@@ -4,6 +4,22 @@ import React from "react";
 import { NavigationMenuItem } from "@/components/home/navigation-menu-item";
 import { Image, Pressable, StyleSheet, View } from "react-native";
 
+const styles = StyleSheet.create({
+  sidebar: {
+    width: 193,
+    alignItems: "center",
+    marginTop: 32,
+    marginLeft: 31,
+  },
+  logo: {
+    width: 191,
+    height: 69,
+    marginBottom: 32,
+  },
+  menuContainer: {
+    paddingVertical: 8,
+  },
+});
 function SidebarTabBar({ state, navigation }: any) {
   const items = [
     {
@@ -69,7 +85,7 @@ export default function TabLayout() {
         headerShown: false,
         tabBarPosition: "left",
         tabBarStyle: {
-          backgroundColor: "transparent",
+          backgroundColor: "white",
           borderRightWidth: 0,
           elevation: 0,
           shadowOpacity: 0,
@@ -119,19 +135,3 @@ export default function TabLayout() {
     </Tabs>
   );
 }
-const styles = StyleSheet.create({
-  sidebar: {
-    width: 193,
-    alignItems: "center",
-    marginTop: 32,
-    marginLeft: 31,
-  },
-  logo: {
-    width: 191,
-    height: 69,
-    marginBottom: 32,
-  },
-  menuContainer: {
-    paddingVertical: 8,
-  },
-});
