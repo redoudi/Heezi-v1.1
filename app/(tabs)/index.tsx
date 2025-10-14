@@ -1,98 +1,256 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import { ActionButton } from "@/components/home/action-button";
+import { CategoryCard } from "@/components/home/category-card";
+import { CourseCard } from "@/components/home/course-card";
+import { ImageGrid } from "@/components/home/image-grid";
+import { LevelSection } from "@/components/home/level-section";
+import { NavigationMenuItem } from "@/components/home/navigation-menu-item";
+import React from "react";
+import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+  const menuItems = [
+    {
+      imageUri:
+        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kxrsaswj_expires_30_days.png",
+      label: "Jouer",
+    },
+    {
+      imageUri:
+        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/u14kpgxz_expires_30_days.png",
+      label: "Profil",
+    },
+    {
+      imageUri:
+        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1b0ke18y_expires_30_days.png",
+      label: "Score",
+    },
+  ];
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+  const imageGrid1 = [
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/3nk7hv2d_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/m5dlwmll_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/4ldezjzz_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iioau6j4_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qfqqlz8k_expires_30_days.png",
+  ];
+
+  const imageGrid2 = [
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wbdvrzse_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/otntrlzv_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/u1j3b1c7_expires_30_days.png",
+  ];
+
+  const imageGrid3 = [
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/vnwq6xma_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/6f2rjpbw_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/drtibfq1_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zgmp5kfw_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/fjhb9y8c_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/3z5eq6qe_expires_30_days.png",
+  ];
+
+  const imageGrid4 = [
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/4pqx9q5x_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/7cy4wc15_expires_30_days.png",
+    "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ro7jb80m_expires_30_days.png",
+  ];
+
+  const categories = [
+    {
+      title: "Gestion d'un tableur",
+      backgroundColor: "#72D6BA",
+      textColor: "#0A2924",
+    },
+    {
+      title: "Edition de texte",
+      backgroundColor: "#33C6FD",
+      textColor: "#0A4F70",
+    },
+    {
+      title: "Lorem ipsum",
+      backgroundColor: "#A085CD",
+      textColor: "#573D75",
+    },
+    {
+      title: "Lorem ipsum",
+      backgroundColor: "#F9BE3C",
+      textColor: "#772D10",
+    },
+  ];
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.view}>
+        <View style={styles.row}>
+          {/* Sidebar */}
+          <View style={styles.sidebar}>
+            <Image
+              source={{
+                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qih0dnn3_expires_30_days.png",
+              }}
+              resizeMode="stretch"
+              style={styles.logo}
+            />
+            <View style={styles.menuContainer}>
+              {menuItems.map((item, index) => (
+                <NavigationMenuItem
+                  key={index}
+                  imageUri={item.imageUri}
+                  label={item.label}
+                />
+              ))}
+              <View style={styles.lastMenuItem}>
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wfgit8hu_expires_30_days.png",
+                  }}
+                  resizeMode="stretch"
+                  style={styles.menuIcon}
+                />
+                <Text style={styles.menuText}>{"Succès"}</Text>
+              </View>
+            </View>
+          </View>
+
+          {/* Main Content */}
+          <View style={styles.mainContent}>
+            <View style={styles.contentRow}>
+              {/* Left Column */}
+              <View style={styles.leftColumn}>
+                <CourseCard
+                  thumbnailUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ldtg9pud_expires_30_days.png"
+                  progress="6 Sections/10 niveaux"
+                  status="En cours"
+                  title="Gestion d'un tableur"
+                  description="Lörem ipsum sulingar sasade, om än säv. "
+                  onPress={() => alert("Pressed!")}
+                />
+
+                <ActionButton
+                  label="Lörem ipsum sulingar sasade, om än säv. "
+                  onPress={() => alert("Pressed!")}
+                  style={styles.actionButton}
+                />
+
+                <ImageGrid imageUris={imageGrid1} style={styles.imageGrid} />
+
+                <ImageGrid imageUris={imageGrid2} style={styles.imageGrid2} />
+
+                <ActionButton
+                  label="Lörem ipsum sulingar sasade, om än säv. "
+                  onPress={() => alert("Pressed!")}
+                />
+              </View>
+
+              {/* Right Column */}
+              <View style={styles.rightColumn}>
+                <LevelSection
+                  level="Niveau. 1"
+                  score="500"
+                  coinIconUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/c30140rw_expires_30_days.png"
+                  badgeIconUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/a8a1zbel_expires_30_days.png"
+                  onScorePress={() => alert("Pressed!")}
+                />
+
+                <View style={styles.categoryList}>
+                  {categories.map((category, index) => (
+                    <CategoryCard
+                      key={index}
+                      title={category.title}
+                      backgroundColor={category.backgroundColor}
+                      textColor={category.textColor}
+                    />
+                  ))}
+                </View>
+              </View>
+            </View>
+
+            <ImageGrid imageUris={imageGrid3} style={styles.imageGrid3} />
+            <ImageGrid imageUris={imageGrid4} />
+          </View>
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    flex: 1,
+    alignItems: "flex-start",
+    backgroundColor: "#FFFFFF",
   },
-  stepContainer: {
-    gap: 8,
+  view: {
+    width: 1440,
+    backgroundColor: "#FFFFFF",
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  sidebar: {
+    width: 193,
+    alignItems: "center",
+    marginTop: 32,
+    marginLeft: 31,
+  },
+  logo: {
+    width: 191,
+    height: 69,
+    marginBottom: 32,
+  },
+  menuContainer: {
+    paddingVertical: 8,
+  },
+  menuIcon: {
+    borderRadius: 8,
+    width: 48,
+    height: 48,
+    marginRight: 16,
+  },
+  menuText: {
+    color: "#292929",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  lastMenuItem: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 8,
+    marginLeft: 7,
+  },
+  mainContent: {
+    width: 1121,
+    marginRight: 32,
+  },
+  contentRow: {
+    flexDirection: "row",
+    marginBottom: 16,
+  },
+  leftColumn: {
+    width: 742,
+    marginTop: 32,
+    marginRight: 16,
+  },
+  rightColumn: {
+    width: 363,
+    backgroundColor: "#FFFFFF",
+  },
+  categoryList: {
+    backgroundColor: "#FFFFFF",
+  },
+  actionButton: {
+    marginBottom: 16,
+  },
+  imageGrid: {
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  imageGrid2: {
+    marginBottom: 16,
+  },
+  imageGrid3: {
+    marginBottom: 8,
   },
 });
