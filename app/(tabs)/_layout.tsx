@@ -57,13 +57,18 @@ function Sidebar() {
         style={styles.logo}
       />
       <View style={styles.menuContainer}>
-        {menuItems.map((item, index) => (
-          <NavigationMenuItem
-            key={index}
-            imageUri={item.imageUri}
-            label={item.label}
-          />
-        ))}
+        <NavigationMenuItem
+          imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kxrsaswj_expires_30_days.png"
+          label="Jouer"
+        />
+        <NavigationMenuItem
+          imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/u14kpgxz_expires_30_days.png"
+          label="Profil"
+        />
+        <NavigationMenuItem
+          imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1b0ke18y_expires_30_days.png"
+          label="Score"
+        />
         <LastMenuItem
           imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wfgit8hu_expires_30_days.png"
           label="Succès"
