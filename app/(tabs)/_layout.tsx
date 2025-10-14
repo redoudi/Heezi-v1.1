@@ -21,33 +21,6 @@ const styles = StyleSheet.create({
   },
 });
 function SidebarTabBar({ state, navigation }: any) {
-  const items = [
-    {
-      name: "jouer",
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kxrsaswj_expires_30_days.png",
-      label: "Jouer",
-    },
-    {
-      name: "profil",
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/u14kpgxz_expires_30_days.png",
-      label: "Profil",
-    },
-    {
-      name: "score",
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1b0ke18y_expires_30_days.png",
-      label: "Score",
-    },
-    {
-      name: "succes",
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wfgit8hu_expires_30_days.png",
-      label: "Succès",
-    },
-  ];
-
   return (
     <View style={styles.sidebar}>
       <Image
@@ -58,20 +31,66 @@ function SidebarTabBar({ state, navigation }: any) {
         style={styles.logo}
       />
       <View style={styles.menuContainer}>
-        {items.map((item) => {
-          const isFocused = state?.routes?.[state.index]?.name === item.name;
-          return (
-            <Pressable
-              key={item.name}
-              accessibilityRole="button"
-              accessibilityState={isFocused ? { selected: true } : {}}
-              onPress={() => navigation.navigate(item.name)}
-              style={{ alignSelf: "flex-start" }}
-            >
-              <NavigationMenuItem imageUri={item.imageUri} label={item.label} />
-            </Pressable>
-          );
-        })}
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={
+            state?.routes?.[state.index]?.name === "jouer"
+              ? { selected: true }
+              : {}
+          }
+          onPress={() => navigation.navigate("jouer")}
+          style={{ alignSelf: "flex-start" }}
+        >
+          <NavigationMenuItem
+            imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kxrsaswj_expires_30_days.png"
+            label="Jouer"
+          />
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={
+            state?.routes?.[state.index]?.name === "profil"
+              ? { selected: true }
+              : {}
+          }
+          onPress={() => navigation.navigate("profil")}
+          style={{ alignSelf: "flex-start" }}
+        >
+          <NavigationMenuItem
+            imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/u14kpgxz_expires_30_days.png"
+            label="Profil"
+          />
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={
+            state?.routes?.[state.index]?.name === "score"
+              ? { selected: true }
+              : {}
+          }
+          onPress={() => navigation.navigate("score")}
+          style={{ alignSelf: "flex-start" }}
+        >
+          <NavigationMenuItem
+            imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1b0ke18y_expires_30_days.png"
+            label="Score"
+          />
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={
+            state?.routes?.[state.index]?.name === "succes"
+              ? { selected: true }
+              : {}
+          }
+          onPress={() => navigation.navigate("succes")}
+          style={{ alignSelf: "flex-start" }}
+        >
+          <NavigationMenuItem
+            imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wfgit8hu_expires_30_days.png"
+            label="Succès"
+          />
+        </Pressable>
       </View>
     </View>
   );
