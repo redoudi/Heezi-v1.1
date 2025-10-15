@@ -58,6 +58,7 @@ export default function TabLayout() {
           tabBarIcon: () => (
             <View
               style={{
+                alignSelf: "flex-start",
                 marginBottom: 24,
                 marginLeft: 7,
               }}
@@ -78,6 +79,7 @@ export default function TabLayout() {
           tabBarIcon: () => (
             <View
               style={{
+                alignSelf: "flex-start",
                 marginBottom: 24,
                 marginLeft: 7,
               }}
@@ -98,6 +100,7 @@ export default function TabLayout() {
           tabBarIcon: () => (
             <View
               style={{
+                alignSelf: "flex-start",
                 marginBottom: 24,
                 marginLeft: 7,
               }}
@@ -118,6 +121,7 @@ export default function TabLayout() {
           tabBarIcon: () => (
             <View
               style={{
+                alignSelf: "flex-start",
                 marginBottom: 24,
                 marginLeft: 7,
               }}
