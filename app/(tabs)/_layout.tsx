@@ -4,22 +4,6 @@ import React from "react";
 import { NavigationMenuItem } from "@/components/home/navigation-menu-item";
 import { Image, Pressable, StyleSheet, View } from "react-native";
 
-const styles = StyleSheet.create({
-  sidebar: {
-    width: 193,
-    alignItems: "center",
-    marginTop: 32,
-    marginLeft: 31,
-  },
-  logo: {
-    width: 191,
-    height: 69,
-    marginBottom: 32,
-  },
-  menuContainer: {
-    paddingVertical: 8,
-  },
-});
 function SidebarTabBar({ state, navigation }: any) {
   return (
     <View style={styles.sidebar}>
@@ -96,6 +80,24 @@ function SidebarTabBar({ state, navigation }: any) {
   );
 }
 
+const styles = StyleSheet.create({
+  sidebar: {
+    width: 193,
+    alignItems: "center",
+    marginTop: 32,
+    marginLeft: 31,
+    backgroundColor: "white",
+  },
+  logo: {
+    width: 191,
+    height: 69,
+    marginBottom: 32,
+  },
+  menuContainer: {
+    paddingVertical: 8,
+  },
+});
+
 export default function TabLayout() {
   return (
     <Tabs
@@ -111,7 +113,7 @@ export default function TabLayout() {
         },
       }}
     >
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="jouer"
         options={{
           title: "Jouer",
@@ -150,7 +152,7 @@ export default function TabLayout() {
         options={{
           href: null,
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
