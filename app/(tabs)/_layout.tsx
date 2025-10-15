@@ -1,73 +1,68 @@
 import { Tabs } from "expo-router";
 import React from "react";
 
-import { NavigationMenuItem } from "@/components/home/navigation-menu-item";
-import { Image, StyleSheet, View } from "react-native";
+import { HapticTab } from "@/components/haptic-tab";
+import { Colors } from "@/constants/theme";
+import { useColorScheme } from "@/hooks/use-color-scheme";
+import { Image, StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
-  tabBar: {
-    width: 193,
-    marginTop: 32,
-    backgroundColor: "white",
-    borderWidth: 0,
-    elevation: 0,
-    shadowOpacity: 0,
-    // Reserve space for the logo (69) + spacing (32)
-    paddingTop: 101,
-    paddingBottom: 8,
-  },
-  tabBarBackground: {
-    flex: 1,
-    alignItems: "center",
-  },
-  logo: {
-    width: 191,
-    height: 69,
-    marginBottom: 32,
-  },
-});
+const TabBarItemIcon = (imgSource) => (
+  <Image
+    source={imgSource}
+    resizeMode="stretch"
+    style={{ width: 48, height: 48, marginBottom: 16 }}
+  />
+);
 
 export default function TabLayout() {
+  const colorScheme = useColorScheme();
+
+  const heeziIconSource = require("../../assets/heezi.png");
+  const playIconSource = require("../../assets/play.png");
+
   return (
     <Tabs
       screenOptions={{
+        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
+        tabBarButton: HapticTab,
         tabBarPosition: "left",
-        tabBarShowLabel: false,
-        tabBarStyle: styles.tabBar,
-        tabBarItemStyle: { alignSelf: "flex-start" },
-        tabBarIconStyle: { alignItems: "flex-start" },
-        tabBarBackground: () => (
-          <View style={styles.tabBarBackground}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qih0dnn3_expires_30_days.png",
-              }}
-              resizeMode="stretch"
-              style={styles.logo}
-            />
-          </View>
-        ),
+        tabBarLabelStyle: {
+          color: "#292929",
+          fontSize: 24,
+          fontWeight: "bold",
+        },
+        tabBarIconStyle: {
+          width: 48,
+          height: 48,
+          marginRight: 16,
+        },
       }}
     >
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "",
+          tabBarIcon: () => (
+            <Image
+              source={require("../../assets/heezi.png")}
+              resizeMode="stretch"
+              style={{ width: 191, height: 69, marginBottom: 32 }}
+            />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="jouer"
         options={{
           title: "Jouer",
           href: "/(tabs)/jouer",
           tabBarIcon: () => (
-            <View
-              style={{
-                alignSelf: "flex-start",
-                marginBottom: 24,
-                marginLeft: 7,
-              }}
-            >
-              <NavigationMenuItem
-                imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kxrsaswj_expires_30_days.png"
-                label="Jouer"
-              />
-            </View>
+            <Image
+              source={require("../../assets/play.png")}
+              resizeMode="stretch"
+              style={styles.tabBarItemIcon}
+            />
           ),
         }}
       />
@@ -77,18 +72,11 @@ export default function TabLayout() {
           title: "Profil",
           href: "/(tabs)/profil",
           tabBarIcon: () => (
-            <View
-              style={{
-                alignSelf: "flex-start",
-                marginBottom: 24,
-                marginLeft: 7,
-              }}
-            >
-              <NavigationMenuItem
-                imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/u14kpgxz_expires_30_days.png"
-                label="Profil"
-              />
-            </View>
+            <Image
+              source={require("../../assets/profil.png")}
+              resizeMode="stretch"
+              style={styles.tabBarItemIcon}
+            />
           ),
         }}
       />
@@ -98,18 +86,11 @@ export default function TabLayout() {
           title: "Score",
           href: "/(tabs)/score",
           tabBarIcon: () => (
-            <View
-              style={{
-                alignSelf: "flex-start",
-                marginBottom: 24,
-                marginLeft: 7,
-              }}
-            >
-              <NavigationMenuItem
-                imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1b0ke18y_expires_30_days.png"
-                label="Score"
-              />
-            </View>
+            <Image
+              source={require("../../assets/score.png")}
+              resizeMode="stretch"
+              style={styles.tabBarItemIcon}
+            />
           ),
         }}
       />
@@ -119,33 +100,22 @@ export default function TabLayout() {
           title: "Succès",
           href: "/(tabs)/succes",
           tabBarIcon: () => (
-            <View
-              style={{
-                alignSelf: "flex-start",
-                marginBottom: 24,
-                marginLeft: 7,
-              }}
-            >
-              <NavigationMenuItem
-                imageUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wfgit8hu_expires_30_days.png"
-                label="Succès"
-              />
-            </View>
+            <Image
+              source={require("../../assets/succes.png")}
+              resizeMode="stretch"
+              style={styles.tabBarItemIcon}
+            />
           ),
-        }}
-      />
-      <Tabs.Screen
-        name="index"
-        options={{
-          href: null,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          href: null,
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBarItemIcon: {
+    width: 48,
+    height: 48,
+    marginRight: 16,
+  },
+});
