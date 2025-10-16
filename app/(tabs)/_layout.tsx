@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
   logoStyle: {
     width: 191,
     height: 69,
+    backgroundColor: "pink",
   },
   tabBarItemStyle: {
     alignSelf: "flex-start",
