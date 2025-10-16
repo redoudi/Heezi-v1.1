@@ -82,8 +82,6 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.container}>
       <View style={styles.view}>
         <View style={styles.row}>
-          {/* Sidebar */}
-
           {/* Main Content */}
           <View style={styles.mainContent}>
             <View style={styles.contentRow}>
