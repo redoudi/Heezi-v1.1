@@ -1,7 +1,6 @@
-import { CategoryCard } from "@/components/home/category-card";
 import { ImageGrid } from "@/components/home/image-grid";
 import { LeftColumn } from "@/components/home/left-column";
-import { LevelSection } from "@/components/home/level-section";
+import { RightColumn } from "@/components/home/right-column";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
@@ -69,26 +68,7 @@ export default function HomeScreen() {
               <LeftColumn imageGrid1={imageGrid1} imageGrid2={imageGrid2} />
 
               {/* Right Column */}
-              <View style={styles.rightColumn}>
-                <LevelSection
-                  level="Niveau. 1"
-                  score="500"
-                  coinIconUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/c30140rw_expires_30_days.png"
-                  badgeIconUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/a8a1zbel_expires_30_days.png"
-                  onScorePress={() => alert("Pressed!")}
-                />
-
-                <View style={styles.categoryList}>
-                  {categories.map((category, index) => (
-                    <CategoryCard
-                      key={index}
-                      title={category.title}
-                      backgroundColor={category.backgroundColor}
-                      textColor={category.textColor}
-                    />
-                  ))}
-                </View>
-              </View>
+              <RightColumn categories={categories} />
             </View>
 
             <ImageGrid imageUris={imageGrid3} style={styles.imageGrid3} />
@@ -127,14 +107,7 @@ const styles = StyleSheet.create({
     marginTop: 32,
     marginRight: 16,
   },
-  rightColumn: {
-    width: 363,
-    backgroundColor: "#FFFFFF",
-  },
-  // leftColumn styles moved to LeftColumn component
-  categoryList: {
-    backgroundColor: "#FFFFFF",
-  },
+  // right/left column styles moved to their components
   imageGrid3: {
     marginBottom: 8,
   },
