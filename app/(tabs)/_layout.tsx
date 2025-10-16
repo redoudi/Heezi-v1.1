@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     width: 193,
     minWidth: 193,
     maxWidth: 193,
+    marginLeft: 31,
   },
   tabBarBackgroundStyle: {
     backgroundColor: "blue",
