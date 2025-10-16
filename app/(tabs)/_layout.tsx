@@ -90,29 +90,23 @@ export default function TabLayout() {
 
 const styles = StyleSheet.create({
   tabBarStyle: {
-    marginTop: 32,
     backgroundColor: "white",
     elevation: 0,
     shadowOpacity: 0,
     paddingTop: 93,
-    borderWidth: 1,
-    borderColor: "red",
     alignItems: "center",
     width: 193,
     minWidth: 193,
     maxWidth: 193,
-    marginLeft: 31,
+    margin: 32,
   },
   tabBarBackgroundStyle: {
-    backgroundColor: "blue",
     alignItems: "center",
     justifyContent: "center",
   },
   logoStyle: {
     width: 191,
     height: 69,
-    backgroundColor: "pink",
-    alignSelf: "center",
   },
   tabBarItemStyle: {
     flexDirection: "row",

@@ -3,9 +3,8 @@ import { CategoryCard } from "@/components/home/category-card";
 import { CourseCard } from "@/components/home/course-card";
 import { ImageGrid } from "@/components/home/image-grid";
 import { LevelSection } from "@/components/home/level-section";
-import { NavigationMenuItem } from "@/components/home/navigation-menu-item";
 import React from "react";
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
   const menuItems = [
@@ -84,34 +83,6 @@ export default function HomeScreen() {
       <View style={styles.view}>
         <View style={styles.row}>
           {/* Sidebar */}
-          <View style={styles.sidebar}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qih0dnn3_expires_30_days.png",
-              }}
-              resizeMode="stretch"
-              style={styles.logo}
-            />
-            <View style={styles.menuContainer}>
-              {menuItems.map((item, index) => (
-                <NavigationMenuItem
-                  key={index}
-                  imageUri={item.imageUri}
-                  label={item.label}
-                />
-              ))}
-              <View style={styles.lastMenuItem}>
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wfgit8hu_expires_30_days.png",
-                  }}
-                  resizeMode="stretch"
-                  style={styles.menuIcon}
-                />
-                <Text style={styles.menuText}>{"Succès"}</Text>
-              </View>
-            </View>
-          </View>
 
           {/* Main Content */}
           <View style={styles.mainContent}>
@@ -194,8 +165,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 32,
     marginLeft: 31,
-    borderWidth: 1,
+    borderWidth: 3,
     borderColor: "black",
+    backgroundColor: "yellow",
   },
   logo: {
     width: 191,
