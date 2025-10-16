@@ -4,7 +4,7 @@ import React from "react";
 import { HapticTab } from "@/components/haptic-tab";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet } from "react-native";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -22,15 +22,13 @@ export default function TabLayout() {
         tabBarLabelStyle: styles.tabBarLabelStyle,
 
         tabBarBackground: () => (
-          <View style={styles.tabBarBackgroundStyle}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qih0dnn3_expires_30_days.png",
-              }}
-              resizeMode="stretch"
-              style={styles.logoStyle}
-            />
-          </View>
+          <Image
+            source={{
+              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qih0dnn3_expires_30_days.png",
+            }}
+            resizeMode="stretch"
+            style={styles.logoStyle}
+          />
         ),
       }}
     >
@@ -51,7 +49,6 @@ export default function TabLayout() {
         name="profil"
         options={{
           title: "Profil",
-          href: "/(tabs)/profil",
           tabBarIcon: () => (
             <Image
               source={require("../../assets/profil.png")}
@@ -65,7 +62,6 @@ export default function TabLayout() {
         name="score"
         options={{
           title: "Score",
-          href: "/(tabs)/score",
           tabBarIcon: () => (
             <Image
               source={require("../../assets/score.png")}
@@ -79,7 +75,6 @@ export default function TabLayout() {
         name="succes"
         options={{
           title: "Succès",
-          href: "/(tabs)/succes",
           tabBarIcon: () => (
             <Image
               source={require("../../assets/succes.png")}
@@ -95,12 +90,11 @@ export default function TabLayout() {
 
 const styles = StyleSheet.create({
   tabBarStyle: {
-    width: 193,
     marginTop: 32,
     backgroundColor: "white",
     elevation: 0,
     shadowOpacity: 0,
-    paddingTop: 101,
+    paddingTop: 93,
     borderWidth: 1,
     borderColor: "red",
     alignItems: "center",
@@ -114,17 +108,15 @@ const styles = StyleSheet.create({
     width: 191,
     height: 69,
     backgroundColor: "pink",
+    alignSelf: "center",
   },
   tabBarItemStyle: {
-    alignSelf: "flex-start",
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 8,
-    paddingBottom: 24,
+    marginVertical: 15,
   },
   tabBarIconStyle: {
-    width: 48,
-    height: 48,
     marginRight: 14,
   },
 
