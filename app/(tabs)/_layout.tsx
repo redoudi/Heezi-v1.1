@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "red",
     alignItems: "center",
+    width: 193,
   },
   tabBarBackgroundStyle: {
     backgroundColor: "blue",
