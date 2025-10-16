@@ -1,5 +1,4 @@
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -9,7 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-export default function DialogScreen() {
+export default function ScenarioScreen() {
   const [textInput1, onChangeTextInput1] = useState("");
   return (
     <SafeAreaView style={styles.container}>

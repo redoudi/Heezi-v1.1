@@ -1,30 +1,10 @@
-import { ActionButton } from "@/components/home/action-button";
 import { CategoryCard } from "@/components/home/category-card";
-import { CourseCard } from "@/components/home/course-card";
 import { ImageGrid } from "@/components/home/image-grid";
+import { LeftColumn } from "@/components/home/left-column";
 import { LevelSection } from "@/components/home/level-section";
-import React from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
-  const menuItems = [
-    {
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kxrsaswj_expires_30_days.png",
-      label: "Jouer",
-    },
-    {
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/u14kpgxz_expires_30_days.png",
-      label: "Profil",
-    },
-    {
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1b0ke18y_expires_30_days.png",
-      label: "Score",
-    },
-  ];
-
   const imageGrid1 = [
     "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/3nk7hv2d_expires_30_days.png",
     "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/m5dlwmll_expires_30_days.png",
@@ -86,31 +66,7 @@ export default function HomeScreen() {
           <View style={styles.mainContent}>
             <View style={styles.contentRow}>
               {/* Left Column */}
-              <View style={styles.leftColumn}>
-                <CourseCard
-                  thumbnailUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ldtg9pud_expires_30_days.png"
-                  progress="6 Sections/10 niveaux"
-                  status="En cours"
-                  title="Gestion d'un tableur"
-                  description="Lörem ipsum sulingar sasade, om än säv. "
-                  onPress={() => alert("Pressed!")}
-                />
-
-                <ActionButton
-                  label="Lörem ipsum sulingar sasade, om än säv. "
-                  onPress={() => alert("Pressed!")}
-                  style={styles.actionButton}
-                />
-
-                <ImageGrid imageUris={imageGrid1} style={styles.imageGrid} />
-
-                <ImageGrid imageUris={imageGrid2} style={styles.imageGrid2} />
-
-                <ActionButton
-                  label="Lörem ipsum sulingar sasade, om än säv. "
-                  onPress={() => alert("Pressed!")}
-                />
-              </View>
+              <LeftColumn imageGrid1={imageGrid1} imageGrid2={imageGrid2} />
 
               {/* Right Column */}
               <View style={styles.rightColumn}>
@@ -175,17 +131,9 @@ const styles = StyleSheet.create({
     width: 363,
     backgroundColor: "#FFFFFF",
   },
+  // leftColumn styles moved to LeftColumn component
   categoryList: {
     backgroundColor: "#FFFFFF",
-  },
-  actionButton: {
-    marginBottom: 16,
-  },
-  imageGrid: {
-    marginBottom: 8,
-  },
-  imageGrid2: {
-    marginBottom: 16,
   },
   imageGrid3: {
     marginBottom: 8,
