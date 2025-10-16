@@ -93,12 +93,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     elevation: 0,
     shadowOpacity: 0,
-    paddingTop: 93,
+    paddingTop: 132,
     alignItems: "center",
-    width: 193,
-    minWidth: 193,
-    maxWidth: 193,
-    margin: 32,
+
+    minWidth: 257,
+    maxWidth: 257,
+    marginRight: 32,
   },
   tabBarBackgroundStyle: {
     alignItems: "center",
@@ -107,6 +107,8 @@ const styles = StyleSheet.create({
   logoStyle: {
     width: 191,
     height: 69,
+    marginHorizontal: "auto",
+    marginTop: 32,
   },
   tabBarItemStyle: {
     flexDirection: "row",
