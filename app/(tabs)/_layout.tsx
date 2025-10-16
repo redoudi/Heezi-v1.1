@@ -99,6 +99,8 @@ const styles = StyleSheet.create({
     borderColor: "red",
     alignItems: "center",
     width: 193,
+    minWidth: 193,
+    maxWidth: 193,
   },
   tabBarBackgroundStyle: {
     backgroundColor: "blue",
