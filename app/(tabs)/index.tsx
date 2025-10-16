@@ -158,41 +158,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  sidebar: {
-    width: 193,
-    alignItems: "center",
-    marginTop: 32,
-    marginLeft: 31,
-    borderWidth: 3,
-    borderColor: "black",
-    backgroundColor: "yellow",
-  },
-  logo: {
-    width: 191,
-    height: 69,
-    marginBottom: 32,
-  },
-  menuContainer: {
-    paddingVertical: 8,
-  },
-  menuIcon: {
-    borderRadius: 8,
-    width: 48,
-    height: 48,
-    marginRight: 16,
-  },
-  menuText: {
-    color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  lastMenuItem: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
-    borderRadius: 8,
-    marginLeft: 7,
-  },
   mainContent: {
     width: 1121,
     marginRight: 32,
