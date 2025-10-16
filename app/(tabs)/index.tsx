@@ -194,6 +194,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 32,
     marginLeft: 31,
+    borderWidth: 1,
+    borderColor: "black",
   },
   logo: {
     width: 191,
