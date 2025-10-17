@@ -1,5 +1,5 @@
 import { CategoryCard } from "@/components/home/category-card";
-import { LevelSection } from "@/components/home/level-section";
+import { LevelHeader } from "@/components/home/level-header";
 import { StyleSheet, View } from "react-native";
 
 interface CategoryItem {
@@ -15,13 +15,7 @@ interface RightColumnProps {
 export function RightColumn({ categories }: RightColumnProps) {
   return (
     <View style={styles.rightColumn}>
-      <LevelSection
-        level="Niveau. 1"
-        score="500"
-        coinIconUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/c30140rw_expires_30_days.png"
-        badgeIconUri="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/a8a1zbel_expires_30_days.png"
-        onScorePress={() => alert("Pressed!")}
-      />
+      <LevelHeader onScorePress={() => alert("Pressed!")} />
 
       <View style={styles.categoryList}>
         {categories.map((category, index) => (

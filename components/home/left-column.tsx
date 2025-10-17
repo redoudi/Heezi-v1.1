@@ -20,13 +20,6 @@ export function LeftColumn({ imageGrid1, imageGrid2 }: LeftColumnProps) {
       />
 
       <ImageGrid imageUris={imageGrid1} style={styles.imageGrid} />
-
-      <ImageGrid imageUris={imageGrid2} style={styles.imageGrid2} />
-
-      <ActionButton
-        label="Lörem ipsum sulingar sasade, om än säv. "
-        onPress={() => alert("Pressed!")}
-      />
     </View>
   );
 }
