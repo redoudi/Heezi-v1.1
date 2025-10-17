@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { Image, StyleSheet, View } from "react-native";
 
 interface MissionDoorGridProps {
@@ -8,13 +9,15 @@ interface MissionDoorGridProps {
 export function MissionDoorGrid({ imageUris, style }: MissionDoorGridProps) {
   return (
     <View style={[styles.container, style]}>
-      <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
-        }}
-        resizeMode="stretch"
-        style={styles.image}
-      />
+      <Link href="/mission" asChild>
+        <Image
+          source={{
+            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
+          }}
+          resizeMode="stretch"
+          style={styles.image}
+        />
+      </Link>
     </View>
   );
 }
