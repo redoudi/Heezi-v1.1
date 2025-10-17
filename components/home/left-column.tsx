@@ -1,6 +1,6 @@
 import { ActionButton } from "@/components/home/action-button";
 import { ActiveCourseCard } from "@/components/home/active-course-card";
-import { ImageGrid } from "@/components/home/image-grid";
+import { MissionDoorGrid } from "@/components/home/missionDoorGrid";
 import { StyleSheet, View } from "react-native";
 
 interface LeftColumnProps {
@@ -10,6 +10,8 @@ interface LeftColumnProps {
 
 const imageGrid1 = [
   "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
+  "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iioau6j4_expires_30_days.png",
+  "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qfqqlz8k_expires_30_days.png",
 ];
 
 export function LeftColumn() {
@@ -23,7 +25,7 @@ export function LeftColumn() {
         style={styles.actionButton}
       />
 
-      <ImageGrid imageUris={imageGrid1} style={styles.imageGrid} />
+      <MissionDoorGrid imageUris={imageGrid1} style={styles.imageGrid} />
     </View>
   );
 }

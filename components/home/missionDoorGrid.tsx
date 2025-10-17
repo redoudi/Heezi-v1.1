@@ -1,24 +1,20 @@
-import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 
-interface ImageGridProps {
+interface MissionDoorGridProps {
   imageUris: string[];
   style?: any;
 }
 
-export function ImageGrid({ imageUris, style }: ImageGridProps) {
+export function MissionDoorGrid({ imageUris, style }: MissionDoorGridProps) {
   return (
     <View style={[styles.container, style]}>
-      {imageUris.map((uri, index) => (
-        <Image
-          key={index}
-          source={{ uri }}
-          resizeMode="stretch"
-          style={
-            index === imageUris.length - 1 ? styles.lastImage : styles.image
-          }
-        />
-      ))}
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
+        }}
+        resizeMode="stretch"
+        style={styles.image}
+      />
     </View>
   );
 }
