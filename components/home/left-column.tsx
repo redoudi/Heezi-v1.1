@@ -8,13 +8,17 @@ interface LeftColumnProps {
   imageGrid2: string[];
 }
 
-export function LeftColumn({ imageGrid1, imageGrid2 }: LeftColumnProps) {
+const imageGrid1 = [
+  "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
+];
+
+export function LeftColumn() {
   return (
     <View style={styles.leftColumn}>
       <ActiveCourseCard />
 
       <ActionButton
-        label="Lörem ipsum sulingar sasade, om än säv. "
+        label="Niveau 1"
         onPress={() => alert("Pressed!")}
         style={styles.actionButton}
       />
