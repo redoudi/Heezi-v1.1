@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { Link, useRouter } from "expo-router";
+import { useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -9,6 +10,7 @@ import {
   View,
 } from "react-native";
 export default function ScenarioScreen() {
+  const router = useRouter();
   const [textInput1, onChangeTextInput1] = useState("");
   return (
     <SafeAreaView style={styles.container}>
@@ -53,20 +55,22 @@ export default function ScenarioScreen() {
                     style={styles.button2}
                     onPress={() => alert("Pressed!")}
                   >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lpcexk6v_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image3}
-                    />
+                    <Link href="/mission/tableur" asChild>
+                      <Image
+                        source={{
+                          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lpcexk6v_expires_30_days.png",
+                        }}
+                        resizeMode={"stretch"}
+                        style={styles.image3}
+                      />
+                    </Link>
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
             <TouchableOpacity
               style={styles.buttonRow}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/mission/tableur")}
             >
               <Text style={styles.text}>{"Commencer"}</Text>
               <Image
