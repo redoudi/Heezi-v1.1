@@ -13,7 +13,10 @@ export default function MissionLayout() {
 
     <Stack>
       <Stack.Screen name="scenario" options={{ headerShown: false }} />
-      <Stack.Screen name="tableur" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="(practice)/spreadsheet"
+        options={{ headerShown: false }}
+      />
     </Stack>
   );
 }

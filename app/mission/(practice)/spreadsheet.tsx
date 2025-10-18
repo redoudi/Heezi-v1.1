@@ -1,3 +1,4 @@
+// removed unused router import; BackButton handles navigation
 import {
   Image,
   SafeAreaView,
@@ -7,7 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-export default function TableurScreen() {
+import BackButton from "../../../components/ui/back-button";
+export default function SpreadsheetScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
@@ -37,18 +39,10 @@ export default function TableurScreen() {
               resizeMode={"stretch"}
               style={styles.image4}
             />
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => alert("Pressed!")}
-            >
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iycoag37_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image5}
-              />
-            </TouchableOpacity>
+            <BackButton
+              containerStyle={styles.button}
+              imageStyle={styles.image5}
+            />
           </View>
           <View style={styles.row2}>
             <TouchableOpacity
