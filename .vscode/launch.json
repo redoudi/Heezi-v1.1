@@ -5,11 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
+      "name": "Chrome",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
+      "type": "chrome",
       "url": "http://localhost:8081",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "userDataDir": "${workspaceFolder}/.tmp",
+      "skipFiles": ["**/node_modules/**"]
     },
     {
       "type": "pwa-msedge",
