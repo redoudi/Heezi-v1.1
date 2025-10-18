@@ -19,7 +19,7 @@ export function PracticeToolProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export default function usePracticeTool(): PracticeTool {
+export default function usePracticeTool() {
   const context = useContext(PracticeToolContext);
   if (context === undefined) {
     throw new Error(
