@@ -38,7 +38,7 @@ export default function TabLayout() {
           title: "Jouer",
           tabBarIcon: () => (
             <Image
-              source={require("../../assets/play.png")}
+              source={require("../../assets/images/play.png")}
               resizeMode="stretch"
               style={styles.tabBarItemIconImage}
             />
@@ -51,7 +51,7 @@ export default function TabLayout() {
           title: "Profil",
           tabBarIcon: () => (
             <Image
-              source={require("../../assets/profil.png")}
+              source={require("../../assets/images/profil.png")}
               resizeMode="stretch"
               style={styles.tabBarItemIconImage}
             />
@@ -64,7 +64,7 @@ export default function TabLayout() {
           title: "Score",
           tabBarIcon: () => (
             <Image
-              source={require("../../assets/score.png")}
+              source={require("../../assets/images/score.png")}
               resizeMode="stretch"
               style={styles.tabBarItemIconImage}
             />
@@ -77,7 +77,7 @@ export default function TabLayout() {
           title: "Succès",
           tabBarIcon: () => (
             <Image
-              source={require("../../assets/succes.png")}
+              source={require("../../assets/images/succes.png")}
               resizeMode="stretch"
               style={styles.tabBarItemIconImage}
             />
