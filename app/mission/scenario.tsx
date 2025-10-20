@@ -19,7 +19,7 @@ export default function ScenarioScreen() {
           <View style={styles.view2}>
             <TouchableOpacity
               style={styles.button}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.back()}
             >
               <Image
                 source={{
