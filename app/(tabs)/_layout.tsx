@@ -2,13 +2,11 @@ import { Tabs } from "expo-router";
 
 import { HapticTab } from "@/components/haptic-tab";
 import { Colors } from "@/constants/theme";
-import usePracticeTool from "@/context/usePracticeTool";
 import { useColorScheme } from "@/hooks/use-color-scheme";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const { practiceTool } = usePracticeTool();
 
   return (
     <Tabs
@@ -24,7 +22,6 @@ export default function TabLayout() {
 
         tabBarBackground: () => (
           <View>
-            <Text>{practiceTool}</Text>
             <Image
               source={{
                 uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qih0dnn3_expires_30_days.png",

@@ -1,3 +1,4 @@
+import { PracticeToolProvider } from "@/context/usePracticeTool";
 import { Stack } from "expo-router";
 import "react-native-reanimated";
 
@@ -6,10 +7,11 @@ import "react-native-reanimated";
 export default function PlayLayout() {
   return (
     // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="mission" options={{ headerShown: false }} />
-    </Stack>
+    <PracticeToolProvider>
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="mission" options={{ headerShown: false }} />
+      </Stack>
+    </PracticeToolProvider>
   );
 }

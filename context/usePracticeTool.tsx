@@ -11,7 +11,7 @@ const PracticeToolContext = createContext<{
 });
 
 export function PracticeToolProvider({ children }: { children: ReactNode }) {
-  const [practiceTool, setPracticeTool] = useState<PracticeTool>("none");
+  const [practiceTool, setPracticeTool] = useState<PracticeTool>("spreadsheet");
   return (
     <PracticeToolContext.Provider value={{ practiceTool, setPracticeTool }}>
       {children}
