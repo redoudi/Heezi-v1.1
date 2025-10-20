@@ -83,6 +83,13 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="play/mission"
+        options={{
+          tabBarStyle: { display: "none" },
+          tabBarButton: () => null,
+        }}
+      />
     </Tabs>
   );
 }
