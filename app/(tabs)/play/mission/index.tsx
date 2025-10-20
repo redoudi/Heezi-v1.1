@@ -1,5 +1,5 @@
 import usePracticeTool from "@/context/usePracticeTool";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
   Image,
@@ -68,21 +68,22 @@ export default function ScenarioScreen() {
                 </View>
               </View>
             </View>
-            <Link href={`/play/mission/${practiceTool}`} asChild>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => router.push(`/play/mission/${practiceTool}`)}
-              >
-                <Text style={styles.text}>{"Commencer"}</Text>
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/6ce1tot3_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-              </TouchableOpacity>
-            </Link>
+
+            <TouchableOpacity
+              style={styles.buttonRow}
+              onPress={() =>
+                router.push(`/play/mission/practice/${practiceTool}`)
+              }
+            >
+              <Text style={styles.text}>{"Commencer"}</Text>
+              <Image
+                source={{
+                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/6ce1tot3_expires_30_days.png",
+                }}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
