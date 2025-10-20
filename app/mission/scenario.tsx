@@ -1,4 +1,4 @@
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
   Image,
@@ -55,22 +55,20 @@ export default function ScenarioScreen() {
                     style={styles.button2}
                     onPress={() => alert("Pressed!")}
                   >
-                    <Link href="/mission/tableur" asChild>
-                      <Image
-                        source={{
-                          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lpcexk6v_expires_30_days.png",
-                        }}
-                        resizeMode={"stretch"}
-                        style={styles.image3}
-                      />
-                    </Link>
+                    <Image
+                      source={{
+                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lpcexk6v_expires_30_days.png",
+                      }}
+                      resizeMode={"stretch"}
+                      style={styles.image3}
+                    />
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
             <TouchableOpacity
               style={styles.buttonRow}
-              onPress={() => router.push("/mission/tableur")}
+              onPress={() => router.push("/mission/spreadsheet")}
             >
               <Text style={styles.text}>{"Commencer"}</Text>
               <Image
