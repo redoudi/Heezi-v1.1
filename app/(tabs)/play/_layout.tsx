@@ -4,15 +4,14 @@ import "react-native-reanimated";
 
 // import { useColorScheme } from "@/hooks/use-color-scheme";
 
-export const unstable_settings = {
-  anchor: "(tabs)",
-};
-
 export default function PlayLayout() {
   return (
     // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
     <PracticeToolProvider>
-      <Stack />
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="mission" options={{ headerShown: false }} />
+      </Stack>
     </PracticeToolProvider>
   );
 }
