@@ -1,21 +1,21 @@
-import React, { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 
 export type PracticeTool = "spreadsheet" | "textEditor";
 
-const PracticeToolContext = createContext<
-  | {
-      practiceTool: PracticeTool;
-      setPracticeTool: (practiceTool: PracticeTool) => void;
-    }
-  | undefined
->(undefined);
+const PracticeToolContext = createContext<{
+  practiceTool: PracticeTool;
+  setPracticeTool: (practiceTool: PracticeTool) => void;
+}>({
+  practiceTool: "none",
+  setPracticeTool: () => {},
+});
 
 export function PracticeToolProvider({ children }: { children: ReactNode }) {
-  const [practiceTool, setPracticeTool] = useState<PracticeTool>("undefined");
-  return React.createElement(
-    PracticeToolContext.Provider,
-    { value: { practiceTool, setPracticeTool } },
-    children
+  const [practiceTool, setPracticeTool] = useState<PracticeTool>("none");
+  return (
+    <PracticeToolContext.Provider value={{ practiceTool, setPracticeTool }}>
+      {children}
+    </PracticeToolContext.Provider>
   );
 }
 
