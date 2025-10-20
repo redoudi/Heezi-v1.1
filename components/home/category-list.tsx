@@ -27,6 +27,7 @@ export const categories: CategoryItem[] = [
 
 export function CategoryList() {
   const { setPracticeTool } = usePracticeTool();
+
   return (
     <View style={styles.categoryList}>
       {categories.map((category, index) => (

@@ -17,6 +17,10 @@ export default function MissionLayout() {
         name="(practice)/spreadsheet"
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="(practice)/textEditor"
+        options={{ headerShown: false }}
+      />
     </Stack>
   );
 }
