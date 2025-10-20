@@ -8,12 +8,6 @@ interface LeftColumnProps {
   imageGrid2: string[];
 }
 
-const imageGrid1 = [
-  "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
-  "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iioau6j4_expires_30_days.png",
-  "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qfqqlz8k_expires_30_days.png",
-];
-
 export function LeftColumn() {
   return (
     <View style={styles.leftColumn}>
@@ -25,7 +19,7 @@ export function LeftColumn() {
         style={styles.actionButton}
       />
 
-      <MissionDoorGrid imageUris={imageGrid1} style={styles.imageGrid} />
+      <MissionDoorGrid style={styles.imageGrid} />
     </View>
   );
 }

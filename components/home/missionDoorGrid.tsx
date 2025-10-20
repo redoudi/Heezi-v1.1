@@ -2,11 +2,10 @@ import { Link } from "expo-router";
 import { Image, StyleSheet, View } from "react-native";
 
 interface MissionDoorGridProps {
-  imageUris: string[];
   style?: any;
 }
 
-export function MissionDoorGrid({ imageUris, style }: MissionDoorGridProps) {
+export function MissionDoorGrid({ style }: MissionDoorGridProps) {
   return (
     <View style={[styles.container, style]}>
       <Link href="/mission/scenario" asChild>
