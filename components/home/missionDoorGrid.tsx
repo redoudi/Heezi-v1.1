@@ -8,7 +8,7 @@ interface MissionDoorGridProps {
 export function MissionDoorGrid({ style }: MissionDoorGridProps) {
   return (
     <View style={[styles.container, style]}>
-      <Link href="/mission/scenario" asChild>
+      <Link href="/play/mission/scenario" asChild>
         <Image
           source={{
             uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
