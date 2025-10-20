@@ -7,11 +7,10 @@ import "react-native-reanimated";
 export default function PlayLayout() {
   return (
     // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-    <PracticeToolProvider>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="mission" options={{ headerShown: false }} />
-      </Stack>
-    </PracticeToolProvider>
+
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="mission" options={{ headerShown: false }} />
+    </Stack>
   );
 }
