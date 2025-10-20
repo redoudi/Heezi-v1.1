@@ -71,9 +71,7 @@ export default function ScenarioScreen() {
             <Link href={`/play/mission/${practiceTool}`} asChild>
               <TouchableOpacity
                 style={styles.buttonRow}
-                onPress={() =>
-                  router.push(`/play/mission/practice/${practiceTool}`)
-                }
+                onPress={() => router.push(`/play/mission/${practiceTool}`)}
               >
                 <Text style={styles.text}>{"Commencer"}</Text>
                 <Image
