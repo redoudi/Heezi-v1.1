@@ -11,7 +11,7 @@ const PracticeToolContext = createContext<
 >(undefined);
 
 export function PracticeToolProvider({ children }: { children: ReactNode }) {
-  const [practiceTool, setPracticeTool] = useState<PracticeTool>("");
+  const [practiceTool, setPracticeTool] = useState<PracticeTool>("undefined");
   return React.createElement(
     PracticeToolContext.Provider,
     { value: { practiceTool, setPracticeTool } },
