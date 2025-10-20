@@ -14,7 +14,7 @@ export function LeftColumn() {
       <ActiveCourseCard />
 
       <ActionButton
-        label="Niveau 1"
+        label="Section 1"
         onPress={() => alert("Pressed!")}
         style={styles.actionButton}
       />
