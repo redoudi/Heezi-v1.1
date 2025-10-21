@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import BackButton from "../ui/back-button";
-import { styles } from "./window-topbar";
+import BackButton from "../../ui/back-button";
+import { styles } from "./titlebar";
 
 export default function SpreadsheetScreen() {
   return (

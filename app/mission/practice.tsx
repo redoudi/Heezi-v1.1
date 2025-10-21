@@ -1,5 +1,5 @@
-import SpreadsheetScreen from "@/components/practice-tool/SpreadsheetScreen";
-import TextEditorScreen from "@/components/practice-tool/textEditor";
+import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/SpreadsheetScreen";
+import TextEditorScreen from "@/components/practice-tools/textEditor";
 import usePracticeTool from "@/context/usePracticeTool";
 
 export default function PracticeToolScreen() {
