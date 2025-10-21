@@ -1,4 +1,3 @@
-import usePracticeTool from "@/context/usePracticeTool";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
 import {
@@ -13,7 +12,7 @@ import {
 export default function ScenarioScreen() {
   const router = useRouter();
   const [textInput1, onChangeTextInput1] = useState("");
-  const { practiceTool } = usePracticeTool();
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.view}>

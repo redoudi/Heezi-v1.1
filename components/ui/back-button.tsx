@@ -1,6 +1,7 @@
 import { router } from "expo-router";
 import {
   Image,
+  StyleSheet,
   TouchableOpacity,
   type ImageStyle,
   type StyleProp,
@@ -14,8 +15,8 @@ type BackButtonProps = {
 };
 
 export default function BackButton({
-  containerStyle,
-  imageStyle,
+  containerStyle = styles.button,
+  imageStyle = styles.image5,
 }: BackButtonProps) {
   return (
     <TouchableOpacity style={containerStyle} onPress={() => router.back()}>
@@ -29,3 +30,19 @@ export default function BackButton({
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    width: 40,
+    alignItems: "center",
+    backgroundColor: "#FDC1AB",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 32,
+  },
+  image5: {
+    borderRadius: 8,
+    width: 24,
+    height: 24,
+  },
+});
