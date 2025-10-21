@@ -13,9 +13,6 @@ type BackButtonProps = {
   imageStyle?: StyleProp<ImageStyle>;
 };
 
-const DEFAULT_BACK_ICON_URI =
-  "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iycoag37_expires_30_days.png";
-
 export default function BackButton({
   containerStyle,
   imageStyle,
@@ -23,7 +20,9 @@ export default function BackButton({
   return (
     <TouchableOpacity style={containerStyle} onPress={() => router.back()}>
       <Image
-        source={{ uri: DEFAULT_BACK_ICON_URI }}
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iycoag37_expires_30_days.png",
+        }}
         resizeMode={"stretch"}
         style={imageStyle}
       />
