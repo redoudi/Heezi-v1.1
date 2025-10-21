@@ -1,5 +1,5 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { styles } from "../spreadsheet/titlebar";
+import { styles } from "../titlebar";
 
 export default function Ribbon() {
   return (
