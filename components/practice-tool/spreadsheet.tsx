@@ -1,4 +1,3 @@
-// removed unused router import; BackButton handles navigation
 import {
   Image,
   SafeAreaView,
