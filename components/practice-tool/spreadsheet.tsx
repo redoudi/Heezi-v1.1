@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import BackButton from "../../../components/ui/back-button";
+import BackButton from "../ui/back-button";
 export default function SpreadsheetScreen() {
   return (
     <SafeAreaView style={styles.container}>

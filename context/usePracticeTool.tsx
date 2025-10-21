@@ -7,7 +7,7 @@ const PracticeToolContext = createContext<{
   setPracticeTool: (practiceTool: PracticeTool) => void;
 }>({
   practiceTool: "",
-  setPracticeTool: (a: PracticeTool) => {},
+  setPracticeTool: (arg1: PracticeTool) => {},
 });
 
 export function PracticeToolProvider({ children }: { children: ReactNode }) {
