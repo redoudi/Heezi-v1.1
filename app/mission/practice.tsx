@@ -1,4 +1,4 @@
-import SpreadsheetScreen from "@/components/practice-tool/spreadsheet";
+import SpreadsheetScreen from "@/components/practice-tool/SpreadsheetScreen";
 import TextEditorScreen from "@/components/practice-tool/textEditor";
 import usePracticeTool from "@/context/usePracticeTool";
 
