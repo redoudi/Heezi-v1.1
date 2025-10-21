@@ -1,12 +1,12 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 
-export type PracticeTool = "spreadsheet" | "textEditor" | "none";
+export type PracticeTool = "spreadsheet" | "textEditor";
 
 const PracticeToolContext = createContext<{
   practiceTool: PracticeTool;
   setPracticeTool: (practiceTool: PracticeTool) => void;
 }>({
-  practiceTool: "none",
+  practiceTool: "spreadsheet",
   setPracticeTool: () => {},
 });
 
