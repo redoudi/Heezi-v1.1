@@ -3,14 +3,13 @@ import "react-native-reanimated";
 
 // import { useColorScheme } from "@/hooks/use-color-scheme";
 
-export default function PlayLayout() {
+export default function PracticeLayout() {
   return (
     // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
 
     <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="mission" options={{ headerShown: false }} />
-      <Stack.Screen name="mission/practice" options={{ headerShown: false }} />
+      <Stack.Screen name="spreadsheet" options={{ headerShown: false }} />
+      <Stack.Screen name="textEditor" options={{ headerShown: false }} />
     </Stack>
   );
 }

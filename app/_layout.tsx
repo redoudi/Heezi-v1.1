@@ -17,6 +17,7 @@ export default function RootLayout() {
     <ThemeProvider value={DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="mission" options={{ headerShown: false }} />
 
         <Stack.Screen
           name="modal"
