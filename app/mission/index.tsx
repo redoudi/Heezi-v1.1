@@ -68,7 +68,7 @@ export default function ScenarioScreen() {
                 </View>
               </View>
             </View>
-            <Link href={`/mission/practicee`} asChild>
+            <Link href={`/mission/practice`} asChild>
               <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
                 <Text style={styles.text}>{"Commencer"}</Text>
                 <Image
