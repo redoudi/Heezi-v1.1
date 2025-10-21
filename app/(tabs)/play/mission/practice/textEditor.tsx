@@ -1,3 +1,4 @@
+import BackButton from "@/components/ui/back-button";
 import {
   Image,
   SafeAreaView,
@@ -36,18 +37,7 @@ export default function TextEditorScreen() {
               resizeMode={"stretch"}
               style={styles.image4}
             />
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => alert("Pressed!")}
-            >
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/neqlyrjl_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image5}
-              />
-            </TouchableOpacity>
+            <BackButton />
           </View>
           <View style={styles.row2}>
             <TouchableOpacity
