@@ -7,9 +7,9 @@ import {
 } from "react-native";
 import BackButton from "../../ui/back-button";
 import FunctionBar from "./function-bar";
+import SpreadsheetGrid from "./grid/spreadsheet-grid";
 import Ribbon from "./ribbon/ribbon";
 import RibbonTabs from "./ribbon/ribbon-tabs";
-import SpreadsheetGrid from "./spreadsheet-grid";
 import { styles } from "./titlebar";
 
 export default function SpreadsheetScreen() {

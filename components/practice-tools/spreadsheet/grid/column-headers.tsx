@@ -1,5 +1,5 @@
 import { Image, Text, View } from "react-native";
-import { styles } from "./titlebar";
+import { styles } from "../titlebar";
 
 export default function ColumnHeaders() {
   return (
