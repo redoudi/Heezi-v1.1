@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import BackButton from "../../ui/back-button";
-import Ribbons from "../ribbon/ribbon";
+import Ribbon from "../ribbon/ribbon";
 import { styles } from "./titlebar";
 
 export default function SpreadsheetScreen() {
@@ -127,7 +127,7 @@ export default function SpreadsheetScreen() {
               </TouchableOpacity>
             </View>
           </View>
-          <Ribbons />
+          <Ribbon />
           <View style={styles.row4}>
             <TouchableOpacity
               style={styles.buttonRow7}
