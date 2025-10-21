@@ -1,13 +1,13 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 
-export type PracticeTool = "spreadsheet" | "textEditor";
+export type PracticeTool = "spreadsheet" | "textEditor" | "";
 
 const PracticeToolContext = createContext<{
   practiceTool: PracticeTool;
   setPracticeTool: (practiceTool: PracticeTool) => void;
 }>({
-  practiceTool: "spreadsheet",
-  setPracticeTool: () => {},
+  practiceTool: "",
+  setPracticeTool: (a: PracticeTool) => {},
 });
 
 export function PracticeToolProvider({ children }: { children: ReactNode }) {
