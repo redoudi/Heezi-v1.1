@@ -1,5 +1,5 @@
-import { Link, useRouter } from "expo-router";
-import { useState } from "react";
+import { Link, useLocalSearchParams, useRouter } from "expo-router";
+import { useEffect, useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -12,6 +12,16 @@ import {
 export default function ScenarioScreen() {
   const router = useRouter();
   const [textInput1, onChangeTextInput1] = useState("");
+  const { id } = useLocalSearchParams();
+  const [intro, setIntro] = useState<any>(null);
+  useEffect(() => {
+    const fetchLevel = async () => {
+      const level = await fetch(`/assets/levels/spreadsheet/lvl${id}.json`);
+      const levelData = await level.json();
+      setIntro(levelData.intro);
+    };
+    fetchLevel();
+  }, [id]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,9 +54,7 @@ export default function ScenarioScreen() {
                   />
                 </View>
                 <TextInput
-                  placeholder={
-                    "Lörem ipsum köttskatt astrolig: nemiren men maligen !!!"
-                  }
+                  placeholder={intro}
                   value={textInput1}
                   onChangeText={onChangeTextInput1}
                   style={styles.input}
