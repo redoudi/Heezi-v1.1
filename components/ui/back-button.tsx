@@ -14,18 +14,15 @@ type BackButtonProps = {
   imageStyle?: StyleProp<ImageStyle>;
 };
 
-export default function BackButton({
-  containerStyle = styles.button,
-  imageStyle = styles.image5,
-}: BackButtonProps) {
+export default function BackButton() {
   return (
-    <TouchableOpacity style={containerStyle} onPress={() => router.back()}>
+    <TouchableOpacity style={styles.button} onPress={() => router.back()}>
       <Image
         source={{
           uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iycoag37_expires_30_days.png",
         }}
         resizeMode={"stretch"}
-        style={imageStyle}
+        style={styles.image5}
       />
     </TouchableOpacity>
   );

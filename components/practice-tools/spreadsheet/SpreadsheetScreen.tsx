@@ -5,48 +5,19 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import BackButton from "../../ui/back-button";
 import FunctionBar from "./function-bar";
 import SpreadsheetGrid from "./grid/spreadsheet-grid";
 import Ribbon from "./ribbon/ribbon";
 import RibbonTabs from "./ribbon/ribbon-tabs";
 import { styles } from "./spreadsheet-styles";
+import TitleBar from "./title-bar";
 
 export default function SpreadsheetScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
         <View style={styles.column2}>
-          <View style={styles.row}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/5jt7jwsg_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image}
-            />
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/os183jfm_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image2}
-            />
-            <Image
-              source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
-              resizeMode={"stretch"}
-              style={styles.image3}
-            />
-            <Image
-              source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
-              resizeMode={"stretch"}
-              style={styles.image4}
-            />
-            <BackButton
-              containerStyle={styles.button}
-              imageStyle={styles.image5}
-            />
-          </View>
+          <TitleBar />
           <RibbonTabs />
           <Ribbon />
           <FunctionBar />
