@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-export default function Cell({ key, id }) {
+export default function Cell({ id }: { id: string }) {
   return (
     <View style={styles.box}>
       <Text>{id}</Text>
