@@ -6,6 +6,9 @@ const useSpreadsheetStore = create()((set, get) => ({
   setLevelData: (levelData: any) => {
     set(() => ({
       levelData,
+      spreadsheetData: {
+        ...levelData.spreadsheetData,
+      },
     }));
   },
 
