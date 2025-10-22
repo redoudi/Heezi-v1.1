@@ -16,6 +16,16 @@ const ROWS = Array.from({ length: 18 }, (_, i) => ({
   rowNumber: i + 1,
 }));
 
+const CornerSymbol = () => (
+  <Image
+    source={{
+      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/pt024urq_expires_30_days.png",
+    }}
+    resizeMode={"stretch"}
+    style={styles.image35}
+  />
+);
+
 export default function SpreadsheetGridWrong() {
   // Header component
   const renderHeader = useMemo(
@@ -25,13 +35,7 @@ export default function SpreadsheetGridWrong() {
         showsHorizontalScrollIndicator={false}
         style={styles.scrollView}
       >
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/pt024urq_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image35}
-        />
+        <CornerSymbol />
         {COLUMNS.map((column, index) => (
           <View
             key={column}
