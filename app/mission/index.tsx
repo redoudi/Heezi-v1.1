@@ -1,4 +1,5 @@
-import { getLevelData } from "@/assets/levels/indexLevels";
+import { levelFiles } from "@/assets/levels/indexLevels";
+import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import {
@@ -14,11 +15,13 @@ export default function ScenarioScreen() {
   const router = useRouter();
   const [textInput1, onChangeTextInput1] = useState("");
   const { id } = useLocalSearchParams();
-  const [intro, setIntro] = useState<any>(null);
+  const {
+    setLevelData,
+    levelData: { intro },
+  } = useSpreadsheetStore();
   useEffect(() => {
     if (id) {
-      const level = getLevelData(id);
-      setIntro(level.intro);
+      setLevelData(levelFiles[id as keyof typeof levelFiles]);
     }
   }, [id]);
 
@@ -53,7 +56,7 @@ export default function ScenarioScreen() {
                   />
                 </View>
                 <TextInput
-                  placeholder={intro}
+                  placeholder={intro || ""}
                   value={textInput1}
                   onChangeText={onChangeTextInput1}
                   style={styles.input}
