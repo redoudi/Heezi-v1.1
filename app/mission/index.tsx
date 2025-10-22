@@ -1,8 +1,7 @@
-import getLevelData from "@/assets/levels/indexLevels";
-import usePracticeTool from "@/context/usePracticeTool";
+import useLoadLevel from "@/hooks/useLoadLevel";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { Link, useLocalSearchParams, useRouter } from "expo-router";
-import { useEffect, useState } from "react";
+import { Link, useRouter } from "expo-router";
+import { useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -15,18 +14,10 @@ import {
 export default function ScenarioScreen() {
   const router = useRouter();
   const [textInput1, onChangeTextInput1] = useState("");
-  const { id } = useLocalSearchParams();
-  const { practiceTool } = usePracticeTool();
+  useLoadLevel();
   const {
-    setLevelData,
     levelData: { intro },
   } = useSpreadsheetStore();
-  useEffect(() => {
-    if (id && practiceTool) {
-      const levelData = getLevelData(practiceTool, id as string);
-      setLevelData(levelData);
-    }
-  }, [id]);
 
   return (
     <SafeAreaView style={styles.container}>
