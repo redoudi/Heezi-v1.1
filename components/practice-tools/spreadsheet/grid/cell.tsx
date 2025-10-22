@@ -5,12 +5,11 @@ export default function Cell({ id }: { id: string }) {
     useSpreadsheetStore();
 
   return selectedCells.includes(id) ? (
-    <View style={[styles.box, styles.selectedBox]}>
-      <TextInput
-        value={spreadsheetData[id]}
-        onChangeText={(text) => setCellValue(id, text)}
-      />
-    </View>
+    <TextInput
+      style={[styles.box, styles.selectedBox]}
+      value={spreadsheetData[id]}
+      onChangeText={(text) => setCellValue(id, text)}
+    />
   ) : (
     <Pressable onPress={() => setSelectedCells([id])}>
       <View style={[styles.box]}>
