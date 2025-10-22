@@ -1,4 +1,5 @@
-import { levelFiles } from "@/assets/levels/indexLevels";
+import getLevelData from "@/assets/levels/indexLevels";
+import usePracticeTool from "@/context/usePracticeTool";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
@@ -15,13 +16,15 @@ export default function ScenarioScreen() {
   const router = useRouter();
   const [textInput1, onChangeTextInput1] = useState("");
   const { id } = useLocalSearchParams();
+  const { practiceTool } = usePracticeTool();
   const {
     setLevelData,
     levelData: { intro },
   } = useSpreadsheetStore();
   useEffect(() => {
-    if (id) {
-      setLevelData(levelFiles[id as keyof typeof levelFiles]);
+    if (id && practiceTool) {
+      const levelData = getLevelData(practiceTool, id as string);
+      setLevelData(levelData);
     }
   }, [id]);
 
