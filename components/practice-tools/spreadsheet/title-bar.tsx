@@ -1,37 +1,36 @@
+import BackButton from "@/components/ui/back-button";
 import { Image, StyleSheet, View } from "react-native";
 
 export default function TitleBar() {
   return (
     <View style={styles.row}>
-      <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/5jt7jwsg_expires_30_days.png",
-        }}
-        resizeMode={"stretch"}
-        style={styles.image}
-      />
-      <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/os183jfm_expires_30_days.png",
-        }}
-        resizeMode={"stretch"}
-        style={styles.image2}
-      />
-      <Image
-        source={require("../../../assets/images/undo.png")}
-        resizeMode={"stretch"}
-        style={styles.image3}
-      />
-      <Image
-        source={require("../../../assets/images/redo.png")}
-        resizeMode={"stretch"}
-        style={styles.image4}
-      />
-      <Image
-        source={require("../../../assets/images/exit.png")}
-        resizeMode={"stretch"}
-        style={styles.image4}
-      />
+      <View style={styles.row2}>
+        <Image
+          source={{
+            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/5jt7jwsg_expires_30_days.png",
+          }}
+          resizeMode={"stretch"}
+          style={styles.image}
+        />
+        <Image
+          source={{
+            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/os183jfm_expires_30_days.png",
+          }}
+          resizeMode={"stretch"}
+          style={styles.image2}
+        />
+        <Image
+          source={require("../../../assets/images/undo.png")}
+          resizeMode={"stretch"}
+          style={styles.image3}
+        />
+        <Image
+          source={require("../../../assets/images/redo.png")}
+          resizeMode={"stretch"}
+          style={styles.image4}
+        />
+      </View>
+      <BackButton />
     </View>
   );
 }
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
   image4: {
     width: 39,
     height: 42,
-    marginRight: 1134,
+    marginRight: 0,
   },
   image5: {
     borderRadius: 8,
