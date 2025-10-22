@@ -122,15 +122,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginRight: 8,
   },
-
-  box3: {
-    width: 107,
-    height: 34,
-    backgroundColor: "#FFFFFF",
-    borderColor: "#BDBDBD",
-    borderRadius: 8,
-    borderWidth: 1,
-  },
   column12: {
     flex: 1,
     backgroundColor: "#FFFFFF",
@@ -216,5 +207,5 @@ const CELL_STYLES = [
   styles.box,
   styles.box,
   styles.box,
-  styles.box3,
+  styles.box,
 ];
