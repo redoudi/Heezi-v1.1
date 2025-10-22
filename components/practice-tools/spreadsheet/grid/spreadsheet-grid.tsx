@@ -90,8 +90,8 @@ export default function SpreadsheetGridWrong() {
         <View style={getRowNumberStyle(item.rowNumber)}>
           <Text style={styles.text10}>{item.id}</Text>
         </View>
-        {CELL_STYLES.map((cellStyle, cellIndex) => (
-          <View key={`${item.id}-${cellIndex}`} style={styles.box}></View>
+        {COLUMNS.map((_, index) => (
+          <View key={`${item.id}-${index}`} style={styles.box}></View>
         ))}
       </ScrollView>
     );
