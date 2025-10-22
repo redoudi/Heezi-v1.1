@@ -10,7 +10,7 @@ import FunctionBar from "./function-bar";
 import SpreadsheetGrid from "./grid/spreadsheet-grid";
 import Ribbon from "./ribbon/ribbon";
 import RibbonTabs from "./ribbon/ribbon-tabs";
-import { styles } from "./spreadsheetStyles";
+import { styles } from "./spreadsheet-styles";
 
 export default function SpreadsheetScreen() {
   return (

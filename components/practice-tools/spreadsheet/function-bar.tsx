@@ -1,5 +1,5 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { styles } from "./spreadsheetStyles";
+import { styles } from "./spreadsheet-styles";
 
 export default function FunctionBar() {
   return (
