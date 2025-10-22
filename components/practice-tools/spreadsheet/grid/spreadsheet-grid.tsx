@@ -26,7 +26,7 @@ const CornerSymbol = () => (
   />
 );
 
-export default function SpreadsheetGridWrong() {
+export default function SpreadsheetGrid() {
   // Header component
   const renderHeader = useMemo(
     () => (
@@ -69,7 +69,9 @@ export default function SpreadsheetGridWrong() {
           <Text style={styles.text10}>{item.id}</Text>
         </View>
         {COLUMNS.map((_, index) => (
-          <View key={`${item.id}-${index}`} style={styles.box}></View>
+          <View key={`${item.id}-${index}`} style={styles.box}>
+            <Text>{String.fromCharCode(65 + index)}</Text>
+          </View>
         ))}
       </ScrollView>
     );
