@@ -1,22 +1,12 @@
 import { useMemo } from "react";
-import { FlatList, Image, ScrollView, Text, View } from "react-native";
-import { styles } from "../titlebar";
-
-const COLUMNS_ = [
-  "◢",
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-];
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 
@@ -26,22 +16,6 @@ const ROWS = Array.from({ length: 18 }, (_, i) => ({
   rowNumber: i + 1,
 }));
 
-// Cell pattern: box, box, box, box2, box, box, box, box2, box, box, box2, box, box, box3
-const CELL_STYLES = [
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box2,
-  styles.box,
-  styles.box,
-  styles.box2,
-  styles.box,
-  styles.box,
-  styles.box2,
-  styles.box,
-  styles.box,
-  styles.box3,
-];
 // Helper function to get row number style
 const getRowNumberStyle = (rowNumber: number) => {
   switch (rowNumber) {
@@ -137,3 +111,110 @@ export default function SpreadsheetGridWrong() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  box: {
+    width: 107,
+    height: 34,
+    backgroundColor: "#FFFFFF",
+    borderColor: "#BDBDBD",
+    borderRadius: 8,
+    borderWidth: 1,
+    marginRight: 8,
+  },
+
+  box3: {
+    width: 107,
+    height: 34,
+    backgroundColor: "#FFFFFF",
+    borderColor: "#BDBDBD",
+    borderRadius: 8,
+    borderWidth: 1,
+  },
+  column12: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginBottom: 17,
+    marginHorizontal: 8,
+  },
+  image35: {
+    width: 24,
+    height: 17,
+    marginRight: 8,
+  },
+  scrollView: {
+    flexDirection: "row",
+    paddingHorizontal: 8,
+    marginBottom: 8,
+  },
+  scrollView2: {
+    flexDirection: "row",
+    paddingHorizontal: 8,
+  },
+  text9: {
+    color: "#292929",
+    fontSize: 14,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  text10: {
+    color: "#292929",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  view2: {
+    width: 106,
+    marginRight: 9,
+  },
+  view3: {
+    width: 106,
+  },
+  view4: {
+    width: 4,
+    marginRight: 28,
+  },
+  view5: {
+    width: 8,
+    marginRight: 24,
+  },
+  view6: {
+    width: 9,
+    marginRight: 23,
+  },
+  view7: {
+    width: 7,
+    marginRight: 25,
+  },
+  view8: {
+    width: 15,
+    marginRight: 17,
+  },
+  view9: {
+    width: 10,
+    marginRight: 22,
+  },
+  view10: {
+    width: 14,
+    marginRight: 18,
+  },
+});
+
+// Cell pattern: box, box, box, box2, box, box, box, box2, box, box, box2, box, box, box3
+const CELL_STYLES = [
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box,
+  styles.box3,
+];
