@@ -16,32 +16,6 @@ const ROWS = Array.from({ length: 18 }, (_, i) => ({
   rowNumber: i + 1,
 }));
 
-// Helper function to get row number style
-const getRowNumberStyle = (rowNumber: number) => {
-  switch (rowNumber) {
-    case 1:
-      return styles.view4;
-    case 2:
-    case 3:
-    case 5:
-    case 6:
-    case 8:
-    case 9:
-      return styles.view5;
-    case 4:
-      return styles.view6;
-    case 7:
-      return styles.view7;
-    case 10:
-    case 14:
-      return styles.view8;
-    case 11:
-      return styles.view9;
-    default:
-      return styles.view10;
-  }
-};
-
 export default function SpreadsheetGridWrong() {
   // Header component
   const renderHeader = useMemo(
@@ -87,7 +61,7 @@ export default function SpreadsheetGridWrong() {
         showsHorizontalScrollIndicator={false}
         style={isLastRow ? styles.scrollView2 : styles.scrollView}
       >
-        <View style={getRowNumberStyle(item.rowNumber)}>
+        <View style={styles.view4}>
           <Text style={styles.text10}>{item.id}</Text>
         </View>
         {COLUMNS.map((_, index) => (
