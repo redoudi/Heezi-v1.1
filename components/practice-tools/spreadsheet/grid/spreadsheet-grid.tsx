@@ -4,7 +4,11 @@ import { styles } from "../titlebar";
 export default function SpreadsheetGrid() {
   return (
     <View style={styles.column12}>
-      <View style={styles.row15}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.scrollView}
+      >
         <Image
           source={{
             uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/pt024urq_expires_30_days.png",
@@ -48,7 +52,7 @@ export default function SpreadsheetGrid() {
         <View style={styles.view3}>
           <Text style={styles.text9}>{"L"}</Text>
         </View>
-      </View>
+      </ScrollView>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
