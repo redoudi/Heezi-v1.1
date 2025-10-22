@@ -1,3 +1,4 @@
+import { getLevelData } from "@/assets/levels/indexLevels";
 import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import {
@@ -15,12 +16,10 @@ export default function ScenarioScreen() {
   const { id } = useLocalSearchParams();
   const [intro, setIntro] = useState<any>(null);
   useEffect(() => {
-    const fetchLevel = async () => {
-      const level = await fetch(`/assets/levels/spreadsheet/lvl${id}.json`);
-      const levelData = await level.json();
-      setIntro(levelData.intro);
-    };
-    fetchLevel();
+    if (id) {
+      const level = getLevelData(id);
+      setIntro(level.intro);
+    }
   }, [id]);
 
   return (
