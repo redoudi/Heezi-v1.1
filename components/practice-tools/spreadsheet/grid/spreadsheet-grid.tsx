@@ -7,6 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
+import Cell from "./cell";
 
 const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 
@@ -66,10 +67,17 @@ export default function SpreadsheetGrid() {
         <View style={styles.view4}>
           <Text style={styles.text10}>{item.id}</Text>
         </View>
-        {COLUMNS.map((_, index) => (
-          <View key={`${item.id}-${index}`} style={styles.box}>
-            <Text>{String.fromCharCode(65 + index)}</Text>
-          </View>
+        {COLUMNS.map((_, colIndex) => (
+          <Cell
+            key={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
+            id={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
+          />
+          // <View key={`${item.id}-${colIndex}`} style={styles.box}>
+          //   <Text>
+          //     {String.fromCharCode(65 + colIndex)}
+          //     {index + 1}
+          //   </Text>
+          // </View>
         ))}
       </ScrollView>
     );
