@@ -1,6 +1,4 @@
 {
-    "intro": "Welcome to the first level of the spreadsheet game!",
-    "spreadsheetData": {
-        "A1": "ok"
-    }
+    "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
+    "spreadsheetData": {}
 }
