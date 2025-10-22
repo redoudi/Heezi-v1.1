@@ -54,7 +54,7 @@ const getRowNumberStyle = (rowNumber: number) => {
   }
 };
 
-export default function SpreadsheetGrid() {
+export default function SpreadsheetGridWrong() {
   // Header component
   const renderHeader = useMemo(
     () => (
