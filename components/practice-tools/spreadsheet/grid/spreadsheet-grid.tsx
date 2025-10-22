@@ -3,6 +3,7 @@ import SpreadsheetGridWrong from "./spreadsheet-grid_wrong";
 
 const COLUMNS = [
   ["◢", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
+  ["◢", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
 ];
 
 // Row configuration
@@ -15,7 +16,11 @@ export default function SpreadsheetGrid() {
       <View style={styles.column12}>
         <FlatList
           data={COLUMNS}
-          renderItem={({ item }) => <Text style={styles.text9}>{item}</Text>}
+          renderItem={({ item }) => (
+            <View style={styles.view3}>
+              <Text style={styles.text9}>{item}</Text>
+            </View>
+          )}
         />
       </View>
       <SpreadsheetGridWrong />
