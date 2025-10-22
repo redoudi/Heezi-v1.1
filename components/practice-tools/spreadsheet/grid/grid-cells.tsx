@@ -1,5 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
+const ROWS_ = [...Array(19).keys()].map((i) => i + 1);
+
 export default function GridCells() {
   return (
     <>

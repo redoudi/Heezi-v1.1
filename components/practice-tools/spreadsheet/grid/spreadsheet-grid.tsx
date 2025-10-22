@@ -1,9 +1,20 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import SpreadsheetGridWrong from "./spreadsheet-grid_wrong";
 
 const COLUMNS = [
-  ["◢", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
-  ["◢", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
+  "◢",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
 ];
 
 // Row configuration
@@ -13,16 +24,6 @@ const ROWS = [["a", "b"]];
 export default function SpreadsheetGrid() {
   return (
     <View>
-      <View style={styles.column12}>
-        <FlatList
-          data={COLUMNS}
-          renderItem={({ item }) => (
-            <View style={styles.view3}>
-              <Text style={styles.text9}>{item}</Text>
-            </View>
-          )}
-        />
-      </View>
       <SpreadsheetGridWrong />
     </View>
   );
@@ -42,6 +43,10 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     marginBottom: 8,
     marginHorizontal: 8,
+  },
+  view2: {
+    width: 106,
+    marginRight: 9,
   },
   view3: { width: 106 },
   text9: {
