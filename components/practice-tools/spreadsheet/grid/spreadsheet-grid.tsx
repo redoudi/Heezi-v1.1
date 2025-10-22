@@ -57,13 +57,11 @@ export default function SpreadsheetGrid() {
     item: (typeof ROWS)[0];
     index: number;
   }) => {
-    const isLastRow = index === ROWS.length - 1;
-
     return (
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        style={isLastRow ? styles.scrollView2 : styles.scrollView}
+        style={styles.scrollView}
       >
         <View style={styles.view4}>
           <Text style={styles.text10}>{item.id}</Text>
@@ -120,10 +118,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     marginBottom: 8,
   },
-  scrollView2: {
-    flexDirection: "row",
-    paddingHorizontal: 8,
-  },
+
   text9: {
     color: "#292929",
     fontSize: 14,
@@ -172,20 +167,3 @@ const styles = StyleSheet.create({
     marginRight: 18,
   },
 });
-
-// Cell pattern: box, box, box, box2, box, box, box, box2, box, box, box2, box, box, box3
-const CELL_STYLES = [
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-  styles.box,
-];
