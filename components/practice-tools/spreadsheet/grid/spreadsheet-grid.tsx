@@ -72,12 +72,6 @@ export default function SpreadsheetGrid() {
             key={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
             id={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
           />
-          // <View key={`${item.id}-${colIndex}`} style={styles.box}>
-          //   <Text>
-          //     {String.fromCharCode(65 + colIndex)}
-          //     {index + 1}
-          //   </Text>
-          // </View>
         ))}
       </ScrollView>
     );

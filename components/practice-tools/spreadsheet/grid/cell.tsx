@@ -1,14 +1,21 @@
-import useMissionStore from "@/store/useMissionStore";
-import { StyleSheet, Text, View } from "react-native";
+import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 export default function Cell({ id }: { id: string }) {
   const {
-    spreadsheetData: { grid_data },
-  } = useMissionStore();
+    spreadsheetData: { grid_data, selected },
+    setSelected,
+  } = useSpreadsheetStore();
 
-  return (
-    <View style={styles.box}>
-      <Text>{grid_data[id]}</Text>
+  return selected.includes(id) ? (
+    <View style={[styles.box, styles.selectedBox]}>
+      <Text>selected</Text>
     </View>
+  ) : (
+    <Pressable onPress={() => setSelected([id])}>
+      <View style={[styles.box]}>
+        <Text>{grid_data[id]}</Text>
+      </View>
+    </Pressable>
   );
 }
 
@@ -21,5 +28,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     marginRight: 8,
+  },
+  selectedBox: {
+    borderWidth: 3,
+    borderColor: "black",
   },
 });
