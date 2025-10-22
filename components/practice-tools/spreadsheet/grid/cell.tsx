@@ -1,8 +1,13 @@
+import useMissionStore from "@/store/useMissionStore";
 import { StyleSheet, Text, View } from "react-native";
 export default function Cell({ id }: { id: string }) {
+  const {
+    spreadsheetData: { grid_data },
+  } = useMissionStore();
+
   return (
     <View style={styles.box}>
-      <Text>{id}</Text>
+      <Text>{grid_data[id]}</Text>
     </View>
   );
 }
