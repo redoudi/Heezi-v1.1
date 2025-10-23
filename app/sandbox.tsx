@@ -16,8 +16,8 @@ const TextContainer = () => {
   const sampleText =
     "Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade.";
   return (
-    <View style={styles.column10}>
-      <Text style={styles.text14}>{sampleText}</Text>
+    <View style={styles.textContainer}>
+      <Text style={styles.dialogText}>{sampleText}</Text>
       <DownArrow />
     </View>
   );
@@ -30,14 +30,14 @@ const CornerTriangle = () => {
         uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/662flub1_expires_30_days.png",
       }}
       resizeMode={"stretch"}
-      style={styles.image33}
+      style={styles.cornerTriangle}
     />
   );
 };
 
 const TextBox = () => {
   return (
-    <View style={[styles.column7]}>
+    <View style={styles.textBox}>
       <TextContainer />
     </View>
   );
@@ -57,7 +57,7 @@ const Mascot = () => {
 
 export default function Sandbox() {
   return (
-    <SafeAreaView style={styles.row13}>
+    <SafeAreaView style={styles.mainRow}>
       <TextBox />
       <CornerTriangle />
       <Mascot />
@@ -65,14 +65,19 @@ export default function Sandbox() {
   );
 }
 const styles = StyleSheet.create({
-  column7: {
+  mainRow: {
+    flexDirection: "row",
+    marginBottom: 36,
+    marginHorizontal: 32,
+  },
+  textBox: {
     width: 782,
     marginRight: 16,
   },
   column9: {
     marginRight: 0,
   },
-  column10: {
+  textContainer: {
     backgroundColor: "#525252",
     borderTopLeftRadius: 8,
     borderBottomRightRadius: 8,
@@ -86,7 +91,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 21,
   },
-  image33: {
+  cornerTriangle: {
     width: 42,
     height: 61,
   },
@@ -94,12 +99,8 @@ const styles = StyleSheet.create({
     width: 298,
     height: 295,
   },
-  row13: {
-    flexDirection: "row",
-    marginBottom: 36,
-    marginHorizontal: 32,
-  },
-  text14: {
+
+  dialogText: {
     color: "#FFFFFF",
     fontSize: 20,
     fontWeight: "bold",
