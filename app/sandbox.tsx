@@ -55,7 +55,7 @@ const Mascot = () => {
   );
 };
 
-export default function Sandbox() {
+export default function MascotDialog() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainRow}>
