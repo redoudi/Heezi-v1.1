@@ -16,34 +16,29 @@ const TextContainer = () => {
   const sampleText =
     "Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade.";
   return (
-    <View style={styles.column9}>
-      <View style={styles.column10}>
-        <Text style={styles.text14}>{sampleText}</Text>
-        <DownArrow />
-      </View>
+    <View style={styles.column10}>
+      <Text style={styles.text14}>{sampleText}</Text>
+      <DownArrow />
     </View>
   );
 };
 
 const CornerTriangle = () => {
   return (
-    <View style={styles.view38}>
-      <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/662flub1_expires_30_days.png",
-        }}
-        resizeMode={"stretch"}
-        style={styles.image33}
-      />
-    </View>
+    <Image
+      source={{
+        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/662flub1_expires_30_days.png",
+      }}
+      resizeMode={"stretch"}
+      style={styles.image33}
+    />
   );
 };
 
 const TextBox = () => {
   return (
-    <View style={styles.column7}>
+    <View style={[styles.column7]}>
       <TextContainer />
-      <CornerTriangle />
     </View>
   );
 };
@@ -63,7 +58,7 @@ const Mascot = () => {
 export default function Sandbox() {
   return (
     <SafeAreaView style={styles.row13}>
-      <TextBox />
+      <TextBox /> <CornerTriangle />
       <Mascot />
     </SafeAreaView>
   );
@@ -74,7 +69,7 @@ const styles = StyleSheet.create({
     marginRight: 16,
   },
   column9: {
-    marginRight: 42,
+    marginRight: 0,
   },
   column10: {
     backgroundColor: "#525252",

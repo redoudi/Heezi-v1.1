@@ -41,13 +41,4 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginBottom: 16,
   },
-  leftColumn: {
-    width: 742,
-    marginTop: 32,
-    marginRight: 16,
-  },
-  // right/left column styles moved to their components
-  imageGrid3: {
-    marginBottom: 8,
-  },
 });
