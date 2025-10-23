@@ -18,12 +18,7 @@ const TextBox = () => {
             style={styles.image31}
           />
         </View>
-        <View style={styles.absoluteView}>
-          <View style={styles.view37}>
-            <View style={styles.box3}></View>
-          </View>
-        </View>
-      </View>{" "}
+      </View>
       <View style={styles.view38}>
         <Image
           source={{
