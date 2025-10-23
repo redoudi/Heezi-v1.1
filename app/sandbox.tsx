@@ -58,7 +58,8 @@ const Mascot = () => {
 export default function Sandbox() {
   return (
     <SafeAreaView style={styles.row13}>
-      <TextBox /> <CornerTriangle />
+      <TextBox />
+      <CornerTriangle />
       <Mascot />
     </SafeAreaView>
   );
