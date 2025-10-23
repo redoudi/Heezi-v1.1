@@ -46,11 +46,9 @@ const Mascot = () => {
 export default function Sandbox() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.column}>
-        <View style={styles.row13}>
-          <TextBox />
-          <Mascot />
-        </View>
+      <View style={styles.row13}>
+        <TextBox />
+        <Mascot />
       </View>
     </SafeAreaView>
   );
