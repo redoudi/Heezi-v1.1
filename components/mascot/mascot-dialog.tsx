@@ -72,6 +72,11 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 36,
     marginHorizontal: 32,
+    position: "absolute",
+    bottom: 0,
+
+    right: 0,
+    zIndex: 1000,
   },
   mainRow: {
     flexDirection: "row",
