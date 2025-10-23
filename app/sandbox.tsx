@@ -824,6 +824,6 @@ const styles = StyleSheet.create({
   },
   view38: {
     alignItems: "flex-end",
-    marginBottom: 86,
+    justifyContent: "flex-start",
   },
 });
