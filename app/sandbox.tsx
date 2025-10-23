@@ -79,11 +79,11 @@ const styles = StyleSheet.create({
   },
   textBoxContainer: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    alignItems: "flex-start",
+    gap: 0,
   },
   textBox: {
     width: 782,
-    marginRight: 16,
   },
   column9: {
     marginRight: 0,
