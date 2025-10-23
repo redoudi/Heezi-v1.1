@@ -1,4 +1,13 @@
 {
-    "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
-    "spreadsheetData": {}
+    "intro": "Bonjour ! Je dois organiser un évènement et j'ai besoin de compter les dépenses. Tu peux m'aider ?",
+    "spreadsheetData": {
+        "A1": "Intitulé",
+        "B1": "Montant",
+        "A2": "Salle",
+        "A3": "Décoration",
+        "A4": "Promotion",
+        "A5": "Echantillons",
+        "A6": "Traiteur",
+        "A7": "Total"
+    }
 }
