@@ -374,7 +374,6 @@ const styles = StyleSheet.create({
   image34: {
     width: 298,
     height: 295,
-    marginTop: 912,
   },
   row: {
     flexDirection: "row",
