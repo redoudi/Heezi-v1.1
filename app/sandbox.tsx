@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
   cornerTriangle: {
     width: 42,
     height: 61,
+    alignSelf: "flex-start",
   },
   image34: {
     width: 298,
