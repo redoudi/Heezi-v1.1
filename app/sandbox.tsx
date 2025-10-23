@@ -57,18 +57,29 @@ const Mascot = () => {
 
 export default function Sandbox() {
   return (
-    <SafeAreaView style={styles.mainRow}>
-      <TextBox />
-      <CornerTriangle />
-      <Mascot />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.mainRow}>
+        <View style={styles.textBoxContainer}>
+          <TextBox />
+          <CornerTriangle />
+        </View>
+        <Mascot />
+      </View>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
-  mainRow: {
-    flexDirection: "row",
+  container: {
     marginBottom: 36,
     marginHorizontal: 32,
+  },
+  mainRow: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+  },
+  textBoxContainer: {
+    flexDirection: "row",
+    alignItems: "flex-end",
   },
   textBox: {
     width: 782,
