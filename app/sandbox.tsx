@@ -1,33 +1,49 @@
 import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
+const DownArrow = () => {
+  return (
+    <Image
+      source={{
+        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ojvjgq96_expires_30_days.png",
+      }}
+      resizeMode={"stretch"}
+      style={styles.image31}
+    />
+  );
+};
+
+const TextContainer = () => {
+  const sampleText =
+    "Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade.";
+  return (
+    <View style={styles.column9}>
+      <View style={styles.column10}>
+        <Text style={styles.text14}>{sampleText}</Text>
+        <DownArrow />
+      </View>
+    </View>
+  );
+};
+
+const CornerTriangle = () => {
+  return (
+    <View style={styles.view38}>
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/662flub1_expires_30_days.png",
+        }}
+        resizeMode={"stretch"}
+        style={styles.image33}
+      />
+    </View>
+  );
+};
+
 const TextBox = () => {
   return (
     <View style={styles.column7}>
-      <View style={styles.column9}>
-        <View style={styles.column10}>
-          <Text style={styles.text14}>
-            {
-              "Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade."
-            }
-          </Text>
-          <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ojvjgq96_expires_30_days.png",
-            }}
-            resizeMode={"stretch"}
-            style={styles.image31}
-          />
-        </View>
-      </View>
-      <View style={styles.view38}>
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/662flub1_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image33}
-        />
-      </View>
+      <TextContainer />
+      <CornerTriangle />
     </View>
   );
 };
@@ -43,13 +59,12 @@ const Mascot = () => {
     />
   );
 };
+
 export default function Sandbox() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.row13}>
-        <TextBox />
-        <Mascot />
-      </View>
+    <SafeAreaView style={styles.row13}>
+      <TextBox />
+      <Mascot />
     </SafeAreaView>
   );
 }
