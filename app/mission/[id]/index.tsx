@@ -45,10 +45,7 @@ export default function ScenarioScreen() {
                   style={styles.input}
                 />
                 <View style={styles.view5}>
-                  <TouchableOpacity
-                    style={styles.button2}
-                    onPress={() => alert("Pressed!")}
-                  >
+                  <TouchableOpacity style={styles.button2} onPress={() => {}}>
                     <Image
                       source={{
                         uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lpcexk6v_expires_30_days.png",
@@ -60,7 +57,7 @@ export default function ScenarioScreen() {
                 </View>
               </View>
             </View>
-            <Link href={`/mission/practice`} asChild>
+            <Link href={`/mission/${id}/practice`} asChild>
               <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
                 <Text style={styles.text}>{"Commencer"}</Text>
                 <Image
