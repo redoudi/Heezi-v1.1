@@ -26,17 +26,27 @@ export default function MascotMonitor() {
       const isCorrect = checkCondition();
       if (isCorrect) {
         stepIndexRef.current = stepIndexRef.current + 1;
+        handleStepIndexChange();
       }
     }
   }, [spreadsheetData]);
 
   const handleStepIndexChange = () => {
-    const { tip, expected, preActions } =
-      levelTasks?.at(taskIndexRef.current)?.steps?.at(stepIndexRef.current) ||
-      {};
-    setBubbleText(tip?.text2 || "");
-    if (preActions) runPreActions(preActions);
-    if (expected) stepExpectedRef.current = expected;
+    if (
+      stepIndexRef.current >=
+      levelTasks?.at(taskIndexRef.current)?.steps?.length - 1
+    ) {
+      stepIndexRef.current = -1;
+      taskIndexRef.current = taskIndexRef.current + 1;
+      handleTaskIndexChange();
+    } else {
+      const { tip, expected, preActions } =
+        levelTasks?.at(taskIndexRef.current)?.steps?.at(stepIndexRef.current) ||
+        {};
+      setBubbleText(tip?.text2 || "");
+      if (preActions) runPreActions(preActions);
+      if (expected) stepExpectedRef.current = expected;
+    }
   };
 
   useEffect(() => {
