@@ -15,9 +15,7 @@ export default function ScenarioScreen() {
   const router = useRouter();
   const [textInput1, onChangeTextInput1] = useState("");
   useLoadLevel();
-  const {
-    levelData: { intro },
-  } = useSpreadsheetStore();
+  const { intro } = useSpreadsheetStore();
 
   return (
     <SafeAreaView style={styles.container}>
