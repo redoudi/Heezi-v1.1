@@ -15,6 +15,15 @@ export default function MascotMonitor() {
   const [bubbleText, setBubbleText] = useState<string | null>(null);
 
   useEffect(() => {
+    if (stepIndex >= 0) {
+      const { preActions, tip, expected } =
+        levelTasks?.at(taskIndex)?.steps?.at(stepIndex) || {};
+
+      if (tip) setBubbleText(tip.text2);
+    }
+  }, [stepIndex]);
+
+  useEffect(() => {
     if (modalText === "") {
       setStepIndex(0);
     }
