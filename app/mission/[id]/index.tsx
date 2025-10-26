@@ -2,7 +2,7 @@ import { levelFiles } from "@/assets/levels/indexLevels";
 import BackButton from "@/components/ui/back-button";
 import usePracticeTool from "@/context/usePracticeTool";
 import { Link, useLocalSearchParams } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -17,7 +17,15 @@ export default function ScenarioScreen() {
   // useLoadLevel();
   const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
-  const intro = levelFiles?.at(practiceTool)?.at(id)?.intro || "...";
+  const [intro, setIntro] = useState("");
+
+  useEffect(() => {
+    if (id && practiceTool) {
+      const toolLevelFolder = levelFiles[practiceTool];
+      const levelData = toolLevelFolder[id as keyof typeof toolLevelFolder];
+      setIntro(levelData.intro);
+    }
+  }, [practiceTool, id]);
 
   return (
     <SafeAreaView style={styles.container}>
