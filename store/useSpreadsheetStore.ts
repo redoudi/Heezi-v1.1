@@ -9,8 +9,8 @@ interface SpreadsheetStore {
 }
 
 const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
-  spreadsheetData: {},
-  selectedCells: [],
+  spreadsheetData: { cellValues: [], cellsSelected: [] },
+
   tasks: [],
   intro: "",
   setLevelData: (levelData: any) => {
@@ -23,14 +23,17 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
   },
 
   setCellValue: (cell: string, value: string) => {
-    set((state: { spreadsheetData: { [key: string]: string } }) => ({
-      spreadsheetData: { ...state.spreadsheetData, [cell]: value },
+    set((state) => ({
+      spreadsheetData: {
+        ...state.spreadsheetData,
+        cellValues: { ...state.spreadsheetData.cellValues, [cell]: value },
+      },
     }));
   },
 
-  setSelectedCells: (selectedCells: string[]) => {
-    set(() => ({
-      selectedCells,
+  setCellsSelected: (cells: string[]) => {
+    set((state) => ({
+      spreadsheetData: { ...state.spreadsheetData, cellsSelected: cells },
     }));
   },
 }));

@@ -5,19 +5,21 @@ export default function useCheckCondition({
 }: {
   stepExpectedRef: any;
 }) {
-  const { spreadsheetData, selectedCells } = useSpreadsheetStore();
+  const {
+    spreadsheetData: { cellValues, cellsSelected },
+  } = useSpreadsheetStore();
   return () => {
     switch (stepExpectedRef.current.type) {
       case "cellValue":
-        const currentValue = spreadsheetData[stepExpectedRef.current.cell];
+        const currentValue = cellValues[stepExpectedRef.current.cell];
         return currentValue == stepExpectedRef.current.value;
       case "cellSelected":
-        console.log("selectedCells", selectedCells);
+        console.log("selectedCells", cellsSelected);
         console.log(
           "stepExpectedRef.current.cell",
           stepExpectedRef.current.cell
         );
-        return selectedCells.includes(stepExpectedRef.current.cell);
+        return cellsSelected.includes(stepExpectedRef.current.cell);
     }
   };
 }

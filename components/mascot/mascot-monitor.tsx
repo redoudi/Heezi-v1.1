@@ -24,11 +24,7 @@ export default function MascotMonitor() {
     }
   }, [practiceTool, id]);
 
-  const {
-    tasks: levelTasks,
-    spreadsheetData,
-    selectedCells,
-  } = useSpreadsheetStore();
+  const { tasks: levelTasks, spreadsheetData } = useSpreadsheetStore();
   const [tasks, setTasks] = useState<any[]>([]);
   const [taskIndex, setTaskIndex] = useState(-1);
   const [stepIndex, setStepIndex] = useState(-1);
@@ -51,7 +47,7 @@ export default function MascotMonitor() {
         setStepIndex(stepIndex + 1);
       }
     }
-  }, [spreadsheetData, selectedCells]);
+  }, [spreadsheetData]);
 
   useEffect(() => {
     if (stepIndex === levelTasks?.length - 1) {
