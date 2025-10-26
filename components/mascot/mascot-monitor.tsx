@@ -33,7 +33,7 @@ export default function MascotMonitor() {
 
   return (
     <View>
-      <MascotBubble text={bubbleText} />
+      {!!bubbleText && <MascotBubble bubbleText={bubbleText} />}
       <MascotModal
         open={!!modalText?.trim()}
         onClose={() => setModalText("")}

@@ -36,24 +36,22 @@ const Mascot = () => {
   );
 };
 
-export default function MascotBubble({ text }: { text: string }) {
+export default function MascotBubble({ bubbleText }: { bubbleText: string }) {
   return (
-    !!text && (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.mainRow}>
-          <View style={styles.textBoxContainer}>
-            <View style={styles.textBox}>
-              <View style={styles.textContainer}>
-                <Text style={styles.dialogText}>{text || "..."}</Text>
-                <DownArrow />
-              </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.mainRow}>
+        <View style={styles.textBoxContainer}>
+          <View style={styles.textBox}>
+            <View style={styles.textContainer}>
+              <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
+              <DownArrow />
             </View>
-            <CornerTriangle />
           </View>
-          <Mascot />
+          <CornerTriangle />
         </View>
-      </SafeAreaView>
-    )
+        <Mascot />
+      </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
