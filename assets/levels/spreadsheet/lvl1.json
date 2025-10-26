@@ -21,8 +21,7 @@
                     },
                     "expected": {
                         "type": "cellValue",
-                        "x": 1,
-                        "y": 1,
+                        "cell": "B2",
                         "value": 500
                     }
                 },
@@ -33,8 +32,7 @@
                     },
                     "expected": {
                         "type": "cellValue",
-                        "x": 2,
-                        "y": 1,
+                        "cell": "B3",
                         "value": 250
                     }
                 },
@@ -45,8 +43,7 @@
                     },
                     "expected": {
                         "type": "cellValue",
-                        "x": 3,
-                        "y": 1,
+                        "cell": "B4",
                         "value": 200
                     }
                 },
@@ -57,8 +54,7 @@
                     },
                     "expected": {
                         "type": "cellValue",
-                        "x": 4,
-                        "y": 1,
+                        "cell": "B5",
                         "value": 380
                     }
                 },
@@ -69,8 +65,7 @@
                     },
                     "expected": {
                         "type": "cellValue",
-                        "x": 5,
-                        "y": 1,
+                        "cell": "B6",
                         "value": 320
                     }
                 }
@@ -93,8 +88,7 @@
                     ],
                     "expected": {
                         "type": "cellSelected",
-                        "x": 1,
-                        "y": 6
+                        "cell": "B7"
                     }
                 },
                 {

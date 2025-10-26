@@ -1,6 +1,7 @@
+import useCheckCondition from "@/hooks/useCheckCondition";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useEffect, useRef, useState } from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import MascotBubble from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
 
@@ -8,15 +9,34 @@ const TASK0 = 0;
 const STEP0 = -1;
 
 export default function MascotMonitor() {
-  const { tasks: levelTasks } = useSpreadsheetStore();
+  const { tasks: levelTasks, spreadsheetData } = useSpreadsheetStore();
   const [taskIndex, setTaskIndex] = useState(TASK0);
   const [stepIndex, setStepIndex] = useState(STEP0);
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
+  const checkCondition = useCheckCondition({ stepExpectedRef });
 
   useEffect(() => {
-    if (stepIndex >= 0) {
+    console.log("stepIndex", stepIndex);
+    console.log("taskIndex", taskIndex);
+  }, [stepIndex, taskIndex]);
+
+  useEffect(() => {
+    if (spreadsheetData && stepExpectedRef.current) {
+      const isCorrect = checkCondition();
+      console.log("isCorrect", isCorrect);
+      if (isCorrect) {
+        setStepIndex(stepIndex + 1);
+      }
+    }
+  }, [spreadsheetData]);
+
+  useEffect(() => {
+    if (stepIndex === levelTasks?.length - 1) {
+      setBubbleText("");
+      setTaskIndex(taskIndex + 1);
+    } else if (stepIndex >= 0) {
       const { tip, expected } =
         levelTasks?.at(taskIndex)?.steps?.at(stepIndex) || {};
       setBubbleText(tip?.text2 || "");
@@ -32,17 +52,17 @@ export default function MascotMonitor() {
 
   useEffect(() => {
     if (taskIndex >= 0) {
+      setStepIndex(-1);
       const introText = levelTasks?.at(taskIndex)?.intro;
       if (introText && introText.trim() !== "") setModalText(introText);
     }
-  }, [taskIndex]);
-
-  useEffect(() => {
-    if (levelTasks?.length) setTaskIndex(TASK0);
-  }, [levelTasks]);
+  }, [taskIndex, levelTasks]);
 
   return (
     <View>
+      <Text style={{ color: "red", fontSize: 50, fontWeight: "bold" }}>
+        {taskIndex}.{stepIndex}
+      </Text>
       {!!bubbleText && (
         <MascotBubble
           bubbleText={

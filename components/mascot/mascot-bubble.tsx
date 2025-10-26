@@ -56,8 +56,9 @@ export default function MascotBubble({ bubbleText }: { bubbleText: string }) {
 }
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 36,
+    marginBottom: 536,
     marginHorizontal: 32,
+    marginRight: 500,
     position: "absolute",
     bottom: 0,
 
