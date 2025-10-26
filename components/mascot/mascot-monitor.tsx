@@ -15,6 +15,19 @@ export default function MascotMonitor() {
   const [bubbleText, setBubbleText] = useState<string | null>(null);
 
   useEffect(() => {
+    if (modalText === "") {
+      setStepIndex(0);
+    }
+  }, [modalText]);
+
+  useEffect(() => {
+    if (taskIndex >= 0) {
+      const introText = levelTasks?.at(taskIndex)?.intro;
+      if (introText && introText.trim() !== "") setModalText(introText);
+    }
+  }, [taskIndex]);
+
+  useEffect(() => {
     if (levelTasks?.length) setTaskIndex(TASK0);
   }, [levelTasks]);
 

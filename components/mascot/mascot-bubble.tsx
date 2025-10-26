@@ -12,17 +12,6 @@ const DownArrow = () => {
   );
 };
 
-const TextContainer = () => {
-  const sampleText =
-    "Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade.";
-  return (
-    <View style={styles.textContainer}>
-      <Text style={styles.dialogText}>{sampleText}</Text>
-      <DownArrow />
-    </View>
-  );
-};
-
 const CornerTriangle = () => {
   return (
     <Image
@@ -54,7 +43,10 @@ export default function MascotBubble({ text }: { text: string }) {
         <View style={styles.mainRow}>
           <View style={styles.textBoxContainer}>
             <View style={styles.textBox}>
-              <TextContainer text={text} />
+              <View style={styles.textContainer}>
+                <Text style={styles.dialogText}>{text || "..."}</Text>
+                <DownArrow />
+              </View>
             </View>
             <CornerTriangle />
           </View>
