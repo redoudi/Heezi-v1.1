@@ -50,7 +50,7 @@ export default function MascotMonitor() {
   }, [spreadsheetData]);
 
   useEffect(() => {
-    if (stepIndex === levelTasks?.length - 1) {
+    if (taskIndex >= 0 && stepIndex === levelTasks?.length - 1) {
       setBubbleText("");
       setTaskIndex(taskIndex + 1);
     } else if (stepIndex >= 0) {
@@ -60,7 +60,7 @@ export default function MascotMonitor() {
       if (preActions) runPreActions(preActions);
       if (expected) stepExpectedRef.current = expected;
     }
-  }, [stepIndex]);
+  }, [taskIndex, stepIndex]);
 
   useEffect(() => {
     if (modalText === "") {
