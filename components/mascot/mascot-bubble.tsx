@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 536,
     marginHorizontal: 32,
-    marginRight: 500,
+    marginRight: 300,
     position: "absolute",
     bottom: 0,
 

@@ -10,7 +10,11 @@ const TASK0 = 0;
 const STEP0 = -1;
 
 export default function MascotMonitor() {
-  const { tasks: levelTasks, spreadsheetData } = useSpreadsheetStore();
+  const {
+    tasks: levelTasks,
+    spreadsheetData,
+    selectedCells,
+  } = useSpreadsheetStore();
   const [taskIndex, setTaskIndex] = useState(TASK0);
   const [stepIndex, setStepIndex] = useState(STEP0);
   const [modalText, setModalText] = useState<string | null>(null);
@@ -32,7 +36,7 @@ export default function MascotMonitor() {
         setStepIndex(stepIndex + 1);
       }
     }
-  }, [spreadsheetData]);
+  }, [spreadsheetData, selectedCells]);
 
   useEffect(() => {
     if (stepIndex === levelTasks?.length - 1) {
