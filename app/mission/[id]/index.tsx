@@ -17,7 +17,7 @@ export default function ScenarioScreen() {
   // useLoadLevel();
   const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
-  const intro = levelFiles[practiceTool][id].intro;
+  const intro = levelFiles?.at(practiceTool)?.at(id)?.intro || "...";
 
   return (
     <SafeAreaView style={styles.container}>
