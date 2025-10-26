@@ -1,7 +1,7 @@
+import { levelFiles } from "@/assets/levels/indexLevels";
 import BackButton from "@/components/ui/back-button";
-import useLoadLevel from "@/hooks/useLoadLevel";
-import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { Link, useRouter } from "expo-router";
+import usePracticeTool from "@/context/usePracticeTool";
+import { Link, useLocalSearchParams } from "expo-router";
 import { useState } from "react";
 import {
   Image,
@@ -13,10 +13,11 @@ import {
   View,
 } from "react-native";
 export default function ScenarioScreen() {
-  const router = useRouter();
   const [textInput1, onChangeTextInput1] = useState("");
-  useLoadLevel();
-  const { intro } = useSpreadsheetStore();
+  // useLoadLevel();
+  const { id } = useLocalSearchParams();
+  const { practiceTool } = usePracticeTool();
+  const intro = levelFiles[practiceTool][id].intro;
 
   return (
     <SafeAreaView style={styles.container}>
