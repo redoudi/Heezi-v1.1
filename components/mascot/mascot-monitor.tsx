@@ -43,7 +43,13 @@ export default function MascotMonitor() {
 
   return (
     <View>
-      {!!bubbleText && <MascotBubble bubbleText={bubbleText} />}
+      {!!bubbleText && (
+        <MascotBubble
+          bubbleText={
+            levelTasks?.at(taskIndex)?.steps?.at(stepIndex)?.tip?.text2 || ""
+          }
+        />
+      )}
       <MascotModal
         open={!!modalText?.trim()}
         onClose={() => setModalText("")}
