@@ -1,3 +1,4 @@
+import BackButton from "@/components/ui/back-button";
 import useLoadLevel from "@/hooks/useLoadLevel";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { Link, useRouter } from "expo-router";
@@ -22,18 +23,7 @@ export default function ScenarioScreen() {
       <View style={styles.view}>
         <View style={styles.column}>
           <View style={styles.view2}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => router.back()}
-            >
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/mpnekv0z_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image}
-              />
-            </TouchableOpacity>
+            <BackButton />
           </View>
           <View style={styles.column2}>
             <View style={styles.view3}>
