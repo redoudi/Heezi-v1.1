@@ -33,7 +33,7 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
 
   setCellsSelected: (cells: string[]) => {
     set((state) => ({
-      spreadsheetData: { ...state.spreadsheetData, cellsSelected: cells },
+      spreadsheetData: { ...get().spreadsheetData, cellsSelected: cells },
     }));
   },
 }));
