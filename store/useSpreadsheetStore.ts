@@ -1,5 +1,14 @@
 import { create } from "zustand";
-const useSpreadsheetStore = create()((set, get) => ({
+
+interface SpreadsheetStore {
+  spreadsheetData: { [key: string]: string };
+  selectedCells: string[];
+  tasks: any[];
+  intro: string;
+  setLevelData: (levelData: any) => void;
+}
+
+const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
   spreadsheetData: {},
   selectedCells: [],
   tasks: [],

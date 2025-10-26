@@ -14,7 +14,7 @@ export default function PracticeToolScreen() {
   const { setLevelData } = useSpreadsheetStore();
   useEffect(() => {
     if (id && practiceTool && setLevelData) {
-      const levelData = levelFiles[practiceTool][id];
+      const levelData = levelFiles[practiceTool][id as string];
       setLevelData(levelData);
     }
   }, [practiceTool, id, setLevelData]);
