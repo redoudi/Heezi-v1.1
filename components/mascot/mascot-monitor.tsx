@@ -5,20 +5,14 @@ import MascotBubble from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
 
 const TASK0 = 0;
-const STEP0 = 0;
+const STEP0 = -1;
 
 export default function MascotMonitor() {
   const { tasks: levelTasks } = useSpreadsheetStore();
   const [taskIndex, setTaskIndex] = useState(TASK0);
   const [stepIndex, setStepIndex] = useState(STEP0);
   const [modalText, setModalText] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (taskIndex >= 0) {
-      const introText = levelTasks?.at(taskIndex)?.intro;
-      if (!!introText?.trim()) setModalText(introText);
-    }
-  }, [taskIndex]);
+  const [bubbleText, setBubbleText] = useState<string | null>(null);
 
   useEffect(() => {
     if (levelTasks?.length) setTaskIndex(TASK0);
@@ -26,10 +20,10 @@ export default function MascotMonitor() {
 
   return (
     <View>
-      <MascotBubble />
+      <MascotBubble text={bubbleText} />
       <MascotModal
         open={!!modalText?.trim()}
-        onClose={() => setModalText(null)}
+        onClose={() => setModalText("")}
         modalText={modalText}
       />
     </View>

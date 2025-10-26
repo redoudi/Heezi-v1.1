@@ -1,4 +1,11 @@
-import { Image, Modal, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  Modal,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 
 export default function MascotModal({ open, onClose, modalText }) {
   return (
@@ -8,30 +15,34 @@ export default function MascotModal({ open, onClose, modalText }) {
       animationType="fade"
       onRequestClose={onClose}
     >
-      <View style={styles.container}>
-        <View style={styles.column}>
-          <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/paauqhmf_expires_30_days.png",
-            }}
-            resizeMode={"stretch"}
-            style={styles.image}
-          />
-          <View style={styles.view}>
-            <Text style={styles.text}>
-              {modalText ||
-                "Lörem ipsum köttskatt astrolig: nemiren men maligen !!!"}
-            </Text>
-          </View>
-          <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/dwoxzuh6_expires_30_days.png",
-            }}
-            resizeMode={"stretch"}
-            style={styles.image2}
-          />
+      <TouchableWithoutFeedback onPress={onClose}>
+        <View style={styles.container}>
+          <TouchableWithoutFeedback onPress={() => {}}>
+            <View style={styles.column}>
+              <Image
+                source={{
+                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/paauqhmf_expires_30_days.png",
+                }}
+                resizeMode={"stretch"}
+                style={styles.image}
+              />
+              <View style={styles.view}>
+                <Text style={styles.text}>
+                  {modalText ||
+                    "Lörem ipsum köttskatt astrolig: nemiren men maligen !!!"}
+                </Text>
+              </View>
+              <Image
+                source={{
+                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/dwoxzuh6_expires_30_days.png",
+                }}
+                resizeMode={"stretch"}
+                style={styles.image2}
+              />
+            </View>
+          </TouchableWithoutFeedback>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     </Modal>
   );
 }

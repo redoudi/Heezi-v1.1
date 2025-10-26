@@ -35,14 +35,6 @@ const CornerTriangle = () => {
   );
 };
 
-const TextBox = () => {
-  return (
-    <View style={styles.textBox}>
-      <TextContainer />
-    </View>
-  );
-};
-
 const Mascot = () => {
   return (
     <Image
@@ -55,17 +47,21 @@ const Mascot = () => {
   );
 };
 
-export default function MascotBubble() {
+export default function MascotBubble({ text }: { text: string }) {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.mainRow}>
-        <View style={styles.textBoxContainer}>
-          <TextBox />
-          <CornerTriangle />
+    !!text && (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.mainRow}>
+          <View style={styles.textBoxContainer}>
+            <View style={styles.textBox}>
+              <TextContainer text={text} />
+            </View>
+            <CornerTriangle />
+          </View>
+          <Mascot />
         </View>
-        <Mascot />
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    )
   );
 }
 const styles = StyleSheet.create({
