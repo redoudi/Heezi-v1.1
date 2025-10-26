@@ -19,7 +19,7 @@ export default function RootLayout() {
       <PracticeToolProvider>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="mission" options={{ headerShown: false }} />
+          <Stack.Screen name="mission/[id]" options={{ headerShown: false }} />
           <Stack.Screen
             name="modal"
             options={{ presentation: "modal", title: "Modal" }}

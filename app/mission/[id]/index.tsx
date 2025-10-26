@@ -21,9 +21,10 @@ export default function ScenarioScreen() {
 
   useEffect(() => {
     if (id && practiceTool) {
-      const toolLevelFolder = levelFiles[practiceTool];
-      const levelData = toolLevelFolder[id as keyof typeof toolLevelFolder];
-      setIntro(levelData.intro);
+      const levelData = levelFiles[practiceTool]?.[id as string];
+      if (levelData?.intro) {
+        setIntro(levelData.intro);
+      }
     }
   }, [practiceTool, id]);
 
