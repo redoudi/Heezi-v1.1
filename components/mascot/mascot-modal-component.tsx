@@ -28,8 +28,6 @@ export default function MascotModalComponent(props: any) {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
   },
   column: {
