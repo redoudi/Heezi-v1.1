@@ -1,4 +1,5 @@
 import useCheckCondition from "@/hooks/useCheckCondition";
+import useRunPreActions from "@/hooks/useRunPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useEffect, useRef, useState } from "react";
 import { Text, View } from "react-native";
@@ -16,6 +17,7 @@ export default function MascotMonitor() {
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
   const checkCondition = useCheckCondition({ stepExpectedRef });
+  const runPreActions = useRunPreActions();
 
   useEffect(() => {
     console.log("stepIndex", stepIndex);
@@ -37,9 +39,10 @@ export default function MascotMonitor() {
       setBubbleText("");
       setTaskIndex(taskIndex + 1);
     } else if (stepIndex >= 0) {
-      const { tip, expected } =
+      const { tip, expected, preActions } =
         levelTasks?.at(taskIndex)?.steps?.at(stepIndex) || {};
       setBubbleText(tip?.text2 || "");
+      if (preActions) runPreActions(preActions);
       if (expected) stepExpectedRef.current = expected;
     }
   }, [stepIndex]);
