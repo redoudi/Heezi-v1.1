@@ -12,15 +12,11 @@ export default function useCheckCondition({
     switch (stepExpectedRef.current.type) {
       case "cellValue":
         const currentValue = cellValues[stepExpectedRef.current.cell];
-        console.log("currentValue", currentValue);
         return currentValue == stepExpectedRef.current.value;
       case "cellSelected":
-        console.log("selectedCells", cellsSelected);
-        console.log(
-          "stepExpectedRef.current.cell",
-          stepExpectedRef.current.cell
-        );
         return cellsSelected.includes(stepExpectedRef.current.cell);
+      case "cellProps":
+        return false;
     }
   };
 }

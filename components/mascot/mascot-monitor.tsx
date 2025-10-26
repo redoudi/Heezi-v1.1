@@ -6,12 +6,11 @@ import { View } from "react-native";
 import MascotBubble from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
 
-const TASK0 = 0;
-const STEP0 = -1;
+const TASK0 = 1;
+const STEP0 = 1;
 
 export default function MascotMonitor() {
   const { tasks: levelTasks, spreadsheetData } = useSpreadsheetStore();
-  const [tasks, setTasks] = useState<any[]>([]);
 
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
@@ -26,14 +25,16 @@ export default function MascotMonitor() {
       const isCorrect = checkCondition();
       if (isCorrect) {
         stepIndexRef.current = stepIndexRef.current + 1;
+
         handleStepIndexChange();
       }
     }
   }, [spreadsheetData]);
 
   const handleStepIndexChange = () => {
+    console.log("stepIndexRef.current", stepIndexRef.current);
     if (
-      stepIndexRef.current >=
+      stepIndexRef.current >
       levelTasks?.at(taskIndexRef.current)?.steps?.length - 1
     ) {
       stepIndexRef.current = -1;
@@ -51,7 +52,7 @@ export default function MascotMonitor() {
 
   useEffect(() => {
     if (modalText === "") {
-      stepIndexRef.current = 0;
+      stepIndexRef.current = STEP0;
       handleStepIndexChange();
     }
   }, [modalText]);
@@ -62,8 +63,10 @@ export default function MascotMonitor() {
   };
 
   useEffect(() => {
-    taskIndexRef.current = 0;
+    // if (stepIndexRef.current === -1) {
+    taskIndexRef.current = TASK0;
     handleTaskIndexChange();
+    // }
   }, []);
 
   return (
