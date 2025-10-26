@@ -1,6 +1,9 @@
+import { levelFiles } from "@/assets/levels/indexLevels";
+import usePracticeTool from "@/context/usePracticeTool";
 import useCheckCondition from "@/hooks/useCheckCondition";
 import useRunPreActions from "@/hooks/useRunPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import { useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { Text, View } from "react-native";
 import MascotBubble from "./mascot-bubble";
@@ -10,13 +13,25 @@ const TASK0 = 0;
 const STEP0 = -1;
 
 export default function MascotMonitor() {
+  const { id } = useLocalSearchParams();
+  const { practiceTool } = usePracticeTool();
+  useEffect(() => {
+    if (id && practiceTool) {
+      const levelData = levelFiles[practiceTool]?.[id as string];
+      if (levelData?.tasks) {
+        setTasks(levelData.tasks);
+      }
+    }
+  }, [practiceTool, id]);
+
   const {
     tasks: levelTasks,
     spreadsheetData,
     selectedCells,
   } = useSpreadsheetStore();
-  const [taskIndex, setTaskIndex] = useState(TASK0);
-  const [stepIndex, setStepIndex] = useState(STEP0);
+  const [tasks, setTasks] = useState<any[]>([]);
+  const [taskIndex, setTaskIndex] = useState(-1);
+  const [stepIndex, setStepIndex] = useState(-1);
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
@@ -64,6 +79,12 @@ export default function MascotMonitor() {
       if (introText && introText.trim() !== "") setModalText(introText);
     }
   }, [taskIndex, levelTasks]);
+
+  useEffect(() => {
+    if (tasks) {
+      setTaskIndex(0);
+    }
+  }, [tasks]);
 
   return (
     <View>
