@@ -1,10 +1,10 @@
 import { View } from "react-native";
-import MascotDialog from "./mascot-dialog";
+import MascotBubble from "./mascot-bubble";
 
 export default function MascotMonitor() {
   return (
     <View>
-      <MascotDialog />
+      <MascotBubble />
     </View>
   );
 }

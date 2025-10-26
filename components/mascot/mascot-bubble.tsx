@@ -55,7 +55,7 @@ const Mascot = () => {
   );
 };
 
-export default function MascotDialog() {
+export default function MascotBubble() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainRow}>
