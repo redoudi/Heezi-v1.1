@@ -1,5 +1,5 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import MascotBubble from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
@@ -13,13 +13,14 @@ export default function MascotMonitor() {
   const [stepIndex, setStepIndex] = useState(STEP0);
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
+  const stepExpectedRef = useRef<any>(null);
 
   useEffect(() => {
     if (stepIndex >= 0) {
-      const { preActions, tip, expected } =
+      const { tip, expected } =
         levelTasks?.at(taskIndex)?.steps?.at(stepIndex) || {};
-
       if (tip) setBubbleText(tip.text2);
+      if (expected) stepExpectedRef.current = expected;
     }
   }, [stepIndex]);
 
