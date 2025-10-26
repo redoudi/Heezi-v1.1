@@ -19,7 +19,7 @@ export default function MascotMonitor() {
     if (stepIndex >= 0) {
       const { tip, expected } =
         levelTasks?.at(taskIndex)?.steps?.at(stepIndex) || {};
-      if (tip) setBubbleText(tip.text2);
+      setBubbleText(tip?.text2 || "");
       if (expected) stepExpectedRef.current = expected;
     }
   }, [stepIndex]);
