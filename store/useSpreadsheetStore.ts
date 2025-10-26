@@ -2,13 +2,13 @@ import { create } from "zustand";
 const useSpreadsheetStore = create()((set, get) => ({
   spreadsheetData: {},
   selectedCells: [],
-  missionTasks: [],
+  tasks: [],
   intro: "",
   setLevelData: (levelData: any) => {
-    const { spreadsheetData, missionTasks, intro } = levelData;
+    const { spreadsheetData, tasks, intro } = levelData;
     set(() => ({
       spreadsheetData,
-      missionTasks,
+      tasks,
       intro,
     }));
   },
