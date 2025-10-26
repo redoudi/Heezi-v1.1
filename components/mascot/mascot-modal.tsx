@@ -1,14 +1,12 @@
 import { Image, Modal, StyleSheet, Text, View } from "react-native";
 
-export default function MascotModal() {
+export default function MascotModal({ open, onClose, modalText }) {
   return (
     <Modal
-      visible={true}
+      visible={open}
       transparent
       animationType="fade"
-      onRequestClose={() => {
-        console.log("close");
-      }}
+      onRequestClose={onClose}
     >
       <View style={styles.container}>
         <View style={styles.column}>
@@ -21,7 +19,8 @@ export default function MascotModal() {
           />
           <View style={styles.view}>
             <Text style={styles.text}>
-              {"Lörem ipsum köttskatt astrolig: nemiren men maligen !!!"}
+              {modalText ||
+                "Lörem ipsum köttskatt astrolig: nemiren men maligen !!!"}
             </Text>
           </View>
           <Image
