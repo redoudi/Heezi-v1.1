@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import {
   Image,
   SafeAreaView,
@@ -76,7 +77,7 @@ export default function ExportScreen() {
             </View>
             <TouchableOpacity
               style={styles.buttonRow5}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push("/")}
             >
               <Text style={styles.text2}>{"Continuer"}</Text>
               <Image
