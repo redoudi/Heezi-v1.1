@@ -1,7 +1,7 @@
 {
     "intro": "Bonjour ! Je dois organiser un évènement et j'ai besoin de compter les dépenses. Tu peux m'aider ?",
     "spreadsheetData": {
-        "cellValues": {
+        "cellsValues": {
             "A1": "Intitulé",
             "B1": "Montant",
             "A2": "Salle",
@@ -16,6 +16,11 @@
             "B5": "",
             "B6": "",
             "B7": ""
+        },
+        "cellsStyles": {
+            "B1": {
+                "fontWeight": "bold"
+            }
         },
         "cellsSelected": []
     },

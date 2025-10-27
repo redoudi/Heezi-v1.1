@@ -9,7 +9,7 @@ interface SpreadsheetStore {
 }
 
 const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
-  spreadsheetData: { cellValues: [], cellsSelected: [] },
+  spreadsheetData: { cellsValues: [], cellsSelected: [] },
 
   tasks: [],
   intro: "",
@@ -26,7 +26,7 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
     set((state) => ({
       spreadsheetData: {
         ...state.spreadsheetData,
-        cellValues: { ...state.spreadsheetData.cellValues, [cell]: value },
+        cellsValues: { ...state.spreadsheetData.cellsValues, [cell]: value },
       },
     }));
   },
