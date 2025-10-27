@@ -2,9 +2,7 @@ import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 
 export default function useRibbon() {
   const {
-    spreadsheetData: { cellsValues, cellsSelected, cellsStyles },
-    setCellsSelected,
-    setCellValue,
+    spreadsheetData: { cellsSelected },
     setCellStyle,
   } = useSpreadsheetStore();
   return {
