@@ -63,11 +63,11 @@ export default function MascotMonitor() {
   };
 
   useEffect(() => {
-    // if (stepIndexRef.current === -1) {
-    taskIndexRef.current = TASK0;
-    handleTaskIndexChange();
-    // }
-  }, []);
+    if (levelTasks) {
+      taskIndexRef.current = TASK0;
+      handleTaskIndexChange();
+    }
+  }, [levelTasks]);
 
   return (
     <View>
