@@ -9,7 +9,7 @@ export default function Cell({ id }: { id: string }) {
 
   return cellsSelected.includes(id) ? (
     <TextInput
-      style={[styles.box, styles.selectedBox]}
+      style={[styles.box, styles.selectedBox, cellsStyles?.[id]]}
       value={cellsValues[id] || ""}
       onChangeText={(text) => setCellValue(id, text)}
     />
