@@ -1,4 +1,5 @@
 import ExportFormatButtons from "@/components/ExportFormatButtons";
+import SnapshotPreview from "@/components/result-snapshot";
 import { router } from "expo-router";
 import {
   Image,
@@ -8,20 +9,14 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+
 export default function ExportScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.view}>
         <View style={styles.view2}>
           <View style={styles.column}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => alert("Pressed!")}
-            >
-              <View style={styles.view3}>
-                <View style={styles.box}></View>
-              </View>
-            </TouchableOpacity>
+            <SnapshotPreview onPress={() => alert("Pressed!")} />
             <ExportFormatButtons />
             <TouchableOpacity
               style={styles.buttonRow5}
@@ -47,18 +42,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
-  },
-  box: {
-    width: 533,
-    height: 782,
-    backgroundColor: "#000000",
-  },
-  button: {
-    alignSelf: "flex-start",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    padding: 8,
-    marginBottom: 16,
   },
   buttonRow5: {
     alignSelf: "flex-start",
@@ -91,12 +74,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFFFF",
     paddingVertical: 32,
-  },
-  view3: {
-    alignSelf: "flex-start",
-    backgroundColor: "#D9D9D9",
-    paddingVertical: 10,
-    paddingLeft: 3,
-    paddingRight: 16,
   },
 });
