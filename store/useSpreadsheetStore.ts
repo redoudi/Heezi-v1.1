@@ -1,16 +1,22 @@
 import { create } from "zustand";
 
 interface SpreadsheetStore {
-  spreadsheetData: { [key: string]: string };
+  spreadsheetData: {
+    cellsValues: { [key: string]: string | undefined };
+    cellsSelected: string[];
+    cellsStyles?: { [key: string]: any };
+  };
   selectedCells: string[];
   tasks: any[];
   intro: string;
   setLevelData: (levelData: any) => void;
+  setCellValue: (cell: string, value: string) => void;
+  setCellsSelected: (cells: string[]) => void;
 }
 
 const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
-  spreadsheetData: { cellsValues: [], cellsSelected: [] },
-
+  spreadsheetData: { cellsValues: {}, cellsSelected: [] },
+  selectedCells: [],
   tasks: [],
   intro: "",
   setLevelData: (levelData: any) => {

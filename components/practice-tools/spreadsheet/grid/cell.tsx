@@ -10,13 +10,13 @@ export default function Cell({ id }: { id: string }) {
   return cellsSelected.includes(id) ? (
     <TextInput
       style={[styles.box, styles.selectedBox]}
-      value={cellsValues[id]}
+      value={cellsValues[id] || ""}
       onChangeText={(text) => setCellValue(id, text)}
     />
   ) : (
     <Pressable onPress={() => setCellsSelected([id])}>
       <View style={[styles.box]}>
-        <Text style={cellsStyles[id]}>{cellsValues[id]}</Text>
+        <Text style={cellsStyles?.[id]}>{cellsValues[id] || ""}</Text>
       </View>
     </Pressable>
   );
