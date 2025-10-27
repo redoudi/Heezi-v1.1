@@ -2,7 +2,7 @@ import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 export default function Cell({ id }: { id: string }) {
   const {
-    spreadsheetData: { cellsValues, cellsSelected },
+    spreadsheetData: { cellsValues, cellsSelected, cellsStyles },
     setCellsSelected,
     setCellValue,
   } = useSpreadsheetStore();
@@ -16,7 +16,7 @@ export default function Cell({ id }: { id: string }) {
   ) : (
     <Pressable onPress={() => setCellsSelected([id])}>
       <View style={[styles.box]}>
-        <Text>{cellsValues[id]}</Text>
+        <Text style={cellsStyles[id]}>{cellsValues[id]}</Text>
       </View>
     </Pressable>
   );
