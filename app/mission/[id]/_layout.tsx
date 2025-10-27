@@ -10,6 +10,8 @@ export default function PlayLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="practice" options={{ headerShown: false }} />
+      <Stack.Screen name="result" options={{ headerShown: false }} />
+      <Stack.Screen name="export" options={{ headerShown: false }} />
     </Stack>
   );
 }

@@ -1,3 +1,4 @@
+import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
   SafeAreaView,
@@ -7,6 +8,7 @@ import {
   View,
 } from "react-native";
 export default function ResultScreen() {
+  const { id } = useLocalSearchParams();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.view}>
@@ -65,7 +67,7 @@ export default function ResultScreen() {
             </View>
             <TouchableOpacity
               style={styles.buttonRow}
-              onPress={() => alert("Pressed!")}
+              onPress={() => router.push(`/mission/${id}/result`)}
             >
               <Text style={styles.text7}>{"Continuer"}</Text>
               <Image

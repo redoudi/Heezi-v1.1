@@ -1,7 +1,7 @@
 import useCheckCondition from "@/hooks/useCheckCondition";
 import useRunPreActions from "@/hooks/useRunPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import MascotBubble from "./mascot-bubble";
@@ -11,6 +11,7 @@ const TASK0 = 1;
 const STEP0 = 1;
 
 export default function MascotMonitor() {
+  const { id } = useLocalSearchParams();
   const { tasks: levelTasks, spreadsheetData } = useSpreadsheetStore();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
@@ -60,7 +61,7 @@ export default function MascotMonitor() {
       levelTasks.length > 0 &&
       taskIndexRef.current > levelTasks?.length - 1
     ) {
-      router.push("/mission/1/result");
+      router.push(`/mission/${id}/result`);
       return;
     }
     const introText = levelTasks?.at(taskIndexRef.current)?.intro;
