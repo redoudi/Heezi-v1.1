@@ -1,7 +1,9 @@
+import useRibbon from "@/hooks/useRibbon";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "../spreadsheet-styles";
 
 export default function Ribbon() {
+  const ribbonCallbacks = useRibbon();
   return (
     <View style={styles.row4}>
       <View style={styles.column3}>
@@ -87,8 +89,9 @@ export default function Ribbon() {
           </View>
           <View style={styles.row7}>
             <TouchableOpacity
+              // bold button
               style={styles.button13}
-              onPress={() => alert("Pressed!")}
+              onPress={() => ribbonCallbacks.boldSelectedCell()}
             >
               <Image
                 source={{
