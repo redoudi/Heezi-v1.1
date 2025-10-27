@@ -1,60 +1,67 @@
+import usePracticeTool from "@/context/usePracticeTool";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+const ExportXlsxButton = () => {
+  return (
+    <TouchableOpacity
+      style={styles.buttonRow}
+      onPress={() => alert("Pressed!")}
+    >
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ceguc7fq_expires_30_days.png",
+        }}
+        resizeMode={"stretch"}
+        style={styles.image}
+      />
+      <Text style={styles.text}>{".xls"}</Text>
+    </TouchableOpacity>
+  );
+};
+
+const ExportPdfButton = () => {
+  return (
+    <TouchableOpacity
+      style={styles.buttonRow2}
+      onPress={() => alert("Pressed!")}
+    >
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0a6n5ovw_expires_30_days.png",
+        }}
+        resizeMode={"stretch"}
+        style={styles.image}
+      />
+      <Text style={styles.text}>{".pdf"}</Text>
+    </TouchableOpacity>
+  );
+};
+
+const ExportDocxButton = () => {
+  return (
+    <TouchableOpacity
+      style={styles.buttonRow3}
+      onPress={() => alert("Pressed!")}
+    >
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xhzm8bjz_expires_30_days.png",
+        }}
+        resizeMode={"stretch"}
+        style={styles.image}
+      />
+      <Text style={styles.text}>{".docx"}</Text>
+    </TouchableOpacity>
+  );
+};
+
 export default function ExportFormatButtons() {
+  const { practiceTool } = usePracticeTool();
   return (
     <View style={styles.row}>
-      <TouchableOpacity
-        style={styles.buttonRow}
-        onPress={() => alert("Pressed!")}
-      >
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ceguc7fq_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image}
-        />
-        <Text style={styles.text}>{".xls"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.buttonRow2}
-        onPress={() => alert("Pressed!")}
-      >
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0a6n5ovw_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image}
-        />
-        <Text style={styles.text}>{".pdf"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.buttonRow3}
-        onPress={() => alert("Pressed!")}
-      >
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xhzm8bjz_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image}
-        />
-        <Text style={styles.text}>{".docx"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.buttonRow4}
-        onPress={() => alert("Pressed!")}
-      >
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/yl2nzcpd_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image}
-        />
-        <Text style={styles.text}>{".doc"}</Text>
-      </TouchableOpacity>
+      <ExportPdfButton />
+      {practiceTool === "spreadsheet" && <ExportXlsxButton />}
+      {practiceTool === "textEditor" && <ExportDocxButton />}
     </View>
   );
 }
