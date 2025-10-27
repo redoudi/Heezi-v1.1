@@ -1,6 +1,7 @@
 import useCheckCondition from "@/hooks/useCheckCondition";
 import useRunPreActions from "@/hooks/useRunPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import { router } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import MascotBubble from "./mascot-bubble";
@@ -11,7 +12,6 @@ const STEP0 = 1;
 
 export default function MascotMonitor() {
   const { tasks: levelTasks, spreadsheetData } = useSpreadsheetStore();
-
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
@@ -25,14 +25,12 @@ export default function MascotMonitor() {
       const isCorrect = checkCondition();
       if (isCorrect) {
         stepIndexRef.current = stepIndexRef.current + 1;
-
         handleStepIndexChange();
       }
     }
   }, [spreadsheetData]);
 
   const handleStepIndexChange = () => {
-    console.log("stepIndexRef.current", stepIndexRef.current);
     if (
       stepIndexRef.current >
       levelTasks?.at(taskIndexRef.current)?.steps?.length - 1
@@ -58,6 +56,13 @@ export default function MascotMonitor() {
   }, [modalText]);
 
   const handleTaskIndexChange = () => {
+    if (
+      levelTasks.length > 0 &&
+      taskIndexRef.current > levelTasks?.length - 1
+    ) {
+      router.push("/mission/1/result");
+      return;
+    }
     const introText = levelTasks?.at(taskIndexRef.current)?.intro;
     if (introText && introText.trim() !== "") setModalText(introText);
   };
