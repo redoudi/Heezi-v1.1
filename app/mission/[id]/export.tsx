@@ -1,3 +1,4 @@
+import ExportFormatButtons from "@/components/ExportFormatButtons";
 import { router } from "expo-router";
 import {
   Image,
@@ -21,60 +22,7 @@ export default function ExportScreen() {
                 <View style={styles.box}></View>
               </View>
             </TouchableOpacity>
-            <View style={styles.row}>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => alert("Pressed!")}
-              >
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ceguc7fq_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image}
-                />
-                <Text style={styles.text}>{".xls"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow2}
-                onPress={() => alert("Pressed!")}
-              >
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0a6n5ovw_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image}
-                />
-                <Text style={styles.text}>{".pdf"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow3}
-                onPress={() => alert("Pressed!")}
-              >
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xhzm8bjz_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image}
-                />
-                <Text style={styles.text}>{".docx"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow4}
-                onPress={() => alert("Pressed!")}
-              >
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/yl2nzcpd_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image}
-                />
-                <Text style={styles.text}>{".doc"}</Text>
-              </TouchableOpacity>
-            </View>
+            <ExportFormatButtons />
             <TouchableOpacity
               style={styles.buttonRow5}
               onPress={() => router.push("/")}
@@ -112,46 +60,6 @@ const styles = StyleSheet.create({
     padding: 8,
     marginBottom: 16,
   },
-  buttonRow: {
-    width: 110,
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginHorizontal: 8,
-  },
-  buttonRow2: {
-    width: 119,
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginRight: 8,
-  },
-  buttonRow3: {
-    width: 132,
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginRight: 8,
-  },
-  buttonRow4: {
-    width: 119,
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginRight: 56,
-  },
   buttonRow5: {
     alignSelf: "flex-start",
     flexDirection: "row",
@@ -164,29 +72,10 @@ const styles = StyleSheet.create({
   column: {
     paddingHorizontal: 8,
   },
-  image: {
-    borderRadius: 8,
-    width: 30,
-    height: 36,
-    marginRight: 10,
-  },
   image2: {
     borderRadius: 8,
     width: 16,
     height: 24,
-  },
-  row: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginBottom: 16,
-  },
-  text: {
-    color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
   },
   text2: {
     color: "#0A2924",

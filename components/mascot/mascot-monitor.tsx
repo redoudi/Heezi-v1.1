@@ -61,7 +61,7 @@ export default function MascotMonitor() {
       levelTasks.length > 0 &&
       taskIndexRef.current > levelTasks?.length - 1
     ) {
-      router.push(`/mission/${id}/result`);
+      router.push(`/mission/${id}/export`);
       return;
     }
     const introText = levelTasks?.at(taskIndexRef.current)?.intro;

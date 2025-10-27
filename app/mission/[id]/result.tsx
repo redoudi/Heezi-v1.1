@@ -67,7 +67,7 @@ export default function ResultScreen() {
             </View>
             <TouchableOpacity
               style={styles.buttonRow}
-              onPress={() => router.push(`/mission/${id}/result`)}
+              onPress={() => router.push(`/mission/${id}/export`)}
             >
               <Text style={styles.text7}>{"Continuer"}</Text>
               <Image
