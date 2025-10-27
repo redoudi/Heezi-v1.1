@@ -111,10 +111,11 @@
                         "text2": "Maintenant, on met la valeur en gras pour qu'elle soit plus visible"
                     },
                     "expected": {
-                        "type": "cellProps",
+                        "type": "cellStyle",
                         "cell": "B7",
-                        "propKey": "bold",
-                        "propValue": true
+                        "style": {
+                            "fontWeight": "bold"
+                        }
                     }
                 }
             ]
