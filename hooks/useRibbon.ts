@@ -1,10 +1,9 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 
 export default function useRibbon() {
-  const {
-    spreadsheetData: { cellsSelected, cellsStyles },
-    setCellStyle,
-  } = useSpreadsheetStore();
+  const { spreadsheetData, setCellStyle } = useSpreadsheetStore();
+  const cellsSelected = spreadsheetData?.cellsSelected;
+  const cellsStyles = spreadsheetData?.cellsStyles;
   return {
     boldSelectedCell: () => {
       if (cellsSelected?.length > 0) {
