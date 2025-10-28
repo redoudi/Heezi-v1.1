@@ -1,15 +1,6 @@
 {
     "levelType": "lesson",
     "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
-    "gridStartValues": {},
-    "gridStartProps": {
-        "0,0": {
-            "bold": true
-        },
-        "1,0": {
-            "bold": true
-        }
-    },
     "tasks": [
         {
             "intro": "On commence par de petits mot-clés pour se repérer",
