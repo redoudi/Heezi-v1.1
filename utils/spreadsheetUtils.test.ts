@@ -1,6 +1,6 @@
-import { rangeToCells } from "./rangeToCells";
+import { rangeToCells } from "./spreadsheetUtils";
 
-test.only("expands A1:A3 correctly", () => {
+test("expands A1:A3 correctly", () => {
   expect(rangeToCells("A1:A3")).toEqual(["A1", "A2", "A3"]);
 });
 
