@@ -1,19 +1,18 @@
 import { levelFiles } from "@/assets/levels/indexLevels";
 import BackButton from "@/components/ui/back-button";
 import usePracticeTool from "@/context/usePracticeTool";
-import { Link, useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import {
   Image,
   SafeAreaView,
   StyleSheet,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
+
 export default function ScenarioScreen() {
-  const [textInput1, onChangeTextInput1] = useState("");
   // useLoadLevel();
   const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
@@ -27,7 +26,6 @@ export default function ScenarioScreen() {
       }
     }
   }, [practiceTool, id]);
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.view}>
@@ -35,49 +33,32 @@ export default function ScenarioScreen() {
           <View style={styles.view2}>
             <BackButton />
           </View>
-          <View style={styles.column2}>
-            <View style={styles.view3}>
-              <View style={styles.column3}>
-                <View style={styles.view4}>
-                  <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/9k555b9b_expires_30_days.png",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image2}
-                  />
-                </View>
-                <TextInput
-                  placeholder={intro || ""}
-                  value={textInput1}
-                  onChangeText={onChangeTextInput1}
-                  style={styles.input}
-                />
-                <View style={styles.view5}>
-                  <TouchableOpacity style={styles.button2} onPress={() => {}}>
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lpcexk6v_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image3}
-                    />
-                  </TouchableOpacity>
-                </View>
+          <View style={styles.view3}>
+            <View style={styles.column2}>
+              <Image
+                source={{
+                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/5pc0oof0_expires_30_days.png",
+                }}
+                resizeMode={"stretch"}
+                style={styles.image2}
+              />
+              <View style={styles.view4}>
+                <Text style={styles.text}>{intro}</Text>
               </View>
-            </View>
-            <Link href={`/mission/${id}/practice`} asChild>
-              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
-                <Text style={styles.text}>{"Commencer"}</Text>
+              <TouchableOpacity
+                style={styles.buttonRow}
+                onPress={() => router.push(`/mission/${id}/practice`)}
+              >
+                <Text style={styles.text2}>{"Commencer"}</Text>
                 <Image
                   source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/6ce1tot3_expires_30_days.png",
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
                   }}
                   resizeMode={"stretch"}
-                  style={styles.image4}
+                  style={styles.image3}
                 />
               </TouchableOpacity>
-            </Link>
+            </View>
           </View>
         </View>
       </View>
@@ -94,33 +75,22 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     backgroundColor: "#FDC1AB",
     borderRadius: 8,
-    paddingVertical: 8,
-    marginLeft: 8,
-  },
-  button2: {
-    backgroundColor: "#72D6BA",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 16,
+    padding: 16,
   },
   buttonRow: {
+    alignSelf: "flex-start",
     flexDirection: "row",
-    alignItems: "center",
     backgroundColor: "#72D6BA",
     borderRadius: 8,
     paddingVertical: 8,
+    paddingHorizontal: 16,
+    marginLeft: 391,
   },
   column: {
     backgroundColor: "#FFFFFF",
     paddingVertical: 32,
   },
   column2: {
-    alignItems: "center",
-    paddingHorizontal: 396,
-    marginHorizontal: 40,
-  },
-  column3: {
-    alignSelf: "flex-start",
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingVertical: 16,
@@ -133,44 +103,30 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 8,
-    width: 24,
-    height: 24,
-    marginHorizontal: 8,
+    width: 30,
+    height: 32,
   },
   image2: {
     borderRadius: 8,
-    width: 248,
-    height: 248,
+    width: 568,
+    height: 711,
+    marginBottom: 8,
+    marginHorizontal: 16,
   },
   image3: {
     borderRadius: 8,
-    width: 30,
-    height: 32,
-    marginHorizontal: 16,
-  },
-  image4: {
-    borderRadius: 8,
     width: 16,
     height: 24,
-    marginRight: 15,
-  },
-  input: {
-    color: "#292929",
-    fontSize: 16,
-    marginBottom: 8,
-    marginHorizontal: 16,
-    width: 536,
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingLeft: 8,
-    paddingRight: 16,
   },
   text: {
+    color: "#292929",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  text2: {
     color: "#0A2924",
     fontSize: 24,
     fontWeight: "bold",
-    marginLeft: 16,
     marginRight: 11,
   },
   view: {
@@ -180,21 +136,22 @@ const styles = StyleSheet.create({
   view2: {
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
+    paddingLeft: 388,
     marginBottom: 16,
     marginHorizontal: 32,
   },
   view3: {
-    marginBottom: 32,
+    alignItems: "center",
+    marginHorizontal: 40,
   },
   view4: {
     alignSelf: "flex-start",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
-    paddingBottom: 457,
+    paddingVertical: 8,
+    paddingLeft: 8,
+    paddingRight: 57,
     marginBottom: 8,
-    marginHorizontal: 16,
-  },
-  view5: {
-    alignItems: "flex-end",
+    marginLeft: 16,
   },
 });

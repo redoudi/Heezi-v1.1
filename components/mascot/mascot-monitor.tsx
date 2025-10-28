@@ -7,8 +7,8 @@ import { View } from "react-native";
 import MascotBubble from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
 
-const TASK0 = 1;
-const STEP0 = 1;
+const TASK0 = 0;
+const STEP0 = 0;
 
 export default function MascotMonitor() {
   const { id } = useLocalSearchParams();
