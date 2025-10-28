@@ -8,7 +8,6 @@ interface SpreadsheetStore {
   };
   selectedCells: string[];
   tasks: any[];
-  intro: string;
   setLevelData: (levelData: any) => void;
   setCellValue: (cell: string, value: string) => void;
   setCellsSelected: (cells: string[]) => void;
@@ -19,7 +18,6 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
   spreadsheetData: { cellsValues: {}, cellsSelected: [] },
   selectedCells: [],
   tasks: [],
-  intro: "",
   setLevelData: (levelData: any) => {
     const { spreadsheetData, tasks, intro } = levelData;
     set(() => ({
