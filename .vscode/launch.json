@@ -21,7 +21,8 @@
       "url": "http://localhost:8081",
       "presentation": {
         "hidden": true
-      }
+      },
+      "skipFiles": ["**/node_modules/**"]
     },
     {
       "type": "pwa-msedge",
@@ -31,7 +32,8 @@
       "url": "http://localhost:8081",
       "presentation": {
         "hidden": true
-      }
+      },
+      "skipFiles": ["**/node_modules/**"]
     },
     {
       "type": "vscode-edge-devtools.debug",

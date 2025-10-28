@@ -16,7 +16,7 @@ export default function ScenarioScreen() {
   // useLoadLevel();
   const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
-  const [intro, setIntro] = useState("");
+  const [intro, setIntro] = useState("...");
 
   useEffect(() => {
     if (id && practiceTool) {
@@ -26,6 +26,7 @@ export default function ScenarioScreen() {
       }
     }
   }, [practiceTool, id]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.view}>

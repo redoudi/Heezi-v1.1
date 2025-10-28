@@ -7,13 +7,13 @@ export default function useRibbon() {
   } = useSpreadsheetStore();
   return {
     boldSelectedCell: () => {
-      if (cellsSelected.length > 0) {
-        setCellStyle(cellsSelected[0], { fontWeight: "bold" });
+      if (cellsSelected?.length > 0) {
+        setCellStyle(cellsSelected?.[0], { fontWeight: "bold" });
       }
     },
     isSelectedCellBold: () => {
-      if (cellsSelected.length > 0) {
-        return cellsStyles?.[cellsSelected[0]]?.fontWeight === "bold";
+      if (cellsSelected?.length > 0) {
+        return cellsStyles?.[cellsSelected?.[0]]?.fontWeight === "bold";
       }
       return false;
     },
