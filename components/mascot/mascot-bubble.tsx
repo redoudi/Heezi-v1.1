@@ -1,3 +1,4 @@
+import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 const DownArrow = () => {
@@ -37,6 +38,7 @@ const Mascot = () => {
 };
 
 export default function MascotBubble({ bubbleText }: { bubbleText: string }) {
+  const { levelType } = useSpreadsheetStore();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainRow}>
@@ -44,7 +46,7 @@ export default function MascotBubble({ bubbleText }: { bubbleText: string }) {
           <View style={styles.textBox}>
             <View style={styles.textContainer}>
               <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
-              <DownArrow />
+              {levelType === "lesson" && <DownArrow />}
             </View>
           </View>
           <CornerTriangle />

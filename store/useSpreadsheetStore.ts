@@ -12,18 +12,20 @@ interface SpreadsheetStore {
   setCellValue: (cell: string, value: string) => void;
   setCellsSelected: (cells: string[]) => void;
   setCellStyle: (cell: string, style: { [key: string]: any }) => void;
+  levelType: string;
 }
 
 const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
   spreadsheetData: { cellsValues: {}, cellsSelected: [] },
   selectedCells: [],
   tasks: [],
+  levelType: "",
   setLevelData: (levelData: any) => {
-    const { spreadsheetData, tasks, intro } = levelData;
+    const { spreadsheetData, tasks, levelType } = levelData;
     set(() => ({
       spreadsheetData,
       tasks,
-      intro,
+      levelType,
     }));
   },
 
