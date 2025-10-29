@@ -1,3 +1,4 @@
+import { parseCellsExpressions } from "@/utils/spreadsheetUtils";
 import { create } from "zustand";
 
 interface SpreadsheetStore {
@@ -49,7 +50,10 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
 
   setCellsSelected: (cells: string[]) => {
     set((state) => ({
-      spreadsheetData: { ...get().spreadsheetData, cellsSelected: cells },
+      spreadsheetData: {
+        ...get().spreadsheetData,
+        cellsSelected: parseCellsExpressions(cells),
+      },
     }));
   },
 }));
