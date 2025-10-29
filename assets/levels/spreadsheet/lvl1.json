@@ -13,7 +13,7 @@
                     "preActions": [
                         {
                             "type": "select",
-                            "cells": "A1:A3"
+                            "cells": "A1:B3"
                         }
                     ]
                 },
