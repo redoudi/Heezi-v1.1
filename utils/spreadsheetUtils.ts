@@ -39,9 +39,19 @@ const parseCellExpression = (cellExpression: string): string[] => {
   }
 };
 
-export const parseCellsExpressions = (argCells: string[]): string[] => {
+export const parseCellsExpressions = (
+  argCells: string[] | string | undefined | null
+): string[] => {
+  // Handle case where argCells is not an array
+  if (!argCells) {
+    return [];
+  }
+
+  // If it's a string, convert it to an array
+  const cellsArray = Array.isArray(argCells) ? argCells : [argCells];
+
   const finalCells: string[] = [];
-  argCells.forEach((cellExpression) => {
+  cellsArray.forEach((cellExpression) => {
     finalCells.push(...parseCellExpression(cellExpression));
   });
   return finalCells;
