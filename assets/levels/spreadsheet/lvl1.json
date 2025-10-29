@@ -13,7 +13,9 @@
                     "preActions": [
                         {
                             "type": "select",
-                            "cells": "A1:B3"
+                            "cells": [
+                                "A1:B3"
+                            ]
                         }
                     ]
                 },
@@ -25,7 +27,9 @@
                     "preActions": [
                         {
                             "type": "select",
-                            "cells": "A1:A15"
+                            "cells": [
+                                "A1:A15"
+                            ]
                         }
                     ]
                 },
@@ -37,7 +41,9 @@
                     "preActions": [
                         {
                             "type": "select",
-                            "cells": "[A1:J1]"
+                            "cells": [
+                                "A1:J1"
+                            ]
                         }
                     ]
                 }
@@ -78,7 +84,9 @@
                     "preActions": [
                         {
                             "type": "select",
-                            "cells": "A1:A1"
+                            "cells": [
+                                "A1"
+                            ]
                         }
                     ]
                 }
@@ -95,7 +103,9 @@
                     "preActions": [
                         {
                             "type": "select",
-                            "cells": "B2:B2"
+                            "cells": [
+                                "B2"
+                            ]
                         }
                     ]
                 },
@@ -107,7 +117,9 @@
                     "preActions": [
                         {
                             "type": "select",
-                            "cells": "B2:B2"
+                            "cells": [
+                                "B2"
+                            ]
                         },
                         {
                             "type": "cellValue",

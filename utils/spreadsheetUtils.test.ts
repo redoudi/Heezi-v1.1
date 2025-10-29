@@ -5,12 +5,21 @@ test("parse one cell key correctly", () => {
 });
 
 test.only("parses cells expressions correctly", () => {
-  expect(parseCellsExpressions(["A1:A3", "B2:B4"])).toEqual([
+  expect(parseCellsExpressions(["A1:A15"])).toEqual([
     "A1",
     "A2",
     "A3",
-    "B2",
-    "B3",
-    "B4",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
   ]);
 });
