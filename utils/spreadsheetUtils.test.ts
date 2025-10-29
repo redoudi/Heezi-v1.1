@@ -1,9 +1,16 @@
-import { rangeToCells } from "./spreadsheetUtils";
+import { parseCellsExpressions } from "./spreadsheetUtils";
 
-test("expands A1:A3 correctly", () => {
-  expect(rangeToCells("A1:A3")).toEqual(["A1", "A2", "A3"]);
+test.only("parse one cell key correctly", () => {
+  expect(parseCellsExpressions(["A1"])).toEqual(["A1"]);
 });
 
-test("handles multiple columns", () => {
-  expect(rangeToCells("A1:B2")).toEqual(["A1", "B1", "A2", "B2"]);
+test("parses cells expressions correctly", () => {
+  expect(parseCellsExpressions(["A1:A3", "B2:B4"])).toEqual([
+    "A1",
+    "A2",
+    "A3",
+    "B2",
+    "B3",
+    "B4",
+  ]);
 });

@@ -1,15 +1,24 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
-const DownArrow = () => {
+const DownArrow = ({ nextStep }: { nextStep: () => void }) => {
   return (
-    <Image
-      source={{
-        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ojvjgq96_expires_30_days.png",
-      }}
-      resizeMode={"stretch"}
-      style={styles.image31}
-    />
+    <TouchableOpacity onPress={nextStep}>
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ojvjgq96_expires_30_days.png",
+        }}
+        resizeMode={"stretch"}
+        style={styles.image31}
+      />
+    </TouchableOpacity>
   );
 };
 
@@ -37,7 +46,13 @@ const Mascot = () => {
   );
 };
 
-export default function MascotBubble({ bubbleText }: { bubbleText: string }) {
+export default function MascotBubble({
+  bubbleText,
+  nextStep,
+}: {
+  bubbleText: string;
+  nextStep: () => void;
+}) {
   const { levelType } = useSpreadsheetStore();
   return (
     <SafeAreaView style={styles.container}>
@@ -46,7 +61,7 @@ export default function MascotBubble({ bubbleText }: { bubbleText: string }) {
           <View style={styles.textBox}>
             <View style={styles.textContainer}>
               <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
-              {levelType === "lesson" && <DownArrow />}
+              {levelType === "lesson" && <DownArrow nextStep={nextStep} />}
             </View>
           </View>
           <CornerTriangle />

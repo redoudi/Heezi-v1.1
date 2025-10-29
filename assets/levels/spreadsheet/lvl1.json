@@ -32,12 +32,12 @@
                 {
                     "tip": {
                         "text1": "1.c Les rangées",
-                        "text2": "Et ici, on a des rangées"
+                        "text2": "Et ici, on a une rangée"
                     },
                     "preActions": [
                         {
                             "type": "select",
-                            "cells": "A1:J1"
+                            "cells": "[A1:J1]"
                         }
                     ]
                 }
@@ -50,7 +50,13 @@
                     "tip": {
                         "text1": "Etape 2.a",
                         "text2": "Comme tu peux le voir, chaque colonne est désignée par une lettre"
-                    }
+                    },
+                    "preActions": [
+                        {
+                            "type": "select",
+                            "cells": []
+                        }
+                    ]
                 },
                 {
                     "tip": {

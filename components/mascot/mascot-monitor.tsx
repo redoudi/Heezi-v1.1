@@ -21,12 +21,16 @@ export default function MascotMonitor() {
   const taskIndexRef = useRef<number>(-1);
   const stepIndexRef = useRef<number>(-1);
 
+  const nextStep = () => {
+    stepIndexRef.current = stepIndexRef.current + 1;
+    handleStepIndexChange();
+  };
+
   useEffect(() => {
     if (spreadsheetData && stepExpectedRef.current) {
       const isCorrect = checkCondition();
       if (isCorrect) {
-        stepIndexRef.current = stepIndexRef.current + 1;
-        handleStepIndexChange();
+        nextStep();
       }
     }
   }, [spreadsheetData]);
@@ -57,6 +61,7 @@ export default function MascotMonitor() {
   }, [modalText]);
 
   const handleTaskIndexChange = () => {
+    setBubbleText(null);
     if (
       levelTasks.length > 0 &&
       taskIndexRef.current > levelTasks?.length - 1
@@ -77,7 +82,9 @@ export default function MascotMonitor() {
 
   return (
     <View>
-      {!!bubbleText && <MascotBubble bubbleText={bubbleText} />}
+      {!!bubbleText && (
+        <MascotBubble bubbleText={bubbleText} nextStep={nextStep} />
+      )}
       <MascotModal
         open={!!modalText?.trim()}
         onClose={() => setModalText("")}

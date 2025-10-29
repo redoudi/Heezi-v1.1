@@ -18,3 +18,33 @@ export const rangeToCells = (range: string) => {
   }
   return cells;
 };
+
+const isCellKey = (cellExpression: string) => {
+  //check if cellExpression is a valid cell key like "A1", "A10"
+  return /^[A-Z]+\d+$/.test(cellExpression);
+};
+
+const isRangeOfCellKeys = (cellExpression: string) => {
+  //check if cellExpression is a valid range of cell keys like "A1:A10"
+  return /^[A-Z]+\d+:[A-Z]+\d+$/.test(cellExpression);
+};
+
+const parseCellExpressionRec = (cellExpression: string, outputCells = []) => {
+  if (isCellKey(cellExpression)) {
+    return cellExpression;
+  } else if (isRangeOfCellKeys(cellExpression)) {
+    rangeToCells(cellExpression).forEach((cellKey: string) =>
+      outputCells.push(cellKey)
+    );
+  } else {
+    throw new Error(`Invalid cell expression: ${cellExpression}`);
+  }
+};
+
+export const parseCellsExpressions = (argCells: string[]) => {
+  const finalCells: string[] = [];
+  argCells.forEach((cellExpression) => {
+    finalCells.push(parseCellExpressionRec(cellExpression));
+  });
+  return finalCells;
+};
