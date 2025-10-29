@@ -65,7 +65,7 @@ export default function MascotMonitor() {
 
   useEffect(() => {
     if (modalText === "") {
-      stepIndexRef.current = STEP0;
+      stepIndexRef.current = stepParam ? parseInt(stepParam as string) : STEP0;
       handleStepIndexChange();
     }
   }, [modalText]);
