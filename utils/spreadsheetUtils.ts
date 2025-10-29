@@ -29,22 +29,20 @@ const isRangeOfCellKeys = (cellExpression: string) => {
   return /^[A-Z]+\d+:[A-Z]+\d+$/.test(cellExpression);
 };
 
-const parseCellExpressionRec = (cellExpression: string, outputCells = []) => {
+const parseCellExpression = (cellExpression: string): string[] => {
   if (isCellKey(cellExpression)) {
-    return cellExpression;
+    return [cellExpression];
   } else if (isRangeOfCellKeys(cellExpression)) {
-    rangeToCells(cellExpression).forEach((cellKey: string) =>
-      outputCells.push(cellKey)
-    );
+    return rangeToCells(cellExpression);
   } else {
     throw new Error(`Invalid cell expression: ${cellExpression}`);
   }
 };
 
-export const parseCellsExpressions = (argCells: string[]) => {
+export const parseCellsExpressions = (argCells: string[]): string[] => {
   const finalCells: string[] = [];
   argCells.forEach((cellExpression) => {
-    finalCells.push(parseCellExpressionRec(cellExpression));
+    finalCells.push(...parseCellExpression(cellExpression));
   });
   return finalCells;
 };
