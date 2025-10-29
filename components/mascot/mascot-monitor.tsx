@@ -1,7 +1,7 @@
 import useCheckCondition from "@/hooks/useCheckCondition";
 import useRunPreActions from "@/hooks/useRunPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { router, useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import MascotBubble from "./mascot-bubble";
@@ -11,7 +11,8 @@ const TASK0 = 0;
 const STEP0 = 0;
 
 export default function MascotMonitor() {
-  const { id } = useLocalSearchParams();
+  const router = useRouter();
+  const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
   const { tasks: levelTasks, spreadsheetData } = useSpreadsheetStore();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
@@ -21,9 +22,18 @@ export default function MascotMonitor() {
   const taskIndexRef = useRef<number>(-1);
   const stepIndexRef = useRef<number>(-1);
 
-  const nextStep = () => {
-    stepIndexRef.current = stepIndexRef.current + 1;
+  const setStepIndex = (step: number) => {
+    stepIndexRef.current = step;
+    router.setParams({ step: stepIndexRef.current });
     handleStepIndexChange();
+  };
+  const setTaskIndex = (task: number) => {
+    taskIndexRef.current = task;
+    router.setParams({ task: taskIndexRef.current });
+    handleTaskIndexChange();
+  };
+  const nextStep = () => {
+    setStepIndex(stepIndexRef.current + 1);
   };
 
   useEffect(() => {
@@ -41,7 +51,7 @@ export default function MascotMonitor() {
       levelTasks?.at(taskIndexRef.current)?.steps?.length - 1
     ) {
       stepIndexRef.current = -1;
-      taskIndexRef.current = taskIndexRef.current + 1;
+      setTaskIndex(taskIndexRef.current + 1);
       handleTaskIndexChange();
     } else {
       const { tip, expected, preActions } =
@@ -75,7 +85,7 @@ export default function MascotMonitor() {
 
   useEffect(() => {
     if (levelTasks) {
-      taskIndexRef.current = TASK0;
+      taskIndexRef.current = taskParam ? parseInt(taskParam as string) : TASK0;
       handleTaskIndexChange();
     }
   }, [levelTasks]);
