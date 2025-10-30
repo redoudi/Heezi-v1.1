@@ -17,8 +17,8 @@ export default function QuizScreen() {
 
   const setTaskIndex = (task: number) => {
     if (
-      levelData.levelTasks.length > 0 &&
-      runnerRef.current.task > levelData.levelTasks?.length - 1
+      levelData?.tasks?.length &&
+      runnerRef.current.task > levelData.tasks.length - 1
     ) {
       router.push(`/mission/${id}/result`);
     } else {
@@ -29,7 +29,7 @@ export default function QuizScreen() {
   };
 
   const handleTaskIndexChange = () => {
-    const currentTask = levelData.levelTasks?.at(runnerRef.current.task);
+    const currentTask = levelData?.tasks?.at(runnerRef.current.task);
     console.log("currentTask", currentTask);
     const introText = currentTask?.intro;
     console.log("introText", introText);
@@ -38,7 +38,7 @@ export default function QuizScreen() {
 
   useEffect(() => {
     console.log("levelData", levelData);
-    if (levelData && levelData.length) {
+    if (levelData?.tasks?.length) {
       setTaskIndex(taskParam ? parseInt(taskParam as string) : 0);
     }
   }, [levelData]);
