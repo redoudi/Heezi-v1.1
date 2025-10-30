@@ -10,6 +10,16 @@ import {
   View,
 } from "react-native";
 
+const ProgressBar = () => {
+  return (
+    <View style={styles.view2}>
+      <View style={styles.view3}>
+        <View style={styles.box}></View>
+      </View>
+    </View>
+  );
+};
+
 const TopBar = () => {
   return (
     <View style={styles.row}>
@@ -22,12 +32,36 @@ const TopBar = () => {
           style={styles.image}
         />
       </View>
-      <View style={styles.view2}>
-        <View style={styles.view3}>
-          <View style={styles.box}></View>
-        </View>
-      </View>
+      <ProgressBar />
     </View>
+  );
+};
+
+const QuestionBox = ({ question }: { question: string }) => {
+  return (
+    <View style={styles.view5}>
+      <Text style={styles.text}>{question}</Text>
+    </View>
+  );
+};
+
+const MascotInquisitive = () => {
+  return (
+    <Image
+      source={{
+        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/d7skkhjc_expires_30_days.png",
+      }}
+      resizeMode={"stretch"}
+      style={styles.image2}
+    />
+  );
+};
+
+const AnswerButton = ({ answer }: { answer: string }) => {
+  return (
+    <TouchableOpacity style={styles.button} onPress={() => alert("Pressed!")}>
+      <Text style={styles.text2}>{"Btn"}</Text>
+    </TouchableOpacity>
   );
 };
 
@@ -41,41 +75,12 @@ export default function QuizScreen() {
         <TopBar />
         <View style={styles.view4}>
           <View style={styles.column2}>
-            <View style={styles.view5}>
-              <Text style={styles.text}>{question}</Text>
-            </View>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/d7skkhjc_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image2}
-            />
+            <QuestionBox question={question} />
+            <MascotInquisitive />
             <View style={styles.column3}>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => alert("Pressed!")}
-              >
-                <Text style={styles.text2}>{"Btn"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => alert("Pressed!")}
-              >
-                <Text style={styles.text2}>{"Btn"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => alert("Pressed!")}
-              >
-                <Text style={styles.text2}>{"Btn"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.button2}
-                onPress={() => alert("Pressed!")}
-              >
-                <Text style={styles.text2}>{"Btn"}</Text>
-              </TouchableOpacity>
+              <AnswerButton answer="Btn" />
+              <AnswerButton answer="Btn" />
+              <AnswerButton answer="Btn" />
             </View>
           </View>
         </View>
