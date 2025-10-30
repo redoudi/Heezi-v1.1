@@ -19,21 +19,24 @@ export default function MascotMonitor() {
   const stepExpectedRef = useRef<any>(null);
   const checkCondition = useCheckCondition({ stepExpectedRef });
   const runPreActions = useRunPreActions();
-  const taskIndexRef = useRef<number>(-1);
-  const stepIndexRef = useRef<number>(-1);
+
+  const runnerRef = useRef<{ step: number; task: number }>({
+    step: -1,
+    task: -1,
+  });
 
   const setStepIndex = (step: number) => {
-    stepIndexRef.current = step;
-    router.setParams({ step: stepIndexRef.current });
+    runnerRef.current.step = step;
+    router.setParams({ step: runnerRef.current.step });
     handleStepIndexChange();
   };
   const setTaskIndex = (task: number) => {
-    taskIndexRef.current = task;
-    router.setParams({ task: taskIndexRef.current });
+    runnerRef.current.task = task;
+    router.setParams({ task: runnerRef.current.task });
     handleTaskIndexChange();
   };
   const nextStep = () => {
-    setStepIndex(stepIndexRef.current + 1);
+    setStepIndex(runnerRef.current.step + 1);
   };
 
   useEffect(() => {
@@ -47,45 +50,50 @@ export default function MascotMonitor() {
 
   const handleStepIndexChange = () => {
     if (
-      stepIndexRef.current >
-      levelTasks?.at(taskIndexRef.current)?.steps?.length - 1
+      runnerRef.current.step >
+      levelTasks?.at(runnerRef.current.task)?.steps?.length - 1
     ) {
-      stepIndexRef.current = -1;
-      setTaskIndex(taskIndexRef.current + 1);
+      runnerRef.current.step = -1;
+      setTaskIndex(runnerRef.current.task + 1);
       handleTaskIndexChange();
     } else {
       const { tip, expected, preActions } =
-        levelTasks?.at(taskIndexRef.current)?.steps?.at(stepIndexRef.current) ||
-        {};
+        levelTasks
+          ?.at(runnerRef.current.task)
+          ?.steps?.at(runnerRef.current.step) || {};
       setBubbleText(tip?.text2 || "");
       if (preActions) runPreActions(preActions);
       if (expected) stepExpectedRef.current = expected;
     }
   };
 
-  useEffect(() => {
-    if (modalText === "") {
-      stepIndexRef.current = stepParam ? parseInt(stepParam as string) : STEP0;
-      handleStepIndexChange();
-    }
-  }, [modalText]);
-
   const handleTaskIndexChange = () => {
     setBubbleText(null);
     if (
       levelTasks.length > 0 &&
-      taskIndexRef.current > levelTasks?.length - 1
+      runnerRef.current.task > levelTasks?.length - 1
     ) {
       router.push(`/mission/${id}/export`);
       return;
     }
-    const introText = levelTasks?.at(taskIndexRef.current)?.intro;
+    const introText = levelTasks?.at(runnerRef.current.task)?.intro;
     if (introText && introText.trim() !== "") setModalText(introText);
   };
 
   useEffect(() => {
+    if (modalText === "") {
+      runnerRef.current.step = stepParam
+        ? parseInt(stepParam as string)
+        : STEP0;
+      handleStepIndexChange();
+    }
+  }, [modalText]);
+
+  useEffect(() => {
     if (levelTasks) {
-      taskIndexRef.current = taskParam ? parseInt(taskParam as string) : TASK0;
+      runnerRef.current.task = taskParam
+        ? parseInt(taskParam as string)
+        : TASK0;
       handleTaskIndexChange();
     }
   }, [levelTasks]);

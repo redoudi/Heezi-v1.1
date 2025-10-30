@@ -2,10 +2,19 @@ export const rangeToCells = (range: string) => {
   // range is like "A1:A3"
   // return an array of cells like ["A1", "A2", "A3"]
   const [start, end] = range.split(":");
-  const startColumn = start.charAt(0);
-  const startRow = parseInt(start.charAt(1));
-  const endColumn = end.charAt(0);
-  const endRow = parseInt(end.charAt(1));
+
+  // Extract column letters and row numbers from start cell
+  const startMatch = start.match(/^([A-Z]+)(\d+)$/);
+  if (!startMatch) throw new Error(`Invalid start cell: ${start}`);
+  const startColumn = startMatch[1];
+  const startRow = parseInt(startMatch[2]);
+
+  // Extract column letters and row numbers from end cell
+  const endMatch = end.match(/^([A-Z]+)(\d+)$/);
+  if (!endMatch) throw new Error(`Invalid end cell: ${end}`);
+  const endColumn = endMatch[1];
+  const endRow = parseInt(endMatch[2]);
+
   const cells: string[] = [];
   for (let row = startRow; row <= endRow; row++) {
     for (
@@ -46,6 +55,5 @@ export const parseCellsExpressions = (argCells: string[]): string[] => {
     finalCells.push(...parseCellExpression(cellExpression));
   });
 
-  console.log(finalCells);
   return finalCells;
 };
