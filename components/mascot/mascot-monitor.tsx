@@ -70,7 +70,7 @@ export default function MascotMonitor() {
       levelTasks.length > 0 &&
       runnerRef.current.task > levelTasks?.length - 1
     ) {
-      router.push(`/mission/${id}/export`);
+      router.push(`/mission/${id}/result`);
     } else {
       const introText = levelTasks?.at(runnerRef.current.task)?.intro;
       if (introText && introText.trim() !== "") setModalText(introText);
