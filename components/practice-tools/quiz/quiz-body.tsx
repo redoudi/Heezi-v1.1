@@ -65,12 +65,12 @@ const AnswerButton = ({ answer }: { answer: string }) => {
 
 export default function QuizBody({
   question,
-  modalText,
   answers,
+  modalText,
   closeModal,
 }: {
-  question: string;
   modalText: string;
+  question: string;
   answers: string[];
   closeModal: () => void;
 }) {

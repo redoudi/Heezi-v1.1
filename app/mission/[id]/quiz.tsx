@@ -5,21 +5,26 @@ import { useEffect, useRef, useState } from "react";
 
 export default function QuizScreen() {
   const [question, setQuestion] = useState("...?");
+  const [answers, setAnswers] = useState<string[]>([]);
   const [modalText, setModalText] = useState("");
   const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
 
   const { levelData } = useLevelData();
+  const tasks = levelData?.tasks || [];
 
   const runnerRef = useRef<{ step: number; task: number }>({
     step: -1,
     task: -1,
   });
 
+  const setStepIndex = (step: number) => {
+    runnerRef.current.step = step;
+    router.setParams({ step: runnerRef.current.step });
+    handleStepIndexChange();
+  };
+
   const setTaskIndex = (task: number) => {
-    if (
-      levelData?.tasks?.length &&
-      runnerRef.current.task > levelData.tasks.length - 1
-    ) {
+    if (tasks?.length && runnerRef.current.task > levelData.tasks.length - 1) {
       router.push(`/mission/${id}/result`);
     } else {
       runnerRef.current.task = task;
@@ -29,26 +34,45 @@ export default function QuizScreen() {
   };
 
   const handleTaskIndexChange = () => {
-    const currentTask = levelData?.tasks?.at(runnerRef.current.task);
-    console.log("currentTask", currentTask);
+    const currentTask = tasks?.at(runnerRef.current.task);
     const introText = currentTask?.intro;
-    console.log("introText", introText);
     if (introText && introText.trim() !== "") setModalText(introText);
   };
 
+  const handleStepIndexChange = () => {
+    if (
+      runnerRef.current.step >
+      tasks.at(runnerRef.current.task)?.steps?.length - 1
+    ) {
+      runnerRef.current.step = 0;
+      setTaskIndex(runnerRef.current.task + 1);
+    } else {
+      const currentStep = tasks
+        .at(runnerRef.current.task)
+        ?.steps?.at(runnerRef.current.step);
+      setQuestion(currentStep?.question || "");
+      setAnswers(currentStep?.answers || []);
+    }
+  };
+
   useEffect(() => {
-    console.log("levelData", levelData);
-    if (levelData?.tasks?.length) {
+    if (modalText === "") {
+      setStepIndex(stepParam ? parseInt(stepParam as string) : 0);
+    }
+  }, [modalText]);
+
+  useEffect(() => {
+    if (tasks?.length) {
       setTaskIndex(taskParam ? parseInt(taskParam as string) : 0);
     }
   }, [levelData]);
 
   return (
     <QuizBody
-      question={question}
       modalText={modalText}
-      answers={[]}
       closeModal={() => setModalText("")}
+      question={question}
+      answers={answers}
     />
   );
 }

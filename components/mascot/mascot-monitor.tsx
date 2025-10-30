@@ -34,6 +34,7 @@ export default function MascotMonitor() {
     router.setParams({ step: runnerRef.current.step });
     handleStepIndexChange();
   };
+
   const setTaskIndex = (task: number) => {
     runnerRef.current.task = task;
     router.setParams({ task: runnerRef.current.task });
