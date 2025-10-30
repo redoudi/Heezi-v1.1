@@ -1,3 +1,6 @@
+import MascotModal from "@/components/mascot/mascot-modal";
+import useLoadLevel from "@/hooks/useLoadLevel";
+import { useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -6,32 +9,40 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+
+const TopBar = () => {
+  return (
+    <View style={styles.row}>
+      <View style={styles.view}>
+        <Image
+          source={{
+            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/8jxkmv5m_expires_30_days.png",
+          }}
+          resizeMode={"stretch"}
+          style={styles.image}
+        />
+      </View>
+      <View style={styles.view2}>
+        <View style={styles.view3}>
+          <View style={styles.box}></View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
 export default function QuizScreen() {
+  useLoadLevel();
+  const [question, setQuestion] = useState("...?");
+  const [modalText, setModalText] = useState("");
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
-        <View style={styles.row}>
-          <View style={styles.view}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/8jxkmv5m_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.view2}>
-            <View style={styles.view3}>
-              <View style={styles.box}></View>
-            </View>
-          </View>
-        </View>
+        <TopBar />
         <View style={styles.view4}>
           <View style={styles.column2}>
             <View style={styles.view5}>
-              <Text style={styles.text}>
-                {"Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor ? "}
-              </Text>
+              <Text style={styles.text}>{question}</Text>
             </View>
             <Image
               source={{
@@ -83,6 +94,11 @@ export default function QuizScreen() {
             />
           </TouchableOpacity>
         </View>
+        <MascotModal
+          open={!!modalText?.trim()}
+          onClose={() => setModalText("")}
+          modalText={modalText}
+        />
       </View>
     </SafeAreaView>
   );
