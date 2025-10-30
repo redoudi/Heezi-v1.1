@@ -3,12 +3,22 @@ import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/Spreadshe
 import TextEditorScreen from "@/components/practice-tools/textEditor";
 import usePracticeTool from "@/context/usePracticeTool";
 import useLoadLevel from "@/hooks/useLoadLevel";
+import useLevelData from "@/hooks/use-level-data";
 import { View } from "react-native";
+import QuizScreen from "@/app/mission/[id]/quiz";
 
 export default function PracticeToolScreen() {
   const { practiceTool } = usePracticeTool();
   useLoadLevel();
+  const { levelData } = useLevelData();
+  if (!levelData) {
+    return null;
+  }
 
+  const { levelType } = levelData;
+  if (levelType === "quiz") {
+    return <QuizScreen />;
+  }
   const PracticeToolScreen = () => {
     switch (practiceTool) {
       case "spreadsheet":

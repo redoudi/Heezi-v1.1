@@ -3,7 +3,7 @@ import usePracticeTool from "@/context/usePracticeTool";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 
-export default function useLevelData(levelType: string) {
+export default function useLevelData() {
   const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
   const [levelData, setLevelData] = useState<any>(null);
@@ -13,5 +13,5 @@ export default function useLevelData(levelType: string) {
       setLevelData(levelData);
     }
   }, [id, practiceTool]);
-  return levelData;
+  return { levelData };
 }

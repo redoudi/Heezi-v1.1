@@ -17,15 +17,18 @@ export default function ScenarioScreen() {
   const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
   const [intro, setIntro] = useState("...");
+  const [levelType, setLevelType] = useState("");
 
   useEffect(() => {
     if (id && practiceTool) {
       const levelData = levelFiles[practiceTool]?.[id as string];
-      if (levelData?.intro) {
-        setIntro(levelData.intro);
-      }
+      const { levelType, intro } = levelData;
+      setLevelType(levelType);
+      setIntro(intro);
     }
   }, [practiceTool, id]);
+
+  const nextScreen = levelType === "quiz" ? "quiz" : "practice";
 
   return (
     <SafeAreaView style={styles.container}>
@@ -48,7 +51,7 @@ export default function ScenarioScreen() {
               </View>
               <TouchableOpacity
                 style={styles.buttonRow}
-                onPress={() => router.push(`/mission/${id}/practice`)}
+                onPress={() => router.push(`/mission/${id}/${nextScreen}`)}
               >
                 <Text style={styles.text2}>{"Commencer"}</Text>
                 <Image
