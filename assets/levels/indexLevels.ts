@@ -1,3 +1,7 @@
 export const levelFiles: Record<string, any> = {
-  spreadsheet: { 1: require("@/assets/levels/spreadsheet/lvl1.json") },
+  spreadsheet: {
+    1: require("@/assets/levels/spreadsheet/lvl1.json"),
+    2: require("@/assets/levels/spreadsheet/lvl2.json"),
+    3: require("@/assets/levels/spreadsheet/lvl3.json"),
+  },
 };
