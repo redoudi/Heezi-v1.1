@@ -13,7 +13,11 @@ const STEP0 = 0;
 export default function MascotMonitor() {
   const router = useRouter();
   const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
-  const { tasks: levelTasks, spreadsheetData } = useSpreadsheetStore();
+  const {
+    tasks: levelTasks,
+    spreadsheetData,
+    setCellsSelected,
+  } = useSpreadsheetStore();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
@@ -39,21 +43,13 @@ export default function MascotMonitor() {
     setStepIndex(runnerRef.current.step + 1);
   };
 
-  useEffect(() => {
-    if (spreadsheetData && stepExpectedRef.current) {
-      const isCorrect = checkCondition();
-      if (isCorrect) {
-        nextStep();
-      }
-    }
-  }, [spreadsheetData]);
-
   const handleStepIndexChange = () => {
     if (
       runnerRef.current.step >
       levelTasks?.at(runnerRef.current.task)?.steps?.length - 1
     ) {
-      runnerRef.current.step = -1;
+      runnerRef.current.step = 0;
+      router.setParams({ step: runnerRef.current.step });
       setTaskIndex(runnerRef.current.task + 1);
       handleTaskIndexChange();
     } else {
@@ -68,17 +64,27 @@ export default function MascotMonitor() {
   };
 
   const handleTaskIndexChange = () => {
+    setCellsSelected([]);
     setBubbleText(null);
     if (
       levelTasks.length > 0 &&
       runnerRef.current.task > levelTasks?.length - 1
     ) {
       router.push(`/mission/${id}/export`);
-      return;
+    } else {
+      const introText = levelTasks?.at(runnerRef.current.task)?.intro;
+      if (introText && introText.trim() !== "") setModalText(introText);
     }
-    const introText = levelTasks?.at(runnerRef.current.task)?.intro;
-    if (introText && introText.trim() !== "") setModalText(introText);
   };
+
+  useEffect(() => {
+    if (spreadsheetData && stepExpectedRef.current) {
+      const isCorrect = checkCondition();
+      if (isCorrect) {
+        nextStep();
+      }
+    }
+  }, [spreadsheetData]);
 
   useEffect(() => {
     if (modalText === "") {

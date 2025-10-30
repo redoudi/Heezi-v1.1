@@ -56,13 +56,7 @@
                     "tip": {
                         "text1": "Etape 2.a",
                         "text2": "Comme tu peux le voir, chaque colonne est désignée par une lettre"
-                    },
-                    "preActions": [
-                        {
-                            "type": "select",
-                            "cells": []
-                        }
-                    ]
+                    }
                 },
                 {
                     "tip": {
