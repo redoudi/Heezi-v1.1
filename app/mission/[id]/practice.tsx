@@ -3,11 +3,9 @@ import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/Spreadshe
 import TextEditorScreen from "@/components/practice-tools/textEditor";
 import usePracticeTool from "@/context/usePracticeTool";
 import useLoadLevel from "@/hooks/useLoadLevel";
-import { useLocalSearchParams } from "expo-router";
 import { View } from "react-native";
 
 export default function PracticeToolScreen() {
-  const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
   useLoadLevel();
 
