@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import BackButton from "../ui/back-button";
 
-function Header() {
+function TextEditorHeader() {
   return (
     <View style={styles.column2}>
       <View style={styles.row}>
@@ -515,7 +515,7 @@ export default function TextEditorScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
-        <Header />
+        <TextEditorHeader />
         <View style={styles.column10}>
           <View style={styles.view2}>
             <Text style={styles.text11}>{"Entrez le texte"}</Text>
