@@ -19,7 +19,7 @@ function TextBlock({ text = "..." }) {
   );
 }
 
-function TextInputBlock({ text = "...", setText }) {
+function TextInputBlock({ text = "", setText }) {
   return (
     <View style={styles.view2}>
       <TextInput
