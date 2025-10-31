@@ -62,9 +62,10 @@ const AnswerButton = ({
   index,
   selectedAnswerIndex,
 }: {
-  answer: { text: string; isCorrect: boolean };
+  answer: { text: string; isCorrect?: boolean };
   selectAnswer: (index: number) => void;
   index: number;
+  selectedAnswerIndex: number | null;
 }) => {
   return (
     <TouchableOpacity
@@ -98,7 +99,7 @@ const AnswersBox = ({
   selectAnswer,
   selectedAnswerIndex,
 }: {
-  answers: { text: string; isCorrect: boolean }[];
+  answers: { text: string; isCorrect?: boolean }[];
   selectAnswer: (index: number) => void;
   selectedAnswerIndex: number | null;
 }) => {
@@ -131,7 +132,7 @@ export default function QuizBody({
   selectAnswer: (index: number) => void;
   modalText: string;
   question: string;
-  answers: string[];
+  answers: { text: string; isCorrect?: boolean }[];
   closeModal: () => void;
   selectedAnswerIndex: number | null;
   verifyAnswer: () => void;

@@ -5,7 +5,9 @@ import { useEffect, useRef, useState } from "react";
 
 export default function QuizScreen() {
   const [question, setQuestion] = useState("...?");
-  const [answers, setAnswers] = useState<string[]>([]);
+  const [answers, setAnswers] = useState<
+    { text: string; isCorrect?: boolean }[]
+  >([]);
   const [modalText, setModalText] = useState("");
   const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
@@ -61,6 +63,7 @@ export default function QuizScreen() {
   };
 
   const verifyAnswer = () => {
+    if (selectedAnswerIndex === null) return;
     const isCorrect = answers.at(selectedAnswerIndex)?.isCorrect;
     if (isCorrect) setStepIndex(runnerRef.current.step + 1);
   };
