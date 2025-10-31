@@ -10,9 +10,9 @@ const useTextEditorStore = create((set, get) => ({
   },
   setBlockText: (index: number, newValue: any) => {
     set((state) => ({
-      contentBlocks: [
-        ...state.contentBlocks,[index]: { ...state.contentBlocks[index], text: newValue },
-      ],
+      contentBlocks: state.contentBlocks.map((block, i) =>
+        i === index ? { ...block, text: newValue } : block
+      ),
     }));
   },
 }));
