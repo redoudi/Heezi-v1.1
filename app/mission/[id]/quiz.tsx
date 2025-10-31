@@ -27,31 +27,11 @@ export default function QuizScreen() {
   const setStepIndex = (step: number) => {
     runnerRef.current.step = step;
     router.setParams({ step: runnerRef.current.step });
-    handleStepIndexChange();
-  };
-
-  const setTaskIndex = (task: number) => {
-    if (tasks?.length && runnerRef.current.task > levelData.tasks.length - 1) {
-      router.push(`/mission/${id}/result`);
-    } else {
-      runnerRef.current.task = task;
-      router.setParams({ task: runnerRef.current.task });
-      handleTaskIndexChange();
-    }
-  };
-
-  const handleTaskIndexChange = () => {
-    const currentTask = tasks?.at(runnerRef.current.task);
-    const introText = currentTask?.intro;
-    if (introText && introText.trim() !== "") setModalText(introText);
-  };
-
-  const handleStepIndexChange = () => {
     if (
       runnerRef.current.step >
       tasks.at(runnerRef.current.task)?.steps?.length - 1
     ) {
-      runnerRef.current.step = 0;
+      runnerRef.current.step = -1;
       setTaskIndex(runnerRef.current.task + 1);
     } else {
       const currentStep = tasks
@@ -59,6 +39,18 @@ export default function QuizScreen() {
         ?.steps?.at(runnerRef.current.step);
       setQuestion(currentStep?.question || "");
       setAnswers(currentStep?.answers || []);
+    }
+  };
+
+  const setTaskIndex = (task: number) => {
+    if (tasks?.length && runnerRef.current.task > tasks.length - 1) {
+      router.push(`/mission/${id}/result`);
+    } else {
+      runnerRef.current.task = task;
+      router.setParams({ task: runnerRef.current.task });
+      const currentTask = tasks?.at(runnerRef.current.task);
+      const introText = currentTask?.intro;
+      if (introText && introText.trim() !== "") setModalText(introText);
     }
   };
 
