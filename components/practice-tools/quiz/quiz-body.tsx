@@ -1,5 +1,6 @@
 import MascotModal from "@/components/mascot/mascot-modal";
 import {
+  FlatList,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -58,8 +59,23 @@ const MascotInquisitive = () => {
 const AnswerButton = ({ answer }: { answer: string }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={() => alert("Pressed!")}>
-      <Text style={styles.text2}>{"Btn"}</Text>
+      <Text style={styles.text2}>{answer.text || "..."}</Text>
     </TouchableOpacity>
+  );
+};
+
+const AnswersBox = ({
+  answers,
+}: {
+  answers: { text: string; isCorrect: boolean }[];
+}) => {
+  return (
+    <FlatList
+      data={answers}
+      renderItem={({ item }) => <AnswerButton answer={item.text} />}
+      keyExtractor={(item) => item.text}
+      contentContainerStyle={styles.column3}
+    />
   );
 };
 
@@ -82,11 +98,8 @@ export default function QuizBody({
           <View style={styles.column2}>
             <QuestionBox question={question} />
             <MascotInquisitive />
-            <View style={styles.column3}>
-              <AnswerButton answer="Btn" />
-              <AnswerButton answer="Btn" />
-              <AnswerButton answer="Btn" />
-            </View>
+
+            <AnswersBox answers={answers} />
           </View>
         </View>
         <View style={styles.view6}>
