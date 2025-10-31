@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import BackButton from "../ui/back-button";
+import BackButton from "../../ui/back-button";
 
 function TextEditorHeader() {
   return (
