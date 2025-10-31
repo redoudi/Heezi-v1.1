@@ -16,8 +16,7 @@ export default function QuizScreen() {
 
   const selectAnswer = (index: number) => setSelectedAnswerIndex(index);
 
-  const levelData = useLevelData();
-  const tasks = levelData?.tasks || [];
+  const { tasks } = useLevelData();
 
   const runnerRef = useRef<{ step: number; task: number }>({
     step: -1,
@@ -70,7 +69,7 @@ export default function QuizScreen() {
     if (tasks?.length) {
       setTaskIndex(taskParam ? parseInt(taskParam as string) : 0);
     }
-  }, [levelData]);
+  }, [tasks]);
 
   return (
     <QuizBody

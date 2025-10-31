@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function useLevelData() {
   const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
-  const [levelData, setLevelData] = useState<any>(null);
+  const [levelData, setLevelData] = useState<any>({ tasks: [] });
   useEffect(() => {
     if (id && practiceTool) {
       const levelData = levelFiles[practiceTool][id as string];
