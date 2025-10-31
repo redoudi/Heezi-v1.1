@@ -1,8 +1,7 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 
-export default function useRunPreActions() {
-  const { setCellValue, setCellsSelected, spreadsheetData } =
-    useSpreadsheetStore();
+export default function useRunSpreadsheetPreActions() {
+  const { setCellValue, setCellsSelected } = useSpreadsheetStore();
 
   const runPreAction = (preAction: any) => {
     switch (preAction.type) {
