@@ -1,124 +1,57 @@
 {
-    "intro": "Bonjour ! Je dois organiser un évènement et j'ai besoin de compter les dépenses. Tu peux m'aider ?",
-    "spreadsheetData": {
-        "cellsValues": {
-            "A1": "Intitulé",
-            "B1": "Montant",
-            "A2": "Salle",
-            "A3": "Décoration",
-            "A4": "Promotion",
-            "A5": "Echantillons",
-            "A6": "Traiteur",
-            "A7": "Total",
-            "B2": "",
-            "B3": "",
-            "B4": "",
-            "B5": "",
-            "B6": "",
-            "B7": ""
-        },
-        "cellsStyles": {
-            "B1": {
-                "fontWeight": "bold"
-            }
-        },
-        "cellsSelected": []
-    },
+    "levelType": "quiz",
+    "intro": "Et maintenant, rien de mieux qu'un petit quiz pour se rafraichir la mémoire.",
     "tasks": [
         {
-            "intro": "Pour cette mission, on va saisir les montants des dépenses puis calculer leur somme automatiquement.",
+            "intro": "On commence par le vocabulaire.",
             "steps": [
                 {
-                    "tip": {
-                        "text1": "Etape 1.a",
-                        "text2": "En premier, on va saisir le montant de la salle (500€). Clique sur la case B2 et entre le nombre 500"
-                    },
-                    "expected": {
-                        "type": "cellValue",
-                        "cell": "B2",
-                        "value": 500
-                    }
-                },
-                {
-                    "tip": {
-                        "text1": "Etape 1.b",
-                        "text2": "Super ! Il faut aussi 250€ pour la décoration"
-                    },
-                    "expected": {
-                        "type": "cellValue",
-                        "cell": "B3",
-                        "value": 250
-                    }
-                },
-                {
-                    "tip": {
-                        "text1": "Etape 1.c",
-                        "text2": "Génial. On ajoute encore 200€ pour la promotion"
-                    },
-                    "expected": {
-                        "type": "cellValue",
-                        "cell": "B4",
-                        "value": 200
-                    }
-                },
-                {
-                    "tip": {
-                        "text1": "Etape 1.d",
-                        "text2": "Parfait ! Et aussi 380€ pour les échantillons"
-                    },
-                    "expected": {
-                        "type": "cellValue",
-                        "cell": "B5",
-                        "value": 380
-                    }
-                },
-                {
-                    "tip": {
-                        "text1": "Etape 1.e",
-                        "text2": "Et pour finir, 320€ pour le traiteur"
-                    },
-                    "expected": {
-                        "type": "cellValue",
-                        "cell": "B6",
-                        "value": 320
-                    }
-                }
-            ]
-        },
-        {
-            "intro": "Bravo ! Maintenant qu'on a les dépenses, nous allons montrer leur somme.",
-            "steps": [
-                {
-                    "tip": {
-                        "text1": "Etape 2.a",
-                        "text2": "Pour te faciliter la tâche, j'ai déjà saisi le total des dépenses pour toi dans la case B7. Il faudrait juste que tu la sélectionnes"
-                    },
-                    "preActions": [
+                    "question": "Comment s'appellent les cases dans un tableur ?",
+                    "answers": [
                         {
-                            "type": "cellValue",
-                            "cell": "B7",
-                            "value": "1650"
+                            "text": "Les cellules",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Les losanges"
+                        },
+                        {
+                            "text": "Les cubes"
                         }
-                    ],
-                    "expected": {
-                        "type": "cellSelected",
-                        "cell": "B7"
-                    }
+                    ]
                 },
                 {
-                    "tip": {
-                        "text1": "Etape 2.b",
-                        "text2": "Maintenant, on met la valeur en gras pour qu'elle soit plus visible"
-                    },
-                    "expected": {
-                        "type": "cellStyle",
-                        "cell": "B7",
-                        "style": {
-                            "fontWeight": "bold"
+                    "question": "Chaque colonne est identifiée par...",
+                    "answers": [
+                        {
+                            "text": "Une lettre",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Un numéro"
+                        },
+                        {
+                            "text": "Un symbole"
                         }
-                    }
+                    ]
+                },
+                {
+                    "question": "Chaque rangée est identifiée par...",
+                    "answers": [
+                        {
+                            "text": "Une lettre"
+                        },
+                        {
+                            "text": "Un numéro",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Un symbole"
+                        }
+                    ]
                 }
             ]
         }
-    ]
+    ],
+    "outro": "Merci pour ton attention. J'espère que ça a été facile. N'hésite pas à revenir si besoin."
 }

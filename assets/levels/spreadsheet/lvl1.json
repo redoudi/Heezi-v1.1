@@ -1,57 +1,135 @@
 {
-    "levelType": "quiz",
-    "intro": "Et maintenant, rien de mieux qu'un petit quiz pour se rafraichir la mémoire.",
+    "levelType": "lesson",
+    "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
     "tasks": [
         {
-            "intro": "On commence par le vocabulaire.",
+            "intro": "On commence par de petits mot-clés pour se repérer",
             "steps": [
                 {
-                    "question": "Comment s'appellent les cases dans un tableur ?",
-                    "answers": [
+                    "tip": {
+                        "text1": "1.a Les cellules",
+                        "text2": "On appelle ces petites cases des 'cellules'"
+                    },
+                    "preActions": [
                         {
-                            "text": "Les cellules",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Les losanges"
-                        },
-                        {
-                            "text": "Les cubes"
+                            "type": "select",
+                            "cells": [
+                                "A1:B3"
+                            ]
                         }
                     ]
                 },
                 {
-                    "question": "Chaque colonne est identifiée par...",
-                    "answers": [
+                    "tip": {
+                        "text1": "1.b Les colonnes",
+                        "text2": "Ici, on a une colonne"
+                    },
+                    "preActions": [
                         {
-                            "text": "Une lettre",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Un numéro"
-                        },
-                        {
-                            "text": "Un symbole"
+                            "type": "select",
+                            "cells": [
+                                "A1:A15"
+                            ]
                         }
                     ]
                 },
                 {
-                    "question": "Chaque rangée est identifiée par...",
-                    "answers": [
+                    "tip": {
+                        "text1": "1.c Les rangées",
+                        "text2": "Et ici, on a une rangée"
+                    },
+                    "preActions": [
                         {
-                            "text": "Une lettre"
+                            "type": "select",
+                            "cells": [
+                                "A1:J1"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "intro": "Bien ! Maintenant, on va apprendre à repérer les cellules",
+            "steps": [
+                {
+                    "tip": {
+                        "text1": "Etape 2.a",
+                        "text2": "Comme tu peux le voir, chaque colonne est désignée par une lettre"
+                    }
+                },
+                {
+                    "tip": {
+                        "text1": "Etape 2.b",
+                        "text2": "et chaque rangée par un numéro"
+                    }
+                },
+                {
+                    "tip": {
+                        "text1": "Etape 2.c",
+                        "text2": "Une cellule peut donc être identifiée par la colonne et la rangée où elle se trouve"
+                    }
+                },
+                {
+                    "tip": {
+                        "text1": "Etape 2.d",
+                        "text2": "Par exemple, la cellule A1 est la première cellule de la première colonne et de la première rangée"
+                    },
+                    "preActions": [
+                        {
+                            "type": "select",
+                            "cells": [
+                                "A1"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "intro": "Maintenant, on va apprendre à modifier le texte des cellules",
+            "steps": [
+                {
+                    "tip": {
+                        "text1": "Etape 3.a",
+                        "text2": "Pour modifier la valeur d'une cellule, il faut d'abord la sélectionner. Par exemple, on sélectionne la cellule B2 en cliquant dessus"
+                    },
+                    "preActions": [
+                        {
+                            "type": "select",
+                            "cells": [
+                                "B2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tip": {
+                        "text1": "Etape 3.b",
+                        "text2": "Maintenant, grâce à mon clavier, je peux entrer une valeur, comme par exemple : '123'"
+                    },
+                    "preActions": [
+                        {
+                            "type": "select",
+                            "cells": [
+                                "B2"
+                            ]
                         },
                         {
-                            "text": "Un numéro",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Un symbole"
+                            "type": "cellValue",
+                            "cell": "B2",
+                            "value": "123"
                         }
                     ]
                 }
             ]
         }
     ],
-    "outro": "Merci pour ton attention. J'espère que ça a été facile. N'hésite pas à revenir si besoin."
+    "scenarioDialogEnd": [
+        {
+            "text": "Merci pour ton attention. J'espère que ça a été facile. N'hésite pas à revenir si besoin.",
+            "iconName": "heeziProud",
+            "position": "center"
+        }
+    ]
 }

@@ -1,8 +1,6 @@
-import { levelFiles } from "@/assets/levels/indexLevels";
 import BackButton from "@/components/ui/back-button";
-import usePracticeTool from "@/context/usePracticeTool";
+import useLevelData from "@/hooks/use-level-data";
 import { router, useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -15,20 +13,7 @@ import {
 export default function ScenarioScreen() {
   // useLoadLevel();
   const { id } = useLocalSearchParams();
-  const { practiceTool } = usePracticeTool();
-  const [intro, setIntro] = useState("...");
-  const [levelType, setLevelType] = useState("");
-
-  useEffect(() => {
-    if (id && practiceTool) {
-      const levelData = levelFiles[practiceTool]?.[id as string];
-      const { levelType, intro } = levelData;
-      setLevelType(levelType);
-      setIntro(intro);
-    }
-  }, [practiceTool, id]);
-
-  const nextScreen = levelType === "quiz" ? "quiz" : "practice";
+  const { intro } = useLevelData();
 
   return (
     <SafeAreaView style={styles.container}>

@@ -1,4 +1,3 @@
-import BackButton from "@/components/ui/back-button";
 import {
   Image,
   SafeAreaView,
@@ -7,508 +6,516 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-export default function TextEditorScreen() {
+import BackButton from "../ui/back-button";
+
+function Header() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.column}>
-        <View style={styles.column2}>
-          <View style={styles.row}>
+    <View style={styles.column2}>
+      <View style={styles.row}>
+        <Image
+          source={{
+            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/f36dtxie_expires_30_days.png",
+          }}
+          resizeMode={"stretch"}
+          style={styles.image}
+        />
+        <Image
+          source={{
+            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x1cberci_expires_30_days.png",
+          }}
+          resizeMode={"stretch"}
+          style={styles.image2}
+        />
+        <Image
+          source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+          resizeMode={"stretch"}
+          style={styles.image3}
+        />
+        <Image
+          source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+          resizeMode={"stretch"}
+          style={styles.image4}
+        />
+        <BackButton />
+      </View>
+      <View style={styles.row2}>
+        <TouchableOpacity
+          style={styles.button2}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Accueil"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button3}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Insertion"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button4}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Dessin"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button5}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Conception"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button6}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Mise en page"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button7}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Références"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button5}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Publipostage"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button4}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Révision"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button8}
+          onPress={() => alert("Pressed!")}
+        >
+          <Text style={styles.text}>{"Affichage"}</Text>
+        </TouchableOpacity>
+        <View style={styles.row3}>
+          <TouchableOpacity
+            style={styles.button9}
+            onPress={() => alert("Pressed!")}
+          >
             <Image
               source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/f36dtxie_expires_30_days.png",
+                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ufeyprsl_expires_30_days.png",
               }}
               resizeMode={"stretch"}
-              style={styles.image}
+              style={styles.image6}
             />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button10}
+            onPress={() => alert("Pressed!")}
+          >
             <Image
               source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x1cberci_expires_30_days.png",
+                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/v82hp4b9_expires_30_days.png",
               }}
               resizeMode={"stretch"}
-              style={styles.image2}
+              style={styles.image7}
             />
-            <Image
-              source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
-              resizeMode={"stretch"}
-              style={styles.image3}
-            />
-            <Image
-              source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
-              resizeMode={"stretch"}
-              style={styles.image4}
-            />
-            <BackButton />
-          </View>
-          <View style={styles.row2}>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={styles.row4}>
+        <View style={styles.column3}>
+          <View style={styles.row5}>
             <TouchableOpacity
-              style={styles.button2}
+              style={styles.buttonColumn}
               onPress={() => alert("Pressed!")}
             >
-              <Text style={styles.text}>{"Accueil"}</Text>
+              <Image
+                source={{
+                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/brtm7hpr_expires_30_days.png",
+                }}
+                resizeMode={"stretch"}
+                style={styles.image8}
+              />
+              <Text style={styles.text2}>{"Coller"}</Text>
+              <Image
+                source={{
+                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/oluhu4b3_expires_30_days.png",
+                }}
+                resizeMode={"stretch"}
+                style={styles.image9}
+              />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button3}
-              onPress={() => alert("Pressed!")}
-            >
-              <Text style={styles.text}>{"Insertion"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button4}
-              onPress={() => alert("Pressed!")}
-            >
-              <Text style={styles.text}>{"Dessin"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button5}
-              onPress={() => alert("Pressed!")}
-            >
-              <Text style={styles.text}>{"Conception"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button6}
-              onPress={() => alert("Pressed!")}
-            >
-              <Text style={styles.text}>{"Mise en page"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button7}
-              onPress={() => alert("Pressed!")}
-            >
-              <Text style={styles.text}>{"Références"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button5}
-              onPress={() => alert("Pressed!")}
-            >
-              <Text style={styles.text}>{"Publipostage"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button4}
-              onPress={() => alert("Pressed!")}
-            >
-              <Text style={styles.text}>{"Révision"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button8}
-              onPress={() => alert("Pressed!")}
-            >
-              <Text style={styles.text}>{"Affichage"}</Text>
-            </TouchableOpacity>
-            <View style={styles.row3}>
+            <View style={styles.column4}>
               <TouchableOpacity
-                style={styles.button9}
+                style={styles.button11}
                 onPress={() => alert("Pressed!")}
               >
                 <Image
                   source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ufeyprsl_expires_30_days.png",
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/r2e2a79p_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image10}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button12}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/183ucgvf_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image11}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+          <Text style={styles.text3}>{"Presse-papiers"}</Text>
+        </View>
+        <View style={styles.column5}>
+          <View style={styles.column6}>
+            <View style={styles.row6}>
+              <TouchableOpacity
+                style={styles.buttonRow}
+                onPress={() => alert("Pressed!")}
+              >
+                <Text style={styles.text4}>{"Police"}</Text>
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/uig4w09q_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image12}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.buttonRow2}
+                onPress={() => alert("Pressed!")}
+              >
+                <Text style={styles.text5}>{"12"}</Text>
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/7bw6obmu_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image12}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.buttonRow3}
+                onPress={() => alert("Pressed!")}
+              >
+                <Text style={styles.text6}>{"A a"}</Text>
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/rjnwoeo6_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image12}
+                />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.row7}>
+              <TouchableOpacity
+                style={styles.button13}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2ib5w9m2_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image13}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button14}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/djgcsw86_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image14}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button15}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/yn5b2k86_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image15}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button16}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/k9vx5ycz_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image16}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button17}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/n12ta229_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image17}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button18}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1awwjlw7_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image17}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button19}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lrwrll0x_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image18}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button20}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zvx6kr6l_expires_30_days.png",
                   }}
                   resizeMode={"stretch"}
                   style={styles.image6}
                 />
               </TouchableOpacity>
               <TouchableOpacity
-                style={styles.button10}
+                style={styles.button21}
                 onPress={() => alert("Pressed!")}
               >
                 <Image
                   source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/v82hp4b9_expires_30_days.png",
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zcd58amp_expires_30_days.png",
                   }}
                   resizeMode={"stretch"}
-                  style={styles.image7}
+                  style={styles.image19}
                 />
               </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.row4}>
-            <View style={styles.column3}>
-              <View style={styles.row5}>
-                <TouchableOpacity
-                  style={styles.buttonColumn}
-                  onPress={() => alert("Pressed!")}
-                >
-                  <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/brtm7hpr_expires_30_days.png",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image8}
-                  />
-                  <Text style={styles.text2}>{"Coller"}</Text>
-                  <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/oluhu4b3_expires_30_days.png",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image9}
-                  />
-                </TouchableOpacity>
-                <View style={styles.column4}>
-                  <TouchableOpacity
-                    style={styles.button11}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/r2e2a79p_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image10}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button12}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/183ucgvf_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image11}
-                    />
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <Text style={styles.text3}>{"Presse-papiers"}</Text>
-            </View>
-            <View style={styles.column5}>
-              <View style={styles.column6}>
-                <View style={styles.row6}>
-                  <TouchableOpacity
-                    style={styles.buttonRow}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Text style={styles.text4}>{"Police"}</Text>
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/uig4w09q_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image12}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.buttonRow2}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Text style={styles.text5}>{"12"}</Text>
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/7bw6obmu_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image12}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.buttonRow3}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Text style={styles.text6}>{"A a"}</Text>
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/rjnwoeo6_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image12}
-                    />
-                  </TouchableOpacity>
-                </View>
-                <View style={styles.row7}>
-                  <TouchableOpacity
-                    style={styles.button13}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2ib5w9m2_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image13}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button14}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/djgcsw86_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image14}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button15}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/yn5b2k86_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image15}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button16}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/k9vx5ycz_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image16}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button17}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/n12ta229_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image17}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button18}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1awwjlw7_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image17}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button19}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lrwrll0x_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image18}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button20}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zvx6kr6l_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image6}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button21}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zcd58amp_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image19}
-                    />
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <Text style={styles.text7}>{"Police"}</Text>
-            </View>
-            <View style={styles.column7}>
-              <View style={styles.column8}>
-                <View style={styles.row8}>
-                  <Image
-                    source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
-                    resizeMode={"stretch"}
-                    style={styles.image20}
-                  />
-                  <Image
-                    source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
-                    resizeMode={"stretch"}
-                    style={styles.image20}
-                  />
-                  <Image
-                    source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
-                    resizeMode={"stretch"}
-                    style={styles.image21}
-                  />
-                  <TouchableOpacity
-                    style={styles.button22}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xhij6qe3_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image22}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button23}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/m8i25506_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image22}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button23}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qsucqhf4_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image23}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button24}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/f5tsg9ts_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image24}
-                    />
-                  </TouchableOpacity>
-                </View>
-                <View style={styles.row9}>
-                  <TouchableOpacity
-                    style={styles.button25}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ce74949l_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image25}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button26}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/mk84bjzk_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image26}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button25}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wnui27r7_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image25}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button27}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x1fh47wq_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
-                      style={styles.image22}
-                    />
-                  </TouchableOpacity>
-                  <Image
-                    source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
-                    resizeMode={"stretch"}
-                    style={styles.image27}
-                  />
-                </View>
-              </View>
-              <Text style={styles.text7}>{"Paragraphe"}</Text>
-            </View>
-            <View style={styles.column9}>
-              <View style={styles.row10}>
-                <View style={styles.row11}>
-                  <TouchableOpacity
-                    style={styles.button28}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Text style={styles.text8}>{"Normal"}</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button29}
-                    onPress={() => alert("Pressed!")}
-                  >
-                    <Text style={styles.text9}>{"Titre 1"}</Text>
-                  </TouchableOpacity>
-                </View>
-                <TouchableOpacity
-                  style={styles.button30}
-                  onPress={() => alert("Pressed!")}
-                >
-                  <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/n981r9bx_expires_30_days.png",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image28}
-                  />
-                </TouchableOpacity>
-              </View>
-              <Text style={styles.text7}>{"Styles"}</Text>
-            </View>
-            <View style={styles.view}>
-              <TouchableOpacity
-                style={styles.buttonColumn2}
-                onPress={() => alert("Pressed!")}
-              >
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/dpfumd98_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image29}
-                />
-                <Text style={styles.text10}>{"édition"}</Text>
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/8h776a6o_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image9}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
+          <Text style={styles.text7}>{"Police"}</Text>
         </View>
+        <View style={styles.column7}>
+          <View style={styles.column8}>
+            <View style={styles.row8}>
+              <Image
+                source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                resizeMode={"stretch"}
+                style={styles.image20}
+              />
+              <Image
+                source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                resizeMode={"stretch"}
+                style={styles.image20}
+              />
+              <Image
+                source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                resizeMode={"stretch"}
+                style={styles.image21}
+              />
+              <TouchableOpacity
+                style={styles.button22}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xhij6qe3_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image22}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button23}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/m8i25506_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image22}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button23}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qsucqhf4_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image23}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button24}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/f5tsg9ts_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image24}
+                />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.row9}>
+              <TouchableOpacity
+                style={styles.button25}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ce74949l_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image25}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button26}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/mk84bjzk_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image26}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button25}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wnui27r7_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image25}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button27}
+                onPress={() => alert("Pressed!")}
+              >
+                <Image
+                  source={{
+                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x1fh47wq_expires_30_days.png",
+                  }}
+                  resizeMode={"stretch"}
+                  style={styles.image22}
+                />
+              </TouchableOpacity>
+              <Image
+                source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                resizeMode={"stretch"}
+                style={styles.image27}
+              />
+            </View>
+          </View>
+          <Text style={styles.text7}>{"Paragraphe"}</Text>
+        </View>
+        <View style={styles.column9}>
+          <View style={styles.row10}>
+            <View style={styles.row11}>
+              <TouchableOpacity
+                style={styles.button28}
+                onPress={() => alert("Pressed!")}
+              >
+                <Text style={styles.text8}>{"Normal"}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button29}
+                onPress={() => alert("Pressed!")}
+              >
+                <Text style={styles.text9}>{"Titre 1"}</Text>
+              </TouchableOpacity>
+            </View>
+            <TouchableOpacity
+              style={styles.button30}
+              onPress={() => alert("Pressed!")}
+            >
+              <Image
+                source={{
+                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/n981r9bx_expires_30_days.png",
+                }}
+                resizeMode={"stretch"}
+                style={styles.image28}
+              />
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.text7}>{"Styles"}</Text>
+        </View>
+        <View style={styles.view}>
+          <TouchableOpacity
+            style={styles.buttonColumn2}
+            onPress={() => alert("Pressed!")}
+          >
+            <Image
+              source={{
+                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/dpfumd98_expires_30_days.png",
+              }}
+              resizeMode={"stretch"}
+              style={styles.image29}
+            />
+            <Text style={styles.text10}>{"édition"}</Text>
+            <Image
+              source={{
+                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/8h776a6o_expires_30_days.png",
+              }}
+              resizeMode={"stretch"}
+              style={styles.image9}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+export default function TextEditorScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.column}>
+        <Header />
         <View style={styles.column10}>
           <View style={styles.view2}>
             <Text style={styles.text11}>{"Entrez le texte"}</Text>
