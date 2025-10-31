@@ -1,4 +1,4 @@
-import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import useLevelData from "@/hooks/use-level-data";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
@@ -10,9 +10,15 @@ import {
 } from "react-native";
 export default function ResultScreen() {
   const { id } = useLocalSearchParams();
-  const { levelType } = useSpreadsheetStore();
+  const { levelType } = useLevelData();
 
-  const nextPage = levelType === "lesson" ? "/" : "export";
+  const goToNextPage = () => {
+    if (levelType === "practice") {
+      router.push(`/mission/${id}/export`);
+    } else {
+      router.replace("/(tabs)");
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -70,10 +76,7 @@ export default function ResultScreen() {
                 </View>
               </View>
             </View>
-            <TouchableOpacity
-              style={styles.buttonRow}
-              onPress={() => router.push(`/mission/${id}/${nextPage}`)}
-            >
+            <TouchableOpacity style={styles.buttonRow} onPress={goToNextPage}>
               <Text style={styles.text7}>{"Continuer"}</Text>
               <Image
                 source={{
