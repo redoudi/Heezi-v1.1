@@ -1,4 +1,4 @@
-import useLevelData from "@/hooks/use-level-data";
+import useTextEditorStore from "@/store/useTextEditorStore";
 import {
   FlatList,
   Image,
@@ -19,7 +19,7 @@ function TextBlock({ text = "..." }) {
   );
 }
 
-function TextInputBlock({ text = "..." }) {
+function TextInputBlock({ text = "...", setText }) {
   return (
     <View style={styles.view2}>
       <TextInput
@@ -27,7 +27,6 @@ function TextInputBlock({ text = "..." }) {
         value={text}
         onChangeText={(text) => setText(text)}
       />
-      <Text style={styles.text11}>{text}</Text>
     </View>
   );
 }
@@ -40,25 +39,35 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
   );
 }
 
-const ContentBlock = ({ type = "text", text = "..." }) => {
-  if (type === "text") {
-    return <TextBlock text={text} />;
-  } else if (type === "textInput") {
-    return <TextInputBlock text={text} />;
-  }
+const ContentBlockList = () => {
+  const { contentBlocks, setBlockText } = useTextEditorStore();
+  return (
+    <FlatList
+      data={contentBlocks}
+      renderItem={({ item, index }) => {
+        switch (item.type) {
+          case "text":
+            return <TextBlock text={item.text} />;
+          case "textInput":
+            return (
+              <TextInputBlock
+                text={item.text}
+                setText={(text) => setBlockText(index, text)}
+              />
+            );
+        }
+      }}
+    />
+  );
 };
 
 export default function TextEditorScreen() {
-  const { contentBlocks } = useLevelData();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
         <TextEditorHeader />
         <View style={styles.column10}>
-          <FlatList
-            data={contentBlocks}
-            renderItem={({ item }) => <ContentBlock {...item} />}
-          />
+          <ContentBlockList />
         </View>
         <PageNumber currentPage={1} totalPages={1} />
         <View style={styles.column11}>

@@ -8,5 +8,12 @@ const useTextEditorStore = create((set, get) => ({
       contentBlocks,
     }));
   },
+  setBlockText: (index: number, newValue: any) => {
+    set((state) => ({
+      contentBlocks: [
+        ...state.contentBlocks,[index]: { ...state.contentBlocks[index], text: newValue },
+      ],
+    }));
+  },
 }));
 export default useTextEditorStore;
