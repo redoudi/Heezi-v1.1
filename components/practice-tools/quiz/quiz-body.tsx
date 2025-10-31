@@ -72,7 +72,7 @@ const AnswersBox = ({
   return (
     <FlatList
       data={answers}
-      renderItem={({ item }) => <AnswerButton answer={item.text} />}
+      renderItem={({ item }) => <AnswerButton answer={item} />}
       keyExtractor={(item) => item.text}
       contentContainerStyle={styles.column3}
     />
@@ -98,7 +98,6 @@ export default function QuizBody({
           <View style={styles.column2}>
             <QuestionBox question={question} />
             <MascotInquisitive />
-
             <AnswersBox answers={answers} />
           </View>
         </View>
