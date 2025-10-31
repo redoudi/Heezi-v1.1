@@ -60,6 +60,11 @@ export default function QuizScreen() {
     }
   };
 
+  const verifyAnswer = () => {
+    const isCorrect = answers.at(selectedAnswerIndex)?.isCorrect;
+    if (isCorrect) setStepIndex(runnerRef.current.step + 1);
+  };
+
   useEffect(() => {
     if (modalText === "") {
       setStepIndex(stepParam ? parseInt(stepParam as string) : 0);
@@ -80,6 +85,7 @@ export default function QuizScreen() {
       answers={answers}
       selectAnswer={selectAnswer}
       selectedAnswerIndex={selectedAnswerIndex}
+      verifyAnswer={verifyAnswer}
     />
   );
 }

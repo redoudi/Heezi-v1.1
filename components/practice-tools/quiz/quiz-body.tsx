@@ -78,12 +78,9 @@ const AnswerButton = ({
   );
 };
 
-const VerifyButton = () => {
+const VerifyButton = ({ verifyAnswer }: { verifyAnswer: () => void }) => {
   return (
-    <TouchableOpacity
-      style={styles.buttonRow}
-      onPress={() => alert("Pressed!")}
-    >
+    <TouchableOpacity style={styles.buttonRow} onPress={verifyAnswer}>
       <Text style={styles.text3}>{"Vérifier"}</Text>
       <Image
         source={{
@@ -103,6 +100,7 @@ const AnswersBox = ({
 }: {
   answers: { text: string; isCorrect: boolean }[];
   selectAnswer: (index: number) => void;
+  selectedAnswerIndex: number | null;
 }) => {
   return (
     <FlatList
@@ -128,6 +126,7 @@ export default function QuizBody({
   modalText,
   closeModal,
   selectedAnswerIndex,
+  verifyAnswer,
 }: {
   selectAnswer: (index: number) => void;
   modalText: string;
@@ -135,6 +134,7 @@ export default function QuizBody({
   answers: string[];
   closeModal: () => void;
   selectedAnswerIndex: number | null;
+  verifyAnswer: () => void;
 }) {
   return (
     <SafeAreaView style={styles.container}>
@@ -152,7 +152,7 @@ export default function QuizBody({
           </View>
         </View>
         <View style={styles.view6}>
-          <VerifyButton />
+          <VerifyButton verifyAnswer={verifyAnswer} />
         </View>
         <MascotModal
           open={!!modalText?.trim()}
