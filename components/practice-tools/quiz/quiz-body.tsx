@@ -1,4 +1,5 @@
 import MascotModal from "@/components/mascot/mascot-modal";
+import { router } from "expo-router";
 import {
   FlatList,
   Image,
@@ -23,13 +24,15 @@ const TopBar = () => {
   return (
     <View style={styles.row}>
       <View style={styles.view}>
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/8jxkmv5m_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image}
-        />
+        <TouchableOpacity onPress={() => router.back()}>
+          <Image
+            source={{
+              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/8jxkmv5m_expires_30_days.png",
+            }}
+            resizeMode={"stretch"}
+            style={styles.image}
+          />
+        </TouchableOpacity>
       </View>
       <ProgressBar />
     </View>

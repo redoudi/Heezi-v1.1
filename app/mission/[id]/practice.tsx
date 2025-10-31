@@ -32,5 +32,14 @@ function PracticeToolScreen() {
 
 export default function PracticeScreen() {
   const { levelType } = useLevelData();
-  return levelType === "quiz" ? <QuizScreen /> : <PracticeToolScreen />;
+  switch (levelType) {
+    case "quiz":
+      return <QuizScreen />;
+    case "practice":
+      return <PracticeToolScreen />;
+    case "lesson":
+      return <PracticeToolScreen />;
+    default:
+      return null;
+  }
 }
