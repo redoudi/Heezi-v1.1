@@ -63,13 +63,13 @@ export default function QuizScreen() {
     if (modalText === "") {
       setStepIndex(stepParam ? parseInt(stepParam as string) : 0);
     }
-  }, [modalText]);
+  }, [modalText, stepParam, tasks]);
 
   useEffect(() => {
     if (tasks?.length) {
       setTaskIndex(taskParam ? parseInt(taskParam as string) : 0);
     }
-  }, [tasks]);
+  }, [tasks, taskParam]);
 
   return (
     <QuizBody
