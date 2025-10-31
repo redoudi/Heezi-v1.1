@@ -78,6 +78,24 @@ const AnswerButton = ({
   );
 };
 
+const VerifyButton = () => {
+  return (
+    <TouchableOpacity
+      style={styles.buttonRow}
+      onPress={() => alert("Pressed!")}
+    >
+      <Text style={styles.text3}>{"Vérifier"}</Text>
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/tsy13i8h_expires_30_days.png",
+        }}
+        resizeMode={"stretch"}
+        style={styles.image3}
+      />
+    </TouchableOpacity>
+  );
+};
+
 const AnswersBox = ({
   answers,
   selectAnswer,
@@ -134,19 +152,7 @@ export default function QuizBody({
           </View>
         </View>
         <View style={styles.view6}>
-          <TouchableOpacity
-            style={styles.buttonRow}
-            onPress={() => alert("Pressed!")}
-          >
-            <Text style={styles.text3}>{"Vérifier"}</Text>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/tsy13i8h_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image3}
-            />
-          </TouchableOpacity>
+          <VerifyButton />
         </View>
         <MascotModal
           open={!!modalText?.trim()}
