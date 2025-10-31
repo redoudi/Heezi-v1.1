@@ -1,7 +1,5 @@
-import { CategoryCard } from "@/components/home/category-card";
-
 import usePracticeTool, { PracticeTool } from "@/context/usePracticeTool";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export interface CategoryItem {
   title: string;
@@ -11,7 +9,7 @@ export interface CategoryItem {
 }
 
 export function CategoryList() {
-  const { setPracticeTool } = usePracticeTool();
+  const { setPracticeTool, practiceTool } = usePracticeTool();
   const categories: CategoryItem[] = [
     {
       title: "Gestion d'un tableur",
@@ -36,12 +34,23 @@ export function CategoryList() {
             setPracticeTool(category.tool);
           }}
         >
-          <CategoryCard
-            key={index}
-            title={category.title}
-            backgroundColor={category.backgroundColor}
-            textColor={category.textColor}
-          />
+          <View
+            style={[
+              styles.container,
+              {
+                backgroundColor:
+                  practiceTool === category.tool
+                    ? "#FFFFFF"
+                    : category.backgroundColor,
+                borderWidth: practiceTool === category.tool ? 1 : 0,
+                borderColor: category.backgroundColor,
+              },
+            ]}
+          >
+            <Text style={[styles.text, { color: category.textColor }]}>
+              {category.title}
+            </Text>
+          </View>
         </TouchableOpacity>
       ))}
     </View>
@@ -51,5 +60,15 @@ export function CategoryList() {
 const styles = StyleSheet.create({
   categoryList: {
     backgroundColor: "#FFFFFF",
+  },
+  container: {
+    borderRadius: 8,
+    paddingVertical: 49,
+    marginBottom: 8,
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginLeft: 16,
   },
 });
