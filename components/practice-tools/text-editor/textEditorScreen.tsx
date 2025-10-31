@@ -8,39 +8,40 @@ import {
 } from "react-native";
 import TextEditorHeader from "./TextEditorHeader";
 
+function TextBlock({ text = "..." }) {
+  return (
+    <View style={styles.view3}>
+      <Text style={styles.text12}>{text}</Text>
+    </View>
+  );
+}
+
+function TextInputBlock({ text = "..." }) {
+  return (
+    <View style={styles.view2}>
+      <Text style={styles.text11}>{text}</Text>
+    </View>
+  );
+}
+
+function PageNumber({ currentPage = 1, totalPages = 1 }) {
+  return (
+    <View style={styles.view5}>
+      <Text style={styles.text13}>{`Page ${currentPage}/${totalPages}`}</Text>
+    </View>
+  );
+}
+
 export default function TextEditorScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
         <TextEditorHeader />
         <View style={styles.column10}>
-          <View style={styles.view2}>
-            <Text style={styles.text11}>{"Entrez le texte"}</Text>
-          </View>
-          <View style={styles.view3}>
-            <Text style={styles.text12}>
-              {
-                "Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade "
-              }
-            </Text>
-          </View>
-          <View style={styles.view2}>
-            <Text style={styles.text11}>{"Entrez le texte"}</Text>
-          </View>
-          <View style={styles.view3}>
-            <Text style={styles.text12}>
-              {
-                "Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade "
-              }
-            </Text>
-          </View>
-          <View style={styles.view4}>
-            <Text style={styles.text11}>{"Entrez le texte"}</Text>
-          </View>
+          <TextInputBlock text="Entrez le texte" />
+          <TextBlock text="Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade " />
         </View>
-        <View style={styles.view5}>
-          <Text style={styles.text13}>{"Page 1/1"}</Text>
-        </View>
+        <PageNumber currentPage={1} totalPages={1} />
         <View style={styles.column11}>
           <View style={styles.row12}>
             <Image
