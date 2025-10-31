@@ -73,6 +73,7 @@ export default function QuizScreen() {
       closeModal={() => setModalText("")}
       question={question}
       answers={answers}
+      selectedAnswer={selectedAnswer}
     />
   );
 }
