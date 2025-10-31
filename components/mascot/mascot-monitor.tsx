@@ -1,3 +1,4 @@
+import useLevelData from "@/hooks/use-level-data";
 import useCheckCondition from "@/hooks/useCheckCondition";
 import useRunPreActions from "@/hooks/useRunPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
@@ -13,11 +14,8 @@ const STEP0 = 0;
 export default function MascotMonitor() {
   const router = useRouter();
   const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
-  const {
-    tasks: levelTasks,
-    spreadsheetData,
-    setCellsSelected,
-  } = useSpreadsheetStore();
+  const { spreadsheetData, setCellsSelected } = useSpreadsheetStore();
+  const { tasks: levelTasks } = useLevelData();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
