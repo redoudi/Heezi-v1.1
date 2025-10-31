@@ -1,6 +1,6 @@
 import useLevelData from "@/hooks/use-level-data";
-import useCheckCondition from "@/hooks/useCheckCondition";
-import useRunPreActions from "@/hooks/useRunSpreadsheetPreActions";
+import useCheckSpreadsheetCondition from "@/hooks/useCheckSpreadsheetCondition";
+import useRunSpreadsheetPreActions from "@/hooks/useRunSpreadsheetPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
@@ -19,8 +19,8 @@ export default function MascotMonitor() {
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
-  const checkCondition = useCheckCondition({ stepExpectedRef });
-  const runPreActions = useRunPreActions();
+  const checkCondition = useCheckSpreadsheetCondition({ stepExpectedRef });
+  const runPreActions = useRunSpreadsheetPreActions();
 
   const runnerRef = useRef<{ step: number; task: number }>({
     step: -1,
