@@ -16,7 +16,7 @@ export default function QuizScreen() {
 
   const selectAnswer = (index: number) => setSelectedAnswerIndex(index);
 
-  const { levelData } = useLevelData();
+  const levelData = useLevelData();
   const tasks = levelData?.tasks || [];
 
   const runnerRef = useRef<{ step: number; task: number }>({
