@@ -1,4 +1,6 @@
+import useLevelData from "@/hooks/use-level-data";
 import {
+  FlatList,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -32,12 +34,25 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
   );
 }
 
+const ContentBlock = ({ type = "text", text = "..." }) => {
+  if (type === "text") {
+    return <TextBlock text={text} />;
+  } else if (type === "textInput") {
+    return <TextInputBlock text={text} />;
+  }
+};
+
 export default function TextEditorScreen() {
+  const { contentBlocks } = useLevelData();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
         <TextEditorHeader />
         <View style={styles.column10}>
+          <FlatList
+            data={contentBlocks}
+            renderItem={({ item }) => <ContentBlock {...item} />}
+          />
           <TextInputBlock text="Entrez le texte" />
           <TextBlock text="Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade " />
         </View>

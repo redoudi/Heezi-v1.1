@@ -3,7 +3,7 @@ import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/Spreadshe
 import TextEditorScreen from "@/components/practice-tools/text-editor/textEditorScreen";
 import usePracticeTool from "@/context/usePracticeTool";
 import useLevelData from "@/hooks/use-level-data";
-import useLoadLevel from "@/hooks/useLoadLevel";
+import useLoadLevel from "@/hooks/useLoadSpreadsheet";
 import { View } from "react-native";
 import QuizScreen from "./quiz";
 

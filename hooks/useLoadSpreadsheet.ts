@@ -4,7 +4,7 @@ import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 
-export default function useLoadLevel() {
+export default function useLoadSpreadsheet() {
   const { id } = useLocalSearchParams();
   const { practiceTool } = usePracticeTool();
   const { setLevelData } = useSpreadsheetStore();

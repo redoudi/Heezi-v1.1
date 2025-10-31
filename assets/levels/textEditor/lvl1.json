@@ -1,83 +1,106 @@
 {
-    "levelType": "lesson",
-    "intro": "Ensemble, nous allons apprendre à utiliser un éditeur de texte.",
+    "levelType": "practice",
+    "intro": "Je veux envoyer une lettre à la mairie pour réserver une salle de réunion pour mon association. Peux-tu m'aider ?",
     "tasks": [
         {
-            "intro": "Un peu de vocabulaire pour commencer.",
+            "intro": "On saisit d'abord les informations.",
             "steps": [
                 {
                     "tip": {
-                        "text1": "1.a Les pages",
-                        "text2": "Un document contient une ou plusieurs pages."
+                        "text1": "1.a Le nom",
+                        "text2": "On commence par le nom de l'association : ASFB"
+                    },
+                    "expected": {
+                        "type": "blockValue",
+                        "value": "ASFB",
+                        "blockId": "1"
                     }
                 },
                 {
                     "tip": {
-                        "text1": "1.b Le contenu",
-                        "text2": "Le contenu de la page est ce qu'on voit à l'intérieur de la page. C'est souvent du texte mais ça peut aussi être des images, des tableaux par exemple."
+                        "text1": "1.b L'adresse",
+                        "text2": "Et l'adresse : 123 Rue de la Paix 75000 Paris"
+                    },
+                    "expected": {
+                        "type": "blockValue",
+                        "value": "123 Rue de la Paix 75000 Paris",
+                        "blockId": "3"
+                    }
+                },
+                {
+                    "tip": {
+                        "text1": "1.c L'objet",
+                        "text2": "Et l'objet : Réservation"
+                    },
+                    "expected": {
+                        "type": "blockValue",
+                        "value": "Réservation",
+                        "blockId": "5"
+                    }
+                },
+                {
+                    "tip": {
+                        "text1": "1.d La signature",
+                        "text2": "Et pour finir, la signature : ASFB"
+                    },
+                    "expected": {
+                        "type": "blockValue",
+                        "value": "ASFB",
+                        "blockId": "10"
                     }
                 }
             ]
         },
         {
-            "intro": "Saisir du texte",
+            "intro": "Un peu de mise en forme.",
             "steps": [
                 {
                     "tip": {
-                        "text1": "2.a La saisie",
-                        "text2": "Pour saisir du texte, on clique à l'endroit du contenu où on veut ajouter le texte."
-                    }
-                },
-                {
-                    "tip": {
-                        "text1": "2.b Exemple de saisie",
-                        "text2": "Par exemple, je vais ajouter une phrase à la fin du texte déjà présent"
+                        "text1": "2.a La mise en forme",
+                        "text2": "On met en gras l'objet"
                     },
-                    "preActions": [
-                        {
-                            "type": "pushText",
-                            "text": "Voilà, j'ai ajouté une phrase à la fin du texte déjà présent"
-                        }
-                    ]
+                    "expected": {
+                        "type": "mainEdits",
+                        "blockId": "5",
+                        "propKey": "bold",
+                        "propValue": true
+                    }
                 }
             ]
+        }
+    ],
+    "contentBlocks": [
+        {
+            "type": "text",
+            "text": "Nom"
         },
         {
-            "intro": "Modifier du texte",
-            "steps": [
-                {
-                    "tip": {
-                        "text1": "3.a La sélection",
-                        "text2": "On peut aussi sélectionner du texte déjà présent pour le modifier. Pour sélectionner du texte, on clique sur le début et on fait glisser jusqu'à la fin du texte que l'on veut modifier."
-                    },
-                    "preActions": [
-                        {
-                            "type": "selectBlock",
-                            "blockId": "0"
-                        }
-                    ]
-                },
-                {
-                    "tip": {
-                        "text1": "3.b La mise en forme",
-                        "text2": "On peut par exemple le mettre en gras en cliquant sur le bouton gras."
-                    },
-                    "preActions": [
-                        {
-                            "type": "boldText",
-                            "blockId": "0"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "scenarioDialogEnd": [
+            "type": "textInput"
+        },
         {
-            "text": "Merci pour ton attention. J'espère que ça a été facile. N'hésite pas à revenir si besoin.",
-            "iconName": "heeziProud",
-            "position": "center"
+            "type": "text",
+            "text": "Adresse"
+        },
+        {
+            "type": "textInput"
+        },
+        {
+            "type": "text",
+            "text": "Objet"
+        },
+        {
+            "type": "textInput"
+        },
+        {
+            "type": "text",
+            "text": "Bonjour, nous voudrions réserver une salle pour nos réunions. Nous sommes 10 membres. Nous aimerions nous réunir le mercredi de 17h à 19h, une fois par mois. Pouvez-vous nous aider ?"
+        },
+        {
+            "type": "text",
+            "text": "Signature"
+        },
+        {
+            "type": "textInput"
         }
-    ],
-    "textPageFile": "level3Document"
+    ]
 }
