@@ -33,6 +33,7 @@ export default function QuizScreen() {
       runnerRef.current.step = -1;
       setTaskIndex(runnerRef.current.task + 1);
     } else {
+      setSelectedAnswerIndex(-1);
       const currentStep = tasks
         .at(runnerRef.current.task)
         ?.steps?.at(runnerRef.current.step);
