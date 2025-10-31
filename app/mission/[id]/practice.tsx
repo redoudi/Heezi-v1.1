@@ -2,10 +2,12 @@ import MascotMonitor from "@/components/mascot/mascot-monitor";
 import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/SpreadsheetScreen";
 import TextEditorScreen from "@/components/practice-tools/textEditor";
 import usePracticeTool from "@/context/usePracticeTool";
+import useLevelData from "@/hooks/use-level-data";
 import useLoadLevel from "@/hooks/useLoadLevel";
 import { View } from "react-native";
+import QuizScreen from "./quiz";
 
-export default function PracticeToolScreen() {
+function PracticeToolScreen() {
   const { practiceTool } = usePracticeTool();
   useLoadLevel();
 
@@ -26,4 +28,9 @@ export default function PracticeToolScreen() {
       <MascotMonitor />
     </View>
   );
+}
+
+export default function PracticeScreen() {
+  const { levelType } = useLevelData();
+  return levelType === "quiz" ? <QuizScreen /> : <PracticeToolScreen />;
 }

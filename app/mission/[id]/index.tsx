@@ -51,7 +51,7 @@ export default function ScenarioScreen() {
               </View>
               <TouchableOpacity
                 style={styles.buttonRow}
-                onPress={() => router.push(`/mission/${id}/${nextScreen}`)}
+                onPress={() => router.push(`/mission/${id}/practice`)}
               >
                 <Text style={styles.text2}>{"Commencer"}</Text>
                 <Image
