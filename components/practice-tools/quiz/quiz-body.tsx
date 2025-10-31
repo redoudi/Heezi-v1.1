@@ -58,11 +58,21 @@ const MascotInquisitive = () => {
 
 const AnswerButton = ({
   answer,
+  selectAnswer,
+  index,
+  selectedAnswerIndex,
 }: {
   answer: { text: string; isCorrect: boolean };
+  selectAnswer: (index: number) => void;
+  index: number;
 }) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={() => alert("Pressed!")}>
+    <TouchableOpacity
+      style={
+        selectedAnswerIndex === index ? styles.buttonSelected : styles.button
+      }
+      onPress={() => selectAnswer(index)}
+    >
       <Text style={styles.text2}>{answer.text || "..."}</Text>
     </TouchableOpacity>
   );
@@ -70,29 +80,43 @@ const AnswerButton = ({
 
 const AnswersBox = ({
   answers,
+  selectAnswer,
+  selectedAnswerIndex,
 }: {
   answers: { text: string; isCorrect: boolean }[];
+  selectAnswer: (index: number) => void;
 }) => {
   return (
     <FlatList
       data={answers}
-      renderItem={({ item }) => <AnswerButton answer={item} />}
-      keyExtractor={(item) => item.text}
+      renderItem={({ item, index }) => (
+        <AnswerButton
+          answer={item}
+          selectAnswer={selectAnswer}
+          index={index}
+          selectedAnswerIndex={selectedAnswerIndex}
+        />
+      )}
+      keyExtractor={(_, index) => index.toString()}
       contentContainerStyle={styles.column3}
     />
   );
 };
 
 export default function QuizBody({
+  selectAnswer,
   question,
   answers,
   modalText,
   closeModal,
+  selectedAnswerIndex,
 }: {
+  selectAnswer: (index: number) => void;
   modalText: string;
   question: string;
   answers: string[];
   closeModal: () => void;
+  selectedAnswerIndex: number | null;
 }) {
   return (
     <SafeAreaView style={styles.container}>
@@ -102,7 +126,11 @@ export default function QuizBody({
           <View style={styles.column2}>
             <QuestionBox question={question} />
             <MascotInquisitive />
-            <AnswersBox answers={answers} />
+            <AnswersBox
+              answers={answers}
+              selectAnswer={selectAnswer}
+              selectedAnswerIndex={selectedAnswerIndex}
+            />
           </View>
         </View>
         <View style={styles.view6}>
@@ -142,6 +170,13 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#FFFFFF",
+    borderRadius: 8,
+    paddingVertical: 7,
+    paddingHorizontal: 256,
+    marginBottom: 16,
+  },
+  buttonSelected: {
+    backgroundColor: "#45BC9E",
     borderRadius: 8,
     paddingVertical: 7,
     paddingHorizontal: 256,

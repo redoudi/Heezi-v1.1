@@ -8,6 +8,11 @@ export default function QuizScreen() {
   const [answers, setAnswers] = useState<string[]>([]);
   const [modalText, setModalText] = useState("");
   const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
+    null
+  );
+
+  const selectAnswer = (index: number) => setSelectedAnswerIndex(index);
 
   const { levelData } = useLevelData();
   const tasks = levelData?.tasks || [];
@@ -73,7 +78,8 @@ export default function QuizScreen() {
       closeModal={() => setModalText("")}
       question={question}
       answers={answers}
-      selectedAnswer={selectedAnswer}
+      selectAnswer={selectAnswer}
+      selectedAnswerIndex={selectedAnswerIndex}
     />
   );
 }
