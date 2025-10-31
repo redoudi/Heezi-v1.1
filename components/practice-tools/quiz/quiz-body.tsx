@@ -56,7 +56,11 @@ const MascotInquisitive = () => {
   );
 };
 
-const AnswerButton = ({ answer }: { answer: string }) => {
+const AnswerButton = ({
+  answer,
+}: {
+  answer: { text: string; isCorrect: boolean };
+}) => {
   return (
     <TouchableOpacity style={styles.button} onPress={() => alert("Pressed!")}>
       <Text style={styles.text2}>{answer.text || "..."}</Text>
@@ -137,7 +141,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#45BC9E",
   },
   button: {
-    alignSelf: "flex-start",
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingVertical: 7,
