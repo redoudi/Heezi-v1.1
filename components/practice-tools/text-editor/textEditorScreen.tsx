@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -21,6 +22,11 @@ function TextBlock({ text = "..." }) {
 function TextInputBlock({ text = "..." }) {
   return (
     <View style={styles.view2}>
+      <TextInput
+        style={styles.text11}
+        value={text}
+        onChangeText={(text) => setText(text)}
+      />
       <Text style={styles.text11}>{text}</Text>
     </View>
   );
@@ -53,8 +59,6 @@ export default function TextEditorScreen() {
             data={contentBlocks}
             renderItem={({ item }) => <ContentBlock {...item} />}
           />
-          <TextInputBlock text="Entrez le texte" />
-          <TextBlock text="Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade Lörem ipsum dologi begon en pirejil i don mikroskade. Teng lena. Stenonde pros om än vattkoppsgodis hypomöns. Antektig reangen mörat i bynade " />
         </View>
         <PageNumber currentPage={1} totalPages={1} />
         <View style={styles.column11}>

@@ -3,20 +3,30 @@ import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/Spreadshe
 import TextEditorScreen from "@/components/practice-tools/text-editor/textEditorScreen";
 import usePracticeTool from "@/context/usePracticeTool";
 import useLevelData from "@/hooks/use-level-data";
-import useLoadLevel from "@/hooks/useLoadSpreadsheet";
+import useLoadSpreadsheet from "@/hooks/useLoadSpreadsheet";
+import useLoadTextEditor from "@/hooks/useLoadTextEditor";
 import { View } from "react-native";
 import QuizScreen from "./quiz";
 
+function LoadedSpreadsheetScreen() {
+  useLoadSpreadsheet();
+  return <SpreadsheetScreen />;
+}
+
+function LoadedTextEditorScreen() {
+  useLoadTextEditor();
+  return <TextEditorScreen />;
+}
+
 function PracticeToolScreen() {
   const { practiceTool } = usePracticeTool();
-  useLoadLevel();
 
   const PracticeToolScreen = () => {
     switch (practiceTool) {
       case "spreadsheet":
-        return <SpreadsheetScreen />;
+        return <LoadedSpreadsheetScreen />;
       case "textEditor":
-        return <TextEditorScreen />;
+        return <LoadedTextEditorScreen />;
       default:
         return null;
     }
