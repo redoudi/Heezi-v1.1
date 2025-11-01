@@ -19,7 +19,12 @@ export default function MascotMonitor({
   practiceToolData: any;
 }) {
   const router = useRouter();
-  const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
+  const {
+    practiceTool,
+    id,
+    task: taskParam,
+    step: stepParam,
+  } = useLocalSearchParams();
   const { setCellsSelected } = useSpreadsheetStore();
   const { tasks: levelTasks } = useLevelData();
   const [modalText, setModalText] = useState<string | null>(null);
@@ -75,7 +80,7 @@ export default function MascotMonitor({
       levelTasks.length > 0 &&
       runnerRef.current.task > levelTasks?.length - 1
     ) {
-      router.push(`/mission/${id}/result`);
+      router.push(`/mission/${practiceTool}/${id}/result`);
     } else {
       const introText = levelTasks?.at(runnerRef.current.task)?.intro;
       if (introText && introText.trim() !== "") setModalText(introText);

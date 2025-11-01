@@ -12,7 +12,7 @@ import {
 
 export default function ScenarioScreen() {
   // useLoadLevel();
-  const { id } = useLocalSearchParams();
+  const { practiceTool, id } = useLocalSearchParams();
   const { intro } = useLevelData();
 
   return (
@@ -36,7 +36,9 @@ export default function ScenarioScreen() {
               </View>
               <TouchableOpacity
                 style={styles.buttonRow}
-                onPress={() => router.push(`/mission/${id}/practice`)}
+                onPress={() =>
+                  router.push(`/mission/${practiceTool}/${id}/practice`)
+                }
               >
                 <Text style={styles.text2}>{"Commencer"}</Text>
                 <Image

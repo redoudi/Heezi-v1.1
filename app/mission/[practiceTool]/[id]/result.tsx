@@ -9,12 +9,12 @@ import {
   View,
 } from "react-native";
 export default function ResultScreen() {
-  const { id } = useLocalSearchParams();
+  const { practiceTool, id } = useLocalSearchParams();
   const { levelType } = useLevelData();
 
   const goToNextPage = () => {
     if (levelType === "practice") {
-      router.push(`/mission/${id}/export`);
+      router.push(`/mission/${practiceTool}/${id}/export`);
     } else {
       router.replace("/(tabs)");
     }

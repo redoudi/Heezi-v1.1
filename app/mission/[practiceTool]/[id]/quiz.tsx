@@ -9,7 +9,12 @@ export default function QuizScreen() {
     { text: string; isCorrect?: boolean }[]
   >([]);
   const [modalText, setModalText] = useState("");
-  const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
+  const {
+    practiceTool,
+    id,
+    task: taskParam,
+    step: stepParam,
+  } = useLocalSearchParams();
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
     null
   );
@@ -44,7 +49,7 @@ export default function QuizScreen() {
 
   const setTaskIndex = (task: number) => {
     if (tasks?.length && runnerRef.current.task > tasks.length - 1) {
-      router.push(`/mission/${id}/result`);
+      router.push(`/mission/${practiceTool}/${id}/result`);
     } else {
       runnerRef.current.task = task;
       router.setParams({ task: runnerRef.current.task });
