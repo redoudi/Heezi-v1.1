@@ -62,7 +62,8 @@
                     "expected": {
                         "type": "style",
                         "blockIndex": "5",
-                        "fontWeight": "bold"
+                        "property": "fontWeight",
+                        "value": "bold"
                     }
                 }
             ]

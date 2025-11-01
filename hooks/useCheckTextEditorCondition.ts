@@ -12,12 +12,16 @@ export default function useCheckTextEditorCondition({
         const currentText =
           contentBlocks?.length > 0 &&
           contentBlocks.at(parseInt(stepExpectedRef.current.blockIndex))?.text;
-        console.log("currentText", currentText);
-        console.log(
-          "stepExpectedRef.current.text",
-          stepExpectedRef.current.text
-        );
         return currentText === stepExpectedRef.current.text;
+      case "style":
+        const currentStyle =
+          contentBlocks?.length > 0 &&
+          contentBlocks.at(parseInt(stepExpectedRef.current.blockIndex))?.style;
+        return (
+          currentStyle?.[
+            stepExpectedRef.current.property as keyof typeof currentStyle
+          ] === stepExpectedRef.current.value
+        );
     }
   };
 }
