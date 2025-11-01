@@ -3,15 +3,28 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import BackButton from "../../ui/back-button";
 
 function BoldButton() {
-  const { selectedBlockIndex } = useTextEditorStore();
+  const { getSelectedBlock, setSelectedBlockStyle } = useTextEditorStore();
+  const selectedBlock = getSelectedBlock();
+  const isBold = selectedBlock?.style?.fontWeight === "bold" || false;
+
+  const toggleBold = () => {
+    setSelectedBlockStyle({ fontWeight: isBold ? "normal" : "bold" });
+  };
+
   return (
-    <TouchableOpacity style={styles.button13} onPress={() => {}}>
+    <TouchableOpacity
+      style={[
+        styles.button13,
+        isBold ? { borderColor: "black", borderWidth: 1 } : {},
+      ]}
+      onPress={toggleBold}
+    >
       <Image
         source={{
           uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2ib5w9m2_expires_30_days.png",
         }}
         resizeMode={"stretch"}
-        style={styles.image13}
+        style={[styles.image13]}
       />
     </TouchableOpacity>
   );

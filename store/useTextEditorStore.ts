@@ -31,5 +31,8 @@ const useTextEditorStore = create((set, get) => ({
   setSelectedBlockStyle: (style: { [key: string]: any }) => {
     get().setBlockStyle(get().selectedBlockIndex, style);
   },
+  getSelectedBlock: () => {
+    return get().contentBlocks[get().selectedBlockIndex];
+  },
 }));
 export default useTextEditorStore;

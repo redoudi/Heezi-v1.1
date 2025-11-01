@@ -11,10 +11,10 @@ import {
 } from "react-native";
 import TextEditorHeader from "./TextEditorHeader";
 
-function TextBlock({ text = "...", style = {} }) {
+function TextBlock({ text = "...", contentBlockStyle = {} }) {
   return (
     <View style={styles.view3}>
-      <Text style={[styles.text12, style]}>{text}</Text>
+      <Text style={[styles.text12, contentBlockStyle]}>{text}</Text>
     </View>
   );
 }
@@ -23,15 +23,17 @@ function TextInputBlock({
   text = "",
   setText,
   handleFocus,
+  contentBlockStyle = {},
 }: {
   text: string;
   setText: (text: string) => void;
   handleFocus: () => void;
+  contentBlockStyle: { [key: string]: any };
 }) {
   return (
     <View style={styles.view2}>
       <TextInput
-        style={styles.text11}
+        style={[styles.text11, contentBlockStyle]}
         value={text}
         onChangeText={(text) => setText(text)}
         onFocus={handleFocus}
@@ -57,13 +59,16 @@ const ContentBlockList = () => {
       renderItem={({ item, index }) => {
         switch (item.type) {
           case "text":
-            return <TextBlock text={item.text} style={item.style} />;
+            return (
+              <TextBlock text={item.text} contentBlockStyle={item.style} />
+            );
           case "textInput":
             return (
               <TextInputBlock
                 text={item.text}
                 setText={(text) => setBlockText(index, text)}
                 handleFocus={() => setSelectedBlockIndex(index)}
+                contentBlockStyle={item.style}
               />
             );
         }
@@ -193,9 +198,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   text11: {
-    color: "#BDBDBD",
-    fontSize: 20,
-    fontWeight: "bold",
+    color: "#292929",
+    fontSize: 16,
     marginLeft: 9,
   },
   text12: {
