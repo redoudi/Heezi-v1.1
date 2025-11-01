@@ -1,9 +1,9 @@
-import useRibbon from "@/hooks/useRibbon";
+import useSpreadsheetRibbon from "@/hooks/useSpreadsheetRibbon";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "../spreadsheet-styles";
 
 export default function Ribbon() {
-  const ribbonCallbacks = useRibbon();
+  const ribbonCallbacks = useSpreadsheetRibbon();
   return (
     <View style={styles.row4}>
       <View style={styles.column3}>

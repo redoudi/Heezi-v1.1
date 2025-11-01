@@ -1,6 +1,6 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 
-export default function useRibbon() {
+export default function useSpreadsheetRibbon() {
   const { spreadsheetData, setCellStyle } = useSpreadsheetStore();
   const cellsSelected = spreadsheetData?.cellsSelected;
   const cellsStyles = spreadsheetData?.cellsStyles;

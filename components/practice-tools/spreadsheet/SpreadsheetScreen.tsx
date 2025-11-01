@@ -7,8 +7,8 @@ import {
 } from "react-native";
 import FunctionBar from "./function-bar";
 import SpreadsheetGrid from "./grid/spreadsheet-grid";
-import Ribbon from "./ribbon/ribbon";
-import RibbonTabs from "./ribbon/ribbon-tabs";
+import Ribbon from "./ribbon/spreadsheet-ribbon";
+import RibbonTabs from "./ribbon/spreadsheet-ribbon-tabs";
 import { styles } from "./spreadsheet-styles";
 import TitleBar from "./title-bar";
 
