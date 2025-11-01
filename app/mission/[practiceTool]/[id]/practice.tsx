@@ -1,7 +1,6 @@
 import MascotMonitor from "@/components/mascot/mascot-monitor";
 import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/SpreadsheetScreen";
 import TextEditorScreen from "@/components/practice-tools/text-editor/textEditorScreen";
-import usePracticeTool from "@/context/usePracticeTool";
 import useLevelData from "@/hooks/use-level-data";
 import useCheckSpreadsheetCondition from "@/hooks/useCheckSpreadsheetCondition";
 import useCheckTextEditorCondition from "@/hooks/useCheckTextEditorCondition";
@@ -11,6 +10,7 @@ import useRunSpreadsheetPreActions from "@/hooks/useRunSpreadsheetPreActions";
 import useRunTextEditorPreActions from "@/hooks/useRunTextEditorPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import useTextEditorStore from "@/store/useTextEditorStore";
+import { useLocalSearchParams } from "expo-router";
 import { View } from "react-native";
 import QuizScreen from "./quiz";
 
@@ -47,8 +47,7 @@ function LoadedTextEditorScreen() {
 }
 
 function PracticeToolScreen() {
-  const { practiceTool } = usePracticeTool();
-
+  const { practiceTool } = useLocalSearchParams();
   const PracticeToolScreen = () => {
     switch (practiceTool) {
       case "spreadsheet":
