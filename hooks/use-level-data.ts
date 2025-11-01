@@ -1,11 +1,10 @@
 import { levelFiles } from "@/assets/levels/indexLevels";
-import usePracticeTool from "@/context/usePracticeTool";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 
 export default function useLevelData() {
-  const { id } = useLocalSearchParams();
-  const { practiceTool } = usePracticeTool();
+  const { practiceTool, id } = useLocalSearchParams();
+
   const [levelData, setLevelData] = useState<any>({ tasks: [] });
   useEffect(() => {
     if (id && practiceTool) {

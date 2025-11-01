@@ -1,12 +1,10 @@
 import { levelFiles } from "@/assets/levels/indexLevels";
-import usePracticeTool from "@/context/usePracticeTool";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 
 export default function useLoadSpreadsheet() {
-  const { id } = useLocalSearchParams();
-  const { practiceTool } = usePracticeTool();
+  const { practiceTool, id } = useLocalSearchParams();
   const { setLevelData } = useSpreadsheetStore();
   useEffect(() => {
     if (id && practiceTool && setLevelData) {

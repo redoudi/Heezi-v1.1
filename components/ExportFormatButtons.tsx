@@ -1,4 +1,4 @@
-import usePracticeTool from "@/context/usePracticeTool";
+import { useLocalSearchParams } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const ExportXlsxButton = () => {
@@ -56,7 +56,7 @@ const ExportDocxButton = () => {
 };
 
 export default function ExportFormatButtons() {
-  const { practiceTool } = usePracticeTool();
+  const { practiceTool } = useLocalSearchParams();
   return (
     <View style={styles.row}>
       <ExportPdfButton />
