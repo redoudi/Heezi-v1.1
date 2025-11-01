@@ -29,7 +29,7 @@ const useTextEditorStore = create((set, get) => ({
     }));
   },
   setSelectedBlockStyle: (style: { [key: string]: any }) => {
-    get().setBlockStyle(selectedBlockIndex, style);
+    get().setBlockStyle(get().selectedBlockIndex, style);
   },
 }));
 export default useTextEditorStore;
