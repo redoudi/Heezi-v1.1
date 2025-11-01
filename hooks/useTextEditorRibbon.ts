@@ -4,12 +4,18 @@ export default function useSpreadsheetRibbon() {
   const { contentBlocks, selectedBlockIndex, setBlockStyle } =
     useTextEditorStore();
   return {
+    isSelectedBlockBold:
+      contentBlocks?.[selectedBlockIndex]?.style?.fontWeight === "bold" ||
+      false,
     boldSelectedBlock: () => {
       if (selectedBlockIndex !== null) {
-        setBlockStyle(selectedBlockIndex, { fontWeight: "bold" });
+        setBlockStyle(
+          selectedBlockIndex,
+          this.isSelectedBlockBold
+            ? { fontWeight: "normal" }
+            : { fontWeight: "bold" }
+        );
       }
     },
-    isSelectedBlockBold:
-      contentBlocks?.[selectedBlockIndex]?.style?.fontWeight === "bold",
   };
 }
