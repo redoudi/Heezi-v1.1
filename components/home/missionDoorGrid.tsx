@@ -1,3 +1,4 @@
+import usePracticeTool from "@/context/usePracticeTool";
 import { Link } from "expo-router";
 import { Image, StyleSheet, View } from "react-native";
 
@@ -6,9 +7,10 @@ interface MissionDoorGridProps {
 }
 
 export function MissionDoorGrid({ style }: MissionDoorGridProps) {
+  const { practiceTool } = usePracticeTool();
   return (
     <View style={[styles.container, style]}>
-      <Link href="/mission/1" asChild>
+      <Link href={`/mission/${practiceTool}/1`} asChild>
         <Image
           source={{
             uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
@@ -17,7 +19,7 @@ export function MissionDoorGrid({ style }: MissionDoorGridProps) {
           style={styles.image}
         />
       </Link>
-      <Link href="/mission/2" asChild>
+      <Link href={`/mission/${practiceTool}/2`} asChild>
         <Image
           source={{
             uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
@@ -26,7 +28,7 @@ export function MissionDoorGrid({ style }: MissionDoorGridProps) {
           style={styles.image}
         />
       </Link>
-      <Link href="/mission/3" asChild>
+      <Link href={`/mission/${practiceTool}/3`} asChild>
         <Image
           source={{
             uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
