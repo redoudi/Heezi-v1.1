@@ -1,6 +1,6 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 
-export default function useCheckCondition({
+export default function useCheckSpreadsheetCondition({
   stepExpectedRef,
 }: {
   stepExpectedRef: any;

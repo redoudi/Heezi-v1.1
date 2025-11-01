@@ -3,19 +3,39 @@ import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/Spreadshe
 import TextEditorScreen from "@/components/practice-tools/text-editor/textEditorScreen";
 import usePracticeTool from "@/context/usePracticeTool";
 import useLevelData from "@/hooks/use-level-data";
+import useCheckSpreadsheetCondition from "@/hooks/useCheckSpreadsheetCondition";
+import useCheckTextEditorCondition from "@/hooks/useCheckTextEditorCondition";
 import useLoadSpreadsheet from "@/hooks/useLoadSpreadsheet";
 import useLoadTextEditor from "@/hooks/useLoadTextEditor";
+import useRunSpreadsheetPreActions from "@/hooks/useRunSpreadsheetPreActions";
+import useRunTextEditorPreActions from "@/hooks/useRunTextEditorPreActions";
 import { View } from "react-native";
 import QuizScreen from "./quiz";
 
 function LoadedSpreadsheetScreen() {
   useLoadSpreadsheet();
-  return <SpreadsheetScreen />;
+  return (
+    <View>
+      <SpreadsheetScreen />
+      <MascotMonitor
+        checkConditionHook={useCheckSpreadsheetCondition}
+        runPreActionsHook={useRunSpreadsheetPreActions}
+      />
+    </View>
+  );
 }
 
 function LoadedTextEditorScreen() {
   useLoadTextEditor();
-  return <TextEditorScreen />;
+  return (
+    <View>
+      <TextEditorScreen />
+      <MascotMonitor
+        checkConditionHook={useCheckTextEditorCondition}
+        runPreActionsHook={useRunTextEditorPreActions}
+      />
+    </View>
+  );
 }
 
 function PracticeToolScreen() {
@@ -32,12 +52,7 @@ function PracticeToolScreen() {
     }
   };
 
-  return (
-    <View>
-      <PracticeToolScreen />
-      <MascotMonitor />
-    </View>
-  );
+  return <PracticeToolScreen />;
 }
 
 export default function PracticeScreen() {
