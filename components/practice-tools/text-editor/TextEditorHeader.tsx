@@ -1,9 +1,11 @@
+import useTextEditorStore from "@/store/useTextEditorStore";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import BackButton from "../../ui/back-button";
 
 function BoldButton() {
+  const { selectedBlockIndex } = useTextEditorStore();
   return (
-    <TouchableOpacity style={styles.button13} onPress={() => alert("Pressed!")}>
+    <TouchableOpacity style={styles.button13} onPress={() => {}}>
       <Image
         source={{
           uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2ib5w9m2_expires_30_days.png",

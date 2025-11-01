@@ -19,13 +19,22 @@ function TextBlock({ text = "...", style = {} }) {
   );
 }
 
-function TextInputBlock({ text = "", setText }) {
+function TextInputBlock({
+  text = "",
+  setText,
+  handleFocus,
+}: {
+  text: string;
+  setText: (text: string) => void;
+  handleFocus: () => void;
+}) {
   return (
     <View style={styles.view2}>
       <TextInput
         style={styles.text11}
         value={text}
         onChangeText={(text) => setText(text)}
+        onFocus={handleFocus}
       />
     </View>
   );
@@ -40,7 +49,8 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
 }
 
 const ContentBlockList = () => {
-  const { contentBlocks, setBlockText } = useTextEditorStore();
+  const { contentBlocks, setBlockText, setSelectedBlockIndex } =
+    useTextEditorStore();
   return (
     <FlatList
       data={contentBlocks}
@@ -53,6 +63,7 @@ const ContentBlockList = () => {
               <TextInputBlock
                 text={item.text}
                 setText={(text) => setBlockText(index, text)}
+                handleFocus={() => setSelectedBlockIndex(index)}
               />
             );
         }
