@@ -46,7 +46,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "ASFB",
-                        "blockIndex": "10"
+                        "blockIndex": "8"
                     }
                 }
             ]
