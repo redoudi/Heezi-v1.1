@@ -13,3 +13,4 @@
 - [ ] mettre mascot-bubble comme modal pour lesson
 - [ ] mettre la flèche vers le bas comme onclose dans mascot-modal
 - [ ] faire le responsive de tout l'affichage
+- [ ] repair unbolding in tableur
