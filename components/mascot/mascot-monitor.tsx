@@ -1,6 +1,4 @@
 import useLevelData from "@/hooks/use-level-data";
-import useCheckSpreadsheetCondition from "@/hooks/useCheckSpreadsheetCondition";
-import useRunSpreadsheetPreActions from "@/hooks/useRunSpreadsheetPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
@@ -14,10 +12,15 @@ const STEP0 = 0;
 export default function MascotMonitor({
   checkConditionHook,
   runPreActionsHook,
+  practiceToolData,
+}: {
+  checkConditionHook: (props: { stepExpectedRef: any }) => () => boolean;
+  runPreActionsHook: () => (preActions: any[]) => void;
+  practiceToolData: any;
 }) {
   const router = useRouter();
   const { id, task: taskParam, step: stepParam } = useLocalSearchParams();
-  const { spreadsheetData, setCellsSelected } = useSpreadsheetStore();
+  const { setCellsSelected } = useSpreadsheetStore();
   const { tasks: levelTasks } = useLevelData();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
@@ -80,13 +83,13 @@ export default function MascotMonitor({
   };
 
   useEffect(() => {
-    if (spreadsheetData && stepExpectedRef.current) {
+    if (practiceToolData && stepExpectedRef.current) {
       const isCorrect = checkCondition();
       if (isCorrect) {
         nextStep();
       }
     }
-  }, [spreadsheetData]);
+  }, [practiceToolData]);
 
   useEffect(() => {
     if (modalText === "") {

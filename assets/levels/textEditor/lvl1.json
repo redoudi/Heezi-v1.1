@@ -7,46 +7,46 @@
             "steps": [
                 {
                     "tip": {
-                        "text1": "1.a Le nom",
+                        "text1": "1.1 Le nom",
                         "text2": "On commence par le nom de l'association : ASFB"
                     },
                     "expected": {
-                        "type": "blockValue",
-                        "value": "ASFB",
-                        "blockId": "1"
+                        "type": "blockText",
+                        "text": "ASFB",
+                        "blockIndex": "1"
                     }
                 },
                 {
                     "tip": {
-                        "text1": "1.b L'adresse",
+                        "text1": "1.2 L'adresse",
                         "text2": "Et l'adresse : 123 Rue de la Paix 75000 Paris"
                     },
                     "expected": {
-                        "type": "blockValue",
-                        "value": "123 Rue de la Paix 75000 Paris",
-                        "blockId": "3"
+                        "type": "blockText",
+                        "text": "123 Rue de la Paix 75000 Paris",
+                        "blockIndex": "3"
                     }
                 },
                 {
                     "tip": {
-                        "text1": "1.c L'objet",
+                        "text1": "1.3 L'objet",
                         "text2": "Et l'objet : Réservation"
                     },
                     "expected": {
-                        "type": "blockValue",
-                        "value": "Réservation",
-                        "blockId": "5"
+                        "type": "blockText",
+                        "text": "Réservation",
+                        "blockIndex": "5"
                     }
                 },
                 {
                     "tip": {
-                        "text1": "1.d La signature",
+                        "text1": "1.4 La signature",
                         "text2": "Et pour finir, la signature : ASFB"
                     },
                     "expected": {
-                        "type": "blockValue",
-                        "value": "ASFB",
-                        "blockId": "10"
+                        "type": "blockText",
+                        "text": "ASFB",
+                        "blockIndex": "10"
                     }
                 }
             ]
@@ -56,12 +56,12 @@
             "steps": [
                 {
                     "tip": {
-                        "text1": "2.a La mise en forme",
+                        "text1": "2.1 La mise en forme",
                         "text2": "On met en gras l'objet"
                     },
                     "expected": {
                         "type": "mainEdits",
-                        "blockId": "5",
+                        "blockIndex": "5",
                         "propKey": "bold",
                         "propValue": true
                     }

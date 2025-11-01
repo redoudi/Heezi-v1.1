@@ -9,17 +9,22 @@ import useLoadSpreadsheet from "@/hooks/useLoadSpreadsheet";
 import useLoadTextEditor from "@/hooks/useLoadTextEditor";
 import useRunSpreadsheetPreActions from "@/hooks/useRunSpreadsheetPreActions";
 import useRunTextEditorPreActions from "@/hooks/useRunTextEditorPreActions";
+import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import useTextEditorStore from "@/store/useTextEditorStore";
 import { View } from "react-native";
 import QuizScreen from "./quiz";
 
 function LoadedSpreadsheetScreen() {
   useLoadSpreadsheet();
+  const { spreadsheetData, setCellsSelected } = useSpreadsheetStore();
   return (
     <View>
       <SpreadsheetScreen />
       <MascotMonitor
         checkConditionHook={useCheckSpreadsheetCondition}
         runPreActionsHook={useRunSpreadsheetPreActions}
+        practiceToolData={spreadsheetData}
+        onNextTask={() => setCellsSelected([])}
       />
     </View>
   );
@@ -27,12 +32,15 @@ function LoadedSpreadsheetScreen() {
 
 function LoadedTextEditorScreen() {
   useLoadTextEditor();
+  const { contentBlocks } = useTextEditorStore();
   return (
     <View>
       <TextEditorScreen />
       <MascotMonitor
         checkConditionHook={useCheckTextEditorCondition}
         runPreActionsHook={useRunTextEditorPreActions}
+        practiceToolData={contentBlocks}
+        onNextTask={() => {}}
       />
     </View>
   );
