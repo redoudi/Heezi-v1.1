@@ -60,10 +60,9 @@
                         "text2": "On met en gras l'objet"
                     },
                     "expected": {
-                        "type": "mainEdits",
+                        "type": "style",
                         "blockIndex": "5",
-                        "propKey": "bold",
-                        "propValue": true
+                        "fontWeight": "bold"
                     }
                 }
             ]
