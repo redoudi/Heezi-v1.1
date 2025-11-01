@@ -5,9 +5,9 @@ export default function useRunTextEditorPreActions() {
   const runPreAction = (preAction: any) => {
     switch (preAction.type) {
       case "blockText":
-        setBlockText(preAction.blockIndex, preAction.text);
+        setBlockText(Number(preAction.blockIndex), preAction.text);
         break;
     }
   };
-  return (preActionsArr) => preActionsArr.map(runPreAction);
+  return (preActionsArr: any[]) => preActionsArr.map(runPreAction);
 }
