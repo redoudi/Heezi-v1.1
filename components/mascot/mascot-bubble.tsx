@@ -1,4 +1,4 @@
-import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import useLevelData from "@/hooks/use-level-data";
 import {
   Image,
   SafeAreaView,
@@ -53,7 +53,7 @@ export default function MascotBubble({
   bubbleText: string;
   nextStep: () => void;
 }) {
-  const { levelType } = useSpreadsheetStore();
+  const { levelType } = useLevelData();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainRow}>

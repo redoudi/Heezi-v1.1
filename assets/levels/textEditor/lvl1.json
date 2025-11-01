@@ -1,70 +1,74 @@
 {
-    "levelType": "practice",
-    "intro": "Je veux envoyer une lettre à la mairie pour réserver une salle de réunion pour mon association. Peux-tu m'aider ?",
+    "levelType": "lesson",
+    "intro": "Ensemble, nous allons apprendre à utiliser un éditeur de texte.",
     "tasks": [
         {
-            "intro": "On saisit d'abord les informations.",
+            "intro": "Un peu de vocabulaire pour commencer.",
             "steps": [
                 {
                     "tip": {
-                        "text1": "1.1 Le nom",
-                        "text2": "On commence par le nom de l'association : ASFB"
-                    },
-                    "expected": {
-                        "type": "blockText",
-                        "text": "ASFB",
-                        "blockIndex": "1"
+                        "text1": "1.a Les pages",
+                        "text2": "Un document contient une ou plusieurs pages."
                     }
                 },
                 {
                     "tip": {
-                        "text1": "1.2 L'adresse",
-                        "text2": "Et l'adresse : 123 Rue de la Paix 75000 Paris"
-                    },
-                    "expected": {
-                        "type": "blockText",
-                        "text": "123 Rue de la Paix 75000 Paris",
-                        "blockIndex": "3"
-                    }
-                },
-                {
-                    "tip": {
-                        "text1": "1.3 L'objet",
-                        "text2": "Et l'objet : Réservation"
-                    },
-                    "expected": {
-                        "type": "blockText",
-                        "text": "Réservation",
-                        "blockIndex": "5"
-                    }
-                },
-                {
-                    "tip": {
-                        "text1": "1.4 La signature",
-                        "text2": "Et pour finir, la signature : ASFB"
-                    },
-                    "expected": {
-                        "type": "blockText",
-                        "text": "ASFB",
-                        "blockIndex": "8"
+                        "text1": "1.b Le contenu",
+                        "text2": "Le contenu de la page est ce qu'on voit à l'intérieur de la page. C'est souvent du texte mais ça peut aussi être des images, des tableaux par exemple."
                     }
                 }
             ]
         },
         {
-            "intro": "Un peu de mise en forme.",
+            "intro": "Saisir du texte",
             "steps": [
                 {
                     "tip": {
-                        "text1": "2.1 La mise en forme",
-                        "text2": "On met en gras l'objet"
-                    },
-                    "expected": {
-                        "type": "style",
-                        "blockIndex": "5",
-                        "property": "fontWeight",
-                        "value": "bold"
+                        "text1": "2.a La saisie",
+                        "text2": "Pour saisir du texte, on clique à l'endroit du contenu où on veut ajouter le texte."
                     }
+                },
+                {
+                    "tip": {
+                        "text1": "2.b Exemple de saisie",
+                        "text2": "Par exemple, je vais ajouter une phrase à la fin du texte déjà présent"
+                    },
+                    "preActions": [
+                        {
+                            "type": "blockText",
+                            "text": "Voilà, j'ai ajouté une phrase à la fin du texte déjà présent",
+                            "blockIndex": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "intro": "Modifier du texte",
+            "steps": [
+                {
+                    "tip": {
+                        "text1": "3.a La sélection",
+                        "text2": "On peut aussi sélectionner du texte déjà présent pour le modifier. Pour sélectionner du texte, on clique sur le début et on fait glisser jusqu'à la fin du texte que l'on veut modifier."
+                    },
+                    "preActions": [
+                        {
+                            "type": "selectBlock",
+                            "blockId": "0"
+                        }
+                    ]
+                },
+                {
+                    "tip": {
+                        "text1": "3.b La mise en forme",
+                        "text2": "On peut par exemple le mettre en gras en cliquant sur le bouton gras."
+                    },
+                    "preActions": [
+                        {
+                            "type": "boldText",
+                            "blockId": "0"
+                        }
+                    ]
                 }
             ]
         }
@@ -72,35 +76,11 @@
     "contentBlocks": [
         {
             "type": "text",
-            "text": "Nom"
-        },
-        {
-            "type": "textInput"
+            "text": "Exemple"
         },
         {
             "type": "text",
-            "text": "Adresse"
-        },
-        {
-            "type": "textInput"
-        },
-        {
-            "type": "text",
-            "text": "Objet",
-            "style": {
-                "fontWeight": "bold"
-            }
-        },
-        {
-            "type": "textInput"
-        },
-        {
-            "type": "text",
-            "text": "Bonjour, nous voudrions réserver une salle pour nos réunions. Nous sommes 10 membres. Nous aimerions nous réunir le mercredi de 17h à 19h, une fois par mois. Pouvez-vous nous aider ?"
-        },
-        {
-            "type": "text",
-            "text": "Signature"
+            "text": "Ceci est un exemple de texte."
         },
         {
             "type": "textInput"

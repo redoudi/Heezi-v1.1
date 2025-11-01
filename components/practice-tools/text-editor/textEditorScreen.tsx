@@ -20,22 +20,25 @@ function TextBlock({ text = "...", contentBlockStyle = {} }) {
 }
 
 function TextInputBlock({
-  text = "",
   setText,
   handleFocus,
   contentBlockStyle = {},
+  index,
 }: {
-  text: string;
   setText: (text: string) => void;
   handleFocus: () => void;
   contentBlockStyle: { [key: string]: any };
+  index: number;
 }) {
+  const { getBlockText, setBlockText, contentBlocks } = useTextEditorStore();
+
+  console.log("text", contentBlocks[index]?.text);
   return (
     <View style={styles.view2}>
       <TextInput
         style={[styles.text11, contentBlockStyle]}
-        value={text}
-        onChangeText={(text) => setText(text)}
+        value={contentBlocks[index]?.text}
+        onChangeText={(text) => setBlockText(index, text)}
         onFocus={handleFocus}
       />
     </View>
@@ -69,6 +72,7 @@ const ContentBlockList = () => {
                 setText={(text) => setBlockText(index, text)}
                 handleFocus={() => setSelectedBlockIndex(index)}
                 contentBlockStyle={item.style}
+                index={index}
               />
             );
         }

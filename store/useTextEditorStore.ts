@@ -15,6 +15,7 @@ interface TextEditorStore {
   setBlockText: (index: number, newValue: any) => void;
   setSelectedBlockIndex: (index: number) => void;
   setBlockStyle: (index: number, style: { [key: string]: any }) => void;
+  getBlockText: (index: number) => string | undefined;
 }
 
 const useTextEditorStore = create<TextEditorStore>((set, get) => ({
@@ -44,6 +45,9 @@ const useTextEditorStore = create<TextEditorStore>((set, get) => ({
         i === index ? { ...block, style: { ...block.style, ...style } } : block
       ),
     }));
+  },
+  getBlockText: (index: number) => {
+    return get().contentBlocks[index]?.text;
   },
 }));
 export default useTextEditorStore;
