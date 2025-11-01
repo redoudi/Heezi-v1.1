@@ -1,4 +1,5 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
+import { useEffect } from "react";
 import {
   FlatList,
   Image,
@@ -31,7 +32,9 @@ function TextInputBlock({
   index: number;
 }) {
   const { getBlockText, setBlockText, contentBlocks } = useTextEditorStore();
-
+  useEffect(() => {
+    console.log("contentBlocks", contentBlocks);
+  }, [contentBlocks]);
   console.log("text", contentBlocks[index]?.text);
   return (
     <View style={styles.view2}>
