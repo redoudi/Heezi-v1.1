@@ -1,6 +1,23 @@
 import { create } from "zustand";
 
-const useTextEditorStore = create((set, get) => ({
+interface ContentBlock {
+  type: string;
+  text?: string;
+  style?: {
+    [key: string]: any;
+  };
+}
+
+interface TextEditorStore {
+  contentBlocks: ContentBlock[];
+  selectedBlockIndex: number | null;
+  setLevelData: (levelData: any) => void;
+  setBlockText: (index: number, newValue: any) => void;
+  setSelectedBlockIndex: (index: number) => void;
+  setBlockStyle: (index: number, style: { [key: string]: any }) => void;
+}
+
+const useTextEditorStore = create<TextEditorStore>((set, get) => ({
   contentBlocks: [],
   selectedBlockIndex: null,
   setLevelData: (levelData: any) => {
