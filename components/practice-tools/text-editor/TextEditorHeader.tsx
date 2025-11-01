@@ -1,11 +1,19 @@
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import BackButton from "../../ui/back-button";
+
+function BoldButton() {
+  return (
+    <TouchableOpacity style={styles.button13} onPress={() => alert("Pressed!")}>
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2ib5w9m2_expires_30_days.png",
+        }}
+        resizeMode={"stretch"}
+        style={styles.image13}
+      />
+    </TouchableOpacity>
+  );
+}
 
 export default function TextEditorHeader() {
   return (
@@ -215,18 +223,7 @@ export default function TextEditorHeader() {
               </TouchableOpacity>
             </View>
             <View style={styles.row7}>
-              <TouchableOpacity
-                style={styles.button13}
-                onPress={() => alert("Pressed!")}
-              >
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2ib5w9m2_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image13}
-                />
-              </TouchableOpacity>
+              <BoldButton />
               <TouchableOpacity
                 style={styles.button14}
                 onPress={() => alert("Pressed!")}
@@ -1068,4 +1065,3 @@ const styles = StyleSheet.create({
     marginRight: 215,
   },
 });
-

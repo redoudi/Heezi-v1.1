@@ -11,10 +11,10 @@ import {
 } from "react-native";
 import TextEditorHeader from "./TextEditorHeader";
 
-function TextBlock({ text = "..." }) {
+function TextBlock({ text = "...", style = {} }) {
   return (
     <View style={styles.view3}>
-      <Text style={styles.text12}>{text}</Text>
+      <Text style={[styles.text12, style]}>{text}</Text>
     </View>
   );
 }
@@ -47,7 +47,7 @@ const ContentBlockList = () => {
       renderItem={({ item, index }) => {
         switch (item.type) {
           case "text":
-            return <TextBlock text={item.text} />;
+            return <TextBlock text={item.text} style={item.style} />;
           case "textInput":
             return (
               <TextInputBlock
