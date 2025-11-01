@@ -1,0 +1,54 @@
+{
+    "levelType": "quiz",
+    "intro": "Et maintenant, rien de mieux qu'un petit quiz sur l'éditeur de texte pour se rafraichir la mémoire.",
+    "tasks": [
+        {
+            "intro": "On commence par le vocabulaire de l'éditeur de texte.",
+            "steps": [
+                {
+                    "question": "Un document est composé de...",
+                    "answers": [
+                        {
+                            "text": "pages",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "feuilles"
+                        },
+                        {
+                            "text": "classeurs"
+                        }
+                    ]
+                },
+                {
+                    "question": "Une page peut contenir...",
+                    "answers": [
+                        {
+                            "text": "Seulement du texte",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Du texte et des images entre autres"
+                        },
+                        {
+                            "text": "seulement des images"
+                        }
+                    ]
+                },
+                {
+                    "question": "Peut-on modifier du texte ?",
+                    "answers": [
+                        {
+                            "text": "Oui, en le sélectionnant",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Non, il faut créer un nouveau document"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "outro": "Merci pour ton attention. J'espère que ça a été facile. N'hésite pas à revenir si besoin."
+}

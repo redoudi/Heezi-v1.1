@@ -1,5 +1,6 @@
-- [ ] faire practice de textEditor
-- [ ] faire quiz et lesson de textEditor
+- [x] faire practice de textEditor
+- [x] faire quiz de textEditor
+- [ ] lesson de textEditor
 - [ ] ajouter [practicetool] dans mission url
 - [ ] remplacer les graphiques d'intro/outro
 - [ ] changer le thème de l'interface Jouer selon le PracticeTool
@@ -9,6 +10,7 @@
 - [ ] ajouter les highlight pour lesson et practice
 - [ ] ajouter le display correct/faux pour les quiz
 - [ ] implémenter le score à la fin
+- [ ] implémenter la barre de prtogrès
 - [ ] enlever le score à la fin pour practice
 - [ ] mettre mascot-bubble comme modal pour lesson
 - [ ] mettre la flèche vers le bas comme onclose dans mascot-modal
