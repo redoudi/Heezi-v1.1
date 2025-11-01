@@ -54,7 +54,7 @@
                     "preActions": [
                         {
                             "type": "selectBlock",
-                            "blockId": "0"
+                            "blockId": 0
                         }
                     ]
                 },
@@ -65,8 +65,11 @@
                     },
                     "preActions": [
                         {
-                            "type": "boldText",
-                            "blockId": "0"
+                            "type": "style",
+                            "blockIndex": 0,
+                            "value": {
+                                "fontWeight": "bold"
+                            }
                         }
                     ]
                 }
