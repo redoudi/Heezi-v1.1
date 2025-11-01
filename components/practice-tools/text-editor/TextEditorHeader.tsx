@@ -1,23 +1,17 @@
-import useTextEditorStore from "@/store/useTextEditorStore";
+import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import BackButton from "../../ui/back-button";
 
 function BoldButton() {
-  const { getSelectedBlock, setSelectedBlockStyle } = useTextEditorStore();
-  const selectedBlock = getSelectedBlock();
-  const isBold = selectedBlock?.style?.fontWeight === "bold" || false;
-
-  const toggleBold = () => {
-    setSelectedBlockStyle({ fontWeight: isBold ? "normal" : "bold" });
-  };
+  const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
 
   return (
     <TouchableOpacity
       style={[
         styles.button13,
-        isBold ? { borderColor: "black", borderWidth: 1 } : {},
+        isSelectedBlockBold ? { borderColor: "black", borderWidth: 1 } : {},
       ]}
-      onPress={toggleBold}
+      onPress={() => boldSelectedBlock()}
     >
       <Image
         source={{
