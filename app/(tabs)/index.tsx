@@ -1,6 +1,5 @@
 import { LeftColumn } from "@/components/home/left-column";
 import { RightColumn } from "@/components/home/right-column";
-import { PracticeToolProvider } from "@/context/usePracticeTool";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
