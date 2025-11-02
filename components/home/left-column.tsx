@@ -26,7 +26,6 @@ export function LeftColumn() {
 
 const styles = StyleSheet.create({
   leftColumn: {
-    width: 742,
     marginTop: 32,
     marginRight: 16,
   },

@@ -18,5 +18,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
     marginBottom: 16,
+    justifyContent: "space-between",
+    marginRight: 32,
+    marginTop: 16,
   },
 });
