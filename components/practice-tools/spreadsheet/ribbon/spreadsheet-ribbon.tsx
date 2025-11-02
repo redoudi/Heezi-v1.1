@@ -2,8 +2,30 @@ import useSpreadsheetRibbon from "@/hooks/useSpreadsheetRibbon";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "../spreadsheet-styles";
 
-export default function Ribbon() {
+function BoldButton() {
   const ribbonCallbacks = useSpreadsheetRibbon();
+  const { isSelectedCellBold, boldSelectedCell } = useSpreadsheetRibbon();
+  return (
+    <TouchableOpacity
+      // bold button
+      style={[
+        styles.button13,
+        isSelectedCellBold ? { borderColor: "black", borderWidth: 1 } : {},
+      ]}
+      onPress={() => boldSelectedCell()}
+    >
+      <Image
+        source={{
+          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/grsf2bb1_expires_30_days.png",
+        }}
+        resizeMode={"stretch"}
+        style={styles.image13}
+      />
+    </TouchableOpacity>
+  );
+}
+
+export default function Ribbon() {
   return (
     <View style={styles.row4}>
       <View style={styles.column3}>
@@ -88,19 +110,7 @@ export default function Ribbon() {
             </TouchableOpacity>
           </View>
           <View style={styles.row7}>
-            <TouchableOpacity
-              // bold button
-              style={styles.button13}
-              onPress={() => ribbonCallbacks.boldSelectedCell()}
-            >
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/grsf2bb1_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image13}
-              />
-            </TouchableOpacity>
+            <BoldButton />
             <TouchableOpacity
               style={styles.button14}
               onPress={() => alert("Pressed!")}

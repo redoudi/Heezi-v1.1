@@ -4,17 +4,22 @@ export default function useSpreadsheetRibbon() {
   const { spreadsheetData, setCellStyle } = useSpreadsheetStore();
   const cellsSelected = spreadsheetData?.cellsSelected;
   const cellsStyles = spreadsheetData?.cellsStyles;
+
+  const isSelectedCellBold =
+    (cellsSelected?.[0] !== null &&
+      cellsStyles?.[cellsSelected?.[0]]?.fontWeight === "bold") ||
+    false;
+
   return {
+    isSelectedCellBold,
     boldSelectedCell: () => {
       if (cellsSelected?.length > 0) {
-        setCellStyle(cellsSelected?.[0], { fontWeight: "bold" });
+        setCellStyle(cellsSelected?.[0], {
+          fontWeight: isSelectedCellBold
+            ? { fontWeight: "bold" }
+            : { fontWeight: "bold" },
+        });
       }
-    },
-    isSelectedCellBold: () => {
-      if (cellsSelected?.length > 0) {
-        return cellsStyles?.[cellsSelected?.[0]]?.fontWeight === "bold";
-      }
-      return false;
     },
   };
 }
