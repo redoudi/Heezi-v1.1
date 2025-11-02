@@ -23,32 +23,34 @@ export default function ScenarioScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <BackButton style={styles.backButton} />
-      <Image
-        source={imageSource}
-        resizeMode={"stretch"}
-        style={styles.image2}
-      />
-      <View style={styles.view3}>
-        <View style={styles.column2}>
-          <View style={styles.view4}>
-            <Text style={styles.text}>{intro}</Text>
+      <View style={styles.content}>
+        <BackButton style={styles.backButton} />
+        <Image
+          source={imageSource}
+          resizeMode={"stretch"}
+          style={styles.avatar}
+        />
+        <View style={styles.view3}>
+          <View style={styles.column2}>
+            <View style={styles.view4}>
+              <Text style={styles.text}>{intro}</Text>
+            </View>
+            <TouchableOpacity
+              style={styles.buttonRow}
+              onPress={() =>
+                router.push(`/mission/${practiceTool}/${id}/practice`)
+              }
+            >
+              <Text style={styles.text2}>{"Commencer"}</Text>
+              <Image
+                source={{
+                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
+                }}
+                resizeMode={"stretch"}
+                style={styles.image3}
+              />
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            style={styles.buttonRow}
-            onPress={() =>
-              router.push(`/mission/${practiceTool}/${id}/practice`)
-            }
-          >
-            <Text style={styles.text2}>{"Commencer"}</Text>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image3}
-            />
-          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -61,7 +63,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     justifyContent: "center",
   },
-
+  content: {
+    borderWidth: 1,
+  },
+  avatar: {
+    borderRadius: 8,
+    width: 568,
+    height: 711,
+    marginBottom: 16,
+    marginHorizontal: 16,
+    alignSelf: "center",
+  },
   buttonRow: {
     alignSelf: "flex-start",
     flexDirection: "row",
@@ -83,13 +95,7 @@ const styles = StyleSheet.create({
       height: 4,
     },
   },
-  image2: {
-    borderRadius: 8,
-    width: 568,
-    height: 711,
-    marginBottom: 8,
-    marginHorizontal: 16,
-  },
+
   image3: {
     borderRadius: 8,
     width: 16,
@@ -110,9 +116,10 @@ const styles = StyleSheet.create({
   backButton: {
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
-    paddingLeft: 388,
+
     marginBottom: 16,
     marginHorizontal: 32,
+    alignSelf: "flex-start",
   },
   view3: {
     alignItems: "center",
