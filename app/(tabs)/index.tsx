@@ -6,18 +6,16 @@ import { SafeAreaView, StyleSheet, View } from "react-native";
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <PracticeToolProvider>
-        <View style={styles.view}>
-          <View style={styles.row}>
-            <View style={styles.mainContent}>
-              <View style={styles.contentRow}>
-                <LeftColumn />
-                <RightColumn />
-              </View>
+      <View style={styles.view}>
+        <View style={styles.row}>
+          <View style={styles.mainContent}>
+            <View style={styles.contentRow}>
+              <LeftColumn />
+              <RightColumn />
             </View>
           </View>
         </View>
-      </PracticeToolProvider>
+      </View>
     </SafeAreaView>
   );
 }
