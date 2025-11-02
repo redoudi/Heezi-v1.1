@@ -13,7 +13,13 @@ import {
 export default function ScenarioScreen() {
   // useLoadLevel();
   const { practiceTool, id } = useLocalSearchParams();
-  const { intro } = useLevelData();
+  const { intro, levelType } = useLevelData();
+
+  const askingForHelpImage = require("@/assets/images/asking-for-help.png");
+  const heeziIdleImage = require("@/assets/images/heezi-idle.png");
+
+  const imageSource =
+    levelType === "practice" ? askingForHelpImage : heeziIdleImage;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,9 +31,7 @@ export default function ScenarioScreen() {
           <View style={styles.view3}>
             <View style={styles.column2}>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/5pc0oof0_expires_30_days.png",
-                }}
+                source={imageSource}
                 resizeMode={"stretch"}
                 style={styles.image2}
               />

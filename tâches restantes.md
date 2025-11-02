@@ -10,9 +10,9 @@
 - [ ] ajouter les highlight pour lesson et practice
 - [ ] ajouter le display correct/faux pour les quiz
 - [ ] implémenter le score à la fin
-- [ ] implémenter la barre de prtogrès
+- [ ] implémenter la barre de progrès
 - [ ] enlever le score à la fin pour practice
 - [ ] mettre mascot-bubble comme modal pour lesson
 - [ ] mettre la flèche vers le bas comme onclose dans mascot-modal
 - [ ] faire le responsive de tout l'affichage
-- [ ] repair unbolding in tableur
+- [x] repair unbolding in tableur
