@@ -48,30 +48,21 @@ function LoadedTextEditorScreen() {
 
 function PracticeToolScreen() {
   const { practiceTool } = useLocalSearchParams();
-  const PracticeToolScreen = () => {
-    switch (practiceTool) {
-      case "spreadsheet":
-        return <LoadedSpreadsheetScreen />;
-      case "textEditor":
-        return <LoadedTextEditorScreen />;
-      default:
-        return null;
-    }
-  };
 
-  return <PracticeToolScreen />;
+  switch (practiceTool) {
+    case "spreadsheet":
+      return <LoadedSpreadsheetScreen />;
+    case "textEditor":
+      return <LoadedTextEditorScreen />;
+    default:
+      throw new Error("Practice Tool not found");
+  }
 }
 
 export default function PracticeScreen() {
   const { levelType } = useLevelData();
-  switch (levelType) {
-    case "quiz":
-      return <QuizScreen />;
-    case "practice":
-      return <PracticeToolScreen />;
-    case "lesson":
-      return <PracticeToolScreen />;
-    default:
-      return null;
+  if (levelType === "quiz") {
+    return <QuizScreen />;
   }
+  return <PracticeToolScreen />;
 }

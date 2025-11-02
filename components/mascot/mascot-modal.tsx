@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import {
   Image,
   Modal,
+  Platform,
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
@@ -8,6 +10,16 @@ import {
 } from "react-native";
 
 export default function MascotModal({ open, onClose, modalText }) {
+  // Blur any focused elements when modal opens to prevent aria-hidden accessibility issues
+  useEffect(() => {
+    if (open && Platform.OS === "web") {
+      const activeElement = document.activeElement as HTMLElement;
+      if (activeElement && activeElement.blur) {
+        activeElement.blur();
+      }
+    }
+  }, [open]);
+
   return (
     <Modal
       visible={open}
@@ -15,9 +27,9 @@ export default function MascotModal({ open, onClose, modalText }) {
       animationType="fade"
       onRequestClose={onClose}
     >
-      <TouchableWithoutFeedback onPress={onClose}>
+      <TouchableWithoutFeedback onPress={onClose} accessible={false}>
         <View style={styles.container}>
-          <TouchableWithoutFeedback onPress={() => {}}>
+          <TouchableWithoutFeedback onPress={() => {}} accessible={false}>
             <View style={styles.column}>
               <Image
                 source={{
