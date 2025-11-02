@@ -14,11 +14,10 @@ export default function useSpreadsheetRibbon() {
     isSelectedCellBold,
     boldSelectedCell: () => {
       if (cellsSelected?.length > 0) {
-        setCellStyle(cellsSelected?.[0], {
-          fontWeight: isSelectedCellBold
-            ? { fontWeight: "bold" }
-            : { fontWeight: "bold" },
-        });
+        setCellStyle(
+          cellsSelected?.[0],
+          isSelectedCellBold ? { fontWeight: "normal" } : { fontWeight: "bold" }
+        );
       }
     },
   };
