@@ -24,13 +24,13 @@ export default function ScenarioScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <BackButton style={styles.backButton} />
+      <Image
+        source={imageSource}
+        resizeMode={"stretch"}
+        style={styles.image2}
+      />
       <View style={styles.view3}>
         <View style={styles.column2}>
-          <Image
-            source={imageSource}
-            resizeMode={"stretch"}
-            style={styles.image2}
-          />
           <View style={styles.view4}>
             <Text style={styles.text}>{intro}</Text>
           </View>
@@ -59,8 +59,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
-    paddingVertical: 32,
-    borderWidth: 1,
     justifyContent: "center",
   },
 
