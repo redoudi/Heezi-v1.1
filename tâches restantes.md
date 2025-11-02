@@ -1,7 +1,7 @@
 - [x] faire practice de textEditor
 - [x] faire quiz de textEditor
-- [ ] lesson de textEditor
-- [ ] ajouter [practicetool] dans mission url
+- [x] lesson de textEditor
+- [x] ajouter [practicetool] dans mission url
 - [ ] remplacer les graphiques d'intro/outro
 - [ ] changer le thème de l'interface Jouer selon le PracticeTool
 - [ ] ajouter les animations
