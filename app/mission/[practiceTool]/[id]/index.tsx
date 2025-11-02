@@ -23,36 +23,32 @@ export default function ScenarioScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        <View style={styles.column}>
-          <BackButton style={styles.view2} />
-          <View style={styles.view3}>
-            <View style={styles.column2}>
-              <Image
-                source={imageSource}
-                resizeMode={"stretch"}
-                style={styles.image2}
-              />
-              <View style={styles.view4}>
-                <Text style={styles.text}>{intro}</Text>
-              </View>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() =>
-                  router.push(`/mission/${practiceTool}/${id}/practice`)
-                }
-              >
-                <Text style={styles.text2}>{"Commencer"}</Text>
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image3}
-                />
-              </TouchableOpacity>
-            </View>
+      <BackButton style={styles.backButton} />
+      <View style={styles.view3}>
+        <View style={styles.column2}>
+          <Image
+            source={imageSource}
+            resizeMode={"stretch"}
+            style={styles.image2}
+          />
+          <View style={styles.view4}>
+            <Text style={styles.text}>{intro}</Text>
           </View>
+          <TouchableOpacity
+            style={styles.buttonRow}
+            onPress={() =>
+              router.push(`/mission/${practiceTool}/${id}/practice`)
+            }
+          >
+            <Text style={styles.text2}>{"Commencer"}</Text>
+            <Image
+              source={{
+                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
+              }}
+              resizeMode={"stretch"}
+              style={styles.image3}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -63,7 +59,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
+    paddingVertical: 32,
+    borderWidth: 1,
+    justifyContent: "center",
   },
+
   buttonRow: {
     alignSelf: "flex-start",
     flexDirection: "row",
@@ -73,16 +73,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginLeft: 391,
   },
-  column: {
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 32,
-    borderWidth: 1,
-  },
-  content: {
-    width: 1440,
-    backgroundColor: "#FFFFFF",
-    borderWidth: 1,
-  },
+
   column2: {
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
@@ -118,7 +109,7 @@ const styles = StyleSheet.create({
     marginRight: 11,
   },
 
-  view2: {
+  backButton: {
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
     paddingLeft: 388,
