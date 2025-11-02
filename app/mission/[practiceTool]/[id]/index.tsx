@@ -25,9 +25,7 @@ export default function ScenarioScreen() {
     <SafeAreaView style={styles.container}>
       <View style={styles.view}>
         <View style={styles.column}>
-          <View style={styles.view2}>
-            <BackButton />
-          </View>
+          <BackButton style={styles.view2} />
           <View style={styles.view3}>
             <View style={styles.column2}>
               <Image

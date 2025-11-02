@@ -1,20 +1,22 @@
 import { router } from "expo-router";
-import { Image, StyleSheet, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
-export default function BackButton() {
+export default function BackButton({ style }) {
   return (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={() => router.replace("/(tabs)")}
-    >
-      <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iycoag37_expires_30_days.png",
-        }}
-        resizeMode={"stretch"}
-        style={styles.image5}
-      />
-    </TouchableOpacity>
+    <View style={style}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.replace("/(tabs)")}
+      >
+        <Image
+          source={{
+            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iycoag37_expires_30_days.png",
+          }}
+          resizeMode={"stretch"}
+          style={styles.image5}
+        />
+      </TouchableOpacity>
+    </View>
   );
 }
 
