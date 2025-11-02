@@ -1,22 +1,12 @@
 import { router } from "expo-router";
-import {
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  type ImageStyle,
-  type StyleProp,
-  type ViewStyle,
-} from "react-native";
-
-type BackButtonProps = {
-  onPress?: () => void;
-  containerStyle?: StyleProp<ViewStyle>;
-  imageStyle?: StyleProp<ImageStyle>;
-};
+import { Image, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function BackButton() {
   return (
-    <TouchableOpacity style={styles.button} onPress={() => router.back()}>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => router.replace("/(tabs)")}
+    >
       <Image
         source={{
           uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iycoag37_expires_30_days.png",
