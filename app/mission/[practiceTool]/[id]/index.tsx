@@ -23,7 +23,7 @@ export default function ScenarioScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.view}>
+      <View style={styles.content}>
         <View style={styles.column}>
           <BackButton style={styles.view2} />
           <View style={styles.view3}>
@@ -64,12 +64,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
-  button: {
-    alignSelf: "flex-start",
-    backgroundColor: "#FDC1AB",
-    borderRadius: 8,
-    padding: 16,
-  },
   buttonRow: {
     alignSelf: "flex-start",
     flexDirection: "row",
@@ -82,6 +76,12 @@ const styles = StyleSheet.create({
   column: {
     backgroundColor: "#FFFFFF",
     paddingVertical: 32,
+    borderWidth: 1,
+  },
+  content: {
+    width: 1440,
+    backgroundColor: "#FFFFFF",
+    borderWidth: 1,
   },
   column2: {
     backgroundColor: "#FFFFFF",
@@ -93,11 +93,6 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
-  },
-  image: {
-    borderRadius: 8,
-    width: 30,
-    height: 32,
   },
   image2: {
     borderRadius: 8,
@@ -122,10 +117,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginRight: 11,
   },
-  view: {
-    width: 1440,
-    backgroundColor: "#FFFFFF",
-  },
+
   view2: {
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
