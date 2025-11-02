@@ -114,16 +114,14 @@ const styles = StyleSheet.create({
   },
 
   backButton: {
-    backgroundColor: "#FFFFFF",
     paddingVertical: 8,
 
     marginBottom: 16,
-    marginHorizontal: 32,
+
     alignSelf: "flex-start",
   },
   view3: {
     alignItems: "center",
-    marginHorizontal: 40,
   },
   view4: {
     alignSelf: "flex-start",
