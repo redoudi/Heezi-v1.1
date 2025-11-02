@@ -63,7 +63,7 @@ export default function ScenarioScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   button: {
