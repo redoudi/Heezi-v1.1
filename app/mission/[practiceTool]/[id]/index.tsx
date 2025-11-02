@@ -30,11 +30,11 @@ export default function ScenarioScreen() {
           resizeMode={"stretch"}
           style={styles.avatar}
         />
+        <View style={styles.view4}>
+          <Text style={styles.text}>{intro}</Text>
+        </View>
         <View style={styles.view3}>
           <View style={styles.column2}>
-            <View style={styles.view4}>
-              <Text style={styles.text}>{intro}</Text>
-            </View>
             <TouchableOpacity
               style={styles.buttonRow}
               onPress={() =>
@@ -114,14 +114,16 @@ const styles = StyleSheet.create({
   },
 
   backButton: {
+    backgroundColor: "#FFFFFF",
     paddingVertical: 8,
 
     marginBottom: 16,
-
+    marginHorizontal: 32,
     alignSelf: "flex-start",
   },
   view3: {
     alignItems: "center",
+    marginHorizontal: 40,
   },
   view4: {
     alignSelf: "flex-start",
