@@ -10,27 +10,6 @@ import {
   View,
 } from "react-native";
 
-function StartButton() {
-  const { practiceTool, id } = useLocalSearchParams();
-  return (
-    <View style={styles.column2}>
-      <TouchableOpacity
-        style={styles.buttonRow}
-        onPress={() => router.push(`/mission/${practiceTool}/${id}/practice`)}
-      >
-        <Text style={styles.text2}>{"Commencer"}</Text>
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image3}
-        />
-      </TouchableOpacity>
-    </View>
-  );
-}
-
 function Avatar({ imageSource }: { imageSource: ImageSourcePropType }) {
   return (
     <Image source={imageSource} resizeMode={"stretch"} style={styles.avatar} />
@@ -45,15 +24,37 @@ function IntroText({ intro = "..." }) {
   );
 }
 
-export default function ScenarioScreen() {
-  // useLoadLevel();
-  const { intro, levelType } = useLevelData();
+function StartButton({ onPress }: { onPress: () => void }) {
+  return (
+    <View style={styles.view3}>
+      <View style={styles.column2}>
+        <TouchableOpacity style={styles.buttonRow} onPress={onPress}>
+          <Text style={styles.text2}>{"Commencer"}</Text>
+          <Image
+            source={{
+              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
+            }}
+            resizeMode={"stretch"}
+            style={styles.image3}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
 
+export default function ScenarioScreen() {
   const askingForHelpImage = require("@/assets/images/asking-for-help.png");
   const heeziIdleImage = require("@/assets/images/heezi-idle.png");
 
+  const { intro, levelType } = useLevelData();
+  const { practiceTool, id } = useLocalSearchParams();
+
   const imageSource =
     levelType === "practice" ? askingForHelpImage : heeziIdleImage;
+
+  const handleStart = () =>
+    router.push(`/mission/${practiceTool}/${id}/practice`);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -61,9 +62,7 @@ export default function ScenarioScreen() {
         <BackButton style={styles.backButton} />
         <Avatar imageSource={imageSource} />
         <IntroText intro={intro} />
-        <View style={styles.view3}>
-          <StartButton />
-        </View>
+        <StartButton onPress={handleStart} />
       </View>
     </SafeAreaView>
   );
