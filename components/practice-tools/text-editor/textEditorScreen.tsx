@@ -1,12 +1,10 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
 import {
   FlatList,
-  Image,
   SafeAreaView,
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
   View,
 } from "react-native";
 import TextEditorHeader from "./TextEditorHeader";
@@ -88,44 +86,12 @@ export default function TextEditorScreen() {
         <PageNumber currentPage={1} totalPages={1} />
         <View style={styles.column11}>
           <View style={styles.row12}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/eqckye85_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image30}
-            />
-            <TouchableOpacity
-              style={styles.button31}
-              onPress={() => alert("Pressed!")}
-            >
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qj1lahyq_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image31}
-              />
-            </TouchableOpacity>
             <View style={styles.view6}>
               <View style={styles.view7}>
                 <View style={styles.box}></View>
               </View>
             </View>
           </View>
-          <TouchableOpacity
-            style={styles.buttonRow4}
-            onPress={() => alert("Pressed!")}
-          >
-            <Text style={styles.text14}>{"Envoyer"}</Text>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/bl1h9t4s_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image32}
-            />
-          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
