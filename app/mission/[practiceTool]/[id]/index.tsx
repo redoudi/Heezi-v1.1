@@ -40,7 +40,7 @@ function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
 
 function StartButton({ onPress }: { onPress: () => void }) {
   return (
-    <View style={styles.StartButtonContainer2}>
+    <View style={styles.startButtonContainer}>
       <TouchableOpacity style={styles.startButton} onPress={onPress}>
         <Text style={styles.buttonText}>{"Commencer"}</Text>
         <TriangleIcon style={styles.triangleIcon} />
@@ -81,6 +81,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   content: { borderWidth: 2 },
+  backButton: {
+    backgroundColor: "#FFFFFF",
+    paddingVertical: 8,
+    marginBottom: 16,
+    marginHorizontal: 32,
+    alignSelf: "flex-start",
+  },
   avatar: {
     borderRadius: 8,
     width: 568,
@@ -89,9 +96,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     alignSelf: "center",
   },
-
-  StartButtonContainer2: {
-    backgroundColor: "#FFFFFF",
+  startButtonContainer: {
     borderRadius: 8,
     paddingVertical: 16,
     shadowColor: "#1E6759",
@@ -103,7 +108,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginHorizontal: 40,
   },
-
   startButton: {
     alignSelf: "flex-start",
     flexDirection: "row",
@@ -129,15 +133,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginRight: 11,
-  },
-
-  backButton: {
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 8,
-
-    marginBottom: 16,
-    marginHorizontal: 32,
-    alignSelf: "flex-start",
   },
 
   introTextBox: {
