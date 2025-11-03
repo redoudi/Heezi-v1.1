@@ -91,7 +91,7 @@ function ProgressBar() {
 
 export default function TextEditorScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.mainContainer}>
       <View style={styles.column}>
         <TextEditorHeader />
 
@@ -108,7 +108,7 @@ export default function TextEditorScreen() {
   );
 }
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
