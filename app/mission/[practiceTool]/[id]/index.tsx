@@ -82,9 +82,8 @@ const styles = StyleSheet.create({
   },
 
   backButton: {
-    paddingVertical: 8,
     marginBottom: 16,
-    marginHorizontal: 32,
+    marginHorizontal: 0,
     alignSelf: "flex-start",
   },
   avatar: {
@@ -102,7 +101,6 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingLeft: 8,
     marginBottom: 8,
-    marginLeft: 16,
   },
   introText: {
     color: "#292929",
@@ -123,13 +121,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   startButton: {
-    alignSelf: "flex-start",
+    alignSelf: "flex-end",
     flexDirection: "row",
     backgroundColor: "#72D6BA",
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
-    marginLeft: 391,
   },
   buttonText: {
     color: "#0A2924",
