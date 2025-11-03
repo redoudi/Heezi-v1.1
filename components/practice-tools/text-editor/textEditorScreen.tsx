@@ -11,8 +11,8 @@ import TextEditorHeader from "./TextEditorHeader";
 
 function TextBlock({ text = "...", contentBlockStyle = {} }) {
   return (
-    <View style={styles.view3}>
-      <Text style={[styles.text12, contentBlockStyle]}>{text}</Text>
+    <View style={styles.textBlockContainer}>
+      <Text style={[styles.textBlockText, contentBlockStyle]}>{text}</Text>
     </View>
   );
 }
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginLeft: 9,
   },
-  text12: {
+  textBlockText: {
     color: "#292929",
     fontSize: 16,
     width: 618,
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginHorizontal: 64,
   },
-  view3: {
+  textBlockContainer: {
     alignSelf: "flex-start",
     marginBottom: 11,
     marginHorizontal: 64,
