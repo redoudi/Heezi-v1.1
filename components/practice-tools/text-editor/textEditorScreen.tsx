@@ -118,22 +118,7 @@ const styles = StyleSheet.create({
     height: 8,
     backgroundColor: "#45BC9E",
   },
-  button31: {
-    width: 62,
-    alignItems: "center",
-    backgroundColor: "#33C6FD",
-    borderRadius: 8,
-    paddingVertical: 15,
-    marginRight: 16,
-  },
-  buttonRow4: {
-    width: 297,
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#F9BE3C",
-    borderRadius: 8,
-    paddingVertical: 8,
-  },
+
   column: {
     width: 1440,
     backgroundColor: "#EFEFEF",
