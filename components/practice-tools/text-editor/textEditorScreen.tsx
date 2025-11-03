@@ -94,9 +94,7 @@ export default function TextEditorScreen() {
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.column}>
         <TextEditorHeader />
-
         <ContentPage />
-
         <PageNumber currentPage={1} totalPages={1} />
         <View style={styles.progressBarColumn}>
           <View style={styles.ProgressBarRow}>
