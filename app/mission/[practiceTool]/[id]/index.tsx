@@ -63,7 +63,7 @@ export default function ScenarioScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
+      <View style={styles.mainContent}>
         <BackButton style={styles.backButton} />
         <Avatar imageSource={imageSource} />
         <IntroText intro={intro} />
@@ -80,7 +80,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     justifyContent: "center",
   },
-
+  mainContent: {
+    borderRadius: 8,
+    paddingVertical: 16,
+    shadowColor: "#1E6759",
+    shadowOpacity: 1.0,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    alignItems: "center",
+    marginHorizontal: 40,
+    borderWidth: 1,
+    paddingHorizontal: 16,
+  },
   backButton: {
     marginBottom: 16,
     marginHorizontal: 0,
@@ -107,19 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  content: {
-    borderRadius: 8,
-    paddingVertical: 16,
-    shadowColor: "#1E6759",
-    shadowOpacity: 1.0,
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    alignItems: "center",
-    marginHorizontal: 40,
-    borderWidth: 1,
-  },
+
   startButton: {
     alignSelf: "flex-end",
     flexDirection: "row",
