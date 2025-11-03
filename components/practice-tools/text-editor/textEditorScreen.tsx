@@ -75,6 +75,16 @@ const ContentBlockList = () => {
   );
 };
 
+function ProgressBar() {
+  return (
+    <View style={styles.view6}>
+      <View style={styles.view7}>
+        <View style={styles.box}></View>
+      </View>
+    </View>
+  );
+}
+
 export default function TextEditorScreen() {
   return (
     <SafeAreaView style={styles.container}>
@@ -86,11 +96,7 @@ export default function TextEditorScreen() {
         <PageNumber currentPage={1} totalPages={1} />
         <View style={styles.column11}>
           <View style={styles.row12}>
-            <View style={styles.view6}>
-              <View style={styles.view7}>
-                <View style={styles.box}></View>
-              </View>
-            </View>
+            <ProgressBar />
           </View>
         </View>
       </View>
