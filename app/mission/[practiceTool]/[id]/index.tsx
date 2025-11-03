@@ -15,7 +15,7 @@ import {
 
 function Avatar({ imageSource }: { imageSource: ImageSourcePropType }) {
   return (
-    <Image source={imageSource} resizeMode={"stretch"} style={styles.avatar} />
+    <Image source={imageSource} resizeMode={"contain"} style={styles.avatar} />
   );
 }
 
@@ -102,10 +102,7 @@ const styles = StyleSheet.create({
   },
   avatar: {
     borderRadius: 8,
-    width: 568,
-    height: 711,
-    marginBottom: 16,
-    marginHorizontal: 16,
+
     alignSelf: "center",
   },
   introTextBox: {
