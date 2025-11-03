@@ -3,7 +3,9 @@ import useLevelData from "@/hooks/use-level-data";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
+  ImageStyle,
   SafeAreaView,
+  StyleProp,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -18,27 +20,31 @@ function Avatar({ imageSource }: { imageSource: ImageSourcePropType }) {
 
 function IntroText({ intro = "..." }) {
   return (
-    <View style={styles.view4}>
+    <View style={styles.introTextBox}>
       <Text style={styles.text}>{intro}</Text>
     </View>
   );
 }
 
+function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
+  return (
+    <Image
+      source={{
+        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
+      }}
+      resizeMode={"stretch"}
+      style={style}
+    />
+  );
+}
+
 function StartButton({ onPress }: { onPress: () => void }) {
   return (
-    <View style={styles.view3}>
-      <View style={styles.column2}>
-        <TouchableOpacity style={styles.buttonRow} onPress={onPress}>
-          <Text style={styles.text2}>{"Commencer"}</Text>
-          <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
-            }}
-            resizeMode={"stretch"}
-            style={styles.image3}
-          />
-        </TouchableOpacity>
-      </View>
+    <View style={styles.StartButtonContainer2}>
+      <TouchableOpacity style={styles.startButton} onPress={onPress}>
+        <Text style={styles.buttonText}>{"Commencer"}</Text>
+        <TriangleIcon style={styles.triangleIcon} />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -74,9 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     justifyContent: "center",
   },
-  content: {
-    borderWidth: 1,
-  },
+  content: { borderWidth: 2 },
   avatar: {
     borderRadius: 8,
     width: 568,
@@ -85,17 +89,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     alignSelf: "center",
   },
-  buttonRow: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    backgroundColor: "#72D6BA",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginLeft: 391,
-  },
 
-  column2: {
+  StartButtonContainer2: {
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingVertical: 16,
@@ -105,9 +100,21 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
+    alignItems: "center",
+    marginHorizontal: 40,
   },
 
-  image3: {
+  startButton: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    backgroundColor: "#72D6BA",
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    marginLeft: 391,
+  },
+
+  triangleIcon: {
     borderRadius: 8,
     width: 16,
     height: 24,
@@ -117,7 +124,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  text2: {
+  buttonText: {
     color: "#0A2924",
     fontSize: 24,
     fontWeight: "bold",
@@ -132,17 +139,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 32,
     alignSelf: "flex-start",
   },
-  view3: {
-    alignItems: "center",
-    marginHorizontal: 40,
-  },
-  view4: {
+
+  introTextBox: {
     alignSelf: "flex-start",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 8,
     paddingLeft: 8,
-    paddingRight: 57,
     marginBottom: 8,
     marginLeft: 16,
   },
