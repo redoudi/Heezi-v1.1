@@ -11,7 +11,7 @@ import useRunTextEditorPreActions from "@/hooks/useRunTextEditorPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { useLocalSearchParams } from "expo-router";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import QuizScreen from "./quiz";
 
 function LoadedSpreadsheetScreen() {
@@ -61,8 +61,16 @@ function PracticeToolScreen() {
 
 export default function PracticeScreen() {
   const { levelType } = useLevelData();
-  if (levelType === "quiz") {
-    return <QuizScreen />;
-  }
-  return <PracticeToolScreen />;
+  return (
+    <View style={styles.container}>
+      {levelType === "quiz" ? <QuizScreen /> : <PracticeToolScreen />}
+    </View>
+  );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    backgroundColor: "white",
+  },
+});
