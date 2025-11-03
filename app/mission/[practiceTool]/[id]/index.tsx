@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 40,
     borderWidth: 1,
     paddingHorizontal: 16,
+    gap: 8,
   },
   backButton: {
     marginBottom: 16,
