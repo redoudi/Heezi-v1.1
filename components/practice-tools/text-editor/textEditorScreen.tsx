@@ -116,7 +116,6 @@ const styles = StyleSheet.create({
     height: 8,
     backgroundColor: "#45BC9E",
   },
-
   column: {
     width: 1440,
     backgroundColor: "#EFEFEF",
