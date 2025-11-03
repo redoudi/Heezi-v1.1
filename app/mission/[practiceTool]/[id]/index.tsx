@@ -3,6 +3,7 @@ import useLevelData from "@/hooks/use-level-data";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
+  ImageSourcePropType,
   ImageStyle,
   SafeAreaView,
   StyleProp,
@@ -82,7 +83,6 @@ const styles = StyleSheet.create({
   },
   content: { borderWidth: 2 },
   backButton: {
-    backgroundColor: "#FFFFFF",
     paddingVertical: 8,
     marginBottom: 16,
     marginHorizontal: 32,
