@@ -22,7 +22,7 @@ function Avatar({ imageSource }: { imageSource: ImageSourcePropType }) {
 function IntroText({ intro = "..." }) {
   return (
     <View style={styles.introTextBox}>
-      <Text style={styles.text}>{intro}</Text>
+      <Text style={styles.introText}>{intro}</Text>
     </View>
   );
 }
@@ -41,12 +41,10 @@ function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
 
 function StartButton({ onPress }: { onPress: () => void }) {
   return (
-    <View style={styles.startButtonContainer}>
-      <TouchableOpacity style={styles.startButton} onPress={onPress}>
-        <Text style={styles.buttonText}>{"Commencer"}</Text>
-        <TriangleIcon style={styles.triangleIcon} />
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity style={styles.startButton} onPress={onPress}>
+      <Text style={styles.buttonText}>{"Commencer"}</Text>
+      <TriangleIcon style={styles.triangleIcon} />
+    </TouchableOpacity>
   );
 }
 
@@ -69,6 +67,7 @@ export default function ScenarioScreen() {
         <BackButton style={styles.backButton} />
         <Avatar imageSource={imageSource} />
         <IntroText intro={intro} />
+
         <StartButton onPress={handleStart} />
       </View>
     </SafeAreaView>
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     justifyContent: "center",
   },
-  content: { borderWidth: 2 },
+
   backButton: {
     paddingVertical: 8,
     marginBottom: 16,
@@ -96,7 +95,21 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     alignSelf: "center",
   },
-  startButtonContainer: {
+  introTextBox: {
+    alignSelf: "flex-start",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingLeft: 8,
+    marginBottom: 8,
+    marginLeft: 16,
+  },
+  introText: {
+    color: "#292929",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  content: {
     borderRadius: 8,
     paddingVertical: 16,
     shadowColor: "#1E6759",
@@ -107,6 +120,7 @@ const styles = StyleSheet.create({
     },
     alignItems: "center",
     marginHorizontal: 40,
+    borderWidth: 1,
   },
   startButton: {
     alignSelf: "flex-start",
@@ -117,31 +131,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginLeft: 391,
   },
-
-  triangleIcon: {
-    borderRadius: 8,
-    width: 16,
-    height: 24,
-  },
-  text: {
-    color: "#292929",
-    fontSize: 20,
-    fontWeight: "bold",
-  },
   buttonText: {
     color: "#0A2924",
     fontSize: 24,
     fontWeight: "bold",
     marginRight: 11,
   },
-
-  introTextBox: {
-    alignSelf: "flex-start",
-    backgroundColor: "#EFEFEF",
+  triangleIcon: {
     borderRadius: 8,
-    paddingVertical: 8,
-    paddingLeft: 8,
-    marginBottom: 8,
-    marginLeft: 16,
+    width: 16,
+    height: 24,
   },
 });
