@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   },
   mainContent: {
     backgroundColor: "#EFEFEF",
-    flex: 1,
+    borderWidth: 1,
   },
   contentPage: {
     flex: 1,
