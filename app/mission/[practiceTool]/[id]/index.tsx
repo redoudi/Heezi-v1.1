@@ -10,9 +10,43 @@ import {
   View,
 } from "react-native";
 
+function StartButton() {
+  const { practiceTool, id } = useLocalSearchParams();
+  return (
+    <View style={styles.column2}>
+      <TouchableOpacity
+        style={styles.buttonRow}
+        onPress={() => router.push(`/mission/${practiceTool}/${id}/practice`)}
+      >
+        <Text style={styles.text2}>{"Commencer"}</Text>
+        <Image
+          source={{
+            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
+          }}
+          resizeMode={"stretch"}
+          style={styles.image3}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+function Avatar({ imageSource }: { imageSource: ImageSourcePropType }) {
+  return (
+    <Image source={imageSource} resizeMode={"stretch"} style={styles.avatar} />
+  );
+}
+
+function IntroText({ intro = "..." }) {
+  return (
+    <View style={styles.view4}>
+      <Text style={styles.text}>{intro}</Text>
+    </View>
+  );
+}
+
 export default function ScenarioScreen() {
   // useLoadLevel();
-  const { practiceTool, id } = useLocalSearchParams();
   const { intro, levelType } = useLevelData();
 
   const askingForHelpImage = require("@/assets/images/asking-for-help.png");
@@ -25,32 +59,10 @@ export default function ScenarioScreen() {
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <BackButton style={styles.backButton} />
-        <Image
-          source={imageSource}
-          resizeMode={"stretch"}
-          style={styles.avatar}
-        />
-        <View style={styles.view4}>
-          <Text style={styles.text}>{intro}</Text>
-        </View>
+        <Avatar imageSource={imageSource} />
+        <IntroText intro={intro} />
         <View style={styles.view3}>
-          <View style={styles.column2}>
-            <TouchableOpacity
-              style={styles.buttonRow}
-              onPress={() =>
-                router.push(`/mission/${practiceTool}/${id}/practice`)
-              }
-            >
-              <Text style={styles.text2}>{"Commencer"}</Text>
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image3}
-              />
-            </TouchableOpacity>
-          </View>
+          <StartButton />
         </View>
       </View>
     </SafeAreaView>
