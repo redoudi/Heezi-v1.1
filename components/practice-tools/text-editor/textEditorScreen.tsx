@@ -29,9 +29,9 @@ function TextInputBlock({
   contentBlockStyle: { [key: string]: any };
 }) {
   return (
-    <View style={styles.view2}>
+    <View style={styles.textInputContainer}>
       <TextInput
-        style={[styles.text11, contentBlockStyle]}
+        style={[styles.textInput, contentBlockStyle]}
         value={text}
         onChangeText={(text) => setText(text)}
         onFocus={handleFocus}
@@ -42,44 +42,48 @@ function TextInputBlock({
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
-    <View style={styles.view5}>
-      <Text style={styles.text13}>{`Page ${currentPage}/${totalPages}`}</Text>
+    <View style={styles.pageNumberContainer}>
+      <Text
+        style={styles.pageNumberText}
+      >{`Page ${currentPage}/${totalPages}`}</Text>
     </View>
   );
 }
 
-const ContentBlockList = () => {
+const ContentPage = () => {
   const { contentBlocks, setBlockText, setSelectedBlockIndex } =
     useTextEditorStore();
   return (
-    <FlatList
-      data={contentBlocks}
-      renderItem={({ item, index }) => {
-        switch (item.type) {
-          case "text":
-            return (
-              <TextBlock text={item.text} contentBlockStyle={item.style} />
-            );
-          case "textInput":
-            return (
-              <TextInputBlock
-                text={item.text}
-                setText={(text) => setBlockText(index, text)}
-                handleFocus={() => setSelectedBlockIndex(index)}
-                contentBlockStyle={item.style}
-              />
-            );
-        }
-      }}
-    />
+    <View style={styles.contentPage}>
+      <FlatList
+        data={contentBlocks}
+        renderItem={({ item, index }) => {
+          switch (item.type) {
+            case "text":
+              return (
+                <TextBlock text={item.text} contentBlockStyle={item.style} />
+              );
+            case "textInput":
+              return (
+                <TextInputBlock
+                  text={item.text}
+                  setText={(text) => setBlockText(index, text)}
+                  handleFocus={() => setSelectedBlockIndex(index)}
+                  contentBlockStyle={item.style}
+                />
+              );
+          }
+        }}
+      />
+    </View>
   );
 };
 
 function ProgressBar() {
   return (
-    <View style={styles.view6}>
-      <View style={styles.view7}>
-        <View style={styles.box}></View>
+    <View style={styles.progressBarContainer1}>
+      <View style={styles.progressBarContainer2}>
+        <View style={styles.progressBar}></View>
       </View>
     </View>
   );
@@ -90,12 +94,12 @@ export default function TextEditorScreen() {
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
         <TextEditorHeader />
-        <View style={styles.column10}>
-          <ContentBlockList />
-        </View>
+
+        <ContentPage />
+
         <PageNumber currentPage={1} totalPages={1} />
-        <View style={styles.column11}>
-          <View style={styles.row12}>
+        <View style={styles.progressBarColumn}>
+          <View style={styles.ProgressBarRow}>
             <ProgressBar />
           </View>
         </View>
@@ -109,7 +113,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
   },
-  box: {
+  progressBar: {
     width: 63,
     height: 8,
     backgroundColor: "#45BC9E",
@@ -134,7 +138,8 @@ const styles = StyleSheet.create({
     width: 1440,
     backgroundColor: "#EFEFEF",
   },
-  column10: {
+  contentPage: {
+    flex: 1,
     alignSelf: "flex-start",
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
@@ -143,7 +148,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginHorizontal: 345,
   },
-  column11: {
+  progressBarColumn: {
     alignSelf: "flex-start",
     marginBottom: 32,
     marginLeft: 32,
@@ -164,12 +169,12 @@ const styles = StyleSheet.create({
     height: 24,
     marginRight: 16,
   },
-  row12: {
+  ProgressBarRow: {
     alignSelf: "flex-start",
     flexDirection: "row",
     marginBottom: 16,
   },
-  text11: {
+  textInput: {
     color: "#292929",
     fontSize: 16,
     marginLeft: 9,
@@ -179,7 +184,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     width: 618,
   },
-  text13: {
+  pageNumberText: {
     color: "#292929",
     fontSize: 16,
     fontWeight: "bold",
@@ -191,7 +196,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     flex: 1,
   },
-  view2: {
+  textInputContainer: {
     width: 622,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
@@ -211,17 +216,17 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
     marginHorizontal: 64,
   },
-  view5: {
+  pageNumberContainer: {
     alignItems: "center",
     marginBottom: 18,
   },
-  view6: {
+  progressBarContainer1: {
     width: 116,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingVertical: 22,
   },
-  view7: {
+  progressBarContainer2: {
     backgroundColor: "#989898",
     borderRadius: 4,
     marginHorizontal: 16,
