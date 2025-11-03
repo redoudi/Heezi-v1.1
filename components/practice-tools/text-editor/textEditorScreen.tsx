@@ -138,22 +138,6 @@ const styles = StyleSheet.create({
     marginBottom: 32,
     marginLeft: 32,
   },
-  image30: {
-    width: 87,
-    height: 53,
-    marginRight: 16,
-  },
-  image31: {
-    borderRadius: 8,
-    width: 30,
-    height: 22,
-  },
-  image32: {
-    borderRadius: 8,
-    width: 16,
-    height: 24,
-    marginRight: 16,
-  },
   ProgressBarRow: {
     alignSelf: "flex-start",
     flexDirection: "row",
@@ -174,13 +158,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
-  text14: {
-    color: "#903610",
-    fontSize: 24,
-    fontWeight: "bold",
-    marginLeft: 16,
-    flex: 1,
-  },
   textInputContainer: {
     width: 622,
     backgroundColor: "#EFEFEF",
@@ -192,13 +169,6 @@ const styles = StyleSheet.create({
   view3: {
     alignSelf: "flex-start",
     marginBottom: 11,
-    marginHorizontal: 64,
-  },
-  view4: {
-    width: 622,
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 11,
     marginHorizontal: 64,
   },
   pageNumberContainer: {
