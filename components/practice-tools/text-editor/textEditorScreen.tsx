@@ -111,11 +111,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
   },
-  progressBar: {
-    width: 63,
-    height: 8,
-    backgroundColor: "#45BC9E",
-  },
   column: {
     width: 1440,
     backgroundColor: "#EFEFEF",
@@ -130,30 +125,15 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginHorizontal: 345,
   },
-  progressBarColumn: {
+  textBlockContainer: {
     alignSelf: "flex-start",
-    marginBottom: 32,
-    marginLeft: 32,
-  },
-  ProgressBarRow: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    marginBottom: 16,
-  },
-  textInput: {
-    color: "#292929",
-    fontSize: 16,
-    marginLeft: 9,
+    marginBottom: 11,
+    marginHorizontal: 64,
   },
   textBlockText: {
     color: "#292929",
     fontSize: 16,
     width: 618,
-  },
-  pageNumberText: {
-    color: "#292929",
-    fontSize: 16,
-    fontWeight: "bold",
   },
   textInputContainer: {
     width: 622,
@@ -163,14 +143,29 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginHorizontal: 64,
   },
-  textBlockContainer: {
-    alignSelf: "flex-start",
-    marginBottom: 11,
-    marginHorizontal: 64,
+  textInput: {
+    color: "#292929",
+    fontSize: 16,
+    marginLeft: 9,
   },
   pageNumberContainer: {
     alignItems: "center",
     marginBottom: 18,
+  },
+  pageNumberText: {
+    color: "#292929",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  progressBarColumn: {
+    alignSelf: "flex-start",
+    marginBottom: 32,
+    marginLeft: 32,
+  },
+  ProgressBarRow: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    marginBottom: 16,
   },
   progressBarContainer1: {
     width: 116,
@@ -182,5 +177,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#989898",
     borderRadius: 4,
     marginHorizontal: 16,
+  },
+  progressBar: {
+    width: 63,
+    height: 8,
+    backgroundColor: "#45BC9E",
   },
 });
