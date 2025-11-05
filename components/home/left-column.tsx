@@ -3,17 +3,14 @@ import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import SectionsList from "./sections-list";
 
-interface LeftColumnProps {
-  imageGrid1: string[];
-  imageGrid2: string[];
-}
-
 export function LeftColumn() {
-  const [sectionIndex, setSectionIndex] = useState<number>(0);
+  const [sectionIndex, setSectionIndex] = useState<number>(-1);
   return (
     <View style={styles.leftColumn}>
       <ActiveCourseCard />
-      <SectionsList setSectionIndex={setSectionIndex} />
+      {sectionIndex === -1 && (
+        <SectionsList setSectionIndex={setSectionIndex} />
+      )}
       {/* <ActionButton
         label="Section 1"
         onPress={() => alert("Pressed!")}
