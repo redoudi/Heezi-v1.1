@@ -32,7 +32,7 @@ export default function SectionsList() {
                   source={{
                     uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/7b4n53nk_expires_30_days.png",
                   }}
-                  resizeMode={"stretch"}
+                  resizeMode={"contain"}
                   style={styles.image}
                 />
               </TouchableOpacity>
@@ -40,70 +40,70 @@ export default function SectionsList() {
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/9uv8qf21_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.image2}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qzp5ge44_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.image3}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2eub5oiv_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.image4}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/muewt0o1_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.image5}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/h88sgh3z_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.image6}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x3xlnrws_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.absoluteImage}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/k8yljswe_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.absoluteImage2}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/k87xra1i_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.absoluteImage3}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x2n5y6hw_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.absoluteImage4}
               />
               <Image
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zyj8nexa_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.absoluteImage5}
               />
             </View>
@@ -112,7 +112,7 @@ export default function SectionsList() {
             source={{
               uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/aik0c764_expires_30_days.png",
             }}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles.absoluteImage6}
           />
         </View>
@@ -135,7 +135,7 @@ export default function SectionsList() {
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/sy8w1ahc_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.image}
               />
             </TouchableOpacity>
@@ -144,7 +144,7 @@ export default function SectionsList() {
             source={{
               uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kvf6wzrn_expires_30_days.png",
             }}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles.image7}
           />
         </View>
@@ -167,7 +167,7 @@ export default function SectionsList() {
                 source={{
                   uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/l29fup9x_expires_30_days.png",
                 }}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.image}
               />
             </TouchableOpacity>
@@ -176,7 +176,7 @@ export default function SectionsList() {
             source={{
               uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xdcz0s8c_expires_30_days.png",
             }}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles.image8}
           />
         </View>
