@@ -1,15 +1,18 @@
 import { ActiveCourseCard } from "@/components/home/active-course-card";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
+import SectionScreen from "./section-screen";
 import SectionsList from "./sections-list";
 
 export function LeftColumn() {
-  const [sectionIndex, setSectionIndex] = useState<number>(-1);
+  const [sectionIndex, setSectionIndex] = useState<number>(0);
   return (
     <View style={styles.leftColumn}>
       <ActiveCourseCard />
-      {sectionIndex === -1 && (
+      {sectionIndex === -1 ? (
         <SectionsList setSectionIndex={setSectionIndex} />
+      ) : (
+        <SectionScreen />
       )}
       {/* <ActionButton
         label="Section 1"
