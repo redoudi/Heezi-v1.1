@@ -34,7 +34,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="play"
         options={{
           title: "Jouer",
           tabBarIcon: () => (
@@ -83,6 +83,12 @@ export default function TabLayout() {
               style={styles.tabBarItemIconImage}
             />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="index"
+        options={{
+          tabBarButton: () => null,
         }}
       />
     </Tabs>
