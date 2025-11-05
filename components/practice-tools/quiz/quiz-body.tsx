@@ -149,7 +149,7 @@ export default function QuizBody({
           <View style={styles.column2}>
             <QuestionBox question={question} />
             <MascotteQuiz style={styles.mascotImage} />
-            <MascotInquisitive />
+            {/* <MascotInquisitive /> */}
             <AnswersBox
               answers={answers}
               selectAnswer={selectAnswer}

@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import { StyleSheet, View, ViewStyle } from "react-native";
 import LottieView from "lottie-react-native";
+import { useRef } from "react";
+import { StyleSheet, View, ViewStyle } from "react-native";
 
 const animationData = require("./MascotteQuiz.json");
 
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   animation: {
     width: "100%",
-    height: "100%",
+    aspectRatio: 1, // 800x800 = 1:1 aspect ratio
+    maxHeight: "100%",
   },
 });
-
