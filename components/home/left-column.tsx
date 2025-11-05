@@ -13,19 +13,14 @@ export function LeftColumn() {
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={true}
       >
-        <ActiveCourseCard />
-        {sectionIndex === -1 ? (
-          <SectionsList setSectionIndex={setSectionIndex} />
-        ) : (
-          <SectionScreen />
-        )}
-        {/* <ActionButton
-          label="Section 1"
-          onPress={() => alert("Pressed!")}
-          style={styles.actionButton}
-        />
-
-        <MissionDoorGrid style={styles.imageGrid} /> */}
+        <View style={styles.leftColumnContent}>
+          <ActiveCourseCard />
+          {sectionIndex === -1 ? (
+            <SectionsList setSectionIndex={setSectionIndex} />
+          ) : (
+            <SectionScreen />
+          )}
+        </View>
       </ScrollView>
     </View>
   );
@@ -36,11 +31,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: "stretch",
     marginRight: 16,
-    justifyContent: "center",
-    alignItems: "center",
   },
   leftColumn: {
     flex: 1,
+  },
+  leftColumnContent: {
+    flex: 1,
+    alignSelf: "center",
   },
   contentContainer: {
     paddingTop: 32,
