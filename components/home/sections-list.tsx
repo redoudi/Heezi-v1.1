@@ -7,7 +7,11 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-export default function SectionsList() {
+export default function SectionsList({
+  setSectionIndex,
+}: {
+  setSectionIndex: (index: number) => void;
+}) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
@@ -25,7 +29,7 @@ export default function SectionsList() {
             <View style={styles.row}>
               <TouchableOpacity
                 style={styles.buttonRow}
-                onPress={() => alert("Pressed!")}
+                onPress={() => setSectionIndex(0)}
               >
                 <Text style={styles.text2}>{"Continuer"}</Text>
                 <Image
