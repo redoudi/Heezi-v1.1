@@ -34,6 +34,7 @@ export function LeftColumn() {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
+    alignSelf: "stretch",
     marginRight: 16,
   },
   leftColumn: {

@@ -14,6 +14,7 @@ export function RightColumn() {
 const styles = StyleSheet.create({
   rightColumn: {
     width: 363,
+    alignSelf: "stretch",
     backgroundColor: "#FFFFFF",
   },
 });
