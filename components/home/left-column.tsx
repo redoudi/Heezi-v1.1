@@ -1,34 +1,46 @@
 import { ActiveCourseCard } from "@/components/home/active-course-card";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import SectionScreen from "./section-screen";
 import SectionsList from "./sections-list";
 
 export function LeftColumn() {
-  const [sectionIndex, setSectionIndex] = useState<number>(0);
+  const [sectionIndex, setSectionIndex] = useState<number>(-1);
   return (
-    <View style={styles.leftColumn}>
-      <ActiveCourseCard />
-      {sectionIndex === -1 ? (
-        <SectionsList setSectionIndex={setSectionIndex} />
-      ) : (
-        <SectionScreen />
-      )}
-      {/* <ActionButton
-        label="Section 1"
-        onPress={() => alert("Pressed!")}
-        style={styles.actionButton}
-      />
+    <View style={styles.wrapper}>
+      <ScrollView
+        style={styles.leftColumn}
+        contentContainerStyle={styles.contentContainer}
+        showsVerticalScrollIndicator={true}
+      >
+        <ActiveCourseCard />
+        {sectionIndex === -1 ? (
+          <SectionsList setSectionIndex={setSectionIndex} />
+        ) : (
+          <SectionScreen />
+        )}
+        {/* <ActionButton
+          label="Section 1"
+          onPress={() => alert("Pressed!")}
+          style={styles.actionButton}
+        />
 
-      <MissionDoorGrid style={styles.imageGrid} /> */}
+        <MissionDoorGrid style={styles.imageGrid} /> */}
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  leftColumn: {
-    marginTop: 32,
+  wrapper: {
+    flex: 1,
     marginRight: 16,
+  },
+  leftColumn: {
+    flex: 1,
+  },
+  contentContainer: {
+    paddingTop: 32,
   },
   actionButton: {
     marginBottom: 16,

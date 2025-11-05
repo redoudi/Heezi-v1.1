@@ -1,14 +1,7 @@
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.column}>
         <View style={styles.column2}>
           <View style={styles.row}>
@@ -143,12 +136,11 @@ export default function SectionScreen() {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
   },
