@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   mainContent: {
+    flex: 1,
     borderRadius: 8,
     paddingVertical: 16,
     shadowColor: "#1E6759",

@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   mainContent: {
+    flex: 1,
     backgroundColor: "#EFEFEF",
     borderWidth: 1,
   },
