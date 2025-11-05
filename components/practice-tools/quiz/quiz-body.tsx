@@ -1,3 +1,4 @@
+import MascotteQuiz from "@/components/animations/MascotteQuiz";
 import MascotModal from "@/components/mascot/mascot-modal";
 import { router } from "expo-router";
 import {
@@ -54,7 +55,7 @@ const MascotInquisitive = () => {
         uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/d7skkhjc_expires_30_days.png",
       }}
       resizeMode={"stretch"}
-      style={styles.image2}
+      style={styles.mascotImage}
     />
   );
 };
@@ -147,6 +148,7 @@ export default function QuizBody({
         <View style={styles.view4}>
           <View style={styles.column2}>
             <QuestionBox question={question} />
+            <MascotteQuiz style={styles.mascotImage} />
             <MascotInquisitive />
             <AnswersBox
               answers={answers}
@@ -227,7 +229,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 32,
   },
-  image2: {
+  mascotImage: {
     width: 257,
     height: 304,
     marginBottom: 7,
