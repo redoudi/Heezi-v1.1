@@ -1,5 +1,9 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-export default function SectionScreen() {
+export default function SectionScreen({
+  resetSectionIndex,
+}: {
+  resetSectionIndex: () => void;
+}) {
   return (
     <View style={styles.container}>
       <View style={styles.column}>
@@ -7,13 +11,15 @@ export default function SectionScreen() {
           <View style={styles.row}>
             <View style={styles.row2}>
               <View style={styles.view}>
-                <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/z1q84zux_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
-                  style={styles.image}
-                />
+                <TouchableOpacity onPress={() => resetSectionIndex()}>
+                  <Image
+                    source={{
+                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/z1q84zux_expires_30_days.png",
+                    }}
+                    resizeMode={"stretch"}
+                    style={styles.image}
+                  />
+                </TouchableOpacity>
               </View>
               <Text style={styles.text}>{"3 niveaux"}</Text>
             </View>

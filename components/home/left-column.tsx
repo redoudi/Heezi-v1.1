@@ -6,6 +6,8 @@ import SectionsList from "./sections-list";
 
 export function LeftColumn() {
   const [sectionIndex, setSectionIndex] = useState<number>(-1);
+  const resetSectionIndex = () => setSectionIndex(-1);
+
   return (
     <View style={styles.wrapper}>
       <ScrollView
@@ -18,7 +20,7 @@ export function LeftColumn() {
           {sectionIndex === -1 ? (
             <SectionsList setSectionIndex={setSectionIndex} />
           ) : (
-            <SectionScreen />
+            <SectionScreen resetSectionIndex={resetSectionIndex} />
           )}
         </View>
       </ScrollView>
