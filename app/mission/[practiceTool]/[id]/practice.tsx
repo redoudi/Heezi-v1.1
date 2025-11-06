@@ -18,7 +18,7 @@ function LoadedSpreadsheetScreen() {
   useLoadSpreadsheet();
   const { spreadsheetData, setCellsSelected } = useSpreadsheetStore();
   return (
-    <View>
+    <View style={{ height: "100%" }}>
       <SpreadsheetScreen />
       <MascotMonitor
         checkConditionHook={useCheckSpreadsheetCondition}
