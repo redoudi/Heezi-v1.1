@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Chouette from "../animations/Chouette";
+import Renard from "../animations/Renard";
 export default function SectionScreen({
   resetSectionIndex,
 }: {
@@ -57,75 +58,7 @@ export default function SectionScreen({
         >
           <Text style={styles.text5}>Pratique</Text>
         </TouchableOpacity>
-        <View>
-          <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/9padzl5p_expires_30_days.png",
-            }}
-            resizeMode={"stretch"}
-            style={styles.image4}
-          />
-          <View style={styles.row3}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/53eqhtdt_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image5}
-            />
-            <View style={styles.column3}>
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/edba9xcc_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image6}
-              />
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/clgmqpui_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image7}
-              />
-              <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zjoo1o6j_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
-                style={styles.image8}
-              />
-            </View>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/c2md1x7y_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.absoluteImage}
-            />
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/4kalaek0_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.absoluteImage2}
-            />
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/y50z3489_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.absoluteImage3}
-            />
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/dhh51rh2_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.absoluteImage4}
-            />
-          </View>
-        </View>
+        <Renard style={styles.image3} />
       </View>
     </View>
   );
