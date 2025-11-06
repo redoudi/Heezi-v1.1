@@ -34,7 +34,7 @@ function LoadedTextEditorScreen() {
   useLoadTextEditor();
   const { contentBlocks } = useTextEditorStore();
   return (
-    <View>
+    <View style={{ height: "100%" }}>
       <TextEditorScreen />
       <MascotMonitor
         checkConditionHook={useCheckTextEditorCondition}
