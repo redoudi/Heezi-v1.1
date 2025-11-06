@@ -1,4 +1,5 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Chouette from "../animations/Chouette";
 export default function SectionScreen({
   resetSectionIndex,
 }: {
@@ -42,13 +43,7 @@ export default function SectionScreen({
             <Text style={styles.text5}>{"Cours"}</Text>
           </TouchableOpacity>
         </View>
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kysr25zg_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image2}
-        />
+        <Chouette style={styles.image3} />
         <View style={styles.view3}>
           <TouchableOpacity
             style={styles.button2}
@@ -57,13 +52,7 @@ export default function SectionScreen({
             <Text style={styles.text5}>{"Quiz"}</Text>
           </TouchableOpacity>
         </View>
-        <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/8d0w5l56_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
-          style={styles.image3}
-        />
+        <Chouette style={styles.image3} />
         <TouchableOpacity
           style={styles.button3}
           onPress={() => alert("Pressed!")}
