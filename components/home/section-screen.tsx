@@ -30,9 +30,7 @@ export default function SectionScreen({
           </View>
           <View>
             <Text style={styles.text3}>{"Titre de la section"}</Text>
-            <Text style={styles.text4}>
-              {"Lörem ipsum sulingar sasade, om än säv. "}
-            </Text>
+            <Text style={styles.text4}>{"Pratique"}</Text>
           </View>
         </View>
         <View style={styles.view3}>
@@ -57,9 +55,7 @@ export default function SectionScreen({
           style={styles.button3}
           onPress={() => alert("Pressed!")}
         >
-          <Text style={styles.text5}>
-            {"Lörem ipsum sulingar sasade, om än säv. "}
-          </Text>
+          <Text style={styles.text5}>Pratique</Text>
         </TouchableOpacity>
         <View>
           <Image
