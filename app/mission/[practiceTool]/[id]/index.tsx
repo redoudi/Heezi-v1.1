@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   avatar: {
     borderRadius: 8,
     alignSelf: "center",
-    minHeight: 400,
+    minHeight: 200,
   },
   introTextBox: {
     alignSelf: "flex-start",
