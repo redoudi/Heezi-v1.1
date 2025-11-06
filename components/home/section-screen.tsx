@@ -30,7 +30,7 @@ export default function SectionScreen({
           </View>
           <View>
             <Text style={styles.text3}>{"Titre de la section"}</Text>
-            <Text style={styles.text4}>{"Pratique"}</Text>
+            <Text style={styles.text4}>{"Sous-titre de la section"}</Text>
           </View>
         </View>
         <View style={styles.view3}>
