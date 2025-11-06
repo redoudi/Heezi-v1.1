@@ -1,3 +1,5 @@
+import usePracticeTool from "@/context/usePracticeTool";
+import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Chouette from "../animations/Chouette";
 import Renard from "../animations/Renard";
@@ -6,6 +8,7 @@ export default function SectionScreen({
 }: {
   resetSectionIndex: () => void;
 }) {
+  const { practiceTool } = usePracticeTool();
   return (
     <View style={styles.container}>
       <View style={styles.column}>
@@ -42,7 +45,12 @@ export default function SectionScreen({
             <Text style={styles.text5}>{"Cours"}</Text>
           </TouchableOpacity>
         </View>
-        <Chouette style={styles.image3} />
+
+        <TouchableOpacity
+          onPress={() => router.replace(`/mission/${practiceTool}/1`)}
+        >
+          <Chouette style={styles.image3} />
+        </TouchableOpacity>
         <View style={styles.view3}>
           <TouchableOpacity
             style={styles.button2}
