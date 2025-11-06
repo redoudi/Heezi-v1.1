@@ -2,9 +2,7 @@
 - [x] faire quiz de textEditor
 - [x] lesson de textEditor
 - [x] ajouter [practicetool] dans mission url
-
-- - remplacer les graphiques d'intro/outro\*\*
-
+- [ ] r*emplacer les graphiques d'intro/outro*
 - [ ] changer le thème de l'interface Jouer selon le PracticeTool
 - [x] ajouter les animations
 - [ ] enlever tous les alert=>pressed
