@@ -1,3 +1,4 @@
+import ChouetteFin from "@/components/animations/ChouetteFin";
 import useLevelData from "@/hooks/use-level-data";
 import { router, useLocalSearchParams } from "expo-router";
 import {
@@ -20,6 +21,10 @@ export default function ResultScreen() {
     }
   };
 
+  const BoxAnimation = () => {
+    return <ChouetteFin style={styles.box} />;
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.view}>
@@ -30,7 +35,7 @@ export default function ResultScreen() {
               onPress={() => alert("Pressed!")}
             >
               <View style={styles.view3}>
-                <View style={styles.box}></View>
+                <BoxAnimation />
               </View>
             </TouchableOpacity>
             <View style={styles.column2}>
@@ -95,13 +100,13 @@ export default function ResultScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   box: {
     width: 533,
     height: 653,
-    backgroundColor: "#000000",
+    backgroundColor: "white",
   },
   box2: {
     width: 63,
