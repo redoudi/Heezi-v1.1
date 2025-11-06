@@ -59,14 +59,22 @@ export default function SectionScreen({
             <Text style={styles.text5}>{"Quiz"}</Text>
           </TouchableOpacity>
         </View>
-        <Chouette style={styles.image3} />
+        <TouchableOpacity
+          onPress={() => router.replace(`/mission/${practiceTool}/2`)}
+        >
+          <Chouette style={styles.image3} />
+        </TouchableOpacity>
         <TouchableOpacity
           style={styles.button3}
           onPress={() => alert("Pressed!")}
         >
           <Text style={styles.text5}>Pratique</Text>
         </TouchableOpacity>
-        <Renard style={styles.image3} />
+        <TouchableOpacity
+          onPress={() => router.replace(`/mission/${practiceTool}/3`)}
+        >
+          <Renard style={styles.image3} />
+        </TouchableOpacity>
       </View>
     </View>
   );
