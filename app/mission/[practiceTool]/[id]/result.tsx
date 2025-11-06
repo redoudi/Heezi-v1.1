@@ -1,4 +1,5 @@
 import ChouetteFin from "@/components/animations/ChouetteFin";
+import RenardFin from "@/components/animations/RenardFin";
 import useLevelData from "@/hooks/use-level-data";
 import { router, useLocalSearchParams } from "expo-router";
 import {
@@ -22,7 +23,10 @@ export default function ResultScreen() {
   };
 
   const BoxAnimation = () => {
-    return <ChouetteFin style={styles.box} />;
+    const animationComponent =
+      levelType === "practice" ? RenardFin : ChouetteFin;
+    const AnimationComponent = animationComponent;
+    return <AnimationComponent style={styles.box} />;
   };
 
   return (
