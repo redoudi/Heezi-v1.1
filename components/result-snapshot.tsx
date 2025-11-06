@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   box: {
     width: 533,
     height: 782,
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
   },
   button: {
     alignSelf: "flex-start",
