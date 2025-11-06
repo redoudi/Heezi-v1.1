@@ -16,3 +16,4 @@
 - [ ] mettre la flèche vers le bas comme onclose dans mascot-modal
 - [ ] faire le responsive de tout l'affichage
 - [x] repair unbolding in tableur
+- [ ] ajouter les boutons près des animations dans section-screen
