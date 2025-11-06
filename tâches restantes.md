@@ -2,11 +2,12 @@
 - [x] faire quiz de textEditor
 - [x] lesson de textEditor
 - [x] ajouter [practicetool] dans mission url
-- [ ] remplacer les graphiques d'intro/outro
+
+- - remplacer les graphiques d'intro/outro\*\*
+
 - [ ] changer le thème de l'interface Jouer selon le PracticeTool
-- [ ] ajouter les animations
+- [x] ajouter les animations
 - [ ] enlever tous les alert=>pressed
-- [ ] décider de que faire des boutons disabled
 - [ ] ajouter les highlight pour lesson et practice
 - [ ] ajouter le display correct/faux pour les quiz
 - [ ] implémenter le score à la fin
@@ -18,3 +19,4 @@
 - [x] repair unbolding in tableur
 - [ ] ajouter les boutons près des animations dans section-screen
 - [ ] disable les boutons non implémentés
+- [ ] implémenter l'export
