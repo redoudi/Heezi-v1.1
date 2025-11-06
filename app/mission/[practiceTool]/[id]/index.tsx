@@ -65,7 +65,11 @@ export default function ScenarioScreen() {
     <SafeAreaView style={styles.container}>
       <View style={styles.mainContent}>
         <BackButton style={styles.backButton} />
-        <Avatar imageSource={imageSource} />
+        <Image
+          source={imageSource}
+          resizeMode={"contain"}
+          style={styles.avatar}
+        />
         <IntroText intro={intro} />
 
         <StartButton onPress={handleStart} />
@@ -94,6 +98,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingHorizontal: 16,
     gap: 8,
+    width: 633,
   },
   backButton: {
     marginBottom: 16,
@@ -103,8 +108,11 @@ const styles = StyleSheet.create({
   avatar: {
     borderRadius: 8,
     alignSelf: "center",
-    minHeight: 200,
+    width: 533,
+    height: 653,
+    marginBottom: 16,
   },
+
   introTextBox: {
     alignSelf: "flex-start",
     backgroundColor: "#EFEFEF",
