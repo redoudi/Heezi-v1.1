@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#EFEFEF",
     borderWidth: 1,
+    borderColor: "#EFEFEF",
   },
   contentPage: {
     flex: 1,

@@ -18,3 +18,5 @@
 - [ ] ajouter les boutons près des animations dans section-screen
 - [ ] disable les boutons non implémentés
 - [ ] implémenter l'export
+- [ ] refaire la sélection du tableau excel
+- [ ] télécharger toutes les images

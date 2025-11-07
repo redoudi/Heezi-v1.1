@@ -338,6 +338,8 @@ export const styles = StyleSheet.create({
     width: 1440,
     flex: 1,
     backgroundColor: "#EFEFEF",
+    borderWidth: 1,
+    borderColor: "#EFEFEF",
   },
   column2: {
     marginTop: 2,

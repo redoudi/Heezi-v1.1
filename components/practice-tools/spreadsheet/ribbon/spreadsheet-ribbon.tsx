@@ -3,7 +3,6 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "../spreadsheet-styles";
 
 function BoldButton() {
-  const ribbonCallbacks = useSpreadsheetRibbon();
   const { isSelectedCellBold, boldSelectedCell } = useSpreadsheetRibbon();
   return (
     <TouchableOpacity
