@@ -8,6 +8,7 @@ export default function ResultSnapshot() {
   useEffect(() => {
     console.log(cellsValues);
   }, [cellsValues]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.scrollView}>
