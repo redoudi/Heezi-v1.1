@@ -1,5 +1,5 @@
 import ExportFormatButtons from "@/components/ExportFormatButtons";
-import SnapshotPreview from "@/components/result-snapshot";
+import ResultSnapshot2 from "@/components/result-snapshot2";
 import { router } from "expo-router";
 import {
   Image,
@@ -16,7 +16,8 @@ export default function ExportScreen() {
       <View style={styles.view}>
         <View style={styles.view2}>
           <View style={styles.column}>
-            <SnapshotPreview onPress={() => alert("Pressed!")} />
+            {/* <SnapshotPreview /> */}
+            <ResultSnapshot2 />
             <ExportFormatButtons />
             <TouchableOpacity
               style={styles.buttonRow5}

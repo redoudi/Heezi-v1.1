@@ -4,9 +4,9 @@ interface SnapshotPreviewProps {
   onPress: () => void;
 }
 
-export default function SnapshotPreview({ onPress }: SnapshotPreviewProps) {
+export default function SnapshotPreview() {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity style={styles.button}>
       <View style={styles.view3}>
         <View style={styles.box}></View>
       </View>
