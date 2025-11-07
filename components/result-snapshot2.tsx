@@ -1,8 +1,8 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function ResultSnapshot2() {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <View style={styles.scrollView}>
         <View style={styles.row}>
           <View style={styles.column}>
             <Text style={styles.text}>{"Lörem "}</Text>
@@ -25,7 +25,7 @@ export default function ResultSnapshot2() {
             <Text style={styles.text3}>{"Lörem ipsum"}</Text>
           </View>
         </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     paddingTop: 32,
-    paddingBottom: 536,
+    height: "100%",
   },
   scrollView: {
     flex: 1,
