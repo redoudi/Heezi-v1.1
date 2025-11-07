@@ -1,14 +1,15 @@
 import {
   Image,
-  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
+import { ScrollableScreen } from "@/components/scrollable-screen";
+
 export default function ProfilScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.view}>
         <View style={styles.view2}>
           <View style={styles.view3}>
@@ -83,12 +84,11 @@ export default function ProfilScreen() {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </ScrollableScreen>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },

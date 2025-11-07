@@ -1,8 +1,10 @@
+import { ScrollableScreen } from "@/components/scrollable-screen";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 export default function SectionsList() {
   return (
-    <View style={styles.container}>
+    <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.column}>
         <View style={styles.column2}>
           <Text style={styles.text}>{"Section 1"}</Text>
@@ -172,7 +174,7 @@ export default function SectionsList() {
           style={styles.image8}
         />
       </View>
-    </View>
+    </ScrollableScreen>
   );
 }
 const styles = StyleSheet.create({

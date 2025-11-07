@@ -1,7 +1,9 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { ScrollableScreen } from "@/components/scrollable-screen";
+
 export default function SuccessScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.view}>
         <View style={styles.column}>
           <View style={styles.column2}>
@@ -116,12 +118,11 @@ export default function SuccessScreen() {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </ScrollableScreen>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },

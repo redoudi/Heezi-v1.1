@@ -1,14 +1,9 @@
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollableScreen } from "@/components/scrollable-screen";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 export default function ScoreScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.view}>
         <View style={styles.column}>
           <View style={styles.column2}>
@@ -195,12 +190,11 @@ export default function ScoreScreen() {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </ScrollableScreen>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
