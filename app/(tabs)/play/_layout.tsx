@@ -2,7 +2,6 @@ import { RightColumn } from "@/components/home/right-column";
 import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 
 import { ActiveCourseCard } from "@/components/home/active-course-card";
-import { useState } from "react";
 
 import { Slot } from "expo-router";
 
@@ -29,9 +28,6 @@ const styles = StyleSheet.create({
 });
 
 function LeftColumn() {
-  const [sectionIndex, setSectionIndex] = useState<number>(-1);
-  const resetSectionIndex = () => setSectionIndex(-1);
-
   return (
     <View style={styles2.wrapper}>
       <ScrollView
