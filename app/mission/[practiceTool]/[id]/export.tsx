@@ -1,5 +1,5 @@
 import ExportFormatButtons from "@/components/ExportFormatButtons";
-import SnapshotPreview from "@/components/result-snapshot";
+import SnapshotPreview from "@/components/snapshot-preview";
 import { router } from "expo-router";
 import {
   Image,
