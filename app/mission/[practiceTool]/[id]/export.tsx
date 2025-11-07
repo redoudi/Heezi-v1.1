@@ -24,9 +24,7 @@ export default function ExportScreen() {
             >
               <Text style={styles.text2}>{"Continuer"}</Text>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/a74yzjog_expires_30_days.png",
-                }}
+                source={require("@/assets/images/a74yzjog_expires_30_days.png")}
                 resizeMode={"stretch"}
                 style={styles.image2}
               />
