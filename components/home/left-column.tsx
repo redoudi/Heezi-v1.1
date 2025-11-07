@@ -1,7 +1,7 @@
 import { ActiveCourseCard } from "@/components/home/active-course-card";
 import { useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import SectionScreen from "./section-screen";
+import SectionScreen from "../../app/(tabs)/play/section-screen";
 import SectionsList from "./sections-list";
 
 export function LeftColumn() {
