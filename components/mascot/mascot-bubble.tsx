@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     marginRight: 0,
   },
   textContainer: {
-    backgroundColor: "#525252",
+    backgroundColor: "rgba(82,82,82,0.8)",
     borderTopLeftRadius: 8,
     borderBottomRightRadius: 8,
     borderBottomLeftRadius: 8,
