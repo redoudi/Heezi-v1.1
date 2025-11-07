@@ -12,9 +12,7 @@ const DownArrow = ({ nextStep }: { nextStep: () => void }) => {
   return (
     <TouchableOpacity onPress={nextStep}>
       <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ojvjgq96_expires_30_days.png",
-        }}
+        source={require("@/assets/images/ojvjgq96_expires_30_days.png")}
         resizeMode={"stretch"}
         style={styles.image31}
       />
@@ -25,9 +23,7 @@ const DownArrow = ({ nextStep }: { nextStep: () => void }) => {
 const CornerTriangle = () => {
   return (
     <Image
-      source={{
-        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/662flub1_expires_30_days.png",
-      }}
+      source={require("@/assets/images/662flub1_expires_30_days.png")}
       resizeMode={"stretch"}
       style={styles.cornerTriangle}
     />
@@ -37,9 +33,7 @@ const CornerTriangle = () => {
 const Mascot = () => {
   return (
     <Image
-      source={{
-        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/tfupuxd4_expires_30_days.png",
-      }}
+      source={require("@/assets/images/tfupuxd4_expires_30_days.png")}
       resizeMode={"contain"}
       style={styles.mascot}
     />

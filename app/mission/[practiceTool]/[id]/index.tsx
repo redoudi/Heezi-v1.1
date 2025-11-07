@@ -30,9 +30,7 @@ function IntroText({ intro = "..." }) {
 function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
   return (
     <Image
-      source={{
-        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/q6vunbbw_expires_30_days.png",
-      }}
+      source={require("@/assets/images/q6vunbbw_expires_30_days.png")}
       resizeMode={"stretch"}
       style={style}
     />

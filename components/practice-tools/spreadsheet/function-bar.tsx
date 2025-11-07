@@ -44,7 +44,7 @@ export default function FunctionBar() {
         </View>
       </View>
       <Image
-        source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+        source={require("@/assets/images/1tMFzp8.png")}
         resizeMode={"stretch"}
         style={styles.image34}
       />

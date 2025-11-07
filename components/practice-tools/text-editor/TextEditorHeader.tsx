@@ -43,12 +43,12 @@ export default function TextEditorHeader() {
           style={styles.image2}
         />
         <Image
-          source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+          source={require("@/assets/images/1tMFzp8.png")}
           resizeMode={"stretch"}
           style={styles.image3}
         />
         <Image
-          source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+          source={require("@/assets/images/1tMFzp8.png")}
           resizeMode={"stretch"}
           style={styles.image4}
         />
@@ -337,17 +337,17 @@ export default function TextEditorHeader() {
           <View style={styles.column8}>
             <View style={styles.row8}>
               <Image
-                source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                source={require("@/assets/images/1tMFzp8.png")}
                 resizeMode={"stretch"}
                 style={styles.image20}
               />
               <Image
-                source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                source={require("@/assets/images/1tMFzp8.png")}
                 resizeMode={"stretch"}
                 style={styles.image20}
               />
               <Image
-                source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                source={require("@/assets/images/1tMFzp8.png")}
                 resizeMode={"stretch"}
                 style={styles.image21}
               />
@@ -450,7 +450,7 @@ export default function TextEditorHeader() {
                 />
               </TouchableOpacity>
               <Image
-                source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                source={require("@/assets/images/1tMFzp8.png")}
                 resizeMode={"stretch"}
                 style={styles.image27}
               />

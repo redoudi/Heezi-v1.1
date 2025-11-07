@@ -48,7 +48,7 @@ export default function ProfilScreen() {
               </View>
               <View style={styles.row3}>
                 <Image
-                  source={{ uri: "https://i.imgur.com/1tMFzp8.png" }}
+                  source={require("@/assets/images/1tMFzp8.png")}
                   resizeMode={"stretch"}
                   style={styles.image3}
                 />
