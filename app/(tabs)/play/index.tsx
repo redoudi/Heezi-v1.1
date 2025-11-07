@@ -1,10 +1,6 @@
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-export default function SectionsList({
-  setSectionIndex,
-}: {
-  setSectionIndex: (index: number) => void;
-}) {
+export default function SectionsList() {
   return (
     <View style={styles.container}>
       <View style={styles.column}>
