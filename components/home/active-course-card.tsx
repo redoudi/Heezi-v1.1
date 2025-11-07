@@ -5,7 +5,6 @@ export function ActiveCourseCard() {
   const { practiceTool } = usePracticeTool();
   return (
     <CourseCard
-      thumbnailUri={require("@/assets/images/ldtg9pud_expires_30_days.png")}
       progress="6 Sections/10 niveaux"
       status="En cours"
       title={

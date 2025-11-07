@@ -10,7 +10,6 @@ interface CourseCardProps {
 }
 
 export function CourseCard({
-  thumbnailUri,
   progress,
   status,
   title,
