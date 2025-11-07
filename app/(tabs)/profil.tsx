@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Image,
   SafeAreaView,
@@ -90,7 +89,7 @@ export default function ProfilScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   box: {

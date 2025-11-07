@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Image,
   SafeAreaView,
@@ -202,7 +201,7 @@ export default function ScoreScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   box: {

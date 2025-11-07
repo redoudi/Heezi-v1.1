@@ -1,4 +1,3 @@
-import React from "react";
 import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function SuccessScreen() {
   return (
@@ -123,7 +122,7 @@ export default function SuccessScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   box: {
