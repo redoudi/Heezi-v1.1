@@ -1,22 +1,18 @@
-import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { NavigationMenuItem } from "./navigation-menu-item";
 
 export function Sidebar() {
   const menuItems = [
     {
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kxrsaswj_expires_30_days.png",
+      imageUri: require("@/assets/images/kxrsaswj_expires_30_days.png"),
       label: "Jouer",
     },
     {
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/u14kpgxz_expires_30_days.png",
+      imageUri: require("@/assets/images/u14kpgxz_expires_30_days.png"),
       label: "Profil",
     },
     {
-      imageUri:
-        "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1b0ke18y_expires_30_days.png",
+      imageUri: require("@/assets/images/1b0ke18y_expires_30_days.png"),
       label: "Score",
     },
   ];
@@ -24,9 +20,7 @@ export function Sidebar() {
   return (
     <View style={styles.sidebar}>
       <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qih0dnn3_expires_30_days.png",
-        }}
+        source={require("@/assets/images/qih0dnn3_expires_30_days.png")}
         resizeMode="stretch"
         style={styles.logo}
       />
@@ -40,9 +34,7 @@ export function Sidebar() {
         ))}
         <View style={styles.lastMenuItem}>
           <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wfgit8hu_expires_30_days.png",
-            }}
+            source={require("@/assets/images/wfgit8hu_expires_30_days.png")}
             resizeMode="stretch"
             style={styles.menuIcon}
           />

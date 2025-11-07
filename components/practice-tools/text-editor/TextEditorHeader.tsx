@@ -14,10 +14,7 @@ function BoldButton() {
       onPress={() => boldSelectedBlock()}
     >
       <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2ib5w9m2_expires_30_days.png",
-        }}
-        resizeMode={"stretch"}
+        source={require("@/assets/images/2ib5w9m2_expires_30_days.png")} resizeMode={"stretch"}
         style={[styles.image13]}
       />
     </TouchableOpacity>
@@ -29,17 +26,11 @@ export default function TextEditorHeader() {
     <View style={styles.column2}>
       <View style={styles.row}>
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/f36dtxie_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
+          source={require("@/assets/images/f36dtxie_expires_30_days.png")} resizeMode={"stretch"}
           style={styles.image}
         />
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x1cberci_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
+          source={require("@/assets/images/x1cberci_expires_30_days.png")} resizeMode={"stretch"}
           style={styles.image2}
         />
         <Image
@@ -115,10 +106,7 @@ export default function TextEditorHeader() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ufeyprsl_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/ufeyprsl_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image6}
             />
           </TouchableOpacity>
@@ -127,10 +115,7 @@ export default function TextEditorHeader() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/v82hp4b9_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/v82hp4b9_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image7}
             />
           </TouchableOpacity>
@@ -144,18 +129,12 @@ export default function TextEditorHeader() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/brtm7hpr_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/brtm7hpr_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image8}
               />
               <Text style={styles.text2}>{"Coller"}</Text>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/oluhu4b3_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/oluhu4b3_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image9}
               />
             </TouchableOpacity>
@@ -165,10 +144,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/r2e2a79p_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/r2e2a79p_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image10}
                 />
               </TouchableOpacity>
@@ -177,10 +153,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/183ucgvf_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/183ucgvf_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image11}
                 />
               </TouchableOpacity>
@@ -197,10 +170,7 @@ export default function TextEditorHeader() {
               >
                 <Text style={styles.text4}>{"Police"}</Text>
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/uig4w09q_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/uig4w09q_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image12}
                 />
               </TouchableOpacity>
@@ -210,10 +180,7 @@ export default function TextEditorHeader() {
               >
                 <Text style={styles.text5}>{"12"}</Text>
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/7bw6obmu_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/7bw6obmu_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image12}
                 />
               </TouchableOpacity>
@@ -223,10 +190,7 @@ export default function TextEditorHeader() {
               >
                 <Text style={styles.text6}>{"A a"}</Text>
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/rjnwoeo6_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/rjnwoeo6_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image12}
                 />
               </TouchableOpacity>
@@ -238,10 +202,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/djgcsw86_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/djgcsw86_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image14}
                 />
               </TouchableOpacity>
@@ -250,10 +211,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/yn5b2k86_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/yn5b2k86_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image15}
                 />
               </TouchableOpacity>
@@ -262,10 +220,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/k9vx5ycz_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/k9vx5ycz_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image16}
                 />
               </TouchableOpacity>
@@ -274,10 +229,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/n12ta229_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/n12ta229_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image17}
                 />
               </TouchableOpacity>
@@ -286,10 +238,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1awwjlw7_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/1awwjlw7_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image17}
                 />
               </TouchableOpacity>
@@ -298,10 +247,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lrwrll0x_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/lrwrll0x_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image18}
                 />
               </TouchableOpacity>
@@ -310,10 +256,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zvx6kr6l_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/zvx6kr6l_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image6}
                 />
               </TouchableOpacity>
@@ -322,10 +265,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zcd58amp_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/zcd58amp_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image19}
                 />
               </TouchableOpacity>
@@ -356,10 +296,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xhij6qe3_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/xhij6qe3_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image22}
                 />
               </TouchableOpacity>
@@ -368,10 +305,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/m8i25506_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/m8i25506_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image22}
                 />
               </TouchableOpacity>
@@ -380,10 +314,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qsucqhf4_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/qsucqhf4_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image23}
                 />
               </TouchableOpacity>
@@ -392,10 +323,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/f5tsg9ts_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/f5tsg9ts_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image24}
                 />
               </TouchableOpacity>
@@ -406,10 +334,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ce74949l_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/ce74949l_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image25}
                 />
               </TouchableOpacity>
@@ -418,10 +343,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/mk84bjzk_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/mk84bjzk_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image26}
                 />
               </TouchableOpacity>
@@ -430,10 +352,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wnui27r7_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/wnui27r7_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image25}
                 />
               </TouchableOpacity>
@@ -442,10 +361,7 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={{
-                    uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x1fh47wq_expires_30_days.png",
-                  }}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/x1fh47wq_expires_30_days.png")} resizeMode={"stretch"}
                   style={styles.image22}
                 />
               </TouchableOpacity>
@@ -479,10 +395,7 @@ export default function TextEditorHeader() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/n981r9bx_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/n981r9bx_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image28}
               />
             </TouchableOpacity>
@@ -495,18 +408,12 @@ export default function TextEditorHeader() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/dpfumd98_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/dpfumd98_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image29}
             />
             <Text style={styles.text10}>{"édition"}</Text>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/8h776a6o_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/8h776a6o_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image9}
             />
           </TouchableOpacity>

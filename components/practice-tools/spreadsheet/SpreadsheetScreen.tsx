@@ -26,10 +26,7 @@ export default function SpreadsheetScreen() {
         <View style={styles.column13}>
           <View style={styles.row16}>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/4z87rs57_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/4z87rs57_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image36}
             />
             <TouchableOpacity
@@ -37,10 +34,7 @@ export default function SpreadsheetScreen() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/o6j3pvf5_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/o6j3pvf5_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image37}
               />
             </TouchableOpacity>
@@ -56,10 +50,7 @@ export default function SpreadsheetScreen() {
           >
             <Text style={styles.text11}>{"Envoyer"}</Text>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/bg345eii_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/bg345eii_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image38}
             />
           </TouchableOpacity>

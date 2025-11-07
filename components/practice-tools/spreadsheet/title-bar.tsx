@@ -6,17 +6,11 @@ export default function TitleBar() {
     <View style={styles.row}>
       <View style={styles.row2}>
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/5jt7jwsg_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
+          source={require("@/assets/images/5jt7jwsg_expires_30_days.png")} resizeMode={"stretch"}
           style={styles.image}
         />
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/os183jfm_expires_30_days.png",
-          }}
-          resizeMode={"stretch"}
+          source={require("@/assets/images/os183jfm_expires_30_days.png")} resizeMode={"stretch"}
           style={styles.image2}
         />
         <Image

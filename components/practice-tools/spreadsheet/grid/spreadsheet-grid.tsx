@@ -19,10 +19,7 @@ const ROWS = Array.from({ length: 18 }, (_, i) => ({
 
 const CornerSymbol = () => (
   <Image
-    source={{
-      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/pt024urq_expires_30_days.png",
-    }}
-    resizeMode={"stretch"}
+    source={require("@/assets/images/pt024urq_expires_30_days.png")} resizeMode={"stretch"}
     style={styles.image35}
   />
 );

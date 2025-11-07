@@ -9,9 +9,7 @@ export default function BackButton({ style }) {
         onPress={() => router.replace("/(tabs)")}
       >
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/iycoag37_expires_30_days.png",
-          }}
+          source={require("@/assets/images/iycoag37_expires_30_days.png")}
           resizeMode={"stretch"}
           style={styles.image5}
         />

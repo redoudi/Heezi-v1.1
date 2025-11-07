@@ -64,10 +64,7 @@ export default function RibbonTabs() {
           onPress={() => alert("Pressed!")}
         >
           <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/86rkedvc_expires_30_days.png",
-            }}
-            resizeMode={"stretch"}
+            source={require("@/assets/images/86rkedvc_expires_30_days.png")} resizeMode={"stretch"}
             style={styles.image6}
           />
         </TouchableOpacity>
@@ -76,10 +73,7 @@ export default function RibbonTabs() {
           onPress={() => alert("Pressed!")}
         >
           <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zromobil_expires_30_days.png",
-            }}
-            resizeMode={"stretch"}
+            source={require("@/assets/images/zromobil_expires_30_days.png")} resizeMode={"stretch"}
             style={styles.image7}
           />
         </TouchableOpacity>

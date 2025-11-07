@@ -14,10 +14,7 @@ function BoldButton() {
       onPress={() => boldSelectedCell()}
     >
       <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/grsf2bb1_expires_30_days.png",
-        }}
-        resizeMode={"stretch"}
+        source={require("@/assets/images/grsf2bb1_expires_30_days.png")} resizeMode={"stretch"}
         style={styles.image13}
       />
     </TouchableOpacity>
@@ -34,18 +31,12 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/1fzbdkqt_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/1fzbdkqt_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image8}
             />
             <Text style={styles.text2}>{"Coller"}</Text>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/37i3d2ye_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/37i3d2ye_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image9}
             />
           </TouchableOpacity>
@@ -55,10 +46,7 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/y25kezvs_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/y25kezvs_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image10}
               />
             </TouchableOpacity>
@@ -67,10 +55,7 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/jz6td9an_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/jz6td9an_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image11}
               />
             </TouchableOpacity>
@@ -87,10 +72,7 @@ export default function Ribbon() {
             >
               <Text style={styles.text4}>{"Police"}</Text>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/3jmssrjq_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/3jmssrjq_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image12}
               />
             </TouchableOpacity>
@@ -100,10 +82,7 @@ export default function Ribbon() {
             >
               <Text style={styles.text5}>{"12"}</Text>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/bk05j5hf_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/bk05j5hf_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image12}
               />
             </TouchableOpacity>
@@ -115,10 +94,7 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/wbsdd6yd_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/wbsdd6yd_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image14}
               />
             </TouchableOpacity>
@@ -127,10 +103,7 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/shmc35k2_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/shmc35k2_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image15}
               />
             </TouchableOpacity>
@@ -139,10 +112,7 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/7czrdf4k_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/7czrdf4k_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image16}
               />
             </TouchableOpacity>
@@ -151,10 +121,7 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ath16u4f_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/ath16u4f_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image17}
               />
             </TouchableOpacity>
@@ -163,10 +130,7 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/uewh91sl_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/uewh91sl_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image18}
               />
             </TouchableOpacity>
@@ -181,10 +145,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/nkzp2nt3_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/nkzp2nt3_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image19}
             />
           </TouchableOpacity>
@@ -193,10 +154,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/y7bq5psu_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/y7bq5psu_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image19}
             />
           </TouchableOpacity>
@@ -205,10 +163,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/gxdqlt2g_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/gxdqlt2g_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image19}
             />
           </TouchableOpacity>
@@ -217,10 +172,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/mc2ln7j3_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/mc2ln7j3_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image20}
             />
           </TouchableOpacity>
@@ -231,10 +183,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/uirt4emu_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/uirt4emu_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image21}
             />
           </TouchableOpacity>
@@ -243,10 +192,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/393nlgpw_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/393nlgpw_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image19}
             />
           </TouchableOpacity>
@@ -255,10 +201,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/e7u96dzs_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/e7u96dzs_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image21}
             />
           </TouchableOpacity>
@@ -272,10 +215,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/h7fhqw57_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/h7fhqw57_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image20}
             />
           </TouchableOpacity>
@@ -284,10 +224,7 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/lxt8yo0p_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/lxt8yo0p_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image20}
             />
           </TouchableOpacity>
@@ -303,10 +240,7 @@ export default function Ribbon() {
         >
           <Text style={styles.text4}>{"Standard"}</Text>
           <Image
-            source={{
-              uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/f0blr7yj_expires_30_days.png",
-            }}
-            resizeMode={"stretch"}
+            source={require("@/assets/images/f0blr7yj_expires_30_days.png")} resizeMode={"stretch"}
             style={styles.image23}
           />
         </TouchableOpacity>
@@ -359,18 +293,12 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/6p0qmdld_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/6p0qmdld_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image28}
               />
               <Text style={styles.text7}>{"Insérer"}</Text>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/bm26nyo6_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/bm26nyo6_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image29}
               />
             </TouchableOpacity>
@@ -379,18 +307,12 @@ export default function Ribbon() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/3psjry5g_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/3psjry5g_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image28}
               />
               <Text style={styles.text7}>{"Supprimer"}</Text>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ihd2alr2_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/ihd2alr2_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image23}
               />
             </TouchableOpacity>
@@ -400,18 +322,12 @@ export default function Ribbon() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ueuz0btu_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/ueuz0btu_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image30}
             />
             <Text style={styles.text8}>{"Format"}</Text>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x88mmd51_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
+              source={require("@/assets/images/x88mmd51_expires_30_days.png")} resizeMode={"stretch"}
               style={styles.image29}
             />
           </TouchableOpacity>

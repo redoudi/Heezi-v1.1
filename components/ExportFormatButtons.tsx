@@ -8,9 +8,7 @@ const ExportXlsxButton = () => {
       onPress={() => alert("Pressed!")}
     >
       <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/ceguc7fq_expires_30_days.png",
-        }}
+        source={require("@/assets/images/ceguc7fq_expires_30_days.png")}
         resizeMode={"stretch"}
         style={styles.image}
       />
@@ -26,9 +24,7 @@ const ExportPdfButton = () => {
       onPress={() => alert("Pressed!")}
     >
       <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0a6n5ovw_expires_30_days.png",
-        }}
+        source={require("@/assets/images/0a6n5ovw_expires_30_days.png")}
         resizeMode={"stretch"}
         style={styles.image}
       />
@@ -44,9 +40,7 @@ const ExportDocxButton = () => {
       onPress={() => alert("Pressed!")}
     >
       <Image
-        source={{
-          uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xhzm8bjz_expires_30_days.png",
-        }}
+        source={require("@/assets/images/xhzm8bjz_expires_30_days.png")}
         resizeMode={"stretch"}
         style={styles.image}
       />

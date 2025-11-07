@@ -32,10 +32,7 @@ export default function MascotModal({ open, onClose, modalText }) {
           <TouchableWithoutFeedback onPress={() => {}} accessible={false}>
             <View style={styles.column}>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/paauqhmf_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/paauqhmf_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image}
               />
               <View style={styles.view}>
@@ -45,10 +42,7 @@ export default function MascotModal({ open, onClose, modalText }) {
                 </Text>
               </View>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/dwoxzuh6_expires_30_days.png",
-                }}
-                resizeMode={"stretch"}
+                source={require("@/assets/images/dwoxzuh6_expires_30_days.png")} resizeMode={"stretch"}
                 style={styles.image2}
               />
             </View>

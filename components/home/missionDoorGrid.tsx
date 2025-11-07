@@ -12,28 +12,19 @@ export function MissionDoorGrid({ style }: MissionDoorGridProps) {
     <View style={[styles.container, style]}>
       <Link href={`/mission/${practiceTool}/1`} asChild>
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
-          }}
-          resizeMode="stretch"
+          source={require("@/assets/images/0bgealkc_expires_30_days.png")} resizeMode="stretch"
           style={styles.image}
         />
       </Link>
       <Link href={`/mission/${practiceTool}/2`} asChild>
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
-          }}
-          resizeMode="stretch"
+          source={require("@/assets/images/0bgealkc_expires_30_days.png")} resizeMode="stretch"
           style={styles.image}
         />
       </Link>
       <Link href={`/mission/${practiceTool}/3`} asChild>
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0bgealkc_expires_30_days.png",
-          }}
-          resizeMode="stretch"
+          source={require("@/assets/images/0bgealkc_expires_30_days.png")} resizeMode="stretch"
           style={styles.image}
         />
       </Link>
