@@ -1,10 +1,6 @@
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import ResultSnapshot from "./result-snapshot";
 
-interface SnapshotPreviewProps {
-  onPress: () => void;
-}
-
 export default function SnapshotPreview() {
   return (
     <TouchableOpacity style={styles.button}>
