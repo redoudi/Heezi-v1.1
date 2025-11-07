@@ -1,7 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface CourseCardProps {
-  thumbnailUri: string;
   progress: string;
   status: string;
   title: string;
