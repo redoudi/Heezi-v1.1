@@ -1,5 +1,11 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import { useEffect } from "react";
 export default function ResultSnapshot() {
+  const { cellsValues } = useSpreadsheetStore();
+  useEffect(() => {
+    console.log(cellsValues);
+  }, [cellsValues]);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.scrollView}>
