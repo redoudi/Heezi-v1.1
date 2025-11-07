@@ -5,23 +5,23 @@ export default function ResultSnapshot2() {
       <View style={styles.scrollView}>
         <View style={styles.row}>
           <View style={styles.column}>
-            <Text style={styles.text}>{"Lörem "}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
+            <Text style={styles.headerText}>{"Lörem "}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
             <Text style={styles.text3}>{"Lörem ipsum"}</Text>
           </View>
           <View>
-            <Text style={styles.text}>{"Lörem "}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text2}>{"Lörem ipsum"}</Text>
+            <Text style={styles.headerText}>{"Lörem "}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
+            <Text style={styles.text}>{"Lörem ipsum"}</Text>
             <Text style={styles.text3}>{"Lörem ipsum"}</Text>
           </View>
         </View>
@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 8,
   },
-  text: {
+  headerText: {
     color: "#292929",
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 10,
     marginRight: 25,
   },
-  text2: {
+  text: {
     color: "#292929",
     fontSize: 16,
     marginBottom: 10,
