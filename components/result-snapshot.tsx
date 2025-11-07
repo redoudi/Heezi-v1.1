@@ -6,9 +6,6 @@ export default function ResultSnapshot() {
   const {
     spreadsheetData: { cellsValues },
   } = useSpreadsheetStore();
-  useEffect(() => {
-    console.log(cellsValues);
-  }, [cellsValues]);
 
   const col1 = rangeToCells("A2:A7");
   const col2 = rangeToCells("B2:B7");
