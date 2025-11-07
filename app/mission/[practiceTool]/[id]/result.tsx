@@ -55,9 +55,7 @@ export default function ResultScreen() {
                 <View style={styles.row}>
                   <Text style={styles.text3}>{"+3"}</Text>
                   <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/niw8yegh_expires_30_days.png",
-                    }}
+                    source={require("@/assets/images/niw8yegh_expires_30_days.png")}
                     resizeMode={"stretch"}
                     style={styles.image}
                   />
@@ -65,9 +63,7 @@ export default function ResultScreen() {
                 <View style={styles.row2}>
                   <Text style={styles.text4}>{"+500"}</Text>
                   <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/3ixeh7z2_expires_30_days.png",
-                    }}
+                    source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
                     resizeMode={"stretch"}
                     style={styles.image2}
                   />
@@ -88,9 +84,7 @@ export default function ResultScreen() {
             <TouchableOpacity style={styles.buttonRow} onPress={goToNextPage}>
               <Text style={styles.text7}>{"Continuer"}</Text>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/bwp5ecq4_expires_30_days.png",
-                }}
+                source={require("@/assets/images/bwp5ecq4_expires_30_days.png")}
                 resizeMode={"stretch"}
                 style={styles.image3}
               />
