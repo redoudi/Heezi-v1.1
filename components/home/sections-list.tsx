@@ -24,9 +24,7 @@ export default function SectionsList({
             >
               <Text style={styles.text2}>{"Continuer"}</Text>
               <Image
-                source={{
-                  uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/7b4n53nk_expires_30_days.png",
-                }}
+                source={require("@/assets/images/continue-icon.png")}
                 resizeMode={"contain"}
                 style={styles.image}
               />
