@@ -34,7 +34,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="play/index"
+        name="play"
         options={{
           title: "Jouer",
           tabBarIcon: () => (
