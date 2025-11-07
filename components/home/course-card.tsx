@@ -1,4 +1,3 @@
-import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface CourseCardProps {
@@ -21,7 +20,7 @@ export function CourseCard({
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: thumbnailUri }}
+        source={require("@/assets/images/ldtg9pud_expires_30_days.png")}
         resizeMode="stretch"
         style={styles.thumbnail}
       />
