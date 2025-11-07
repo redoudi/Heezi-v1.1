@@ -40,8 +40,8 @@ const Mascot = () => {
       source={{
         uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/tfupuxd4_expires_30_days.png",
       }}
-      resizeMode={"stretch"}
-      style={styles.image34}
+      resizeMode={"contain"}
+      style={styles.mascot}
     />
   );
 };
@@ -73,12 +73,8 @@ export default function MascotBubble({
 }
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 300,
-    marginHorizontal: 32,
-    marginRight: 300,
     position: "absolute",
-    bottom: 0,
-
+    bottom: 16,
     right: 0,
     zIndex: 1000,
   },
@@ -116,9 +112,9 @@ const styles = StyleSheet.create({
     height: 61,
     alignSelf: "flex-start",
   },
-  image34: {
-    width: 298,
-    height: 295,
+  mascot: {
+    width: 150,
+    height: 150,
   },
 
   dialogText: {
