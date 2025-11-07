@@ -8,7 +8,7 @@
 - [ ] enlever tous les alert=>pressed
 - [ ] ajouter les highlight pour lesson et practice
 - [ ] ajouter le display correct/faux pour les quiz
-- [ ] implémenter le score à la fin
+- [ ] implémenter le score à la fin pour les quiz
 - [ ] implémenter la barre de progrès
 - [ ] enlever le score à la fin pour practice
 - [ ] mettre mascot-bubble comme modal pour lesson
