@@ -18,6 +18,9 @@
             "B7": ""
         },
         "cellsStyles": {
+            "A1": {
+                "fontWeight": "bold"
+            },
             "B1": {
                 "fontWeight": "bold"
             }
