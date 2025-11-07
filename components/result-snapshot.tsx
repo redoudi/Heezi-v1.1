@@ -1,5 +1,5 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-export default function ResultSnapshot2() {
+export default function ResultSnapshot() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.scrollView}>
