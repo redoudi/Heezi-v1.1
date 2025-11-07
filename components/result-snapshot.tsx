@@ -1,8 +1,10 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useEffect } from "react";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function ResultSnapshot() {
-  const { cellsValues } = useSpreadsheetStore();
+  const {
+    spreadsheetData: { cellsValues },
+  } = useSpreadsheetStore();
   useEffect(() => {
     console.log(cellsValues);
   }, [cellsValues]);
