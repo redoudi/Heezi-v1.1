@@ -1,4 +1,5 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import { rangeToCells } from "@/utils/spreadsheetUtils";
 import { useEffect } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function ResultSnapshot() {
@@ -9,29 +10,25 @@ export default function ResultSnapshot() {
     console.log(cellsValues);
   }, [cellsValues]);
 
+  const col1 = rangeToCells("A2:A7");
+  const col2 = rangeToCells("B2:B7");
+  const col1Values = col1.map((cell) => cellsValues[cell]);
+  const col2Values = col2.map((cell) => cellsValues[cell]);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.scrollView}>
         <View style={styles.row}>
           <View style={styles.column}>
-            <Text style={styles.headerText}>{"Lörem "}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text3}>{"Lörem ipsum"}</Text>
+            <Text style={styles.headerText}>{cellsValues["A1"]}</Text>
+            {col1Values.map((value) => (
+              <Text style={styles.text}>{value}</Text>
+            ))}
           </View>
           <View>
-            <Text style={styles.headerText}>{"Lörem "}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text}>{"Lörem ipsum"}</Text>
-            <Text style={styles.text3}>{"Lörem ipsum"}</Text>
+            <Text style={styles.headerText}>{cellsValues["B1"]}</Text>
+            {col2Values.map((value) => (
+              <Text style={styles.text}>{value}</Text>
+            ))}
           </View>
         </View>
       </View>
@@ -75,5 +72,6 @@ const styles = StyleSheet.create({
   text3: {
     color: "#292929",
     fontSize: 16,
+    marginBottom: 10,
   },
 });
