@@ -30,81 +30,59 @@ export default function SectionsList({
               />
             </TouchableOpacity>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/9uv8qf21_expires_30_days.png",
-              }}
+              source={require("@/assets/images/9uv8qf21_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image2}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qzp5ge44_expires_30_days.png",
-              }}
+              source={require("@/assets/images/qzp5ge44_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image3}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/2eub5oiv_expires_30_days.png",
-              }}
+              source={require("@/assets/images/2eub5oiv_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image4}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/muewt0o1_expires_30_days.png",
-              }}
+              source={require("@/assets/images/muewt0o1_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image5}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/h88sgh3z_expires_30_days.png",
-              }}
+              source={require("@/assets/images/h88sgh3z_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image6}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x3xlnrws_expires_30_days.png",
-              }}
+              source={require("@/assets/images/x3xlnrws_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.absoluteImage}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/k8yljswe_expires_30_days.png",
-              }}
+              source={require("@/assets/images/k8yljswe_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.absoluteImage2}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/k87xra1i_expires_30_days.png",
-              }}
+              source={require("@/assets/images/k87xra1i_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.absoluteImage3}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/x2n5y6hw_expires_30_days.png",
-              }}
+              source={require("@/assets/images/x2n5y6hw_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.absoluteImage4}
             />
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zyj8nexa_expires_30_days.png",
-              }}
+              source={require("@/assets/images/zyj8nexa_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.absoluteImage5}
             />
           </View>
         </View>
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/aik0c764_expires_30_days.png",
-          }}
+          source={require("@/assets/images/aik0c764_expires_30_days.png")}
           resizeMode={"contain"}
           style={styles.absoluteImage6}
         />
@@ -125,18 +103,14 @@ export default function SectionsList({
           >
             <Text style={styles.text4}>{"Continuer"}</Text>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/sy8w1ahc_expires_30_days.png",
-              }}
+              source={require("@/assets/images/sy8w1ahc_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image}
             />
           </TouchableOpacity>
         </View>
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kvf6wzrn_expires_30_days.png",
-          }}
+          source={require("@/assets/images/kvf6wzrn_expires_30_days.png")}
           resizeMode={"contain"}
           style={styles.image7}
         />
@@ -157,18 +131,14 @@ export default function SectionsList({
           >
             <Text style={styles.text4}>{"Continuer"}</Text>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/l29fup9x_expires_30_days.png",
-              }}
+              source={require("@/assets/images/l29fup9x_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image}
             />
           </TouchableOpacity>
         </View>
         <Image
-          source={{
-            uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xdcz0s8c_expires_30_days.png",
-          }}
+          source={require("@/assets/images/xdcz0s8c_expires_30_days.png")}
           resizeMode={"contain"}
           style={styles.image8}
         />
