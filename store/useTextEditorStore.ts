@@ -2,8 +2,13 @@ import { create } from "zustand";
 
 interface ContentBlock {
   type: string;
+  id?: string;
   text?: string;
+  placeholder?: string;
   style?: {
+    [key: string]: any;
+  };
+  blockStyle?: {
     [key: string]: any;
   };
 }

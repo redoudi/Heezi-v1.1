@@ -1,9 +1,9 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
-import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
-function TextBlock({ item }) {
+function TextBlock({ item }: { item: any }) {
   return (
-    <View style={styles.textBlockContainer}>
+    <View style={[styles.textBlockContainer, item.blockStyle]}>
       <Text style={[styles.textBlockText, item.style]}>{item.text}</Text>
     </View>
   );
@@ -11,23 +11,18 @@ function TextBlock({ item }) {
 
 function TextInputBlock({
   item,
-  setText,
   handleFocus,
 }: {
-  text: string;
-  setText: (text: string) => void;
+  item: any;
   handleFocus: () => void;
-  contentBlockStyle: { [key: string]: any };
-  placeholder: string;
 }) {
-  const { setBlockText, setSelectedBlockId: setSelectedBlockIndex } =
-    useTextEditorStore();
+  const { setBlockText } = useTextEditorStore();
   return (
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
         style={[styles.textInput, item.style]}
         value={item.text}
-        onChangeText={(inputText) => setBlockText(item.id, inputText)}
+        onChangeText={(inputText) => setBlockText(item.index, inputText)}
         onFocus={handleFocus}
         placeholder={item.placeholder}
       />
@@ -36,28 +31,59 @@ function TextInputBlock({
 }
 
 const ContentPage = () => {
-  const { contentBlocks, setBlockText, setSelectedBlockIndex } =
-    useTextEditorStore();
+  const { contentBlocks, setSelectedBlockIndex } = useTextEditorStore();
+
+  const blocksWithIndex = contentBlocks.map((block, index) => ({
+    ...block,
+    index,
+  }));
+
+  const bottomAlignedBlocks = blocksWithIndex.filter(
+    (block) => block.blockStyle?.alignSelf === "flex-end"
+  );
+  const regularBlocks = blocksWithIndex.filter(
+    (block) => block.blockStyle?.alignSelf !== "flex-end"
+  );
+
+  const renderBlock = (item: any) => {
+    switch (item.type) {
+      case "text":
+        return <TextBlock item={item} />;
+      case "textInput":
+        return (
+          <TextInputBlock
+            item={item}
+            handleFocus={() => setSelectedBlockIndex(item.index)}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
+  const hasBottomAlignedBlocks = bottomAlignedBlocks.length > 0;
 
   return (
     <View style={styles.contentPage}>
-      <FlatList
-        style={styles.contentBlocksList}
-        data={contentBlocks}
-        renderItem={({ item, index }) => {
-          switch (item.type) {
-            case "text":
-              return <TextBlock item={item} />;
-            case "textInput":
-              return (
-                <TextInputBlock
-                  item={item}
-                  handleFocus={() => setSelectedBlockIndex(index)}
-                />
-              );
-          }
-        }}
-      />
+      <View
+        style={[
+          styles.contentBlocksList,
+          hasBottomAlignedBlocks && styles.contentBlocksListWithBottom,
+        ]}
+      >
+        <View>
+          {regularBlocks.map((item) => (
+            <View key={item.index}>{renderBlock(item)}</View>
+          ))}
+        </View>
+        {hasBottomAlignedBlocks && (
+          <View style={styles.bottomBlocksContainer}>
+            {bottomAlignedBlocks.map((item) => (
+              <View key={item.index}>{renderBlock(item)}</View>
+            ))}
+          </View>
+        )}
+      </View>
     </View>
   );
 };
@@ -71,16 +97,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingTop: 48,
-
     marginBottom: 8,
     marginHorizontal: 345,
-    borderWidth: 3,
-    borderColor: "red",
   },
   contentBlocksList: {
     flex: 1,
-    borderWidth: 3,
-    borderColor: "blue",
+  },
+  contentBlocksListWithBottom: {
+    justifyContent: "space-between",
+  },
+  bottomBlocksContainer: {
+    alignSelf: "stretch",
   },
   textBlockContainer: {
     alignSelf: "flex-start",
