@@ -1,4 +1,4 @@
-import useExportValues from "@/hooks/useExportSpreadsheetValues";
+import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
 import { exportPdf } from "@/utils/exportPdf";
 import { useLocalSearchParams } from "expo-router";
 import {
@@ -13,7 +13,7 @@ import {
 import { exportXlsx } from "../utils/exportXlsx";
 
 const ExportXlsxButton = () => {
-  const { values } = useExportValues();
+  const { values } = useExportSpreadsheetValues();
 
   const handleExportXlsx = () => {
     if (!values.length) {
@@ -56,7 +56,7 @@ const ExportXlsxButton = () => {
 };
 
 const ExportPdfButton = () => {
-  const { values } = useExportValues();
+  const { values } = useExportSpreadsheetValues();
 
   const handleExportPdf = async () => {
     if (!values.length) {

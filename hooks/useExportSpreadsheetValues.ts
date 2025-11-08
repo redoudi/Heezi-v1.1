@@ -2,7 +2,7 @@ import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { rangeToCells } from "@/utils/spreadsheetUtils";
 import useLoadSpreadsheet from "./useLoadSpreadsheet";
 
-export default function useExportValues() {
+export default function useExportSpreadsheetValues() {
   useLoadSpreadsheet();
   const {
     spreadsheetData: { cellsValues },

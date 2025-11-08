@@ -1,12 +1,19 @@
+import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import SpreadsheetResultSnapshot from "./spreadsheet-result-snapshot";
+import TextEditorResultSnapshot from "./text-editor-result-snapshot";
 
 export default function SnapshotPreview() {
+  const { practiceTool } = useLocalSearchParams();
   return (
     <TouchableOpacity style={styles.button}>
       <View style={styles.view3}>
         <View style={styles.box}>
-          <SpreadsheetResultSnapshot />
+          {practiceTool === "spreadsheet" ? (
+            <SpreadsheetResultSnapshot />
+          ) : (
+            <TextEditorResultSnapshot />
+          )}
         </View>
       </View>
     </TouchableOpacity>
