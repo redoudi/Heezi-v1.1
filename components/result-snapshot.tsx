@@ -1,29 +1,8 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { rangeToCells } from "@/utils/spreadsheetUtils";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
-export default function ResultSnapshot() {
-  const {
-    spreadsheetData: { cellsValues },
-  } = useSpreadsheetStore();
-
-  const col1 = rangeToCells("A2:A7");
-  const col2 = rangeToCells("B2:B7");
-  const col1Values = col1.map((cell) => cellsValues[cell]);
-  const col2Values = col2.map((cell) => cellsValues[cell]);
-  const cellsIndices = [
-    ["A1", "B1"],
-    ["A2", "B2"],
-    ["A3", "B3"],
-    ["A4", "B4"],
-    ["A5", "B5"],
-    ["A6", "B6"],
-    ["A7", "B7"],
-  ];
-  const values = cellsIndices.map((cellsRow) =>
-    cellsRow.map((cell) => cellsValues[cell])
-  );
-  const [headers, ...entries] = cellsIndices;
-
+export default function ResultSnapshot({ data }) {
+  const [headers, ...entries] = data;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.snapshotBox}>
