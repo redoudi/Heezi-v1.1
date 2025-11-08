@@ -107,7 +107,8 @@
             "placeholder": "Signature",
             "blockStyle": {
                 "alignSelf": "flex-end",
-                "marginBottom": 56
+                "marginBottom": 56,
+                "marginTop": "auto"
             }
         }
     ]
