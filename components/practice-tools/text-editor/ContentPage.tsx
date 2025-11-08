@@ -22,7 +22,7 @@ function TextInputBlock({
       <TextInput
         style={[styles.textInput, item.style]}
         value={item.text}
-        onChangeText={(inputText) => setBlockText(item.index, inputText)}
+        onChangeText={(inputText) => setBlockText(item.id, inputText)}
         onFocus={handleFocus}
         placeholder={item.placeholder}
       />
@@ -33,57 +33,26 @@ function TextInputBlock({
 const ContentPage = () => {
   const { contentBlocks, setSelectedBlockIndex } = useTextEditorStore();
 
-  const blocksWithIndex = contentBlocks.map((block, index) => ({
-    ...block,
-    index,
-  }));
-
-  const bottomAlignedBlocks = blocksWithIndex.filter(
-    (block) => block.blockStyle?.alignSelf === "flex-end"
-  );
-  const regularBlocks = blocksWithIndex.filter(
-    (block) => block.blockStyle?.alignSelf !== "flex-end"
-  );
-
-  const renderBlock = (item: any) => {
-    switch (item.type) {
-      case "text":
-        return <TextBlock item={item} />;
-      case "textInput":
-        return (
-          <TextInputBlock
-            item={item}
-            handleFocus={() => setSelectedBlockIndex(item.index)}
-          />
-        );
-      default:
-        return null;
-    }
-  };
-
-  const hasBottomAlignedBlocks = bottomAlignedBlocks.length > 0;
+  const renderBlock = (item: any) => {};
 
   return (
     <View style={styles.contentPage}>
-      <View
-        style={[
-          styles.contentBlocksList,
-          hasBottomAlignedBlocks && styles.contentBlocksListWithBottom,
-        ]}
-      >
-        <View>
-          {regularBlocks.map((item) => (
-            <View key={item.index}>{renderBlock(item)}</View>
-          ))}
-        </View>
-        {hasBottomAlignedBlocks && (
-          <View style={styles.bottomBlocksContainer}>
-            {bottomAlignedBlocks.map((item) => (
-              <View key={item.index}>{renderBlock(item)}</View>
-            ))}
-          </View>
-        )}
-      </View>
+      {contentBlocks.map((item, index) => {
+        switch (item.type) {
+          case "text":
+            return <TextBlock key={index} item={item} />;
+          case "textInput":
+            return (
+              <TextInputBlock
+                key={index}
+                item={item}
+                handleFocus={() => setSelectedBlockIndex(index)}
+              />
+            );
+          default:
+            return null;
+        }
+      })}
     </View>
   );
 };
