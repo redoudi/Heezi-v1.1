@@ -1,6 +1,6 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { rangeToCells } from "@/utils/spreadsheetUtils";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function ResultSnapshot() {
   const {
     spreadsheetData: { cellsValues },
@@ -10,22 +10,56 @@ export default function ResultSnapshot() {
   const col2 = rangeToCells("B2:B7");
   const col1Values = col1.map((cell) => cellsValues[cell]);
   const col2Values = col2.map((cell) => cellsValues[cell]);
+  const cellsIndices = [
+    ["A1", "B1"],
+    ["A2", "B2"],
+    ["A3", "B3"],
+    ["A4", "B4"],
+    ["A5", "B5"],
+    ["A6", "B6"],
+    ["A7", "B7"],
+  ];
+  const values = cellsIndices.map((cellsRow) =>
+    cellsRow.map((cell) => cellsValues[cell])
+  );
+  const [headers, ...entries] = cellsIndices;
+
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.scrollView}>
-        <View style={styles.row}>
-          <View style={styles.column}>
-            <Text style={styles.headerText}>{cellsValues["A1"]}</Text>
-            {col1Values.map((value) => (
-              <Text style={styles.text}>{value}</Text>
-            ))}
-          </View>
-          <View>
-            <Text style={styles.headerText}>{cellsValues["B1"]}</Text>
-            {col2Values.map((value) => (
-              <Text style={styles.text}>{value}</Text>
-            ))}
-          </View>
+      <View style={styles.snapshotBox}>
+        <View style={styles.cellGrid}>
+          <FlatList
+            data={[headers]}
+            renderItem={({ item }) => {
+              return (
+                <View style={styles.row2}>
+                  {item.map((cell, index) => {
+                    return (
+                      <Text key={index} style={styles.headerText}>
+                        {cell}
+                      </Text>
+                    );
+                  })}
+                </View>
+              );
+            }}
+          />
+          <FlatList
+            data={entries}
+            renderItem={({ item }) => {
+              return (
+                <View style={styles.row2}>
+                  {item.map((cell, index) => {
+                    return (
+                      <Text key={index} style={styles.text}>
+                        {cell}
+                      </Text>
+                    );
+                  })}
+                </View>
+              );
+            }}
+          />
         </View>
       </View>
     </SafeAreaView>
@@ -39,15 +73,15 @@ const styles = StyleSheet.create({
   column: {
     marginHorizontal: 32,
   },
-  row: {
-    flexDirection: "row",
+  row2: { marginHorizontal: 32, flexDirection: "row" },
+  cellGrid: {
     borderColor: "#000000",
     borderRadius: 8,
     borderWidth: 1,
     paddingTop: 32,
     height: "100%",
   },
-  scrollView: {
+  snapshotBox: {
     flex: 1,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
