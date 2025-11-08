@@ -29,18 +29,15 @@ export default function MascotModal({ open, onClose, modalText }) {
     >
       <TouchableWithoutFeedback onPress={onClose} accessible={false}>
         <View style={styles.mainContainer}>
-          <TouchableWithoutFeedback onPress={() => {}} accessible={false}>
-            <View style={styles.modalContent}>
-              <Image
-                source={require("@/assets/images/paauqhmf_expires_30_days.png")}
-                resizeMode={"contain"}
-                style={styles.mascotImage}
-              />
+          <View style={styles.modalContent}>
+            <Image
+              source={require("@/assets/images/paauqhmf_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles.mascotImage}
+            />
+            <View style={styles.modalTextBoxContainer}>
               <View style={styles.modalTextBox}>
-                <Text style={styles.modalText}>
-                  {modalText ||
-                    "Lörem ipsum köttskatt astrolig: nemiren men maligen !!!"}
-                </Text>
+                <Text style={styles.modalText}>{modalText || "..."}</Text>
               </View>
               <Image
                 source={require("@/assets/images/dwoxzuh6_expires_30_days.png")}
@@ -48,7 +45,7 @@ export default function MascotModal({ open, onClose, modalText }) {
                 style={styles.arrowDownImage}
               />
             </View>
-          </TouchableWithoutFeedback>
+          </View>
         </View>
       </TouchableWithoutFeedback>
     </Modal>
@@ -60,8 +57,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    borderWidth: 10,
-    borderColor: "red",
   },
 
   modalContent: {
@@ -72,14 +67,13 @@ const styles = StyleSheet.create({
     paddingBottom: 17,
     paddingLeft: 15,
     paddingRight: 16,
+    alignItems: "center",
     shadowColor: "#1E6759",
     shadowOpacity: 1.0,
     shadowOffset: {
       width: 0,
       height: 4,
     },
-    borderWidth: 10,
-    borderColor: "red",
   },
   mascotImage: {
     borderRadius: 8,
@@ -103,5 +97,9 @@ const styles = StyleSheet.create({
     paddingBottom: 7,
     paddingLeft: 8,
     marginBottom: 8,
+  },
+  modalTextBoxContainer: {
+    alignSelf: "stretch",
+    alignItems: "stretch",
   },
 });
