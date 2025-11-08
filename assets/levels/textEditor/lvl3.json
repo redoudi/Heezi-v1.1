@@ -72,12 +72,12 @@
     "contentBlocks": [
         {
             "type": "textInput",
-            "blockId": "nomInput",
+            "id": "nomInput",
             "placeholder": "Nom"
         },
         {
             "type": "textInput",
-            "blockId": "adresseInput",
+            "id": "adresseInput",
             "placeholder": "Adresse"
         },
         {
@@ -89,7 +89,7 @@
         },
         {
             "type": "textInput",
-            "blockId": "objetInput"
+            "id": "objetInput"
         },
         {
             "type": "text",
@@ -97,7 +97,7 @@
         },
         {
             "type": "textInput",
-            "blockId": "signatureInput",
+            "id": "signatureInput",
             "placeholder": "Signature",
             "style": {
                 "alignSelf": "flex-end"

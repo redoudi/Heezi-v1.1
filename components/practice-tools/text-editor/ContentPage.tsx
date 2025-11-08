@@ -1,26 +1,18 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 
-function TextBlock({
-  text = "...",
-  contentBlockStyle = {},
-}: {
-  text: string;
-  contentBlockStyle: { [key: string]: any };
-}) {
+function TextBlock({ item }) {
   return (
     <View style={styles.textBlockContainer}>
-      <Text style={[styles.textBlockText, contentBlockStyle]}>{text}</Text>
+      <Text style={[styles.textBlockText, item.style]}>{item.text}</Text>
     </View>
   );
 }
 
 function TextInputBlock({
-  text = "",
+  item,
   setText,
   handleFocus,
-  contentBlockStyle = {},
-  placeholder = "",
 }: {
   text: string;
   setText: (text: string) => void;
@@ -29,13 +21,13 @@ function TextInputBlock({
   placeholder: string;
 }) {
   return (
-    <View style={[styles.textInputContainer, contentBlockStyle]}>
+    <View style={[styles.textInputContainer, item.style]}>
       <TextInput
         style={[styles.textInput]}
-        value={text}
+        value={item.text}
         onChangeText={(inputText) => setText(inputText)}
         onFocus={handleFocus}
-        placeholder={placeholder}
+        placeholder={item.placeholder}
       />
     </View>
   );
@@ -53,17 +45,13 @@ const ContentPage = () => {
         renderItem={({ item, index }) => {
           switch (item.type) {
             case "text":
-              return (
-                <TextBlock text={item.text} contentBlockStyle={item.style} />
-              );
+              return <TextBlock item={item} />;
             case "textInput":
               return (
                 <TextInputBlock
-                  text={item.text}
+                  item={item}
                   setText={(inputText) => setBlockText(index, inputText)}
                   handleFocus={() => setSelectedBlockIndex(index)}
-                  contentBlockStyle={item.style}
-                  placeholder={item.placeholder}
                 />
               );
           }
@@ -90,6 +78,8 @@ const styles = StyleSheet.create({
   },
   contentBlocksList: {
     flex: 1,
+    borderWidth: 3,
+    borderColor: "blue",
   },
   textBlockContainer: {
     alignSelf: "flex-start",
