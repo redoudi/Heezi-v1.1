@@ -1,6 +1,7 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-export default function SpreadsheetResultSnapshot() {
+
+export default function TextEditorResultSnapshot() {
   const { contentBlocks } = useTextEditorStore();
   return (
     <SafeAreaView style={styles.container}>
