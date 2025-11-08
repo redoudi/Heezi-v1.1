@@ -23,7 +23,7 @@ function TextInputBlock({
   const { setBlockText, setSelectedBlockId: setSelectedBlockIndex } =
     useTextEditorStore();
   return (
-    <View style={[styles.textInputContainer]}>
+    <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
         style={[styles.textInput, item.style]}
         value={item.text}

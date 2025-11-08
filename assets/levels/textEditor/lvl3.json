@@ -99,8 +99,10 @@
             "type": "textInput",
             "id": "signatureInput",
             "placeholder": "Signature",
-            "style": {
-                "alignSelf": "flex-end"
+            "blockStyle": {
+                "alignSelf": "flex-end",
+                "borderWidth": 1,
+                "borderColor": "red"
             }
         }
     ]
