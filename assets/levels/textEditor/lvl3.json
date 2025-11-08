@@ -82,7 +82,7 @@
         },
         {
             "type": "text",
-            "text": "Objet",
+            "text": "Objet :",
             "style": {
                 "fontWeight": "bold"
             }
@@ -98,7 +98,10 @@
         {
             "type": "textInput",
             "blockId": "signatureInput",
-            "placeholder": "Signature"
+            "placeholder": "Signature",
+            "style": {
+                "alignSelf": "flex-end"
+            }
         }
     ]
 }

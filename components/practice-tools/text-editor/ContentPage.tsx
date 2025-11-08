@@ -20,19 +20,22 @@ function TextInputBlock({
   setText,
   handleFocus,
   contentBlockStyle = {},
+  placeholder = "",
 }: {
   text: string;
   setText: (text: string) => void;
   handleFocus: () => void;
   contentBlockStyle: { [key: string]: any };
+  placeholder: string;
 }) {
   return (
-    <View style={styles.textInputContainer}>
+    <View style={[styles.textInputContainer, contentBlockStyle]}>
       <TextInput
-        style={[styles.textInput, contentBlockStyle]}
+        style={[styles.textInput]}
         value={text}
         onChangeText={(inputText) => setText(inputText)}
         onFocus={handleFocus}
+        placeholder={placeholder}
       />
     </View>
   );
@@ -60,6 +63,7 @@ const ContentPage = () => {
                   setText={(inputText) => setBlockText(index, inputText)}
                   handleFocus={() => setSelectedBlockIndex(index)}
                   contentBlockStyle={item.style}
+                  placeholder={item.placeholder}
                 />
               );
           }
