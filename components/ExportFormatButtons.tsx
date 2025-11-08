@@ -12,6 +12,7 @@ import {
 } from "react-native";
 
 const ExportXlsxButton = () => {
+  const { values } = useExportValues();
   return (
     <TouchableOpacity
       style={styles.buttonRow}
