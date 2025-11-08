@@ -37,7 +37,6 @@ export default function ResultSnapshot() {
               ))}
             </View>
           </View>
-
           <FlatList
             style={{ borderWidth: 1, borderColor: "black" }}
             data={entries}
