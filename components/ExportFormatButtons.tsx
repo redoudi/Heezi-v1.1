@@ -1,6 +1,15 @@
 import useExportValues from "@/hooks/useExportValues";
+import { exportPdf } from "@/utils/exportPdf";
 import { useLocalSearchParams } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const ExportXlsxButton = () => {
   return (
@@ -19,11 +28,42 @@ const ExportXlsxButton = () => {
 };
 
 const ExportPdfButton = () => {
-  const { cellsIndices: data } = useExportValues();
+  const { cellsIndices, values } = useExportValues();
+
+  const handleExportPdf = async () => {
+    if (!cellsIndices.length) {
+      Alert.alert(
+        "Nothing to export",
+        "We couldn't find any data to include in the PDF."
+      );
+      return;
+    }
+
+    if (Platform.OS !== "web") {
+      Alert.alert(
+        "Export unavailable",
+        "PDF export is currently available on web only."
+      );
+      return;
+    }
+
+    try {
+      await exportPdf(cellsIndices, values);
+    } catch (error) {
+      console.error("Failed to export PDF", error);
+      Alert.alert(
+        "Export failed",
+        "Something went wrong while preparing your PDF. Please try again."
+      );
+    }
+  };
+
   return (
     <TouchableOpacity
       style={styles.buttonRow2}
-      onPress={() => alert("Pressed!")}
+      onPress={() => {
+        void handleExportPdf();
+      }}
     >
       <Image
         source={require("@/assets/images/0a6n5ovw_expires_30_days.png")}
