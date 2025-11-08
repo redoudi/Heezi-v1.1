@@ -9,7 +9,7 @@ export default function TextEditorResultSnapshot() {
         {contentBlocks.map((block, index) => (
           <View key={index} style={[block.blockStyle]}>
             <Text key={index} style={[styles.text, block.style]}>
-              {block.text || block.placeholder}
+              {block.text}
             </Text>
           </View>
         ))}
