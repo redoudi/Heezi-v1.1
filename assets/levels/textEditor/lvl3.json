@@ -71,18 +71,14 @@
     ],
     "contentBlocks": [
         {
-            "type": "text",
-            "text": "Nom"
+            "type": "textInput",
+            "blockId": "nomInput",
+            "placeholder": "Nom"
         },
         {
-            "type": "textInput"
-        },
-        {
-            "type": "text",
-            "text": "Adresse"
-        },
-        {
-            "type": "textInput"
+            "type": "textInput",
+            "blockId": "adresseInput",
+            "placeholder": "Adresse"
         },
         {
             "type": "text",
@@ -92,18 +88,17 @@
             }
         },
         {
-            "type": "textInput"
+            "type": "textInput",
+            "blockId": "objetInput"
         },
         {
             "type": "text",
             "text": "Bonjour, nous voudrions réserver une salle pour nos réunions. Nous sommes 10 membres. Nous aimerions nous réunir le mercredi de 17h à 19h, une fois par mois. Pouvez-vous nous aider ?"
         },
         {
-            "type": "text",
-            "text": "Signature"
-        },
-        {
-            "type": "textInput"
+            "type": "textInput",
+            "blockId": "signatureInput",
+            "placeholder": "Signature"
         }
     ]
 }

@@ -28,22 +28,24 @@ export default function MascotModal({ open, onClose, modalText }) {
       onRequestClose={onClose}
     >
       <TouchableWithoutFeedback onPress={onClose} accessible={false}>
-        <View style={styles.container}>
+        <View style={styles.mainContainer}>
           <TouchableWithoutFeedback onPress={() => {}} accessible={false}>
-            <View style={styles.column}>
+            <View style={styles.modalContent}>
               <Image
-                source={require("@/assets/images/paauqhmf_expires_30_days.png")} resizeMode={"stretch"}
-                style={styles.image}
+                source={require("@/assets/images/paauqhmf_expires_30_days.png")}
+                resizeMode={"contain"}
+                style={styles.mascotImage}
               />
-              <View style={styles.view}>
-                <Text style={styles.text}>
+              <View style={styles.modalTextBox}>
+                <Text style={styles.modalText}>
                   {modalText ||
                     "Lörem ipsum köttskatt astrolig: nemiren men maligen !!!"}
                 </Text>
               </View>
               <Image
-                source={require("@/assets/images/dwoxzuh6_expires_30_days.png")} resizeMode={"stretch"}
-                style={styles.image2}
+                source={require("@/assets/images/dwoxzuh6_expires_30_days.png")}
+                resizeMode={"contain"}
+                style={styles.arrowDownImage}
               />
             </View>
           </TouchableWithoutFeedback>
@@ -54,15 +56,15 @@ export default function MascotModal({ open, onClose, modalText }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    borderWidth: 10,
+    borderColor: "red",
   },
-  container2: {
-    backgroundColor: "#FFFFFF",
-  },
-  column: {
+
+  modalContent: {
     width: 748,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
@@ -76,23 +78,25 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
+    borderWidth: 10,
+    borderColor: "red",
   },
-  image: {
+  mascotImage: {
     borderRadius: 8,
     height: 398,
     marginBottom: 8,
   },
-  image2: {
+  arrowDownImage: {
     borderRadius: 8,
     width: 32,
     height: 21,
   },
-  text: {
+  modalText: {
     color: "#292929",
     fontSize: 20,
     fontWeight: "bold",
   },
-  view: {
+  modalTextBox: {
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingTop: 8,
