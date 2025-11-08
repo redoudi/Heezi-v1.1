@@ -1,11 +1,5 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 
 function TextBlock({
   text = "...",
@@ -84,7 +78,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingTop: 48,
-    paddingBottom: 501,
+
     marginBottom: 8,
     marginHorizontal: 345,
     borderWidth: 3,
@@ -117,4 +111,3 @@ const styles = StyleSheet.create({
     marginLeft: 9,
   },
 });
-
