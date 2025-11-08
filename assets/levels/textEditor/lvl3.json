@@ -85,6 +85,9 @@
             "text": "Objet :",
             "style": {
                 "fontWeight": "bold"
+            },
+            "blockStyle": {
+                "marginTop": 16
             }
         },
         {
@@ -93,7 +96,10 @@
         },
         {
             "type": "text",
-            "text": "Bonjour, nous voudrions réserver une salle pour nos réunions. Nous sommes 10 membres. Nous aimerions nous réunir le mercredi de 17h à 19h, une fois par mois. Pouvez-vous nous aider ?"
+            "text": "Bonjour, nous voudrions réserver une salle pour nos réunions. Nous sommes 10 membres. Nous aimerions nous réunir le mercredi de 17h à 19h, une fois par mois. Pouvez-vous nous aider ?",
+            "blockStyle": {
+                "marginTop": 24
+            }
         },
         {
             "type": "textInput",
@@ -101,8 +107,7 @@
             "placeholder": "Signature",
             "blockStyle": {
                 "alignSelf": "flex-end",
-                "borderWidth": 1,
-                "borderColor": "red"
+                "marginBottom": 56
             }
         }
     ]
