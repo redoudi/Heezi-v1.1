@@ -1,44 +1,6 @@
-import useTextEditorStore from "@/store/useTextEditorStore";
-import {
-  FlatList,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import ContentPage from "./ContentPage";
 import TextEditorHeader from "./TextEditorHeader";
-
-function TextBlock({ text = "...", contentBlockStyle = {} }) {
-  return (
-    <View style={styles.textBlockContainer}>
-      <Text style={[styles.textBlockText, contentBlockStyle]}>{text}</Text>
-    </View>
-  );
-}
-
-function TextInputBlock({
-  text = "",
-  setText,
-  handleFocus,
-  contentBlockStyle = {},
-}: {
-  text: string;
-  setText: (text: string) => void;
-  handleFocus: () => void;
-  contentBlockStyle: { [key: string]: any };
-}) {
-  return (
-    <View style={styles.textInputContainer}>
-      <TextInput
-        style={[styles.textInput, contentBlockStyle]}
-        value={text}
-        onChangeText={(text) => setText(text)}
-        onFocus={handleFocus}
-      />
-    </View>
-  );
-}
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
@@ -49,35 +11,6 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
     </View>
   );
 }
-
-const ContentPage = () => {
-  const { contentBlocks, setBlockText, setSelectedBlockIndex } =
-    useTextEditorStore();
-  return (
-    <View style={styles.contentPage}>
-      <FlatList
-        data={contentBlocks}
-        renderItem={({ item, index }) => {
-          switch (item.type) {
-            case "text":
-              return (
-                <TextBlock text={item.text} contentBlockStyle={item.style} />
-              );
-            case "textInput":
-              return (
-                <TextInputBlock
-                  text={item.text}
-                  setText={(text) => setBlockText(index, text)}
-                  handleFocus={() => setSelectedBlockIndex(index)}
-                  contentBlockStyle={item.style}
-                />
-              );
-          }
-        }}
-      />
-    </View>
-  );
-};
 
 function ProgressBar() {
   return (
@@ -116,39 +49,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     borderWidth: 1,
     borderColor: "#EFEFEF",
-  },
-  contentPage: {
-    flex: 1,
-    alignSelf: "flex-start",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingTop: 48,
-    paddingBottom: 501,
-    marginBottom: 8,
-    marginHorizontal: 345,
-  },
-  textBlockContainer: {
-    alignSelf: "flex-start",
-    marginBottom: 11,
-    marginHorizontal: 64,
-  },
-  textBlockText: {
-    color: "#292929",
-    fontSize: 16,
-    width: 618,
-  },
-  textInputContainer: {
-    width: 622,
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 11,
-    marginBottom: 10,
-    marginHorizontal: 64,
-  },
-  textInput: {
-    color: "#292929",
-    fontSize: 16,
-    marginLeft: 9,
   },
   pageNumberContainer: {
     alignItems: "center",
