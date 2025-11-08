@@ -31,51 +31,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     flex: 1,
   },
-  flatList: {
-    // borderWidth: 1,
-    // borderColor: "green",
-  },
-  cellGrid: {
-    flex: 1,
-    borderRadius: 8,
-    paddingTop: 32,
-    marginTop: 102,
-    // borderWidth: 1,
-    // borderColor: "#000000",
-  },
-  cellsRow: {
-    marginHorizontal: 32,
-    flexDirection: "row",
-    justifyContent: "center",
-    // borderWidth: 1,
-  },
-  headerCell: {
-    borderWidth: 2,
-    borderColor: "black",
-  },
-  cell: {
-    borderWidth: 1,
-    borderColor: "gray",
-    padding: 10,
-    width: "40%",
-    textAlign: "center",
-  },
-  headerText: {
-    color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 10,
-    marginRight: 25,
-  },
   text: {
-    color: "#292929",
-    fontSize: 16,
-    marginBottom: 10,
-  },
-  column: {
-    marginHorizontal: 32,
-  },
-  text3: {
     color: "#292929",
     fontSize: 16,
     marginBottom: 10,
