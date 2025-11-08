@@ -10,14 +10,41 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { exportXlsx } from "../utils/exportXlsx";
 
 const ExportXlsxButton = () => {
   const { values } = useExportValues();
+
+  const handleExportXlsx = () => {
+    if (!values.length) {
+      Alert.alert(
+        "Nothing to export",
+        "We couldn't find any data to include in the spreadsheet."
+      );
+      return;
+    }
+
+    if (Platform.OS !== "web") {
+      Alert.alert(
+        "Export unavailable",
+        "Spreadsheet export is currently available on web only."
+      );
+      return;
+    }
+
+    try {
+      exportXlsx(values);
+    } catch (error) {
+      console.error("Failed to export XLSX", error);
+      Alert.alert(
+        "Export failed",
+        "Something went wrong while preparing your spreadsheet. Please try again."
+      );
+    }
+  };
+
   return (
-    <TouchableOpacity
-      style={styles.buttonRow}
-      onPress={() => alert("Pressed!")}
-    >
+    <TouchableOpacity style={styles.buttonRow} onPress={handleExportXlsx}>
       <Image
         source={require("@/assets/images/ceguc7fq_expires_30_days.png")}
         resizeMode={"stretch"}
