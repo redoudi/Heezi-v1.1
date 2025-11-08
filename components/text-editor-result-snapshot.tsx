@@ -1,5 +1,7 @@
+import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 export default function SpreadsheetResultSnapshot() {
+  const { contentBlocks } = useExportTextEditorValues();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.snapshotBox}></View>
