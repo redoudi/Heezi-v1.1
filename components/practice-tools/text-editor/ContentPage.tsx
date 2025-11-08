@@ -17,6 +17,7 @@ function TextInputBlock({
   handleFocus: () => void;
 }) {
   const { setBlockText } = useTextEditorStore();
+
   return (
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
@@ -32,8 +33,6 @@ function TextInputBlock({
 
 const ContentPage = () => {
   const { contentBlocks, setSelectedBlockIndex } = useTextEditorStore();
-
-  const renderBlock = (item: any) => {};
 
   return (
     <View style={styles.contentPage}>
