@@ -28,23 +28,18 @@ export default function ResultSnapshot() {
     <SafeAreaView style={styles.container}>
       <View style={styles.snapshotBox}>
         <View style={styles.cellGrid}>
+          <View style={{ borderWidth: 1, borderColor: "black" }}>
+            <View style={styles.cellsRow}>
+              {headers.map((cell, index) => (
+                <Text key={index} style={styles.headerText}>
+                  {cell}
+                </Text>
+              ))}
+            </View>
+          </View>
+
           <FlatList
-            data={[headers]}
-            renderItem={({ item }) => {
-              return (
-                <View style={styles.cellsRow}>
-                  {item.map((cell, index) => {
-                    return (
-                      <Text key={index} style={styles.headerText}>
-                        {cell}
-                      </Text>
-                    );
-                  })}
-                </View>
-              );
-            }}
-          />
-          <FlatList
+            style={{ borderWidth: 1, borderColor: "black" }}
             data={entries}
             renderItem={({ item }) => {
               return (
@@ -80,7 +75,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "flex-start",
-
     borderColor: "#000000",
     borderRadius: 8,
     borderWidth: 1,
