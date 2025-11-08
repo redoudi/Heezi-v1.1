@@ -27,60 +27,69 @@ export default function ResultSnapshot() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.snapshotBox}>
-        <View style={styles.cellGrid}>
-          <View style={{ borderWidth: 1, borderColor: "black" }}>
-            <View style={styles.cellsRow}>
-              {headers.map((cell, index) => (
-                <Text key={index} style={styles.headerText}>
-                  {cell}
-                </Text>
-              ))}
+        <View style={styles.cellsRow}>
+          {headers.map((cell, index) => (
+            <View key={index} style={styles.cell}>
+              <Text style={styles.headerText}>{cell}</Text>
             </View>
-          </View>
-          <FlatList
-            style={{ borderWidth: 1, borderColor: "black" }}
-            data={entries}
-            renderItem={({ item }) => {
-              return (
-                <View style={styles.cellsRow}>
-                  {item.map((cell, index) => {
-                    return (
-                      <Text key={index} style={styles.text}>
-                        {cell}
-                      </Text>
-                    );
-                  })}
-                </View>
-              );
-            }}
-          />
+          ))}
         </View>
+        <FlatList
+          style={{ borderWidth: 1, borderColor: "green" }}
+          data={entries}
+          renderItem={({ item }) => {
+            return (
+              <View style={styles.cellsRow}>
+                {item.map((cell, index) => {
+                  return (
+                    <View key={index} style={styles.cell}>
+                      <Text style={styles.text}>{cell}</Text>
+                    </View>
+                  );
+                })}
+              </View>
+            );
+          }}
+        />
       </View>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#FFFFFF",
+    flex: 1,
+    justifyContent: "center",
   },
   snapshotBox: {
-    flex: 1,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
-    padding: 8,
+    padding: 32,
+    borderWidth: 1,
+    borderColor: "black",
   },
   cellGrid: {
     flex: 1,
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+
     borderColor: "#000000",
     borderRadius: 8,
     borderWidth: 1,
     paddingTop: 32,
-    height: "100%",
+    marginTop: 102,
   },
-  cellsRow: { marginHorizontal: 32, flexDirection: "row" },
+  cellsRow: {
+    marginHorizontal: 32,
+    flexDirection: "row",
+    justifyContent: "center",
+    borderWidth: 1,
+  },
+  cell: {
+    borderWidth: 1,
+    borderColor: "black",
+    padding: 10,
+    width: "40%",
+    textAlign: "center",
+  },
   headerText: {
     color: "#292929",
     fontSize: 24,
