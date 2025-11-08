@@ -1,14 +1,12 @@
-import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { rangeToCells } from "@/utils/spreadsheetUtils";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
-import ResultSnapshot from "./result-snapshot";
+import SpreadsheetResultSnapshot from "./spreadsheet-result-snapshot";
 
 export default function SnapshotPreview() {
   return (
     <TouchableOpacity style={styles.button}>
       <View style={styles.view3}>
         <View style={styles.box}>
-          <ResultSnapshot />
+          <SpreadsheetResultSnapshot />
         </View>
       </View>
     </TouchableOpacity>

@@ -1,6 +1,6 @@
-import useExportValues from "@/hooks/useExportValues";
+import useExportValues from "@/hooks/useExportSpreadsheetValues";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
-export default function ResultSnapshot() {
+export default function SpreadsheetResultSnapshot() {
   const { values } = useExportValues();
   const [headers, ...entries] = values;
   return (
