@@ -1,8 +1,8 @@
 import useExportValues from "@/hooks/useExportValues";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function ResultSnapshot() {
-  const { cellsIndices: data } = useExportValues();
-  const [headers, ...entries] = data;
+  const { values } = useExportValues();
+  const [headers, ...entries] = values;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.snapshotBox}>
