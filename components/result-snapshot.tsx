@@ -32,7 +32,7 @@ export default function ResultSnapshot() {
             data={[headers]}
             renderItem={({ item }) => {
               return (
-                <View style={styles.row2}>
+                <View style={styles.cellsRow}>
                   {item.map((cell, index) => {
                     return (
                       <Text key={index} style={styles.headerText}>
@@ -48,7 +48,7 @@ export default function ResultSnapshot() {
             data={entries}
             renderItem={({ item }) => {
               return (
-                <View style={styles.row2}>
+                <View style={styles.cellsRow}>
                   {item.map((cell, index) => {
                     return (
                       <Text key={index} style={styles.text}>
@@ -70,23 +70,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
   },
-  column: {
-    marginHorizontal: 32,
-  },
-  row2: { marginHorizontal: 32, flexDirection: "row" },
-  cellGrid: {
-    borderColor: "#000000",
-    borderRadius: 8,
-    borderWidth: 1,
-    paddingTop: 32,
-    height: "100%",
-  },
   snapshotBox: {
     flex: 1,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     padding: 8,
   },
+  cellGrid: {
+    flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+
+    borderColor: "#000000",
+    borderRadius: 8,
+    borderWidth: 1,
+    paddingTop: 32,
+    height: "100%",
+  },
+  cellsRow: { marginHorizontal: 32, flexDirection: "row" },
   headerText: {
     color: "#292929",
     fontSize: 24,
@@ -98,6 +99,9 @@ const styles = StyleSheet.create({
     color: "#292929",
     fontSize: 16,
     marginBottom: 10,
+  },
+  column: {
+    marginHorizontal: 32,
   },
   text3: {
     color: "#292929",
