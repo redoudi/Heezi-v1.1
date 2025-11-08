@@ -1,5 +1,3 @@
-import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { rangeToCells } from "@/utils/spreadsheetUtils";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function ResultSnapshot({ data }) {
   const [headers, ...entries] = data;
@@ -14,7 +12,7 @@ export default function ResultSnapshot({ data }) {
           ))}
         </View>
         <FlatList
-          style={{ borderWidth: 1, borderColor: "green" }}
+          style={styles.flatList}
           data={entries}
           renderItem={({ item }) => {
             return (
@@ -44,8 +42,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     padding: 32,
-    borderWidth: 1,
+    // borderWidth: 1,
     borderColor: "black",
+  },
+  flatList: {
+    borderWidth: 1,
+    borderColor: "green",
   },
   cellGrid: {
     flex: 1,
