@@ -1,3 +1,4 @@
+import useExportValues from "@/hooks/useExportValues";
 import { useLocalSearchParams } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -18,6 +19,7 @@ const ExportXlsxButton = () => {
 };
 
 const ExportPdfButton = () => {
+  const { cellsIndices: data } = useExportValues();
   return (
     <TouchableOpacity
       style={styles.buttonRow2}
