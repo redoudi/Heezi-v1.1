@@ -1,10 +1,19 @@
 import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function SpreadsheetResultSnapshot() {
-  const { contentBlocks } = useExportTextEditorValues();
+  const { values } = useExportTextEditorValues();
+  const textBlocks = values;
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.snapshotBox}></View>
+      <View style={styles.snapshotBox}>
+        {textBlocks.map((block, index) => (
+          <View key={index} style={[block.blockStyle]}>
+            <Text key={index} style={[styles.text, block.style]}>
+              {block.text || block.placeholder}
+            </Text>
+          </View>
+        ))}
+      </View>
     </SafeAreaView>
   );
 }
@@ -12,14 +21,15 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFFFFF",
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
   },
   snapshotBox: {
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     padding: 32,
-    // borderWidth: 1,
-    // borderColor: "black",
+    borderWidth: 1,
+    borderColor: "black",
+    flex: 1,
   },
   flatList: {
     // borderWidth: 1,
