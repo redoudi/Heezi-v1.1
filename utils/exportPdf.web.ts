@@ -103,7 +103,6 @@ export async function exportPdf(
   doc.setFont("helvetica", "normal");
   doc.setFontSize(11);
   doc.setTextColor(96, 131, 123);
-  doc.text(`Generated on ${generatedAt}`, MARGIN, MARGIN + 20);
 
   doc.setDrawColor(199, 213, 209);
 
@@ -115,17 +114,12 @@ export async function exportPdf(
       cursorY = MARGIN;
     }
 
-    row.forEach((cellId, columnIndex) => {
+    row.forEach((_, columnIndex) => {
       const x = MARGIN + columnIndex * columnWidth;
       const rawValue = values[rowIndex]?.[columnIndex];
       const displayValue = formatCellValue(rawValue);
 
       doc.rect(x, cursorY - 18, columnWidth, ROW_HEIGHT, "S");
-
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(9);
-      doc.setTextColor(96, 131, 123);
-      doc.text(cellId, x + 10, cursorY - 2);
 
       doc.setFont("helvetica", "normal");
       doc.setFontSize(13);
@@ -134,7 +128,7 @@ export async function exportPdf(
       const textWidth = columnWidth - 20;
       const content = displayValue.length ? displayValue : " ";
       const wrapped = doc.splitTextToSize(content, textWidth);
-      doc.text(wrapped, x + 10, cursorY + 12, {
+      doc.text(wrapped, x + 10, cursorY - 6, {
         baseline: "top",
         lineHeightFactor: 1.2,
       });
@@ -143,9 +137,7 @@ export async function exportPdf(
     cursorY += ROW_HEIGHT;
   });
 
-  const filename = `heezi-export-${new Date()
-    .toISOString()
-    .split("T")[0]}.pdf`;
+  const filename = `heezi-export-${new Date().toISOString().split("T")[0]}.pdf`;
 
   doc.save(filename);
 }
@@ -165,4 +157,3 @@ function formatCellValue(value: unknown): string {
 
   return String(value);
 }
-

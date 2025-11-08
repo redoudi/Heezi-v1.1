@@ -56,10 +56,10 @@ const ExportXlsxButton = () => {
 };
 
 const ExportPdfButton = () => {
-  const { cellsIndices, values } = useExportValues();
+  const { values } = useExportValues();
 
   const handleExportPdf = async () => {
-    if (!cellsIndices.length) {
+    if (!values.length) {
       Alert.alert(
         "Nothing to export",
         "We couldn't find any data to include in the PDF."
@@ -76,7 +76,7 @@ const ExportPdfButton = () => {
     }
 
     try {
-      await exportPdf(cellsIndices, values);
+      await exportPdf(values);
     } catch (error) {
       console.error("Failed to export PDF", error);
       Alert.alert(
