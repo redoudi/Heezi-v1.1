@@ -6,7 +6,7 @@ export default function ResultSnapshot({ data }) {
       <View style={styles.snapshotBox}>
         <View style={styles.cellsRow}>
           {headers.map((cell, index) => (
-            <View key={index} style={styles.cell}>
+            <View key={index} style={[styles.cell, styles.headerCell]}>
               <Text style={styles.headerText}>{cell}</Text>
             </View>
           ))}
@@ -43,30 +43,33 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 32,
     // borderWidth: 1,
-    borderColor: "black",
+    // borderColor: "black",
   },
   flatList: {
-    borderWidth: 1,
-    borderColor: "green",
+    // borderWidth: 1,
+    // borderColor: "green",
   },
   cellGrid: {
     flex: 1,
-
-    borderColor: "#000000",
     borderRadius: 8,
-    borderWidth: 1,
     paddingTop: 32,
     marginTop: 102,
+    // borderWidth: 1,
+    // borderColor: "#000000",
   },
   cellsRow: {
     marginHorizontal: 32,
     flexDirection: "row",
     justifyContent: "center",
-    borderWidth: 1,
+    // borderWidth: 1,
+  },
+  headerCell: {
+    borderWidth: 2,
+    borderColor: "black",
   },
   cell: {
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: "gray",
     padding: 10,
     width: "40%",
     textAlign: "center",
