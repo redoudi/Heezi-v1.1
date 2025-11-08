@@ -17,7 +17,7 @@ interface TextEditorStore {
   contentBlocks: ContentBlock[];
   selectedBlockIndex: number | null;
   setLevelData: (levelData: any) => void;
-  setBlockText: (index: number, newValue: any) => void;
+  setBlockText: (id: string, newValue: any) => void;
   setSelectedBlockIndex: (index: number) => void;
   setBlockStyle: (index: number, style: { [key: string]: any }) => void;
   getBlockText: (index: number) => string | undefined;
