@@ -95,7 +95,7 @@ export async function exportPdf(values: unknown[][]): Promise<void> {
   doc.setFont("helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(10, 41, 36);
-  doc.text("Heezi Spreadsheet Export", MARGIN, MARGIN);
+  doc.text("Mission Tableur n°1", MARGIN, MARGIN);
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(11);
