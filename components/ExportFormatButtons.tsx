@@ -11,6 +11,7 @@ import {
   View,
 } from "react-native";
 import { exportXlsx } from "../utils/exportXlsx";
+import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
 
 const ExportXlsxButton = () => {
   const { values } = useExportSpreadsheetValues();
@@ -56,7 +57,12 @@ const ExportXlsxButton = () => {
 };
 
 const ExportPdfButton = () => {
-  const { values } = useExportSpreadsheetValues();
+  const { practiceTool } = useLocalSearchParams();
+  const getValuesHook =
+    practiceTool === "spreadsheet"
+      ? useExportSpreadsheetValues
+      : useExportTextEditorValues;
+  const { values } = getValuesHook();
 
   const handleExportPdf = async () => {
     if (!values.length) {
