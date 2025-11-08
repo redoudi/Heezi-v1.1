@@ -11,7 +11,8 @@ export default function useCheckTextEditorCondition({
       case "blockText":
         const currentText =
           contentBlocks?.length > 0 &&
-          contentBlocks.at(parseInt(stepExpectedRef.current.blockIndex))?.text;
+          contentBlocks.find((block) => block.id === stepExpectedRef.current.id)
+            ?.text;
         return currentText === stepExpectedRef.current.text;
       case "style":
         const currentStyle =

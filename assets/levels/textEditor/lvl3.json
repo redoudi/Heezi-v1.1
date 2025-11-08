@@ -13,7 +13,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "ASFB",
-                        "blockIndex": "1"
+                        "id": "nomInput"
                     }
                 },
                 {
@@ -24,7 +24,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "123 Rue de la Paix 75000 Paris",
-                        "blockIndex": "3"
+                        "id": "adresseInput"
                     }
                 },
                 {
@@ -35,7 +35,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "Réservation",
-                        "blockIndex": "5"
+                        "id": "objetInput"
                     }
                 },
                 {
@@ -46,7 +46,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "ASFB",
-                        "blockIndex": "8"
+                        "id": "signatureInput"
                     }
                 }
             ]
@@ -61,7 +61,7 @@
                     },
                     "expected": {
                         "type": "style",
-                        "blockIndex": "5",
+                        "id": "objetInput",
                         "property": "fontWeight",
                         "value": "bold"
                     }
