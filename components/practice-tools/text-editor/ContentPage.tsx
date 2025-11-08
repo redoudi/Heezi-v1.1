@@ -20,12 +20,14 @@ function TextInputBlock({
   contentBlockStyle: { [key: string]: any };
   placeholder: string;
 }) {
+  const { setBlockText, setSelectedBlockId: setSelectedBlockIndex } =
+    useTextEditorStore();
   return (
-    <View style={[styles.textInputContainer, item.style]}>
+    <View style={[styles.textInputContainer]}>
       <TextInput
-        style={[styles.textInput]}
+        style={[styles.textInput, item.style]}
         value={item.text}
-        onChangeText={(inputText) => setText(inputText)}
+        onChangeText={(inputText) => setBlockText(item.id, inputText)}
         onFocus={handleFocus}
         placeholder={item.placeholder}
       />
@@ -50,7 +52,6 @@ const ContentPage = () => {
               return (
                 <TextInputBlock
                   item={item}
-                  setText={(inputText) => setBlockText(index, inputText)}
                   handleFocus={() => setSelectedBlockIndex(index)}
                 />
               );

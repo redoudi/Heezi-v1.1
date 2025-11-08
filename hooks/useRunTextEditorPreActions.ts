@@ -1,8 +1,11 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
 
 export default function useRunTextEditorPreActions() {
-  const { setBlockText, setSelectedBlockIndex, setBlockStyle } =
-    useTextEditorStore();
+  const {
+    setBlockText,
+    setSelectedBlockId: setSelectedBlockIndex,
+    setBlockStyle,
+  } = useTextEditorStore();
   const runPreAction = (preAction: any) => {
     switch (preAction.type) {
       case "blockText":
