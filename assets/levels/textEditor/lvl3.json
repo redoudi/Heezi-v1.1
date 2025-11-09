@@ -81,6 +81,25 @@
             "placeholder": "Adresse"
         },
         {
+            "type": "view",
+            "style": {
+                "flexDirection": "row"
+            },
+            "children": [
+                {
+                    "type": "text",
+                    "text": "Objet :",
+                    "style": {
+                        "fontWeight": "bold"
+                    }
+                },
+                {
+                    "type": "textInput",
+                    "id": "objetInput"
+                }
+            ]
+        },
+        {
             "type": "text",
             "text": "Objet :",
             "style": {

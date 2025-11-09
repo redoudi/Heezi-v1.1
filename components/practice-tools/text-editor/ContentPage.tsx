@@ -31,27 +31,32 @@ function TextInputBlock({
   );
 }
 
+function ContentItem({ item, index }: { item: any; index: number }) {
+  const { setSelectedBlockIndex } = useTextEditorStore();
+  switch (item.type) {
+    case "text":
+      return <TextBlock key={index} item={item} />;
+    case "textInput":
+      return (
+        <TextInputBlock
+          key={index}
+          item={item}
+          handleFocus={() => setSelectedBlockIndex(index)}
+        />
+      );
+    default:
+      return <View key={index} />;
+  }
+}
+
 const ContentPage = () => {
   const { contentBlocks, setSelectedBlockIndex } = useTextEditorStore();
 
   return (
     <View style={styles.contentPage}>
-      {contentBlocks.map((item, index) => {
-        switch (item.type) {
-          case "text":
-            return <TextBlock key={index} item={item} />;
-          case "textInput":
-            return (
-              <TextInputBlock
-                key={index}
-                item={item}
-                handleFocus={() => setSelectedBlockIndex(index)}
-              />
-            );
-          default:
-            return null;
-        }
-      })}
+      {contentBlocks.map((item, index) => (
+        <ContentItem key={index} item={item} index={index} />
+      ))}
     </View>
   );
 };
