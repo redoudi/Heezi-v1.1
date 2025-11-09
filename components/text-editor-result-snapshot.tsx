@@ -3,16 +3,37 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function TextEditorResultSnapshot() {
   const { contentBlocks } = useTextEditorStore();
+
+  const renderText = (block: any, index: number) => (
+    <View key={index} style={[block.blockStyle]}>
+      <Text key={index} style={[styles.text, block.style]}>
+        {block.text}
+      </Text>
+    </View>
+  );
+  const renderContentBlocksRecursive = (blocks) => {
+    return blocks.map((block: any, index: number) => {
+      switch (block.type) {
+        case "textInput":
+          return renderText(block, index);
+        case "text":
+          return renderText(block, index);
+        case "view":
+          return (
+            <View key={index} style={block.style}>
+              {renderContentBlocksRecursive(block.children)}
+            </View>
+          );
+        default:
+          return null;
+      }
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.snapshotBox}>
-        {contentBlocks.map((block, index) => (
-          <View key={index} style={[block.blockStyle]}>
-            <Text key={index} style={[styles.text, block.style]}>
-              {block.text}
-            </Text>
-          </View>
-        ))}
+        {renderContentBlocksRecursive(contentBlocks)}
       </View>
     </SafeAreaView>
   );
