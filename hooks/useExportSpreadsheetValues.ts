@@ -26,5 +26,5 @@ export default function useExportSpreadsheetValues() {
       return { value: cellsValues[cell], style: cellsStyles?.[cell] || {} };
     })
   );
-  return { col1Values, col2Values, cellsIndices, cellsContents };
+  return { col1Values, col2Values, cellsIndices, values: cellsContents };
 }

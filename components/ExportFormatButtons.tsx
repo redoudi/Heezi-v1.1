@@ -73,14 +73,6 @@ const ExportPdfButton = () => {
       return;
     }
 
-    if (Platform.OS !== "web") {
-      Alert.alert(
-        "Export unavailable",
-        "PDF export is currently available on web only."
-      );
-      return;
-    }
-
     try {
       await exportPdf(values);
     } catch (error) {
