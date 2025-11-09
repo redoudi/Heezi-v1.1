@@ -98,6 +98,7 @@ const useTextEditorStore = create<TextEditorStore>((set, get) => ({
         style: { ...block.style, ...style },
       })),
     }));
+    get().setSelectedBlockId(null);
   },
   getBlockById: (blockId: string | null) =>
     findBlockByIdRecursive(get().contentBlocks, blockId),
