@@ -17,9 +17,9 @@ interface TextEditorStore {
   contentBlocks: ContentBlock[];
   selectedBlockId: string | null;
   setLevelData: (levelData: any) => void;
-  setBlockText: (id: string, newValue: any) => void;
-  setSelectedBlockId: (id: string) => void;
-  setBlockStyle: (id: string, style: { [key: string]: any }) => void;
+  setBlockText: (blockId: string, newValue: any) => void;
+  setSelectedBlockId: (blockId: string) => void;
+  setBlockStyle: (blockId: string, style: { [key: string]: any }) => void;
 }
 
 const useTextEditorStore = create<TextEditorStore>((set, get) => ({
@@ -31,22 +31,22 @@ const useTextEditorStore = create<TextEditorStore>((set, get) => ({
       contentBlocks,
     }));
   },
-  setBlockText: (id: string, newValue: any) => {
+  setBlockText: (blockId: string, newValue: any) => {
     set((state) => ({
       contentBlocks: state.contentBlocks.map((block) =>
-        block.id === id ? { ...block, text: newValue } : block
+        block.blockId === blockId ? { ...block, text: newValue } : block
       ),
     }));
   },
-  setSelectedBlockId: (id: string) => {
+  setSelectedBlockId: (blockId: string) => {
     set(() => ({
-      selectedBlockId: id,
+      selectedBlockId: blockId,
     }));
   },
-  setBlockStyle: (id: string, style: { [key: string]: any }) => {
+  setBlockStyle: (blockId: string, style: { [key: string]: any }) => {
     set((state) => ({
       contentBlocks: state.contentBlocks.map((block) =>
-        block.id === id
+        block.blockId === blockId
           ? { ...block, style: { ...block.style, ...style } }
           : block
       ),

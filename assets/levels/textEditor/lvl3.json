@@ -13,7 +13,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "ASFB",
-                        "id": "nomInput"
+                        "blockId": "nomInput"
                     }
                 },
                 {
@@ -24,7 +24,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "123 Rue de la Paix 75000 Paris",
-                        "id": "adresseInput"
+                        "blockId": "adresseInput"
                     }
                 },
                 {
@@ -35,7 +35,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "Réservation",
-                        "id": "objetInput"
+                        "blockId": "objetInput"
                     }
                 },
                 {
@@ -46,7 +46,7 @@
                     "expected": {
                         "type": "blockText",
                         "text": "ASFB",
-                        "id": "signatureInput"
+                        "blockId": "signatureInput"
                     }
                 }
             ]
@@ -61,7 +61,7 @@
                     },
                     "expected": {
                         "type": "style",
-                        "id": "objetInput",
+                        "blockId": "objetInput",
                         "property": "fontWeight",
                         "value": "bold"
                     }
@@ -72,12 +72,12 @@
     "contentBlocks": [
         {
             "type": "textInput",
-            "id": "nomInput",
+            "blockId": "nomInput",
             "placeholder": "Nom"
         },
         {
             "type": "textInput",
-            "id": "adresseInput",
+            "blockId": "adresseInput",
             "placeholder": "Adresse"
         },
         {
@@ -99,11 +99,11 @@
                     "blockStyle": {
                         "alignSelf": "center"
                     },
-                    "id": "objet"
+                    "blockId": "objet"
                 },
                 {
                     "type": "textInput",
-                    "id": "objetInput",
+                    "blockId": "objetInput",
                     "placeholder": "Objet",
                     "blockStyle": {
                         "alignSelf": "center",
@@ -118,11 +118,11 @@
             "blockStyle": {
                 "marginTop": 24
             },
-            "id": "body"
+            "blockId": "body"
         },
         {
             "type": "textInput",
-            "id": "signatureInput",
+            "blockId": "signatureInput",
             "placeholder": "Signature",
             "blockStyle": {
                 "marginBottom": 56,

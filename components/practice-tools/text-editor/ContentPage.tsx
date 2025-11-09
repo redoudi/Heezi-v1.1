@@ -23,7 +23,7 @@ function TextInputBlock({
       <TextInput
         style={[styles.textInput, item.style]}
         value={item.text}
-        onChangeText={(inputText) => setBlockText(item.id, inputText)}
+        onChangeText={(inputText) => setBlockText(item.blockId, inputText)}
         onFocus={handleFocus}
         placeholder={item.placeholder}
         placeholderTextColor="rgb(111, 111, 111)"

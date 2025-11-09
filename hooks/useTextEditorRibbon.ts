@@ -6,18 +6,15 @@ export default function useSpreadsheetRibbon() {
 
   const isSelectedBlockBold =
     (selectedBlockId !== null &&
-      contentBlocks?.find((block) => block.id === selectedBlockId)?.style
+      contentBlocks?.find((block) => block.blockId === selectedBlockId)?.style
         ?.fontWeight === "bold") ||
     false;
 
   const boldSelectedBlock = () => {
     if (selectedBlockId !== null) {
-      const isCurrentlyBold =
-        contentBlocks?.find((block) => block.id === selectedBlockId)?.style
-          ?.fontWeight === "bold";
       setBlockStyle(
         selectedBlockId,
-        isCurrentlyBold ? { fontWeight: "normal" } : { fontWeight: "bold" }
+        isSelectedBlockBold ? { fontWeight: "normal" } : { fontWeight: "bold" }
       );
     }
   };
