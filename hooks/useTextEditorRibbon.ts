@@ -1,23 +1,22 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
 
 export default function useSpreadsheetRibbon() {
-  const {
-    contentBlocks,
-    selectedBlockId: selectedBlockIndex,
-    setBlockStyle,
-  } = useTextEditorStore();
+  const { contentBlocks, selectedBlockId, setBlockStyle } =
+    useTextEditorStore();
 
   const isSelectedBlockBold =
-    (selectedBlockIndex !== null &&
-      contentBlocks?.[selectedBlockIndex]?.style?.fontWeight === "bold") ||
+    (selectedBlockId !== null &&
+      contentBlocks?.find((block) => block.id === selectedBlockId)?.style
+        ?.fontWeight === "bold") ||
     false;
 
   const boldSelectedBlock = () => {
-    if (selectedBlockIndex !== null) {
+    if (selectedBlockId !== null) {
       const isCurrentlyBold =
-        contentBlocks[selectedBlockIndex]?.style?.fontWeight === "bold";
+        contentBlocks?.find((block) => block.id === selectedBlockId)?.style
+          ?.fontWeight === "bold";
       setBlockStyle(
-        selectedBlockIndex,
+        selectedBlockId,
         isCurrentlyBold ? { fontWeight: "normal" } : { fontWeight: "bold" }
       );
     }
