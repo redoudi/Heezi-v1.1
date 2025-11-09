@@ -26,6 +26,7 @@ function TextInputBlock({
         onChangeText={(inputText) => setBlockText(item.id, inputText)}
         onFocus={handleFocus}
         placeholder={item.placeholder}
+        placeholderTextColor="rgb(111, 111, 111)"
       />
     </View>
   );

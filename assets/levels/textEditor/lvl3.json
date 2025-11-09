@@ -86,7 +86,8 @@
                 "flexDirection": "row",
                 "alignItems": "center",
                 "justifyContent": "flex-start",
-                "gap": 8
+                "gap": 8,
+                "marginTop": 24
             },
             "children": [
                 {
