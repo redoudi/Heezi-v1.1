@@ -52,8 +52,6 @@ function ContentItem({ item, index }: { item: any; index: number }) {
           ))}
         </View>
       );
-    default:
-      return <View key={index} />;
   }
 }
 
@@ -89,7 +87,8 @@ const styles = StyleSheet.create({
   textBlockText: {
     color: "#292929",
     fontSize: 16,
-    width: 618,
+
+    textAlignVertical: "center",
   },
   textInputContainer: {
     backgroundColor: "#EFEFEF",

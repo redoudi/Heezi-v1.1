@@ -83,20 +83,29 @@
         {
             "type": "view",
             "style": {
-                "flexDirection": "row"
+                "flexDirection": "row",
+                "borderWidth": 1,
+                "alignItems": "center",
+                "justifyContent": "flex-start"
             },
             "children": [
                 {
                     "type": "text",
                     "text": "Objet :",
                     "style": {
-                        "fontWeight": "bold"
+                        "fontWeight": "bold",
+                        "borderWidth": 1,
+                        "textAlign": "center"
                     }
                 },
                 {
                     "type": "textInput",
                     "id": "objetInput",
-                    "placeholder": "Objet"
+                    "placeholder": "Objet",
+                    "style": {
+                        "width": "100%",
+                        "borderWidth": 1
+                    }
                 }
             ]
         },
