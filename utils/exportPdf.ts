@@ -203,7 +203,7 @@ export async function exportTextEditorPdf(
   doc.setFont("helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(10, 41, 36);
-  doc.text("Mission Rédaction", MARGIN, MARGIN);
+  doc.text("Mission Editeur de texte n°1", MARGIN, MARGIN);
 
   context.cursorY += HEADING_OFFSET;
 
