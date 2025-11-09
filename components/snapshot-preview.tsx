@@ -11,8 +11,10 @@ export default function SnapshotPreview() {
         <View style={styles.box}>
           {practiceTool === "spreadsheet" ? (
             <SpreadsheetResultSnapshot />
-          ) : (
+          ) : practiceTool === "textEditor" ? (
             <TextEditorResultSnapshot />
+          ) : (
+            <></>
           )}
         </View>
       </View>

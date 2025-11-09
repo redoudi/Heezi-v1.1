@@ -5,7 +5,7 @@ import useLoadSpreadsheet from "./useLoadSpreadsheet";
 export default function useExportSpreadsheetValues() {
   useLoadSpreadsheet();
   const {
-    spreadsheetData: { cellsValues },
+    spreadsheetData: { cellsValues, cellsStyles },
   } = useSpreadsheetStore();
 
   const col1 = rangeToCells("A2:A7");
@@ -21,8 +21,10 @@ export default function useExportSpreadsheetValues() {
     ["A6", "B6"],
     ["A7", "B7"],
   ];
-  const values = cellsIndices.map((cellsRow) =>
-    cellsRow.map((cell) => cellsValues[cell])
+  const cellsContents = cellsIndices.map((cellsRow) =>
+    cellsRow.map((cell) => {
+      return { value: cellsValues[cell], style: cellsStyles?.[cell] || {} };
+    })
   );
-  return { col1Values, col2Values, cellsIndices, values };
+  return { col1Values, col2Values, cellsIndices, cellsContents };
 }

@@ -17,7 +17,7 @@ interface SpreadsheetStore {
 }
 
 const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
-  spreadsheetData: { cellsValues: {}, cellsSelected: [] },
+  spreadsheetData: { cellsValues: {}, cellsSelected: [], cellsStyles: {} },
 
   tasks: [],
   levelType: "",
