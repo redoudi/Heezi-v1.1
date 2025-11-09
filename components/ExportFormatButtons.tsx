@@ -1,11 +1,10 @@
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
 import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
-import { exportPdf } from "@/utils/exportPdf";
+import { exportSpreadsheetPdf, exportTextEditorPdf } from "@/utils/exportPdf";
 import { useLocalSearchParams } from "expo-router";
 import {
   Alert,
   Image,
-  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -21,14 +20,6 @@ const ExportXlsxButton = () => {
       Alert.alert(
         "Nothing to export",
         "We couldn't find any data to include in the spreadsheet."
-      );
-      return;
-    }
-
-    if (Platform.OS !== "web") {
-      Alert.alert(
-        "Export unavailable",
-        "Spreadsheet export is currently available on web only."
       );
       return;
     }
@@ -74,7 +65,11 @@ const ExportPdfButton = () => {
     }
 
     try {
-      await exportPdf(contents);
+      if (practiceTool === "spreadsheet") {
+        await exportSpreadsheetPdf(contents);
+      } else {
+        await exportTextEditorPdf(contents);
+      }
     } catch (error) {
       console.error("Failed to export PDF", error);
       Alert.alert(

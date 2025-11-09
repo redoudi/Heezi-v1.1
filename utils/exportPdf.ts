@@ -66,7 +66,7 @@ async function loadJsPdfFromCdn(): Promise<JsPDFConstructor> {
   return jsPdfPromise;
 }
 
-export async function exportPdf(
+export async function exportSpreadsheetPdf(
   contents: { value: unknown; style: { [key: string]: any } }[][]
 ): Promise<void> {
   if (!contents.length) {
@@ -173,4 +173,12 @@ function isBoldFontWeight(fontWeight: unknown): boolean {
 
   const numericValue = Number.parseInt(normalized, 10);
   return Number.isFinite(numericValue) && numericValue >= 600;
+}
+
+export async function exportTextEditorPdf(
+  contents: { value: unknown; style: { [key: string]: any } }[][]
+): Promise<void> {
+  if (!contents.length) {
+    throw new Error("Nothing to export");
+  }
 }
