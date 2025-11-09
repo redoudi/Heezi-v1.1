@@ -22,7 +22,7 @@ export default function MascotModal({ open, onClose, modalText }) {
 
   return (
     <Modal
-      visible={open}
+      visible={false && open}
       transparent
       animationType="fade"
       onRequestClose={onClose}

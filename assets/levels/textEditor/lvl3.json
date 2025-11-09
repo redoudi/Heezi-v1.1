@@ -84,27 +84,28 @@
             "type": "view",
             "style": {
                 "flexDirection": "row",
-                "borderWidth": 1,
                 "alignItems": "center",
-                "justifyContent": "flex-start"
+                "justifyContent": "flex-start",
+                "gap": 8
             },
             "children": [
                 {
                     "type": "text",
                     "text": "Objet :",
                     "style": {
-                        "fontWeight": "bold",
-                        "borderWidth": 1,
-                        "textAlign": "center"
+                        "fontWeight": "bold"
+                    },
+                    "blockStyle": {
+                        "alignSelf": "center"
                     }
                 },
                 {
                     "type": "textInput",
                     "id": "objetInput",
                     "placeholder": "Objet",
-                    "style": {
-                        "width": "100%",
-                        "borderWidth": 1
+                    "blockStyle": {
+                        "alignSelf": "center",
+                        "flex": 1
                     }
                 }
             ]

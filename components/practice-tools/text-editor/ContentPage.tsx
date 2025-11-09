@@ -78,16 +78,16 @@ const styles = StyleSheet.create({
     paddingTop: 48,
     marginBottom: 8,
     marginHorizontal: 345,
+    paddingHorizontal: 64,
   },
   textBlockContainer: {
     alignSelf: "flex-start",
     marginBottom: 11,
-    marginHorizontal: 64,
+    // marginHorizontal: 64,
   },
   textBlockText: {
     color: "#292929",
     fontSize: 16,
-
     textAlignVertical: "center",
   },
   textInputContainer: {
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 11,
     marginBottom: 10,
-    marginHorizontal: 64,
+    // marginHorizontal: 64,
   },
   textInput: {
     color: "#292929",
