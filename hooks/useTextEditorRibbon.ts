@@ -1,8 +1,11 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
 
 export default function useSpreadsheetRibbon() {
-  const { contentBlocks, selectedBlockIndex, setBlockStyle } =
-    useTextEditorStore();
+  const {
+    contentBlocks,
+    selectedBlockId: selectedBlockIndex,
+    setBlockStyle,
+  } = useTextEditorStore();
 
   const isSelectedBlockBold =
     (selectedBlockIndex !== null &&

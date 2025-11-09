@@ -33,7 +33,7 @@ function TextInputBlock({
 }
 
 function ContentItem({ item, index }: { item: any; index: number }) {
-  const { setSelectedBlockIndex } = useTextEditorStore();
+  const { setSelectedBlockId: setSelectedBlockIndex } = useTextEditorStore();
   switch (item.type) {
     case "text":
       return <TextBlock key={index} item={item} />;
