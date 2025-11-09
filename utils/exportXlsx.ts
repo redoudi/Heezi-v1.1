@@ -11,7 +11,11 @@ export function exportXlsx(
   const tableRows = contents
     .map((row) => {
       const cells = row
-        .map((cell) => `<td>${escapeHtml(formatCellValue(cell.value))}</td>`)
+        .map((cell) => {
+          const cellStyle = getCellStyleAttributes(cell?.style);
+          const content = formatCellContent(cell);
+          return `<td${cellStyle}>${content}</td>`;
+        })
         .join("");
       return `<tr>${cells}</tr>`;
     })
@@ -73,6 +77,65 @@ function formatCellValue(value: unknown): string {
   }
 
   return String(value);
+}
+
+function isBoldFontWeight(fontWeight: unknown): boolean {
+  if (typeof fontWeight === "number") {
+    return fontWeight >= 600;
+  }
+
+  if (fontWeight === null || fontWeight === undefined) {
+    return false;
+  }
+
+  const normalized = String(fontWeight).trim().toLowerCase();
+
+  if (normalized === "bold" || normalized === "bolder") {
+    return true;
+  }
+
+  const numericValue = Number.parseInt(normalized, 10);
+  return Number.isFinite(numericValue) && numericValue >= 600;
+}
+
+function formatCellContent(cell: {
+  value: unknown;
+  style?: { [key: string]: any };
+}): string {
+  const text = escapeHtml(formatCellValue(cell.value));
+  const fontWeight =
+    cell?.style?.fontWeight ??
+    cell?.style?.fontweight ??
+    cell?.style?.["font-weight"];
+
+  if (isBoldFontWeight(fontWeight)) {
+    return `<strong>${text}</strong>`;
+  }
+
+  return text;
+}
+
+function getCellStyleAttributes(
+  style: { [key: string]: any } | undefined
+): string {
+  if (!style) {
+    return "";
+  }
+
+  const attributes: string[] = [];
+
+  const fontWeight =
+    style.fontWeight ?? style.fontweight ?? style["font-weight"];
+
+  if (isBoldFontWeight(fontWeight)) {
+    attributes.push("font-weight:bold;");
+  }
+
+  if (!attributes.length) {
+    return "";
+  }
+
+  return ` style="${attributes.join(" ")}"`;
 }
 
 function escapeHtml(value: string): string {
