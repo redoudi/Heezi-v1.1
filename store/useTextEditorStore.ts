@@ -26,7 +26,9 @@ const useTextEditorStore = create<TextEditorStore>((set, get) => ({
   contentBlocks: [],
   selectedBlockId: null,
   setLevelData: (levelData: any) => {
-    const { contentBlocks } = levelData;
+    const contentBlocks = JSON.parse(
+      JSON.stringify(levelData?.contentBlocks ?? [])
+    );
     set(() => ({
       contentBlocks,
     }));
