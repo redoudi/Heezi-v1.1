@@ -73,12 +73,14 @@
         {
             "type": "textInput",
             "blockId": "nomInput",
-            "placeholder": "Nom"
+            "placeholder": "Nom",
+            "text": ""
         },
         {
             "type": "textInput",
             "blockId": "adresseInput",
-            "placeholder": "Adresse"
+            "placeholder": "Adresse",
+            "text": ""
         },
         {
             "type": "view",
@@ -108,7 +110,8 @@
                     "blockStyle": {
                         "alignSelf": "center",
                         "flex": 1
-                    }
+                    },
+                    "text": ""
                 }
             ]
         },
@@ -127,7 +130,8 @@
             "blockStyle": {
                 "marginBottom": 56,
                 "marginTop": "auto"
-            }
+            },
+            "text": ""
         }
     ]
 }
