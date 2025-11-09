@@ -44,13 +44,21 @@ function ContentItem({ item, index }: { item: any; index: number }) {
           handleFocus={() => setSelectedBlockIndex(index)}
         />
       );
+    case "view":
+      return (
+        <View key={index} style={item.style}>
+          {item.children.map((child: any, index: number) => (
+            <ContentItem key={index} item={child} index={index} />
+          ))}
+        </View>
+      );
     default:
       return <View key={index} />;
   }
 }
 
 const ContentPage = () => {
-  const { contentBlocks, setSelectedBlockIndex } = useTextEditorStore();
+  const { contentBlocks } = useTextEditorStore();
 
   return (
     <View style={styles.contentPage}>
