@@ -116,7 +116,10 @@ export async function exportPdf(
 
       doc.rect(x, cursorY - 18, columnWidth, ROW_HEIGHT, "S");
 
-      doc.setFont("helvetica", "normal");
+      const fontWeight = cell?.style?.fontWeight;
+      const useBoldFont = isBoldFontWeight(fontWeight);
+
+      doc.setFont("helvetica", useBoldFont ? "bold" : "normal");
       doc.setFontSize(13);
       doc.setTextColor(10, 41, 36);
 
@@ -151,4 +154,23 @@ function formatCellValue(value: unknown): string {
   }
 
   return String(value);
+}
+
+function isBoldFontWeight(fontWeight: unknown): boolean {
+  if (typeof fontWeight === "number") {
+    return fontWeight >= 600;
+  }
+
+  if (fontWeight === null || fontWeight === undefined) {
+    return false;
+  }
+
+  const normalized = String(fontWeight).trim().toLowerCase();
+
+  if (normalized === "bold" || normalized === "bolder") {
+    return true;
+  }
+
+  const numericValue = Number.parseInt(normalized, 10);
+  return Number.isFinite(numericValue) && numericValue >= 600;
 }
