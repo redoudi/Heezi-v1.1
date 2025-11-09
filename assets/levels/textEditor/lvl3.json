@@ -97,7 +97,8 @@
                     },
                     "blockStyle": {
                         "alignSelf": "center"
-                    }
+                    },
+                    "id": "objet"
                 },
                 {
                     "type": "textInput",
@@ -112,24 +113,11 @@
         },
         {
             "type": "text",
-            "text": "Objet :",
-            "style": {
-                "fontWeight": "bold"
-            },
-            "blockStyle": {
-                "marginTop": 16
-            }
-        },
-        {
-            "type": "textInput",
-            "id": "objetInput"
-        },
-        {
-            "type": "text",
             "text": "Bonjour, nous voudrions réserver une salle pour nos réunions. Nous sommes 10 membres. Nous aimerions nous réunir le mercredi de 17h à 19h, une fois par mois. Pouvez-vous nous aider ?",
             "blockStyle": {
                 "marginTop": 24
-            }
+            },
+            "id": "body"
         },
         {
             "type": "textInput",
