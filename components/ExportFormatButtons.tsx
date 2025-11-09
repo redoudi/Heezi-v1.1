@@ -1,4 +1,5 @@
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
+import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
 import { exportPdf } from "@/utils/exportPdf";
 import { useLocalSearchParams } from "expo-router";
 import {
@@ -11,7 +12,6 @@ import {
   View,
 } from "react-native";
 import { exportXlsx } from "../utils/exportXlsx";
-import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
 
 const ExportXlsxButton = () => {
   const { values } = useExportSpreadsheetValues();
@@ -62,10 +62,10 @@ const ExportPdfButton = () => {
     practiceTool === "spreadsheet"
       ? useExportSpreadsheetValues
       : useExportTextEditorValues;
-  const { values } = getValuesHook();
+  const { contents } = getValuesHook();
 
   const handleExportPdf = async () => {
-    if (!values.length) {
+    if (!contents.length) {
       Alert.alert(
         "Nothing to export",
         "We couldn't find any data to include in the PDF."
@@ -74,7 +74,7 @@ const ExportPdfButton = () => {
     }
 
     try {
-      await exportPdf(values);
+      await exportPdf(contents);
     } catch (error) {
       console.error("Failed to export PDF", error);
       Alert.alert(

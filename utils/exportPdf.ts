@@ -66,12 +66,14 @@ async function loadJsPdfFromCdn(): Promise<JsPDFConstructor> {
   return jsPdfPromise;
 }
 
-export async function exportPdf(values: unknown[][]): Promise<void> {
-  if (!values.length) {
+export async function exportPdf(
+  contents: { value: unknown; style: { [key: string]: any } }[][]
+): Promise<void> {
+  if (!contents.length) {
     throw new Error("Nothing to export");
   }
 
-  const columnCount = values[0]?.length ?? 0;
+  const columnCount = contents[0]?.length ?? 0;
 
   if (!columnCount) {
     throw new Error("No columns detected");
@@ -90,8 +92,6 @@ export async function exportPdf(values: unknown[][]): Promise<void> {
   const availableWidth = pageWidth - MARGIN * 2;
   const columnWidth = availableWidth / columnCount;
 
-  const generatedAt = new Date().toLocaleString();
-
   doc.setFont("helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(10, 41, 36);
@@ -105,16 +105,15 @@ export async function exportPdf(values: unknown[][]): Promise<void> {
 
   let cursorY = MARGIN + HEADING_OFFSET;
 
-  values.forEach((row, rowIndex) => {
+  contents.forEach((cellsRow, rowIndex) => {
     if (cursorY + ROW_HEIGHT > pageHeight - MARGIN) {
       doc.addPage();
       cursorY = MARGIN;
     }
 
-    row.forEach((_, columnIndex) => {
+    cellsRow.forEach((cell, columnIndex) => {
       const x = MARGIN + columnIndex * columnWidth;
-      const rawValue = values[rowIndex]?.[columnIndex];
-      const displayValue = formatCellValue(rawValue);
+      const displayValue = formatCellValue(cell?.value || "");
 
       doc.rect(x, cursorY - 18, columnWidth, ROW_HEIGHT, "S");
 
