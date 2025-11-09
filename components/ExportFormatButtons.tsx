@@ -14,10 +14,10 @@ import {
 import { exportXlsx } from "../utils/exportXlsx";
 
 const ExportXlsxButton = () => {
-  const { values } = useExportSpreadsheetValues();
+  const { contents } = useExportSpreadsheetValues();
 
   const handleExportXlsx = () => {
-    if (!values.length) {
+    if (!contents.length) {
       Alert.alert(
         "Nothing to export",
         "We couldn't find any data to include in the spreadsheet."
@@ -34,7 +34,7 @@ const ExportXlsxButton = () => {
     }
 
     try {
-      exportXlsx(values);
+      exportXlsx(contents);
     } catch (error) {
       console.error("Failed to export XLSX", error);
       Alert.alert(
