@@ -95,7 +95,8 @@
                 },
                 {
                     "type": "textInput",
-                    "id": "objetInput"
+                    "id": "objetInput",
+                    "placeholder": "Objet"
                 }
             ]
         },

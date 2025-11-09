@@ -81,15 +81,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginHorizontal: 345,
   },
-  contentBlocksList: {
-    flex: 1,
-  },
-  contentBlocksListWithBottom: {
-    justifyContent: "space-between",
-  },
-  bottomBlocksContainer: {
-    alignSelf: "stretch",
-  },
   textBlockContainer: {
     alignSelf: "flex-start",
     marginBottom: 11,
@@ -101,7 +92,6 @@ const styles = StyleSheet.create({
     width: 618,
   },
   textInputContainer: {
-    width: 622,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 11,
