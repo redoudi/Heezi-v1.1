@@ -10,9 +10,16 @@ import useRunSpreadsheetPreActions from "@/hooks/useRunSpreadsheetPreActions";
 import useRunTextEditorPreActions from "@/hooks/useRunTextEditorPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import useTextEditorStore from "@/store/useTextEditorStore";
+import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, View } from "react-native";
 import QuizScreen from "./quiz";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getMissionStaticParams();
+}
 
 function LoadedSpreadsheetScreen() {
   useLoadSpreadsheet();

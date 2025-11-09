@@ -1,6 +1,7 @@
 import ChouetteFin from "@/components/animations/ChouetteFin";
 import RenardFin from "@/components/animations/RenardFin";
 import useLevelData from "@/hooks/use-level-data";
+import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
@@ -10,6 +11,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getMissionStaticParams();
+}
+
 export default function ResultScreen() {
   const { practiceTool, id } = useLocalSearchParams();
   const { levelType } = useLevelData();

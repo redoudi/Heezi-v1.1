@@ -1,16 +1,40 @@
 import { levelFiles } from "@/assets/levels/indexLevels";
+import { normalizeRouteParam } from "@/utils/normalizeRouteParam";
 import { useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+const EMPTY_LEVEL_DATA = { tasks: [] };
 
 export default function useLevelData() {
-  const { practiceTool, id } = useLocalSearchParams();
+  const { practiceTool: practiceToolParam, id: idParam } =
+    useLocalSearchParams();
+  const practiceTool = normalizeRouteParam(practiceToolParam);
+  const id = normalizeRouteParam(idParam);
 
-  const [levelData, setLevelData] = useState<any>({ tasks: [] });
-  useEffect(() => {
-    if (id && practiceTool) {
-      const levelData = levelFiles[practiceTool][id as string];
-      setLevelData(levelData);
+  const currentLevelData = useMemo(() => {
+    if (!practiceTool || !id) {
+      return null;
     }
-  }, [id, practiceTool]);
+
+    const toolLevels = levelFiles[practiceTool as string];
+    if (!toolLevels) {
+      return null;
+    }
+
+    return toolLevels[id as string] ?? null;
+  }, [practiceTool, id]);
+
+  const [levelData, setLevelData] = useState<any>(
+    currentLevelData ?? EMPTY_LEVEL_DATA
+  );
+
+  useEffect(() => {
+    if (currentLevelData) {
+      setLevelData(currentLevelData);
+    } else {
+      setLevelData(EMPTY_LEVEL_DATA);
+    }
+  }, [currentLevelData]);
+
   return levelData;
 }

@@ -1,5 +1,6 @@
 import ExportFormatButtons from "@/components/ExportFormatButtons";
 import SnapshotPreview from "@/components/snapshot-preview";
+import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router } from "expo-router";
 import {
   Image,
@@ -9,6 +10,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getMissionStaticParams();
+}
 
 export default function ExportScreen() {
   return (

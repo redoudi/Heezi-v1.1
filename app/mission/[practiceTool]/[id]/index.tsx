@@ -1,5 +1,6 @@
 import BackButton from "@/components/ui/back-button";
 import useLevelData from "@/hooks/use-level-data";
+import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
@@ -44,6 +45,12 @@ function StartButton({ onPress }: { onPress: () => void }) {
       <TriangleIcon style={styles.triangleIcon} />
     </TouchableOpacity>
   );
+}
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getMissionStaticParams();
 }
 
 export default function ScenarioScreen() {

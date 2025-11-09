@@ -35,6 +35,16 @@ npm run reset-project
 
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
+## Build for the Web
+
+The project now exports a fully static web build. To generate the production-ready site:
+
+1. Install dependencies if you haven't already: `npm install`
+2. Build the static bundle: `npm run build:web`
+3. Serve the `dist` folder with your preferred static server, for example: `npx serve dist`
+
+Dynamic mission routes are pre-generated from the level definitions in `assets/levels/indexLevels.ts`. Add new entries there to include additional missions in future web builds.
+
 ## Learn more
 
 To learn more about developing your project with Expo, look at the following resources:

@@ -1,14 +1,25 @@
 import { levelFiles } from "@/assets/levels/indexLevels";
 import useTextEditorStore from "@/store/useTextEditorStore";
+import { normalizeRouteParam } from "@/utils/normalizeRouteParam";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 
 export default function useLoadSpreadsheet() {
-  const { practiceTool, id } = useLocalSearchParams();
+  const { practiceTool: practiceToolParam, id: idParam } =
+    useLocalSearchParams();
+  const practiceTool = normalizeRouteParam(practiceToolParam);
+  const id = normalizeRouteParam(idParam);
   const { setLevelData } = useTextEditorStore();
+
   useEffect(() => {
-    if (id && practiceTool && setLevelData) {
-      const levelData = levelFiles[practiceTool][id as string];
+    if (!id || !practiceTool || !setLevelData) {
+      return;
+    }
+
+    const toolLevels = levelFiles[practiceTool];
+    const levelData = toolLevels?.[id];
+
+    if (levelData) {
       setLevelData(levelData);
     }
   }, [practiceTool, id, setLevelData]);
