@@ -100,7 +100,6 @@ export async function exportPdf(
   doc.setFont("helvetica", "normal");
   doc.setFontSize(11);
   doc.setTextColor(96, 131, 123);
-
   doc.setDrawColor(199, 213, 209);
 
   let cursorY = MARGIN + HEADING_OFFSET;
