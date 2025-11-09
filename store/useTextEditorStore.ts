@@ -2,6 +2,7 @@ import { create } from "zustand";
 
 interface ContentBlock {
   type: string;
+  blockId?: string;
   id?: string;
   text?: string;
   placeholder?: string;
@@ -11,6 +12,7 @@ interface ContentBlock {
   blockStyle?: {
     [key: string]: any;
   };
+  children?: ContentBlock[];
 }
 
 interface TextEditorStore {
