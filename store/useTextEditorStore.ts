@@ -15,6 +15,48 @@ interface ContentBlock {
   children?: ContentBlock[];
 }
 
+const findBlockByIdRecursive = (
+  blocks: ContentBlock[] | undefined,
+  blockId: string | null
+): ContentBlock | undefined => {
+  if (!blocks || !blockId) {
+    return undefined;
+  }
+
+  for (const block of blocks) {
+    if (block.blockId === blockId) {
+      return block;
+    }
+
+    const nestedMatch = findBlockByIdRecursive(block.children, blockId);
+    if (nestedMatch) {
+      return nestedMatch;
+    }
+  }
+
+  return undefined;
+};
+
+const updateBlockById = (
+  blocks: ContentBlock[],
+  blockId: string,
+  updater: (block: ContentBlock) => ContentBlock
+): ContentBlock[] =>
+  blocks.map((block) => {
+    if (block.blockId === blockId) {
+      return updater(block);
+    }
+
+    if (block.children?.length) {
+      return {
+        ...block,
+        children: updateBlockById(block.children, blockId, updater),
+      };
+    }
+
+    return block;
+  });
+
 interface TextEditorStore {
   contentBlocks: ContentBlock[];
   selectedBlockId: string | null;
@@ -22,6 +64,7 @@ interface TextEditorStore {
   setBlockText: (blockId: string, newValue: any) => void;
   setSelectedBlockId: (blockId: string) => void;
   setBlockStyle: (blockId: string, style: { [key: string]: any }) => void;
+  getBlockById: (blockId: string | null) => ContentBlock | undefined;
 }
 
 const useTextEditorStore = create<TextEditorStore>((set, get) => ({
@@ -37,9 +80,10 @@ const useTextEditorStore = create<TextEditorStore>((set, get) => ({
   },
   setBlockText: (blockId: string, newValue: any) => {
     set((state) => ({
-      contentBlocks: state.contentBlocks.map((block) =>
-        block.blockId === blockId ? { ...block, text: newValue } : block
-      ),
+      contentBlocks: updateBlockById(state.contentBlocks, blockId, (block) => ({
+        ...block,
+        text: newValue,
+      })),
     }));
   },
   setSelectedBlockId: (blockId: string) => {
@@ -49,12 +93,13 @@ const useTextEditorStore = create<TextEditorStore>((set, get) => ({
   },
   setBlockStyle: (blockId: string, style: { [key: string]: any }) => {
     set((state) => ({
-      contentBlocks: state.contentBlocks.map((block) =>
-        block.blockId === blockId
-          ? { ...block, style: { ...block.style, ...style } }
-          : block
-      ),
+      contentBlocks: updateBlockById(state.contentBlocks, blockId, (block) => ({
+        ...block,
+        style: { ...block.style, ...style },
+      })),
     }));
   },
+  getBlockById: (blockId: string | null) =>
+    findBlockByIdRecursive(get().contentBlocks, blockId),
 }));
 export default useTextEditorStore;
