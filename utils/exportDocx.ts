@@ -37,6 +37,8 @@ type DocParagraph = {
   text: string;
   bold?: boolean;
   italic?: boolean;
+  spacingBefore?: number;
+  spacingAfter?: number;
 };
 
 let jsZipPromise: Promise<typeof import("jszip")> | null = null;
@@ -132,18 +134,21 @@ function extractParagraphs(
         return [];
       }
 
-      return [
-        {
-          text,
-          bold: segments.some((segment) => segment.bold),
-          italic: segments.some((segment) => segment.italic),
-        },
-      ];
+      const paragraph: DocParagraph = {
+        text,
+        bold: segments.some((segment) => segment.bold),
+        italic: segments.some((segment) => segment.italic),
+      };
+
+      applyBlockSpacing([paragraph], block);
+      return [paragraph];
     }
 
-    return block.children.flatMap((child) =>
+    const childParagraphs = block.children.flatMap((child) =>
       extractParagraphs(child, inlineContext)
     );
+    applyBlockSpacing(childParagraphs, block);
+    return childParagraphs;
   }
 
   const rawText = getBlockText(block);
@@ -162,6 +167,7 @@ function extractParagraphs(
     paragraph.italic = true;
   }
 
+  applyBlockSpacing([paragraph], block);
   return [paragraph];
 }
 
@@ -193,6 +199,23 @@ function buildDocumentXml(paragraphs: DocParagraph[]): string {
 }
 
 function createParagraphXml(paragraph: DocParagraph): string {
+  const pPrParts: string[] = [];
+
+  if (paragraph.spacingBefore || paragraph.spacingAfter) {
+    const attrs: string[] = [];
+    if (paragraph.spacingBefore) {
+      attrs.push(`w:before="${paragraph.spacingBefore}"`);
+    }
+    if (paragraph.spacingAfter) {
+      attrs.push(`w:after="${paragraph.spacingAfter}"`);
+    }
+    if (attrs.length) {
+      pPrParts.push(`<w:spacing ${attrs.join(" ")}/>`);
+    }
+  }
+
+  const pPr = pPrParts.length ? `<w:pPr>${pPrParts.join("")}</w:pPr>` : "";
+
   const runProps =
     paragraph.bold || paragraph.italic
       ? `<w:rPr>${paragraph.bold ? "<w:b/>" : ""}${
@@ -201,7 +224,7 @@ function createParagraphXml(paragraph: DocParagraph): string {
       : "";
   const runs = createRuns(paragraph);
 
-  return `<w:p><w:r>${runProps}${runs}</w:r></w:p>`;
+  return `<w:p>${pPr}<w:r>${runProps}${runs}</w:r></w:p>`;
 }
 
 function createRuns(paragraph: DocParagraph): string {
@@ -298,6 +321,84 @@ function pickStyleValue(
   }
 
   return undefined;
+}
+
+function applyBlockSpacing(
+  paragraphs: DocParagraph[],
+  block: TextEditorBlock
+): void {
+  if (!paragraphs.length) {
+    return;
+  }
+
+  const { before, after } = getBlockSpacing(block);
+
+  if (before) {
+    const first = paragraphs[0];
+    first.spacingBefore = (first.spacingBefore ?? 0) + before;
+  }
+
+  if (after) {
+    const last = paragraphs[paragraphs.length - 1];
+    last.spacingAfter = (last.spacingAfter ?? 0) + after;
+  }
+}
+
+function getBlockSpacing(block: TextEditorBlock): { before: number; after: number } {
+  const beforePx = extractSpacing(block, "marginTop");
+  const afterPx = extractSpacing(block, "marginBottom");
+
+  return {
+    before: convertPxToTwips(beforePx),
+    after: convertPxToTwips(afterPx),
+  };
+}
+
+function extractSpacing(
+  block: TextEditorBlock,
+  property: "marginTop" | "marginBottom"
+): number {
+  const keys =
+    property === "marginTop"
+      ? ["marginTop", "marginVertical", "margin"]
+      : ["marginBottom", "marginVertical", "margin"];
+
+  const value = pickStyleValue(block, keys);
+
+  return normalizeSpacingValue(value);
+}
+
+function normalizeSpacingValue(value: unknown): number {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return Math.max(0, value);
+  }
+
+  if (typeof value === "string") {
+    const trimmed = value.trim().toLowerCase();
+
+    if (!trimmed || trimmed === "auto") {
+      return 0;
+    }
+
+    const match = trimmed.match(/^-?\d+(\.\d+)?/);
+    if (match) {
+      const parsed = Number.parseFloat(match[0]);
+      if (Number.isFinite(parsed)) {
+        return Math.max(0, parsed);
+      }
+    }
+  }
+
+  return 0;
+}
+
+function convertPxToTwips(px: number): number {
+  if (!px) {
+    return 0;
+  }
+
+  const twips = Math.round(px * 15);
+  return twips > 0 ? twips : 0;
 }
 
 function isBoldFontWeight(fontWeight: unknown): boolean {
