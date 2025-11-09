@@ -9,9 +9,11 @@ const SPACING_KEYS_BY_PROPERTY: Record<string, string[]> = {
   marginTop: ["marginTop", "marginVertical", "margin"],
   marginBottom: ["marginBottom", "marginVertical", "margin"],
   marginLeft: ["marginLeft", "marginHorizontal", "margin"],
+  marginRight: ["marginRight", "marginHorizontal", "margin"],
   paddingTop: ["paddingTop", "paddingVertical", "padding"],
   paddingBottom: ["paddingBottom", "paddingVertical", "padding"],
   paddingLeft: ["paddingLeft", "paddingHorizontal", "padding"],
+  paddingRight: ["paddingRight", "paddingHorizontal", "padding"],
   gap: ["gap"],
 };
 
@@ -298,9 +300,30 @@ function renderViewBlock(
   const gap = extractSpacing(block.style, "gap");
   const flexDirection = (block.style?.flexDirection as string) ?? "column";
 
-  addVerticalSpacing(context, marginTop + paddingTop);
-
   const childIndent = indent + marginLeft + paddingLeft;
+  const topSpacing = marginTop + paddingTop;
+
+  if (
+    flexDirection === "row" &&
+    block.children?.length &&
+    block.children.every((child) => isInlineRenderable(child))
+  ) {
+    const inlineLayouts = block.children.map((child) =>
+      measureInlineTextBlock(child, context)
+    );
+    const inlineContentHeight = getInlineRowHeight(inlineLayouts);
+    const totalHeight =
+      topSpacing + inlineContentHeight + paddingBottom + marginBottom;
+
+    ensureSpace(context, totalHeight);
+    addVerticalSpacing(context, topSpacing);
+    renderInlineRow(inlineLayouts, context, childIndent, gap);
+    context.cursorY += inlineContentHeight;
+    addVerticalSpacing(context, paddingBottom + marginBottom);
+    return;
+  }
+
+  addVerticalSpacing(context, topSpacing);
 
   if (block.children?.length) {
     block.children.forEach((child, index) => {
@@ -312,6 +335,148 @@ function renderViewBlock(
   }
 
   addVerticalSpacing(context, paddingBottom + marginBottom);
+}
+
+function renderInlineRow(
+  layouts: InlineTextBlockLayout[],
+  context: PdfRenderContext,
+  indent: number,
+  gap: number
+) {
+  const baseY = context.cursorY;
+  const doc = context.doc;
+
+  let cursorX = indent;
+
+  layouts.forEach((layout, index) => {
+    cursorX += layout.marginLeft + layout.paddingLeft;
+
+    const textY = baseY + layout.marginTop + layout.paddingTop;
+
+    doc.setFont("helvetica", layout.fontVariant);
+    doc.setFontSize(layout.fontSize);
+    doc.setTextColor(
+      layout.textColor[0],
+      layout.textColor[1],
+      layout.textColor[2]
+    );
+
+    doc.text(layout.textLines, cursorX, textY, {
+      baseline: "top",
+      lineHeightFactor: layout.lineHeightFactor,
+    });
+
+    cursorX += layout.textWidth + layout.paddingRight + layout.marginRight;
+
+    if (index < layouts.length - 1 && gap) {
+      cursorX += gap;
+    }
+  });
+}
+
+function isInlineRenderable(block: TextEditorBlock): boolean {
+  if (!block) {
+    return false;
+  }
+
+  if (block.children?.length) {
+    return false;
+  }
+
+  return block.type === "text" || block.type === "textInput";
+}
+
+interface InlineTextBlockLayout {
+  block: TextEditorBlock;
+  textLines: string[];
+  fontVariant: "normal" | "bold" | "italic" | "bolditalic";
+  fontSize: number;
+  textColor: [number, number, number];
+  lineHeightFactor: number;
+  textWidth: number;
+  textHeight: number;
+  marginLeft: number;
+  marginRight: number;
+  marginTop: number;
+  marginBottom: number;
+  paddingLeft: number;
+  paddingRight: number;
+  paddingTop: number;
+  paddingBottom: number;
+}
+
+function measureInlineTextBlock(
+  block: TextEditorBlock,
+  context: PdfRenderContext
+): InlineTextBlockLayout {
+  const textStyle = block?.style ?? {};
+  const containerStyle = block?.blockStyle ?? {};
+
+  const fontSize = extractFontSize(textStyle.fontSize) ?? 16;
+  const fontWeight = textStyle.fontWeight;
+  const fontStyle = textStyle.fontStyle;
+  const fontVariant = getFontVariant(fontWeight, fontStyle);
+  const textColor = parseColor(textStyle.color) ?? [41, 41, 41];
+  const lineHeightFactor =
+    extractLineHeight(textStyle.lineHeight, fontSize) ?? 1.35;
+
+  const marginLeft = extractSpacing(containerStyle, "marginLeft");
+  const marginRight = extractSpacing(containerStyle, "marginRight");
+  const marginTop = extractSpacing(containerStyle, "marginTop");
+  const marginBottom = extractSpacing(containerStyle, "marginBottom");
+  const paddingLeft = extractSpacing(containerStyle, "paddingLeft");
+  const paddingRight = extractSpacing(containerStyle, "paddingRight");
+  const paddingTop = extractSpacing(containerStyle, "paddingTop");
+  const paddingBottom = extractSpacing(containerStyle, "paddingBottom");
+
+  const content = getBlockText(block);
+  const textLines = [content ?? " "];
+
+  const doc = context.doc;
+  const previousFont = doc.getFont();
+  const previousFontSize = doc.getFontSize();
+
+  doc.setFont("helvetica", fontVariant);
+  doc.setFontSize(fontSize);
+
+  const textWidth = Math.max(
+    ...textLines.map((line) => doc.getTextWidth(line ?? ""))
+  );
+  const textHeight = textLines.length * fontSize * lineHeightFactor;
+
+  doc.setFont(previousFont.fontName, previousFont.fontStyle);
+  doc.setFontSize(previousFontSize);
+
+  return {
+    block,
+    textLines,
+    fontVariant,
+    fontSize,
+    textColor,
+    lineHeightFactor,
+    textWidth,
+    textHeight,
+    marginLeft,
+    marginRight,
+    marginTop,
+    marginBottom,
+    paddingLeft,
+    paddingRight,
+    paddingTop,
+    paddingBottom,
+  };
+}
+
+function getInlineRowHeight(layouts: InlineTextBlockLayout[]): number {
+  return layouts.reduce((maxHeight, layout) => {
+    const totalHeight =
+      layout.marginTop +
+      layout.paddingTop +
+      layout.textHeight +
+      layout.paddingBottom +
+      layout.marginBottom;
+    return Math.max(maxHeight, totalHeight);
+  }, 0);
 }
 
 function renderTextLikeBlock(
