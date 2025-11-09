@@ -5,7 +5,7 @@ export default function useCheckTextEditorCondition({
 }: {
   stepExpectedRef: any;
 }) {
-  const { contentBlocks, getBlockById } = useTextEditorStore();
+  const { getBlockById } = useTextEditorStore();
   return () => {
     switch (stepExpectedRef.current.type) {
       case "blockText":
@@ -16,7 +16,7 @@ export default function useCheckTextEditorCondition({
 
       case "style":
         return (
-          getBlockById(stepExpectedRef.current.blockId)?.style[
+          getBlockById(stepExpectedRef.current.blockId)?.style?.[
             stepExpectedRef.current.property
           ] === stepExpectedRef.current.value
         );
