@@ -5,6 +5,16 @@ const JSPDF_SCRIPT_ID = "jspdf-cdn-script";
 const JSPDF_CDN_URL =
   "https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js";
 
+const SPACING_KEYS_BY_PROPERTY: Record<string, string[]> = {
+  marginTop: ["marginTop", "marginVertical", "margin"],
+  marginBottom: ["marginBottom", "marginVertical", "margin"],
+  marginLeft: ["marginLeft", "marginHorizontal", "margin"],
+  paddingTop: ["paddingTop", "paddingVertical", "padding"],
+  paddingBottom: ["paddingBottom", "paddingVertical", "padding"],
+  paddingLeft: ["paddingLeft", "paddingHorizontal", "padding"],
+  gap: ["gap"],
+};
+
 type JsPDFConstructor = typeof import("jspdf")["jsPDF"];
 
 declare global {
@@ -229,6 +239,7 @@ interface PdfRenderContext {
 interface TextEditorBlock {
   type?: string;
   text?: string;
+  value?: string;
   placeholder?: string;
   blockStyle?: { [key: string]: any };
   style?: { [key: string]: any };
@@ -316,7 +327,10 @@ function renderTextLikeBlock(
   const textStyle = block?.style ?? {};
   const containerStyle = block?.blockStyle ?? {};
 
-  const marginTop = extractSpacing(containerStyle, "marginTop");
+  const hasAutoMarginTop = hasAutoSpacing(containerStyle, "marginTop");
+  const marginTop = hasAutoMarginTop
+    ? 0
+    : extractSpacing(containerStyle, "marginTop");
   const marginBottom = extractSpacing(containerStyle, "marginBottom");
   const paddingTop = extractSpacing(containerStyle, "paddingTop");
   const paddingBottom = extractSpacing(containerStyle, "paddingBottom");
@@ -358,12 +372,22 @@ function renderTextLikeBlock(
 
   const blockHeight = textLines.length * fontSize * lineHeightFactor;
 
-  ensureSpace(
-    context,
-    marginTop + paddingTop + blockHeight + paddingBottom + marginBottom
-  );
+  const heightAfterCursor =
+    paddingTop + blockHeight + paddingBottom + marginBottom;
+  const totalHeight =
+    marginTop + paddingTop + blockHeight + paddingBottom + marginBottom;
 
-  addVerticalSpacing(context, marginTop + paddingTop);
+  if (hasAutoMarginTop) {
+    ensureSpace(context, heightAfterCursor);
+    const spaceRemaining =
+      context.pageHeight - context.margin - context.cursorY - heightAfterCursor;
+    const autoSpacing = Math.max(spaceRemaining, 0);
+    addVerticalSpacing(context, autoSpacing + paddingTop);
+  } else {
+    const topSpacing = marginTop + paddingTop;
+    ensureSpace(context, totalHeight);
+    addVerticalSpacing(context, topSpacing);
+  }
 
   const x = getAlignedX(
     textAlign,
@@ -446,17 +470,7 @@ function extractSpacingFromObject(
     return null;
   }
 
-  const keysByProperty: Record<string, string[]> = {
-    marginTop: ["marginTop", "marginVertical", "margin"],
-    marginBottom: ["marginBottom", "marginVertical", "margin"],
-    marginLeft: ["marginLeft", "marginHorizontal", "margin"],
-    paddingTop: ["paddingTop", "paddingVertical", "padding"],
-    paddingBottom: ["paddingBottom", "paddingVertical", "padding"],
-    paddingLeft: ["paddingLeft", "paddingHorizontal", "padding"],
-    gap: ["gap"],
-  };
-
-  const keys = keysByProperty[property] ?? [property];
+  const keys = SPACING_KEYS_BY_PROPERTY[property] ?? [property];
 
   for (const key of keys) {
     const rawValue = style[key];
@@ -467,6 +481,44 @@ function extractSpacingFromObject(
   }
 
   return null;
+}
+
+function hasAutoSpacing(
+  style: StyleObject | StyleObject[],
+  property: string
+): boolean {
+  const styles = Array.isArray(style) ? style : [style];
+
+  for (const current of styles) {
+    if (hasAutoSpacingInObject(current, property)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function hasAutoSpacingInObject(
+  style: { [key: string]: any } | undefined,
+  property: string
+): boolean {
+  if (!style) {
+    return false;
+  }
+
+  const keys = SPACING_KEYS_BY_PROPERTY[property] ?? [property];
+
+  for (const key of keys) {
+    if (isAutoValue(style[key])) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function isAutoValue(value: unknown): boolean {
+  return typeof value === "string" && value.trim().toLowerCase() === "auto";
 }
 
 function extractFontSize(fontSize: unknown): number | null {
