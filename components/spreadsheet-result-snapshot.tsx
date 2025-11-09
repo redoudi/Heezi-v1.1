@@ -1,7 +1,7 @@
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 export default function SpreadsheetResultSnapshot() {
-  const { values: cellsContents } = useExportSpreadsheetValues();
+  const { contents: cellsContents } = useExportSpreadsheetValues();
   const [headers, ...entries] = cellsContents;
   return (
     <SafeAreaView style={styles.container}>
