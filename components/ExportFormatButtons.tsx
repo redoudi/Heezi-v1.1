@@ -1,5 +1,6 @@
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
 import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
+import { exportTextEditorDocx } from "@/utils/exportDocx";
 import { exportSpreadsheetPdf, exportTextEditorPdf } from "@/utils/exportPdf";
 import { useLocalSearchParams } from "expo-router";
 import {
@@ -66,9 +67,13 @@ const ExportPdfButton = () => {
 
     try {
       if (practiceTool === "spreadsheet") {
-        await exportSpreadsheetPdf(contents);
+        await exportSpreadsheetPdf(
+          contents as ReturnType<typeof useExportSpreadsheetValues>["contents"]
+        );
       } else {
-        await exportTextEditorPdf(contents);
+        await exportTextEditorPdf(
+          contents as ReturnType<typeof useExportTextEditorValues>["contents"]
+        );
       }
     } catch (error) {
       console.error("Failed to export PDF", error);
@@ -97,10 +102,34 @@ const ExportPdfButton = () => {
 };
 
 const ExportDocxButton = () => {
+  const { contents } = useExportTextEditorValues();
+
+  const handleExportDocx = async () => {
+    if (!contents.length) {
+      Alert.alert(
+        "Nothing to export",
+        "We couldn't find any data to include in the document."
+      );
+      return;
+    }
+
+    try {
+      await exportTextEditorDocx(contents);
+    } catch (error) {
+      console.error("Failed to export DOCX", error);
+      Alert.alert(
+        "Export failed",
+        "Something went wrong while preparing your document. Please try again."
+      );
+    }
+  };
+
   return (
     <TouchableOpacity
       style={styles.buttonRow3}
-      onPress={() => alert("Pressed!")}
+      onPress={() => {
+        void handleExportDocx();
+      }}
     >
       <Image
         source={require("@/assets/images/xhzm8bjz_expires_30_days.png")}
