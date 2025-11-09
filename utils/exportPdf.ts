@@ -176,9 +176,458 @@ function isBoldFontWeight(fontWeight: unknown): boolean {
 }
 
 export async function exportTextEditorPdf(
-  contents: { value: unknown; style: { [key: string]: any } }[][]
+  contents: TextEditorBlock[]
 ): Promise<void> {
   if (!contents.length) {
     throw new Error("Nothing to export");
   }
+
+  const jsPDF = await loadJsPdfFromCdn();
+
+  const doc = new jsPDF({
+    orientation: "portrait",
+    unit: "pt",
+    format: "a4",
+  });
+
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const context: PdfRenderContext = {
+    doc,
+    pageWidth,
+    pageHeight,
+    margin: MARGIN,
+    cursorY: MARGIN,
+  };
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(22);
+  doc.setTextColor(10, 41, 36);
+  doc.text("Mission Rédaction", MARGIN, MARGIN);
+
+  context.cursorY += HEADING_OFFSET;
+
+  renderBlocks(contents, context, MARGIN);
+
+  const filename = `heezi-text-editor-export-${
+    new Date().toISOString().split("T")[0]
+  }.pdf`;
+
+  doc.save(filename);
+}
+
+type PdfDoc = InstanceType<JsPDFConstructor>;
+
+interface PdfRenderContext {
+  doc: PdfDoc;
+  pageWidth: number;
+  pageHeight: number;
+  margin: number;
+  cursorY: number;
+}
+
+interface TextEditorBlock {
+  type?: string;
+  text?: string;
+  placeholder?: string;
+  blockStyle?: { [key: string]: any };
+  style?: { [key: string]: any };
+  children?: TextEditorBlock[];
+}
+
+function renderBlocks(
+  blocks: TextEditorBlock[],
+  context: PdfRenderContext,
+  indent: number
+) {
+  if (!Array.isArray(blocks)) {
+    return;
+  }
+
+  blocks.forEach((child) => {
+    renderBlock(child, context, indent);
+  });
+}
+
+function renderBlock(
+  block: TextEditorBlock,
+  context: PdfRenderContext,
+  indent: number
+) {
+  if (!block) {
+    return;
+  }
+
+  switch (block.type) {
+    case "view":
+      renderViewBlock(block, context, indent);
+      return;
+    case "text":
+    case "textInput":
+    default:
+      if (block.children?.length) {
+        renderViewBlock(block, context, indent);
+        return;
+      }
+      renderTextLikeBlock(block, context, indent);
+  }
+}
+
+function renderViewBlock(
+  block: TextEditorBlock,
+  context: PdfRenderContext,
+  indent: number
+) {
+  const marginTop = extractSpacing(block.style, "marginTop");
+  const marginBottom = extractSpacing(block.style, "marginBottom");
+  const paddingTop = extractSpacing(block.style, "paddingTop");
+  const paddingBottom = extractSpacing(block.style, "paddingBottom");
+  const paddingLeft = extractSpacing(block.style, "paddingLeft");
+  const marginLeft = extractSpacing(block.style, "marginLeft");
+  const gap = extractSpacing(block.style, "gap");
+  const flexDirection = (block.style?.flexDirection as string) ?? "column";
+
+  addVerticalSpacing(context, marginTop + paddingTop);
+
+  const childIndent = indent + marginLeft + paddingLeft;
+
+  if (block.children?.length) {
+    block.children.forEach((child, index) => {
+      if (index > 0 && gap && flexDirection !== "row") {
+        addVerticalSpacing(context, gap);
+      }
+      renderBlock(child, context, childIndent);
+    });
+  }
+
+  addVerticalSpacing(context, paddingBottom + marginBottom);
+}
+
+function renderTextLikeBlock(
+  block: TextEditorBlock,
+  context: PdfRenderContext,
+  indent: number
+) {
+  if (block?.type === "view") {
+    renderViewBlock(block, context, indent);
+    return;
+  }
+
+  const textStyle = block?.style ?? {};
+  const containerStyle = block?.blockStyle ?? {};
+
+  const marginTop = extractSpacing(containerStyle, "marginTop");
+  const marginBottom = extractSpacing(containerStyle, "marginBottom");
+  const paddingTop = extractSpacing(containerStyle, "paddingTop");
+  const paddingBottom = extractSpacing(containerStyle, "paddingBottom");
+  const paddingLeft = extractSpacing(containerStyle, "paddingLeft");
+  const marginLeftContainer = extractSpacing(containerStyle, "marginLeft");
+  const marginLeftText = extractSpacing(textStyle, "marginLeft");
+  const paddingLeftText = extractSpacing(textStyle, "paddingLeft");
+
+  const fontSize = extractFontSize(textStyle.fontSize) ?? 16;
+  const fontWeight = textStyle.fontWeight;
+  const fontStyle = textStyle.fontStyle;
+  const textAlign = (textStyle.textAlign as PdfTextAlign) ?? "left";
+  const textColor = parseColor(textStyle.color) ?? [41, 41, 41];
+  const lineHeightFactor =
+    extractLineHeight(textStyle.lineHeight, fontSize) ?? 1.35;
+
+  const indentOffset =
+    indent +
+    paddingLeft +
+    marginLeftContainer +
+    marginLeftText +
+    paddingLeftText;
+
+  let availableWidth = context.pageWidth - indentOffset - context.margin;
+  if (availableWidth <= 0) {
+    availableWidth = context.pageWidth - context.margin * 2;
+  }
+
+  const content = getBlockText(block);
+  const doc = context.doc;
+
+  doc.setFont("helvetica", getFontVariant(fontWeight, fontStyle));
+  doc.setFontSize(fontSize);
+  doc.setTextColor(textColor[0], textColor[1], textColor[2]);
+
+  const textLines = Array.isArray(content)
+    ? content
+    : doc.splitTextToSize(content ?? " ", availableWidth);
+
+  const blockHeight = textLines.length * fontSize * lineHeightFactor;
+
+  ensureSpace(
+    context,
+    marginTop + paddingTop + blockHeight + paddingBottom + marginBottom
+  );
+
+  addVerticalSpacing(context, marginTop + paddingTop);
+
+  const x = getAlignedX(
+    textAlign,
+    indentOffset,
+    context.pageWidth,
+    context.margin,
+    availableWidth
+  );
+
+  doc.text(textLines, x, context.cursorY, {
+    baseline: "top",
+    align: textAlign,
+    lineHeightFactor,
+  });
+
+  context.cursorY += blockHeight;
+  addVerticalSpacing(context, paddingBottom + marginBottom);
+}
+
+type PdfTextAlign = "left" | "center" | "right" | "justify";
+
+function getAlignedX(
+  align: PdfTextAlign,
+  indent: number,
+  pageWidth: number,
+  margin: number,
+  availableWidth: number
+): number {
+  switch (align) {
+    case "center":
+      return pageWidth / 2;
+    case "right":
+      return pageWidth - margin;
+    default:
+      return indent;
+  }
+}
+
+function addVerticalSpacing(context: PdfRenderContext, spacing: number) {
+  if (!spacing) {
+    return;
+  }
+
+  ensureSpace(context, spacing);
+  context.cursorY += spacing;
+}
+
+function ensureSpace(context: PdfRenderContext, heightNeeded: number) {
+  if (context.cursorY + heightNeeded <= context.pageHeight - context.margin) {
+    return;
+  }
+
+  context.doc.addPage();
+  context.cursorY = context.margin;
+}
+
+type StyleObject = { [key: string]: any } | undefined;
+
+function extractSpacing(
+  style: StyleObject | StyleObject[],
+  property: string
+): number {
+  const styles = Array.isArray(style) ? style : [style];
+
+  for (const current of styles) {
+    const value = extractSpacingFromObject(current, property);
+    if (value !== null) {
+      return value;
+    }
+  }
+
+  return 0;
+}
+
+function extractSpacingFromObject(
+  style: { [key: string]: any } | undefined,
+  property: string
+): number | null {
+  if (!style) {
+    return null;
+  }
+
+  const keysByProperty: Record<string, string[]> = {
+    marginTop: ["marginTop", "marginVertical", "margin"],
+    marginBottom: ["marginBottom", "marginVertical", "margin"],
+    marginLeft: ["marginLeft", "marginHorizontal", "margin"],
+    paddingTop: ["paddingTop", "paddingVertical", "padding"],
+    paddingBottom: ["paddingBottom", "paddingVertical", "padding"],
+    paddingLeft: ["paddingLeft", "paddingHorizontal", "padding"],
+    gap: ["gap"],
+  };
+
+  const keys = keysByProperty[property] ?? [property];
+
+  for (const key of keys) {
+    const rawValue = style[key];
+    const value = parseDimension(rawValue);
+    if (value !== null) {
+      return toPt(value);
+    }
+  }
+
+  return null;
+}
+
+function extractFontSize(fontSize: unknown): number | null {
+  const value = parseDimension(fontSize);
+  return value !== null ? toPt(value) : null;
+}
+
+function extractLineHeight(
+  lineHeight: unknown,
+  fontSize: number
+): number | null {
+  if (lineHeight === null || lineHeight === undefined) {
+    return null;
+  }
+
+  if (typeof lineHeight === "number") {
+    if (lineHeight > 10) {
+      return toPt(lineHeight) / fontSize;
+    }
+    if (lineHeight > 0) {
+      return lineHeight;
+    }
+  }
+
+  if (typeof lineHeight === "string") {
+    const trimmed = lineHeight.trim();
+    if (!trimmed) {
+      return null;
+    }
+
+    if (trimmed.endsWith("%")) {
+      const percent = Number.parseFloat(trimmed.slice(0, -1));
+      if (Number.isFinite(percent) && percent > 0) {
+        return percent / 100;
+      }
+    }
+
+    const dimension = parseDimension(trimmed);
+    if (dimension !== null) {
+      return toPt(dimension) / fontSize;
+    }
+  }
+
+  return null;
+}
+
+function parseDimension(value: unknown): number | null {
+  if (value === null || value === undefined) {
+    return null;
+  }
+
+  if (Array.isArray(value)) {
+    return null;
+  }
+
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value;
+  }
+
+  if (typeof value === "string") {
+    const trimmed = value.trim().toLowerCase();
+
+    if (!trimmed || trimmed === "auto") {
+      return null;
+    }
+
+    if (trimmed.endsWith("px")) {
+      const parsed = Number.parseFloat(trimmed.slice(0, -2));
+      return Number.isFinite(parsed) ? parsed : null;
+    }
+
+    const parsed = Number.parseFloat(trimmed);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  return null;
+}
+
+function toPt(value: number): number {
+  return value * 0.75;
+}
+
+function parseColor(value: unknown): [number, number, number] | null {
+  if (!value) {
+    return null;
+  }
+
+  if (Array.isArray(value) && value.length >= 3) {
+    const [r, g, b] = value.map((component) =>
+      Math.max(0, Math.min(255, Number(component) || 0))
+    );
+    return [r, g, b];
+  }
+
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const hexMatch = value.trim().match(/^#?([a-f0-9]{6})$/i);
+  if (hexMatch) {
+    const hex = hexMatch[1];
+    const r = Number.parseInt(hex.slice(0, 2), 16);
+    const g = Number.parseInt(hex.slice(2, 4), 16);
+    const b = Number.parseInt(hex.slice(4, 6), 16);
+    return [r, g, b];
+  }
+
+  const rgbMatch = value
+    .trim()
+    .match(/^rgba?\(\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*([0-9.]+).*?\)$/i);
+  if (rgbMatch) {
+    return [
+      Number.parseFloat(rgbMatch[1]),
+      Number.parseFloat(rgbMatch[2]),
+      Number.parseFloat(rgbMatch[3]),
+    ].map((component) => Math.max(0, Math.min(255, Math.round(component)))) as [
+      number,
+      number,
+      number
+    ];
+  }
+
+  return null;
+}
+
+function getFontVariant(
+  fontWeight: unknown,
+  fontStyle: unknown
+): "normal" | "bold" | "italic" | "bolditalic" {
+  const isBold = isBoldFontWeight(fontWeight);
+  const isItalic =
+    typeof fontStyle === "string" &&
+    fontStyle.trim().toLowerCase() === "italic";
+
+  if (isBold && isItalic) {
+    return "bolditalic";
+  }
+
+  if (isBold) {
+    return "bold";
+  }
+
+  if (isItalic) {
+    return "italic";
+  }
+
+  return "normal";
+}
+
+function getBlockText(block: TextEditorBlock): string {
+  const baseText =
+    block?.text ??
+    (typeof block?.value === "string" ? (block.value as string) : "");
+
+  if (typeof baseText === "string" && baseText.trim().length > 0) {
+    return baseText;
+  }
+
+  if (block?.placeholder) {
+    return `[${block.placeholder}]`;
+  }
+
+  return " ";
 }
