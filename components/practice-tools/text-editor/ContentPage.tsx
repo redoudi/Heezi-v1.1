@@ -9,14 +9,8 @@ function TextBlock({ item }: { item: any }) {
   );
 }
 
-function TextInputBlock({
-  item,
-  handleFocus,
-}: {
-  item: any;
-  handleFocus: () => void;
-}) {
-  const { setBlockText } = useTextEditorStore();
+function TextInputBlock({ item }: { item: any }) {
+  const { setBlockText, setSelectedBlockId } = useTextEditorStore();
 
   return (
     <View style={[styles.textInputContainer, item.blockStyle]}>
@@ -24,7 +18,7 @@ function TextInputBlock({
         style={[styles.textInput, item.style]}
         value={item.text}
         onChangeText={(inputText) => setBlockText(item.blockId, inputText)}
-        onFocus={handleFocus}
+        onFocus={() => setSelectedBlockId(item.blockId)}
         placeholder={item.placeholder}
         placeholderTextColor="rgb(111, 111, 111)"
       />
@@ -38,13 +32,7 @@ function ContentItem({ item, index }: { item: any; index: number }) {
     case "text":
       return <TextBlock key={index} item={item} />;
     case "textInput":
-      return (
-        <TextInputBlock
-          key={index}
-          item={item}
-          handleFocus={() => setSelectedBlockIndex(index)}
-        />
-      );
+      return <TextInputBlock key={index} item={item} />;
     case "view":
       return (
         <View key={index} style={item.style}>

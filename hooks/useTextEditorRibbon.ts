@@ -1,8 +1,17 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
+import { useEffect } from "react";
 
-export default function useSpreadsheetRibbon() {
+export default function useTextEditorRibbon() {
   const { contentBlocks, selectedBlockId, setBlockStyle } =
     useTextEditorStore();
+
+  const selectedBlock = contentBlocks?.find(
+    (block) => block.blockId === selectedBlockId
+  );
+
+  useEffect(() => {
+    console.log(selectedBlockId);
+  }, [selectedBlockId, contentBlocks]);
 
   const isSelectedBlockBold =
     (selectedBlockId !== null &&
