@@ -1,3 +1,4 @@
+import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -28,6 +29,7 @@ export default function MascotMonitor({
   } = useLocalSearchParams();
   const { setCellsSelected } = useSpreadsheetStore();
   const { tasks: levelTasks } = useLevelData();
+  const { moveCursor } = useCursor();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
@@ -64,14 +66,14 @@ export default function MascotMonitor({
       setTaskIndex(runnerRef.current.task + 1);
       handleTaskIndexChange();
     } else {
-      const { tip, expected, preActions, moveCursor } =
+      const { tip, expected, preActions, cursor } =
         levelTasks
           ?.at(runnerRef.current.task)
           ?.steps?.at(runnerRef.current.step) || {};
       setBubbleText(tip?.text2 || "");
       if (preActions) runPreActions(preActions);
       if (expected) stepExpectedRef.current = expected;
-      if (moveCursor) moveCursor(moveCursor.x, moveCursor.y);
+      if (cursor) moveCursor(cursor.x, cursor.y);
     }
   };
 

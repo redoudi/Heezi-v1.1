@@ -24,13 +24,13 @@
             "steps": [
                 {
                     "tip": {
-                        "text1": "2.a La saisie",
+                        "text1": "2.1 La saisie",
                         "text2": "Pour saisir du texte, on clique à l'endroit du contenu où on veut ajouter le texte."
                     },
-                    "moveCursor": {
+                    "cursor": {
                         "elementRef": "exempleInput",
-                        "x": 50,
-                        "y": 100
+                        "x": 10,
+                        "y": 10
                     }
                 },
                 {

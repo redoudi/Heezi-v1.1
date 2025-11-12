@@ -12,6 +12,10 @@ export default function Cursor() {
     }
   }, [cursorPosition]);
 
+  useEffect(() => {
+    console.log("cursorPosition", cursorPosition);
+  }, [cursorPosition]);
+
   return (
     <Image
       source={require("@/assets/images/cursor.png")}

@@ -30,6 +30,7 @@ export function CursorProvider({ children }: { children: ReactNode }) {
   });
 
   const moveCursor = (x: number, y: number) => {
+    console.log("moveCursor", x, y);
     setCursorPosition({ x, y });
   };
 
