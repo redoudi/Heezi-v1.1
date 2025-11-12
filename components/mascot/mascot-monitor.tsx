@@ -64,13 +64,14 @@ export default function MascotMonitor({
       setTaskIndex(runnerRef.current.task + 1);
       handleTaskIndexChange();
     } else {
-      const { tip, expected, preActions } =
+      const { tip, expected, preActions, moveCursor } =
         levelTasks
           ?.at(runnerRef.current.task)
           ?.steps?.at(runnerRef.current.step) || {};
       setBubbleText(tip?.text2 || "");
       if (preActions) runPreActions(preActions);
       if (expected) stepExpectedRef.current = expected;
+      if (moveCursor) moveCursor(moveCursor.x, moveCursor.y);
     }
   };
 

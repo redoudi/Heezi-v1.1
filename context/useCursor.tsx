@@ -11,14 +11,14 @@ type CursorState = {
 type CursorContextType = {
   cursorRef: React.RefObject<any>;
   cursorPosition: CursorState;
-  setCursorPosition: (cursorPosition: CursorState) => void;
+  moveCursor: (x: number, y: number) => void;
 };
 
 // Create the context with default values
 const CursorContext = createContext<CursorContextType>({
   cursorRef: { current: null },
   cursorPosition: { x: 0, y: 0 },
-  setCursorPosition: () => {},
+  moveCursor: () => {},
 });
 
 // Provider component
@@ -29,10 +29,12 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     y: 0,
   });
 
+  const moveCursor = (x: number, y: number) => {
+    setCursorPosition({ x, y });
+  };
+
   return (
-    <CursorContext.Provider
-      value={{ cursorRef, cursorPosition, setCursorPosition }}
-    >
+    <CursorContext.Provider value={{ cursorRef, cursorPosition, moveCursor }}>
       {children}
     </CursorContext.Provider>
   );

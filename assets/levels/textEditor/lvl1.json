@@ -28,7 +28,9 @@
                         "text2": "Pour saisir du texte, on clique à l'endroit du contenu où on veut ajouter le texte."
                     },
                     "moveCursor": {
-                        "elementRef": "exempleInput"
+                        "elementRef": "exempleInput",
+                        "x": 50,
+                        "y": 100
                     }
                 },
                 {
