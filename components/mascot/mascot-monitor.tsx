@@ -26,7 +26,7 @@ export default function MascotMonitor({
   } = useLocalSearchParams();
   const { setCellsSelected } = useSpreadsheetStore();
   const { tasks: levelTasks } = useLevelData();
-  const { moveCursor } = useCursor();
+  const { moveCursor, hideCursor } = useCursor();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
@@ -63,6 +63,7 @@ export default function MascotMonitor({
       setTaskIndex(runnerRef.current.task + 1);
       handleTaskIndexChange();
     } else {
+      hideCursor();
       if (runnerRef.current.step === -1) {
         const introText = levelTasks?.at(runnerRef.current.task)?.intro;
         if (introText && introText.trim() !== "") setModalText(introText);

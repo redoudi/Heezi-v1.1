@@ -14,6 +14,8 @@ type CursorContextType = {
   moveCursor: (elementId: string, offsetX?: number, offsetY?: number) => void;
   setContentsRef: (id: string, ref: any) => void;
   contentsRefs: { [key: string]: any };
+  hideCursor: () => void;
+  showCursor: () => void;
 };
 
 // Create the context with default values
@@ -23,6 +25,8 @@ const CursorContext = createContext<CursorContextType>({
   moveCursor: () => {},
   setContentsRef: () => {},
   contentsRefs: {},
+  hideCursor: () => {},
+  showCursor: () => {},
 });
 
 // Provider component
@@ -103,6 +107,8 @@ export function CursorProvider({ children }: { children: ReactNode }) {
         moveCursor,
         setContentsRef,
         contentsRefs: contentsRefsState,
+        hideCursor,
+        showCursor,
       }}
     >
       {children}
