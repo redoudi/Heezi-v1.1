@@ -69,6 +69,9 @@
                         "text1": "3.b La mise en forme",
                         "text2": "On peut par exemple le mettre en gras en cliquant sur le bouton gras."
                     },
+                    "cursor": {
+                        "elementId": "boldButton"
+                    },
                     "preActions": [
                         {
                             "type": "style",
