@@ -41,18 +41,24 @@ export function CursorProvider({ children }: { children: ReactNode }) {
 
   const setContentRef = (id: string, ref: any) => {
     contentsRefs.current[id] = ref;
-    console.log("contentsRefs", contentsRefs.current);
   };
   const setContentLayout = (id: string, layout: any) => {
     contentsLayouts.current[id] = layout;
     console.log("contentsLayouts", contentsLayouts.current);
   };
 
-  const moveCursor = (
-    elementId: string,
-    offsetX: number = 0,
-    offsetY: number = 0
-  ) => {
+  const moveCursor = (id: string) => {
+    showCursor();
+    const layout = contentsLayouts.current[id];
+    if (layout) {
+      setCursorPosition({
+        x: layout.x,
+        y: layout.y,
+      });
+    }
+  };
+
+  const moveCursor_ = (elementId: string) => {
     showCursor();
     const ref = contentsRefs.current[elementId];
     if (ref && ref.current) {
@@ -69,26 +75,10 @@ export function CursorProvider({ children }: { children: ReactNode }) {
         const cursorSize = 20;
         const cursorOffset = cursorSize / 2;
         setCursorPosition({
-          x: centerX - cursorOffset + offsetX,
-          y: centerY - cursorOffset + offsetY,
+          x: centerX - cursorOffset,
+          y: centerY - cursorOffset,
         });
-        console.log(
-          "moveCursor to element",
-          elementId,
-          "at center",
-          centerX - cursorOffset + offsetX,
-          centerY - cursorOffset + offsetY
-        );
-      } else {
-        console.warn("Element does not have getBoundingClientRect", element);
       }
-    } else {
-      console.warn(
-        "Element ref not found for",
-        elementId,
-        "refs:",
-        contentsRefs.current
-      );
     }
   };
 

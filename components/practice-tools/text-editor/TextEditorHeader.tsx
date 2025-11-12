@@ -15,11 +15,6 @@ function BoldButton() {
     }
   }, [setContentRef, boldButtonRef]);
 
-  const handleLayout = (event: any) => {
-    const { x, y, width, height } = event.nativeEvent.layout;
-    setContentLayout("boldButton", { x, y, width, height });
-  };
-
   return (
     <TouchableOpacity
       style={[
@@ -28,12 +23,14 @@ function BoldButton() {
       ]}
       onPress={() => boldSelectedBlock()}
       ref={boldButtonRef}
-      onLayout={handleLayout}
     >
       <Image
         source={require("@/assets/images/2ib5w9m2_expires_30_days.png")}
         resizeMode={"stretch"}
         style={[styles.image13]}
+        onLayout={(event) =>
+          setContentLayout("boldButton", event?.nativeEvent?.layout)
+        }
       />
     </TouchableOpacity>
   );
