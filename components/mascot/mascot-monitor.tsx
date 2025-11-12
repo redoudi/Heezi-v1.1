@@ -3,7 +3,7 @@ import useLevelData from "@/hooks/use-level-data";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Cursor from "./cursor";
 import MascotBubble from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
@@ -119,7 +119,7 @@ export default function MascotMonitor({
   }, [levelTasks]);
 
   return (
-    <View>
+    <View style={styles.container}>
       {!!bubbleText && (
         <MascotBubble bubbleText={bubbleText} nextStep={nextStep} />
       )}
@@ -132,3 +132,14 @@ export default function MascotMonitor({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    pointerEvents: "box-none",
+  },
+});
