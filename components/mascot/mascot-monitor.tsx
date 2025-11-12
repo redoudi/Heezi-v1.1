@@ -2,7 +2,7 @@ import useLevelData from "@/hooks/use-level-data";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
-import { View } from "react-native";
+import { Image, View } from "react-native";
 import MascotBubble from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
 
@@ -124,6 +124,7 @@ export default function MascotMonitor({
         onClose={() => setModalText("")}
         modalText={modalText}
       />
+      <Image source={require("@/assets/images/cursor.png")} />
     </View>
   );
 }

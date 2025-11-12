@@ -26,6 +26,9 @@
                     "tip": {
                         "text1": "2.a La saisie",
                         "text2": "Pour saisir du texte, on clique à l'endroit du contenu où on veut ajouter le texte."
+                    },
+                    "cursor": {
+                        "ref": "end"
                     }
                 },
                 {
@@ -37,7 +40,7 @@
                         {
                             "type": "blockText",
                             "text": "Voilà, j'ai ajouté une phrase à la fin du texte déjà présent",
-                            "blockIndex": "2"
+                            "blockId": "exempleInput"
                         }
                     ]
                 }
@@ -54,7 +57,7 @@
                     "preActions": [
                         {
                             "type": "selectBlock",
-                            "blockId": 0
+                            "blockId": "exempleInput"
                         }
                     ]
                 },
@@ -66,7 +69,7 @@
                     "preActions": [
                         {
                             "type": "style",
-                            "blockIndex": 0,
+                            "blockId": "exempleInput",
                             "value": {
                                 "fontWeight": "bold"
                             }
@@ -79,14 +82,17 @@
     "contentBlocks": [
         {
             "type": "text",
-            "text": "Exemple"
+            "text": "Exemple",
+            "blockId": "exemple"
         },
         {
             "type": "text",
             "text": "Ceci est un exemple de texte."
         },
         {
-            "type": "textInput"
+            "type": "textInput",
+            "blockId": "exempleInput",
+            "text": ""
         }
     ]
 }
