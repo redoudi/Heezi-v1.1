@@ -11,7 +11,7 @@ type CursorState = {
 type CursorContextType = {
   cursorRef: React.RefObject<any>;
   cursorPosition: CursorState;
-  moveCursor: (x: number, y: number) => void;
+  moveCursor: (elementId: string, offsetX?: number, offsetY?: number) => void;
   setContentsRef: (id: string, ref: any) => void;
   contentsRefs: { [key: string]: any };
 };
@@ -33,28 +33,62 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     y: 0,
   });
   const contentsRefs = useRef<{ [key: string]: any }>({});
+  const [contentsRefsState, setContentsRefsState] = useState<{
+    [key: string]: any;
+  }>({});
 
   const setContentsRef = (id: string, ref: any) => {
     contentsRefs.current[id] = ref;
+    setContentsRefsState({ ...contentsRefs.current });
     console.log("contentsRefs", contentsRefs.current);
   };
 
-  const moveCursor_ = (x: number, y: number) => {
-    console.log("moveCursor", x, y);
-    setCursorPosition({ x, y });
-  };
+  const moveCursor = (
+    elementId: string,
+    offsetX: number = 0,
+    offsetY: number = 0
+  ) => {
+    const ref = contentsRefs.current[elementId];
+    if (ref && ref.current) {
+      // In React Native Web, ref.current should be the DOM element
+      const element = ref.current;
 
-  const moveCursor = (elementRef: string) => {
-    const element = contentsRefs.current[elementRef];
-    if (element) {
-      const { x, y } = element.getBoundingClientRect();
-      setCursorPosition({ x, y });
+      // Check if it's a DOM element with getBoundingClientRect
+      if (typeof element.getBoundingClientRect === "function") {
+        const rect = element.getBoundingClientRect();
+        setCursorPosition({
+          x: rect.left + offsetX,
+          y: rect.top + offsetY,
+        });
+        console.log(
+          "moveCursor to element",
+          elementId,
+          "at",
+          rect.left + offsetX,
+          rect.top + offsetY
+        );
+      } else {
+        console.warn("Element does not have getBoundingClientRect", element);
+      }
+    } else {
+      console.warn(
+        "Element ref not found for",
+        elementId,
+        "refs:",
+        contentsRefs.current
+      );
     }
   };
 
   return (
     <CursorContext.Provider
-      value={{ cursorRef, cursorPosition, moveCursor, setContentsRef }}
+      value={{
+        cursorRef,
+        cursorPosition,
+        moveCursor,
+        setContentsRef,
+        contentsRefs: contentsRefsState,
+      }}
     >
       {children}
     </CursorContext.Provider>

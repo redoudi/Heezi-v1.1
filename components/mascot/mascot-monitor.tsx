@@ -73,7 +73,9 @@ export default function MascotMonitor({
       setBubbleText(tip?.text2 || "");
       if (preActions) runPreActions(preActions);
       if (expected) stepExpectedRef.current = expected;
-      if (cursor) moveCursor(cursor.elementId);
+      if (cursor && cursor.elementId) {
+        moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
+      }
     }
   };
 
