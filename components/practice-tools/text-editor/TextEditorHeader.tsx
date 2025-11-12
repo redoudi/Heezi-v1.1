@@ -7,13 +7,18 @@ import BackButton from "../../ui/back-button";
 function BoldButton() {
   const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
   const boldButtonRef = useRef<any>(null);
-  const { setContentRef } = useCursor();
+  const { setContentRef, setContentLayout } = useCursor();
 
   useEffect(() => {
     if (setContentRef) {
       setContentRef("boldButton", boldButtonRef);
     }
   }, [setContentRef, boldButtonRef]);
+
+  const handleLayout = (event: any) => {
+    const { x, y, width, height } = event.nativeEvent.layout;
+    setContentLayout("boldButton", { x, y, width, height });
+  };
 
   return (
     <TouchableOpacity
@@ -23,6 +28,7 @@ function BoldButton() {
       ]}
       onPress={() => boldSelectedBlock()}
       ref={boldButtonRef}
+      onLayout={handleLayout}
     >
       <Image
         source={require("@/assets/images/2ib5w9m2_expires_30_days.png")}
