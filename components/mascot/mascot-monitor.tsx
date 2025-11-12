@@ -2,10 +2,10 @@ import useLevelData from "@/hooks/use-level-data";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
-import { Image, View } from "react-native";
+import { View } from "react-native";
+import Cursor from "./cursor";
 import MascotBubble from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
-import Cursor from "./cursor";
 
 const TASK0 = 0;
 const STEP0 = 0;
@@ -34,6 +34,10 @@ export default function MascotMonitor({
   const checkCondition = checkConditionHook({ stepExpectedRef });
   const runPreActions = runPreActionsHook();
   const cursorRef = useRef<any>(null);
+  const [cursorPosition, setCursorPosition] = useState<{
+    x: number;
+    y: number;
+  }>({ x: 0, y: 0 });
 
   const runnerRef = useRef<{ step: number; task: number }>({
     step: -1,
@@ -126,7 +130,7 @@ export default function MascotMonitor({
         onClose={() => setModalText("")}
         modalText={modalText}
       />
-      <Cursor ref={cursorRef} />
+      <Cursor ref={cursorRef} setCursorPosition={setCursorPosition} />
     </View>
   );
 }
