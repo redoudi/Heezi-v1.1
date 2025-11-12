@@ -1,5 +1,6 @@
+import useCursor from "@/context/useCursor";
 import useTextEditorStore from "@/store/useTextEditorStore";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
 function TextBlock({ item }: { item: any }) {
@@ -12,15 +13,19 @@ function TextBlock({ item }: { item: any }) {
 
 function TextInputBlock({ item }: { item: any }) {
   const { setBlockText, setSelectedBlockId } = useTextEditorStore();
+  const { setContentsRef } = useCursor();
   const blockRef = useRef<TextInput>(null);
 
-  // useEffect(() => {
-  //   setElementRef(item.blockId, blockRef);
-  // }, []);
+  useEffect(() => {
+    if (setContentsRef && item.blockId) {
+      setContentsRef(item.blockId, blockRef);
+    }
+  }, [setContentsRef, item.blockId]);
 
   return (
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
+        nativeID={item.blockId}
         style={[styles.textInput, item.style]}
         value={item.text}
         onChangeText={(inputText) => setBlockText(item.blockId, inputText)}
