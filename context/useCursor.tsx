@@ -37,13 +37,9 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     y: 0,
   });
   const contentsRefs = useRef<{ [key: string]: any }>({});
-  const [contentsRefsState, setContentsRefsState] = useState<{
-    [key: string]: any;
-  }>({});
 
   const setContentsRef = (id: string, ref: any) => {
     contentsRefs.current[id] = ref;
-    setContentsRefsState({ ...contentsRefs.current });
     console.log("contentsRefs", contentsRefs.current);
   };
 
@@ -106,7 +102,7 @@ export function CursorProvider({ children }: { children: ReactNode }) {
         cursorPosition,
         moveCursor,
         setContentsRef,
-        contentsRefs: contentsRefsState,
+        contentsRefs,
         hideCursor,
         showCursor,
       }}
