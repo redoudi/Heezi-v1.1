@@ -1,9 +1,19 @@
+import useCursor from "@/context/useCursor";
 import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
+import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import BackButton from "../../ui/back-button";
 
 function BoldButton() {
   const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
+  const boldButtonRef = useRef<any>(null);
+  const { setContentsRef } = useCursor();
+
+  useEffect(() => {
+    if (setContentsRef) {
+      setContentsRef("boldButton", boldButtonRef);
+    }
+  }, [setContentsRef, boldButtonRef]);
 
   return (
     <TouchableOpacity
@@ -12,9 +22,11 @@ function BoldButton() {
         isSelectedBlockBold ? { borderColor: "black", borderWidth: 1 } : {},
       ]}
       onPress={() => boldSelectedBlock()}
+      ref={boldButtonRef}
     >
       <Image
-        source={require("@/assets/images/2ib5w9m2_expires_30_days.png")} resizeMode={"stretch"}
+        source={require("@/assets/images/2ib5w9m2_expires_30_days.png")}
+        resizeMode={"stretch"}
         style={[styles.image13]}
       />
     </TouchableOpacity>
@@ -26,11 +38,13 @@ export default function TextEditorHeader() {
     <View style={styles.column2}>
       <View style={styles.row}>
         <Image
-          source={require("@/assets/images/f36dtxie_expires_30_days.png")} resizeMode={"stretch"}
+          source={require("@/assets/images/f36dtxie_expires_30_days.png")}
+          resizeMode={"stretch"}
           style={styles.image}
         />
         <Image
-          source={require("@/assets/images/x1cberci_expires_30_days.png")} resizeMode={"stretch"}
+          source={require("@/assets/images/x1cberci_expires_30_days.png")}
+          resizeMode={"stretch"}
           style={styles.image2}
         />
         <Image
@@ -106,7 +120,8 @@ export default function TextEditorHeader() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={require("@/assets/images/ufeyprsl_expires_30_days.png")} resizeMode={"stretch"}
+              source={require("@/assets/images/ufeyprsl_expires_30_days.png")}
+              resizeMode={"stretch"}
               style={styles.image6}
             />
           </TouchableOpacity>
@@ -115,7 +130,8 @@ export default function TextEditorHeader() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={require("@/assets/images/v82hp4b9_expires_30_days.png")} resizeMode={"stretch"}
+              source={require("@/assets/images/v82hp4b9_expires_30_days.png")}
+              resizeMode={"stretch"}
               style={styles.image7}
             />
           </TouchableOpacity>
@@ -129,12 +145,14 @@ export default function TextEditorHeader() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={require("@/assets/images/brtm7hpr_expires_30_days.png")} resizeMode={"stretch"}
+                source={require("@/assets/images/brtm7hpr_expires_30_days.png")}
+                resizeMode={"stretch"}
                 style={styles.image8}
               />
               <Text style={styles.text2}>{"Coller"}</Text>
               <Image
-                source={require("@/assets/images/oluhu4b3_expires_30_days.png")} resizeMode={"stretch"}
+                source={require("@/assets/images/oluhu4b3_expires_30_days.png")}
+                resizeMode={"stretch"}
                 style={styles.image9}
               />
             </TouchableOpacity>
@@ -144,7 +162,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/r2e2a79p_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/r2e2a79p_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image10}
                 />
               </TouchableOpacity>
@@ -153,7 +172,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/183ucgvf_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/183ucgvf_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image11}
                 />
               </TouchableOpacity>
@@ -170,7 +190,8 @@ export default function TextEditorHeader() {
               >
                 <Text style={styles.text4}>{"Police"}</Text>
                 <Image
-                  source={require("@/assets/images/uig4w09q_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/uig4w09q_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image12}
                 />
               </TouchableOpacity>
@@ -180,7 +201,8 @@ export default function TextEditorHeader() {
               >
                 <Text style={styles.text5}>{"12"}</Text>
                 <Image
-                  source={require("@/assets/images/7bw6obmu_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/7bw6obmu_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image12}
                 />
               </TouchableOpacity>
@@ -190,7 +212,8 @@ export default function TextEditorHeader() {
               >
                 <Text style={styles.text6}>{"A a"}</Text>
                 <Image
-                  source={require("@/assets/images/rjnwoeo6_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/rjnwoeo6_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image12}
                 />
               </TouchableOpacity>
@@ -202,7 +225,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/djgcsw86_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/djgcsw86_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image14}
                 />
               </TouchableOpacity>
@@ -211,7 +235,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/yn5b2k86_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/yn5b2k86_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image15}
                 />
               </TouchableOpacity>
@@ -220,7 +245,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/k9vx5ycz_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/k9vx5ycz_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image16}
                 />
               </TouchableOpacity>
@@ -229,7 +255,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/n12ta229_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/n12ta229_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image17}
                 />
               </TouchableOpacity>
@@ -238,7 +265,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/1awwjlw7_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/1awwjlw7_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image17}
                 />
               </TouchableOpacity>
@@ -247,7 +275,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/lrwrll0x_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/lrwrll0x_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image18}
                 />
               </TouchableOpacity>
@@ -256,7 +285,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/zvx6kr6l_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/zvx6kr6l_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image6}
                 />
               </TouchableOpacity>
@@ -265,7 +295,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/zcd58amp_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/zcd58amp_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image19}
                 />
               </TouchableOpacity>
@@ -296,7 +327,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/xhij6qe3_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/xhij6qe3_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image22}
                 />
               </TouchableOpacity>
@@ -305,7 +337,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/m8i25506_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/m8i25506_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image22}
                 />
               </TouchableOpacity>
@@ -314,7 +347,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/qsucqhf4_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/qsucqhf4_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image23}
                 />
               </TouchableOpacity>
@@ -323,7 +357,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/f5tsg9ts_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/f5tsg9ts_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image24}
                 />
               </TouchableOpacity>
@@ -334,7 +369,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/ce74949l_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/ce74949l_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image25}
                 />
               </TouchableOpacity>
@@ -343,7 +379,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/mk84bjzk_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/mk84bjzk_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image26}
                 />
               </TouchableOpacity>
@@ -352,7 +389,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/wnui27r7_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/wnui27r7_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image25}
                 />
               </TouchableOpacity>
@@ -361,7 +399,8 @@ export default function TextEditorHeader() {
                 onPress={() => alert("Pressed!")}
               >
                 <Image
-                  source={require("@/assets/images/x1fh47wq_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/x1fh47wq_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image22}
                 />
               </TouchableOpacity>
@@ -395,7 +434,8 @@ export default function TextEditorHeader() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={require("@/assets/images/n981r9bx_expires_30_days.png")} resizeMode={"stretch"}
+                source={require("@/assets/images/n981r9bx_expires_30_days.png")}
+                resizeMode={"stretch"}
                 style={styles.image28}
               />
             </TouchableOpacity>
@@ -408,12 +448,14 @@ export default function TextEditorHeader() {
             onPress={() => alert("Pressed!")}
           >
             <Image
-              source={require("@/assets/images/dpfumd98_expires_30_days.png")} resizeMode={"stretch"}
+              source={require("@/assets/images/dpfumd98_expires_30_days.png")}
+              resizeMode={"stretch"}
               style={styles.image29}
             />
             <Text style={styles.text10}>{"édition"}</Text>
             <Image
-              source={require("@/assets/images/8h776a6o_expires_30_days.png")} resizeMode={"stretch"}
+              source={require("@/assets/images/8h776a6o_expires_30_days.png")}
+              resizeMode={"stretch"}
               style={styles.image9}
             />
           </TouchableOpacity>
