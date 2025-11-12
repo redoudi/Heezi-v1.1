@@ -39,9 +39,17 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     console.log("contentsRefs", contentsRefs.current);
   };
 
-  const moveCursor = (x: number, y: number) => {
+  const moveCursor_ = (x: number, y: number) => {
     console.log("moveCursor", x, y);
     setCursorPosition({ x, y });
+  };
+
+  const moveCursor = (elementRef: string) => {
+    const element = contentsRefs.current[elementRef];
+    if (element) {
+      const { x, y } = element.getBoundingClientRect();
+      setCursorPosition({ x, y });
+    }
   };
 
   return (
