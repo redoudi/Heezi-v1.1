@@ -1,6 +1,7 @@
 import MascotMonitor from "@/components/mascot/mascot-monitor";
 import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/SpreadsheetScreen";
 import TextEditorScreen from "@/components/practice-tools/text-editor/textEditorScreen";
+import { CursorProvider } from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import useCheckSpreadsheetCondition from "@/hooks/useCheckSpreadsheetCondition";
 import useCheckTextEditorCondition from "@/hooks/useCheckTextEditorCondition";
@@ -70,7 +71,13 @@ export default function PracticeScreen() {
   const { levelType } = useLevelData();
   return (
     <View style={styles.container}>
-      {levelType === "quiz" ? <QuizScreen /> : <PracticeToolScreen />}
+      {levelType === "quiz" ? (
+        <QuizScreen />
+      ) : (
+        <CursorProvider>
+          <PracticeToolScreen />
+        </CursorProvider>
+      )}
     </View>
   );
 }

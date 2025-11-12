@@ -1,41 +1,37 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useRef, useState } from "react";
 
 // Define your context state type here
+// Example: cursor position
 type CursorState = {
-  // Add your state properties here
-  // Example: position: { x: number; y: number };
+  x: number;
+  y: number;
 };
 
 // Define your context value type
 type CursorContextType = {
-  // Add your state and setter functions here
-  // Example:
-  // cursor: CursorState;
-  // setCursor: (cursor: CursorState) => void;
+  cursorRef: React.RefObject<any>;
+  cursorPosition: CursorState;
+  setCursorPosition: (cursorPosition: CursorState) => void;
 };
 
 // Create the context with default values
 const CursorContext = createContext<CursorContextType>({
-  // Add default values matching CursorContextType
-  // Example:
-  // cursor: { x: 0, y: 0 },
-  // setCursor: () => {},
+  cursorRef: { current: null },
+  cursorPosition: { x: 0, y: 0 },
+  setCursorPosition: () => {},
 });
 
 // Provider component
 export function CursorProvider({ children }: { children: ReactNode }) {
-  // Add your state hooks here
-  // Example:
-  // const [cursor, setCursor] = useState<CursorState>({ x: 0, y: 0 });
+  const cursorRef = useRef<any>(null);
+  const [cursorPosition, setCursorPosition] = useState<CursorState>({
+    x: 0,
+    y: 0,
+  });
 
   return (
     <CursorContext.Provider
-      value={
-        {
-          // Add your context values here
-          // Example: cursor, setCursor
-        }
-      }
+      value={{ cursorRef, cursorPosition, setCursorPosition }}
     >
       {children}
     </CursorContext.Provider>

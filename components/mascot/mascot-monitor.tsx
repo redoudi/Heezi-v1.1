@@ -33,11 +33,6 @@ export default function MascotMonitor({
   const stepExpectedRef = useRef<any>(null);
   const checkCondition = checkConditionHook({ stepExpectedRef });
   const runPreActions = runPreActionsHook();
-  const cursorRef = useRef<any>(null);
-  const [cursorPosition, setCursorPosition] = useState<{
-    x: number;
-    y: number;
-  }>({ x: 0, y: 0 });
 
   const runnerRef = useRef<{ step: number; task: number }>({
     step: -1,
@@ -130,7 +125,7 @@ export default function MascotMonitor({
         onClose={() => setModalText("")}
         modalText={modalText}
       />
-      <Cursor ref={cursorRef} setCursorPosition={setCursorPosition} />
+      <Cursor />
     </View>
   );
 }

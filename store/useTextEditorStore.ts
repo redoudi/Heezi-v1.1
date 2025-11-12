@@ -65,13 +65,12 @@ interface TextEditorStore {
   setSelectedBlockId: (blockId: string) => void;
   setBlockStyle: (blockId: string, style: { [key: string]: any }) => void;
   getBlockById: (blockId: string | null) => ContentBlock | undefined;
-  setElementRef: (blockId: string, ref: any) => void;
 }
 
 const useTextEditorStore = create<TextEditorStore>((set, get) => ({
   contentBlocks: [],
   selectedBlockId: null,
-  elementsRefs: {},
+
   setLevelData: (levelData: any) => {
     const contentBlocks = JSON.parse(
       JSON.stringify(levelData?.contentBlocks ?? [])
@@ -104,10 +103,5 @@ const useTextEditorStore = create<TextEditorStore>((set, get) => ({
   },
   getBlockById: (blockId: string | null) =>
     findBlockByIdRecursive(get().contentBlocks, blockId),
-  setElementRef: (blockId: string, ref) => {
-    set((state) => ({
-      elementsRefs: { ...state.elementsRefs, [blockId]: ref },
-    }));
-  },
 }));
 export default useTextEditorStore;
