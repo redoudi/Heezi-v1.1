@@ -56,16 +56,22 @@ export function CursorProvider({ children }: { children: ReactNode }) {
       // Check if it's a DOM element with getBoundingClientRect
       if (typeof element.getBoundingClientRect === "function") {
         const rect = element.getBoundingClientRect();
+        // Calculate center of the element
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        // Cursor size is 20x20, so offset by half to center it
+        const cursorSize = 20;
+        const cursorOffset = cursorSize / 2;
         setCursorPosition({
-          x: rect.left + offsetX,
-          y: rect.top + offsetY,
+          x: centerX - cursorOffset + offsetX,
+          y: centerY - cursorOffset + offsetY,
         });
         console.log(
           "moveCursor to element",
           elementId,
-          "at",
-          rect.left + offsetX,
-          rect.top + offsetY
+          "at center",
+          centerX - cursorOffset + offsetX,
+          centerY - cursorOffset + offsetY
         );
       } else {
         console.warn("Element does not have getBoundingClientRect", element);
