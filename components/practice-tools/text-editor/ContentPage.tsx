@@ -1,4 +1,5 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
+import { useEffect, useRef } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
 function TextBlock({ item }: { item: any }) {
@@ -10,7 +11,17 @@ function TextBlock({ item }: { item: any }) {
 }
 
 function TextInputBlock({ item }: { item: any }) {
-  const { setBlockText, setSelectedBlockId } = useTextEditorStore();
+  const { setBlockText, setSelectedBlockId, setElementRef, elementsRefs } =
+    useTextEditorStore();
+  const blockRef = useRef<TextInput>(null);
+
+  useEffect(() => {
+    console.log(elementsRefs);
+  }, [elementsRefs]);
+
+  useEffect(() => {
+    setElementRef(item.blockId, blockRef);
+  }, []);
 
   return (
     <View style={[styles.textInputContainer, item.blockStyle]}>
@@ -21,6 +32,7 @@ function TextInputBlock({ item }: { item: any }) {
         onFocus={() => setSelectedBlockId(item.blockId)}
         placeholder={item.placeholder}
         placeholderTextColor="rgb(111, 111, 111)"
+        ref={blockRef}
       />
     </View>
   );

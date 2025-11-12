@@ -5,6 +5,7 @@ export default function useRunTextEditorPreActions() {
     setBlockText,
     setSelectedBlockId: setSelectedBlockIndex,
     setBlockStyle,
+    elementsRefs,
   } = useTextEditorStore();
   const runPreAction = (preAction: any) => {
     switch (preAction.type) {
@@ -16,6 +17,9 @@ export default function useRunTextEditorPreActions() {
         break;
       case "style":
         setBlockStyle(Number(preAction.blockIndex), preAction.value);
+        break;
+      case "cursor":
+        const elementRef = elementsRefs[preAction.elementRef];
         break;
     }
   };
