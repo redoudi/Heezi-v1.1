@@ -48,6 +48,7 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     offsetX: number = 0,
     offsetY: number = 0
   ) => {
+    showCursor();
     const ref = contentsRefs.current[elementId];
     if (ref && ref.current) {
       // In React Native Web, ref.current should be the DOM element
@@ -84,6 +85,14 @@ export function CursorProvider({ children }: { children: ReactNode }) {
         contentsRefs.current
       );
     }
+  };
+
+  const hideCursor = () => {
+    cursorRef.current.style.display = "none";
+  };
+
+  const showCursor = () => {
+    cursorRef.current.style.display = "block";
   };
 
   return (
