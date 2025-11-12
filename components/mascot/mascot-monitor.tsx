@@ -38,7 +38,7 @@ export default function MascotMonitor({
 
   const runnerRef = useRef<{ step: number; task: number }>({
     step: -1,
-    task: -1,
+    task: -2,
   });
 
   const setStepIndex = (step: number) => {
@@ -61,7 +61,7 @@ export default function MascotMonitor({
       runnerRef.current.step >
       levelTasks?.at(runnerRef.current.task)?.steps?.length - 1
     ) {
-      runnerRef.current.step = 0;
+      runnerRef.current.step = -1;
       router.setParams({ step: runnerRef.current.step });
       setTaskIndex(runnerRef.current.task + 1);
       handleTaskIndexChange();
@@ -88,8 +88,10 @@ export default function MascotMonitor({
     ) {
       router.push(`/mission/${practiceTool}/${id}/result`);
     } else {
-      const introText = levelTasks?.at(runnerRef.current.task)?.intro;
-      if (introText && introText.trim() !== "") setModalText(introText);
+      if (runnerRef.current.step === -1) {
+        const introText = levelTasks?.at(runnerRef.current.task)?.intro;
+        if (introText && introText.trim() !== "") setModalText(introText);
+      }
     }
   };
 
