@@ -36,6 +36,9 @@
                         "text1": "2.b Exemple de saisie",
                         "text2": "Par exemple, je vais ajouter une phrase à la fin du texte déjà présent"
                     },
+                    "cursor": {
+                        "elementId": ""
+                    },
                     "preActions": [
                         {
                             "type": "blockText",

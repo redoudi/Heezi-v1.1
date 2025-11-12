@@ -69,5 +69,6 @@ const styles = StyleSheet.create({
     height: 20,
     zIndex: 10000,
     pointerEvents: "none",
+    visibility: "hidden",
   },
 });

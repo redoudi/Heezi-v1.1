@@ -92,11 +92,11 @@ export function CursorProvider({ children }: { children: ReactNode }) {
   };
 
   const hideCursor = () => {
-    cursorRef.current.style.display = "none";
+    cursorRef.current.style.visibility = "hidden";
   };
 
   const showCursor = () => {
-    cursorRef.current.style.display = "block";
+    cursorRef.current.style.visibility = "visible";
   };
 
   return (
