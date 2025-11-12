@@ -7,13 +7,13 @@ import BackButton from "../../ui/back-button";
 function BoldButton() {
   const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
   const boldButtonRef = useRef<any>(null);
-  const { setContentsRef } = useCursor();
+  const { setContentRef } = useCursor();
 
   useEffect(() => {
-    if (setContentsRef) {
-      setContentsRef("boldButton", boldButtonRef);
+    if (setContentRef) {
+      setContentRef("boldButton", boldButtonRef);
     }
-  }, [setContentsRef, boldButtonRef]);
+  }, [setContentRef, boldButtonRef]);
 
   return (
     <TouchableOpacity

@@ -12,7 +12,7 @@ type CursorContextType = {
   cursorRef: React.RefObject<any>;
   cursorPosition: CursorState;
   moveCursor: (elementId: string, offsetX?: number, offsetY?: number) => void;
-  setContentsRef: (id: string, ref: any) => void;
+  setContentRef: (id: string, ref: any) => void;
   contentsRefs: { [key: string]: any };
   hideCursor: () => void;
   showCursor: () => void;
@@ -23,7 +23,7 @@ const CursorContext = createContext<CursorContextType>({
   cursorRef: { current: null },
   cursorPosition: { x: 0, y: 0 },
   moveCursor: () => {},
-  setContentsRef: () => {},
+  setContentRef: () => {},
   contentsRefs: {},
   hideCursor: () => {},
   showCursor: () => {},
@@ -38,7 +38,7 @@ export function CursorProvider({ children }: { children: ReactNode }) {
   });
   const contentsRefs = useRef<{ [key: string]: any }>({});
 
-  const setContentsRef = (id: string, ref: any) => {
+  const setContentRef = (id: string, ref: any) => {
     contentsRefs.current[id] = ref;
     console.log("contentsRefs", contentsRefs.current);
   };
@@ -101,7 +101,7 @@ export function CursorProvider({ children }: { children: ReactNode }) {
         cursorRef,
         cursorPosition,
         moveCursor,
-        setContentsRef,
+        setContentRef,
         contentsRefs,
         hideCursor,
         showCursor,

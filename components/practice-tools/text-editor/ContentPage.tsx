@@ -13,14 +13,14 @@ function TextBlock({ item }: { item: any }) {
 
 function TextInputBlock({ item }: { item: any }) {
   const { setBlockText, setSelectedBlockId } = useTextEditorStore();
-  const { setContentsRef } = useCursor();
+  const { setContentRef } = useCursor();
   const blockRef = useRef<TextInput>(null);
 
   useEffect(() => {
-    if (setContentsRef && item.blockId) {
-      setContentsRef(item.blockId, blockRef);
+    if (setContentRef && item.blockId) {
+      setContentRef(item.blockId, blockRef);
     }
-  }, [setContentsRef, item.blockId]);
+  }, [setContentRef, item.blockId]);
 
   return (
     <View style={[styles.textInputContainer, item.blockStyle]}>
