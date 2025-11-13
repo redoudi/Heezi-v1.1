@@ -1,11 +1,11 @@
-- [ ] ajouter un curseur
+- [ ] ajouter un curseur (partout)
 - [x] bubble : verbe d'action vs impératif
 - [x] appuyer sur entrer pour passer à la bulle suivante
 - [x] rester sur la section après fin de niveau
 - [x] mettre objet et corps en milieu de page
 - [x] régler le bug du total qui n'est pas écrit automatiquement
+- [x] ajouter une bulle "tu peux télécharger ton doc"
 
-- - ajouter une bulle "tu peux télécharger ton doc"
 - - inverser couleurs quand sélectionné dans le choix du practicetool
 - - texteditor snapshot :
 - - le fichier xls exporté désactive le quadrillage par défaut ??
