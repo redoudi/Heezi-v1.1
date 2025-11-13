@@ -1,3 +1,4 @@
+import usePracticeTool from "@/context/usePracticeTool";
 import useLevelData from "@/hooks/use-level-data";
 import {
   Image,
@@ -43,13 +44,14 @@ const Mascot = () => {
 export const MascotDialog = ({
   bubbleText,
   downArrowNextStep,
+  style,
 }: {
   bubbleText: string;
   downArrowNextStep: React.ReactNode;
 }) => {
   const DownArrowNextStep = downArrowNextStep;
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, style]}>
       <View style={styles.mainRow}>
         <View style={styles.textBoxContainer}>
           <View style={styles.textBox}>
@@ -74,7 +76,7 @@ export default function MascotBubble({
   nextStep: () => void | null;
 }) {
   const { levelType } = useLevelData();
-
+  const { practiceTool } = usePracticeTool();
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
     <DownArrow nextStep={nextStep} />
   );
@@ -82,6 +84,7 @@ export default function MascotBubble({
     <MascotDialog
       bubbleText={bubbleText}
       downArrowNextStep={DownArrowNextStep}
+      style={practiceTool === "spreadsheet" ? { bottom: 300 } : {}}
     />
   );
 }

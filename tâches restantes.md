@@ -11,11 +11,10 @@
 - [ ] icone Quiz différente de cours
 - [ ] mettre textinput direct, sans besoin de cliquer
 - [x] "saisis le nom de l'association"
-
-- - mettre mairie de Kourou en destinataire
-- - code postal : "97310 Kourou"
-- - remonter la mascotte dans l'exo spreadsheet
-- Version mobile
+- [ ] mettre mairie de Kourou en destinataire
+- [x] code postal : "97310 Kourou"
+- [ ] remonter la mascotte dans l'exo spreadsheet
+- [ ] Version mobile
 
 \*\*
 
