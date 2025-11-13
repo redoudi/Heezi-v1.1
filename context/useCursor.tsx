@@ -51,7 +51,8 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     if (ref && ref.current) {
       const element = ref.current;
       const rect = element.getBoundingClientRect();
-      return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+      return { x: rect.left, y: rect.top };
+      // return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
     }
     return { x: 0, y: 0 };
   };
@@ -70,11 +71,9 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     cursorRef.current.style.visibility = "visible";
   };
 
-  const screenHeight = Dimensions.get("window").height;
-
   // Initialize at bottom left of screen
   const animatedX = useSharedValue(0);
-  const animatedY = useSharedValue(screenHeight - 20);
+  const animatedY = useSharedValue(Dimensions.get("window").height - 20);
 
   const animateToPosition = (x: number, y: number) => {
     animatedX.value = withTiming(x, {
