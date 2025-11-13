@@ -28,7 +28,7 @@ export default function ExportScreen() {
             <ExportFormatButtons />
             <TouchableOpacity
               style={styles.buttonRow5}
-              onPress={() => router.replace("/(tabs)")} // go to home page
+              onPress={() => router.replace("/(tabs)/play/section-screen")} // go to home page
             >
               <Text style={styles.text2}>{"Continuer"}</Text>
               <Image

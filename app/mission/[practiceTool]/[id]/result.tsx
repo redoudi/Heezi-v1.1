@@ -26,7 +26,7 @@ export default function ResultScreen() {
     if (levelType === "practice") {
       router.push(`/mission/${practiceTool}/${id}/export`);
     } else {
-      router.replace("/(tabs)");
+      router.replace("/(tabs)/play/section-screen");
     }
   };
 
