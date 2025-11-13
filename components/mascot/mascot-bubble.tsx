@@ -40,7 +40,14 @@ const Mascot = () => {
   );
 };
 
-export const MascotDialog = ({ bubbleText }: { bubbleText: string }) => {
+export const MascotDialog = ({
+  bubbleText,
+  downArrowNextStep,
+}: {
+  bubbleText: string;
+  downArrowNextStep: React.ReactNode;
+}) => {
+  const DownArrowNextStep = downArrowNextStep;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainRow}>
@@ -48,6 +55,7 @@ export const MascotDialog = ({ bubbleText }: { bubbleText: string }) => {
           <View style={styles.textBox}>
             <View style={styles.textContainer}>
               <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
+              {DownArrowNextStep}
             </View>
           </View>
           <CornerTriangle />
@@ -66,23 +74,15 @@ export default function MascotBubble({
   nextStep: () => void | null;
 }) {
   const { levelType } = useLevelData();
+
+  const DownArrowNextStep = nextStep && levelType === "lesson" && (
+    <DownArrow nextStep={nextStep} />
+  );
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.mainRow}>
-        <View style={styles.textBoxContainer}>
-          <View style={styles.textBox}>
-            <View style={styles.textContainer}>
-              <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
-              {nextStep && levelType === "lesson" && (
-                <DownArrow nextStep={nextStep} />
-              )}
-            </View>
-          </View>
-          <CornerTriangle />
-        </View>
-        <Mascot />
-      </View>
-    </SafeAreaView>
+    <MascotDialog
+      bubbleText={bubbleText}
+      downArrowNextStep={DownArrowNextStep}
+    />
   );
 }
 const styles = StyleSheet.create({
