@@ -59,7 +59,7 @@ export default function MascotMonitor({
       runnerRef.current.step >
       levelTasks?.at(runnerRef.current.task)?.steps?.length - 1
     ) {
-      runnerRef.current.step = -1;
+      runnerRef.current.step = -2;
       router.setParams({ step: runnerRef.current.step });
       setTaskIndex(runnerRef.current.task + 1);
       handleTaskIndexChange();
@@ -94,8 +94,6 @@ export default function MascotMonitor({
       runnerRef.current.task > levelTasks?.length - 1
     ) {
       router.push(`/mission/${practiceTool}/${id}/result`);
-    } else {
-      handleStepIndexChange();
     }
   };
 
@@ -112,7 +110,7 @@ export default function MascotMonitor({
     if (levelTasks) {
       runnerRef.current.step = stepParam ? parseInt(stepParam as string) : -1;
       runnerRef.current.task = taskParam ? parseInt(taskParam as string) : 0;
-      handleTaskIndexChange();
+      handleStepIndexChange();
     }
   }, [levelTasks]);
 
