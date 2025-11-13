@@ -110,7 +110,6 @@ export default function MascotMonitor({
   useEffect(() => {
     if (modalText === "") {
       nextStep();
-      handleStepIndexChange();
     }
   }, [modalText]);
 
