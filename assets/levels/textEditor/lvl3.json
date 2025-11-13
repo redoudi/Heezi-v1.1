@@ -19,11 +19,11 @@
                 {
                     "tip": {
                         "text1": "1.2 L'adresse",
-                        "text2": "Et maintenant, tu peux saisir l'adresse : \"123 Rue de la Paix 75000 Paris\""
+                        "text2": "Et maintenant, tu peux saisir l'adresse : \"123 Rue de la Paix 97310 Kourou\""
                     },
                     "expected": {
                         "type": "blockText",
-                        "text": "123 Rue de la Paix 75000 Paris",
+                        "text": "123 Rue de la Paix 97310 Kourou",
                         "blockId": "adresseInput"
                     }
                 },
