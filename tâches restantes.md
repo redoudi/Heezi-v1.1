@@ -3,8 +3,8 @@
 - [x] appuyer sur entrer pour passer à la bulle suivante
 - [x] rester sur la section après fin de niveau
 - [x] mettre objet et corps en milieu de page
+- [x] régler le bug du total qui n'est pas écrit automatiquement
 
-- - régler le bug du total qui n'est pas écrit automatiquement
 - - ajouter une bulle "tu peux télécharger ton doc"
 - - inverser couleurs quand sélectionné dans le choix du practicetool
 - - texteditor snapshot :

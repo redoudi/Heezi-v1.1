@@ -45,7 +45,7 @@ export default function MascotBubble({
   nextStep,
 }: {
   bubbleText: string;
-  nextStep: () => void;
+  nextStep: () => void | null;
 }) {
   const { levelType } = useLevelData();
   return (
@@ -55,7 +55,9 @@ export default function MascotBubble({
           <View style={styles.textBox}>
             <View style={styles.textContainer}>
               <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
-              {levelType === "lesson" && <DownArrow nextStep={nextStep} />}
+              {nextStep && levelType === "lesson" && (
+                <DownArrow nextStep={nextStep} />
+              )}
             </View>
           </View>
           <CornerTriangle />
