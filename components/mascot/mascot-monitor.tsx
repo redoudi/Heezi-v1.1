@@ -123,31 +123,23 @@ export default function MascotMonitor({
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
-      if (event.key === "Enter") {
+      if (runnerRef.current.step > -2 && event.key === "Enter") {
         nextStep();
       }
     };
 
     // Add event listener
-    if (
-      typeof window !== "undefined" &&
-      levelType === "lesson" &&
-      runnerRef.current.step > -1
-    ) {
+    if (typeof window !== "undefined" && levelType === "lesson") {
       window.addEventListener("keydown", handleKeyPress);
     }
 
     // Cleanup
     return () => {
-      if (
-        typeof window !== "undefined" &&
-        levelType === "lesson" &&
-        runnerRef.current.step > -1
-      ) {
+      if (typeof window !== "undefined" && levelType === "lesson") {
         window.removeEventListener("keydown", handleKeyPress);
       }
     };
-  }, []);
+  }, [levelType]);
 
   return (
     <View style={styles.container}>
