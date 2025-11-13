@@ -1,5 +1,5 @@
 import useCursor from "@/context/useCursor";
-import useSpreadsheetRibbon from "@/hooks/useSpreadsheetRibbon";
+import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import { useEffect, useRef } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "../spreadsheet-styles";

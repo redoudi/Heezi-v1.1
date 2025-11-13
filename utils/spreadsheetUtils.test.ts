@@ -1,10 +1,10 @@
-import { parseCellsExpressions } from "./spreadsheetUtils";
+import { getCellUnderneath, parseCellsExpressions } from "./spreadsheetUtils";
 
 test("parse one cell key correctly", () => {
   expect(parseCellsExpressions(["A1"])).toEqual(["A1"]);
 });
 
-test.only("parses cells expressions correctly", () => {
+test("parses cells expressions correctly", () => {
   expect(parseCellsExpressions(["A1:A15"])).toEqual([
     "A1",
     "A2",
@@ -22,4 +22,8 @@ test.only("parses cells expressions correctly", () => {
     "A14",
     "A15",
   ]);
+});
+
+test.only("get next cell correctly", () => {
+  expect(getCellUnderneath("A1")).toEqual("A2");
 });

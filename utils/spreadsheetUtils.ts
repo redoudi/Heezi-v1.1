@@ -57,3 +57,9 @@ export const parseCellsExpressions = (argCells: string[]): string[] => {
 
   return finalCells;
 };
+
+export const getCellUnderneath = (cell: string) => {
+  const column = cell.split("")[0];
+  const row = parseInt(cell.split("")[1]);
+  return `${column}${row + 1}`;
+};
