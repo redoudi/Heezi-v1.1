@@ -41,7 +41,7 @@ export default function TextEditorScreen() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   mainContent: {

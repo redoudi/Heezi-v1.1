@@ -72,7 +72,6 @@ export default ContentPage;
 const styles = StyleSheet.create({
   contentPage: {
     flex: 1,
-    alignSelf: "flex-start",
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingTop: 48,
