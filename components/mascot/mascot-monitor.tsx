@@ -26,7 +26,7 @@ export default function MascotMonitor({
   } = useLocalSearchParams();
   const { setCellsSelected } = useSpreadsheetStore();
   const { tasks: levelTasks } = useLevelData();
-  const { moveCursor, hideCursor, showCursor } = useCursor();
+  const { moveCursor, hideCursor } = useCursor();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
