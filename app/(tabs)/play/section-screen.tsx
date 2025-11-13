@@ -49,7 +49,13 @@ export default function SectionScreen({
         <TouchableOpacity
           onPress={() => router.replace(`/mission/${practiceTool}/1`)}
         >
-          <Chouette style={styles.image3} />
+          <View style={styles.sectionRow}>
+            <Chouette style={styles.chouette} />
+            <Image
+              source={require("@/assets/images/lesson.png")}
+              resizeMode={"contain"}
+            />
+          </View>
         </TouchableOpacity>
         <View style={styles.view3}>
           <TouchableOpacity
@@ -62,7 +68,13 @@ export default function SectionScreen({
         <TouchableOpacity
           onPress={() => router.replace(`/mission/${practiceTool}/2`)}
         >
-          <Chouette style={styles.image3} />
+          <View style={styles.sectionRow}>
+            <Chouette style={styles.chouette} />
+            <Image
+              source={require("@/assets/images/quiz.png")}
+              resizeMode={"contain"}
+            />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button3}
@@ -73,7 +85,13 @@ export default function SectionScreen({
         <TouchableOpacity
           onPress={() => router.replace(`/mission/${practiceTool}/3`)}
         >
-          <Renard style={styles.image3} />
+          <View style={styles.sectionRow}>
+            <Renard style={styles.chouette} />
+            <Image
+              source={require("@/assets/images/practice.png")}
+              resizeMode={"contain"}
+            />
+          </View>
         </TouchableOpacity>
       </View>
     </View>
@@ -156,9 +174,10 @@ const styles = StyleSheet.create({
     height: 385,
     marginBottom: 16,
   },
-  image3: {
+  chouette: {
     height: 385,
     marginBottom: 15,
+    borderWidth: 1,
   },
   image4: {
     width: 70,
@@ -245,5 +264,9 @@ const styles = StyleSheet.create({
   },
   view3: {
     marginBottom: 16,
+  },
+  sectionRow: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 });

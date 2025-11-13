@@ -9,9 +9,9 @@
 - [ ] texteditor snapshot : le fichier xls exporté désactive le quadrillage par défaut ??
 - [x] ajouter entrer dans tableur pour passer à la ligne suivante
 - [ ] icone Quiz différente de cours
+- [ ] mettre textinput direct, sans besoin de cliquer
+- [x] "saisis le nom de l'association"
 
-- - mettre textinput direct, sans besoin de cliquer
-- - "saisis le nom de l'association"
 - - mettre mairie de Kourou en destinataire
 - - code postal : "97310 Kourou"
 - - remonter la mascotte dans l'exo spreadsheet
