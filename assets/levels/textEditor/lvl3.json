@@ -83,6 +83,15 @@
             "text": ""
         },
         {
+            "type": "text",
+            "text": "Mairie de Kourou",
+            "blockStyle": {
+                "marginTop": 24,
+                "marginLeft": "auto"
+            },
+            "blockId": "body"
+        },
+        {
             "type": "view",
             "style": {
                 "flexDirection": "row",
