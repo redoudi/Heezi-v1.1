@@ -1,7 +1,7 @@
-\*\*\* - ajouter un curseur
+- [ ] ajouter un curseur
+- [x] bubble : verbe d'action vs impératif
+- [x] appuyer sur entrer pour passer à la bulle suivante
 
-- - bubble : verbe d'action vs impératif
-- - appuyer sur entrer pour passer à la bulle suivante
 - - rester sur la section après fin de niveau
 - - mettre objet et corps en milieu de page
 - - régler le bug du total qui n'est pas écrit automatiquement
