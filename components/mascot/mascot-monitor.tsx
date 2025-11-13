@@ -25,7 +25,7 @@ export default function MascotMonitor({
     step: stepParam,
   } = useLocalSearchParams();
   const { setCellsSelected } = useSpreadsheetStore();
-  const { tasks: levelTasks } = useLevelData();
+  const { tasks: levelTasks, levelType } = useLevelData();
   const { moveCursor, hideCursor } = useCursor();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
@@ -120,6 +120,34 @@ export default function MascotMonitor({
       handleTaskIndexChange();
     }
   }, [levelTasks]);
+
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === "Enter") {
+        nextStep();
+      }
+    };
+
+    // Add event listener
+    if (
+      typeof window !== "undefined" &&
+      levelType === "lesson" &&
+      runnerRef.current.step > -1
+    ) {
+      window.addEventListener("keydown", handleKeyPress);
+    }
+
+    // Cleanup
+    return () => {
+      if (
+        typeof window !== "undefined" &&
+        levelType === "lesson" &&
+        runnerRef.current.step > -1
+      ) {
+        window.removeEventListener("keydown", handleKeyPress);
+      }
+    };
+  }, []);
 
   return (
     <View style={styles.container}>
