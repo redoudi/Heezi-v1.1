@@ -7,10 +7,10 @@
 - [x] ajouter une bulle "tu peux télécharger ton doc"
 - [x] inverser couleurs quand sélectionné dans le choix du practicetool
 - [ ] texteditor snapshot : le fichier xls exporté désactive le quadrillage par défaut ??
-- [ ] ajouter entrer dans tableur pour passer à la ligne suivante
+- [x] ajouter entrer dans tableur pour passer à la ligne suivante
+- [ ] icone Quiz différente de cours
 
-- - icone Quiz différente de cours
-- - mettre textinput direct, sans besoin de
+- - mettre textinput direct, sans besoin de cliquer
 - - "saisis le nom de l'association"
 - - mettre mairie de Kourou en destinataire
 - - code postal : "97310 Kourou"
