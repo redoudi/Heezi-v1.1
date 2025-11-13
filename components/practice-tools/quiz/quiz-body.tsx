@@ -27,7 +27,8 @@ const TopBar = () => {
       <View style={styles.view}>
         <TouchableOpacity onPress={() => router.back()}>
           <Image
-            source={require("@/assets/images/8jxkmv5m_expires_30_days.png")} resizeMode={"stretch"}
+            source={require("@/assets/images/8jxkmv5m_expires_30_days.png")}
+            resizeMode={"stretch"}
             style={styles.image}
           />
         </TouchableOpacity>
@@ -48,7 +49,8 @@ const QuestionBox = ({ question }: { question: string }) => {
 const MascotInquisitive = () => {
   return (
     <Image
-      source={require("@/assets/images/d7skkhjc_expires_30_days.png")} resizeMode={"stretch"}
+      source={require("@/assets/images/d7skkhjc_expires_30_days.png")}
+      resizeMode={"stretch"}
       style={styles.mascotImage}
     />
   );
@@ -82,7 +84,8 @@ const VerifyButton = ({ verifyAnswer }: { verifyAnswer: () => void }) => {
     <TouchableOpacity style={styles.buttonRow} onPress={verifyAnswer}>
       <Text style={styles.text3}>{"Vérifier"}</Text>
       <Image
-        source={require("@/assets/images/tsy13i8h_expires_30_days.png")} resizeMode={"stretch"}
+        source={require("@/assets/images/tsy13i8h_expires_30_days.png")}
+        resizeMode={"stretch"}
         style={styles.image3}
       />
     </TouchableOpacity>
@@ -163,7 +166,7 @@ export default function QuizBody({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   box: {

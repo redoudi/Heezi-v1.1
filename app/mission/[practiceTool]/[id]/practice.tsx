@@ -69,16 +69,12 @@ function PracticeToolScreen() {
 
 export default function PracticeScreen() {
   const { levelType } = useLevelData();
-  return (
-    <View style={styles.container}>
-      {levelType === "quiz" ? (
-        <QuizScreen />
-      ) : (
-        <CursorProvider>
-          <PracticeToolScreen />
-        </CursorProvider>
-      )}
-    </View>
+  return levelType === "quiz" ? (
+    <QuizScreen />
+  ) : (
+    <CursorProvider>
+      <PracticeToolScreen />
+    </CursorProvider>
   );
 }
 const styles = StyleSheet.create({
