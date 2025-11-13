@@ -25,7 +25,7 @@
                 {
                     "tip": {
                         "text1": "2.1 La saisie",
-                        "text2": "Pour saisir du texte, on clique à l'endroit du contenu où on veut ajouter le texte."
+                        "text2": "Pour saisir du texte, je clique à l'endroit du contenu où je veux ajouter le texte."
                     },
                     "cursor": {
                         "elementId": "exempleInput"
@@ -55,7 +55,7 @@
                 {
                     "tip": {
                         "text1": "3.a La sélection",
-                        "text2": "On peut aussi sélectionner du texte déjà présent pour le modifier. Pour sélectionner du texte, on clique sur le début et on fait glisser jusqu'à la fin du texte que l'on veut modifier."
+                        "text2": "Je peux aussi sélectionner du texte déjà présent pour le modifier. Pour sélectionner du texte, je clique sur le début et je fais glisser jusqu'à la fin du texte que je veux modifier."
                     },
                     "preActions": [
                         {
@@ -67,7 +67,7 @@
                 {
                     "tip": {
                         "text1": "3.b La mise en forme",
-                        "text2": "On peut par exemple le mettre en gras en cliquant sur le bouton gras."
+                        "text2": "Je peux par exemple le mettre en gras en cliquant sur le bouton gras."
                     },
                     "cursor": {
                         "elementId": "boldButton"
@@ -82,7 +82,7 @@
                         }
                     ]
                 }
-            ]
+            ]+
         }
     ],
     "contentBlocks": [
