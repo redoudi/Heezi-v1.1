@@ -40,9 +40,9 @@ export function CategoryList() {
               {
                 backgroundColor:
                   practiceTool === category.tool
-                    ? "#FFFFFF"
-                    : category.backgroundColor,
-                borderWidth: practiceTool === category.tool ? 1 : 0,
+                    ? category.backgroundColor
+                    : "#FFFFFF",
+                borderWidth: practiceTool === category.tool ? 0 : 1,
                 borderColor: category.backgroundColor,
               },
             ]}
