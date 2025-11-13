@@ -5,7 +5,7 @@ import Animated from "react-native-reanimated";
 const AnimatedImage = Animated.createAnimatedComponent(Image);
 
 export default function Cursor() {
-  const { cursorRef, cursorPosition, animatedStyle } = useCursor();
+  const { cursorRef, animatedStyle } = useCursor();
 
   return (
     <AnimatedImage
