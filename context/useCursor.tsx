@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useContext, useRef, useState } from "react";
+import { ReactNode, createContext, useContext, useRef } from "react";
+import { Dimensions } from "react-native";
+import {
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 
 // Define your context state type here
 // Example: cursor position
@@ -32,10 +38,7 @@ const CursorContext = createContext<CursorContextType>({
 // Provider component
 export function CursorProvider({ children }: { children: ReactNode }) {
   const cursorRef = useRef<any>(null);
-  const [cursorPosition, setCursorPosition] = useState<CursorState>({
-    x: 0,
-    y: 0,
-  });
+
   const contentsRefs = useRef<{ [key: string]: any }>({});
 
   const setContentRef = (id: string, ref: any) => {
@@ -43,28 +46,20 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     console.log("contentsRefs", contentsRefs.current);
   };
 
-  const moveCursor = (elementId: string) => {
-    showCursor();
+  const getElementCenter = (elementId: string) => {
     const ref = contentsRefs.current[elementId];
     if (ref && ref.current) {
-      // In React Native Web, ref.current should be the DOM element
       const element = ref.current;
-
-      // Check if it's a DOM element with getBoundingClientRect
-      if (typeof element.getBoundingClientRect === "function") {
-        const rect = element.getBoundingClientRect();
-        // Calculate center of the element
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        // Cursor size is 20x20, so offset by half to center it
-        const cursorSize = 20;
-        const cursorOffset = cursorSize / 2;
-        setCursorPosition({
-          x: centerX - cursorOffset,
-          y: centerY - cursorOffset,
-        });
-      }
+      const rect = element.getBoundingClientRect();
+      return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
     }
+    return { x: 0, y: 0 };
+  };
+
+  const moveCursor = (elementId: string) => {
+    showCursor();
+    const center = getElementCenter(elementId);
+    animateToPosition(center.x, center.y);
   };
 
   const hideCursor = () => {
@@ -75,16 +70,38 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     cursorRef.current.style.visibility = "visible";
   };
 
+  const screenHeight = Dimensions.get("window").height;
+
+  // Initialize at bottom left of screen
+  const animatedX = useSharedValue(0);
+  const animatedY = useSharedValue(screenHeight - 20);
+
+  const animateToPosition = (x: number, y: number) => {
+    animatedX.value = withTiming(x, {
+      duration: 800,
+    });
+    animatedY.value = withTiming(y, {
+      duration: 800,
+    });
+  };
+
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      left: animatedX.value,
+      top: animatedY.value,
+    };
+  });
+
   return (
     <CursorContext.Provider
       value={{
         cursorRef,
-        cursorPosition,
         moveCursor,
         setContentRef,
         contentsRefs,
         hideCursor,
         showCursor,
+        animatedStyle,
       }}
     >
       {children}
