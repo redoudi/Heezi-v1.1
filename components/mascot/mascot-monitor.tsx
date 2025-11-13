@@ -1,4 +1,5 @@
 import useCursor from "@/context/useCursor";
+import { useKbdNextStep } from "@/hooks/use-keyboard";
 import useLevelData from "@/hooks/use-level-data";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -108,12 +109,6 @@ export default function MascotMonitor({
   }, [practiceToolData]);
 
   useEffect(() => {
-    if (modalText === "") {
-      nextStep();
-    }
-  }, [modalText]);
-
-  useEffect(() => {
     if (levelTasks) {
       runnerRef.current.step = stepParam ? parseInt(stepParam as string) : -1;
       runnerRef.current.task = taskParam ? parseInt(taskParam as string) : 0;
@@ -121,25 +116,7 @@ export default function MascotMonitor({
     }
   }, [levelTasks]);
 
-  useEffect(() => {
-    const handleKeyPress = (event: KeyboardEvent) => {
-      if (runnerRef.current.step > -2 && event.key === "Enter") {
-        nextStep();
-      }
-    };
-
-    // Add event listener
-    if (typeof window !== "undefined" && levelType === "lesson") {
-      window.addEventListener("keydown", handleKeyPress);
-    }
-
-    // Cleanup
-    return () => {
-      if (typeof window !== "undefined" && levelType === "lesson") {
-        window.removeEventListener("keydown", handleKeyPress);
-      }
-    };
-  }, [levelType]);
+  useKbdNextStep({ runnerRef, levelType, nextStep });
 
   return (
     <View style={styles.container}>
@@ -148,7 +125,10 @@ export default function MascotMonitor({
       )}
       <MascotModal
         open={!!modalText?.trim()}
-        onClose={() => setModalText("")}
+        onClose={() => {
+          setModalText("");
+          nextStep();
+        }}
         modalText={modalText}
       />
       <Cursor />
