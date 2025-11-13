@@ -22,8 +22,8 @@ export default function MascotMonitor({
   const {
     practiceTool,
     id,
-    task: taskParam,
-    step: stepParam,
+
+    stepParam,
   } = useLocalSearchParams();
   const { setCellsSelected } = useSpreadsheetStore();
   const { tasks: levelTasks, levelType } = useLevelData();
@@ -41,17 +41,38 @@ export default function MascotMonitor({
 
   const setStepIndex = (step: number) => {
     runnerRef.current.step = step;
-    router.setParams({ step: runnerRef.current.step });
     handleStepIndexChange();
   };
 
   const setTaskIndex = (task: number) => {
     runnerRef.current.task = task;
-    router.setParams({ task: runnerRef.current.task });
     handleTaskIndexChange();
   };
   const nextStep = () => {
     setStepIndex(runnerRef.current.step + 1);
+  };
+
+  const executeStep = () => {
+    if (runnerRef.current.step === -1) {
+      const introText = levelTasks?.at(runnerRef.current.task)?.intro;
+      if (introText && introText.trim() !== "") setModalText(introText);
+    } else {
+      const { tip, expected, preActions, cursor } =
+        levelTasks
+          ?.at(runnerRef.current.task)
+          ?.steps?.at(runnerRef.current.step) || {};
+      setBubbleText(tip?.text2 || "");
+      if (preActions) runPreActions(preActions);
+      if (levelType === "practice" && expected)
+        stepExpectedRef.current = expected;
+      if (cursor) {
+        if (cursor.elementId) {
+          moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
+        } else {
+          hideCursor();
+        }
+      }
+    }
   };
 
   const handleStepIndexChange = () => {
@@ -60,29 +81,9 @@ export default function MascotMonitor({
       levelTasks?.at(runnerRef.current.task)?.steps?.length - 1
     ) {
       runnerRef.current.step = -2;
-      router.setParams({ step: runnerRef.current.step });
       setTaskIndex(runnerRef.current.task + 1);
-      handleTaskIndexChange();
     } else {
-      if (runnerRef.current.step === -1) {
-        const introText = levelTasks?.at(runnerRef.current.task)?.intro;
-        if (introText && introText.trim() !== "") setModalText(introText);
-      } else {
-        const { tip, expected, preActions, cursor } =
-          levelTasks
-            ?.at(runnerRef.current.task)
-            ?.steps?.at(runnerRef.current.step) || {};
-        setBubbleText(tip?.text2 || "");
-        if (preActions) runPreActions(preActions);
-        if (expected) stepExpectedRef.current = expected;
-        if (cursor) {
-          if (cursor.elementId) {
-            moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
-          } else {
-            hideCursor();
-          }
-        }
-      }
+      executeStep();
     }
   };
 
@@ -108,8 +109,8 @@ export default function MascotMonitor({
 
   useEffect(() => {
     if (levelTasks) {
-      runnerRef.current.step = stepParam ? parseInt(stepParam as string) : -1;
-      runnerRef.current.task = taskParam ? parseInt(taskParam as string) : 0;
+      runnerRef.current.step = -1;
+      runnerRef.current.task = 0;
       handleStepIndexChange();
     }
   }, [levelTasks]);
