@@ -50,8 +50,8 @@ export function CursorProvider({ children }: { children: ReactNode }) {
     if (ref && ref.current) {
       const element = ref.current;
       const rect = element.getBoundingClientRect();
-      return { x: rect.left, y: rect.top };
-      // return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+      // return { x: rect.left, y: rect.top };
+      return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
     }
     return { x: 0, y: 0 };
   };
