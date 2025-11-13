@@ -40,6 +40,24 @@ const Mascot = () => {
   );
 };
 
+export const MascotDialog = ({ bubbleText }: { bubbleText: string }) => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.mainRow}>
+        <View style={styles.textBoxContainer}>
+          <View style={styles.textBox}>
+            <View style={styles.textContainer}>
+              <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
+            </View>
+          </View>
+          <CornerTriangle />
+        </View>
+        <Mascot />
+      </View>
+    </SafeAreaView>
+  );
+};
+
 export default function MascotBubble({
   bubbleText,
   nextStep,

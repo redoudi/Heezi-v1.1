@@ -1,4 +1,5 @@
 import ExportFormatButtons from "@/components/ExportFormatButtons";
+import { MascotDialog } from "@/components/mascot/mascot-bubble";
 import SnapshotPreview from "@/components/snapshot-preview";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router } from "expo-router";
@@ -40,6 +41,7 @@ export default function ExportScreen() {
           </View>
         </View>
       </View>
+      <MascotDialog bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!" />
     </SafeAreaView>
   );
 }
