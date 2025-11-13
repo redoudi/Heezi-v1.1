@@ -6,6 +6,7 @@ interface SpreadsheetStore {
     cellsValues: { [key: string]: string | undefined };
     cellsSelected: string[];
     cellsStyles?: { [key: string]: any };
+    cellsEnabled?: [];
   };
 
   tasks: any[];
@@ -22,11 +23,12 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
   tasks: [],
   levelType: "",
   setLevelData: (levelData: any) => {
-    const { spreadsheetData, tasks, levelType } = levelData;
+    const { spreadsheetData, tasks, levelType, cellsEnabled } = levelData;
     set(() => ({
       spreadsheetData,
       tasks,
       levelType,
+      cellsEnabled,
     }));
   },
 

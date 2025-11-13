@@ -1,6 +1,13 @@
 {
     "levelType": "practice",
     "intro": "Bonjour ! Je dois organiser un évènement et j'ai besoin de compter les dépenses. Tu peux m'aider ?",
+    "cellsEnabled": [
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B6"
+    ],
     "spreadsheetData": {
         "cellsValues": {
             "A1": "Intitulé",
