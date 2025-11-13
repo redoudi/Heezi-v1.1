@@ -1,4 +1,28 @@
-- [x] faire practice de textEditor
+\*\*\* - ajouter un curseur
+
+- - bubble : verbe d'action vs impératif
+- - appuyer sur entrer pour passer à la bulle suivante
+- - rester sur la section après fin de niveau
+- - mettre objet et corps en milieu de page
+- - régler le bug du total qui n'est pas écrit automatiquement
+- - ajouter une bulle "tu peux télécharger ton doc"
+- - inverser couleurs quand sélectionné dans le choix du practicetool
+- - texteditor snapshot :
+- - le fichier xls exporté désactive le quadrillage par défaut ??
+- - ajouter entrer dans tableur pour passer à la ligne suivante
+- - icone Quiz différente de cours
+- - mettre textinput direct, sans besoin de
+- - "saisis le nom de l'association"
+- - mettre mairie de Kourou en destinataire
+- - code postal : "97310 Kourou"
+- - remonter la mascotte dans l'exo spreadsheet
+- Version mobile
+
+\*\*
+
+- [ ]
+- [ ]
+- [ ] faire practice de textEditor
 - [x] faire quiz de textEditor
 - [x] lesson de textEditor
 - [x] ajouter [practicetool] dans mission url
