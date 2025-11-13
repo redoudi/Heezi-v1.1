@@ -23,7 +23,7 @@ export default function MascotMonitor({
     practiceTool,
     id,
 
-    stepParam,
+    taskStep: taskStepParam,
   } = useLocalSearchParams();
   const { setCellsSelected } = useSpreadsheetStore();
   const { tasks: levelTasks, levelType } = useLevelData();
@@ -44,19 +44,31 @@ export default function MascotMonitor({
     handleStepIndexChange();
   };
 
-  const setTaskIndex = (task: number) => {
-    runnerRef.current.task = task;
-    handleTaskIndexChange();
-  };
   const nextStep = () => {
     setStepIndex(runnerRef.current.step + 1);
   };
 
+  const setTaskIndex = (task: number) => {
+    runnerRef.current.task = task;
+    // setCellsSelected([]);
+
+    if (
+      levelTasks.length > 0 &&
+      runnerRef.current.task > levelTasks?.length - 1
+    ) {
+      router.push(`/mission/${practiceTool}/${id}/result`);
+    } else {
+      handleStepIndexChange();
+    }
+  };
+
   const executeStep = () => {
     if (runnerRef.current.step === -1) {
+      //show modal text
       const introText = levelTasks?.at(runnerRef.current.task)?.intro;
       if (introText && introText.trim() !== "") setModalText(introText);
     } else {
+      //run task step
       const { tip, expected, preActions, cursor } =
         levelTasks
           ?.at(runnerRef.current.task)
@@ -77,24 +89,15 @@ export default function MascotMonitor({
 
   const handleStepIndexChange = () => {
     if (
+      //switch to next task if current step is the last step of the current task
       runnerRef.current.step >
       levelTasks?.at(runnerRef.current.task)?.steps?.length - 1
     ) {
-      runnerRef.current.step = -2;
+      setBubbleText(null);
+      runnerRef.current.step = -1;
       setTaskIndex(runnerRef.current.task + 1);
     } else {
       executeStep();
-    }
-  };
-
-  const handleTaskIndexChange = () => {
-    setCellsSelected([]);
-    setBubbleText(null);
-    if (
-      levelTasks.length > 0 &&
-      runnerRef.current.task > levelTasks?.length - 1
-    ) {
-      router.push(`/mission/${practiceTool}/${id}/result`);
     }
   };
 
@@ -109,11 +112,17 @@ export default function MascotMonitor({
 
   useEffect(() => {
     if (levelTasks) {
-      runnerRef.current.step = -1;
-      runnerRef.current.task = 0;
+      if (taskStepParam) {
+        const [task, step] = taskStepParam.split(".");
+        runnerRef.current.task = parseInt(task);
+        runnerRef.current.step = parseInt(step);
+      } else {
+        runnerRef.current.step = -1;
+        runnerRef.current.task = 0;
+      }
       handleStepIndexChange();
     }
-  }, [levelTasks]);
+  }, [levelTasks, taskStepParam]);
 
   useKbdNextStep({ runnerRef, levelType, nextStep });
 
