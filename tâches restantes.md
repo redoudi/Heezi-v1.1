@@ -9,7 +9,7 @@
 - [ ] texteditor snapshot : le fichier xls exporté désactive le quadrillage par défaut ??
 - [x] ajouter entrer dans tableur pour passer à la ligne suivante
 - [x] icone Quiz différente de cours
-- [ ] mettre textinput direct, sans besoin de cliquer
+- [x] mettre textinput direct, sans besoin de cliquer
 - [x] "saisis le nom de l'association"
 - [x] mettre mairie de Kourou en destinataire
 - [x] code postal : "97310 Kourou"
