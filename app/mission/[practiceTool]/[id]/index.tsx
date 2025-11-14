@@ -67,9 +67,6 @@ const getImageSource = (levelType: string) => {
 };
 
 export default function ScenarioScreen() {
-  const askingForHelpImage = require("@/assets/images/asking-for-help.png");
-  const heeziIdleImage = require("@/assets/images/heezi-idle.png");
-
   const { intro, levelType } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
 
