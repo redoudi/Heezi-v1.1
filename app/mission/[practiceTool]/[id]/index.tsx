@@ -53,6 +53,19 @@ export function generateStaticParams() {
   return getMissionStaticParams();
 }
 
+const getImageSource = (levelType: string) => {
+  switch (levelType) {
+    case "practice":
+      return require("@/assets/images/asking-for-help.png");
+    case "lesson":
+      return require("@/assets/images/intro-cours.png");
+    case "quiz":
+      return require("@/assets/images/heezi-idle.png");
+    default:
+      return require("@/assets/images/asking-for-help.png");
+  }
+};
+
 export default function ScenarioScreen() {
   const askingForHelpImage = require("@/assets/images/asking-for-help.png");
   const heeziIdleImage = require("@/assets/images/heezi-idle.png");
@@ -60,8 +73,7 @@ export default function ScenarioScreen() {
   const { intro, levelType } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
 
-  const imageSource =
-    levelType === "practice" ? askingForHelpImage : heeziIdleImage;
+  const imageSource = getImageSource(levelType);
 
   const handleStart = () =>
     router.push(`/mission/${practiceTool}/${id}/practice`);
