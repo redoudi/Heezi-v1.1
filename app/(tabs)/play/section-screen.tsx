@@ -1,9 +1,7 @@
 import MissionPart from "@/components/MissionPart";
-import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionScreen() {
-  const { practiceTool } = usePracticeTool();
   const lessonButtonImage = require("@/assets/images/lesson.png");
   const quizButtonImage = require("@/assets/images/quiz.png");
   const practiceButtonImage = require("@/assets/images/practice.png");
