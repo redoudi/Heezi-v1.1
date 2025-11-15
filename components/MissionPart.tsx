@@ -34,7 +34,11 @@ export default function MissionPart({
       >
         <View style={styles.sectionRow}>
           <CustomAnimation
-            animationData={character ? characters?.[character]?.bureauVert : ""}
+            animationData={
+              character
+                ? characters?.[character as keyof typeof characters]?.bureauVert
+                : undefined
+            }
           />
           <Image source={image} resizeMode={"contain"} />
         </View>
