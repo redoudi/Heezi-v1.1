@@ -2,8 +2,6 @@ import MissionPart from "@/components/MissionPart";
 import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Chouette from "../../../components/animations/Chouette";
-import Renard from "../../../components/animations/CustomAnimation";
 export default function SectionScreen() {
   const { practiceTool } = usePracticeTool();
   const lessonButtonImage = require("@/assets/images/lesson.png");
@@ -38,42 +36,12 @@ export default function SectionScreen() {
           </View>
         </View>
         <MissionPart title="Cours" image={lessonButtonImage} levelNumber={1} />
-        <View style={styles.view3}>
-          <TouchableOpacity
-            style={styles.button2}
-            onPress={() => alert("Pressed!")}
-          >
-            <Text style={styles.text5}>{"Quiz"}</Text>
-          </TouchableOpacity>
-        </View>
-        <TouchableOpacity
-          onPress={() => router.replace(`/mission/${practiceTool}/2`)}
-        >
-          <View style={styles.sectionRow}>
-            <Chouette style={styles.chouette} />
-            <Image
-              source={require("@/assets/images/quiz.png")}
-              resizeMode={"contain"}
-            />
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button3}
-          onPress={() => alert("Pressed!")}
-        >
-          <Text style={styles.text5}>Pratique</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => router.replace(`/mission/${practiceTool}/3`)}
-        >
-          <View style={styles.sectionRow}>
-            <Renard style={styles.chouette} />
-            <Image
-              source={require("@/assets/images/practice.png")}
-              resizeMode={"contain"}
-            />
-          </View>
-        </TouchableOpacity>
+        <MissionPart title="Quiz" image={quizButtonImage} levelNumber={2} />
+        <MissionPart
+          title="Pratique"
+          image={practiceButtonImage}
+          levelNumber={3}
+        />
       </View>
     </View>
   );
