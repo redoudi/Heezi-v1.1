@@ -20,7 +20,7 @@ export default function SectionScreen() {
           <View style={styles.row}>
             <View style={styles.row2}>
               <View style={styles.view}>
-                <TouchableOpacity onPress={() => router.back()}>
+                <TouchableOpacity onPress={() => router.replace("/(tabs)")}>
                   <Image
                     source={{
                       uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/z1q84zux_expires_30_days.png",
