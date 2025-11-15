@@ -13,7 +13,12 @@ export function CourseCard() {
       <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
         <View style={styles.header}>
           <Text style={styles.progressText}>1 Section/3 niveaux</Text>
-          <View style={styles.statusButton}>
+          <View
+            style={[
+              styles.statusButton,
+              { backgroundColor: toolConstants.secondaryColor },
+            ]}
+          >
             <Text style={styles.statusText}>En cours</Text>
           </View>
         </View>
@@ -53,7 +58,7 @@ const styles = StyleSheet.create({
   statusButton: {
     width: 68,
     alignItems: "center",
-    backgroundColor: "#A6E9D4",
+
     borderRadius: 8,
     paddingVertical: 4,
   },
