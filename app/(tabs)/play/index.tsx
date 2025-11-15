@@ -4,7 +4,7 @@ import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function SectionsList() {
-  const { practiceToolColor } = usePracticeTool();
+  const { toolConstants } = usePracticeTool();
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.column}>
@@ -17,7 +17,10 @@ export default function SectionsList() {
           </View>
           <View style={styles.row}>
             <TouchableOpacity
-              style={styles.buttonRow}
+              style={[
+                styles.buttonRow,
+                { backgroundColor: toolConstants.color },
+              ]}
               onPress={() => router.push("/play/section-screen")}
             >
               <Text style={styles.text2}>{"Continuer"}</Text>
@@ -205,7 +208,6 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: "row",
-    backgroundColor: "#72D6BA",
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
