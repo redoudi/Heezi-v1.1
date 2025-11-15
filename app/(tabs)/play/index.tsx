@@ -5,88 +5,44 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function SectionsList() {
   const { toolConstants } = usePracticeTool();
+
+  const Continuer = () => {
+    return (
+      <View style={styles.row}>
+        <TouchableOpacity
+          style={[styles.buttonRow, { backgroundColor: toolConstants.color }]}
+          onPress={() => router.push("/play/section-screen")}
+        >
+          <Text style={styles.text2}>{"Continuer"}</Text>
+          <Image
+            source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+      </View>
+    );
+  };
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.column}>
         <View style={styles.column2}>
-          <Text style={styles.text}>{"Section 1"}</Text>
-          <View style={styles.button}>
-            <View style={styles.view}>
-              <View style={styles.box}></View>
+          <View>
+            <Text style={styles.text}>{"Section 1"}</Text>
+            <View style={styles.button}>
+              <View style={styles.view}>
+                <View style={styles.box}></View>
+              </View>
             </View>
+            <Continuer />
           </View>
-          <View style={styles.row}>
-            <TouchableOpacity
-              style={[
-                styles.buttonRow,
-                { backgroundColor: toolConstants.color },
-              ]}
-              onPress={() => router.push("/play/section-screen")}
-            >
-              <Text style={styles.text2}>{"Continuer"}</Text>
-              <Image
-                source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
-                resizeMode={"contain"}
-                style={styles.image}
-              />
-            </TouchableOpacity>
-            <Image
-              source={require("@/assets/images/9uv8qf21_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image2}
-            />
-            <Image
-              source={require("@/assets/images/qzp5ge44_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image3}
-            />
-            <Image
-              source={require("@/assets/images/2eub5oiv_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image4}
-            />
-            <Image
-              source={require("@/assets/images/muewt0o1_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image5}
-            />
-            <Image
-              source={require("@/assets/images/h88sgh3z_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image6}
-            />
-            <Image
-              source={require("@/assets/images/x3xlnrws_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.absoluteImage}
-            />
-            <Image
-              source={require("@/assets/images/k8yljswe_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.absoluteImage2}
-            />
-            <Image
-              source={require("@/assets/images/k87xra1i_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.absoluteImage3}
-            />
-            <Image
-              source={require("@/assets/images/x2n5y6hw_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.absoluteImage4}
-            />
-            <Image
-              source={require("@/assets/images/zyj8nexa_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.absoluteImage5}
-            />
-          </View>
+
+          <Image
+            source={require("@/assets/images/aik0c764_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.absoluteImage6}
+          />
         </View>
-        <Image
-          source={require("@/assets/images/aik0c764_expires_30_days.png")}
-          resizeMode={"contain"}
-          style={styles.absoluteImage6}
-        />
       </View>
       <View style={styles.row2}>
         <View style={styles.column3}>
@@ -186,13 +142,7 @@ const styles = StyleSheet.create({
     width: 6,
     height: 28,
   },
-  absoluteImage6: {
-    position: "absolute",
-    top: 32,
-    right: -4,
-    width: 169,
-    height: 169,
-  },
+  absoluteImage6: {},
   box: {
     width: 63,
     height: 8,
@@ -239,6 +189,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#D3F4E9",
     borderRadius: 8,
     paddingVertical: 32,
+    flexDirection: "row",
   },
   column3: {
     flex: 1,
