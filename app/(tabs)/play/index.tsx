@@ -26,7 +26,12 @@ export default function SectionsList() {
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.column}>
-        <View style={styles.column2}>
+        <View
+          style={[
+            styles.column2,
+            { backgroundColor: toolConstants.secondaryColor },
+          ]}
+        >
           <View>
             <Text style={styles.text}>{"Section 1"}</Text>
             <View style={styles.button}>
@@ -36,7 +41,6 @@ export default function SectionsList() {
             </View>
             <Continuer />
           </View>
-
           <Image
             source={require("@/assets/images/aik0c764_expires_30_days.png")}
             resizeMode={"contain"}
@@ -186,7 +190,6 @@ const styles = StyleSheet.create({
     marginBottom: 32,
   },
   column2: {
-    backgroundColor: "#D3F4E9",
     borderRadius: 8,
     paddingVertical: 32,
     flexDirection: "row",
