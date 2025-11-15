@@ -22,6 +22,20 @@ export default function MissionPart({
     practiceTool as string,
     levelNumber
   );
+
+  const getAnimationData = () => {
+    const bureauAnimations =
+      characters?.[character as keyof typeof characters]?.bureau;
+    switch (practiceTool) {
+      case "spreadsheet":
+        return bureauAnimations?.vert;
+      case "textEditor":
+        return bureauAnimations?.bleu;
+      default:
+        return "";
+    }
+  };
+
   return (
     <View>
       <View style={styles.view3}>
@@ -36,13 +50,7 @@ export default function MissionPart({
         }
       >
         <View style={styles.sectionRow}>
-          <CustomAnimation
-            animationData={
-              character
-                ? characters?.[character as keyof typeof characters]?.bureauVert
-                : undefined
-            }
-          />
+          <CustomAnimation animationData={getAnimationData()} />
           <Image source={image} resizeMode={"contain"} />
         </View>
       </TouchableOpacity>
