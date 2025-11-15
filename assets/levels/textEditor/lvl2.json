@@ -1,5 +1,6 @@
 {
     "levelType": "quiz",
+    "character": "renard",
     "intro": "Et maintenant, rien de mieux qu'un petit quiz sur l'éditeur de texte pour se rafraichir la mémoire.",
     "tasks": [
         {

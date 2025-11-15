@@ -1,7 +1,9 @@
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import characters from "@/constants/characters";
 import usePracticeTool from "@/context/usePracticeTool";
+import useLevelData from "@/hooks/use-level-data";
 import CustomAnimation from "./animations/CustomAnimation";
 
 export default function MissionPart({
@@ -16,6 +18,7 @@ export default function MissionPart({
   animationData: any;
 }) {
   const { practiceTool } = usePracticeTool();
+  const { character } = useLevelData();
   return (
     <View>
       <View style={styles.view3}>
@@ -30,7 +33,9 @@ export default function MissionPart({
         }
       >
         <View style={styles.sectionRow}>
-          <CustomAnimation animationData={animationData} />
+          <CustomAnimation
+            animationData={character ? characters?.[character]?.bureauVert : ""}
+          />
           <Image source={image} resizeMode={"contain"} />
         </View>
       </TouchableOpacity>

@@ -1,5 +1,6 @@
 {
     "levelType": "practice",
+    "character": "renard",
     "intro": "Bonjour ! Je dois organiser un évènement et j'ai besoin de compter les dépenses. Tu peux m'aider ?",
     "cellsEnabled": [
         "B2",

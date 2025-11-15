@@ -30,18 +30,17 @@ export default function ResultScreen() {
     }
   };
 
-  const BoxAnimation = () => {
-    return (
-      <View style={styles.box}>
-        <CustomAnimation
-          animationData={
-            levelType === "practice"
-              ? renardFinAnimationData
-              : renardFinAnimationData
-          }
-        />
-      </View>
-    );
+  const getAnimationData = () => {
+    switch (levelType) {
+      case "lesson":
+        return renardFinAnimationData;
+      case "practice":
+        return renardFinAnimationData;
+      case "quiz":
+        return chouetteFinAnimationData;
+      default:
+        return "";
+    }
   };
 
   return (
@@ -54,7 +53,9 @@ export default function ResultScreen() {
               onPress={() => alert("Pressed!")}
             >
               <View style={styles.view3}>
-                <BoxAnimation />
+                <View style={styles.box}>
+                  <CustomAnimation animationData={getAnimationData()} />
+                </View>
               </View>
             </TouchableOpacity>
             <View style={styles.column2}>

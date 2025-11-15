@@ -1,5 +1,6 @@
 {
     "levelType": "lesson",
+    "character": "renard",
     "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
     "tasks": [
         {
