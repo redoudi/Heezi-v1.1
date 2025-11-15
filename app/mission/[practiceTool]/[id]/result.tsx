@@ -1,4 +1,5 @@
 import CustomAnimation from "@/components/animations/CustomAnimation";
+import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
@@ -19,27 +20,12 @@ export function generateStaticParams() {
 
 export default function ResultScreen() {
   const { practiceTool, id } = useLocalSearchParams();
-  const { levelType } = useLevelData();
-  const chouetteFinAnimationData = require("@/assets/animations/ChouetteFin.json");
-  const renardFinAnimationData = require("@/assets/animations/RenardFin.json");
+  const { levelType, character } = useLevelData();
   const goToNextPage = () => {
     if (levelType === "practice") {
       router.push(`/mission/${practiceTool}/${id}/export`);
     } else {
       router.replace("/(tabs)/play/section-screen");
-    }
-  };
-
-  const getAnimationData = () => {
-    switch (levelType) {
-      case "lesson":
-        return renardFinAnimationData;
-      case "practice":
-        return renardFinAnimationData;
-      case "quiz":
-        return chouetteFinAnimationData;
-      default:
-        return "";
     }
   };
 
@@ -54,7 +40,12 @@ export default function ResultScreen() {
             >
               <View style={styles.view3}>
                 <View style={styles.box}>
-                  <CustomAnimation animationData={getAnimationData()} />
+                  <CustomAnimation
+                    animationData={
+                      characters[character as keyof typeof characters]?.fin ||
+                      ""
+                    }
+                  />
                 </View>
               </View>
             </TouchableOpacity>
