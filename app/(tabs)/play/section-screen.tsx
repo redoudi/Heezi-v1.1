@@ -6,6 +6,9 @@ import Chouette from "../../../components/animations/Chouette";
 import Renard from "../../../components/animations/CustomAnimation";
 export default function SectionScreen() {
   const { practiceTool } = usePracticeTool();
+  const lessonButtonImage = require("@/assets/images/lesson.png");
+  const quizButtonImage = require("@/assets/images/quiz.png");
+  const practiceButtonImage = require("@/assets/images/practice.png");
   return (
     <View style={styles.container}>
       <View style={styles.column}>
@@ -34,7 +37,7 @@ export default function SectionScreen() {
             <Text style={styles.text4}>{"Sous-titre de la section"}</Text>
           </View>
         </View>
-        <MissionPart />
+        <MissionPart title="Cours" image={lessonButtonImage} levelNumber={1} />
         <View style={styles.view3}>
           <TouchableOpacity
             style={styles.button2}
