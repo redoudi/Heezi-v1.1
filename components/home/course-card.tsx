@@ -1,21 +1,7 @@
 import usePracticeTool from "@/context/usePracticeTool";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-interface CourseCardProps {
-  progress: string;
-  status: string;
-  title: string;
-  description: string;
-  onPress: () => void;
-}
-
-export function CourseCard({
-  progress,
-  status,
-  title,
-  description,
-  onPress,
-}: CourseCardProps) {
+export function CourseCard() {
   const { toolConstants } = usePracticeTool();
   return (
     <View style={styles.container}>
@@ -26,13 +12,13 @@ export function CourseCard({
       />
       <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
         <View style={styles.header}>
-          <Text style={styles.progressText}>{progress}</Text>
+          <Text style={styles.progressText}>1 Section/3 niveaux</Text>
           <View style={styles.statusButton}>
-            <Text style={styles.statusText}>{status}</Text>
+            <Text style={styles.statusText}>En cours</Text>
           </View>
         </View>
         <Text style={styles.title}>{toolConstants.title}</Text>
-        <Text style={styles.description}>{description}</Text>
+        <Text style={styles.description}>{toolConstants.description}</Text>
       </View>
     </View>
   );

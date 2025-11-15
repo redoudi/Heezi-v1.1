@@ -1,7 +1,7 @@
 import { RightColumn } from "@/components/home/right-column";
 import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 
-import { ActiveCourseCard } from "@/components/home/active-course-card";
+import { CourseCard } from "@/components/home/course-card";
 
 import { Slot } from "expo-router";
 
@@ -36,7 +36,7 @@ function LeftColumn() {
         showsVerticalScrollIndicator={true}
       >
         <View style={styles2.leftColumnContent}>
-          <ActiveCourseCard />
+          <CourseCard />
           <Slot />
         </View>
       </ScrollView>
