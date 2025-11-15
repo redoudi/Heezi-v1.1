@@ -1,4 +1,5 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import usePracticeTool from "@/context/usePracticeTool";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 interface CourseCardProps {
   progress: string;
@@ -15,6 +16,7 @@ export function CourseCard({
   description,
   onPress,
 }: CourseCardProps) {
+  const { toolConstants } = usePracticeTool();
   return (
     <View style={styles.container}>
       <Image
@@ -22,12 +24,12 @@ export function CourseCard({
         resizeMode="stretch"
         style={styles.thumbnail}
       />
-      <View style={styles.content}>
+      <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
         <View style={styles.header}>
           <Text style={styles.progressText}>{progress}</Text>
-          <TouchableOpacity style={styles.statusButton} onPress={onPress}>
+          <View style={styles.statusButton}>
             <Text style={styles.statusText}>{status}</Text>
-          </TouchableOpacity>
+          </View>
         </View>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>

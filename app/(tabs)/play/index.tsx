@@ -1,21 +1,20 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
+import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function SectionsList() {
+  const { practiceToolColor } = usePracticeTool();
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.column}>
         <View style={styles.column2}>
           <Text style={styles.text}>{"Section 1"}</Text>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => alert("Pressed!")}
-          >
+          <View style={styles.button}>
             <View style={styles.view}>
               <View style={styles.box}></View>
             </View>
-          </TouchableOpacity>
+          </View>
           <View style={styles.row}>
             <TouchableOpacity
               style={styles.buttonRow}
