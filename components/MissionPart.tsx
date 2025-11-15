@@ -1,17 +1,19 @@
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Chouette from "./animations/Chouette";
 
 import usePracticeTool from "@/context/usePracticeTool";
+import CustomAnimation from "./animations/CustomAnimation";
 
 export default function MissionPart({
   title,
   image,
   levelNumber,
+  animationData,
 }: {
   title: string;
   image: any;
   levelNumber: number;
+  animationData: any;
 }) {
   const { practiceTool } = usePracticeTool();
   return (
@@ -28,7 +30,7 @@ export default function MissionPart({
         }
       >
         <View style={styles.sectionRow}>
-          <Chouette style={styles.chouette} />
+          <CustomAnimation animationData={animationData} />
           <Image source={image} resizeMode={"contain"} />
         </View>
       </TouchableOpacity>

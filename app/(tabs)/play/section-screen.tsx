@@ -3,8 +3,11 @@ import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionScreen() {
   const lessonButtonImage = require("@/assets/images/lesson.png");
+  const lessonAnimationData = require("@/assets/animations/CoqBureauVert.json");
   const quizButtonImage = require("@/assets/images/quiz.png");
+  const quizAnimationData = require("@/assets/animations/RenardBureauVert.json");
   const practiceButtonImage = require("@/assets/images/practice.png");
+  const practiceAnimationData = require("@/assets/animations/RenardBureauVert.json");
   return (
     <View style={styles.container}>
       <View style={styles.column}>
@@ -33,12 +36,23 @@ export default function SectionScreen() {
             <Text style={styles.text4}>{"Sous-titre de la section"}</Text>
           </View>
         </View>
-        <MissionPart title="Cours" image={lessonButtonImage} levelNumber={1} />
-        <MissionPart title="Quiz" image={quizButtonImage} levelNumber={2} />
+        <MissionPart
+          title="Cours"
+          image={lessonButtonImage}
+          levelNumber={1}
+          animationData={lessonAnimationData}
+        />
+        <MissionPart
+          title="Quiz"
+          image={quizButtonImage}
+          levelNumber={2}
+          animationData={quizAnimationData}
+        />
         <MissionPart
           title="Pratique"
           image={practiceButtonImage}
           levelNumber={3}
+          animationData={practiceAnimationData}
         />
       </View>
     </View>
