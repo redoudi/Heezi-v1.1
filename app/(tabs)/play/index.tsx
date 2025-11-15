@@ -190,6 +190,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 32,
     flexDirection: "row",
+    justifyContent: "space-between",
   },
   column3: {
     flex: 1,
