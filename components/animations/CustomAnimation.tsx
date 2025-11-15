@@ -1,9 +1,7 @@
 import LottieView from "lottie-react-native";
 
-const renardData = require("./Renard.json");
-
 export default function CustomAnimation({
-  animationData = renardData,
+  animationData,
 }: {
   animationData: any;
 }) {
