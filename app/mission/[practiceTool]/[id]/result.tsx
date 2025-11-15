@@ -1,5 +1,4 @@
-import ChouetteFin from "@/components/animations/ChouetteFin";
-import RenardFin from "@/components/animations/RenardFin";
+import CustomAnimation from "@/components/animations/CustomAnimation";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
@@ -21,7 +20,8 @@ export function generateStaticParams() {
 export default function ResultScreen() {
   const { practiceTool, id } = useLocalSearchParams();
   const { levelType } = useLevelData();
-
+  const chouetteFinAnimationData = require("@/assets/animations/ChouetteFin.json");
+  const renardFinAnimationData = require("@/assets/animations/RenardFin.json");
   const goToNextPage = () => {
     if (levelType === "practice") {
       router.push(`/mission/${practiceTool}/${id}/export`);
@@ -31,10 +31,17 @@ export default function ResultScreen() {
   };
 
   const BoxAnimation = () => {
-    const animationComponent =
-      levelType === "practice" ? RenardFin : ChouetteFin;
-    const AnimationComponent = animationComponent;
-    return <AnimationComponent style={styles.box} />;
+    return (
+      <View style={styles.box}>
+        <CustomAnimation
+          animationData={
+            levelType === "practice"
+              ? renardFinAnimationData
+              : renardFinAnimationData
+          }
+        />
+      </View>
+    );
   };
 
   return (

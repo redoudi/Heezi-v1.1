@@ -3,7 +3,7 @@ import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionScreen() {
   const lessonButtonImage = require("@/assets/images/lesson.png");
-  const lessonAnimationData = require("@/assets/animations/CoqBureauVert.json");
+  const lessonAnimationData = require("@/assets/animations/RenardBureauVert.json");
   const quizButtonImage = require("@/assets/images/quiz.png");
   const quizAnimationData = require("@/assets/animations/RenardBureauVert.json");
   const practiceButtonImage = require("@/assets/images/practice.png");
