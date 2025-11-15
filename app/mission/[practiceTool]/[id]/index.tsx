@@ -1,4 +1,5 @@
 import BackButton from "@/components/ui/back-button";
+import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
@@ -67,7 +68,7 @@ const getImageSource = (levelType: string) => {
 };
 
 export default function ScenarioScreen() {
-  const { intro, levelType } = useLevelData();
+  const { intro, levelType, character } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
 
   const imageSource = getImageSource(levelType);
@@ -80,7 +81,11 @@ export default function ScenarioScreen() {
       <View style={styles.mainContent}>
         <BackButton style={styles.backButton} />
         <Image
-          source={imageSource}
+          source={
+            character
+              ? characters?.[character as keyof typeof characters]?.intro
+              : ""
+          }
           resizeMode={"contain"}
           style={styles.avatar}
         />
