@@ -1,4 +1,5 @@
 import MissionPart from "@/components/MissionPart";
+import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionScreen() {
@@ -8,10 +9,14 @@ export default function SectionScreen() {
   const quizAnimationData = require("@/assets/animations/RenardBureauVert.json");
   const practiceButtonImage = require("@/assets/images/practice.png");
   const practiceAnimationData = require("@/assets/animations/RenardBureauVert.json");
+
+  const { toolConstants } = usePracticeTool();
   return (
     <View style={styles.container}>
       <View style={styles.column}>
-        <View style={styles.column2}>
+        <View
+          style={[styles.column2, { backgroundColor: toolConstants.color }]}
+        >
           <View style={styles.row}>
             <View style={styles.row2}>
               <View style={styles.view}>
@@ -118,7 +123,6 @@ const styles = StyleSheet.create({
     width: 741,
   },
   column2: {
-    backgroundColor: "#72D6BA",
     borderRadius: 8,
     padding: 16,
     marginBottom: 16,
