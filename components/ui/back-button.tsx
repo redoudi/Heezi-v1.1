@@ -6,7 +6,7 @@ export default function BackButton({ style }) {
     <View style={style}>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.replace("/(tabs)")}
+        onPress={() => router.replace("/(tabs)/play/section-screen")}
       >
         <Image
           source={require("@/assets/images/iycoag37_expires_30_days.png")}

@@ -1,4 +1,5 @@
 import { levelFiles } from "@/assets/levels/indexLevels";
+import usePracticeTool from "@/context/usePracticeTool";
 import { normalizeRouteParam } from "@/utils/normalizeRouteParam";
 import { useLocalSearchParams } from "expo-router";
 import { useMemo } from "react";
@@ -25,4 +26,31 @@ export default function useLevelData() {
   }, [practiceTool, id]);
 
   return levelData || EMPTY_LEVEL_DATA;
+}
+
+export function useLevelDataWithLevelNumber(levelNumber: number) {
+  const { practiceTool } = usePracticeTool();
+
+  if (!practiceTool) {
+    return null;
+  }
+
+  const toolLevels = levelFiles[practiceTool as string];
+  if (!toolLevels) {
+    return null;
+  }
+
+  return toolLevels[levelNumber.toString()] ?? EMPTY_LEVEL_DATA;
+}
+
+export function getLevelDataByNumber(
+  practiceTool: string,
+  levelNumber: number
+) {
+  const toolLevels = levelFiles[practiceTool as string];
+  if (!toolLevels) {
+    return null;
+  }
+
+  return toolLevels[levelNumber.toString()] ?? EMPTY_LEVEL_DATA;
 }
