@@ -2,7 +2,7 @@ import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Chouette from "../../../components/animations/Chouette";
-import Renard from "../../../components/animations/Renard";
+import Renard from "../../../components/animations/CustomAnimation";
 export default function SectionScreen({
   resetSectionIndex,
 }: {
