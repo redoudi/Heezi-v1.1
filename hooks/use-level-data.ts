@@ -10,11 +10,10 @@ export default function useLevelData() {
   const practiceTool = normalizeRouteParam(practiceToolParam);
   const id = normalizeRouteParam(idParam);
 
-  if (!practiceTool || !id) {
-    return null;
+  if (practiceTool && id) {
+    return getLevelDataByNumber(practiceTool as string, parseInt(id as string));
   }
-
-  return getLevelDataByNumber(practiceTool as string, parseInt(id as string));
+  return null;
 }
 
 export function getLevelDataByNumber(
