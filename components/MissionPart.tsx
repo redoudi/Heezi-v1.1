@@ -1,80 +1,37 @@
-import MissionPart from "@/components/MissionPart";
-import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Chouette from "../../../components/animations/Chouette";
-import Renard from "../../../components/animations/CustomAnimation";
-export default function SectionScreen() {
+import Chouette from "./animations/Chouette";
+
+import usePracticeTool from "@/context/usePracticeTool";
+
+export default function MissionPart() {
   const { practiceTool } = usePracticeTool();
   return (
-    <View style={styles.container}>
-      <View style={styles.column}>
-        <View style={styles.column2}>
-          <View style={styles.row}>
-            <View style={styles.row2}>
-              <View style={styles.view}>
-                <TouchableOpacity onPress={() => router.back()}>
-                  <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/z1q84zux_expires_30_days.png",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
-                </TouchableOpacity>
-              </View>
-              <Text style={styles.text}>{"3 niveaux"}</Text>
-            </View>
-            <View style={styles.view2}>
-              <Text style={styles.text2}>{"En cours"}</Text>
-            </View>
-          </View>
-          <View>
-            <Text style={styles.text3}>{"Titre de la section"}</Text>
-            <Text style={styles.text4}>{"Sous-titre de la section"}</Text>
-          </View>
-        </View>
-        <MissionPart />
-        <View style={styles.view3}>
-          <TouchableOpacity
-            style={styles.button2}
-            onPress={() => alert("Pressed!")}
-          >
-            <Text style={styles.text5}>{"Quiz"}</Text>
-          </TouchableOpacity>
-        </View>
+    <View>
+      <View style={styles.view3}>
         <TouchableOpacity
-          onPress={() => router.replace(`/mission/${practiceTool}/2`)}
-        >
-          <View style={styles.sectionRow}>
-            <Chouette style={styles.chouette} />
-            <Image
-              source={require("@/assets/images/quiz.png")}
-              resizeMode={"contain"}
-            />
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button3}
+          style={styles.button}
           onPress={() => alert("Pressed!")}
         >
-          <Text style={styles.text5}>Pratique</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => router.replace(`/mission/${practiceTool}/3`)}
-        >
-          <View style={styles.sectionRow}>
-            <Renard style={styles.chouette} />
-            <Image
-              source={require("@/assets/images/practice.png")}
-              resizeMode={"contain"}
-            />
-          </View>
+          <Text style={styles.text5}>{"Cours"}</Text>
         </TouchableOpacity>
       </View>
+
+      <TouchableOpacity
+        onPress={() => router.replace(`/mission/${practiceTool}/1`)}
+      >
+        <View style={styles.sectionRow}>
+          <Chouette style={styles.chouette} />
+          <Image
+            source={require("@/assets/images/lesson.png")}
+            resizeMode={"contain"}
+          />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     alignItems: "flex-start",
