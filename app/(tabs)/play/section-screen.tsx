@@ -3,11 +3,7 @@ import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Chouette from "../../../components/animations/Chouette";
 import Renard from "../../../components/animations/CustomAnimation";
-export default function SectionScreen({
-  resetSectionIndex,
-}: {
-  resetSectionIndex: () => void;
-}) {
+export default function SectionScreen() {
   const { practiceTool } = usePracticeTool();
   return (
     <View style={styles.container}>
