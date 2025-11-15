@@ -17,7 +17,7 @@ export default function MissionPart({
   levelNumber: number;
   animationData: any;
 }) {
-  const { practiceTool } = usePracticeTool();
+  const { practiceTool, toolConstants } = usePracticeTool();
   const { character } = getLevelDataByNumber(
     practiceTool as string,
     levelNumber
@@ -39,7 +39,7 @@ export default function MissionPart({
   return (
     <View>
       <View style={styles.view3}>
-        <View style={styles.button}>
+        <View style={[styles.button, { backgroundColor: toolConstants.color }]}>
           <Text style={styles.text5}>{title}</Text>
         </View>
       </View>
@@ -61,7 +61,6 @@ export default function MissionPart({
 const styles = StyleSheet.create({
   button: {
     alignSelf: "flex-start",
-    backgroundColor: "#45BC9E",
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
