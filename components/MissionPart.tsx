@@ -10,12 +10,10 @@ export default function MissionPart({
   title,
   image,
   levelNumber,
-  animationData,
 }: {
   title: string;
   image: any;
   levelNumber: number;
-  animationData: any;
 }) {
   const { practiceTool, toolConstants } = usePracticeTool();
   const { character } = getLevelDataByNumber(
