@@ -7,13 +7,7 @@ export function ActiveCourseCard() {
     <CourseCard
       progress="6 Sections/10 niveaux"
       status="En cours"
-      title={
-        practiceTool === "spreadsheet"
-          ? "Gestion d'un tableur"
-          : "L'éditeur de texte"
-      }
       description="Lörem ipsum sulingar sasade, om än säv. "
-      onPress={() => {}}
     />
   );
 }

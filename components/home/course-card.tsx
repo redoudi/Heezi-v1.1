@@ -31,7 +31,7 @@ export function CourseCard({
             <Text style={styles.statusText}>{status}</Text>
           </View>
         </View>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{toolConstants.title}</Text>
         <Text style={styles.description}>{description}</Text>
       </View>
     </View>
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
   },
   content: {
     width: 552,
-    backgroundColor: "#72D6BA",
     borderRadius: 8,
     paddingVertical: 16,
   },
