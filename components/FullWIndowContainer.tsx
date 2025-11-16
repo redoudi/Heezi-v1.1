@@ -8,7 +8,7 @@ export default function FullWIndowContainer({
 }) {
   const { height } = useWindowDimensions();
   return (
-    <SafeAreaView style={[styles.container, { height: height }]}>
+    <SafeAreaView style={[styles.container, { height: height || "100%" }]}>
       {children}
     </SafeAreaView>
   );
