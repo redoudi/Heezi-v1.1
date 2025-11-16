@@ -10,6 +10,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  useWindowDimensions,
 } from "react-native";
 
 export const dynamicParams = false;
@@ -28,76 +29,72 @@ export default function ResultScreen() {
       router.replace("/(tabs)/play/section-screen");
     }
   };
+  const { height } = useWindowDimensions();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.view}>
-        <View style={styles.view2}>
-          <View style={styles.column}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => alert("Pressed!")}
-            >
-              <View style={styles.view3}>
-                <View style={styles.box}>
-                  <CustomAnimation
-                    animationData={
-                      characters[character as keyof typeof characters]?.fin ||
-                      ""
-                    }
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <View style={styles.column2}>
-              <Text style={styles.text}>
-                {"Remarque de la performance réalisée"}
-              </Text>
-              <Text style={styles.text2}>
-                {
-                  "Lörem ipsum sageledes neliga vade homosat. Filomani rende om sose. "
+    <SafeAreaView style={[styles.container, { height: height }]}>
+      <View style={[styles.mainContent, { height: height - 24 }]}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => alert("Pressed!")}
+        >
+          <View style={styles.view3}>
+            <View style={styles.box}>
+              <CustomAnimation
+                animationData={
+                  characters[character as keyof typeof characters]?.fin || ""
                 }
-              </Text>
-              <View style={styles.column3}>
-                <View style={styles.row}>
-                  <Text style={styles.text3}>{"+3"}</Text>
-                  <Image
-                    source={require("@/assets/images/niw8yegh_expires_30_days.png")}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
+              />
+            </View>
+          </View>
+        </TouchableOpacity>
+        <View style={styles.column2}>
+          <Text style={styles.text}>
+            {"Remarque de la performance réalisée"}
+          </Text>
+          <Text style={styles.text2}>
+            {
+              "Lörem ipsum sageledes neliga vade homosat. Filomani rende om sose. "
+            }
+          </Text>
+          <View style={styles.column3}>
+            <View style={styles.row}>
+              <Text style={styles.text3}>{"+3"}</Text>
+              <Image
+                source={require("@/assets/images/niw8yegh_expires_30_days.png")}
+                resizeMode={"stretch"}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.row2}>
+              <Text style={styles.text4}>{"+500"}</Text>
+              <Image
+                source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
+                resizeMode={"stretch"}
+                style={styles.image2}
+              />
+            </View>
+            <View style={styles.row3}>
+              <View style={styles.column4}>
+                <View style={styles.view4}>
+                  <Text style={styles.text5}>{"Nv.1"}</Text>
                 </View>
-                <View style={styles.row2}>
-                  <Text style={styles.text4}>{"+500"}</Text>
-                  <Image
-                    source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
-                    resizeMode={"stretch"}
-                    style={styles.image2}
-                  />
-                </View>
-                <View style={styles.row3}>
-                  <View style={styles.column4}>
-                    <View style={styles.view4}>
-                      <Text style={styles.text5}>{"Nv.1"}</Text>
-                    </View>
-                    <View style={styles.view5}>
-                      <View style={styles.box2}></View>
-                    </View>
-                  </View>
-                  <Text style={styles.text6}>{"+100xp"}</Text>
+                <View style={styles.view5}>
+                  <View style={styles.box2}></View>
                 </View>
               </View>
+              <Text style={styles.text6}>{"+100xp"}</Text>
             </View>
-            <TouchableOpacity style={styles.buttonRow} onPress={goToNextPage}>
-              <Text style={styles.text7}>{"Continuer"}</Text>
-              <Image
-                source={require("@/assets/images/bwp5ecq4_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles.image3}
-              />
-            </TouchableOpacity>
           </View>
         </View>
+        <TouchableOpacity style={styles.buttonRow} onPress={goToNextPage}>
+          <Text style={styles.text7}>{"Continuer"}</Text>
+          <Image
+            source={require("@/assets/images/bwp5ecq4_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image3}
+          />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -108,6 +105,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
+  mainContent: {
+    borderWidth: 1,
+    alignItems: "center",
+
+    paddingVertical: 32,
+    marginBottom: 2,
+    marginHorizontal: 8,
+  },
+  view2: {},
+  column: {},
   box: {
     width: 533,
     height: 653,
@@ -134,10 +141,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginRight: 399,
   },
-  column: {
-    marginBottom: 2,
-    marginHorizontal: 8,
-  },
+
   column2: {
     alignSelf: "flex-start",
     backgroundColor: "#EFEFEF",
@@ -234,15 +238,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginRight: 11,
   },
-  view: {
-    width: 1440,
-    backgroundColor: "#FFFFFF",
-  },
-  view2: {
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 32,
-  },
+
   view3: {
     alignSelf: "flex-start",
     backgroundColor: "#D9D9D9",
