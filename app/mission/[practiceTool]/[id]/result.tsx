@@ -1,4 +1,5 @@
 import CustomAnimation from "@/components/animations/CustomAnimation";
+import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
 import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
@@ -115,7 +116,7 @@ export default function ResultScreen() {
             </View>
           </View>
         </View>
-        <CustomButton text={"Continuer"} onPress={goToNextPage} />
+        <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
       </View>
     </SafeAreaView>
   );
