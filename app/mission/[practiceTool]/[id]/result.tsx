@@ -6,9 +6,7 @@ import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
-  ImageStyle,
   SafeAreaView,
-  StyleProp,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -20,6 +18,46 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getMissionStaticParams();
+}
+
+function EndLevelStats() {
+  return (
+    <View style={styles.column2}>
+      <Text style={styles.text}>{"Remarque de la performance réalisée"}</Text>
+      <Text style={styles.text2}>
+        {"Lörem ipsum sageledes neliga vade homosat. Filomani rende om sose. "}
+      </Text>
+      <View style={styles.column3}>
+        <View style={styles.row}>
+          <Text style={styles.text3}>{"+3"}</Text>
+          <Image
+            source={require("@/assets/images/niw8yegh_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.row2}>
+          <Text style={styles.text4}>{"+500"}</Text>
+          <Image
+            source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image2}
+          />
+        </View>
+        <View style={styles.row3}>
+          <View style={styles.column4}>
+            <View style={styles.view4}>
+              <Text style={styles.text5}>{"Nv.1"}</Text>
+            </View>
+            <View style={styles.view5}>
+              <View style={styles.box2}></View>
+            </View>
+          </View>
+          <Text style={styles.text6}>{"+100xp"}</Text>
+        </View>
+      </View>
+    </View>
+  );
 }
 
 export default function ResultScreen() {
@@ -52,62 +90,26 @@ export default function ResultScreen() {
             </View>
           </View>
         </TouchableOpacity>
-        <View style={styles.column2}>
-          <Text style={styles.text}>
-            {"Remarque de la performance réalisée"}
-          </Text>
-          <Text style={styles.text2}>
-            {
-              "Lörem ipsum sageledes neliga vade homosat. Filomani rende om sose. "
-            }
-          </Text>
-          <View style={styles.column3}>
-            <View style={styles.row}>
-              <Text style={styles.text3}>{"+3"}</Text>
-              <Image
-                source={require("@/assets/images/niw8yegh_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles.image}
-              />
-            </View>
-            <View style={styles.row2}>
-              <Text style={styles.text4}>{"+500"}</Text>
-              <Image
-                source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles.image2}
-              />
-            </View>
-            <View style={styles.row3}>
-              <View style={styles.column4}>
-                <View style={styles.view4}>
-                  <Text style={styles.text5}>{"Nv.1"}</Text>
-                </View>
-                <View style={styles.view5}>
-                  <View style={styles.box2}></View>
-                </View>
-              </View>
-              <Text style={styles.text6}>{"+100xp"}</Text>
-            </View>
-          </View>
+        <View>
+          <EndLevelStats />
+          <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
         </View>
-        <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
       </View>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
     backgroundColor: "#FFFFFF",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   mainContent: {
     borderWidth: 1,
     alignItems: "center",
-    paddingVertical: 32,
-    marginBottom: 2,
-    marginHorizontal: 8,
+    justifyContent: "space-between",
+    padding: 16,
   },
 
   box: {

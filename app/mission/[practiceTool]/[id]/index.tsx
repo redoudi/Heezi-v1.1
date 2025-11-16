@@ -65,17 +65,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   mainContent: {
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 16,
     borderRadius: 8,
-    paddingVertical: 16,
+
     shadowColor: "#1E6759",
     shadowOpacity: 1.0,
     shadowOffset: {
       width: 0,
       height: 4,
     },
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginHorizontal: 40,
+
     borderWidth: 1,
     paddingHorizontal: 16,
     gap: 8,
