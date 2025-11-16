@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
     marginRight: 11,
   },
   triangleIcon: {
+    alignSelf: "center",
     borderRadius: 8,
     width: 16,
     height: 24,

@@ -5,7 +5,9 @@ import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
+  ImageStyle,
   SafeAreaView,
+  StyleProp,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -19,6 +21,16 @@ export function generateStaticParams() {
   return getMissionStaticParams();
 }
 
+function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
+  return (
+    <Image
+      source={require("@/assets/images/q6vunbbw_expires_30_days.png")}
+      resizeMode={"stretch"}
+      style={style}
+    />
+  );
+}
+
 const CustomButton = ({
   text,
   onPress,
@@ -29,11 +41,7 @@ const CustomButton = ({
   return (
     <TouchableOpacity style={styles.buttonRow} onPress={onPress}>
       <Text style={styles.text7}>{text}</Text>
-      <Image
-        source={require("@/assets/images/bwp5ecq4_expires_30_days.png")}
-        resizeMode={"stretch"}
-        style={styles.image3}
-      />
+      <TriangleIcon style={styles.triangleIcon} />
     </TouchableOpacity>
   );
 };
@@ -184,7 +192,8 @@ const styles = StyleSheet.create({
     height: 20,
     marginRight: 425,
   },
-  image3: {
+  triangleIcon: {
+    alignSelf: "center",
     borderRadius: 8,
     width: 16,
     height: 24,
