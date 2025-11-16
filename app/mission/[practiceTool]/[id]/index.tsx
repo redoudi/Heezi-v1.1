@@ -6,12 +6,9 @@ import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
-  ImageStyle,
   SafeAreaView,
-  StyleProp,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
   useWindowDimensions,
 } from "react-native";
@@ -21,31 +18,6 @@ function IntroText({ intro = "..." }) {
     <View style={styles.introTextBox}>
       <Text style={styles.introText}>{intro}</Text>
     </View>
-  );
-}
-
-function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
-  return (
-    <Image
-      source={require("@/assets/images/q6vunbbw_expires_30_days.png")}
-      resizeMode={"stretch"}
-      style={style}
-    />
-  );
-}
-
-function CustomButton({
-  text,
-  onPress,
-}: {
-  text: string;
-  onPress: () => void;
-}) {
-  return (
-    <TouchableOpacity style={styles.startButton} onPress={onPress}>
-      <Text style={styles.buttonText}>{text}</Text>
-      <TriangleIcon style={styles.triangleIcon} />
-    </TouchableOpacity>
   );
 }
 

@@ -22,31 +22,6 @@ export function generateStaticParams() {
   return getMissionStaticParams();
 }
 
-function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
-  return (
-    <Image
-      source={require("@/assets/images/q6vunbbw_expires_30_days.png")}
-      resizeMode={"stretch"}
-      style={style}
-    />
-  );
-}
-
-const CustomButton = ({
-  text,
-  onPress,
-}: {
-  text: string;
-  onPress: () => void;
-}) => {
-  return (
-    <TouchableOpacity style={styles.buttonRow} onPress={onPress}>
-      <Text style={styles.text7}>{text}</Text>
-      <TriangleIcon style={styles.triangleIcon} />
-    </TouchableOpacity>
-  );
-};
-
 export default function ResultScreen() {
   const { practiceTool, id } = useLocalSearchParams();
   const { levelType, character } = useLevelData();
