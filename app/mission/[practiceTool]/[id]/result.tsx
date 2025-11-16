@@ -19,9 +19,29 @@ export function generateStaticParams() {
   return getMissionStaticParams();
 }
 
+const CustomButton = ({
+  text,
+  onPress,
+}: {
+  text: string;
+  onPress: () => void;
+}) => {
+  return (
+    <TouchableOpacity style={styles.buttonRow} onPress={onPress}>
+      <Text style={styles.text7}>{text}</Text>
+      <Image
+        source={require("@/assets/images/bwp5ecq4_expires_30_days.png")}
+        resizeMode={"stretch"}
+        style={styles.image3}
+      />
+    </TouchableOpacity>
+  );
+};
+
 export default function ResultScreen() {
   const { practiceTool, id } = useLocalSearchParams();
   const { levelType, character } = useLevelData();
+
   const goToNextPage = () => {
     if (levelType === "practice") {
       router.push(`/mission/${practiceTool}/${id}/export`);
@@ -87,14 +107,7 @@ export default function ResultScreen() {
             </View>
           </View>
         </View>
-        <TouchableOpacity style={styles.buttonRow} onPress={goToNextPage}>
-          <Text style={styles.text7}>{"Continuer"}</Text>
-          <Image
-            source={require("@/assets/images/bwp5ecq4_expires_30_days.png")}
-            resizeMode={"stretch"}
-            style={styles.image3}
-          />
-        </TouchableOpacity>
+        <CustomButton text={"Continuer"} onPress={goToNextPage} />
       </View>
     </SafeAreaView>
   );
@@ -108,13 +121,11 @@ const styles = StyleSheet.create({
   mainContent: {
     borderWidth: 1,
     alignItems: "center",
-
     paddingVertical: 32,
     marginBottom: 2,
     marginHorizontal: 8,
   },
-  view2: {},
-  column: {},
+
   box: {
     width: 533,
     height: 653,

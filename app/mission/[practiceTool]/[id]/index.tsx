@@ -33,10 +33,16 @@ function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
   );
 }
 
-function StartButton({ onPress }: { onPress: () => void }) {
+function CustomButton({
+  text,
+  onPress,
+}: {
+  text: string;
+  onPress: () => void;
+}) {
   return (
     <TouchableOpacity style={styles.startButton} onPress={onPress}>
-      <Text style={styles.buttonText}>{"Commencer"}</Text>
+      <Text style={styles.buttonText}>{text}</Text>
       <TriangleIcon style={styles.triangleIcon} />
     </TouchableOpacity>
   );
@@ -68,11 +74,11 @@ export default function ScenarioScreen() {
               : ""
           }
           resizeMode={"contain"}
-          style={styles.introImage}
+          style={styles.boxImage}
         />
         <View>
           <IntroText intro={intro} />
-          <StartButton onPress={handleStart} />
+          <CustomButton text={"Commencer"} onPress={handleStart} />
         </View>
       </View>
     </SafeAreaView>
@@ -81,7 +87,6 @@ export default function ScenarioScreen() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFFFFF",
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -108,7 +113,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     alignSelf: "flex-start",
   },
-  introImage: {
+  boxImage: {
     borderRadius: 8,
     alignSelf: "stretch",
     flex: 1,
