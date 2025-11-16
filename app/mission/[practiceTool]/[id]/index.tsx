@@ -76,7 +76,7 @@ export default function ScenarioScreen() {
 }
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
+    flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
     justifyContent: "center",
