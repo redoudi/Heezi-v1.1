@@ -1,3 +1,4 @@
+import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
 import BackButton from "@/components/ui/back-button";
 import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
@@ -78,7 +79,7 @@ export default function ScenarioScreen() {
         />
         <View>
           <IntroText intro={intro} />
-          <CustomButton text={"Commencer"} onPress={handleStart} />
+          <ButtonWithArrow text={"Commencer"} onPress={handleStart} />
         </View>
       </View>
     </SafeAreaView>
