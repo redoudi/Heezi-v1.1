@@ -51,7 +51,7 @@ export function generateStaticParams() {
 export default function ScenarioScreen() {
   const { intro, character } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
-  const { width, height } = useWindowDimensions();
+  const { height } = useWindowDimensions();
 
   const handleStart = () =>
     router.push(`/mission/${practiceTool}/${id}/practice`);
@@ -110,8 +110,11 @@ const styles = StyleSheet.create({
   },
   introImage: {
     borderRadius: 8,
-    alignSelf: "center",
+    alignSelf: "stretch",
     flex: 1,
+    width: "100%",
+    maxWidth: "100%",
+    maxHeight: "100%",
     marginBottom: 16,
   },
 
