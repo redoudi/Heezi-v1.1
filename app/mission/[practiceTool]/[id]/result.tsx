@@ -9,7 +9,6 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
   useWindowDimensions,
 } from "react-native";
@@ -76,20 +75,13 @@ export default function ResultScreen() {
   return (
     <SafeAreaView style={[styles.container, { height: height }]}>
       <View style={[styles.mainContent, { height: height - 24 }]}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => alert("Pressed!")}
-        >
-          <View style={styles.view3}>
-            <View style={styles.box}>
-              <CustomAnimation
-                animationData={
-                  characters[character as keyof typeof characters]?.fin || ""
-                }
-              />
-            </View>
-          </View>
-        </TouchableOpacity>
+        <View style={styles.imageBox}>
+          <CustomAnimation
+            animationData={
+              characters[character as keyof typeof characters]?.fin || ""
+            }
+          />
+        </View>
         <View>
           <EndLevelStats />
           <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
@@ -106,29 +98,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   mainContent: {
-    borderWidth: 1,
-    alignItems: "center",
+    alignItems: "stretch",
     justifyContent: "space-between",
+    height: "100%",
     padding: 16,
   },
-
-  box: {
-    width: 533,
-    height: 653,
-    backgroundColor: "white",
+  imageBox: {
+    borderRadius: 8,
+    padding: 8,
+    flex: 1,
   },
+
   box2: {
     width: 63,
     height: 8,
     backgroundColor: "#33C6FD",
   },
-  button: {
-    alignSelf: "flex-start",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    padding: 8,
-    marginBottom: 16,
-  },
+
   buttonRow: {
     alignSelf: "flex-start",
     flexDirection: "row",
@@ -237,13 +223,6 @@ const styles = StyleSheet.create({
     marginRight: 11,
   },
 
-  view3: {
-    alignSelf: "flex-start",
-    backgroundColor: "#D9D9D9",
-    paddingVertical: 8,
-    paddingLeft: 3,
-    paddingRight: 16,
-  },
   view4: {
     alignSelf: "flex-start",
     paddingBottom: 1,

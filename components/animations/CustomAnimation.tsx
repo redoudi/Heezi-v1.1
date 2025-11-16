@@ -5,5 +5,12 @@ export default function CustomAnimation({
 }: {
   animationData: any;
 }) {
-  return <LottieView source={animationData} loop={true} autoPlay={true} />;
+  return (
+    <LottieView
+      source={animationData}
+      loop={true}
+      autoPlay={true}
+      resizeMode="cover"
+    />
+  );
 }
