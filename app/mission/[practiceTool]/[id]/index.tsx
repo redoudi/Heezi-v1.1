@@ -70,9 +70,10 @@ export default function ScenarioScreen() {
           resizeMode={"contain"}
           style={styles.introImage}
         />
-        <IntroText intro={intro} />
-
-        <StartButton onPress={handleStart} />
+        <View>
+          <IntroText intro={intro} />
+          <StartButton onPress={handleStart} />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -95,6 +96,7 @@ const styles = StyleSheet.create({
       height: 4,
     },
     alignItems: "center",
+    justifyContent: "space-between",
     marginHorizontal: 40,
     borderWidth: 1,
     paddingHorizontal: 16,
