@@ -1,4 +1,4 @@
-import { levelFiles } from "@/assets/levels/indexLevels";
+import { levelFiles } from "@/constants/indexLevels";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { normalizeRouteParam } from "@/utils/normalizeRouteParam";
 import { useLocalSearchParams } from "expo-router";

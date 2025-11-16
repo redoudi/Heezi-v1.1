@@ -1,4 +1,4 @@
-- [ ] ajouter un curseur (partout)
+- [ ] _ajouter un curseur (partout)_
 - [x] bubble : verbe d'action vs impératif
 - [x] appuyer sur entrer pour passer à la bulle suivante
 - [x] rester sur la section après fin de niveau
@@ -16,18 +16,10 @@
 - [x] remonter la mascotte dans l'exo spreadsheet
 - [ ] Version mobile
 
-\*\*
+---
 
-- [ ]
-- [ ]
-- [ ] faire practice de textEditor
-- [x] faire quiz de textEditor
-- [x] lesson de textEditor
-- [x] ajouter [practicetool] dans mission url
-- [ ] r*emplacer les graphiques d'intro/outro*
-- [ ] changer le thème de l'interface Jouer selon le PracticeTool
-- [x] ajouter les animations
-- [ ] enlever tous les alert=>pressed
+- [ ] faire le responsive de tout l'affichage
+- [ ] _changer le thème de l'interface Jouer selon le PracticeTool_
 - [ ] ajouter les highlight pour lesson et practice
 - [ ] ajouter le display correct/faux pour les quiz
 - [ ] implémenter le score à la fin pour les quiz
@@ -35,10 +27,8 @@
 - [ ] enlever le score à la fin pour practice
 - [ ] mettre mascot-bubble comme modal pour lesson
 - [ ] mettre la flèche vers le bas comme onclose dans mascot-modal
-- [ ] faire le responsive de tout l'affichage
 - [x] repair unbolding in tableur
 - [ ] ajouter les boutons près des animations dans section-screen
 - [ ] disable les boutons non implémentés
-- [ ] implémenter l'export
-- [ ] refaire la sélection du tableau excel
-- [ ] télécharger toutes les images
+- [ ] refaire le graphisme de la sélection du tableau excel
+- [ ] _télécharger toutes les images_

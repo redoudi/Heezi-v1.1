@@ -1,4 +1,4 @@
-import { levelFiles } from "@/assets/levels/indexLevels";
+import { levelFiles } from "@/constants/indexLevels";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 

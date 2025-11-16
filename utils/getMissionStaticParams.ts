@@ -1,4 +1,4 @@
-import { levelFiles } from "@/assets/levels/indexLevels";
+import { levelFiles } from "@/constants/indexLevels";
 
 export interface MissionRouteParams {
   practiceTool: string;
@@ -13,4 +13,3 @@ export function getMissionStaticParams(): MissionRouteParams[] {
     }))
   );
 }
-
