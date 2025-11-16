@@ -3,10 +3,11 @@ import useLevelData from "@/hooks/use-level-data";
 import {
   Image,
   SafeAreaView,
+  StyleProp,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
+  ViewStyle,
 } from "react-native";
 
 const DownArrow = ({ nextStep }: { nextStep: () => void }) => {
@@ -48,6 +49,7 @@ export const MascotDialog = ({
 }: {
   bubbleText: string;
   downArrowNextStep: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
 }) => {
   const DownArrowNextStep = downArrowNextStep;
   return (
