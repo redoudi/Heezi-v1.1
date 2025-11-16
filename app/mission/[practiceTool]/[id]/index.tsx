@@ -47,21 +47,8 @@ export function generateStaticParams() {
   return getMissionStaticParams();
 }
 
-const getImageSource = (levelType: string) => {
-  switch (levelType) {
-    case "practice":
-      return require("@/assets/images/asking-for-help.png");
-    case "lesson":
-      return require("@/assets/images/intro-cours.png");
-    case "quiz":
-      return require("@/assets/images/heezi-idle.png");
-    default:
-      return require("@/assets/images/asking-for-help.png");
-  }
-};
-
 export default function ScenarioScreen() {
-  const { intro, levelType, character } = useLevelData();
+  const { intro, character } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
 
   const handleStart = () =>
@@ -89,7 +76,7 @@ export default function ScenarioScreen() {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: "100%",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
     justifyContent: "center",
