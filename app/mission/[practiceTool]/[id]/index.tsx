@@ -57,8 +57,9 @@ export default function ScenarioScreen() {
     router.push(`/mission/${practiceTool}/${id}/practice`);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.mainContent}>
+    <SafeAreaView style={[styles.container, { height: height }]}>
+      {/* <View style={[styles.mainContent]}> */}
+      <View style={[styles.mainContent, { height: height }]}>
         <BackButton style={styles.backButton} />
         <Image
           source={
@@ -78,9 +79,10 @@ export default function ScenarioScreen() {
 }
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#FFFFFF",
+    flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#FFFFFF",
     justifyContent: "center",
   },
   mainContent: {
