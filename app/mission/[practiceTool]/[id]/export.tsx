@@ -1,16 +1,10 @@
 import ExportFormatButtons from "@/components/ExportFormatButtons";
+import FullWIndowContainer from "@/components/FullWIndowContainer";
 import { MascotDialog } from "@/components/mascot/mascot-bubble";
 import SnapshotPreview from "@/components/snapshot-preview";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router } from "expo-router";
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export const dynamicParams = false;
 
@@ -20,12 +14,11 @@ export function generateStaticParams() {
 
 export default function ExportScreen() {
   return (
-    <SafeAreaView style={styles.container}>
+    <FullWIndowContainer>
       <View style={styles.view}>
         <View style={styles.view2}>
           <View style={styles.column}>
             <SnapshotPreview />
-            {/* <ResultSnapshot2 /> */}
             <ExportFormatButtons />
             <TouchableOpacity
               style={styles.buttonRow5}
@@ -42,7 +35,7 @@ export default function ExportScreen() {
         </View>
       </View>
       <MascotDialog bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!" />
-    </SafeAreaView>
+    </FullWIndowContainer>
   );
 }
 const styles = StyleSheet.create({
