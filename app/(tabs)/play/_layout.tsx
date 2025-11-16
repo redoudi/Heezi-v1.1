@@ -3,13 +3,16 @@ import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 
 import { CourseCard } from "@/components/home/course-card";
 
+import { PracticeToolProvider } from "@/context/usePracticeTool";
 import { Slot } from "expo-router";
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <LeftColumn />
-      <RightColumn />
+      <PracticeToolProvider>
+        <LeftColumn />
+        <RightColumn />
+      </PracticeToolProvider>
     </SafeAreaView>
   );
 }

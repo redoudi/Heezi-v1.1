@@ -12,6 +12,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  useWindowDimensions,
 } from "react-native";
 
 function IntroText({ intro = "..." }) {
@@ -50,6 +51,7 @@ export function generateStaticParams() {
 export default function ScenarioScreen() {
   const { intro, character } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
+  const { width, height } = useWindowDimensions();
 
   const handleStart = () =>
     router.push(`/mission/${practiceTool}/${id}/practice`);
@@ -65,7 +67,7 @@ export default function ScenarioScreen() {
               : ""
           }
           resizeMode={"contain"}
-          style={styles.avatar}
+          style={styles.introImage}
         />
         <IntroText intro={intro} />
 
@@ -76,7 +78,6 @@ export default function ScenarioScreen() {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
@@ -103,11 +104,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     alignSelf: "flex-start",
   },
-  avatar: {
+  introImage: {
     borderRadius: 8,
     alignSelf: "center",
-    width: 533,
-    height: 653,
+    width: 300,
+    height: 300,
     marginBottom: 16,
   },
 
