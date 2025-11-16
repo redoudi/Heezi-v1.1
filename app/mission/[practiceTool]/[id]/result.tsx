@@ -1,3 +1,4 @@
+import FullWIndowContainer from "@/components/FullWIndowContainer";
 import CustomAnimation from "@/components/animations/CustomAnimation";
 import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
 import characters from "@/constants/characters";
@@ -6,7 +7,6 @@ import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
@@ -73,7 +73,7 @@ export default function ResultScreen() {
   const { height } = useWindowDimensions();
 
   return (
-    <SafeAreaView style={[styles.container, { height: height }]}>
+    <FullWIndowContainer>
       <View style={[styles.mainContent, { height: height - 24 }]}>
         <View style={styles.imageBox}>
           <CustomAnimation
@@ -87,7 +87,7 @@ export default function ResultScreen() {
           <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
         </View>
       </View>
-    </SafeAreaView>
+    </FullWIndowContainer>
   );
 }
 const styles = StyleSheet.create({

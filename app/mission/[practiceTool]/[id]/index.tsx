@@ -1,3 +1,4 @@
+import FullWIndowContainer from "@/components/FullWIndowContainer";
 import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
 import BackButton from "@/components/ui/back-button";
 import characters from "@/constants/characters";
@@ -6,7 +7,6 @@ import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
@@ -36,7 +36,7 @@ export default function ScenarioScreen() {
     router.push(`/mission/${practiceTool}/${id}/practice`);
 
   return (
-    <SafeAreaView style={[styles.container, { height: height }]}>
+    <FullWIndowContainer>
       {/* <View style={[styles.mainContent]}> */}
       <View style={[styles.mainContent, { height: height - 24 }]}>
         <BackButton style={styles.backButton} />
@@ -54,7 +54,7 @@ export default function ScenarioScreen() {
           <ButtonWithArrow text={"Commencer"} onPress={handleStart} />
         </View>
       </View>
-    </SafeAreaView>
+    </FullWIndowContainer>
   );
 }
 const styles = StyleSheet.create({
