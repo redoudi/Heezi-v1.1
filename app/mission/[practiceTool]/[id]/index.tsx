@@ -59,7 +59,7 @@ export default function ScenarioScreen() {
   return (
     <SafeAreaView style={[styles.container, { height: height }]}>
       {/* <View style={[styles.mainContent]}> */}
-      <View style={[styles.mainContent, { height: height }]}>
+      <View style={[styles.mainContent, { height: height - 24 }]}>
         <BackButton style={styles.backButton} />
         <Image
           source={
