@@ -5,7 +5,6 @@ import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import {
   Image,
-  ImageSourcePropType,
   ImageStyle,
   SafeAreaView,
   StyleProp,
@@ -14,12 +13,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
-function Avatar({ imageSource }: { imageSource: ImageSourcePropType }) {
-  return (
-    <Image source={imageSource} resizeMode={"contain"} style={styles.avatar} />
-  );
-}
 
 function IntroText({ intro = "..." }) {
   return (
@@ -70,8 +63,6 @@ const getImageSource = (levelType: string) => {
 export default function ScenarioScreen() {
   const { intro, levelType, character } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
-
-  const imageSource = getImageSource(levelType);
 
   const handleStart = () =>
     router.push(`/mission/${practiceTool}/${id}/practice`);
