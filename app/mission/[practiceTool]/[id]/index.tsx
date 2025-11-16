@@ -111,8 +111,7 @@ const styles = StyleSheet.create({
   introImage: {
     borderRadius: 8,
     alignSelf: "center",
-    width: 300,
-    height: 300,
+    flex: 1,
     marginBottom: 16,
   },
 
