@@ -1,47 +1,14 @@
 import { useKbdSpdshtNextRow } from "@/hooks/use-keyboard";
-import {
-  FlatList,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
 import Cell from "./cell";
+import HeaderRow from "./header-row";
 
 const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
-
 // Row configuration
 const ROWS = Array.from({ length: 18 }, (_, i) => ({
   id: (i + 1).toString(),
   rowNumber: i + 1,
 }));
-
-const CornerSymbol = () => (
-  <Image
-    source={require("@/assets/images/pt024urq_expires_30_days.png")}
-    resizeMode={"stretch"}
-    style={styles.image35}
-  />
-);
-
-const HeaderRow = () => (
-  <ScrollView
-    horizontal
-    showsHorizontalScrollIndicator={false}
-    style={styles.scrollView}
-  >
-    <CornerSymbol />
-    {COLUMNS.map((columnLetter, index) => (
-      <View
-        key={columnLetter}
-        style={index === COLUMNS.length - 1 ? styles.view3 : styles.view2}
-      >
-        <Text style={styles.text9}>{columnLetter}</Text>
-      </View>
-    ))}
-  </ScrollView>
-);
 
 export default function SpreadsheetGrid() {
   useKbdSpdshtNextRow();
@@ -76,7 +43,7 @@ export default function SpreadsheetGrid() {
 
   return (
     <View style={styles.column12}>
-      <HeaderRow />
+      <HeaderRow columnsLetters={COLUMNS} />
       <FlatList
         data={ROWS}
         renderItem={renderRow}
