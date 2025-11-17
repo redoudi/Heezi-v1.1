@@ -16,7 +16,6 @@ export default function FullWindowContainer({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
