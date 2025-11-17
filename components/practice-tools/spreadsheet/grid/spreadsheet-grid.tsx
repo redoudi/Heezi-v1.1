@@ -25,26 +25,27 @@ const CornerSymbol = () => (
   />
 );
 
+const HeaderRow = () => (
+  <ScrollView
+    horizontal
+    showsHorizontalScrollIndicator={false}
+    style={styles.scrollView}
+  >
+    <CornerSymbol />
+    {COLUMNS.map((columnLetter, index) => (
+      <View
+        key={columnLetter}
+        style={index === COLUMNS.length - 1 ? styles.view3 : styles.view2}
+      >
+        <Text style={styles.text9}>{columnLetter}</Text>
+      </View>
+    ))}
+  </ScrollView>
+);
+
 export default function SpreadsheetGrid() {
   useKbdSpdshtNextRow();
   // Header component
-  const renderHeader = (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      style={styles.scrollView}
-    >
-      <CornerSymbol />
-      {COLUMNS.map((columnLetter, index) => (
-        <View
-          key={columnLetter}
-          style={index === COLUMNS.length - 1 ? styles.view3 : styles.view2}
-        >
-          <Text style={styles.text9}>{columnLetter}</Text>
-        </View>
-      ))}
-    </ScrollView>
-  );
 
   // Row component
   const renderRow = ({
@@ -75,7 +76,7 @@ export default function SpreadsheetGrid() {
 
   return (
     <View style={styles.column12}>
-      {renderHeader}
+      <HeaderRow />
       <FlatList
         data={ROWS}
         renderItem={renderRow}
