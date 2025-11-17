@@ -1,5 +1,4 @@
 import { useKbdSpdshtNextRow } from "@/hooks/use-keyboard";
-import { useMemo } from "react";
 import {
   FlatList,
   Image,
@@ -29,25 +28,22 @@ const CornerSymbol = () => (
 export default function SpreadsheetGrid() {
   useKbdSpdshtNextRow();
   // Header component
-  const renderHeader = useMemo(
-    () => (
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={styles.scrollView}
-      >
-        <CornerSymbol />
-        {COLUMNS.map((column, index) => (
-          <View
-            key={column}
-            style={index === COLUMNS.length - 1 ? styles.view3 : styles.view2}
-          >
-            <Text style={styles.text9}>{column}</Text>
-          </View>
-        ))}
-      </ScrollView>
-    ),
-    []
+  const renderHeader = (
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      style={styles.scrollView}
+    >
+      <CornerSymbol />
+      {COLUMNS.map((columnLetter, index) => (
+        <View
+          key={columnLetter}
+          style={index === COLUMNS.length - 1 ? styles.view3 : styles.view2}
+        >
+          <Text style={styles.text9}>{columnLetter}</Text>
+        </View>
+      ))}
+    </ScrollView>
   );
 
   // Row component
@@ -64,8 +60,8 @@ export default function SpreadsheetGrid() {
         showsHorizontalScrollIndicator={false}
         style={styles.scrollView}
       >
-        <View style={styles.view4}>
-          <Text style={styles.text10}>{item.id}</Text>
+        <View style={styles.rowNumberContainer}>
+          <Text style={styles.rowNumber}>{item.id}</Text>
         </View>
         {COLUMNS.map((_, colIndex) => (
           <Cell
@@ -78,16 +74,14 @@ export default function SpreadsheetGrid() {
   };
 
   return (
-    <View>
-      <View style={styles.column12}>
-        {renderHeader}
-        <FlatList
-          data={ROWS}
-          renderItem={renderRow}
-          keyExtractor={(item) => item.id}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
+    <View style={styles.column12}>
+      {renderHeader}
+      <FlatList
+        data={ROWS}
+        renderItem={renderRow}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 }
@@ -127,7 +121,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-  text10: {
+  rowNumber: {
     color: "#292929",
     fontSize: 16,
     fontWeight: "bold",
@@ -140,8 +134,7 @@ const styles = StyleSheet.create({
   view3: {
     width: 106,
   },
-  view4: {
-    width: 4,
+  rowNumberContainer: {
     marginRight: 28,
   },
   view5: {
