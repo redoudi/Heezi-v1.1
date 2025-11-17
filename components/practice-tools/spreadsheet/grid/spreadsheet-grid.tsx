@@ -135,7 +135,10 @@ const styles = StyleSheet.create({
     width: 106,
   },
   rowNumberContainer: {
-    marginRight: 28,
+    width: 28,
+    alignItems: "flex-end",
+    justifyContent: "center",
+    marginRight: 16,
   },
   view5: {
     width: 8,
