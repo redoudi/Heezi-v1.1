@@ -17,17 +17,23 @@ interface SpreadsheetStore {
   levelType: string;
 }
 
+const getDefaultSpreadsheetData = () => ({
+  cellsValues: {},
+  cellsSelected: [],
+  cellsStyles: {},
+});
+
 const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
-  spreadsheetData: { cellsValues: {}, cellsSelected: [], cellsStyles: {} },
+  spreadsheetData: getDefaultSpreadsheetData(),
 
   tasks: [],
   levelType: "",
   setLevelData: (levelData: any) => {
     const { spreadsheetData, tasks, levelType, cellsEnabled } = levelData;
-    set(() => ({
-      spreadsheetData,
-      tasks,
-      levelType,
+    set((state) => ({
+      spreadsheetData: spreadsheetData || getDefaultSpreadsheetData(),
+      tasks: tasks || [],
+      levelType: levelType || "",
       cellsEnabled,
     }));
   },
@@ -35,8 +41,11 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
   setCellValue: (cell: string, value: string) => {
     set((state) => ({
       spreadsheetData: {
-        ...state.spreadsheetData,
-        cellsValues: { ...state.spreadsheetData.cellsValues, [cell]: value },
+        ...(state.spreadsheetData || getDefaultSpreadsheetData()),
+        cellsValues: {
+          ...(state.spreadsheetData?.cellsValues || {}),
+          [cell]: value,
+        },
       },
     }));
   },
@@ -44,8 +53,11 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
   setCellStyle: (cell: string, style: { [key: string]: any }) => {
     set((state) => ({
       spreadsheetData: {
-        ...state.spreadsheetData,
-        cellsStyles: { ...state.spreadsheetData.cellsStyles, [cell]: style },
+        ...(state.spreadsheetData || getDefaultSpreadsheetData()),
+        cellsStyles: {
+          ...(state.spreadsheetData?.cellsStyles || {}),
+          [cell]: style,
+        },
       },
     }));
   },
@@ -53,7 +65,7 @@ const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
   setCellsSelected: (cells: string[] | string) => {
     set((state) => ({
       spreadsheetData: {
-        ...get().spreadsheetData,
+        ...(state.spreadsheetData || getDefaultSpreadsheetData()),
         cellsSelected: parseCellsExpressions(cells),
       },
     }));

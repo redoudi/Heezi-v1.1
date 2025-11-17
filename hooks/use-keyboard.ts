@@ -34,9 +34,10 @@ export const useKbdNextStep = ({
 
 export const useKbdSpdshtNextRow = () => {
   const {
-    spreadsheetData: { cellsSelected },
+    spreadsheetData,
     setCellsSelected,
   } = useSpreadsheetStore();
+  const cellsSelected = spreadsheetData?.cellsSelected || [];
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (cellsSelected.length > 0 && event.key === "Enter") {
