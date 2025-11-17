@@ -1,10 +1,4 @@
-import {
-  Image,
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, SafeAreaView, TouchableOpacity, View } from "react-native";
 import FunctionBar from "./function-bar";
 import SpreadsheetGrid from "./grid/spreadsheet-grid";
 import Ribbon from "./ribbon/spreadsheet-ribbon";
@@ -26,7 +20,8 @@ export default function SpreadsheetScreen() {
         <View style={styles.column13}>
           <View style={styles.row16}>
             <Image
-              source={require("@/assets/images/4z87rs57_expires_30_days.png")} resizeMode={"stretch"}
+              source={require("@/assets/images/4z87rs57_expires_30_days.png")}
+              resizeMode={"stretch"}
               style={styles.image36}
             />
             <TouchableOpacity
@@ -34,7 +29,8 @@ export default function SpreadsheetScreen() {
               onPress={() => alert("Pressed!")}
             >
               <Image
-                source={require("@/assets/images/o6j3pvf5_expires_30_days.png")} resizeMode={"stretch"}
+                source={require("@/assets/images/o6j3pvf5_expires_30_days.png")}
+                resizeMode={"stretch"}
                 style={styles.image37}
               />
             </TouchableOpacity>
@@ -44,16 +40,6 @@ export default function SpreadsheetScreen() {
               </View>
             </View>
           </View>
-          <TouchableOpacity
-            style={styles.buttonRow8}
-            onPress={() => alert("Pressed!")}
-          >
-            <Text style={styles.text11}>{"Envoyer"}</Text>
-            <Image
-              source={require("@/assets/images/bg345eii_expires_30_days.png")} resizeMode={"stretch"}
-              style={styles.image38}
-            />
-          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
