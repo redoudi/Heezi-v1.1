@@ -1,5 +1,5 @@
 import ExportFormatButtons from "@/components/ExportFormatButtons";
-import FullWIndowContainer from "@/components/FullWIndowContainer";
+import FullWindowContainer from "@/components/FullWindowContainer";
 import { MascotDialog } from "@/components/mascot/mascot-bubble";
 import SnapshotPreview from "@/components/snapshot-preview";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
@@ -14,7 +14,7 @@ export function generateStaticParams() {
 
 export default function ExportScreen() {
   return (
-    <FullWIndowContainer>
+    <FullWindowContainer>
       <View style={styles.view}>
         <View style={styles.view2}>
           <View style={styles.column}>
@@ -35,7 +35,7 @@ export default function ExportScreen() {
         </View>
       </View>
       <MascotDialog bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!" />
-    </FullWIndowContainer>
+    </FullWindowContainer>
   );
 }
 const styles = StyleSheet.create({

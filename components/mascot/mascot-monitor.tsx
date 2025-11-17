@@ -1,7 +1,6 @@
 import useCursor from "@/context/useCursor";
 import { useKbdNextStep } from "@/hooks/use-keyboard";
 import useLevelData from "@/hooks/use-level-data";
-import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, View } from "react-native";
@@ -25,7 +24,7 @@ export default function MascotMonitor({
 
     taskStep: taskStepParam,
   } = useLocalSearchParams();
-  const { setCellsSelected } = useSpreadsheetStore();
+
   const { tasks: levelTasks, levelType } = useLevelData();
   const { moveCursor, hideCursor } = useCursor();
   const [modalText, setModalText] = useState<string | null>(null);

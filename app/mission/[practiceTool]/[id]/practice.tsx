@@ -13,7 +13,7 @@ import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { useLocalSearchParams } from "expo-router";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import QuizScreen from "./quiz";
 
 export const dynamicParams = false;
@@ -24,15 +24,14 @@ export function generateStaticParams() {
 
 function LoadedSpreadsheetScreen() {
   useLoadSpreadsheet();
-  const { spreadsheetData, setCellsSelected } = useSpreadsheetStore();
+  const { spreadsheetData } = useSpreadsheetStore();
   return (
-    <View style={{ height: "100%" }}>
+    <View>
       <SpreadsheetScreen />
       <MascotMonitor
         checkConditionHook={useCheckSpreadsheetCondition}
         runPreActionsHook={useRunSpreadsheetPreActions}
         practiceToolData={spreadsheetData}
-        onNextTask={() => setCellsSelected([])}
       />
     </View>
   );
@@ -42,13 +41,12 @@ function LoadedTextEditorScreen() {
   useLoadTextEditor();
   const { contentBlocks } = useTextEditorStore();
   return (
-    <View style={{ height: "100%" }}>
+    <View>
       <TextEditorScreen />
       <MascotMonitor
         checkConditionHook={useCheckTextEditorCondition}
         runPreActionsHook={useRunTextEditorPreActions}
         practiceToolData={contentBlocks}
-        onNextTask={() => {}}
       />
     </View>
   );
@@ -77,10 +75,3 @@ export default function PracticeScreen() {
     </CursorProvider>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    backgroundColor: "white",
-  },
-});

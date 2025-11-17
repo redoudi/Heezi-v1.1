@@ -1,4 +1,4 @@
-import FullWIndowContainer from "@/components/FullWIndowContainer";
+import FullWindowContainer from "@/components/FullWindowContainer";
 import CustomAnimation from "@/components/animations/CustomAnimation";
 import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
 import characters from "@/constants/characters";
@@ -73,7 +73,7 @@ export default function ResultScreen() {
   const { height } = useWindowDimensions();
 
   return (
-    <FullWIndowContainer>
+    <FullWindowContainer>
       <View style={[styles.mainContent, { height: height - 24 }]}>
         <View style={styles.imageBox}>
           <CustomAnimation
@@ -87,7 +87,7 @@ export default function ResultScreen() {
           <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
         </View>
       </View>
-    </FullWIndowContainer>
+    </FullWindowContainer>
   );
 }
 const styles = StyleSheet.create({

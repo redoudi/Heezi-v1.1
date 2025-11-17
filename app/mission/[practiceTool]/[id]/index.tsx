@@ -1,4 +1,4 @@
-import FullWIndowContainer from "@/components/FullWIndowContainer";
+import FullWindowContainer from "@/components/FullWindowContainer";
 import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
 import BackButton from "@/components/ui/back-button";
 import characters from "@/constants/characters";
@@ -36,7 +36,7 @@ export default function ScenarioScreen() {
     router.push(`/mission/${practiceTool}/${id}/practice`);
 
   return (
-    <FullWIndowContainer>
+    <FullWindowContainer>
       {/* <View style={[styles.mainContent]}> */}
       <View style={[styles.mainContent, { height: height - 24 }]}>
         <BackButton style={styles.backButton} />
@@ -54,7 +54,7 @@ export default function ScenarioScreen() {
           <ButtonWithArrow text={"Commencer"} onPress={handleStart} />
         </View>
       </View>
-    </FullWIndowContainer>
+    </FullWindowContainer>
   );
 }
 const styles = StyleSheet.create({

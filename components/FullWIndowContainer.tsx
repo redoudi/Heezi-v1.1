@@ -1,7 +1,7 @@
 import { StyleSheet, useWindowDimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function FullWIndowContainer({
+export default function FullWindowContainer({
   children,
 }: {
   children: React.ReactNode;
