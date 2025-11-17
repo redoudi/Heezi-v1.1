@@ -1,4 +1,5 @@
 import MissionPart from "@/components/MissionPart";
+import StatusText from "@/components/status-text";
 import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -32,9 +33,7 @@ export default function SectionScreen() {
               </View>
               <Text style={styles.text}>{"3 niveaux"}</Text>
             </View>
-            <View style={styles.view2}>
-              <Text style={styles.text2}>{"En cours"}</Text>
-            </View>
+            <StatusText />
           </View>
           <View>
             <Text style={styles.text3}>{"Titre de la section"}</Text>
@@ -193,7 +192,7 @@ const styles = StyleSheet.create({
     color: "#1C5348",
     fontSize: 14,
   },
-  text2: {
+  statusText: {
     color: "#0A2924",
     fontSize: 16,
   },

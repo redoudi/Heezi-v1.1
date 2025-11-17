@@ -44,8 +44,8 @@ const Mascot = () => {
 
 export const MascotDialog = ({
   bubbleText,
-  downArrowNextStep,
-  style,
+  downArrowNextStep = undefined,
+  style = undefined,
 }: {
   bubbleText: string;
   downArrowNextStep: React.ReactNode;
