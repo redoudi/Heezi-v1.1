@@ -1,3 +1,4 @@
+import FullWindowContainer from "@/components/FullWindowContainer";
 import MascotMonitor from "@/components/mascot/mascot-monitor";
 import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/SpreadsheetScreen";
 import TextEditorScreen from "@/components/practice-tools/text-editor/textEditorScreen";
@@ -26,14 +27,14 @@ function LoadedSpreadsheetScreen() {
   useLoadSpreadsheet();
   const { spreadsheetData } = useSpreadsheetStore();
   return (
-    <View>
+    <FullWindowContainer>
       <SpreadsheetScreen />
       <MascotMonitor
         checkConditionHook={useCheckSpreadsheetCondition}
         runPreActionsHook={useRunSpreadsheetPreActions}
         practiceToolData={spreadsheetData}
       />
-    </View>
+    </FullWindowContainer>
   );
 }
 
