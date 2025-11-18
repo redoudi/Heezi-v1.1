@@ -1,11 +1,11 @@
 import { CourseCard } from "@/components/home/course-card";
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import usePracticeTool from "@/context/usePracticeTool";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const Continuer = () => {
-  const { toolConstants } = usePracticeTool();
+  const { toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.row}>
       <TouchableOpacity
@@ -24,7 +24,7 @@ const Continuer = () => {
 };
 
 export default function SectionsList() {
-  const { toolConstants } = usePracticeTool();
+  const { toolConstants } = usePracticeToolConstants();
 
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>

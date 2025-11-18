@@ -1,6 +1,6 @@
 import MissionPart from "@/components/MissionPart";
 import StatusText from "@/components/status-text";
-import usePracticeTool from "@/context/usePracticeTool";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionScreen() {
@@ -11,7 +11,7 @@ export default function SectionScreen() {
   const practiceButtonImage = require("@/assets/images/practice.png");
   const practiceAnimationData = require("@/assets/animations/RenardBureauVert.json");
 
-  const { toolConstants } = usePracticeTool();
+  const { toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.container}>
       <View style={styles.column}>

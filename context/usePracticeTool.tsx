@@ -31,7 +31,6 @@ export function PracticeToolProvider({ children }: { children: ReactNode }) {
     <PracticeToolContext.Provider
       value={{
         practiceTool,
-
         toolConstants,
       }}
     >
