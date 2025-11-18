@@ -15,7 +15,7 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
   return (
     <TouchableOpacity
       onPress={() => {
-        router.push(`/play/${tool}`);
+        router.push(`/play/${cardToolConstants.tool}`);
       }}
     >
       <View
