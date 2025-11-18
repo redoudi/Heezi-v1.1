@@ -44,11 +44,12 @@ export default function SpreadsheetGrid() {
   return (
     <View style={styles.column12}>
       <HeaderRow columnsLetters={COLUMNS} />
+
       <FlatList
         data={ROWS}
         renderItem={renderRow}
         keyExtractor={(item) => item.id}
-        showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={true}
       />
     </View>
   );
