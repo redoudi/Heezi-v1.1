@@ -1,38 +1,10 @@
 import { CourseCard } from "@/components/home/course-card";
 import ContinuerSectionBtn from "@/components/home/section-card/ContinuerSectionBtn";
+import SectionCard from "@/components/home/section-card/SectionCard";
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
-
-function SectionCard({
-  mascotImageSource,
-  sectionNumber,
-}: {
-  mascotImageSource: number;
-  sectionNumber: number;
-}) {
-  return (
-    <View style={styles.row3}>
-      <View style={styles.column3}>
-        <View style={styles.column}>
-          <Text style={styles.text3}>{`Section ${sectionNumber}`}</Text>
-          <View style={styles.view2}>
-            <View style={styles.view3}>
-              <View style={styles.box}></View>
-            </View>
-          </View>
-        </View>
-        <ContinuerSectionBtn disabled={true} />
-      </View>
-      <Image
-        source={mascotImageSource}
-        resizeMode={"contain"}
-        style={styles.image8}
-      />
-    </View>
-  );
-}
 
 export default function SectionsList() {
   const { toolConstants, practiceTool } = usePracticeToolConstants();
