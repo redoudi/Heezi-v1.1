@@ -10,7 +10,7 @@ const Continuer = () => {
     <View style={styles.row}>
       <TouchableOpacity
         style={[styles.buttonRow, { backgroundColor: toolConstants.color }]}
-        onPress={() => router.push("/play/section-screen")}
+        onPress={() => router.push("/(tabs)/play/section-screen")}
       >
         <Text style={styles.text2}>{"Continuer"}</Text>
         <Image
