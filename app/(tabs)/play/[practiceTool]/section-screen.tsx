@@ -11,7 +11,7 @@ export default function SectionScreen() {
   const practiceButtonImage = require("@/assets/images/practice.png");
   const practiceAnimationData = require("@/assets/animations/RenardBureauVert.json");
 
-  const { toolConstants } = usePracticeToolConstants();
+  const { toolConstants, practiceTool } = usePracticeToolConstants();
   return (
     <View style={styles.container}>
       <View style={styles.column}>
@@ -21,7 +21,9 @@ export default function SectionScreen() {
           <View style={styles.row}>
             <View style={styles.row2}>
               <View style={styles.view}>
-                <TouchableOpacity onPress={() => router.replace("/(tabs)")}>
+                <TouchableOpacity
+                  onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
+                >
                   <Image
                     source={{
                       uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/z1q84zux_expires_30_days.png",
