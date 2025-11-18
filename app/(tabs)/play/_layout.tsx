@@ -1,14 +1,19 @@
 import { RightColumn } from "@/components/home/right-column";
-import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
-
-import { CourseCard } from "@/components/home/course-card";
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+  useWindowDimensions,
+} from "react-native";
 
 import { PracticeToolProvider } from "@/context/usePracticeTool";
 import { Slot } from "expo-router";
 
 export default function HomeScreen() {
+  const { height } = useWindowDimensions();
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { height: height || "100%" }]}>
       <PracticeToolProvider>
         <LeftColumn />
         <RightColumn />
@@ -39,7 +44,6 @@ function LeftColumn() {
         showsVerticalScrollIndicator={true}
       >
         <View style={styles2.leftColumnContent}>
-          <CourseCard />
           <Slot />
         </View>
       </ScrollView>

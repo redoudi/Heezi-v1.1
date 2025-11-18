@@ -1,3 +1,4 @@
+import { CourseCard } from "@/components/home/course-card";
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
@@ -27,6 +28,8 @@ export default function SectionsList() {
 
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
+      {" "}
+      <CourseCard />
       <View style={styles.column}>
         <View
           style={[
