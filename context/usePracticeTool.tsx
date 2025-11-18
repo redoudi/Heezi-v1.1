@@ -1,5 +1,6 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
-import { ReactNode, createContext, useContext, useState } from "react";
+import { useLocalSearchParams } from "expo-router";
+import { ReactNode, createContext, useContext } from "react";
 
 export type PracticeTool = "spreadsheet" | "textEditor" | "";
 
@@ -19,8 +20,10 @@ const PracticeToolContext = createContext<{
 });
 
 export function PracticeToolProvider({ children }: { children: ReactNode }) {
-  const [practiceTool, setPracticeTool] =
-    useState<PracticeTool>(defaultPracticeTool);
+  const { practiceTool } =
+    useLocalSearchParams<{ practiceTool: PracticeTool }>() ||
+    defaultPracticeTool;
+
   const toolConstants =
     practiceToolsConstants[practiceTool as keyof typeof practiceToolsConstants];
 
@@ -28,7 +31,7 @@ export function PracticeToolProvider({ children }: { children: ReactNode }) {
     <PracticeToolContext.Provider
       value={{
         practiceTool,
-        setPracticeTool,
+
         toolConstants,
       }}
     >

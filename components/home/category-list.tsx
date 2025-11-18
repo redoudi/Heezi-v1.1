@@ -1,4 +1,5 @@
 import usePracticeTool, { PracticeTool } from "@/context/usePracticeTool";
+import { router } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export interface CategoryItem {
@@ -9,7 +10,7 @@ export interface CategoryItem {
 }
 
 export function CategoryList() {
-  const { setPracticeTool, practiceTool } = usePracticeTool();
+  const { practiceTool } = usePracticeTool();
   const categories: CategoryItem[] = [
     {
       title: "Gestion d'un tableur",
@@ -31,7 +32,7 @@ export function CategoryList() {
         <TouchableOpacity
           key={index}
           onPress={() => {
-            setPracticeTool(category.tool);
+            router.push(`/play/${category.tool}`);
           }}
         >
           <View
