@@ -1,7 +1,7 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { PracticeTool } from "@/context/usePracticeTool";
-import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { router } from "expo-router";
+import { CategoryCard } from "@/components/home/category-card";
+import { router, useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export interface CategoryItem {
@@ -12,36 +12,12 @@ export interface CategoryItem {
 }
 
 export function CategoryList() {
-  const { practiceTool } = usePracticeToolConstants();
-  const categories = Object.values(practiceToolsConstants);
+  const toolNames = Object.keys(practiceToolsConstants);
 
   return (
     <View style={styles.categoryList}>
-      {categories.map((category, index) => (
-        <TouchableOpacity
-          key={index}
-          onPress={() => {
-            router.push(`/play/${category.tool}`);
-          }}
-        >
-          <View
-            style={[
-              styles.container,
-              {
-                backgroundColor:
-                  practiceTool === category.tool
-                    ? category.backgroundColor
-                    : "#FFFFFF",
-                borderWidth: practiceTool === category.tool ? 0 : 1,
-                borderColor: category.backgroundColor,
-              },
-            ]}
-          >
-            <Text style={[styles.text, { color: category.textColor }]}>
-              {category.title}
-            </Text>
-          </View>
-        </TouchableOpacity>
+      {toolNames.map((toolName, index) => (
+        <CategoryCard key={index} toolName={toolName} />
       ))}
     </View>
   );

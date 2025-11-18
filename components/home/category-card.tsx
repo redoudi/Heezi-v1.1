@@ -1,5 +1,6 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import practiceToolsConstants from "@/constants/practiceToolsConstants";
+import { router, useLocalSearchParams } from "expo-router";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface CategoryCardProps {
   title: string;
@@ -7,15 +8,34 @@ interface CategoryCardProps {
   textColor: string;
 }
 
-export function CategoryCard({
-  title,
-  backgroundColor,
-  textColor,
-}: CategoryCardProps) {
+export function CategoryCard({ toolName }: CategoryCardProps) {
+  const { practiceTool } = useLocalSearchParams();
+  const cardToolConstants =
+    practiceToolsConstants[toolName as keyof typeof practiceToolsConstants];
   return (
-    <View style={[styles.container, { backgroundColor }]}>
-      <Text style={[styles.text, { color: textColor }]}>{title}</Text>
-    </View>
+    <TouchableOpacity
+      onPress={() => {
+        router.push(`/play/${tool}`);
+      }}
+    >
+      <View
+        style={[
+          styles.container,
+          {
+            borderColor: cardToolConstants.backgroundColor,
+            borderWidth: practiceTool === cardToolConstants.tool ? 0 : 1,
+            backgroundColor:
+              practiceTool === cardToolConstants.tool
+                ? cardToolConstants.backgroundColor
+                : "#FFFFFF",
+          },
+        ]}
+      >
+        <Text style={[styles.text, { color: cardToolConstants.textColor }]}>
+          {cardToolConstants.title}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 
