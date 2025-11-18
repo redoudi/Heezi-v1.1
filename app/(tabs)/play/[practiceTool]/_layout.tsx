@@ -7,17 +7,14 @@ import {
   useWindowDimensions,
 } from "react-native";
 
-import { PracticeToolProvider } from "@/context/usePracticeTool";
 import { Slot } from "expo-router";
 
 export default function HomeScreen() {
   const { height } = useWindowDimensions();
   return (
     <SafeAreaView style={[styles.container, { height: height || "100%" }]}>
-      <PracticeToolProvider>
-        <LeftColumn />
-        <RightColumn />
-      </PracticeToolProvider>
+      <LeftColumn />
+      <RightColumn />
     </SafeAreaView>
   );
 }
