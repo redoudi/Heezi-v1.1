@@ -1,3 +1,4 @@
+import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { PracticeTool } from "@/context/usePracticeTool";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
@@ -12,20 +13,7 @@ export interface CategoryItem {
 
 export function CategoryList() {
   const { practiceTool } = usePracticeToolConstants();
-  const categories: CategoryItem[] = [
-    {
-      title: "Gestion d'un tableur",
-      backgroundColor: "#72D6BA",
-      textColor: "#0A2924",
-      tool: "spreadsheet",
-    },
-    {
-      title: "Edition de texte",
-      backgroundColor: "#33C6FD",
-      textColor: "#0A4F70",
-      tool: "textEditor",
-    },
-  ];
+  const categories = Object.values(practiceToolsConstants);
 
   return (
     <View style={styles.categoryList}>
