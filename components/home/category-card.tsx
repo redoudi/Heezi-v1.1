@@ -12,6 +12,9 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
   const { practiceTool } = useLocalSearchParams();
   const cardToolConstants =
     practiceToolsConstants[toolName as keyof typeof practiceToolsConstants];
+
+  const backgroundColor =
+    practiceTool === toolName ? cardToolConstants.backgroundColor : "#FFFFFF";
   return (
     <TouchableOpacity
       onPress={() => {
@@ -23,11 +26,8 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
           styles.container,
           {
             borderColor: cardToolConstants.backgroundColor,
-            borderWidth: practiceTool === cardToolConstants.tool ? 0 : 1,
-            backgroundColor:
-              practiceTool === cardToolConstants.tool
-                ? cardToolConstants.backgroundColor
-                : "#FFFFFF",
+            borderWidth: practiceTool === toolName ? 0 : 1,
+            backgroundColor,
           },
         ]}
       >
