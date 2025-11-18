@@ -9,7 +9,11 @@ const CornerSymbol = () => (
   />
 );
 
-export default function HeaderRow({ columnsLetters }: { COLUMNS: string[] }) {
+export default function HeaderRow({
+  columnsLetters,
+}: {
+  columnsLetters: string[];
+}) {
   return (
     <ScrollView
       horizontal
