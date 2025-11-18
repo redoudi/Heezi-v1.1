@@ -1,4 +1,10 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+} from "react-native";
 import ContentPage from "./ContentPage";
 import TextEditorHeader from "./TextEditorHeader";
 
@@ -23,8 +29,9 @@ function ProgressBar() {
 }
 
 export default function TextEditorScreen() {
+  const { height } = useWindowDimensions();
   return (
-    <SafeAreaView style={styles.mainContainer}>
+    <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
         <TextEditorHeader />
         <ContentPage />
