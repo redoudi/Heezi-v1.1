@@ -168,6 +168,7 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: "row",
+    alignItems: "center",
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
