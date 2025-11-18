@@ -5,12 +5,14 @@ import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const Continuer = () => {
-  const { toolConstants } = usePracticeToolConstants();
+  const { toolConstants, practiceTool } = usePracticeToolConstants();
   return (
     <View style={styles.row}>
       <TouchableOpacity
         style={[styles.buttonRow, { backgroundColor: toolConstants.color }]}
-        onPress={() => router.push("/(tabs)/play/section-screen")}
+        onPress={() =>
+          router.push(`/(tabs)/play/${practiceTool}/section-screen`)
+        }
       >
         <Text style={styles.text2}>{"Continuer"}</Text>
         <Image
