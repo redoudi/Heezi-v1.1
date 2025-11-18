@@ -4,15 +4,17 @@ import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Continuer = () => {
-  const { toolConstants, practiceTool } = usePracticeToolConstants();
+function Continuer({ onPress = () => {}, disabled = false }) {
+  const { toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.row}>
       <TouchableOpacity
-        style={[styles.buttonRow, { backgroundColor: toolConstants.color }]}
-        onPress={() =>
-          router.push(`/(tabs)/play/${practiceTool}/section-screen`)
-        }
+        style={[
+          styles.buttonRow,
+          { backgroundColor: disabled ? "white" : toolConstants.color },
+        ]}
+        onPress={onPress}
+        disabled={disabled}
       >
         <Text style={styles.text2}>{"Continuer"}</Text>
         <Image
@@ -23,10 +25,10 @@ const Continuer = () => {
       </TouchableOpacity>
     </View>
   );
-};
+}
 
 export default function SectionsList() {
-  const { toolConstants } = usePracticeToolConstants();
+  const { toolConstants, practiceTool } = usePracticeToolConstants();
 
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
@@ -45,7 +47,11 @@ export default function SectionsList() {
                 <View style={styles.box}></View>
               </View>
             </View>
-            <Continuer />
+            <Continuer
+              onPress={() =>
+                router.push(`/(tabs)/play/${practiceTool}/section-screen`)
+              }
+            />
           </View>
           <Image
             source={require("@/assets/images/aik0c764_expires_30_days.png")}
@@ -64,17 +70,7 @@ export default function SectionsList() {
               </View>
             </View>
           </View>
-          <TouchableOpacity
-            style={styles.buttonRow2}
-            onPress={() => alert("Pressed!")}
-          >
-            <Text style={styles.text4}>{"Continuer"}</Text>
-            <Image
-              source={require("@/assets/images/sy8w1ahc_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image}
-            />
-          </TouchableOpacity>
+          <Continuer disabled={true} />
         </View>
         <Image
           source={require("@/assets/images/kvf6wzrn_expires_30_days.png")}
@@ -92,17 +88,7 @@ export default function SectionsList() {
               </View>
             </View>
           </View>
-          <TouchableOpacity
-            style={styles.buttonRow3}
-            onPress={() => alert("Pressed!")}
-          >
-            <Text style={styles.text4}>{"Continuer"}</Text>
-            <Image
-              source={require("@/assets/images/l29fup9x_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image}
-            />
-          </TouchableOpacity>
+          <Continuer disabled={true} />
         </View>
         <Image
           source={require("@/assets/images/xdcz0s8c_expires_30_days.png")}
