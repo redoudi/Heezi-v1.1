@@ -56,15 +56,6 @@ export default function SpreadsheetGrid() {
 }
 
 const styles = StyleSheet.create({
-  box: {
-    width: 107,
-    height: 34,
-    backgroundColor: "#FFFFFF",
-    borderColor: "#BDBDBD",
-    borderRadius: 8,
-    borderWidth: 1,
-    marginRight: 8,
-  },
   column12: {
     flex: 1,
     backgroundColor: "#FFFFFF",
@@ -73,22 +64,10 @@ const styles = StyleSheet.create({
     marginBottom: 17,
     marginHorizontal: 8,
   },
-  image35: {
-    width: 24,
-    height: 17,
-    marginRight: 8,
-  },
   scrollView: {
     flexDirection: "row",
     paddingHorizontal: 8,
     marginBottom: 8,
-  },
-
-  text9: {
-    color: "#292929",
-    fontSize: 14,
-    fontWeight: "bold",
-    textAlign: "center",
   },
   rowNumber: {
     color: "#292929",
@@ -108,29 +87,5 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "center",
     marginRight: 16,
-  },
-  view5: {
-    width: 8,
-    marginRight: 24,
-  },
-  view6: {
-    width: 9,
-    marginRight: 23,
-  },
-  view7: {
-    width: 7,
-    marginRight: 25,
-  },
-  view8: {
-    width: 15,
-    marginRight: 17,
-  },
-  view9: {
-    width: 10,
-    marginRight: 22,
-  },
-  view10: {
-    width: 14,
-    marginRight: 18,
   },
 });
