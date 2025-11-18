@@ -3,26 +3,28 @@ import usePracticeTool from "@/context/usePracticeTool";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+const Continuer = () => {
+  const { toolConstants } = usePracticeTool();
+  return (
+    <View style={styles.row}>
+      <TouchableOpacity
+        style={[styles.buttonRow, { backgroundColor: toolConstants.color }]}
+        onPress={() => router.push("/play/section-screen")}
+      >
+        <Text style={styles.text2}>{"Continuer"}</Text>
+        <Image
+          source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
+          resizeMode={"contain"}
+          style={styles.image}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 export default function SectionsList() {
   const { toolConstants } = usePracticeTool();
 
-  const Continuer = () => {
-    return (
-      <View style={styles.row}>
-        <TouchableOpacity
-          style={[styles.buttonRow, { backgroundColor: toolConstants.color }]}
-          onPress={() => router.push("/play/section-screen")}
-        >
-          <Text style={styles.text2}>{"Continuer"}</Text>
-          <Image
-            source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
-            resizeMode={"contain"}
-            style={styles.image}
-          />
-        </TouchableOpacity>
-      </View>
-    );
-  };
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.column}>
