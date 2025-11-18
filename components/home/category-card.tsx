@@ -1,29 +1,16 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { router, useLocalSearchParams } from "expo-router";
-import { useEffect } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface CategoryCardProps {
-  title: string;
-  backgroundColor: string;
-  textColor: string;
+  toolName: keyof typeof practiceToolsConstants;
 }
 
 export function CategoryCard({ toolName }: CategoryCardProps) {
   const { practiceTool } = useLocalSearchParams();
-  const cardToolConstants =
-    practiceToolsConstants[toolName as keyof typeof practiceToolsConstants];
+  const cardToolConstants = practiceToolsConstants[toolName];
 
   const isCurrentTool = practiceTool === toolName;
-
-  // if (isCurrentTool) {
-  //   console.log("practiceTool", practiceTool);
-  //   console.log("current tool", toolName);
-  // }
-
-  useEffect(() => {
-    console.log("practiceTool", practiceTool);
-  }, [practiceTool]);
 
   const backgroundColor = isCurrentTool
     ? cardToolConstants.backgroundColor
@@ -32,7 +19,7 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
   return (
     <TouchableOpacity
       onPress={() => {
-        router.push(`/play/${toolName}`);
+        router.push(`/(tabs)/play/${toolName}`);
       }}
     >
       <View
