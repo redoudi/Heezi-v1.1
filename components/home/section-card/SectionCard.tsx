@@ -1,7 +1,15 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
 
-export default function SectionCard({ mascotImageSource, sectionNumber }) {
+export default function SectionCard({
+  mascotImageSource,
+  sectionNumber,
+  continuerRoute,
+}: {
+  mascotImageSource: number;
+  sectionNumber: number;
+  continuerRoute: string;
+}) {
   return (
     <View style={styles.row3}>
       <View style={styles.column3}>
@@ -13,7 +21,7 @@ export default function SectionCard({ mascotImageSource, sectionNumber }) {
             </View>
           </View>
         </View>
-        <ContinuerSectionBtn disabled={true} />
+        <ContinuerSectionBtn disabled={!!!continuerRoute} />
       </View>
       <Image
         source={mascotImageSource}

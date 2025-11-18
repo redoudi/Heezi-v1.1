@@ -40,6 +40,11 @@ export default function SectionsList() {
         </View>
       </View>
       <SectionCard
+        mascotImageSource={require("@/assets/images/aik0c764_expires_30_days.png")}
+        sectionNumber={1}
+        continuerRoute={`/(tabs)/play/${practiceTool}/section-screen`}
+      />
+      <SectionCard
         mascotImageSource={require("@/assets/images/kvf6wzrn_expires_30_days.png")}
         sectionNumber={2}
       />
