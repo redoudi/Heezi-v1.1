@@ -1,8 +1,8 @@
-import usePracticeTool from "@/context/usePracticeTool";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function StatusText() {
-  const { toolConstants } = usePracticeTool();
+  const { toolConstants } = usePracticeToolConstants();
   return (
     <View
       style={[

@@ -1,9 +1,9 @@
-import usePracticeTool from "@/context/usePracticeTool";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, Text, View } from "react-native";
 import StatusText from "../status-text";
 
 export function CourseCard() {
-  const { toolConstants } = usePracticeTool();
+  const { toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.container}>
       <Image

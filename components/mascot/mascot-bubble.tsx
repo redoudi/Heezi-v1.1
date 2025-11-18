@@ -1,5 +1,5 @@
-import usePracticeTool from "@/context/usePracticeTool";
 import useLevelData from "@/hooks/use-level-data";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import {
   Image,
   SafeAreaView,
@@ -79,7 +79,7 @@ export default function MascotBubble({
   nextStep: () => void | null;
 }) {
   const { levelType } = useLevelData();
-  const { practiceTool } = usePracticeTool();
+  const { practiceTool } = usePracticeToolConstants();
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
     <DownArrow nextStep={nextStep} />
   );

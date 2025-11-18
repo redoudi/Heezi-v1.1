@@ -1,4 +1,5 @@
-import usePracticeTool, { PracticeTool } from "@/context/usePracticeTool";
+import { PracticeTool } from "@/context/usePracticeTool";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -10,7 +11,7 @@ export interface CategoryItem {
 }
 
 export function CategoryList() {
-  const { practiceTool } = usePracticeTool();
+  const { practiceTool } = usePracticeToolConstants();
   const categories: CategoryItem[] = [
     {
       title: "Gestion d'un tableur",

@@ -7,5 +7,5 @@ export default function usePracticeToolConstants() {
     useLocalSearchParams<{ practiceTool: PracticeTool }>() || "spreadsheet";
   const toolConstants =
     practiceToolsConstants[practiceTool as keyof typeof practiceToolsConstants];
-  return { toolConstants };
+  return { practiceTool, toolConstants };
 }

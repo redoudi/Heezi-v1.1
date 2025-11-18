@@ -2,8 +2,8 @@ import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import characters from "@/constants/characters";
-import usePracticeTool from "@/context/usePracticeTool";
 import { getLevelDataByNumber } from "@/hooks/use-level-data";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import CustomAnimation from "./animations/CustomAnimation";
 
 export default function MissionPart({
@@ -15,7 +15,7 @@ export default function MissionPart({
   image: any;
   levelNumber: number;
 }) {
-  const { practiceTool, toolConstants } = usePracticeTool();
+  const { practiceTool, toolConstants } = usePracticeToolConstants();
   const { character } = getLevelDataByNumber(
     practiceTool as string,
     levelNumber
