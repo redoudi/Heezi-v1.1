@@ -1,4 +1,10 @@
-import { Image, SafeAreaView, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  SafeAreaView,
+  TouchableOpacity,
+  View,
+  useWindowDimensions,
+} from "react-native";
 import FunctionBar from "./function-bar";
 import SpreadsheetGrid from "./grid/spreadsheet-grid";
 import Ribbon from "./ribbon/spreadsheet-ribbon";
@@ -7,8 +13,9 @@ import { styles } from "./spreadsheet-styles";
 import TitleBar from "./title-bar";
 
 export default function SpreadsheetScreen() {
+  const { height } = useWindowDimensions();
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { height: height || "100%" }]}>
       <View style={styles.column}>
         <View style={styles.column2}>
           <TitleBar />
