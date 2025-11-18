@@ -1,82 +1,35 @@
-import { CourseCard } from "@/components/home/course-card";
-import ContinuerSectionBtn from "@/components/home/section-card/ContinuerSectionBtn";
-import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { router } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function SectionsList() {
-  const { toolConstants, practiceTool } = usePracticeToolConstants();
-
+export default function ContinuerSectionBtn({
+  onPress = () => {},
+  disabled = false,
+}: {
+  onPress: () => void;
+  disabled: boolean;
+}) {
+  const { toolConstants } = usePracticeToolConstants();
   return (
-    <ScrollableScreen contentContainerStyle={styles.container}>
-      <CourseCard />
-      <View style={styles.column}>
-        <View
-          style={[
-            styles.column2,
-            { backgroundColor: toolConstants.secondaryColor },
-          ]}
-        >
-          <View>
-            <Text style={styles.text}>{"Section 1"}</Text>
-            <View style={styles.button}>
-              <View style={styles.view}>
-                <View style={styles.box}></View>
-              </View>
-            </View>
-            <ContinuerSectionBtn
-              onPress={() =>
-                router.push(`/(tabs)/play/${practiceTool}/section-screen`)
-              }
-            />
-          </View>
-          <Image
-            source={require("@/assets/images/aik0c764_expires_30_days.png")}
-            resizeMode={"contain"}
-            style={styles.absoluteImage6}
-          />
-        </View>
-      </View>
-      <View style={styles.row2}>
-        <View style={styles.column3}>
-          <View style={styles.column}>
-            <Text style={styles.text3}>{"Section 2"}</Text>
-            <View style={styles.view2}>
-              <View style={styles.view3}>
-                <View style={styles.box}></View>
-              </View>
-            </View>
-          </View>
-          <ContinuerSectionBtn disabled={true} />
-        </View>
+    <View style={styles.row}>
+      <TouchableOpacity
+        style={[
+          styles.buttonRow,
+          { backgroundColor: disabled ? "white" : toolConstants.color },
+        ]}
+        onPress={onPress}
+        disabled={disabled}
+      >
+        <Text style={styles.text2}>{"Continuer"}</Text>
         <Image
-          source={require("@/assets/images/kvf6wzrn_expires_30_days.png")}
+          source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
           resizeMode={"contain"}
-          style={styles.image7}
+          style={styles.image}
         />
-      </View>
-      <View style={styles.row3}>
-        <View style={styles.column3}>
-          <View style={styles.column}>
-            <Text style={styles.text3}>{"Section 3"}</Text>
-            <View style={styles.view2}>
-              <View style={styles.view3}>
-                <View style={styles.box}></View>
-              </View>
-            </View>
-          </View>
-          <ContinuerSectionBtn disabled={true} />
-        </View>
-        <Image
-          source={require("@/assets/images/xdcz0s8c_expires_30_days.png")}
-          resizeMode={"contain"}
-          style={styles.image8}
-        />
-      </View>
-    </ScrollableScreen>
+      </TouchableOpacity>
+    </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFFFFF",
