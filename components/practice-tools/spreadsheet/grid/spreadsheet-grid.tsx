@@ -1,5 +1,5 @@
 import { useKbdSpdshtNextRow } from "@/hooks/use-keyboard";
-import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Cell from "./cell";
 import HeaderRow from "./header-row";
 
@@ -16,36 +16,26 @@ export default function SpreadsheetGrid() {
   return (
     <View style={styles.mainContainer}>
       <HeaderRow columnsLetters={COLUMNS} />
-      <FlatList
-        data={ROWS}
-        renderItem={({
-          item,
-          index,
-        }: {
-          item: (typeof ROWS)[0];
-          index: number;
-        }) => {
-          return (
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              style={styles.gridCellsContainer}
-            >
-              <View style={styles.rowNumberContainer}>
-                <Text style={styles.rowNumber}>{item}</Text>
-              </View>
-              {COLUMNS.map((_, colIndex) => (
-                <Cell
-                  key={`${colIndex}-${index}`}
-                  id={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
-                />
-              ))}
-            </ScrollView>
-          );
-        }}
-        keyExtractor={(item) => item.toString()}
-        showsVerticalScrollIndicator={true}
-      />
+      <ScrollView showsVerticalScrollIndicator>
+        {ROWS.map((item, index) => (
+          <ScrollView
+            key={item}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.gridCellsContainer}
+          >
+            <View style={styles.rowNumberContainer}>
+              <Text style={styles.rowNumber}>{item}</Text>
+            </View>
+            {COLUMNS.map((_, colIndex) => (
+              <Cell
+                key={`${colIndex}-${index}`}
+                id={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
+              />
+            ))}
+          </ScrollView>
+        ))}
+      </ScrollView>
     </View>
   );
 }
