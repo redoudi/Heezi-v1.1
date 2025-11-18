@@ -24,7 +24,7 @@ export default function TabLayout() {
           <View>
             <Image
               source={require("../../assets/images/logo.png")}
-              resizeMode="stretch"
+              resizeMode="contain"
               style={styles.logoStyle}
             />
           </View>
