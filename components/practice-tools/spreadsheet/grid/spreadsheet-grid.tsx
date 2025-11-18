@@ -14,7 +14,7 @@ export default function SpreadsheetGrid() {
   // Row component
 
   return (
-    <View style={styles.column12}>
+    <View style={styles.mainContainer}>
       <HeaderRow columnsLetters={COLUMNS} />
       <FlatList
         data={ROWS}
@@ -51,7 +51,7 @@ export default function SpreadsheetGrid() {
 }
 
 const styles = StyleSheet.create({
-  column12: {
+  mainContainer: {
     flex: 1,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
