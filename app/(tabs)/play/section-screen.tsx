@@ -36,8 +36,8 @@ export default function SectionScreen() {
             <StatusText />
           </View>
           <View>
-            <Text style={styles.text3}>{"Titre de la section"}</Text>
-            <Text style={styles.text4}>{"Sous-titre de la section"}</Text>
+            <Text style={styles.text3}>{"Section 1"}</Text>
+            <Text style={styles.text4}>{"Apprendre les bases"}</Text>
           </View>
         </View>
         <MissionPart
