@@ -36,7 +36,7 @@ export default function SpreadsheetGrid() {
               </View>
               {COLUMNS.map((_, colIndex) => (
                 <Cell
-                  key={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
+                  key={`${colIndex}-${index}`}
                   id={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
                 />
               ))}
