@@ -1,5 +1,5 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
-import { router, useLocalSearchParams } from "expo-router";
+import { router, useGlobalSearchParams } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface CategoryCardProps {
@@ -7,10 +7,15 @@ interface CategoryCardProps {
 }
 
 export function CategoryCard({ toolName }: CategoryCardProps) {
-  const { practiceTool } = useLocalSearchParams();
+  const { practiceTool } = useGlobalSearchParams();
   const cardToolConstants = practiceToolsConstants[toolName];
 
-  const isCurrentTool = practiceTool === toolName;
+  const selectedTool = Array.isArray(practiceTool)
+    ? practiceTool[0]
+    : practiceTool;
+  const fallbackTool = Object.keys(practiceToolsConstants)[0];
+
+  const isCurrentTool = (selectedTool ?? fallbackTool) === toolName;
 
   const backgroundColor = isCurrentTool
     ? cardToolConstants.backgroundColor
