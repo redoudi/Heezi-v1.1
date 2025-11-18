@@ -32,7 +32,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="play/index"
+        name="play"
         options={{
           title: "Jouer",
           tabBarIcon: () => (
@@ -85,12 +85,6 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="index"
-        options={{
-          tabBarButton: () => null,
-        }}
-      />
-      <Tabs.Screen
-        name="play/[practiceTool]"
         options={{
           tabBarButton: () => null,
         }}
