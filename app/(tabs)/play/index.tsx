@@ -28,7 +28,6 @@ export default function SectionsList() {
 
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
-      {" "}
       <CourseCard />
       <View style={styles.column}>
         <View
