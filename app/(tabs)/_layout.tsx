@@ -23,9 +23,7 @@ export default function TabLayout() {
         tabBarBackground: () => (
           <View>
             <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/qih0dnn3_expires_30_days.png",
-              }}
+              source={require("../../assets/images/logo.png")}
               resizeMode="stretch"
               style={styles.logoStyle}
             />
