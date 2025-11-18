@@ -1,5 +1,6 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { router, useLocalSearchParams } from "expo-router";
+import { useEffect } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface CategoryCardProps {
@@ -13,12 +14,25 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
   const cardToolConstants =
     practiceToolsConstants[toolName as keyof typeof practiceToolsConstants];
 
-  const backgroundColor =
-    practiceTool === toolName ? cardToolConstants.backgroundColor : "#FFFFFF";
+  const isCurrentTool = practiceTool === toolName;
+
+  // if (isCurrentTool) {
+  //   console.log("practiceTool", practiceTool);
+  //   console.log("current tool", toolName);
+  // }
+
+  useEffect(() => {
+    console.log("practiceTool", practiceTool);
+  }, [practiceTool]);
+
+  const backgroundColor = isCurrentTool
+    ? cardToolConstants.backgroundColor
+    : "#FFFFFF";
+
   return (
     <TouchableOpacity
       onPress={() => {
-        router.push(`/play/${cardToolConstants.tool}`);
+        router.push(`/play/${toolName}`);
       }}
     >
       <View
@@ -26,7 +40,7 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
           styles.container,
           {
             borderColor: cardToolConstants.backgroundColor,
-            borderWidth: practiceTool === toolName ? 0 : 1,
+            borderWidth: isCurrentTool ? 0 : 1,
             backgroundColor,
           },
         ]}
