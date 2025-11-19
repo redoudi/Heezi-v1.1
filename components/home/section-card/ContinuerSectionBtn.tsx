@@ -1,14 +1,14 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ContinuerSectionBtn({
-  onPress = () => {},
-  disabled = false,
+  continuerRoute,
 }: {
-  onPress?: () => void;
-  disabled?: boolean;
+  continuerRoute: string;
 }) {
   const { toolConstants } = usePracticeToolConstants();
+  const disabled = !!!continuerRoute;
   return (
     <View style={styles.mainContainer}>
       <TouchableOpacity
@@ -16,7 +16,7 @@ export default function ContinuerSectionBtn({
           styles.button,
           { backgroundColor: disabled ? "white" : toolConstants.color },
         ]}
-        onPress={onPress}
+        onPress={() => router.push(continuerRoute)}
         disabled={disabled}
       >
         <Text style={styles.buttonText}>{"Continuer"}</Text>

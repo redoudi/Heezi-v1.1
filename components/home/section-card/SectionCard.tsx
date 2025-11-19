@@ -6,7 +6,7 @@ import ProgressBar from "./ProgressBar";
 export default function SectionCard({
   mascotImageSource,
   sectionNumber,
-  continuerRoute,
+  continuerRoute = "",
 }: {
   mascotImageSource: number;
   sectionNumber: number;
@@ -27,7 +27,7 @@ export default function SectionCard({
         <Text style={styles.sectionHeader}>{`Section ${sectionNumber}`}</Text>
         <View style={styles.progressAndContinuer}>
           <ProgressBar />
-          <ContinuerSectionBtn disabled={disabled} />
+          <ContinuerSectionBtn continuerRoute={continuerRoute} />
         </View>
       </View>
       <View style={styles.imageContainer}>
