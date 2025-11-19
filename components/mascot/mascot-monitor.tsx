@@ -107,7 +107,7 @@ export default function MascotMonitor({
         nextStep();
       }
     }
-  }, [practiceToolData]);
+  }, [checkCondition, nextStep, practiceToolData]);
 
   useEffect(() => {
     if (levelTasks) {
