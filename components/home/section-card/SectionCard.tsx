@@ -24,11 +24,11 @@ export default function SectionCard({
       ]}
     >
       <View style={styles.leftColumn}>
-        <View style={styles.sectionAndProgress}>
-          <Text style={styles.sectionHeader}>{`Section ${sectionNumber}`}</Text>
+        <Text style={styles.sectionHeader}>{`Section ${sectionNumber}`}</Text>
+        <View style={styles.progressAndContinuer}>
           <ProgressBar />
+          <ContinuerSectionBtn disabled={disabled} />
         </View>
-        <ContinuerSectionBtn disabled={disabled} />
       </View>
       <View style={styles.imageContainer}>
         <Image
@@ -52,11 +52,10 @@ const styles = StyleSheet.create({
   leftColumn: {
     flex: 1,
     marginRight: 33,
-    borderWidth: 1,
     alignItems: "flex-start",
     justifyContent: "space-between",
   },
-  sectionAndProgress: { borderWidth: 1, justifyContent: "space-between" },
+  progressAndContinuer: { justifyContent: "space-between", flex: 1 },
   sectionHeader: {
     color: "#000000",
     fontSize: 24,
@@ -65,7 +64,6 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
-    borderWidth: 1,
     alignItems: "flex-end",
   },
   image8: {

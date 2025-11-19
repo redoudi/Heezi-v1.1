@@ -30,7 +30,6 @@ export default function ContinuerSectionBtn({
 
 const styles = StyleSheet.create({
   mainContainer: {
-    borderWidth: 1,
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 8,
