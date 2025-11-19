@@ -8,9 +8,10 @@ export default function SectionsList() {
   const { toolConstants, practiceTool } = usePracticeToolConstants();
 
   return (
-    <ScrollableScreen contentContainerStyle={styles.container}>
+    <ScrollableScreen
+      contentContainerStyle={[styles.container, { marginBottom: 32 }]}
+    >
       <CourseCard />
-
       <SectionCard
         mascotImageSource={require("@/assets/images/aik0c764_expires_30_days.png")}
         sectionNumber={1}

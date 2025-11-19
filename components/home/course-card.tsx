@@ -26,7 +26,7 @@ export function CourseCard() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    marginBottom: 32,
+    marginBottom: 16,
   },
   thumbnail: {
     width: 173,
