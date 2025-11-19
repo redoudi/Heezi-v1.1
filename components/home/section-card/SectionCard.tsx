@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   },
   column: {
     marginBottom: 32,
+    justifyContent: "space-between",
   },
   text3: {
     color: "#000000",
