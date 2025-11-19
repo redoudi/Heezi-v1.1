@@ -45,6 +45,9 @@
                         "text1": "Etape 1.a",
                         "text2": "En premier, on va saisir le montant de la salle (500€). Clique sur la case B2 et entre le nombre 500"
                     },
+                    "cursor": {
+                        "elementId": "B2"
+                    },
                     "expected": {
                         "type": "cellValue",
                         "cell": "B2",
