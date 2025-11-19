@@ -1,5 +1,5 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function ContinuerSectionBtn({
   onPress = () => {},
@@ -10,32 +10,25 @@ export default function ContinuerSectionBtn({
 }) {
   const { toolConstants } = usePracticeToolConstants();
   return (
-    <View style={styles.row}>
-      <TouchableOpacity
-        style={[
-          styles.buttonRow,
-          { backgroundColor: disabled ? "white" : toolConstants.color },
-        ]}
-        onPress={onPress}
-        disabled={disabled}
-      >
-        <Text style={styles.text2}>{"Continuer"}</Text>
-        <Image
-          source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
-          resizeMode={"contain"}
-          style={styles.image}
-        />
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      style={[
+        styles.buttonRow,
+        { backgroundColor: disabled ? "white" : toolConstants.color },
+      ]}
+      onPress={onPress}
+      disabled={disabled}
+    >
+      <Text style={styles.text2}>{"Continuer"}</Text>
+      <Image
+        source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
+        resizeMode={"contain"}
+        style={styles.image}
+      />
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  row: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    marginLeft: 32,
-  },
   buttonRow: {
     flexDirection: "row",
     alignItems: "center",
