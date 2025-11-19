@@ -13,7 +13,7 @@ export function CourseCard() {
       />
       <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
         <View style={styles.header}>
-          <Text style={styles.progressText}>1 Section/3 niveaux</Text>
+          <Text style={styles.progressText}>1/3 sections débloquées</Text>
           <StatusText />
         </View>
         <Text style={styles.title}>{toolConstants.title}</Text>
