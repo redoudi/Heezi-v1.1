@@ -1,4 +1,4 @@
-import { Image, ScrollView, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { styles } from "../spreadsheet-styles";
 
 const CornerSymbol = () => (
@@ -15,11 +15,7 @@ export default function HeaderRow({
   columnsLetters: string[];
 }) {
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      style={styles.scrollView}
-    >
+    <View style={styles.scrollView}>
       <CornerSymbol />
       {columnsLetters.map((columnLetter, index) => (
         <View
@@ -31,6 +27,6 @@ export default function HeaderRow({
           <Text style={styles.text9}>{columnLetter}</Text>
         </View>
       ))}
-    </ScrollView>
+    </View>
   );
 }
