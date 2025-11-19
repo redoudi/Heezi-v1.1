@@ -3,8 +3,8 @@ import { StyleSheet, View } from "react-native";
 export default function ProgressBar(): React.ReactNode {
   return (
     <View style={styles.progressBarContainer}>
-      <View style={styles.progressBarFill}>
-        <View style={styles.box}></View>
+      <View style={styles.progressBarBg}>
+        <View style={styles.progressBarFill}></View>
       </View>
     </View>
   );
@@ -16,12 +16,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 8,
   },
-  progressBarFill: {
-    backgroundColor: "#33C6FD",
+  progressBarBg: {
+    backgroundColor: "#989898",
     borderRadius: 4,
+    height: 8,
+    borderColor: "#33C6FD",
   },
-  box: {
-    width: 63,
+  progressBarFill: {
+    width: "1%",
     height: 8,
     backgroundColor: "#33C6FD",
   },
