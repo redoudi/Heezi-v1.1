@@ -2,7 +2,7 @@ export default {
   spreadsheet: {
     color: "#72D6BA",
     secondaryColor: "#D3F4E9",
-    title: "Gestion d'un tableur",
+    title: "Le Tableur",
     description: "Comment utiliser un tableur",
     backgroundColor: "#72D6BA",
     tool: "spreadsheet",
