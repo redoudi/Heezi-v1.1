@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     height: "100%",
     padding: 16,
+    borderRadius: 8,
   },
   imageBox: {
     backgroundColor: "white",
