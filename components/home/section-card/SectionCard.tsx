@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 15,
+    marginLeft: 8,
   },
   imageContainer: {
     flex: 1,
