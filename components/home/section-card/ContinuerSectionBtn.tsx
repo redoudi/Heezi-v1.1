@@ -5,8 +5,8 @@ export default function ContinuerSectionBtn({
   onPress = () => {},
   disabled = false,
 }: {
-  onPress: () => void;
-  disabled: boolean;
+  onPress?: () => void;
+  disabled?: boolean;
 }) {
   const { toolConstants } = usePracticeToolConstants();
   return (
