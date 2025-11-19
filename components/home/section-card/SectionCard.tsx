@@ -1,6 +1,7 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, Text, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
+import ProgressBar from "./ProgressBar";
 
 export default function SectionCard({
   mascotImageSource,
@@ -25,11 +26,7 @@ export default function SectionCard({
       <View style={styles.leftColumn}>
         <View style={styles.column}>
           <Text style={styles.text3}>{`Section ${sectionNumber}`}</Text>
-          <View style={styles.view2}>
-            <View style={styles.view3}>
-              <View style={styles.box}></View>
-            </View>
-          </View>
+          <ProgressBar />
         </View>
         <ContinuerSectionBtn disabled={disabled} />
       </View>
@@ -68,28 +65,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 15,
   },
-  view2: {
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    padding: 8,
-  },
-  view3: {
-    backgroundColor: "#989898",
-    borderRadius: 4,
-  },
-  box: {
-    width: 63,
-    height: 8,
-    backgroundColor: "#33C6FD",
+  imageContainer: {
+    flex: 1,
+    borderWidth: 1,
+    alignItems: "flex-end",
   },
   image8: {
     borderRadius: 8,
     height: 195,
     flex: 1,
-  },
-  imageContainer: {
-    flex: 1,
-    borderWidth: 1,
-    alignItems: "flex-end",
   },
 });
