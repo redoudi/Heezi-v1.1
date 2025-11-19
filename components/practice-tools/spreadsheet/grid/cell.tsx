@@ -1,6 +1,5 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { useEffect, useRef } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import CellTextInput from "./CellTextInput";
 export default function Cell({ id }: { id: string }) {
   const { spreadsheetData, setCellsSelected, setCellValue, cellsEnabled } =
@@ -8,19 +7,6 @@ export default function Cell({ id }: { id: string }) {
   const cellsValues = spreadsheetData?.cellsValues;
   const cellsSelected = spreadsheetData?.cellsSelected;
   const cellsStyles = spreadsheetData?.cellsStyles;
-
-  const textInputRef = useRef<TextInput>(null);
-
-  useEffect(() => {
-    if (
-      id &&
-      cellsSelected?.includes(id) &&
-      textInputRef.current &&
-      cellsEnabled?.includes(id)
-    ) {
-      textInputRef.current?.focus();
-    }
-  }, [cellsSelected, id, cellsEnabled]);
 
   return cellsEnabled?.includes(id) && cellsSelected?.includes(id) ? (
     <CellTextInput id={id} />
