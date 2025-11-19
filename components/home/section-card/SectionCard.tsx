@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     marginRight: 33,
     borderWidth: 1,
     alignItems: "flex-start",
+    justifyContent: "space-between",
   },
   sectionAndProgress: { borderWidth: 1, justifyContent: "space-between" },
   sectionHeader: {
