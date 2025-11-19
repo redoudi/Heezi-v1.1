@@ -16,13 +16,13 @@ export default function SectionCard({
   return (
     <View
       style={[
-        styles.row3,
+        styles.mainContainer,
         {
           backgroundColor: disabled ? undefined : toolConstants.secondaryColor,
         },
       ]}
     >
-      <View style={styles.column3}>
+      <View style={styles.leftColumn}>
         <View style={styles.column}>
           <Text style={styles.text3}>{`Section ${sectionNumber}`}</Text>
           <View style={styles.view2}>
@@ -33,25 +33,30 @@ export default function SectionCard({
         </View>
         <ContinuerSectionBtn disabled={disabled} />
       </View>
-      <Image
-        source={mascotImageSource}
-        resizeMode={"contain"}
-        style={styles.image8}
-      />
+      <View style={styles.imageContainer}>
+        <Image
+          source={mascotImageSource}
+          resizeMode={"contain"}
+          style={styles.image8}
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  row3: {
+  mainContainer: {
     flexDirection: "row",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     padding: 32,
+    justifyContent: "space-between",
   },
-  column3: {
+  leftColumn: {
     flex: 1,
     marginRight: 33,
+    borderWidth: 1,
+    alignItems: "flex-start",
   },
   column: {
     marginBottom: 32,
@@ -80,5 +85,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     height: 195,
     flex: 1,
+  },
+  imageContainer: {
+    flex: 1,
+    borderWidth: 1,
+    alignItems: "flex-end",
   },
 });
