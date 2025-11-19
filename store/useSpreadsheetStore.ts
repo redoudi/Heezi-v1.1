@@ -6,7 +6,7 @@ interface SpreadsheetStore {
     cellsValues: { [key: string]: string | undefined };
     cellsSelected: string[];
     cellsStyles?: { [key: string]: any };
-    cellsEnabled?: [];
+    cellsEnabled?: string[];
   };
 
   tasks: any[];
@@ -21,6 +21,7 @@ const getDefaultSpreadsheetData = () => ({
   cellsValues: {},
   cellsSelected: [],
   cellsStyles: {},
+  cellsEnabled: [],
 });
 
 const useSpreadsheetStore = create<SpreadsheetStore>((set, get) => ({
