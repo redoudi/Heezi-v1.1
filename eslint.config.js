@@ -5,6 +5,9 @@ const expoConfig = require("eslint-config-expo/flat");
 module.exports = defineConfig([
   expoConfig,
   {
+    plugins: {
+      "react-native": require("eslint-plugin-react-native"),
+    },
     languageOptions: {
       parserOptions: {
         project: ["./tsconfig.json"],
