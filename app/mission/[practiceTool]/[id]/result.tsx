@@ -70,7 +70,7 @@ export default function ResultScreen() {
 
   return (
     <FullWindowContainer style={styles.maintContainer}>
-      <View style={[styles.mainContent]}>
+      <View style={styles.mainContent}>
         <View style={styles.imageBox}>
           <CustomAnimation
             animationData={
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     margin: 16,
   },
   imageBox: {
+    borderWidth: 1,
     backgroundColor: "white",
     borderRadius: 8,
     padding: 8,
