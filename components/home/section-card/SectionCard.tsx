@@ -43,28 +43,18 @@ export default function SectionCard({
 }
 
 const styles = StyleSheet.create({
-  box: {
-    width: 63,
-    height: 8,
-    backgroundColor: "#33C6FD",
-  },
-  column: {
-    marginBottom: 32,
-  },
-  column3: {
-    flex: 1,
-    marginRight: 33,
-  },
-  image8: {
-    borderRadius: 8,
-    height: 195,
-    flex: 1,
-  },
   row3: {
     flexDirection: "row",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     padding: 32,
+  },
+  column3: {
+    flex: 1,
+    marginRight: 33,
+  },
+  column: {
+    marginBottom: 32,
   },
   text3: {
     color: "#000000",
@@ -80,5 +70,15 @@ const styles = StyleSheet.create({
   view3: {
     backgroundColor: "#989898",
     borderRadius: 4,
+  },
+  box: {
+    width: 63,
+    height: 8,
+    backgroundColor: "#33C6FD",
+  },
+  image8: {
+    borderRadius: 8,
+    height: 195,
+    flex: 1,
   },
 });
