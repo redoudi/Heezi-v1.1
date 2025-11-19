@@ -15,7 +15,7 @@ export function generateStaticParams() {
 
 function EndLevelStats() {
   return (
-    <View style={styles.column2}>
+    <View style={styles.mainContainer}>
       <Text style={styles.text}>{"Remarque de la performance réalisée"}</Text>
       <Text style={styles.text2}>
         {"Lörem ipsum sageledes neliga vade homosat. Filomani rende om sose. "}
@@ -127,8 +127,8 @@ const styles = StyleSheet.create({
     marginRight: 399,
   },
 
-  column2: {
-    alignSelf: "flex-start",
+  mainContainer: {
+    alignSelf: "stretch",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 8,
