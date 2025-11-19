@@ -55,10 +55,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     alignItems: "flex-start",
   },
-  sectionAndProgress: {
-    marginBottom: 32,
-    justifyContent: "space-between",
-  },
+  sectionAndProgress: { borderWidth: 1, justifyContent: "space-between" },
   sectionHeader: {
     color: "#000000",
     fontSize: 24,

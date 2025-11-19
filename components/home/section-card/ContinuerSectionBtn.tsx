@@ -12,7 +12,7 @@ export default function ContinuerSectionBtn({
   return (
     <TouchableOpacity
       style={[
-        styles.buttonRow,
+        styles.mainContainer,
         { backgroundColor: disabled ? "white" : toolConstants.color },
       ]}
       onPress={onPress}
@@ -29,14 +29,13 @@ export default function ContinuerSectionBtn({
 }
 
 const styles = StyleSheet.create({
-  buttonRow: {
+  mainContainer: {
+    borderWidth: 1,
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
-    marginTop: 24,
-    marginRight: 25,
   },
   text2: {
     color: "#0A2924",
