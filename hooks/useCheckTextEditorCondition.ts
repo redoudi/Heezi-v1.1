@@ -9,7 +9,7 @@ export default function useCheckTextEditorCondition({
   const { getBlockById, selectedBlockId } = useTextEditorStore();
 
   useEffect(() => {
-    console.log(st)
+    console.log("stepExpectedType", stepExpectedRef.current?.type);
     console.log("stepExpectedRef", stepExpectedRef.current?.blockId);
     console.log("selectedBlockId", selectedBlockId);
   }, [selectedBlockId, stepExpectedRef]);
