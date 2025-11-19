@@ -1,4 +1,3 @@
-import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface LevelSectionProps {
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
   },
   progressBar: {
     height: 8,
-    backgroundColor: "#33C6FD",
+    backgroundColor: "#989898",
     marginHorizontal: 16,
   },
   scoreRow: {
