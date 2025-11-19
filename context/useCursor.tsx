@@ -43,6 +43,7 @@ export function CursorProvider({ children }: { children: ReactNode }) {
 
   const setContentRef = (id: string, ref: any) => {
     contentsRefs.current[id] = ref;
+    console.log("contentsRefs", contentsRefs.current);
   };
 
   const getElementCenter = (elementId: string) => {
