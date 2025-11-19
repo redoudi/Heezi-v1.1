@@ -5,13 +5,7 @@ import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
-import {
-  Image,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 export const dynamicParams = false;
 
@@ -73,11 +67,10 @@ export default function ResultScreen() {
       router.replace(`/(tabs)/play/${practiceTool}/section-screen`);
     }
   };
-  const { height } = useWindowDimensions();
 
   return (
-    <FullWindowContainer>
-      <View style={[styles.mainContent, { height: height - 24 }]}>
+    <FullWindowContainer style={styles.maintContainer}>
+      <View style={[styles.mainContent]}>
         <View style={styles.imageBox}>
           <CustomAnimation
             animationData={
@@ -94,6 +87,7 @@ export default function ResultScreen() {
   );
 }
 const styles = StyleSheet.create({
+  maintContainer: { padding: 16 },
   container: {
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
@@ -107,6 +101,7 @@ const styles = StyleSheet.create({
     height: "100%",
     padding: 16,
     borderRadius: 8,
+    margin: 16,
   },
   imageBox: {
     backgroundColor: "white",
