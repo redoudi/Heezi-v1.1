@@ -1,12 +1,16 @@
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 export default function BackButton({ style }) {
+  const { practiceTool } = usePracticeToolConstants();
   return (
     <View style={style}>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.replace("/(tabs)/play/section-screen")}
+        onPress={() =>
+          router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
+        }
       >
         <Image
           source={require("@/assets/images/iycoag37_expires_30_days.png")}

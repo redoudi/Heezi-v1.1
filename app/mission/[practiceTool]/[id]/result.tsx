@@ -60,14 +60,14 @@ function EndLevelStats() {
 }
 
 export default function ResultScreen() {
-  const { practiceTool, id } = useLocalSearchParams();
+  const { practiceTool, id } = useLocalSearchParams<{ practiceTool: PracticeTool, id: string }>();
   const { levelType, character } = useLevelData();
 
   const goToNextPage = () => {
     if (levelType === "practice") {
       router.push(`/mission/${practiceTool}/${id}/export`);
     } else {
-      router.replace("/(tabs)/play/section-screen");
+      router.replace(`/(tabs)/play/${practiceTool}/section-screen`);
     }
   };
   const { height } = useWindowDimensions();

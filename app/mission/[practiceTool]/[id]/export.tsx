@@ -2,6 +2,7 @@ import ExportFormatButtons from "@/components/ExportFormatButtons";
 import FullWindowContainer from "@/components/FullWindowContainer";
 import { MascotDialog } from "@/components/mascot/mascot-bubble";
 import SnapshotPreview from "@/components/snapshot-preview";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -13,6 +14,7 @@ export function generateStaticParams() {
 }
 
 export default function ExportScreen() {
+  const { practiceTool } = usePracticeToolConstants();
   return (
     <FullWindowContainer>
       <View style={styles.view}>
@@ -22,7 +24,9 @@ export default function ExportScreen() {
             <ExportFormatButtons />
             <TouchableOpacity
               style={styles.buttonRow5}
-              onPress={() => router.replace("/(tabs)/play/section-screen")} // go to home page
+              onPress={() =>
+                router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
+              } // go to home page
             >
               <Text style={styles.text2}>{"Continuer"}</Text>
               <Image
