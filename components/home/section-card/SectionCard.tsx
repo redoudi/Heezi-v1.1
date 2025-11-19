@@ -1,3 +1,4 @@
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, Text, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
 
@@ -10,8 +11,17 @@ export default function SectionCard({
   sectionNumber: number;
   continuerRoute: string;
 }) {
+  const disabled = !!!continuerRoute;
+  const { toolConstants } = usePracticeToolConstants();
   return (
-    <View style={styles.row3}>
+    <View
+      style={[
+        styles.row3,
+        {
+          backgroundColor: disabled ? undefined : toolConstants.secondaryColor,
+        },
+      ]}
+    >
       <View style={styles.column3}>
         <View style={styles.column}>
           <Text style={styles.text3}>{`Section ${sectionNumber}`}</Text>
@@ -21,7 +31,7 @@ export default function SectionCard({
             </View>
           </View>
         </View>
-        <ContinuerSectionBtn disabled={!!!continuerRoute} />
+        <ContinuerSectionBtn disabled={disabled} />
       </View>
       <Image
         source={mascotImageSource}
