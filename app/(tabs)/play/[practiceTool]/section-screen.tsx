@@ -20,10 +20,10 @@ export default function SectionScreen() {
         >
           <View style={styles.row}>
             <View style={styles.row2}>
-              <View style={styles.view}>
-                <TouchableOpacity
-                  onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
-                >
+              <TouchableOpacity
+                onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
+              >
+                <View style={styles.view}>
                   <Image
                     source={{
                       uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/z1q84zux_expires_30_days.png",
@@ -31,8 +31,9 @@ export default function SectionScreen() {
                     resizeMode={"stretch"}
                     style={styles.image}
                   />
-                </TouchableOpacity>
-              </View>
+                </View>
+              </TouchableOpacity>
+
               <Text style={styles.text}>{"3 niveaux"}</Text>
             </View>
             <StatusText />
