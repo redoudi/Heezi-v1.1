@@ -1,10 +1,8 @@
 import { CourseCard } from "@/components/home/course-card";
-import ContinuerSectionBtn from "@/components/home/section-card/ContinuerSectionBtn";
 import SectionCard from "@/components/home/section-card/SectionCard";
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { router } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 
 export default function SectionsList() {
   const { toolConstants, practiceTool } = usePracticeToolConstants();
@@ -12,33 +10,7 @@ export default function SectionsList() {
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
       <CourseCard />
-      <View style={styles.column}>
-        <View
-          style={[
-            styles.column2,
-            { backgroundColor: toolConstants.secondaryColor },
-          ]}
-        >
-          <View>
-            <Text style={styles.text}>{"Section 1"}</Text>
-            <View style={styles.button}>
-              <View style={styles.view}>
-                <View style={styles.box}></View>
-              </View>
-            </View>
-            <ContinuerSectionBtn
-              onPress={() =>
-                router.push(`/(tabs)/play/${practiceTool}/section-screen`)
-              }
-            />
-          </View>
-          <Image
-            source={require("@/assets/images/aik0c764_expires_30_days.png")}
-            resizeMode={"contain"}
-            style={styles.absoluteImage6}
-          />
-        </View>
-      </View>
+
       <SectionCard
         mascotImageSource={require("@/assets/images/aik0c764_expires_30_days.png")}
         sectionNumber={1}
