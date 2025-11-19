@@ -56,14 +56,17 @@
                 {
                     "tip": {
                         "text1": "3.a La sélection",
-                        "text2": "Je peux aussi sélectionner du texte déjà présent pour le modifier. Pour sélectionner du texte, je clique sur le début et je fais glisser jusqu'à la fin du texte que je veux modifier."
+                        "text2": "Je peux aussi sélectionner du texte déjà présent pour le modifier. Pour sélectionner du texte, je double-clique dessus."
                     },
                     "preActions": [
                         {
                             "type": "selectBlock",
                             "blockId": "exempleInput"
                         }
-                    ]
+                    ],
+                    "cursor": {
+                        "elementId": "exempleInput"
+                    }
                 },
                 {
                     "tip": {
