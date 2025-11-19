@@ -38,7 +38,10 @@ export default function ExportScreen() {
           </View>
         </View>
       </View>
-      <MascotDialog bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!" />
+      <MascotDialog
+        bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!"
+        textBoxAndTriangleStyle={{ width: "50%" }}
+      />
     </FullWindowContainer>
   );
 }

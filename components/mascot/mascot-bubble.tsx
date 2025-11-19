@@ -46,6 +46,7 @@ export const MascotDialog = ({
   bubbleText,
   downArrowNextStep = undefined,
   style = undefined,
+  textBoxAndTriangleStyle = undefined,
 }: {
   bubbleText: string;
   downArrowNextStep: React.ReactNode;
@@ -54,12 +55,11 @@ export const MascotDialog = ({
   const DownArrowNextStep = downArrowNextStep;
   return (
     <View style={[styles.mainContainer, style]}>
-      <View style={styles.textBoxAndTriangle}>
+      <View style={[styles.textBoxAndTriangle, textBoxAndTriangleStyle]}>
         <View style={styles.textContainer}>
           <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
           {DownArrowNextStep}
         </View>
-
         <CornerTriangle />
       </View>
       <Mascot />
@@ -89,7 +89,6 @@ export default function MascotBubble({
 }
 const styles = StyleSheet.create({
   mainContainer: {
-    borderWidth: 1,
     position: "absolute",
     bottom: 16,
     right: 0,
@@ -99,12 +98,11 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   textBoxAndTriangle: {
-    flex: 1,
-    borderWidth: 1,
     flexDirection: "row",
     alignItems: "flex-end",
-    width: "50%",
+
     height: "100%",
+    width: "70%",
   },
   textContainer: {
     backgroundColor: "rgba(82,82,82,0.8)",
@@ -122,7 +120,6 @@ const styles = StyleSheet.create({
     height: 21,
   },
   cornerTriangle: {
-    borderWidth: 1,
     width: 42,
     height: 61,
     alignSelf: "flex-start",
@@ -130,6 +127,7 @@ const styles = StyleSheet.create({
   mascot: {
     width: 150,
     height: 150,
+    marginBottom: 48,
   },
 
   dialogText: {
