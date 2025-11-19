@@ -2,7 +2,6 @@ import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import {
   Image,
-  SafeAreaView,
   StyleProp,
   StyleSheet,
   Text,
@@ -27,7 +26,7 @@ const CornerTriangle = () => {
   return (
     <Image
       source={require("@/assets/images/662flub1_expires_30_days.png")}
-      resizeMode={"stretch"}
+      resizeMode={"contain"}
       style={styles.cornerTriangle}
     />
   );
@@ -54,20 +53,17 @@ export const MascotDialog = ({
 }) => {
   const DownArrowNextStep = downArrowNextStep;
   return (
-    <SafeAreaView style={[styles.container, style]}>
-      <View style={styles.mainRow}>
-        <View style={styles.textBoxContainer}>
-          <View style={styles.textBox}>
-            <View style={styles.textContainer}>
-              <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
-              {DownArrowNextStep}
-            </View>
-          </View>
-          <CornerTriangle />
+    <View style={[styles.mainContainer, style]}>
+      <View style={styles.textBoxAndTriangle}>
+        <View style={styles.textContainer}>
+          <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
+          {DownArrowNextStep}
         </View>
-        <Mascot />
+
+        <CornerTriangle />
       </View>
-    </SafeAreaView>
+      <Mascot />
+    </View>
   );
 };
 
@@ -92,42 +88,41 @@ export default function MascotBubble({
   );
 }
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
+    borderWidth: 1,
     position: "absolute",
     bottom: 16,
     right: 0,
     zIndex: 1000,
-  },
-  mainRow: {
     flexDirection: "row",
     alignItems: "flex-end",
+    justifyContent: "flex-end",
   },
-  textBoxContainer: {
+  textBoxAndTriangle: {
+    flex: 1,
+    borderWidth: 1,
     flexDirection: "row",
-    alignItems: "flex-start",
-    gap: 0,
-  },
-  textBox: {
-    width: 782,
-  },
-  column9: {
-    marginRight: 0,
+    alignItems: "flex-end",
+    width: "50%",
+    height: "100%",
   },
   textContainer: {
     backgroundColor: "rgba(82,82,82,0.8)",
     borderTopLeftRadius: 8,
     borderBottomRightRadius: 8,
     borderBottomLeftRadius: 8,
-    paddingTop: 19,
-    paddingBottom: 15,
+    paddingTop: 16,
+    paddingBottom: 16,
     paddingLeft: 32,
-    paddingRight: 33,
+    paddingRight: 32,
+    flex: 1,
   },
   image31: {
     width: 32,
     height: 21,
   },
   cornerTriangle: {
+    borderWidth: 1,
     width: 42,
     height: 61,
     alignSelf: "flex-start",
@@ -142,9 +137,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 31,
-  },
-  view38: {
-    alignItems: "flex-end",
-    justifyContent: "flex-start",
   },
 });
