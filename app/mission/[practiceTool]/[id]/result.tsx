@@ -60,7 +60,10 @@ function EndLevelStats() {
 }
 
 export default function ResultScreen() {
-  const { practiceTool, id } = useLocalSearchParams<{ practiceTool: PracticeTool, id: string }>();
+  const { practiceTool, id } = useLocalSearchParams<{
+    practiceTool: PracticeTool;
+    id: string;
+  }>();
   const { levelType, character } = useLevelData();
 
   const goToNextPage = () => {
@@ -98,12 +101,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   mainContent: {
+    backgroundColor: "white",
     alignItems: "stretch",
     justifyContent: "space-between",
     height: "100%",
     padding: 16,
   },
   imageBox: {
+    backgroundColor: "white",
     borderRadius: 8,
     padding: 8,
     flex: 1,
