@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
 
     height: "100%",
-    width: "70%",
   },
   textContainer: {
     backgroundColor: "rgba(82,82,82,0.8)",
