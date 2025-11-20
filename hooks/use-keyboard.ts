@@ -1,5 +1,3 @@
-import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { getCellUnderneath } from "@/utils/spreadsheetUtils";
 import { useEffect } from "react";
 
 export const useKbdNextStep = ({
@@ -30,33 +28,4 @@ export const useKbdNextStep = ({
       }
     };
   }, [levelType]);
-};
-
-export const useKbdSpdshtNextRow = () => {
-  const {
-    spreadsheetData,
-    setCellsSelected,
-  } = useSpreadsheetStore();
-  const cellsSelected = spreadsheetData?.cellsSelected || [];
-  useEffect(() => {
-    const handleKeyPress = (event: KeyboardEvent) => {
-      if (cellsSelected.length > 0 && event.key === "Enter") {
-        const firstCell = cellsSelected[0];
-        const nextCell = getCellUnderneath(firstCell);
-        setCellsSelected([nextCell]);
-      }
-    };
-
-    // Add event listener
-    if (typeof window !== "undefined") {
-      window.addEventListener("keydown", handleKeyPress);
-    }
-
-    // Cleanup
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("keydown", handleKeyPress);
-      }
-    };
-  }, [cellsSelected, setCellsSelected]);
 };
