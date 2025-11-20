@@ -2,10 +2,12 @@ import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import {
   Image,
+  Modal,
   StyleProp,
   StyleSheet,
   Text,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   View,
   ViewStyle,
 } from "react-native";
@@ -74,7 +76,21 @@ export default function MascotBubbleOrModal({
   bubbleText: string;
   nextStep: () => void | null;
 }) {
-  return MascotBubble({ bubbleText, nextStep });
+  const { levelType } = useLevelData();
+  const MascotBubbleComponent = () => MascotBubble({ bubbleText, nextStep });
+  if (levelType === "lesson") {
+    return (
+      <TouchableWithoutFeedback onPress={nextStep} accessible={false}>
+        <View style={styles.overlayContainer}>
+          <View style={styles.mainContainer}>
+            <MascotBubbleComponent />
+          </View>
+        </View>
+      </TouchableWithoutFeedback>
+    );
+  } else {
+    return <MascotBubbleComponent />;
+  }
 }
 
 export function MascotBubble({
@@ -144,5 +160,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 31,
+  },
+  overlayContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
