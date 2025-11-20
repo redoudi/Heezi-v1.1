@@ -2,6 +2,9 @@
     "levelType": "lesson",
     "character": "renard",
     "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
+    "cellsEnabled": [
+        "B2"
+    ],
     "tasks": [
         {
             "intro": "On commence par de petits mot-clés pour se repérer",
@@ -92,7 +95,7 @@
             "steps": [
                 {
                     "tip": {
-                        "text1": "Etape 3.a",
+                        "text1": "Etape 3.1",
                         "text2": "Pour modifier la valeur d'une cellule, je vais d'abord la sélectionner. Par exemple, je sélectionne la cellule B2 en cliquant dessus"
                     },
                     "preActions": [
@@ -102,7 +105,10 @@
                                 "B2"
                             ]
                         }
-                    ]
+                    ],
+                    "cursor": {
+                        "elementId": "B2"
+                    }
                 },
                 {
                     "tip": {
@@ -121,7 +127,28 @@
                             "cell": "B2",
                             "value": "123"
                         }
-                    ]
+                    ],
+                    "cursor": {
+                        "elementId": ""
+                    }
+                },
+                {
+                    "tip": {
+                        "text1": "Etape 3.3",
+                        "text2": "Et pour finir, je peux mettre la valeur en gras en cliquant sur le bouton 'Gras'"
+                    },
+                    "preActions": [
+                        {
+                            "type": "cellStyle",
+                            "cell": "B2",
+                            "style": {
+                                "fontWeight": "bold"
+                            }
+                        }
+                    ],
+                    "cursor": {
+                        "elementId": ""
+                    }
                 }
             ]
         }

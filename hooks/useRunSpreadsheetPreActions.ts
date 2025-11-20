@@ -1,7 +1,8 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 
 export default function useRunSpreadsheetPreActions() {
-  const { setCellValue, setCellsSelected } = useSpreadsheetStore();
+  const { setCellValue, setCellsSelected, setCellStyle } =
+    useSpreadsheetStore();
 
   const runPreAction = (preAction: any) => {
     switch (preAction.type) {
@@ -10,6 +11,9 @@ export default function useRunSpreadsheetPreActions() {
         break;
       case "select":
         setCellsSelected(preAction.cells);
+        break;
+      case "cellStyle":
+        setCellStyle(preAction.cell, preAction.style);
         break;
     }
   };
