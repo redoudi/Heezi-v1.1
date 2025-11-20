@@ -67,7 +67,17 @@ export const MascotDialog = ({
   );
 };
 
-export default function MascotBubble({
+export default function MascotBubbleOrModal({
+  bubbleText,
+  nextStep,
+}: {
+  bubbleText: string;
+  nextStep: () => void | null;
+}) {
+  return MascotBubble({ bubbleText, nextStep });
+}
+
+export function MascotBubble({
   bubbleText,
   nextStep,
 }: {
