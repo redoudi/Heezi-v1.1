@@ -25,6 +25,7 @@ export default function QuizScreen() {
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
     null
   );
+  const [isVerified, setIsVerified] = useState(false);
 
   const selectAnswer = (index: number) => setSelectedAnswerIndex(index);
 
@@ -46,6 +47,7 @@ export default function QuizScreen() {
       setTaskIndex(runnerRef.current.task + 1);
     } else {
       setSelectedAnswerIndex(-1);
+      setIsVerified(false);
       const currentStep = tasks
         .at(runnerRef.current.task)
         ?.steps?.at(runnerRef.current.step);
@@ -68,8 +70,11 @@ export default function QuizScreen() {
 
   const verifyAnswer = () => {
     if (selectedAnswerIndex === null) return;
-    const isCorrect = answers.at(selectedAnswerIndex)?.isCorrect;
-    if (isCorrect) setStepIndex(runnerRef.current.step + 1);
+    setIsVerified(true);
+  };
+
+  const nextStep = () => {
+    setStepIndex(runnerRef.current.step + 1);
   };
 
   useEffect(() => {
@@ -93,6 +98,8 @@ export default function QuizScreen() {
       selectAnswer={selectAnswer}
       selectedAnswerIndex={selectedAnswerIndex}
       verifyAnswer={verifyAnswer}
+      nextStep={nextStep}
+      isVerified={isVerified}
     />
   );
 }

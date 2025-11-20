@@ -46,43 +46,58 @@ const QuestionBox = ({ question }: { question: string }) => {
   );
 };
 
-const MascotInquisitive = () => {
-  return (
-    <Image
-      source={require("@/assets/images/d7skkhjc_expires_30_days.png")}
-      resizeMode={"stretch"}
-      style={styles.mascotImage}
-    />
-  );
-};
-
 const AnswerButton = ({
   answer,
   selectAnswer,
   index,
   selectedAnswerIndex,
+  isVerified,
 }: {
   answer: { text: string; isCorrect?: boolean };
   selectAnswer: (index: number) => void;
   index: number;
   selectedAnswerIndex: number | null;
+  isVerified: boolean;
 }) => {
+  const isSelected = selectedAnswerIndex === index;
+  const isWrongAnswer = isVerified && isSelected && !answer.isCorrect;
+  const isCorrectAnswer = isVerified && answer.isCorrect;
+
+  let buttonStyle = styles.button;
+  if (isWrongAnswer) {
+    buttonStyle = styles.buttonWrong;
+  } else if (isCorrectAnswer) {
+    buttonStyle = styles.buttonCorrect;
+  } else if (isSelected) {
+    buttonStyle = styles.buttonSelected;
+  }
+
   return (
     <TouchableOpacity
-      style={
-        selectedAnswerIndex === index ? styles.buttonSelected : styles.button
-      }
+      style={buttonStyle}
       onPress={() => selectAnswer(index)}
+      disabled={isVerified}
     >
       <Text style={styles.text2}>{answer.text || "..."}</Text>
     </TouchableOpacity>
   );
 };
 
-const VerifyButton = ({ verifyAnswer }: { verifyAnswer: () => void }) => {
+const VerifyButton = ({
+  verifyAnswer,
+  nextStep,
+  isVerified,
+}: {
+  verifyAnswer: () => void;
+  nextStep: () => void;
+  isVerified: boolean;
+}) => {
   return (
-    <TouchableOpacity style={styles.buttonRow} onPress={verifyAnswer}>
-      <Text style={styles.text3}>{"Vérifier"}</Text>
+    <TouchableOpacity
+      style={styles.buttonRow}
+      onPress={isVerified ? nextStep : verifyAnswer}
+    >
+      <Text style={styles.text3}>{isVerified ? "Suivant" : "Vérifier"}</Text>
       <Image
         source={require("@/assets/images/tsy13i8h_expires_30_days.png")}
         resizeMode={"stretch"}
@@ -96,10 +111,12 @@ const AnswersBox = ({
   answers,
   selectAnswer,
   selectedAnswerIndex,
+  isVerified,
 }: {
   answers: { text: string; isCorrect?: boolean }[];
   selectAnswer: (index: number) => void;
   selectedAnswerIndex: number | null;
+  isVerified: boolean;
 }) => {
   return (
     <FlatList
@@ -110,6 +127,7 @@ const AnswersBox = ({
           selectAnswer={selectAnswer}
           index={index}
           selectedAnswerIndex={selectedAnswerIndex}
+          isVerified={isVerified}
         />
       )}
       keyExtractor={(_, index) => index.toString()}
@@ -126,6 +144,8 @@ export default function QuizBody({
   closeModal,
   selectedAnswerIndex,
   verifyAnswer,
+  nextStep,
+  isVerified,
 }: {
   selectAnswer: (index: number) => void;
   modalText: string;
@@ -134,6 +154,8 @@ export default function QuizBody({
   closeModal: () => void;
   selectedAnswerIndex: number | null;
   verifyAnswer: () => void;
+  nextStep: () => void;
+  isVerified: boolean;
 }) {
   return (
     <SafeAreaView style={styles.container}>
@@ -148,11 +170,16 @@ export default function QuizBody({
               answers={answers}
               selectAnswer={selectAnswer}
               selectedAnswerIndex={selectedAnswerIndex}
+              isVerified={isVerified}
             />
           </View>
         </View>
         <View style={styles.view6}>
-          <VerifyButton verifyAnswer={verifyAnswer} />
+          <VerifyButton
+            verifyAnswer={verifyAnswer}
+            nextStep={nextStep}
+            isVerified={isVerified}
+          />
         </View>
         <MascotModal
           open={!!modalText?.trim()}
@@ -187,6 +214,22 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
     paddingHorizontal: 256,
     marginBottom: 16,
+  },
+  buttonWrong: {
+    backgroundColor: "#FF6B6B",
+    borderRadius: 8,
+    paddingVertical: 7,
+    paddingHorizontal: 256,
+    marginBottom: 16,
+  },
+  buttonCorrect: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 8,
+    paddingVertical: 7,
+    paddingHorizontal: 256,
+    marginBottom: 16,
+    borderWidth: 3,
+    borderColor: "#4ECB71",
   },
   button2: {
     alignSelf: "flex-start",
