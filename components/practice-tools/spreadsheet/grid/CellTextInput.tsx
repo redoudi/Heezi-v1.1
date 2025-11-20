@@ -1,9 +1,11 @@
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import { getCellUnderneath } from "@/utils/spreadsheetUtils";
 import { useEffect, useRef } from "react";
 import { StyleSheet, TextInput } from "react-native";
 
 export default function CellTextInput({ id }: { id: string }) {
-  const { spreadsheetData, setCellValue, cellsEnabled } = useSpreadsheetStore();
+  const { spreadsheetData, setCellValue, cellsEnabled, setCellsSelected } =
+    useSpreadsheetStore();
 
   const cellsValues = spreadsheetData?.cellsValues;
   const cellsSelected = spreadsheetData?.cellsSelected;
@@ -28,6 +30,10 @@ export default function CellTextInput({ id }: { id: string }) {
       value={cellsValues?.[id] || ""}
       onChangeText={(text) => setCellValue(id, text)}
       ref={textInputRef}
+      onSubmitEditing={() => {
+        const nextCell = getCellUnderneath(id);
+        setCellsSelected([nextCell]);
+      }}
     />
   );
 }

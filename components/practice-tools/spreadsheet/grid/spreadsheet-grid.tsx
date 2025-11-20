@@ -1,4 +1,3 @@
-import { useKbdSpdshtNextRow } from "@/hooks/use-keyboard";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Cell from "./cell";
 import HeaderRow from "./header-row";
@@ -8,7 +7,7 @@ const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 const ROWS = Array.from({ length: 18 }, (_, i) => i + 1);
 
 export default function SpreadsheetGrid() {
-  useKbdSpdshtNextRow();
+  // useKbdSpdshtNextRow();
   // Header component
 
   // Row component
