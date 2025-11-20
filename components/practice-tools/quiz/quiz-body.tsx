@@ -1,7 +1,6 @@
 import MascotteQuiz from "@/components/animations/MascotteQuiz";
 import MascotModal from "@/components/mascot/mascot-modal";
 import { router } from "expo-router";
-import { useEffect } from "react";
 import {
   FlatList,
   Image,
@@ -89,12 +88,26 @@ const VerifyButton = ({
   nextStep,
   isVerified,
   disabled,
+  selectedAnswerIndex,
+  answers,
 }: {
   verifyAnswer: () => void;
   nextStep: () => void;
   isVerified: boolean;
   disabled: boolean;
+  selectedAnswerIndex: number | null;
+  answers: { text: string; isCorrect?: boolean }[];
 }) => {
+  // Check if the selected answer is correct
+  const isCorrectAnswer =
+    selectedAnswerIndex !== null &&
+    answers[selectedAnswerIndex]?.isCorrect === true;
+
+  // Hide button if answer is correct and verified (auto-advancing)
+  if (isVerified && isCorrectAnswer) {
+    return null;
+  }
+
   return (
     <TouchableOpacity
       style={styles.buttonRow}
@@ -161,9 +174,6 @@ export default function QuizBody({
   nextStep: () => void;
   isVerified: boolean;
 }) {
-  useEffect(() => {
-    console.log("selectedAnswerIndex", selectedAnswerIndex);
-  }, [selectedAnswerIndex]);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
@@ -187,6 +197,8 @@ export default function QuizBody({
             nextStep={nextStep}
             isVerified={isVerified}
             disabled={selectedAnswerIndex === -1}
+            selectedAnswerIndex={selectedAnswerIndex}
+            answers={answers}
           />
         </View>
         <MascotModal

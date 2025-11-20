@@ -68,13 +68,22 @@ export default function QuizScreen() {
     }
   };
 
+  const nextStep = () => {
+    setStepIndex(runnerRef.current.step + 1);
+  };
+
   const verifyAnswer = () => {
     if (selectedAnswerIndex === null) return;
     setIsVerified(true);
-  };
 
-  const nextStep = () => {
-    setStepIndex(runnerRef.current.step + 1);
+    // If the answer is correct, automatically proceed to next step
+    const selectedAnswer = answers[selectedAnswerIndex];
+    if (selectedAnswer?.isCorrect) {
+      // Small delay to show the correct answer feedback before proceeding
+      setTimeout(() => {
+        nextStep();
+      }, 500);
+    }
   };
 
   useEffect(() => {
