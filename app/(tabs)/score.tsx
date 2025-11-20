@@ -9,19 +9,23 @@ export default function ScoreScreen() {
           <View style={styles.column2}>
             <View style={styles.row}>
               <Image
-                source={require("@/assets/images/zyyckjro_expires_30_days.png")} resizeMode={"stretch"}
+                source={require("@/assets/images/zyyckjro_expires_30_days.png")}
+                resizeMode={"stretch"}
                 style={styles.image}
               />
               <Image
-                source={require("@/assets/images/b9id1gh6_expires_30_days.png")} resizeMode={"stretch"}
+                source={require("@/assets/images/b9id1gh6_expires_30_days.png")}
+                resizeMode={"stretch"}
                 style={styles.image2}
               />
               <Image
-                source={require("@/assets/images/1wiy58je_expires_30_days.png")} resizeMode={"stretch"}
+                source={require("@/assets/images/1wiy58je_expires_30_days.png")}
+                resizeMode={"stretch"}
                 style={styles.image2}
               />
               <Image
-                source={require("@/assets/images/rtrwfngz_expires_30_days.png")} resizeMode={"stretch"}
+                source={require("@/assets/images/rtrwfngz_expires_30_days.png")}
+                resizeMode={"stretch"}
                 style={styles.image3}
               />
             </View>
@@ -38,10 +42,7 @@ export default function ScoreScreen() {
           <View style={styles.row2}>
             <View style={styles.column4}>
               <View style={styles.row3}>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => alert("Pressed!")}
-                >
+                <TouchableOpacity style={styles.button} onPress={() => {}}>
                   <Text style={styles.text4}>{"Classement Global"}</Text>
                 </TouchableOpacity>
                 <View style={styles.view2}>
@@ -50,97 +51,81 @@ export default function ScoreScreen() {
                   </Text>
                 </View>
               </View>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => alert("Pressed!")}
-              >
+              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/3lokmvs9_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/3lokmvs9_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image4}
                 />
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow2}
-                onPress={() => alert("Pressed!")}
-              >
+              <TouchableOpacity style={styles.buttonRow2} onPress={() => {}}>
                 <Text style={styles.text9}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/6643scml_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/6643scml_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image4}
                 />
                 <Text style={styles.text10}>{"Nom de la personne"}</Text>
                 <Text style={styles.text11}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => alert("Pressed!")}
-              >
+              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/n8b0919f_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/n8b0919f_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image4}
                 />
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => alert("Pressed!")}
-              >
+              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/myla2l0p_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/myla2l0p_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image4}
                 />
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => alert("Pressed!")}
-              >
+              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/w55o4c0r_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/w55o4c0r_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image4}
                 />
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => alert("Pressed!")}
-              >
+              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/72f9ifvg_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/72f9ifvg_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image4}
                 />
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => alert("Pressed!")}
-              >
+              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/lcfh9jwj_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/lcfh9jwj_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image4}
                 />
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow3}
-                onPress={() => alert("Pressed!")}
-              >
+              <TouchableOpacity style={styles.buttonRow3} onPress={() => {}}>
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/6lq83c0i_expires_30_days.png")} resizeMode={"stretch"}
+                  source={require("@/assets/images/6lq83c0i_expires_30_days.png")}
+                  resizeMode={"stretch"}
                   style={styles.image4}
                 />
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>

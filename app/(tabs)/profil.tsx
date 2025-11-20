@@ -1,11 +1,5 @@
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
 import { ScrollableScreen } from "@/components/scrollable-screen";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ProfilScreen() {
   return (
@@ -20,10 +14,7 @@ export default function ProfilScreen() {
                   <View style={styles.box}></View>
                 </View>
                 <View style={styles.row2}>
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => alert("Pressed!")}
-                  >
+                  <TouchableOpacity style={styles.button} onPress={() => {}}>
                     <Image
                       source={{
                         uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/tggwgkm0_expires_30_days.png",
@@ -32,10 +23,7 @@ export default function ProfilScreen() {
                       style={styles.image}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button2}
-                    onPress={() => alert("Pressed!")}
-                  >
+                  <TouchableOpacity style={styles.button2} onPress={() => {}}>
                     <Image
                       source={{
                         uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/vf068hk1_expires_30_days.png",

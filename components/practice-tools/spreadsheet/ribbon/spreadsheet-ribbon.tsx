@@ -37,10 +37,7 @@ export default function Ribbon() {
     <View style={styles.row4}>
       <View style={styles.column3}>
         <View style={styles.row5}>
-          <TouchableOpacity
-            style={styles.buttonColumn}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.buttonColumn} onPress={() => {}}>
             <Image
               source={require("@/assets/images/1fzbdkqt_expires_30_days.png")}
               resizeMode={"stretch"}
@@ -54,20 +51,14 @@ export default function Ribbon() {
             />
           </TouchableOpacity>
           <View style={styles.column4}>
-            <TouchableOpacity
-              style={styles.button11}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.button11} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/y25kezvs_expires_30_days.png")}
                 resizeMode={"stretch"}
                 style={styles.image10}
               />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button12}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.button12} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/jz6td9an_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -81,10 +72,7 @@ export default function Ribbon() {
       <View style={styles.column5}>
         <View style={styles.column6}>
           <View style={styles.row6}>
-            <TouchableOpacity
-              style={styles.buttonRow}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
               <Text style={styles.text4}>{"Police"}</Text>
               <Image
                 source={require("@/assets/images/3jmssrjq_expires_30_days.png")}
@@ -92,10 +80,7 @@ export default function Ribbon() {
                 style={styles.image12}
               />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.buttonRow2}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.buttonRow2} onPress={() => {}}>
               <Text style={styles.text5}>{"12"}</Text>
               <Image
                 source={require("@/assets/images/bk05j5hf_expires_30_days.png")}
@@ -106,50 +91,35 @@ export default function Ribbon() {
           </View>
           <View style={styles.row7}>
             <BoldButton />
-            <TouchableOpacity
-              style={styles.button14}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.button14} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
                 resizeMode={"stretch"}
                 style={styles.image14}
               />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button15}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.button15} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/shmc35k2_expires_30_days.png")}
                 resizeMode={"stretch"}
                 style={styles.image15}
               />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button16}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.button16} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/7czrdf4k_expires_30_days.png")}
                 resizeMode={"stretch"}
                 style={styles.image16}
               />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button17}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.button17} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/ath16u4f_expires_30_days.png")}
                 resizeMode={"stretch"}
                 style={styles.image17}
               />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button18}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.button18} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/uewh91sl_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -162,40 +132,28 @@ export default function Ribbon() {
       </View>
       <View style={styles.column7}>
         <View style={styles.row8}>
-          <TouchableOpacity
-            style={styles.button19}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button19} onPress={() => {}}>
             <Image
               source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
               resizeMode={"stretch"}
               style={styles.image19}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button19}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button19} onPress={() => {}}>
             <Image
               source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
               resizeMode={"stretch"}
               style={styles.image19}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button20}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button20} onPress={() => {}}>
             <Image
               source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
               resizeMode={"stretch"}
               style={styles.image19}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button21}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button21} onPress={() => {}}>
             <Image
               source={require("@/assets/images/mc2ln7j3_expires_30_days.png")}
               resizeMode={"stretch"}
@@ -204,30 +162,21 @@ export default function Ribbon() {
           </TouchableOpacity>
         </View>
         <View style={styles.row9}>
-          <TouchableOpacity
-            style={styles.button22}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button22} onPress={() => {}}>
             <Image
               source={require("@/assets/images/uirt4emu_expires_30_days.png")}
               resizeMode={"stretch"}
               style={styles.image21}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button20}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button20} onPress={() => {}}>
             <Image
               source={require("@/assets/images/393nlgpw_expires_30_days.png")}
               resizeMode={"stretch"}
               style={styles.image19}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button23}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button23} onPress={() => {}}>
             <Image
               source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
               resizeMode={"stretch"}
@@ -239,20 +188,14 @@ export default function Ribbon() {
             resizeMode={"stretch"}
             style={styles.image22}
           />
-          <TouchableOpacity
-            style={styles.button24}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button24} onPress={() => {}}>
             <Image
               source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
               resizeMode={"stretch"}
               style={styles.image20}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button25}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button25} onPress={() => {}}>
             <Image
               source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
               resizeMode={"stretch"}
@@ -265,10 +208,7 @@ export default function Ribbon() {
         </View>
       </View>
       <View style={styles.column8}>
-        <TouchableOpacity
-          style={styles.buttonRow3}
-          onPress={() => alert("Pressed!")}
-        >
+        <TouchableOpacity style={styles.buttonRow3} onPress={() => {}}>
           <Text style={styles.text4}>{"Standard"}</Text>
           <Image
             source={require("@/assets/images/f0blr7yj_expires_30_days.png")}
@@ -282,16 +222,10 @@ export default function Ribbon() {
             resizeMode={"stretch"}
             style={styles.image24}
           />
-          <TouchableOpacity
-            style={styles.button26}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button26} onPress={() => {}}>
             <Text style={styles.text7}>{"%"}</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button27}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.button27} onPress={() => {}}>
             <Text style={styles.text7}>{"000"}</Text>
           </TouchableOpacity>
         </View>
@@ -320,10 +254,7 @@ export default function Ribbon() {
       <View style={styles.column10}>
         <View style={styles.column11}>
           <View style={styles.row12}>
-            <TouchableOpacity
-              style={styles.buttonRow4}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.buttonRow4} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/6p0qmdld_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -336,10 +267,7 @@ export default function Ribbon() {
                 style={styles.image29}
               />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.buttonRow5}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.buttonRow5} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/3psjry5g_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -353,10 +281,7 @@ export default function Ribbon() {
               />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            style={styles.buttonRow6}
-            onPress={() => alert("Pressed!")}
-          >
+          <TouchableOpacity style={styles.buttonRow6} onPress={() => {}}>
             <Image
               source={require("@/assets/images/ueuz0btu_expires_30_days.png")}
               resizeMode={"stretch"}

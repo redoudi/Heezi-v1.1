@@ -5,7 +5,7 @@ import { StyleSheet, View } from "react-native";
 export function RightColumn() {
   return (
     <View style={styles.rightColumn}>
-      <LevelHeader onScorePress={() => alert("Pressed!")} />
+      <LevelHeader onScorePress={() => {}} />
       <CategoryList />
     </View>
   );

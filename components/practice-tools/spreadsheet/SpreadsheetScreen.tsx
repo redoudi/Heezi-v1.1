@@ -31,10 +31,7 @@ export default function SpreadsheetScreen() {
               resizeMode={"stretch"}
               style={styles.image36}
             />
-            <TouchableOpacity
-              style={styles.button28}
-              onPress={() => alert("Pressed!")}
-            >
+            <TouchableOpacity style={styles.button28} onPress={() => {}}>
               <Image
                 source={require("@/assets/images/o6j3pvf5_expires_30_days.png")}
                 resizeMode={"stretch"}
