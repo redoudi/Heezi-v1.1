@@ -6,13 +6,13 @@ import { styles } from "../spreadsheet-styles";
 
 function BoldButton() {
   const { isSelectedCellBold, boldSelectedCell } = useSpreadsheetRibbon();
-  const { setContentsRef } = useCursor();
-  const boldButtonRef = useRef(null);
+  const { setContentRef } = useCursor();
+  const boldButtonRef = useRef<any>(null);
   useEffect(() => {
-    if (setContentsRef) {
-      setContentsRef("boldButton", boldButtonRef);
+    if (setContentRef && boldButtonRef) {
+      setContentRef("boldButton", boldButtonRef);
     }
-  }, [setContentsRef]);
+  }, [setContentRef, boldButtonRef]);
   return (
     <TouchableOpacity
       // bold button
