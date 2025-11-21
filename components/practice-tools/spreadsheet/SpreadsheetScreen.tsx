@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   mainContent: {
-    width: 1440,
+    maxWidth: 1440,
     flex: 1,
     backgroundColor: "#EFEFEF",
     borderWidth: 1,
