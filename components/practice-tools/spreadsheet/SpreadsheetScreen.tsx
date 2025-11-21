@@ -15,8 +15,8 @@ import TitleBar from "./title-bar";
 export default function SpreadsheetScreen() {
   const { height } = useWindowDimensions();
   return (
-    <SafeAreaView style={[styles.container, { height: height || "100%" }]}>
-      <View style={styles.column}>
+    <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
+      <View style={styles.mainContent}>
         <View style={styles.column2}>
           <TitleBar />
           <RibbonTabs />
@@ -31,7 +31,11 @@ export default function SpreadsheetScreen() {
               resizeMode={"stretch"}
               style={styles.image36}
             />
-            <TouchableOpacity style={styles.button28} onPress={() => {}} disabled>
+            <TouchableOpacity
+              style={styles.button28}
+              onPress={() => {}}
+              disabled
+            >
               <Image
                 source={require("@/assets/images/o6j3pvf5_expires_30_days.png")}
                 resizeMode={"stretch"}
