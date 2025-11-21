@@ -37,10 +37,8 @@ export default function MissionPart({
 
   return (
     <View>
-      <View style={styles.view3}>
-        <View style={[styles.button, { backgroundColor: toolConstants.color }]}>
-          <Text style={styles.text5}>{title}</Text>
-        </View>
+      <View style={[styles.button, { backgroundColor: toolConstants.color }]}>
+        <Text style={styles.text5}>{title}</Text>
       </View>
 
       <TouchableOpacity
@@ -74,9 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
   },
-  view3: {
-    marginBottom: 16,
-  },
+
   sectionRow: {
     flexDirection: "row",
     alignItems: "center",
