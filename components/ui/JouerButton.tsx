@@ -5,14 +5,11 @@ export default function JouerButton({ image }) {
   const { toolConstants } = usePracticeToolConstants();
 
   return (
-    <View style={styles.mainContainer}>
+    <View
+      style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
+    >
       <Image source={image} resizeMode={"contain"} />
-      <View
-        style={[
-          styles.playButtonTextContainer,
-          { backgroundColor: toolConstants.color },
-        ]}
-      >
+      <View style={styles.playButtonTextContainer}>
         <Text style={styles.playButtonText}>{"Jouer"}</Text>
       </View>
     </View>
@@ -21,19 +18,20 @@ export default function JouerButton({ image }) {
 
 const styles = StyleSheet.create({
   mainContainer: {
+    borderRadius: 8,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
+    paddingRight: 8,
   },
   playButtonTextContainer: {
-    backgroundColor: "red",
     alignSelf: "stretch",
     justifyContent: "center",
     borderRadius: 8,
-    paddingHorizontal: 16,
+    paddingHorizontal: 8,
   },
   playButtonText: {
-    color: "#0A2924",
+    color: "white",
     fontSize: 24,
     fontWeight: "bold",
   },
