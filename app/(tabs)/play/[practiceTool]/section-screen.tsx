@@ -41,24 +41,26 @@ export default function SectionScreen() {
             <Text style={styles.text4}>{"Apprendre les bases"}</Text>
           </View>
         </View>
-        <MissionPart
-          title="Cours"
-          image={lessonButtonImage}
-          levelNumber={1}
-          animationData={lessonAnimationData}
-        />
-        <MissionPart
-          title="Quiz"
-          image={quizButtonImage}
-          levelNumber={2}
-          animationData={quizAnimationData}
-        />
-        <MissionPart
-          title="Pratique"
-          image={practiceButtonImage}
-          levelNumber={3}
-          animationData={practiceAnimationData}
-        />
+        <View style={styles.missionPartsContainer}>
+          <MissionPart
+            title="Cours"
+            image={lessonButtonImage}
+            levelNumber={1}
+            animationData={lessonAnimationData}
+          />
+          <MissionPart
+            title="Quiz"
+            image={quizButtonImage}
+            levelNumber={2}
+            animationData={quizAnimationData}
+          />
+          <MissionPart
+            title="Pratique"
+            image={practiceButtonImage}
+            levelNumber={3}
+            animationData={practiceAnimationData}
+          />
+        </View>
       </View>
     </View>
   );
@@ -233,5 +235,8 @@ const styles = StyleSheet.create({
   sectionRow: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  missionPartsContainer: {
+    gap: 32,
   },
 });
