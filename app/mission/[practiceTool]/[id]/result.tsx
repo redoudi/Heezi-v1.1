@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
     margin: 16,
   },
   imageBox: {
-    borderWidth: 1,
     backgroundColor: "white",
     borderRadius: 8,
     padding: 8,
