@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
   sectionRow: {
     flexDirection: "row",
     alignItems: "center",
-    borderWidth: 1,
   },
   playButton: {
     flexDirection: "row",
