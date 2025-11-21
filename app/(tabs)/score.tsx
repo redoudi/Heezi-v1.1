@@ -42,7 +42,11 @@ export default function ScoreScreen() {
           <View style={styles.row2}>
             <View style={styles.column4}>
               <View style={styles.row3}>
-                <TouchableOpacity style={styles.button} onPress={() => {}}>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => {}}
+                  disabled={true}
+                >
                   <Text style={styles.text4}>{"Classement Global"}</Text>
                 </TouchableOpacity>
                 <View style={styles.view2}>
@@ -51,7 +55,11 @@ export default function ScoreScreen() {
                   </Text>
                 </View>
               </View>
-              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.buttonRow}
+                onPress={() => {}}
+                disabled={true}
+              >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/3lokmvs9_expires_30_days.png")}
@@ -61,7 +69,11 @@ export default function ScoreScreen() {
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow2} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.buttonRow2}
+                onPress={() => {}}
+                disabled={true}
+              >
                 <Text style={styles.text9}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/6643scml_expires_30_days.png")}
@@ -71,7 +83,11 @@ export default function ScoreScreen() {
                 <Text style={styles.text10}>{"Nom de la personne"}</Text>
                 <Text style={styles.text11}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.buttonRow}
+                onPress={() => {}}
+                disabled={true}
+              >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/n8b0919f_expires_30_days.png")}
@@ -81,7 +97,11 @@ export default function ScoreScreen() {
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.buttonRow}
+                onPress={() => {}}
+                disabled={true}
+              >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/myla2l0p_expires_30_days.png")}
@@ -91,7 +111,11 @@ export default function ScoreScreen() {
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.buttonRow}
+                onPress={() => {}}
+                disabled={true}
+              >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/w55o4c0r_expires_30_days.png")}
@@ -101,7 +125,11 @@ export default function ScoreScreen() {
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.buttonRow}
+                onPress={() => {}}
+                disabled={true}
+              >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/72f9ifvg_expires_30_days.png")}
@@ -111,7 +139,11 @@ export default function ScoreScreen() {
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.buttonRow}
+                onPress={() => {}}
+                disabled={true}
+              >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/lcfh9jwj_expires_30_days.png")}
@@ -121,7 +153,11 @@ export default function ScoreScreen() {
                 <Text style={styles.text7}>{"Nom de la personne"}</Text>
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow3} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.buttonRow3}
+                onPress={() => {}}
+                disabled={true}
+              >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/6lq83c0i_expires_30_days.png")}

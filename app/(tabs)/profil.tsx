@@ -14,7 +14,11 @@ export default function ProfilScreen() {
                   <View style={styles.box}></View>
                 </View>
                 <View style={styles.row2}>
-                  <TouchableOpacity style={styles.button} onPress={() => {}}>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => {}}
+                    disabled={true}
+                  >
                     <Image
                       source={{
                         uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/tggwgkm0_expires_30_days.png",
@@ -23,7 +27,11 @@ export default function ProfilScreen() {
                       style={styles.image}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity style={styles.button2} onPress={() => {}}>
+                  <TouchableOpacity
+                    style={styles.button2}
+                    onPress={() => {}}
+                    disabled={true}
+                  >
                     <Image
                       source={{
                         uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/vf068hk1_expires_30_days.png",

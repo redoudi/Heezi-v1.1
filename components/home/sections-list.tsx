@@ -9,7 +9,11 @@ export default function SectionsList({
       <View style={styles.column}>
         <View style={styles.column2}>
           <Text style={styles.text}>{"Section 1"}</Text>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {}}
+            disabled={true}
+          >
             <View style={styles.view}>
               <View style={styles.box}></View>
             </View>
@@ -94,7 +98,11 @@ export default function SectionsList({
               </View>
             </View>
           </View>
-          <TouchableOpacity style={styles.buttonRow2} onPress={() => {}}>
+          <TouchableOpacity
+            style={styles.buttonRow2}
+            onPress={() => {}}
+            disabled={true}
+          >
             <Text style={styles.text4}>{"Continuer"}</Text>
             <Image
               source={require("@/assets/images/sy8w1ahc_expires_30_days.png")}
@@ -119,7 +127,11 @@ export default function SectionsList({
               </View>
             </View>
           </View>
-          <TouchableOpacity style={styles.buttonRow3} onPress={() => {}}>
+          <TouchableOpacity
+            style={styles.buttonRow3}
+            onPress={() => {}}
+            disabled={true}
+          >
             <Text style={styles.text4}>{"Continuer"}</Text>
             <Image
               source={require("@/assets/images/l29fup9x_expires_30_days.png")}
