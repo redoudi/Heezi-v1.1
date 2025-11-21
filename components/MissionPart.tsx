@@ -6,6 +6,15 @@ import { getLevelDataByNumber } from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import CustomAnimation from "./animations/CustomAnimation";
 
+function JouerButton({ image }: { image: any }) {
+  return (
+    <View style={styles.playButton}>
+      <Image source={image} resizeMode={"contain"} />
+      <Text style={styles.playButtonText}>{"Jouer"}</Text>
+    </View>
+  );
+}
+
 export default function MissionPart({
   title,
   image,
@@ -49,7 +58,7 @@ export default function MissionPart({
       >
         <View style={styles.sectionRow}>
           <CustomAnimation animationData={getAnimationData()} />
-          <Image source={image} resizeMode={"contain"} />
+          <JouerButton image={image} />
         </View>
       </TouchableOpacity>
     </View>
@@ -79,5 +88,16 @@ const styles = StyleSheet.create({
   sectionRow: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  playButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    gap: 8,
+  },
+  playButtonText: {
+    color: "#292929",
+    fontSize: 14,
+    fontWeight: "bold",
   },
 });
