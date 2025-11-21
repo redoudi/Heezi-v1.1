@@ -4,7 +4,7 @@ import { styles } from "./spreadsheet-styles";
 export default function FunctionBar() {
   return (
     <View style={styles.row4}>
-      <TouchableOpacity style={styles.buttonRow7} onPress={() => {}} disabled={true}>
+      <TouchableOpacity style={styles.buttonRow7} onPress={() => {}} disabled>
         <Text style={styles.text5}>{"A20"}</Text>
         <Image
           source={require("@/assets/images/w85265az_expires_30_days.png")}

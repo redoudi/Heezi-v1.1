@@ -60,42 +60,42 @@ export default function TextEditorHeader() {
         <BackButton />
       </View>
       <View style={styles.row2}>
-        <TouchableOpacity style={styles.button2} onPress={() => {}}>
+        <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Accueil"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button3} onPress={() => {}}>
+        <TouchableOpacity style={styles.button3} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Insertion"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button4} onPress={() => {}}>
+        <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Dessin"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button5} onPress={() => {}}>
+        <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Conception"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button6} onPress={() => {}}>
+        <TouchableOpacity style={styles.button6} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Mise en page"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button7} onPress={() => {}}>
+        <TouchableOpacity style={styles.button7} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Références"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button5} onPress={() => {}}>
+        <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Publipostage"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button4} onPress={() => {}}>
+        <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Révision"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button8} onPress={() => {}}>
+        <TouchableOpacity style={styles.button8} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Affichage"}</Text>
         </TouchableOpacity>
         <View style={styles.row3}>
-          <TouchableOpacity style={styles.button9} onPress={() => {}}>
+          <TouchableOpacity style={styles.button9} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/ufeyprsl_expires_30_days.png")}
               resizeMode={"stretch"}
               style={styles.image6}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button10} onPress={() => {}}>
+          <TouchableOpacity style={styles.button10} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/v82hp4b9_expires_30_days.png")}
               resizeMode={"stretch"}
@@ -107,7 +107,7 @@ export default function TextEditorHeader() {
       <View style={styles.row4}>
         <View style={styles.column3}>
           <View style={styles.row5}>
-            <TouchableOpacity style={styles.buttonColumn} onPress={() => {}}>
+            <TouchableOpacity style={styles.buttonColumn} onPress={() => {}} disabled>
               <Image
                 source={require("@/assets/images/brtm7hpr_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -121,14 +121,14 @@ export default function TextEditorHeader() {
               />
             </TouchableOpacity>
             <View style={styles.column4}>
-              <TouchableOpacity style={styles.button11} onPress={() => {}}>
+              <TouchableOpacity style={styles.button11} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/r2e2a79p_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image10}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button12} onPress={() => {}}>
+              <TouchableOpacity style={styles.button12} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/183ucgvf_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -142,7 +142,7 @@ export default function TextEditorHeader() {
         <View style={styles.column5}>
           <View style={styles.column6}>
             <View style={styles.row6}>
-              <TouchableOpacity style={styles.buttonRow} onPress={() => {}}>
+              <TouchableOpacity style={styles.buttonRow} onPress={() => {}} disabled>
                 <Text style={styles.text4}>{"Police"}</Text>
                 <Image
                   source={require("@/assets/images/uig4w09q_expires_30_days.png")}
@@ -150,7 +150,7 @@ export default function TextEditorHeader() {
                   style={styles.image12}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow2} onPress={() => {}}>
+              <TouchableOpacity style={styles.buttonRow2} onPress={() => {}} disabled>
                 <Text style={styles.text5}>{"12"}</Text>
                 <Image
                   source={require("@/assets/images/7bw6obmu_expires_30_days.png")}
@@ -158,7 +158,7 @@ export default function TextEditorHeader() {
                   style={styles.image12}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonRow3} onPress={() => {}}>
+              <TouchableOpacity style={styles.buttonRow3} onPress={() => {}} disabled>
                 <Text style={styles.text6}>{"A a"}</Text>
                 <Image
                   source={require("@/assets/images/rjnwoeo6_expires_30_days.png")}
@@ -169,56 +169,56 @@ export default function TextEditorHeader() {
             </View>
             <View style={styles.row7}>
               <BoldButton />
-              <TouchableOpacity style={styles.button14} onPress={() => {}}>
+              <TouchableOpacity style={styles.button14} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/djgcsw86_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image14}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button15} onPress={() => {}}>
+              <TouchableOpacity style={styles.button15} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/yn5b2k86_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image15}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button16} onPress={() => {}}>
+              <TouchableOpacity style={styles.button16} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/k9vx5ycz_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image16}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button17} onPress={() => {}}>
+              <TouchableOpacity style={styles.button17} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/n12ta229_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image17}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button18} onPress={() => {}}>
+              <TouchableOpacity style={styles.button18} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/1awwjlw7_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image17}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button19} onPress={() => {}}>
+              <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/lrwrll0x_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image18}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button20} onPress={() => {}}>
+              <TouchableOpacity style={styles.button20} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/zvx6kr6l_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image6}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button21} onPress={() => {}}>
+              <TouchableOpacity style={styles.button21} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/zcd58amp_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -247,28 +247,28 @@ export default function TextEditorHeader() {
                 resizeMode={"stretch"}
                 style={styles.image21}
               />
-              <TouchableOpacity style={styles.button22} onPress={() => {}}>
+              <TouchableOpacity style={styles.button22} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/xhij6qe3_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image22}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button23} onPress={() => {}}>
+              <TouchableOpacity style={styles.button23} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/m8i25506_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image22}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button23} onPress={() => {}}>
+              <TouchableOpacity style={styles.button23} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/qsucqhf4_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image23}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button24} onPress={() => {}}>
+              <TouchableOpacity style={styles.button24} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/f5tsg9ts_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -277,28 +277,28 @@ export default function TextEditorHeader() {
               </TouchableOpacity>
             </View>
             <View style={styles.row9}>
-              <TouchableOpacity style={styles.button25} onPress={() => {}}>
+              <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/ce74949l_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image25}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button26} onPress={() => {}}>
+              <TouchableOpacity style={styles.button26} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/mk84bjzk_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image26}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button25} onPress={() => {}}>
+              <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/wnui27r7_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image25}
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button27} onPress={() => {}}>
+              <TouchableOpacity style={styles.button27} onPress={() => {}} disabled>
                 <Image
                   source={require("@/assets/images/x1fh47wq_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -317,14 +317,14 @@ export default function TextEditorHeader() {
         <View style={styles.column9}>
           <View style={styles.row10}>
             <View style={styles.row11}>
-              <TouchableOpacity style={styles.button28} onPress={() => {}}>
+              <TouchableOpacity style={styles.button28} onPress={() => {}} disabled>
                 <Text style={styles.text8}>{"Normal"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button29} onPress={() => {}}>
+              <TouchableOpacity style={styles.button29} onPress={() => {}} disabled>
                 <Text style={styles.text9}>{"Titre 1"}</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.button30} onPress={() => {}}>
+            <TouchableOpacity style={styles.button30} onPress={() => {}} disabled>
               <Image
                 source={require("@/assets/images/n981r9bx_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -335,7 +335,7 @@ export default function TextEditorHeader() {
           <Text style={styles.text7}>{"Styles"}</Text>
         </View>
         <View style={styles.view}>
-          <TouchableOpacity style={styles.buttonColumn2} onPress={() => {}}>
+          <TouchableOpacity style={styles.buttonColumn2} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/dpfumd98_expires_30_days.png")}
               resizeMode={"stretch"}

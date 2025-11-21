@@ -17,7 +17,7 @@ export default function ProfilScreen() {
                   <TouchableOpacity
                     style={styles.button}
                     onPress={() => {}}
-                    disabled={true}
+                    disabled
                   >
                     <Image
                       source={{
@@ -30,7 +30,7 @@ export default function ProfilScreen() {
                   <TouchableOpacity
                     style={styles.button2}
                     onPress={() => {}}
-                    disabled={true}
+                    disabled
                   >
                     <Image
                       source={{

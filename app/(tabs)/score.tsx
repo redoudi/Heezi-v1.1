@@ -45,7 +45,7 @@ export default function ScoreScreen() {
                 <TouchableOpacity
                   style={styles.button}
                   onPress={() => {}}
-                  disabled={true}
+                  disabled
                 >
                   <Text style={styles.text4}>{"Classement Global"}</Text>
                 </TouchableOpacity>
@@ -58,7 +58,7 @@ export default function ScoreScreen() {
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
-                disabled={true}
+                disabled
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
@@ -72,7 +72,7 @@ export default function ScoreScreen() {
               <TouchableOpacity
                 style={styles.buttonRow2}
                 onPress={() => {}}
-                disabled={true}
+                disabled
               >
                 <Text style={styles.text9}>{"1."}</Text>
                 <Image
@@ -86,7 +86,7 @@ export default function ScoreScreen() {
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
-                disabled={true}
+                disabled
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
@@ -100,7 +100,7 @@ export default function ScoreScreen() {
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
-                disabled={true}
+                disabled
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
@@ -114,7 +114,7 @@ export default function ScoreScreen() {
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
-                disabled={true}
+                disabled
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
@@ -128,7 +128,7 @@ export default function ScoreScreen() {
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
-                disabled={true}
+                disabled
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
@@ -142,7 +142,7 @@ export default function ScoreScreen() {
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
-                disabled={true}
+                disabled
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
@@ -156,7 +156,7 @@ export default function ScoreScreen() {
               <TouchableOpacity
                 style={styles.buttonRow3}
                 onPress={() => {}}
-                disabled={true}
+                disabled
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image

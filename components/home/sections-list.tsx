@@ -9,11 +9,7 @@ export default function SectionsList({
       <View style={styles.column}>
         <View style={styles.column2}>
           <Text style={styles.text}>{"Section 1"}</Text>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {}}
-            disabled={true}
-          >
+          <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
             <View style={styles.view}>
               <View style={styles.box}></View>
             </View>
@@ -101,7 +97,7 @@ export default function SectionsList({
           <TouchableOpacity
             style={styles.buttonRow2}
             onPress={() => {}}
-            disabled={true}
+            disabled
           >
             <Text style={styles.text4}>{"Continuer"}</Text>
             <Image
@@ -130,7 +126,7 @@ export default function SectionsList({
           <TouchableOpacity
             style={styles.buttonRow3}
             onPress={() => {}}
-            disabled={true}
+            disabled
           >
             <Text style={styles.text4}>{"Continuer"}</Text>
             <Image
