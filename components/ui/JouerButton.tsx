@@ -1,26 +1,40 @@
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function JouerButton({ image }) {
+  const { toolConstants } = usePracticeToolConstants();
+
   return (
-    <View style={styles.playButton}>
+    <View style={styles.mainContainer}>
       <Image source={image} resizeMode={"contain"} />
-      <Text style={styles.playButtonText}>{"Jouer"}</Text>
+      <View
+        style={[
+          styles.playButtonTextContainer,
+          { backgroundColor: toolConstants.color },
+        ]}
+      >
+        <Text style={styles.playButtonText}>{"Jouer"}</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  playButton: {
-    padding: 8,
-    backgroundColor: "#EFEFEF",
+  mainContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
-    gap: 8,
+  },
+  playButtonTextContainer: {
+    backgroundColor: "red",
+    alignSelf: "stretch",
+    justifyContent: "center",
+    borderRadius: 8,
+    paddingHorizontal: 16,
   },
   playButtonText: {
-    color: "#292929",
-    fontSize: 14,
+    color: "#0A2924",
+    fontSize: 24,
     fontWeight: "bold",
   },
 });
