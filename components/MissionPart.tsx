@@ -1,19 +1,11 @@
 import { router } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import JouerButton from "@/components/ui/JouerButton";
 import characters from "@/constants/characters";
 import { getLevelDataByNumber } from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import CustomAnimation from "./animations/CustomAnimation";
-
-function JouerButton({ image }: { image: any }) {
-  return (
-    <View style={styles.playButton}>
-      <Image source={image} resizeMode={"contain"} />
-      <Text style={styles.playButtonText}>{"Jouer"}</Text>
-    </View>
-  );
-}
 
 export default function MissionPart({
   title,

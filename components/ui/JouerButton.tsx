@@ -10,10 +10,9 @@ export default function JouerButton({ image }) {
 }
 
 const styles = StyleSheet.create({
-  view3: {
-    marginBottom: 16,
-  },
   playButton: {
+    padding: 8,
+    backgroundColor: "#EFEFEF",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
