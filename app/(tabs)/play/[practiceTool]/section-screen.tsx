@@ -25,9 +25,7 @@ export default function SectionScreen() {
               >
                 <View style={styles.view}>
                   <Image
-                    source={{
-                      uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/z1q84zux_expires_30_days.png",
-                    }}
+                    source={require("@/assets/images/z1q84zux_expires_30_days.png")}
                     resizeMode={"stretch"}
                     style={styles.image}
                   />
