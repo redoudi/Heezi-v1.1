@@ -2,7 +2,7 @@ import LottieView from "lottie-react-native";
 import { useRef } from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";
 
-const animationData = require("./MascotteQuiz.json");
+const animationData = require("@/assets/animations/MascotteQuiz.json");
 
 interface MascotteQuizProps {
   /**
