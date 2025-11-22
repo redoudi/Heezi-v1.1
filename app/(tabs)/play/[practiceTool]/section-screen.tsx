@@ -4,11 +4,10 @@ import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionScreen() {
-  const lessonButtonImage = require("@/assets/images/buttonIcons/lessonVert.png");
   const lessonAnimationData = require("@/assets/animations/RenardBureauVert.json");
-  const quizButtonImage = require("@/assets/images/quiz.png");
+
   const quizAnimationData = require("@/assets/animations/RenardBureauVert.json");
-  const practiceButtonImage = require("@/assets/images/practice.png");
+
   const practiceAnimationData = require("@/assets/animations/RenardBureauVert.json");
 
   const { toolConstants, practiceTool, toolSectionButtons } =
@@ -51,13 +50,13 @@ export default function SectionScreen() {
           />
           <MissionPart
             title="Quiz"
-            image={quizButtonImage}
+            image={toolSectionButtons.quiz}
             levelNumber={2}
             animationData={quizAnimationData}
           />
           <MissionPart
             title="Pratique"
-            image={practiceButtonImage}
+            image={toolSectionButtons.practice}
             levelNumber={3}
             animationData={practiceAnimationData}
           />
