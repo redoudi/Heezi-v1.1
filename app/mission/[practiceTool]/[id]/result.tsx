@@ -30,7 +30,7 @@ export default function ResultScreen() {
   };
 
   return (
-    <FullWindowContainer style={styles.maintContainer}>
+    <FullWindowContainer style={styles.mainContainer}>
       <View style={styles.mainContent}>
         <View style={styles.imageBox}>
           <CustomAnimation
@@ -40,7 +40,9 @@ export default function ResultScreen() {
           />
         </View>
         <View>
-          <EndLevelStats />
+          <View style={styles.endLevelStatsContainer}>
+            <EndLevelStats />
+          </View>
           <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
         </View>
       </View>
@@ -48,7 +50,7 @@ export default function ResultScreen() {
   );
 }
 const styles = StyleSheet.create({
-  maintContainer: { padding: 16 },
+  mainContainer: { padding: 16 },
   container: {
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
@@ -90,5 +92,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginRight: 11,
+  },
+  endLevelStatsContainer: {
+    alignSelf: "stretch",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 32,
+    marginBottom: 16,
   },
 });

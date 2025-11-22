@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 export function EndLevelStats() {
   return (
-    <View style={styles.mainContainer}>
+    <View>
       <Text style={styles.text}>{"Remarque de la performance réalisée"}</Text>
       <Text style={styles.text2}>
         {"Lörem ipsum sageledes neliga vade homosat. Filomani rende om sose. "}
@@ -143,4 +143,3 @@ const styles = StyleSheet.create({
     backgroundColor: "#33C6FD",
   },
 });
-
