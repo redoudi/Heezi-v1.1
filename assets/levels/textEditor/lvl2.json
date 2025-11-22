@@ -51,5 +51,8 @@
             ]
         }
     ],
-    "outro": "Merci pour ton attention. J'espère que ça a été facile. N'hésite pas à revenir si besoin."
+    "endLevelReport": {
+        "title": "Bravo !",
+        "description": "J'espère que ça t'a permis de consolider tes connaissances."
+    }
 }

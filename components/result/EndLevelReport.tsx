@@ -1,5 +1,39 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 
+function endLevelStats() {
+  return (
+    <View style={styles.column3}>
+      <View style={styles.row}>
+        <Text style={styles.text3}>{"+3"}</Text>
+        <Image
+          source={require("@/assets/images/niw8yegh_expires_30_days.png")}
+          resizeMode={"stretch"}
+          style={styles.image}
+        />
+      </View>
+      <View style={styles.row2}>
+        <Text style={styles.text4}>{"+500"}</Text>
+        <Image
+          source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
+          resizeMode={"stretch"}
+          style={styles.image2}
+        />
+      </View>
+      <View style={styles.row3}>
+        <View style={styles.column4}>
+          <View style={styles.view4}>
+            <Text style={styles.text5}>{"Nv.1"}</Text>
+          </View>
+          <View style={styles.view5}>
+            <View style={styles.box2}></View>
+          </View>
+        </View>
+        <Text style={styles.text6}>{"+100xp"}</Text>
+      </View>
+    </View>
+  );
+}
+
 export function EndLevelReport({
   title,
   description,
@@ -11,35 +45,6 @@ export function EndLevelReport({
     <View style={styles.mainContainer}>
       <Text style={styles.text}>{title}</Text>
       <Text style={styles.text2}>{description}</Text>
-      <View style={styles.column3}>
-        <View style={styles.row}>
-          <Text style={styles.text3}>{"+3"}</Text>
-          <Image
-            source={require("@/assets/images/niw8yegh_expires_30_days.png")}
-            resizeMode={"stretch"}
-            style={styles.image}
-          />
-        </View>
-        <View style={styles.row2}>
-          <Text style={styles.text4}>{"+500"}</Text>
-          <Image
-            source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
-            resizeMode={"stretch"}
-            style={styles.image2}
-          />
-        </View>
-        <View style={styles.row3}>
-          <View style={styles.column4}>
-            <View style={styles.view4}>
-              <Text style={styles.text5}>{"Nv.1"}</Text>
-            </View>
-            <View style={styles.view5}>
-              <View style={styles.box2}></View>
-            </View>
-          </View>
-          <Text style={styles.text6}>{"+100xp"}</Text>
-        </View>
-      </View>
     </View>
   );
 }
