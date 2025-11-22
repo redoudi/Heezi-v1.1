@@ -1,11 +1,14 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
-import { PracticeTool } from "@/context/usePracticeTool";
+import sectionButtons from "@/constants/sectionButtons";
+
 import { useLocalSearchParams } from "expo-router";
 
 export default function usePracticeToolConstants() {
   const { practiceTool } =
-    useLocalSearchParams<{ practiceTool: PracticeTool }>() || "spreadsheet";
+    useLocalSearchParams<{ practiceTool }>() || "spreadsheet";
   const toolConstants =
     practiceToolsConstants[practiceTool as keyof typeof practiceToolsConstants];
-  return { practiceTool, toolConstants };
+  const toolSectionButtons =
+    sectionButtons[practiceTool as keyof typeof sectionButtons];
+  return { practiceTool, toolConstants, toolSectionButtons };
 }
