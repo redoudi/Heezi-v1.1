@@ -1,14 +1,9 @@
 import QuizBody from "@/components/practice-tools/quiz/quiz-body";
 import useLevelData from "@/hooks/use-level-data";
-import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 
 export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return getMissionStaticParams();
-}
 
 export default function QuizScreen() {
   const [question, setQuestion] = useState("...?");
@@ -16,12 +11,7 @@ export default function QuizScreen() {
     { text: string; isCorrect?: boolean }[]
   >([]);
   const [modalText, setModalText] = useState("");
-  const {
-    practiceTool,
-    id,
-    task: taskParam,
-    step: stepParam,
-  } = useLocalSearchParams();
+  const { practiceTool, id } = useLocalSearchParams();
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
     null
   );
@@ -38,7 +28,7 @@ export default function QuizScreen() {
 
   const setStepIndex = (step: number) => {
     runnerRef.current.step = step;
-    router.setParams({ step: runnerRef.current.step.toString() });
+
     if (
       runnerRef.current.step >
       tasks.at(runnerRef.current.task)?.steps?.length - 1
@@ -61,7 +51,7 @@ export default function QuizScreen() {
       router.push(`/mission/${practiceTool}/${id}/result`);
     } else {
       runnerRef.current.task = task;
-      router.setParams({ task: runnerRef.current.task.toString() });
+
       const currentTask = tasks?.at(runnerRef.current.task);
       const introText = currentTask?.intro;
       if (introText && introText.trim() !== "") setModalText(introText);
@@ -88,15 +78,15 @@ export default function QuizScreen() {
 
   useEffect(() => {
     if (modalText === "") {
-      setStepIndex(stepParam ? parseInt(stepParam as string) : 0);
+      setStepIndex(0);
     }
-  }, [modalText, stepParam, tasks]);
+  }, [modalText, tasks]);
 
   useEffect(() => {
     if (tasks?.length) {
-      setTaskIndex(taskParam ? parseInt(taskParam as string) : 0);
+      setTaskIndex(0);
     }
-  }, [tasks, taskParam]);
+  }, [tasks]);
 
   return (
     <QuizBody
