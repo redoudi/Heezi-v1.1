@@ -1,6 +1,6 @@
 {
     "levelType": "lesson",
-    "character": "renard",
+    "character": "mascotte",
     "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
     "cellsEnabled": [
         "B2"

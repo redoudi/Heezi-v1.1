@@ -39,4 +39,12 @@ export default {
     fin: require("@/assets/animations/MoutonFin.json"),
     intro: require("@/assets/images/colleagues/mouton.jpg"),
   },
+  mascotte: {
+    bureau: {
+      vert: require("@/assets/animations/MascotteBureauVert.json"),
+      bleu: require("@/assets/animations/MascotteBureauBleu.json"),
+    },
+    fin: require("@/assets/animations/MascotteFin.json"),
+    intro: require("@/assets/images/colleagues/mascotte.png"),
+  },
 };
