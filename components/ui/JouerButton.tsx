@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     paddingRight: 8,
+    marginRight: 8,
   },
   playButtonTextContainer: {
     alignSelf: "stretch",
