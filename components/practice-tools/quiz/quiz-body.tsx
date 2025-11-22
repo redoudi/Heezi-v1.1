@@ -1,4 +1,4 @@
-import MascotteQuiz from "@/components/animations/MascotteQuiz";
+import CustomAnimation from "@/components/animations/CustomAnimation";
 import MascotModal from "@/components/mascot/mascot-modal";
 import { router } from "expo-router";
 import {
@@ -181,7 +181,11 @@ export default function QuizBody({
         <View style={styles.view4}>
           <View style={styles.column2}>
             <QuestionBox question={question} />
-            <MascotteQuiz style={styles.mascotImage} />
+            <View style={styles.mascotImage}>
+              <CustomAnimation
+                animationData={require("@/assets/animations/MascotteQuiz.json")}
+              />
+            </View>
             {/* <MascotInquisitive /> */}
             <AnswersBox
               answers={answers}
