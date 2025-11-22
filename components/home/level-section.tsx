@@ -13,7 +13,6 @@ export function LevelSection({
   score,
   coinIconUri,
   badgeIconUri,
-  onScorePress,
 }: LevelSectionProps) {
   return (
     <View style={styles.container}>
@@ -22,7 +21,7 @@ export function LevelSection({
         <View style={styles.progressBar} />
       </View>
       <View style={styles.scoreRow}>
-        <TouchableOpacity style={styles.scoreButton} onPress={onScorePress}>
+        <TouchableOpacity style={styles.scoreButton} onPress={() => {}}>
           <Image
             source={{ uri: coinIconUri }}
             resizeMode="stretch"
