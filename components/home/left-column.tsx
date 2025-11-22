@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import SectionScreen from "../../app/(tabs)/play/[practiceTool]/section-screen";
 import SectionsList from "./sections-list";
+import { CourseCard } from "@/components/home/course-card";
 
 export function LeftColumn() {
   const [sectionIndex, setSectionIndex] = useState<number>(-1);
@@ -16,7 +17,7 @@ export function LeftColumn() {
         showsVerticalScrollIndicator={true}
       >
         <View style={styles.leftColumnContent}>
-          <ActiveCourseCard />
+          <CourseCard />
           {sectionIndex === -1 ? (
             <SectionsList setSectionIndex={setSectionIndex} />
           ) : (

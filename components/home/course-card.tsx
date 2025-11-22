@@ -1,16 +1,16 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import StatusText from "../status-text";
 
 export function CourseCard() {
   const { toolConstants } = usePracticeToolConstants();
   return (
-    <View style={styles.container}>
-      <Image
+    <View style={styles.mainContainer}>
+      {/* <Image
         source={require("@/assets/images/ldtg9pud_expires_30_days.png")}
         resizeMode="stretch"
         style={styles.thumbnail}
-      />
+      /> */}
       <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
         <View style={styles.header}>
           <Text style={styles.progressText}>1/3 sections débloquées</Text>
@@ -24,7 +24,7 @@ export function CourseCard() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flexDirection: "row",
     marginBottom: 16,
   },
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginRight: 16,
   },
   content: {
-    width: 552,
+    flex: 1,
     borderRadius: 8,
     paddingVertical: 16,
   },
