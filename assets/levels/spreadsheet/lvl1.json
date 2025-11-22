@@ -159,5 +159,9 @@
             "iconName": "heeziProud",
             "position": "center"
         }
-    ]
+    ],
+    "endLevelReport": {
+        "title": "Merci pour ton attention !",
+        "description": "J'espère que ça a été facile."
+    }
 }

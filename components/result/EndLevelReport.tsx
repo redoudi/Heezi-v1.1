@@ -1,12 +1,16 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 
-export function EndLevelStats() {
+export function EndLevelReport({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
-    <View>
-      <Text style={styles.text}>{"Remarque de la performance réalisée"}</Text>
-      <Text style={styles.text2}>
-        {"Lörem ipsum sageledes neliga vade homosat. Filomani rende om sose. "}
-      </Text>
+    <View style={styles.mainContainer}>
+      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.text2}>{description}</Text>
       <View style={styles.column3}>
         <View style={styles.row}>
           <Text style={styles.text3}>{"+3"}</Text>

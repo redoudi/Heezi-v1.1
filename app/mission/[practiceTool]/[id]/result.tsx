@@ -1,6 +1,6 @@
 import FullWindowContainer from "@/components/FullWindowContainer";
 import CustomAnimation from "@/components/animations/CustomAnimation";
-import { EndLevelStats } from "@/components/result/EndLevelStats";
+import { EndLevelReport } from "@/components/result/EndLevelReport";
 import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
 import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
@@ -19,7 +19,7 @@ export default function ResultScreen() {
     practiceTool: string;
     id: string;
   }>();
-  const { levelType, character } = useLevelData();
+  const { levelType, character, endLevelReport } = useLevelData();
 
   const goToNextPage = () => {
     if (levelType === "practice") {
@@ -40,9 +40,12 @@ export default function ResultScreen() {
           />
         </View>
         <View>
-          <View style={styles.endLevelStatsContainer}>
-            <EndLevelStats />
-          </View>
+          <EndLevelReport
+            title={endLevelReport?.title || "Bravo !"}
+            description={
+              endLevelReport?.description || "Tu as réussi la mission"
+            }
+          />
           <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
         </View>
       </View>
@@ -92,13 +95,5 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginRight: 11,
-  },
-  endLevelStatsContainer: {
-    alignSelf: "stretch",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 32,
-    marginBottom: 16,
   },
 });
