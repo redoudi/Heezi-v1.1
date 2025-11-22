@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 interface LevelSectionProps {
   level: string;
@@ -21,7 +21,11 @@ export function LevelSection({
         <View style={styles.progressBar} />
       </View>
       <View style={styles.scoreRow}>
-        <TouchableOpacity style={styles.scoreButton} onPress={() => {}}>
+        {/* <TouchableOpacity
+          style={styles.scoreButton}
+          disabled
+          onPress={() => {}}
+        >
           <Image
             source={{ uri: coinIconUri }}
             resizeMode="stretch"
@@ -33,7 +37,7 @@ export function LevelSection({
           source={{ uri: badgeIconUri }}
           resizeMode="stretch"
           style={styles.badgeIcon}
-        />
+        /> */}
       </View>
     </View>
   );
