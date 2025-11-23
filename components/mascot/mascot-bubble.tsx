@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   textBoxAndTriangle: {
     flexDirection: "row",
     alignItems: "flex-end",
-
+    maxWidth: 800,
     height: "100%",
   },
   textContainer: {
