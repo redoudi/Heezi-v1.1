@@ -1,6 +1,6 @@
 import QuizBody from "@/components/practice-tools/quiz/quiz-body";
 import useLevelData from "@/hooks/use-level-data";
-import { router, useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 
 export const dynamicParams = false;
@@ -26,36 +26,6 @@ export default function QuizScreen() {
     task: -1,
   });
 
-  const setStepIndex = (step: number) => {
-    runnerRef.current.step = step;
-    if (
-      runnerRef.current.step >
-      tasks.at(runnerRef.current.task)?.steps?.length - 1
-    ) {
-      runnerRef.current.step = -1;
-      setTaskIndex(runnerRef.current.task + 1);
-    } else {
-      setSelectedAnswerIndex(-1);
-      setIsVerified(false);
-      const currentStep = tasks
-        .at(runnerRef.current.task)
-        ?.steps?.at(runnerRef.current.step);
-      setQuestion(currentStep?.question || "");
-      setAnswers(currentStep?.answers || []);
-    }
-  };
-
-  const setTaskIndex = (task: number) => {
-    if (tasks?.length && runnerRef.current.task > tasks.length - 1) {
-      router.push(`/mission/${practiceTool}/${id}/result`);
-    } else {
-      runnerRef.current.task = task;
-      const currentTask = tasks?.at(runnerRef.current.task);
-      const introText = currentTask?.intro;
-      if (introText && introText.trim() !== "") setModalText(introText);
-    }
-  };
-
   const verifyAnswer = () => {
     if (selectedAnswerIndex === null) return;
     setIsVerified(true);
@@ -66,13 +36,6 @@ export default function QuizScreen() {
       }, 500);
     }
   };
-
-  useEffect(() => {
-    if (tasks?.length) {
-      setTaskIndex(0);
-      setStepIndex(0);
-    }
-  }, [tasks]);
 
   //*/************** */
 
