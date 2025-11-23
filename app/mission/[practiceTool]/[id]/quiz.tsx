@@ -1,35 +1,22 @@
 import QuizBody from "@/components/practice-tools/quiz/quiz-body";
 import useLevelData from "@/hooks/use-level-data";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 
 export const dynamicParams = false;
 
 export default function QuizScreen() {
-  const [question, setQuestion] = useState("...?");
-  const [answers, setAnswers] = useState<
-    { text: string; isCorrect?: boolean }[]
-  >([]);
-  const [modalText, setModalText] = useState("");
-  const { practiceTool, id } = useLocalSearchParams();
+  const { tasks } = useLevelData();
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
     null
   );
   const [isVerified, setIsVerified] = useState(false);
-
-  const selectAnswer = (index: number) => setSelectedAnswerIndex(index);
-
-  const { tasks } = useLevelData();
-
-  const runnerRef = useRef<{ step: number; task: number }>({
-    step: -1,
-    task: -1,
-  });
+  const { practiceTool, id } = useLocalSearchParams();
 
   const verifyAnswer = () => {
     if (selectedAnswerIndex === null) return;
     setIsVerified(true);
-    const selectedAnswer = answers[selectedAnswerIndex];
+    const selectedAnswer = currentStep.answers[selectedAnswerIndex];
     if (selectedAnswer?.isCorrect) {
       setTimeout(() => {
         nextStep();
@@ -52,7 +39,14 @@ export default function QuizScreen() {
   }
 
   const nextStep = () => {
-    setCurrentStep(stepGeneratorRef.current.next().value);
+    const nextStepYield = stepGeneratorRef.current.next();
+    if (nextStepYield.done) {
+      router.push(`/mission/${practiceTool}/${id}/result`);
+    } else {
+      setSelectedAnswerIndex(null);
+      setIsVerified(false);
+      setCurrentStep(nextStepYield.value);
+    }
   };
 
   useEffect(() => {
@@ -65,7 +59,7 @@ export default function QuizScreen() {
   return (
     <QuizBody
       currentStep={currentStep}
-      selectAnswer={selectAnswer}
+      selectAnswer={(index: number) => setSelectedAnswerIndex(index)}
       selectedAnswerIndex={selectedAnswerIndex}
       verifyAnswer={verifyAnswer}
       nextStep={nextStep}
