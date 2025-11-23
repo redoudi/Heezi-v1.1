@@ -73,7 +73,7 @@ const AnswerButton = ({
 
   return (
     <TouchableOpacity
-      style={buttonStyle}
+      style={[buttonStyle]}
       onPress={() => selectAnswer(index)}
       disabled={isVerified}
     >
@@ -109,7 +109,10 @@ const VerifyButton = ({
 
   return (
     <TouchableOpacity
-      style={styles.buttonRow}
+      style={[
+        styles.buttonRow,
+        disabled ? { opacity: 0.5, backgroundColor: "#989898" } : {},
+      ]}
       onPress={isVerified ? nextStep : verifyAnswer}
       disabled={disabled}
     >
@@ -171,6 +174,7 @@ export default function QuizBody({
   isVerified: boolean;
 }) {
   const { question, answers } = currentStep;
+  const disabled = selectedAnswerIndex === null;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>
@@ -197,7 +201,7 @@ export default function QuizBody({
             verifyAnswer={verifyAnswer}
             nextStep={nextStep}
             isVerified={isVerified}
-            disabled={selectedAnswerIndex === -1}
+            disabled={disabled}
             selectedAnswerIndex={selectedAnswerIndex}
             answers={answers}
           />
