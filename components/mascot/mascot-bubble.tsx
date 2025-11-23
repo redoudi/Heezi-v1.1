@@ -2,7 +2,6 @@ import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import {
   Image,
-  Modal,
   StyleProp,
   StyleSheet,
   Text,
