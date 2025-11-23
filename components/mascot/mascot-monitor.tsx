@@ -149,17 +149,15 @@ export default function MascotMonitor({
 
   useEffect(() => {
     if (currentStep) {
-      setBubbleText(currentStep.tip?.text2 || "");
+      const { tip, expected, preActions, cursor } = currentStep;
+      setBubbleText(tip?.text2 || "");
       // if (preActions) runPreActions(preActions);
       // if (levelType === "practice" && currentStep.expected)
       //   stepExpectedRef.current = currentStep.expected;
-      // if (cursor) {
-      //   if (cursor.elementId) {
-      //     moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
-      //   } else {
-      //     hideCursor();
-      //   }
-      // }
+
+      if (cursor && cursor.elementId) {
+        moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
+      }
     }
   }, [
     currentStep,
