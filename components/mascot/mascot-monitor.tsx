@@ -1,6 +1,7 @@
 import useCursor from "@/context/useCursor";
 import { useKbdNextStep } from "@/hooks/use-keyboard";
 import useLevelData from "@/hooks/use-level-data";
+import arrayGenerator from "@/utils/arrayGenerator";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, View } from "react-native";
@@ -105,24 +106,58 @@ export default function MascotMonitor({
     }
   }, [checkCondition, nextStep, practiceToolData]);
 
-  useEffect(() => {
-    if (tasks) {
-      if (taskStepParam) {
-        const [task, step] = taskStepParam.split(".");
-        runnerRef.current.task = parseInt(task);
-        runnerRef.current.step = parseInt(step);
-      } else {
-        runnerRef.current.step = -1;
-        runnerRef.current.task = 0;
-      }
-      handleStepIndexChange();
-    }
-  }, [tasks, taskStepParam]);
+  // useEffect(() => {
+  //   if (tasks) {
+  //     if (taskStepParam) {
+  //       const [task, step] = taskStepParam.split(".");
+  //       runnerRef.current.task = parseInt(task);
+  //       runnerRef.current.step = parseInt(step);
+  //     } else {
+  //       runnerRef.current.step = -1;
+  //       runnerRef.current.task = 0;
+  //     }
+  //     handleStepIndexChange();
+  //   }
+  // }, [tasks, taskStepParam]);
 
   useKbdNextStep({ runnerRef, levelType, nextStep });
   // ---------------------
 
   const taskGeneratorRef = useRef<any>(null);
+  const currentTaskRef = useRef<any>(null);
+  const stepGeneratorRef = useRef<any>(null);
+  const [currentStep, setCurrentStep] = useState<any>(null);
+
+  const setNextTask = () => {
+    const nextTaskYield = taskGeneratorRef.current.next();
+    if (nextTaskYield.done) {
+      router.push(`/mission/${practiceTool}/${id}/result`);
+    } else {
+      currentTaskRef.current = nextTaskYield.value;
+      // setNextStep();
+      stepGeneratorRef.current = arrayGenerator(currentTaskRef.current.steps);
+      setModalText(currentTaskRef.current.intro);
+    }
+  };
+
+  const setNextStep = () => {
+    const nextStepYield = stepGeneratorRef.current.next();
+    if (nextStepYield.done) {
+      setNextTask();
+    } else {
+      setCurrentStep(nextStepYield.value);
+    }
+  };
+
+  useEffect(() => {
+    if (tasks) {
+      taskGeneratorRef.current = arrayGenerator(tasks);
+      setNextTask();
+      // currentTaskRef.current = taskGeneratorRef.current.next().value;
+      // stepGeneratorRef.current = arrayGenerator(currentTaskRef.current.steps);
+      // setCurrentStep(stepGeneratorRef.current.next().value);
+    }
+  }, [tasks]);
 
   return (
     <View style={styles.container}>
@@ -133,7 +168,7 @@ export default function MascotMonitor({
         open={!!modalText?.trim()}
         onClose={() => {
           setModalText("");
-          nextStep();
+          setNextStep();
         }}
         modalText={modalText}
       />
