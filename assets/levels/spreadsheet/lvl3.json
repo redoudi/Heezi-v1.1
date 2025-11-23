@@ -43,7 +43,7 @@
                 {
                     "tip": {
                         "text1": "Etape 1.a",
-                        "text2": "En premier, on va saisir le montant de la salle (500€). Clique sur la case B2 et entre le nombre 500"
+                        "text2": "En premier, on va saisir le montant de la salle (500€). Clique sur la case B2 et saisis le nombre 500"
                     },
                     "cursor": {
                         "elementId": "B2"
@@ -57,7 +57,7 @@
                 {
                     "tip": {
                         "text1": "Etape 1.b",
-                        "text2": "Super ! Il faut aussi 250€ pour la décoration"
+                        "text2": "Super ! Il faut aussi saisir 250 pour la décoration"
                     },
                     "cursor": {
                         "elementId": "B3"
@@ -65,13 +65,13 @@
                     "expected": {
                         "type": "cellValue",
                         "cell": "B3",
-                        "value": 250
+                        "value": "250"
                     }
                 },
                 {
                     "tip": {
                         "text1": "Etape 1.c",
-                        "text2": "Génial. On ajoute encore 200€ pour la promotion"
+                        "text2": "Génial. Saisis cette fois 200 pour la promotion"
                     },
                     "cursor": {
                         "elementId": "B4"
@@ -79,13 +79,13 @@
                     "expected": {
                         "type": "cellValue",
                         "cell": "B4",
-                        "value": 200
+                        "value": "200"
                     }
                 },
                 {
                     "tip": {
                         "text1": "Etape 1.d",
-                        "text2": "Parfait ! Et aussi 380€ pour les échantillons"
+                        "text2": "Parfait ! Et saisis aussi 380 pour les échantillons"
                     },
                     "cursor": {
                         "elementId": "B5"
@@ -93,13 +93,13 @@
                     "expected": {
                         "type": "cellValue",
                         "cell": "B5",
-                        "value": 380
+                        "value": "380"
                     }
                 },
                 {
                     "tip": {
                         "text1": "Etape 1.e",
-                        "text2": "Et pour finir, 320€ pour le traiteur"
+                        "text2": "Et pour finir, saisis 320 pour le traiteur"
                     },
                     "cursor": {
                         "elementId": "B6"
@@ -107,7 +107,7 @@
                     "expected": {
                         "type": "cellValue",
                         "cell": "B6",
-                        "value": 320
+                        "value": "320"
                     }
                 }
             ]
@@ -138,7 +138,7 @@
                 {
                     "tip": {
                         "text1": "Etape 2.b",
-                        "text2": "Maintenant, on met la valeur en gras pour qu'elle soit plus visible"
+                        "text2": "Maintenant, mets la valeur en gras pour qu'elle soit plus visible"
                     },
                     "cursor": {
                         "elementId": "B7"
