@@ -43,7 +43,7 @@
                 {
                     "tip": {
                         "text1": "Etape 1.a",
-                        "text2": "En premier, on va saisir le montant de la salle (500€). Clique sur la case B2 et saisis le nombre 500"
+                        "text2": "En premier, on va saisir le montant de la salle (500€). Sélectionne la case B2 et saisis le nombre 500"
                     },
                     "cursor": {
                         "elementId": "B2"
