@@ -3,7 +3,7 @@ import { useKbdNextStep } from "@/hooks/use-keyboard";
 import useLevelData from "@/hooks/use-level-data";
 import arrayGenerator from "@/utils/arrayGenerator";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import Cursor from "./cursor";
 import MascotBubbleOrModal from "./mascot-bubble";
@@ -128,36 +128,32 @@ export default function MascotMonitor({
   const stepGeneratorRef = useRef<any>(null);
   const [currentStep, setCurrentStep] = useState<any>(null);
 
-  const setNextTask = () => {
+  const setNextTask = useCallback(() => {
     const nextTaskYield = taskGeneratorRef.current.next();
     if (nextTaskYield.done) {
       router.push(`/mission/${practiceTool}/${id}/result`);
     } else {
       currentTaskRef.current = nextTaskYield.value;
-      // setNextStep();
       stepGeneratorRef.current = arrayGenerator(currentTaskRef.current.steps);
       setModalText(currentTaskRef.current.intro);
     }
-  };
+  }, [router, practiceTool, id]);
 
-  const setNextStep = () => {
+  const setNextStep = useCallback(() => {
     const nextStepYield = stepGeneratorRef.current.next();
     if (nextStepYield.done) {
       setNextTask();
     } else {
       setCurrentStep(nextStepYield.value);
     }
-  };
+  }, [setNextTask]);
 
   useEffect(() => {
     if (tasks) {
       taskGeneratorRef.current = arrayGenerator(tasks);
       setNextTask();
-      // currentTaskRef.current = taskGeneratorRef.current.next().value;
-      // stepGeneratorRef.current = arrayGenerator(currentTaskRef.current.steps);
-      // setCurrentStep(stepGeneratorRef.current.next().value);
     }
-  }, [tasks]);
+  }, [tasks, setNextTask]);
 
   return (
     <View style={styles.container}>
