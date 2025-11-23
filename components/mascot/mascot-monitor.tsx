@@ -141,6 +141,7 @@ export default function MascotMonitor({
   const setNextStep = useCallback(() => {
     const nextStepYield = stepGeneratorRef.current.next();
     if (nextStepYield.done) {
+      setBubbleText("");
       setNextTask();
     } else {
       setCurrentStep(nextStepYield.value);
@@ -149,9 +150,9 @@ export default function MascotMonitor({
 
   useEffect(() => {
     if (currentStep) {
-      const { tip, expected, preActions, cursor } = currentStep;
+      const { tip, preActions, cursor } = currentStep;
       setBubbleText(tip?.text2 || "");
-      // if (preActions) runPreActions(preActions);
+      if (preActions) runPreActions(preActions);
       // if (levelType === "practice" && currentStep.expected)
       //   stepExpectedRef.current = currentStep.expected;
 
