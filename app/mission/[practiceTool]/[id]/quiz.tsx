@@ -50,7 +50,7 @@ export default function QuizScreen() {
   };
 
   useEffect(() => {
-    if (tasks?.length) {
+    if (tasks?.length && id && practiceTool) {
       stepGeneratorRef.current = arrayGenerator(tasks[0].steps);
       nextStep();
     }
