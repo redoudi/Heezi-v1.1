@@ -76,7 +76,11 @@ export default function MascotMonitor({
   ]);
 
   useEffect(() => {
-    if (currentStep && checkConditionCallback(currentStep.expected))
+    if (
+      currentStep &&
+      currentStep.expected &&
+      checkConditionCallback(currentStep.expected)
+    )
       setNextStep();
   }, [currentStep, practiceToolData, setNextStep, checkConditionCallback]);
 

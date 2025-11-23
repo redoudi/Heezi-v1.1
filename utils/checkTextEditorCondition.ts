@@ -3,6 +3,10 @@ export default function checkTextEditorCondition(
   getBlockById: (blockId: string | null) => any,
   selectedBlockId: string | null
 ) {
+  if (!expected || !expected.type) {
+    return false;
+  }
+  
   switch (expected.type) {
     case "blockText":
       return getBlockById(expected.blockId)?.text === expected.text;

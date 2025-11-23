@@ -2,6 +2,10 @@ export default function checkSpreasheetCondition(
   expected: any,
   spreadsheetData: any
 ) {
+  if (!expected || !expected.type) {
+    return false;
+  }
+  
   switch (expected.type) {
     case "cellValue":
       const cellsValues = spreadsheetData?.cellsValues;
