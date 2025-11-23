@@ -125,6 +125,10 @@
                             "type": "cellValue",
                             "cell": "B7",
                             "value": "1650"
+                        },
+                        {
+                            "type": "select",
+                            "cells": ""
                         }
                     ],
                     "cursor": {

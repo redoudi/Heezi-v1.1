@@ -51,9 +51,10 @@ const parseCellExpression = (cellExpression: string): string[] => {
 export const parseCellsExpressions = (argCells: string[]): string[] => {
   const finalCells: string[] = [];
 
-  argCells.forEach((cellExpression) => {
-    finalCells.push(...parseCellExpression(cellExpression));
-  });
+  if (argCells)
+    argCells.forEach((cellExpression) => {
+      finalCells.push(...parseCellExpression(cellExpression));
+    });
 
   return finalCells;
 };
