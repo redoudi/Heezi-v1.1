@@ -4,14 +4,14 @@ import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/Spreadshe
 import TextEditorScreen from "@/components/practice-tools/text-editor/textEditorScreen";
 import { CursorProvider } from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
-import useCheckSpreadsheetCondition from "@/hooks/useCheckSpreadsheetCondition";
-import useCheckTextEditorCondition from "@/hooks/useCheckTextEditorCondition";
 import useLoadSpreadsheet from "@/hooks/useLoadSpreadsheet";
 import useLoadTextEditor from "@/hooks/useLoadTextEditor";
 import useRunSpreadsheetPreActions from "@/hooks/useRunSpreadsheetPreActions";
 import useRunTextEditorPreActions from "@/hooks/useRunTextEditorPreActions";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import useTextEditorStore from "@/store/useTextEditorStore";
+import checkSpreasheetCondition from "@/utils/checkSpreasheetCondition";
+import checkTextEditorCondition from "@/utils/checkTextEditorCondition";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { useLocalSearchParams } from "expo-router";
 import QuizScreen from "./quiz";
@@ -25,13 +25,19 @@ export function generateStaticParams() {
 function LoadedSpreadsheetScreen() {
   useLoadSpreadsheet();
   const { spreadsheetData } = useSpreadsheetStore();
+  const runPreActions = useRunSpreadsheetPreActions();
+
+  const checkCondition = (expected: any) => {
+    return checkSpreasheetCondition(expected, spreadsheetData);
+  };
+
   return (
     <FullWindowContainer>
       <SpreadsheetScreen />
       <MascotMonitor
-        checkConditionHook={useCheckSpreadsheetCondition}
-        runPreActionsHook={useRunSpreadsheetPreActions}
+        runPreActions={runPreActions}
         practiceToolData={spreadsheetData}
+        checkConditionCallback={checkCondition}
       />
     </FullWindowContainer>
   );
@@ -39,14 +45,24 @@ function LoadedSpreadsheetScreen() {
 
 function LoadedTextEditorScreen() {
   useLoadTextEditor();
-  const { contentBlocks } = useTextEditorStore();
+  const { contentBlocks, getBlockById, selectedBlockId } = useTextEditorStore();
+  const runPreActions = useRunTextEditorPreActions();
+
+  const checkCondition = (expected: any) => {
+    return checkTextEditorCondition(
+      expected,
+      getBlockById as (blockId: string | null) => any,
+      selectedBlockId
+    );
+  };
+
   return (
     <FullWindowContainer>
       <TextEditorScreen />
       <MascotMonitor
-        checkConditionHook={useCheckTextEditorCondition}
-        runPreActionsHook={useRunTextEditorPreActions}
+        runPreActions={runPreActions}
         practiceToolData={contentBlocks}
+        checkConditionCallback={checkCondition}
       />
     </FullWindowContainer>
   );

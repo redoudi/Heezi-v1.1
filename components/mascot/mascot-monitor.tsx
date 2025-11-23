@@ -1,7 +1,6 @@
 import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import arrayGenerator from "@/utils/arrayGenerator";
-import checkSpreasheetCondition from "@/utils/checkSpreasheetCondition";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { StyleSheet, View } from "react-native";
@@ -10,116 +9,23 @@ import MascotBubbleOrModal from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
 
 export default function MascotMonitor({
-  checkConditionHook,
-  runPreActionsHook,
+  runPreActions,
   practiceToolData,
+  checkConditionCallback,
 }: {
-  checkConditionHook: (props: { stepExpectedRef: any }) => () => boolean;
-  runPreActionsHook: () => (preActions: any[]) => void;
+  runPreActions: (preActions: any[]) => void;
   practiceToolData: any;
+  checkConditionCallback: (expected: any) => boolean;
 }) {
   const router = useRouter();
-  const {
-    practiceTool,
-    id,
-
-    taskStep: taskStepParam,
-  } = useLocalSearchParams();
+  const { practiceTool, id } = useLocalSearchParams();
 
   const { tasks, levelType } = useLevelData();
   const { moveCursor, hideCursor } = useCursor();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
-  const checkCondition = checkConditionHook({ stepExpectedRef });
-  const runPreActions = runPreActionsHook();
 
-  const runnerRef = useRef<{ step: number; task: number }>({
-    step: -2,
-    task: -1,
-  });
-
-  const setStepIndex = (step: number) => {
-    // runnerRef.current.step = step;
-    // handleStepIndexChange();
-  };
-
-  const nextStep = () => {
-    // setStepIndex(runnerRef.current.step + 1);
-  };
-
-  const setTaskIndex = (task: number) => {
-    // runnerRef.current.task = task;
-    // // setCellsSelected([]);
-    // if (tasks.length > 0 && runnerRef.current.task > tasks?.length - 1) {
-    //   router.push(`/mission/${practiceTool}/${id}/result`);
-    // } else {
-    //   handleStepIndexChange();
-    // }
-  };
-
-  const executeStep = () => {
-    // if (runnerRef.current.step === -1) {
-    //   //show modal text
-    //   const introText = tasks?.at(runnerRef.current.task)?.intro;
-    //   if (introText && introText.trim() !== "") setModalText(introText);
-    // } else {
-    //   //run task step
-    //   const { tip, expected, preActions, cursor } =
-    //     tasks?.at(runnerRef.current.task)?.steps?.at(runnerRef.current.step) ||
-    //     {};
-    //   setBubbleText(tip?.text2 || "");
-    //   if (preActions) runPreActions(preActions);
-    //   if (levelType === "practice" && expected)
-    //     stepExpectedRef.current = expected;
-    //   if (cursor) {
-    //     if (cursor.elementId) {
-    //       moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
-    //     } else {
-    //       hideCursor();
-    //     }
-    //   }
-    // }
-  };
-
-  const handleStepIndexChange = () => {
-    // if (
-    //   //switch to next task if current step is the last step of the current task
-    //   runnerRef.current.step >
-    //   tasks?.at(runnerRef.current.task)?.steps?.length - 1
-    // ) {
-    //   setBubbleText(null);
-    //   runnerRef.current.step = -1;
-    //   setTaskIndex(runnerRef.current.task + 1);
-    // } else {
-    //   executeStep();
-    // }
-  };
-
-  // useEffect(() => {
-  // if (practiceToolData && stepExpectedRef.current) {
-  //   const isCorrect = checkCondition();
-  //   if (isCorrect) {
-  //     nextStep();
-  //   }
-  // }
-  // }, [checkCondition, nextStep, practiceToolData]);
-
-  // useEffect(() => {
-  //   if (tasks) {
-  //     if (taskStepParam) {
-  //       const [task, step] = taskStepParam.split(".");
-  //       runnerRef.current.task = parseInt(task);
-  //       runnerRef.current.step = parseInt(step);
-  //     } else {
-  //       runnerRef.current.step = -1;
-  //       runnerRef.current.task = 0;
-  //     }
-  //     handleStepIndexChange();
-  //   }
-  // }, [tasks, taskStepParam]);
-
-  // useKbdNextStep({ runnerRef, levelType, nextStep });
   // ---------------------
 
   const taskGeneratorRef = useRef<any>(null);
@@ -170,12 +76,9 @@ export default function MascotMonitor({
   ]);
 
   useEffect(() => {
-    if (
-      currentStep &&
-      checkSpreasheetCondition(currentStep.expected, practiceToolData)
-    )
+    if (currentStep && checkConditionCallback(currentStep.expected))
       setNextStep();
-  }, [currentStep, practiceToolData, setNextStep]);
+  }, [currentStep, practiceToolData, setNextStep, checkConditionCallback]);
 
   useEffect(() => {
     if (tasks) {
@@ -187,7 +90,7 @@ export default function MascotMonitor({
   return (
     <View style={styles.container}>
       {!!bubbleText && (
-        <MascotBubbleOrModal bubbleText={bubbleText} nextStep={nextStep} />
+        <MascotBubbleOrModal bubbleText={bubbleText} nextStep={setNextStep} />
       )}
       <MascotModal
         open={!!modalText?.trim()}
