@@ -65,8 +65,11 @@ export default function QuizScreen() {
   const verifyAnswer = () => {
     if (selectedAnswerIndex === null) return;
     setIsVerified(true);
+
+    // If the answer is correct, automatically proceed to next step
     const selectedAnswer = answers[selectedAnswerIndex];
     if (selectedAnswer?.isCorrect) {
+      // Small delay to show the correct answer feedback before proceeding
       setTimeout(() => {
         nextStep();
       }, 500);
@@ -74,14 +77,21 @@ export default function QuizScreen() {
   };
 
   useEffect(() => {
+    if (modalText === "") {
+      setStepIndex(0);
+    }
+  }, [modalText, tasks]);
+
+  useEffect(() => {
     if (tasks?.length) {
       setTaskIndex(0);
-      setStepIndex(0);
     }
   }, [tasks]);
 
   return (
     <QuizBody
+      modalText={modalText}
+      closeModal={() => setModalText("")}
       question={question}
       answers={answers}
       selectAnswer={selectAnswer}

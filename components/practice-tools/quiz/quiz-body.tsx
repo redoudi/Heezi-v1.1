@@ -1,5 +1,4 @@
 import CustomAnimation from "@/components/animations/CustomAnimation";
-import MascotModal from "@/components/mascot/mascot-modal";
 import { router } from "expo-router";
 import {
   FlatList,
@@ -205,11 +204,6 @@ export default function QuizBody({
             answers={answers}
           />
         </View>
-        <MascotModal
-          open={!!modalText?.trim()}
-          onClose={closeModal}
-          modalText={modalText}
-        />
       </View>
     </SafeAreaView>
   );
