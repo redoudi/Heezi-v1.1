@@ -1,7 +1,7 @@
 import useCursor from "@/context/useCursor";
-import { useKbdNextStep } from "@/hooks/use-keyboard";
 import useLevelData from "@/hooks/use-level-data";
 import arrayGenerator from "@/utils/arrayGenerator";
+import checkSpreasheetCondition from "@/utils/checkSpreasheetCondition";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { StyleSheet, View } from "react-native";
@@ -40,71 +40,70 @@ export default function MascotMonitor({
   });
 
   const setStepIndex = (step: number) => {
-    runnerRef.current.step = step;
-    handleStepIndexChange();
+    // runnerRef.current.step = step;
+    // handleStepIndexChange();
   };
 
   const nextStep = () => {
-    setStepIndex(runnerRef.current.step + 1);
+    // setStepIndex(runnerRef.current.step + 1);
   };
 
   const setTaskIndex = (task: number) => {
-    runnerRef.current.task = task;
-    // setCellsSelected([]);
-
-    if (tasks.length > 0 && runnerRef.current.task > tasks?.length - 1) {
-      router.push(`/mission/${practiceTool}/${id}/result`);
-    } else {
-      handleStepIndexChange();
-    }
+    // runnerRef.current.task = task;
+    // // setCellsSelected([]);
+    // if (tasks.length > 0 && runnerRef.current.task > tasks?.length - 1) {
+    //   router.push(`/mission/${practiceTool}/${id}/result`);
+    // } else {
+    //   handleStepIndexChange();
+    // }
   };
 
   const executeStep = () => {
-    if (runnerRef.current.step === -1) {
-      //show modal text
-      const introText = tasks?.at(runnerRef.current.task)?.intro;
-      if (introText && introText.trim() !== "") setModalText(introText);
-    } else {
-      //run task step
-      const { tip, expected, preActions, cursor } =
-        tasks?.at(runnerRef.current.task)?.steps?.at(runnerRef.current.step) ||
-        {};
-      setBubbleText(tip?.text2 || "");
-      if (preActions) runPreActions(preActions);
-      if (levelType === "practice" && expected)
-        stepExpectedRef.current = expected;
-      if (cursor) {
-        if (cursor.elementId) {
-          moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
-        } else {
-          hideCursor();
-        }
-      }
-    }
+    // if (runnerRef.current.step === -1) {
+    //   //show modal text
+    //   const introText = tasks?.at(runnerRef.current.task)?.intro;
+    //   if (introText && introText.trim() !== "") setModalText(introText);
+    // } else {
+    //   //run task step
+    //   const { tip, expected, preActions, cursor } =
+    //     tasks?.at(runnerRef.current.task)?.steps?.at(runnerRef.current.step) ||
+    //     {};
+    //   setBubbleText(tip?.text2 || "");
+    //   if (preActions) runPreActions(preActions);
+    //   if (levelType === "practice" && expected)
+    //     stepExpectedRef.current = expected;
+    //   if (cursor) {
+    //     if (cursor.elementId) {
+    //       moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
+    //     } else {
+    //       hideCursor();
+    //     }
+    //   }
+    // }
   };
 
   const handleStepIndexChange = () => {
-    if (
-      //switch to next task if current step is the last step of the current task
-      runnerRef.current.step >
-      tasks?.at(runnerRef.current.task)?.steps?.length - 1
-    ) {
-      setBubbleText(null);
-      runnerRef.current.step = -1;
-      setTaskIndex(runnerRef.current.task + 1);
-    } else {
-      executeStep();
-    }
+    // if (
+    //   //switch to next task if current step is the last step of the current task
+    //   runnerRef.current.step >
+    //   tasks?.at(runnerRef.current.task)?.steps?.length - 1
+    // ) {
+    //   setBubbleText(null);
+    //   runnerRef.current.step = -1;
+    //   setTaskIndex(runnerRef.current.task + 1);
+    // } else {
+    //   executeStep();
+    // }
   };
 
-  useEffect(() => {
-    if (practiceToolData && stepExpectedRef.current) {
-      const isCorrect = checkCondition();
-      if (isCorrect) {
-        nextStep();
-      }
-    }
-  }, [checkCondition, nextStep, practiceToolData]);
+  // useEffect(() => {
+  // if (practiceToolData && stepExpectedRef.current) {
+  //   const isCorrect = checkCondition();
+  //   if (isCorrect) {
+  //     nextStep();
+  //   }
+  // }
+  // }, [checkCondition, nextStep, practiceToolData]);
 
   // useEffect(() => {
   //   if (tasks) {
@@ -120,7 +119,7 @@ export default function MascotMonitor({
   //   }
   // }, [tasks, taskStepParam]);
 
-  useKbdNextStep({ runnerRef, levelType, nextStep });
+  // useKbdNextStep({ runnerRef, levelType, nextStep });
   // ---------------------
 
   const taskGeneratorRef = useRef<any>(null);
@@ -147,6 +146,37 @@ export default function MascotMonitor({
       setCurrentStep(nextStepYield.value);
     }
   }, [setNextTask]);
+
+  useEffect(() => {
+    if (currentStep) {
+      setBubbleText(currentStep.tip?.text2 || "");
+      // if (preActions) runPreActions(preActions);
+      // if (levelType === "practice" && currentStep.expected)
+      //   stepExpectedRef.current = currentStep.expected;
+      // if (cursor) {
+      //   if (cursor.elementId) {
+      //     moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
+      //   } else {
+      //     hideCursor();
+      //   }
+      // }
+    }
+  }, [
+    currentStep,
+    runPreActions,
+    levelType,
+    stepExpectedRef,
+    moveCursor,
+    hideCursor,
+  ]);
+
+  useEffect(() => {
+    if (
+      currentStep &&
+      checkSpreasheetCondition(currentStep.expected, practiceToolData)
+    )
+      setNextStep();
+  }, [currentStep, practiceToolData, setNextStep]);
 
   useEffect(() => {
     if (tasks) {
