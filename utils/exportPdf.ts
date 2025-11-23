@@ -79,6 +79,7 @@ async function loadJsPdfFromCdn(): Promise<JsPDFConstructor> {
 }
 
 export async function exportSpreadsheetPdf(
+  title: string,
   contents: { value: unknown; style: { [key: string]: any } }[][]
 ): Promise<void> {
   if (!contents.length) {
@@ -147,7 +148,7 @@ export async function exportSpreadsheetPdf(
     cursorY += ROW_HEIGHT;
   });
 
-  const filename = `heezi-export-${new Date().toISOString().split("T")[0]}.pdf`;
+  const filename = `Heezi - ${title}.pdf`;
 
   doc.save(filename);
 }
@@ -188,6 +189,7 @@ function isBoldFontWeight(fontWeight: unknown): boolean {
 }
 
 export async function exportTextEditorPdf(
+  title: string,
   contents: TextEditorBlock[]
 ): Promise<void> {
   if (!contents.length) {
@@ -221,9 +223,7 @@ export async function exportTextEditorPdf(
 
   renderBlocks(contents, context, MARGIN);
 
-  const filename = `heezi-text-editor-export-${
-    new Date().toISOString().split("T")[0]
-  }.pdf`;
+  const filename = `Heezi - ${title}.pdf`;
 
   doc.save(filename);
 }

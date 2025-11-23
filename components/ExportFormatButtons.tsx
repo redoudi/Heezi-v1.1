@@ -1,3 +1,4 @@
+import useLevelData from "@/hooks/use-level-data";
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
 import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
 import { exportTextEditorDocx } from "@/utils/exportDocx";
@@ -50,6 +51,7 @@ const ExportXlsxButton = () => {
 
 const ExportPdfButton = () => {
   const { practiceTool } = useLocalSearchParams();
+  const { title } = useLevelData();
   const getValuesHook =
     practiceTool === "spreadsheet"
       ? useExportSpreadsheetValues
@@ -68,10 +70,12 @@ const ExportPdfButton = () => {
     try {
       if (practiceTool === "spreadsheet") {
         await exportSpreadsheetPdf(
+          title,
           contents as ReturnType<typeof useExportSpreadsheetValues>["contents"]
         );
       } else {
         await exportTextEditorPdf(
+          title,
           contents as ReturnType<typeof useExportTextEditorValues>["contents"]
         );
       }
