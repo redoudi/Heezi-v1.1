@@ -56,10 +56,6 @@ export default function QuizScreen() {
     }
   };
 
-  const nextStep = () => {
-    setStepIndex(runnerRef.current.step + 1);
-  };
-
   const verifyAnswer = () => {
     if (selectedAnswerIndex === null) return;
     setIsVerified(true);
@@ -92,18 +88,20 @@ export default function QuizScreen() {
     }
   }
 
+  const nextStep = () => {
+    setCurrentStep(stepGeneratorRef.current.next().value);
+  };
+
   useEffect(() => {
     if (tasks?.length) {
       stepGeneratorRef.current = arrayGenerator(tasks[0].steps);
-      setCurrentStep(stepGeneratorRef.current.next().value);
+      nextStep();
     }
   }, [tasks]);
 
   return (
     <QuizBody
       currentStep={currentStep}
-      question={question}
-      answers={answers}
       selectAnswer={selectAnswer}
       selectedAnswerIndex={selectedAnswerIndex}
       verifyAnswer={verifyAnswer}

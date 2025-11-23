@@ -161,8 +161,10 @@ export default function QuizBody({
   isVerified,
 }: {
   selectAnswer: (index: number) => void;
-  question: string;
-  answers: { text: string; isCorrect?: boolean }[];
+  currentStep: {
+    question: string;
+    answers: { text: string; isCorrect?: boolean }[];
+  };
   selectedAnswerIndex: number | null;
   verifyAnswer: () => void;
   nextStep: () => void;
