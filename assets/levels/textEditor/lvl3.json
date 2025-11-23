@@ -9,14 +9,14 @@
                 {
                     "tip": {
                         "text1": "1.1 Le nom",
-                        "text2": "Pour commencer, tu peux saisir le nom de l'association : \"ASFB\""
+                        "text2": "Pour commencer, tu peux saisir le nom de l'association : \"Heezi\""
                     },
                     "cursor": {
                         "elementId": "nomInput"
                     },
                     "expected": {
                         "type": "blockText",
-                        "text": "ASFB",
+                        "text": "Heezi",
                         "blockId": "nomInput"
                     }
                 },
@@ -51,14 +51,14 @@
                 {
                     "tip": {
                         "text1": "1.4 La signature",
-                        "text2": "Et pour finir, la signature : \"ASFB\""
+                        "text2": "Et pour finir, la signature : \"Heezi\""
                     },
                     "cursor": {
                         "elementId": "signatureInput"
                     },
                     "expected": {
                         "type": "blockText",
-                        "text": "ASFB",
+                        "text": "Heezi",
                         "blockId": "signatureInput"
                     }
                 }
