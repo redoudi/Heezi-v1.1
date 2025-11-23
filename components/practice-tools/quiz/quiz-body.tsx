@@ -154,25 +154,21 @@ const AnswersBox = ({
 
 export default function QuizBody({
   selectAnswer,
-  question,
-  answers,
-  modalText,
-  closeModal,
+  currentStep,
   selectedAnswerIndex,
   verifyAnswer,
   nextStep,
   isVerified,
 }: {
   selectAnswer: (index: number) => void;
-  modalText: string;
   question: string;
   answers: { text: string; isCorrect?: boolean }[];
-  closeModal: () => void;
   selectedAnswerIndex: number | null;
   verifyAnswer: () => void;
   nextStep: () => void;
   isVerified: boolean;
 }) {
+  const { question, answers } = currentStep;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.column}>

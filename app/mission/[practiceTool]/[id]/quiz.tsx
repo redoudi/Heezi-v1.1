@@ -28,7 +28,6 @@ export default function QuizScreen() {
 
   const setStepIndex = (step: number) => {
     runnerRef.current.step = step;
-
     if (
       runnerRef.current.step >
       tasks.at(runnerRef.current.task)?.steps?.length - 1
@@ -51,7 +50,6 @@ export default function QuizScreen() {
       router.push(`/mission/${practiceTool}/${id}/result`);
     } else {
       runnerRef.current.task = task;
-
       const currentTask = tasks?.at(runnerRef.current.task);
       const introText = currentTask?.intro;
       if (introText && introText.trim() !== "") setModalText(introText);
@@ -80,8 +78,30 @@ export default function QuizScreen() {
     }
   }, [tasks]);
 
+  //*/************** */
+
+  const [currentStep, setCurrentStep] = useState<any>({
+    question: "",
+    answers: [],
+  });
+  const stepGeneratorRef = useRef<any>(null);
+
+  function* arrayGenerator(arr: any[]) {
+    for (const item of arr) {
+      yield item;
+    }
+  }
+
+  useEffect(() => {
+    if (tasks?.length) {
+      stepGeneratorRef.current = arrayGenerator(tasks[0].steps);
+      setCurrentStep(stepGeneratorRef.current.next().value);
+    }
+  }, [tasks]);
+
   return (
     <QuizBody
+      currentStep={currentStep}
       question={question}
       answers={answers}
       selectAnswer={selectAnswer}
