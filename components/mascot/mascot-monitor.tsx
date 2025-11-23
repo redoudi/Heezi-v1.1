@@ -25,7 +25,7 @@ export default function MascotMonitor({
     taskStep: taskStepParam,
   } = useLocalSearchParams();
 
-  const { tasks: levelTasks, levelType } = useLevelData();
+  const { tasks, levelType } = useLevelData();
   const { moveCursor, hideCursor } = useCursor();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
@@ -51,10 +51,7 @@ export default function MascotMonitor({
     runnerRef.current.task = task;
     // setCellsSelected([]);
 
-    if (
-      levelTasks.length > 0 &&
-      runnerRef.current.task > levelTasks?.length - 1
-    ) {
+    if (tasks.length > 0 && runnerRef.current.task > tasks?.length - 1) {
       router.push(`/mission/${practiceTool}/${id}/result`);
     } else {
       handleStepIndexChange();
@@ -64,14 +61,13 @@ export default function MascotMonitor({
   const executeStep = () => {
     if (runnerRef.current.step === -1) {
       //show modal text
-      const introText = levelTasks?.at(runnerRef.current.task)?.intro;
+      const introText = tasks?.at(runnerRef.current.task)?.intro;
       if (introText && introText.trim() !== "") setModalText(introText);
     } else {
       //run task step
       const { tip, expected, preActions, cursor } =
-        levelTasks
-          ?.at(runnerRef.current.task)
-          ?.steps?.at(runnerRef.current.step) || {};
+        tasks?.at(runnerRef.current.task)?.steps?.at(runnerRef.current.step) ||
+        {};
       setBubbleText(tip?.text2 || "");
       if (preActions) runPreActions(preActions);
       if (levelType === "practice" && expected)
@@ -90,7 +86,7 @@ export default function MascotMonitor({
     if (
       //switch to next task if current step is the last step of the current task
       runnerRef.current.step >
-      levelTasks?.at(runnerRef.current.task)?.steps?.length - 1
+      tasks?.at(runnerRef.current.task)?.steps?.length - 1
     ) {
       setBubbleText(null);
       runnerRef.current.step = -1;
@@ -110,7 +106,7 @@ export default function MascotMonitor({
   }, [checkCondition, nextStep, practiceToolData]);
 
   useEffect(() => {
-    if (levelTasks) {
+    if (tasks) {
       if (taskStepParam) {
         const [task, step] = taskStepParam.split(".");
         runnerRef.current.task = parseInt(task);
@@ -121,10 +117,12 @@ export default function MascotMonitor({
       }
       handleStepIndexChange();
     }
-  }, [levelTasks, taskStepParam]);
+  }, [tasks, taskStepParam]);
 
   useKbdNextStep({ runnerRef, levelType, nextStep });
   // ---------------------
+
+  const taskGeneratorRef = useRef<any>(null);
 
   return (
     <View style={styles.container}>
