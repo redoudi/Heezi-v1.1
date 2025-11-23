@@ -1,5 +1,6 @@
 import QuizBody from "@/components/practice-tools/quiz/quiz-body";
 import useLevelData from "@/hooks/use-level-data";
+import arrayGenerator from "@/utils/arrayGenerator";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 
@@ -31,12 +32,6 @@ export default function QuizScreen() {
     answers: [],
   });
   const stepGeneratorRef = useRef<any>(null);
-
-  function* arrayGenerator(arr: any[]) {
-    for (const item of arr) {
-      yield item;
-    }
-  }
 
   const nextStep = () => {
     const nextStepYield = stepGeneratorRef.current.next();

@@ -124,6 +124,7 @@ export default function MascotMonitor({
   }, [levelTasks, taskStepParam]);
 
   useKbdNextStep({ runnerRef, levelType, nextStep });
+  // ---------------------
 
   return (
     <View style={styles.container}>
