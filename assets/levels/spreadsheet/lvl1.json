@@ -46,7 +46,7 @@
                         {
                             "type": "select",
                             "cells": [
-                                "A1:J1"
+                                "A1:L1"
                             ]
                         }
                     ]
