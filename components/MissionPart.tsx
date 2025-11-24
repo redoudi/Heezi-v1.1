@@ -5,6 +5,7 @@ import JouerButton from "@/components/ui/JouerButton";
 import characters from "@/constants/characters";
 import { getLevelDataByNumber } from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import useCompletedLevelsStore from "@/store/useCompletedLevels";
 import CustomAnimation from "./animations/CustomAnimation";
 
 export default function MissionPart({
@@ -21,6 +22,11 @@ export default function MissionPart({
     practiceTool as string,
     levelNumber
   );
+  const { levelsCompleted } = useCompletedLevelsStore();
+  const practicetoolLevelsCompleted =
+    levelsCompleted[practiceTool as keyof typeof levelsCompleted];
+  const isPreviousLevelCompleted =
+    practicetoolLevelsCompleted?.[levelNumber - 1];
 
   const getAnimationData = () => {
     const bureauAnimations =
@@ -35,6 +41,8 @@ export default function MissionPart({
     }
   };
 
+  const disabled = !(levelNumber === 1) && !isPreviousLevelCompleted;
+
   return (
     <View>
       <View style={[styles.button, { backgroundColor: toolConstants.color }]}>
@@ -42,6 +50,7 @@ export default function MissionPart({
       </View>
 
       <TouchableOpacity
+        disabled={disabled}
         onPress={() =>
           router.replace(`/mission/${practiceTool}/${levelNumber}`)
         }
