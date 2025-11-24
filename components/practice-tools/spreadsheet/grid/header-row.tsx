@@ -1,3 +1,5 @@
+import useCursor from "@/context/useCursor";
+import { useEffect, useRef } from "react";
 import { Image, Text, View } from "react-native";
 import { styles } from "../spreadsheet-styles";
 
@@ -14,8 +16,15 @@ export default function HeaderRow({
 }: {
   columnsLetters: string[];
 }) {
+  const headerRowRef = useRef<View>(null);
+  const { setContentRef } = useCursor();
+  useEffect(() => {
+    if (setContentRef) {
+      setContentRef("headerRow", headerRowRef);
+    }
+  }, [setContentRef]);
   return (
-    <View style={styles.scrollView}>
+    <View ref={headerRowRef} style={styles.scrollView}>
       <CornerSymbol />
       {columnsLetters.map((columnLetter, index) => (
         <View

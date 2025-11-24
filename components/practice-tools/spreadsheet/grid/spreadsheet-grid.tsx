@@ -1,3 +1,5 @@
+import useCursor from "@/context/useCursor";
+import { useEffect, useRef } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Cell from "./cell";
 import HeaderRow from "./header-row";
@@ -11,7 +13,13 @@ export default function SpreadsheetGrid() {
   // Header component
 
   // Row component
-
+  const rowNumberContainerRef = useRef<View>(null);
+  const { setContentRef } = useCursor();
+  useEffect(() => {
+    if (setContentRef) {
+      setContentRef("rowNumbersColumn", rowNumberContainerRef);
+    }
+  }, [setContentRef]);
   return (
     <View style={styles.mainContainer}>
       <HeaderRow columnsLetters={COLUMNS} />
@@ -23,7 +31,7 @@ export default function SpreadsheetGrid() {
             showsHorizontalScrollIndicator={false}
             style={styles.gridCellsContainer}
           >
-            <View style={styles.rowNumberContainer}>
+            <View ref={rowNumberContainerRef} style={styles.rowNumberContainer}>
               <Text style={styles.rowNumber}>{item}</Text>
             </View>
             {COLUMNS.map((_, colIndex) => (

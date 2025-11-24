@@ -3,6 +3,7 @@
     "character": "mascotte",
     "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
     "cellsEnabled": [
+        "A1",
         "B2",
         "L18"
     ],
@@ -76,18 +77,27 @@
                             "type": "select",
                             "cells": ""
                         }
-                    ]
+                    ],
+                    "cursor": {
+                        "elementId": "headerRow"
+                    }
                 },
                 {
                     "tip": {
                         "text1": "Etape 2.b",
                         "text2": "et chaque rangée par un numéro"
+                    },
+                    "cursor": {
+                        "elementId": "rowNumbersColumn"
                     }
                 },
                 {
                     "tip": {
                         "text1": "Etape 2.c",
                         "text2": "Une cellule peut donc être identifiée par la colonne et la rangée où elle se trouve"
+                    },
+                    "cursor": {
+                        "elementId": ""
                     }
                 },
                 {
@@ -102,7 +112,10 @@
                                 "A1"
                             ]
                         }
-                    ]
+                    ],
+                    "cursor": {
+                        "elementId": "A1"
+                    }
                 }
             ]
         },
