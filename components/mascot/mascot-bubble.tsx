@@ -90,7 +90,7 @@ export function MascotBubble({
   const { levelType } = useLevelData();
   const { practiceTool } = usePracticeToolConstants();
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
-    <SuivantBtn nextStep={nextStep} />
+    <SuivantBtn onPress={nextStep} />
   );
   return (
     <MascotDialog

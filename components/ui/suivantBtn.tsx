@@ -1,9 +1,9 @@
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-export default function SuivantBtn({ nextStep }: { nextStep: () => void }) {
+export default function SuivantBtn({ onPress }: { onPress: () => void }) {
   return (
-    <TouchableOpacity onPress={nextStep} style={styles.downArrowContainer}>
-      <Text style={styles.text}>Continuer</Text>
+    <TouchableOpacity onPress={onPress} style={styles.downArrowContainer}>
+      <Text style={styles.text}>Suivant</Text>
       <Image
         source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
         resizeMode={"stretch"}
