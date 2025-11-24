@@ -5,23 +5,11 @@ import {
   StyleProp,
   StyleSheet,
   Text,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
   ViewStyle,
 } from "react-native";
-
-const DownArrow = ({ nextStep }: { nextStep: () => void }) => {
-  return (
-    <TouchableOpacity onPress={nextStep}>
-      <Image
-        source={require("@/assets/images/ojvjgq96_expires_30_days.png")}
-        resizeMode={"stretch"}
-        style={styles.image31}
-      />
-    </TouchableOpacity>
-  );
-};
+import SuivantBtn from "../ui/suivantBtn";
 
 const CornerTriangle = () => {
   return (
@@ -102,7 +90,7 @@ export function MascotBubble({
   const { levelType } = useLevelData();
   const { practiceTool } = usePracticeToolConstants();
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
-    <DownArrow nextStep={nextStep} />
+    <SuivantBtn nextStep={nextStep} />
   );
   return (
     <MascotDialog
@@ -112,6 +100,7 @@ export function MascotBubble({
     />
   );
 }
+
 const styles = StyleSheet.create({
   mainContainer: {
     position: "absolute",
@@ -164,5 +153,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  downArrowContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
