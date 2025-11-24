@@ -1,12 +1,13 @@
 import useCursor from "@/context/useCursor";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import CellTextInput from "./CellTextInput";
 export default function Cell({ id }: { id: string }) {
   const { spreadsheetData, setCellsSelected, setCellValue, cellsEnabled } =
     useSpreadsheetStore();
-  const { setContentRef } = useCursor();
+  const { setContentRef, expected } = useCursor();
+  const [isWrongAnswer, setIsWrongAnswer] = useState(false);
   const cellsValues = spreadsheetData?.cellsValues;
   const cellsSelected = spreadsheetData?.cellsSelected;
   const cellsStyles = spreadsheetData?.cellsStyles;
@@ -19,17 +20,23 @@ export default function Cell({ id }: { id: string }) {
     }
   }, [setContentRef, id]);
 
+  const wrongAnswerStyle = {
+    borderColor: "red",
+    borderWidth: 1,
+  };
+
   return (
     <View ref={cellRef}>
       {cellsEnabled?.includes(id) && cellsSelected?.includes(id) ? (
-        <CellTextInput id={id} />
+        <CellTextInput
+          id={id}
+          isWrongAnswer={isWrongAnswer}
+          setIsWrongAnswer={setIsWrongAnswer}
+        />
       ) : (
         <Pressable onPress={() => setCellsSelected([id])}>
           <View
-            style={[
-              styles.box,
-              cellsSelected?.includes(id) ? styles.selectedBox : {},
-            ]}
+            style={[styles.box, isWrongAnswer ? { borderColor: "red" } : {}]}
           >
             <Text style={cellsStyles?.[id]}>{cellsValues?.[id] || ""}</Text>
           </View>
@@ -48,9 +55,5 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     marginRight: 8,
-  },
-  selectedBox: {
-    borderWidth: 3,
-    borderColor: "black",
   },
 });
