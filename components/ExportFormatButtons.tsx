@@ -16,7 +16,7 @@ import { exportXlsx } from "../utils/exportXlsx";
 
 const ExportXlsxButton = () => {
   const { contents } = useExportSpreadsheetValues();
-
+  const { title } = useLevelData();
   const handleExportXlsx = () => {
     if (!contents.length) {
       Alert.alert(
@@ -27,7 +27,7 @@ const ExportXlsxButton = () => {
     }
 
     try {
-      exportXlsx(contents);
+      exportXlsx(title, contents);
     } catch (error) {
       console.error("Failed to export XLSX", error);
       Alert.alert(
@@ -107,7 +107,7 @@ const ExportPdfButton = () => {
 
 const ExportDocxButton = () => {
   const { contents } = useExportTextEditorValues();
-
+  const { title } = useLevelData();
   const handleExportDocx = async () => {
     if (!contents.length) {
       Alert.alert(
@@ -118,7 +118,7 @@ const ExportDocxButton = () => {
     }
 
     try {
-      await exportTextEditorDocx(contents);
+      await exportTextEditorDocx(title, contents);
     } catch (error) {
       console.error("Failed to export DOCX", error);
       Alert.alert(

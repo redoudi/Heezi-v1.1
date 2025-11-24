@@ -52,6 +52,7 @@ async function loadJsZip() {
 }
 
 export async function exportTextEditorDocx(
+  title,
   contents: TextEditorBlock[]
 ): Promise<void> {
   if (!contents.length) {
@@ -83,9 +84,7 @@ export async function exportTextEditorDocx(
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
   });
 
-  const filename = `heezi-text-editor-export-${
-    new Date().toISOString().split("T")[0]
-  }.docx`;
+  const filename = `Heezi - ${title}.docx`;
 
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
@@ -234,8 +233,7 @@ function createRuns(paragraph: DocParagraph): string {
     .map((fragment, index) => {
       const escaped = escapeXml(fragment || " ");
       const textTag = `<w:t xml:space="preserve">${escaped}</w:t>`;
-      const breakTag =
-        index < fragments.length - 1 ? "<w:br/>" : "";
+      const breakTag = index < fragments.length - 1 ? "<w:br/>" : "";
       return `${textTag}${breakTag}`;
     })
     .join("");
@@ -344,7 +342,10 @@ function applyBlockSpacing(
   }
 }
 
-function getBlockSpacing(block: TextEditorBlock): { before: number; after: number } {
+function getBlockSpacing(block: TextEditorBlock): {
+  before: number;
+  after: number;
+} {
   const beforePx = extractSpacing(block, "marginTop");
   const afterPx = extractSpacing(block, "marginBottom");
 
@@ -427,4 +428,3 @@ function isItalicFontStyle(fontStyle: unknown): boolean {
 
   return fontStyle.trim().toLowerCase() === "italic";
 }
-

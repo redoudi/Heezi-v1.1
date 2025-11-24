@@ -2,6 +2,7 @@ const MIME_TYPE = "application/vnd.ms-excel";
 const UTF8_BOM = "\ufeff";
 
 export function exportXlsx(
+  title,
   contents: { value: unknown; style: { [key: string]: any } }[][]
 ): void {
   if (!contents.length) {
@@ -50,7 +51,7 @@ export function exportXlsx(
   const blob = new Blob([html], { type: MIME_TYPE });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
-  const filename = `heezi-export-${new Date().toISOString().split("T")[0]}.xls`;
+  const filename = `Heezi - ${title}.xls`;
 
   link.href = url;
   link.download = filename;
