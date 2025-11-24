@@ -18,7 +18,7 @@
                         {
                             "type": "select",
                             "cells": [
-                                "A1:B3"
+                                "A1:L18"
                             ]
                         }
                     ]
@@ -32,7 +32,7 @@
                         {
                             "type": "select",
                             "cells": [
-                                "A1:A15"
+                                "A1:A18"
                             ]
                         }
                     ]
@@ -60,7 +60,13 @@
                     "tip": {
                         "text1": "Etape 2.a",
                         "text2": "Comme tu peux le voir, chaque colonne est désignée par une lettre"
-                    }
+                    },
+                    "preActions": [
+                        {
+                            "type": "select",
+                            "cells": ""
+                        }
+                    ]
                 },
                 {
                     "tip": {
