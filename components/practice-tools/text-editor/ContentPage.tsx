@@ -38,25 +38,25 @@ function TextInputBlock({ item }: { item: any }) {
   );
 }
 
-function ContentItem({ item, index }: { item: any; index: number }) {
-  switch (item.type) {
-    case "text":
-      return <TextBlock key={index} item={item} />;
-    case "textInput":
-      return <TextInputBlock key={index} item={item} />;
-    case "view":
-      return (
-        <View key={index} style={item.style}>
-          {item.children.map((child: any, index: number) => (
-            <ContentItem key={index} item={child} index={index} />
-          ))}
-        </View>
-      );
-  }
-}
-
 const ContentPage = () => {
   const { contentBlocks } = useTextEditorStore();
+
+  function ContentItem({ item, index }: { item: any; index: number }) {
+    switch (item.type) {
+      case "text":
+        return <TextBlock key={index} item={item} />;
+      case "textInput":
+        return <TextInputBlock key={index} item={item} />;
+      case "view":
+        return (
+          <View key={index} style={item.style}>
+            {item.children.map((child: any, index: number) => (
+              <ContentItem key={index} item={child} index={index} />
+            ))}
+          </View>
+        );
+    }
+  }
 
   return (
     <View style={styles.contentPage}>
