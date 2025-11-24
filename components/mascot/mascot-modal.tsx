@@ -1,3 +1,4 @@
+import SuivantBtnModal from "@/components/ui/suivantBtnModal";
 import { useEffect } from "react";
 import {
   Image,
@@ -39,11 +40,7 @@ export default function MascotModal({ open, onClose, modalText }) {
               <View style={styles.modalTextBox}>
                 <Text style={styles.modalText}>{modalText || "..."}</Text>
               </View>
-              <Image
-                source={require("@/assets/images/dwoxzuh6_expires_30_days.png")}
-                resizeMode={"contain"}
-                style={styles.arrowDownImage}
-              />
+              <SuivantBtnModal text="Continuer" onPress={onClose} />
             </View>
           </View>
         </View>
