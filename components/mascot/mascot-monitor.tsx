@@ -59,9 +59,6 @@ export default function MascotMonitor({
       const { tip, preActions, cursor } = currentStep;
       setBubbleText(tip?.text2 || "");
       if (preActions) runPreActions(preActions);
-      // if (levelType === "practice" && currentStep.expected)
-      //   stepExpectedRef.current = currentStep.expected;
-
       if (cursor && cursor.elementId) {
         moveCursor(cursor.elementId, cursor.x || 0, cursor.y || 0);
       }
