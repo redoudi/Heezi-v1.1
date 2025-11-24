@@ -3,7 +3,8 @@
     "character": "mascotte",
     "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
     "cellsEnabled": [
-        "B2"
+        "B2",
+        "L18"
     ],
     "tasks": [
         {
@@ -21,7 +22,10 @@
                                 "A1:L18"
                             ]
                         }
-                    ]
+                    ],
+                    "cursor": {
+                        "elementId": "L18"
+                    }
                 },
                 {
                     "tip": {
@@ -35,7 +39,10 @@
                                 "A1:A18"
                             ]
                         }
-                    ]
+                    ],
+                    "cursor": {
+                        "elementId": "A18"
+                    }
                 },
                 {
                     "tip": {
@@ -49,7 +56,10 @@
                                 "A1:L1"
                             ]
                         }
-                    ]
+                    ],
+                    "cursor": {
+                        "elementId": "L1"
+                    }
                 }
             ]
         },
