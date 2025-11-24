@@ -21,7 +21,7 @@ export default function MascotMonitor({
   const { practiceTool, id } = useLocalSearchParams();
 
   const { tasks, levelType } = useLevelData();
-  const { moveCursor, hideCursor } = useCursor();
+  const { moveCursor, hideCursor, setExpected } = useCursor();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
@@ -73,12 +73,10 @@ export default function MascotMonitor({
   ]);
 
   useEffect(() => {
-    if (
-      currentStep &&
-      currentStep.expected &&
-      checkConditionCallback(currentStep.expected)
-    )
-      setNextStep();
+    if (currentStep && currentStep.expected) {
+      setExpected(currentStep.expected);
+      if (checkConditionCallback(currentStep.expected)) setNextStep();
+    }
   }, [currentStep, practiceToolData, setNextStep, checkConditionCallback]);
 
   useEffect(() => {

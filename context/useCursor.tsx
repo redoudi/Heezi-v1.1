@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useRef } from "react";
+import { ReactNode, createContext, useContext, useRef, useState } from "react";
 import { Dimensions } from "react-native";
 import {
   useAnimatedStyle,
@@ -37,6 +37,7 @@ const CursorContext = createContext<CursorContextType>({
 
 // Provider component
 export function CursorProvider({ children }: { children: ReactNode }) {
+  const [expected, setExpected] = useState<any>(null);
   const cursorRef = useRef<any>(null);
 
   const contentsRefs = useRef<{ [key: string]: any }>({});
@@ -100,6 +101,8 @@ export function CursorProvider({ children }: { children: ReactNode }) {
         hideCursor,
         showCursor,
         animatedStyle,
+        expected,
+        setExpected,
       }}
     >
       {children}

@@ -1,6 +1,6 @@
 import useCursor from "@/context/useCursor";
 import useTextEditorStore from "@/store/useTextEditorStore";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
 function TextBlock({ item }: { item: any }) {
@@ -13,7 +13,8 @@ function TextBlock({ item }: { item: any }) {
 
 function TextInputBlock({ item }: { item: any }) {
   const { setBlockText, setSelectedBlockId } = useTextEditorStore();
-  const { setContentRef } = useCursor();
+  const { setContentRef, expected } = useCursor();
+  const [isWrongAnswer, setIsWrongAnswer] = useState(false);
   const blockRef = useRef<TextInput>(null);
 
   useEffect(() => {
@@ -22,17 +23,41 @@ function TextInputBlock({ item }: { item: any }) {
     }
   }, [setContentRef, item.blockId]);
 
+  const handleBlur = () => {
+    if (
+      expected &&
+      expected.type === "blockText" &&
+      expected.blockId === item.blockId &&
+      item.text.length &&
+      expected?.text &&
+      item.text !== expected.text
+    ) {
+      setIsWrongAnswer(true);
+    } else {
+      setIsWrongAnswer(false);
+    }
+  };
+
+  const wrongAnswerStyle = {
+    borderColor: "red",
+    borderWidth: 2,
+  };
+
   return (
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
-        nativeID={item.blockId}
-        style={[styles.textInput, item.style]}
+        style={[
+          styles.textInput,
+          item.style,
+          isWrongAnswer ? wrongAnswerStyle : {},
+        ]}
         value={item.text}
         onChangeText={(inputText) => setBlockText(item.blockId, inputText)}
         onFocus={() => setSelectedBlockId(item.blockId)}
         placeholder={item.placeholder}
         placeholderTextColor="rgb(111, 111, 111)"
         ref={blockRef}
+        onBlur={handleBlur}
       />
     </View>
   );

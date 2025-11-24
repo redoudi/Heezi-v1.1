@@ -66,9 +66,15 @@
             ]
         },
         {
-            "intro": "Un peu de mise en forme.",
+            "intro": "On va maintenant ajouter un peu de mise en forme.",
             "steps": [
                 {
+                    "preActions": [
+                        {
+                            "type": "selectBlock",
+                            "blockId": ""
+                        }
+                    ],
                     "tip": {
                         "text1": "2.1 La mise en forme",
                         "text2": "Tu peux à présent mettre en gras l'objet. Pour commencer, double-clique sur l'objet que tu as saisi"
