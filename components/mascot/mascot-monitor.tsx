@@ -1,5 +1,6 @@
 import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
+import useCompletedLevelsStore from "@/store/useCompletedLevels";
 import arrayGenerator from "@/utils/arrayGenerator";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -20,8 +21,9 @@ export default function MascotMonitor({
   const router = useRouter();
   const { practiceTool, id } = useLocalSearchParams();
 
-  const { tasks, levelType } = useLevelData();
+  const { tasks, levelType, levelNumber } = useLevelData();
   const { moveCursor, hideCursor, setExpected } = useCursor();
+  const { setLevelCompleted } = useCompletedLevelsStore();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
   const stepExpectedRef = useRef<any>(null);
@@ -36,6 +38,7 @@ export default function MascotMonitor({
   const setNextTask = useCallback(() => {
     const nextTaskYield = taskGeneratorRef.current.next();
     if (nextTaskYield.done) {
+      setLevelCompleted(levelNumber, practiceTool);
       router.push(`/mission/${practiceTool}/${id}/result`);
     } else {
       currentTaskRef.current = nextTaskYield.value;
