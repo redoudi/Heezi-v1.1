@@ -10,12 +10,18 @@
                     "tip": {
                         "text1": "1.a Les pages",
                         "text2": "Un document contient une ou plusieurs pages."
+                    },
+                    "cursor": {
+                        "elementId": "contentPage"
                     }
                 },
                 {
                     "tip": {
                         "text1": "1.b Le contenu",
                         "text2": "Le contenu de la page est ce qu'on voit à l'intérieur de la page. C'est souvent du texte mais ça peut aussi être des images, des tableaux par exemple."
+                    },
+                    "cursor": {
+                        "elementId": "pageContent"
                     }
                 }
             ]

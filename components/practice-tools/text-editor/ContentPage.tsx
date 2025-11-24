@@ -40,7 +40,15 @@ function TextInputBlock({ item }: { item: any }) {
 
 const ContentPage = () => {
   const { contentBlocks } = useTextEditorStore();
-
+  const contentPageRef = useRef<View>(null);
+  const { setContentRef } = useCursor();
+  const pageContentRef = useRef<View>(null);
+  useEffect(() => {
+    if (setContentRef) {
+      setContentRef("contentPage", contentPageRef);
+      setContentRef("pageContent", pageContentRef);
+    }
+  }, [setContentRef]);
   function ContentItem({ item, index }: { item: any; index: number }) {
     switch (item.type) {
       case "text":
@@ -59,10 +67,12 @@ const ContentPage = () => {
   }
 
   return (
-    <View style={styles.contentPage}>
-      {contentBlocks.map((item, index) => (
-        <ContentItem key={index} item={item} index={index} />
-      ))}
+    <View ref={contentPageRef} style={styles.contentPage}>
+      <View ref={pageContentRef}>
+        {contentBlocks.map((item, index) => (
+          <ContentItem key={index} item={item} index={index} />
+        ))}
+      </View>
     </View>
   );
 };
