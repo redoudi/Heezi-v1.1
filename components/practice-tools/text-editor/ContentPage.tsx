@@ -14,7 +14,7 @@ function TextBlock({ item }: { item: any }) {
 function TextInputBlock({ item }: { item: any }) {
   const { setBlockText, setSelectedBlockId } = useTextEditorStore();
   const { setContentRef, expected } = useCursor();
-  const [isWrongAnswer, setIsWrongAnswer] = useState(false);
+  const [isWrongAnswer, setIsWrongAnswer] = useState(null);
   const blockRef = useRef<TextInput>(null);
 
   useEffect(() => {
@@ -51,6 +51,7 @@ function TextInputBlock({ item }: { item: any }) {
           item.style,
           isWrongAnswer ? wrongAnswerStyle : {},
         ]}
+        editable={isWrongAnswer !== false}
         value={item.text}
         onChangeText={(inputText) => setBlockText(item.blockId, inputText)}
         onFocus={() => setSelectedBlockId(item.blockId)}
