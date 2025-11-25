@@ -7,7 +7,7 @@ export default function Cell({ id }: { id: string }) {
   const { spreadsheetData, setCellsSelected, setCellValue, cellsEnabled } =
     useSpreadsheetStore();
   const { setContentRef, expected } = useCursor();
-  const [isWrongAnswer, setIsWrongAnswer] = useState(false);
+  const [isWrongAnswer, setIsWrongAnswer] = useState(null);
   const cellsValues = spreadsheetData?.cellsValues;
   const cellsSelected = spreadsheetData?.cellsSelected;
   const cellsStyles = spreadsheetData?.cellsStyles;
