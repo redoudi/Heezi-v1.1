@@ -73,6 +73,6 @@ const styles = StyleSheet.create({
     width: 28,
     alignItems: "flex-end",
     justifyContent: "center",
-    marginRight: 4,
+    marginRight: 8,
   },
 });
