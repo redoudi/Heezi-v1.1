@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   highlighted: {
     borderColor: "red",
-    borderWidth: 3,
+    borderWidth: 6,
     borderStyle: "dotted",
   },
 });

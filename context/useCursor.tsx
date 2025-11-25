@@ -37,7 +37,7 @@ const CursorContext = createContext<CursorContextType>({
 
 // Provider component
 export function CursorProvider({ children }: { children: ReactNode }) {
-  const [currentStep, setCurrentStep] = useState<any>(null);
+  const [currentStep, setCurrentStep] = useState<any>({});
   const [expected, setExpected] = useState<any>(null);
   const cursorRef = useRef<any>(null);
 
