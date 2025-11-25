@@ -1,3 +1,4 @@
+import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import {
@@ -64,19 +65,19 @@ export default function MascotBubbleOrModal({
   nextStep: () => void | null;
 }) {
   const { levelType } = useLevelData();
-  const MascotBubbleComponent = () => MascotBubble({ bubbleText, nextStep });
+  const { contentRef } = useCursor();
   if (levelType === "lesson") {
     return (
       <TouchableWithoutFeedback onPress={() => {}} accessible={false}>
         <View style={styles.overlayContainer}>
           <View style={styles.mainContainer}>
-            <MascotBubbleComponent />
+            <MascotBubble bubbleText={bubbleText} nextStep={nextStep} />
           </View>
         </View>
       </TouchableWithoutFeedback>
     );
   } else {
-    return <MascotBubbleComponent />;
+    return <MascotBubble bubbleText={bubbleText} nextStep={nextStep} />;
   }
 }
 
