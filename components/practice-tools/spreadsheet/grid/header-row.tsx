@@ -15,15 +15,24 @@ export default function HeaderRow({
 }: {
   columnsLetters: string[];
 }) {
+  const elementId = "headerRow";
   const headerRowRef = useRef<View>(null);
   const { setContentRef } = useCursor();
   useEffect(() => {
     if (setContentRef) {
-      setContentRef("headerRow", headerRowRef);
+      setContentRef(elementId, headerRowRef);
     }
   }, [setContentRef]);
+  const {
+    currentStep: { highlight },
+  } = useCursor();
+
+  const isHighlighted = highlight?.elementId === elementId;
   return (
-    <View ref={headerRowRef} style={styles.scrollView}>
+    <View
+      ref={headerRowRef}
+      style={[styles.scrollView, isHighlighted && styles.highlighted]}
+    >
       <CornerSymbol />
       {columnsLetters.map((columnLetter, index) => (
         <View
@@ -62,5 +71,10 @@ const styles = StyleSheet.create({
     width: 24,
     height: 17,
     marginRight: 8,
+  },
+  highlighted: {
+    borderColor: "red",
+    borderWidth: 3,
+    borderStyle: "dotted",
   },
 });
