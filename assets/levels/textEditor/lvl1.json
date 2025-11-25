@@ -39,7 +39,7 @@
                 {
                     "tip": {
                         "text1": "2.1 La saisie",
-                        "text2": "Pour saisir du texte, je clique à l'endroit du contenu où je veux ajouter le texte."
+                        "text2": "Pour saisir du texte, je clique d'abord à l'endroit du contenu où je veux ajouter le texte."
                     },
                     "cursor": {
                         "elementId": "exempleInput"
@@ -48,7 +48,7 @@
                 {
                     "tip": {
                         "text1": "2.b Exemple de saisie",
-                        "text2": "Par exemple, je vais ajouter une phrase à la fin du texte déjà présent"
+                        "text2": "Ensuite, avec mon clavier, je peux écrire le texte que je veux ajouter."
                     },
                     "cursor": {
                         "elementId": ""
@@ -84,7 +84,7 @@
                 {
                     "tip": {
                         "text1": "3.b La mise en forme",
-                        "text2": "Je peux par exemple le mettre en gras en cliquant sur le bouton gras."
+                        "text2": "Je peux par ensuite, par exemple, le mettre en gras. Pour cela, je clique sur le bouton gras."
                     },
                     "cursor": {
                         "elementId": "boldButton"
