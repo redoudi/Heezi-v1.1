@@ -15,7 +15,7 @@ export default function Cell({ id }: { id: string }) {
   const cellRef = useRef<View>(null);
 
   useEffect(() => {
-    if (setContentRef && id && cellsEnabled?.includes(id)) {
+    if (setContentRef && id) {
       setContentRef(id, cellRef);
     }
   }, [setContentRef, id, cellsEnabled]);
