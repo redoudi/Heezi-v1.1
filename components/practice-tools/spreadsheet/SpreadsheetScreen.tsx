@@ -43,17 +43,23 @@ function LevelStats() {
 export default function SpreadsheetScreen() {
   const { height } = useWindowDimensions();
   const { levelType } = useLevelData();
+  const isLesson = levelType === "lesson";
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
-        <TitleBar />
-        <View style={styles.column2}>
-          <RibbonTabs />
-          <Ribbon />
-          <FunctionBar />
+        <View style={styles.titleBarContainer}>
+          <TitleBar />
         </View>
-        <SpreadsheetGrid />
-        <LevelStats />
+        <View style={styles.interactiveSection}>
+          <View style={styles.column2}>
+            <RibbonTabs />
+            <Ribbon />
+            <FunctionBar />
+          </View>
+          <SpreadsheetGrid />
+          <LevelStats />
+          {isLesson && <View style={styles.overlay} />}
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -71,9 +77,25 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#EFEFEF",
   },
+  titleBarContainer: {
+    zIndex: 1001,
+    position: "relative",
+  },
+  interactiveSection: {
+    flex: 1,
+    position: "relative",
+  },
   column2: {
     marginTop: 2,
     marginBottom: 3,
+  },
+  overlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1000,
   },
   column13: {
     alignSelf: "flex-start",
