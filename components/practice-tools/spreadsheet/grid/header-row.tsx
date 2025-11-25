@@ -1,7 +1,6 @@
 import useCursor from "@/context/useCursor";
 import { useEffect, useRef } from "react";
-import { Image, Text, View } from "react-native";
-import { styles } from "../spreadsheet-styles";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 const CornerSymbol = () => (
   <Image
@@ -39,3 +38,29 @@ export default function HeaderRow({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  scrollView: {
+    flexDirection: "row",
+    paddingHorizontal: 8,
+    marginBottom: 8,
+  },
+  view2: {
+    width: 106,
+    marginRight: 9,
+  },
+  view3: {
+    width: 106,
+  },
+  text9: {
+    color: "#292929",
+    fontSize: 14,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  image35: {
+    width: 24,
+    height: 17,
+    marginRight: 8,
+  },
+});
