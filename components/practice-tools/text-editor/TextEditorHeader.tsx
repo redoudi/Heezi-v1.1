@@ -33,32 +33,37 @@ function BoldButton() {
   );
 }
 
+export function TitleBar() {
+  return (
+    <View style={styles.row}>
+      <Image
+        source={require("@/assets/images/f36dtxie_expires_30_days.png")}
+        resizeMode={"stretch"}
+        style={styles.image}
+      />
+      <Image
+        source={require("@/assets/images/x1cberci_expires_30_days.png")}
+        resizeMode={"stretch"}
+        style={styles.image2}
+      />
+      <Image
+        source={require("@/assets/images/1tMFzp8.png")}
+        resizeMode={"stretch"}
+        style={styles.image3}
+      />
+      <Image
+        source={require("@/assets/images/1tMFzp8.png")}
+        resizeMode={"stretch"}
+        style={styles.image4}
+      />
+      <BackButton />
+    </View>
+  );
+}
+
 export default function TextEditorHeader() {
   return (
     <View style={styles.column2}>
-      <View style={styles.row}>
-        <Image
-          source={require("@/assets/images/f36dtxie_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image}
-        />
-        <Image
-          source={require("@/assets/images/x1cberci_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image2}
-        />
-        <Image
-          source={require("@/assets/images/1tMFzp8.png")}
-          resizeMode={"stretch"}
-          style={styles.image3}
-        />
-        <Image
-          source={require("@/assets/images/1tMFzp8.png")}
-          resizeMode={"stretch"}
-          style={styles.image4}
-        />
-        <BackButton />
-      </View>
       <View style={styles.row2}>
         <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
           <Text style={styles.text}>{"Accueil"}</Text>

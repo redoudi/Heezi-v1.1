@@ -6,7 +6,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 import ContentPage from "./ContentPage";
-import TextEditorHeader from "./TextEditorHeader";
+import TextEditorHeader, { TitleBar } from "./TextEditorHeader";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
@@ -33,6 +33,7 @@ export default function TextEditorScreen() {
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
+        <TitleBar />
         <TextEditorHeader />
         <ContentPage />
         <PageNumber currentPage={1} totalPages={1} />
