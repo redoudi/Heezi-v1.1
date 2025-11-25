@@ -9,10 +9,6 @@ const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 const ROWS = Array.from({ length: 18 }, (_, i) => i + 1);
 
 export default function SpreadsheetGrid() {
-  // useKbdSpdshtNextRow();
-  // Header component
-
-  // Row component
   const rowNumberContainerRef = useRef<View>(null);
   const { setContentRef } = useCursor();
   useEffect(() => {
