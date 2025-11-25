@@ -56,12 +56,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   selectedBox: {
-    width: 107,
-    height: 34,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    borderWidth: 3,
-    marginRight: 8,
     borderColor: "black",
+    borderWidth: 3,
   },
 });
