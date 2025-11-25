@@ -37,6 +37,7 @@ const CursorContext = createContext<CursorContextType>({
 
 // Provider component
 export function CursorProvider({ children }: { children: ReactNode }) {
+  const [currentStep, setCurrentStep] = useState<any>(null);
   const [expected, setExpected] = useState<any>(null);
   const cursorRef = useRef<any>(null);
 
@@ -103,6 +104,8 @@ export function CursorProvider({ children }: { children: ReactNode }) {
         animatedStyle,
         expected,
         setExpected,
+        currentStep,
+        setCurrentStep,
       }}
     >
       {children}

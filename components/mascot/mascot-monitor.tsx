@@ -22,7 +22,8 @@ export default function MascotMonitor({
   const { practiceTool, id } = useLocalSearchParams();
 
   const { tasks, levelType, levelNumber } = useLevelData();
-  const { moveCursor, hideCursor, setExpected } = useCursor();
+  const { moveCursor, hideCursor, setExpected, currentStep, setCurrentStep } =
+    useCursor();
   const { setLevelCompleted } = useCompletedLevelsStore();
   const [modalText, setModalText] = useState<string | null>(null);
   const [bubbleText, setBubbleText] = useState<string | null>(null);
@@ -33,7 +34,6 @@ export default function MascotMonitor({
   const taskGeneratorRef = useRef<any>(null);
   const currentTaskRef = useRef<any>(null);
   const stepGeneratorRef = useRef<any>(null);
-  const [currentStep, setCurrentStep] = useState<any>(null);
 
   const setNextTask = useCallback(() => {
     const nextTaskYield = taskGeneratorRef.current.next();
