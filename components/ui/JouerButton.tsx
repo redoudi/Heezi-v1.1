@@ -8,10 +8,10 @@ export default function JouerButton({ image }) {
     <View
       style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
     >
-      <Image source={image} resizeMode={"contain"} />
       <View style={styles.playButtonTextContainer}>
         <Text style={styles.playButtonText}>{"Jouer"}</Text>
       </View>
+      <Image source={image} resizeMode={"contain"} />
     </View>
   );
 }
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
-    paddingRight: 8,
+
     marginRight: 8,
     marginBottom: 56,
   },
