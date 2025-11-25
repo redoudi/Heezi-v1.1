@@ -15,15 +15,10 @@ export default function Cell({ id }: { id: string }) {
   const cellRef = useRef<View>(null);
 
   useEffect(() => {
-    if (setContentRef && id) {
+    if (setContentRef && id && cellsEnabled?.includes(id)) {
       setContentRef(id, cellRef);
     }
-  }, [setContentRef, id]);
-
-  const wrongAnswerStyle = {
-    borderColor: "red",
-    borderWidth: 1,
-  };
+  }, [setContentRef, id, cellsEnabled]);
 
   return (
     <View ref={cellRef}>
