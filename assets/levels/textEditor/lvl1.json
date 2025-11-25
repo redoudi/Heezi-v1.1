@@ -14,6 +14,9 @@
                     },
                     "cursor": {
                         "elementId": "contentPage"
+                    },
+                    "highlight": {
+                        "elementId": "contentPage"
                     }
                 },
                 {
@@ -22,6 +25,9 @@
                         "text2": "Le contenu de la page est ce qu'on voit à l'intérieur de la page. C'est souvent du texte mais ça peut aussi être des images, des tableaux par exemple."
                     },
                     "cursor": {
+                        "elementId": "pageContent"
+                    },
+                    "highlight": {
                         "elementId": "pageContent"
                     }
                 }

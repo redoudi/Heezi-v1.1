@@ -1,4 +1,5 @@
 import useCursor from "@/context/useCursor";
+import useHighlight from "@/hooks/useHighlight";
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
@@ -93,9 +94,17 @@ const ContentPage = () => {
     }
   }, [setContentRef]);
 
+  const { hightlightedStyle: contentPageHighlightedStyle } =
+    useHighlight("contentPage");
+  const { hightlightedStyle: pageContentHighlightedStyle } =
+    useHighlight("pageContent");
+
   return (
-    <View ref={contentPageRef} style={styles.contentPage}>
-      <View ref={pageContentRef}>
+    <View
+      ref={contentPageRef}
+      style={[styles.contentPage, contentPageHighlightedStyle]}
+    >
+      <View ref={pageContentRef} style={[pageContentHighlightedStyle]}>
         {contentBlocks.map((item, index) => (
           <ContentItem key={index} item={item} index={index} />
         ))}

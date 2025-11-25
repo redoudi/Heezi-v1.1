@@ -6,5 +6,14 @@ export default function useHighlight(elementId: string) {
   } = useCursor();
 
   const isHighlighted = highlight?.elementId === elementId;
-  return { isHighlighted };
+
+  const hightlightedStyleDef = {
+    borderColor: "red",
+    borderWidth: 6,
+    borderStyle: "dotted",
+  };
+
+  const hightlightedStyle = isHighlighted ? hightlightedStyleDef : {};
+
+  return { isHighlighted, hightlightedStyle };
 }
