@@ -6,7 +6,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import Cursor from "./cursor";
-import MascotBubbleOrModal, { MascotBubble } from "./mascot-bubble";
+import MascotBubbleModal, { MascotBubble } from "./mascot-bubble";
 import MascotModal from "./mascot-modal";
 
 export default function MascotMonitor({
@@ -93,7 +93,7 @@ export default function MascotMonitor({
     <View style={styles.container}>
       {!!bubbleText &&
         (levelType === "lesson" ? (
-          <MascotBubbleOrModal bubbleText={bubbleText} nextStep={setNextStep} />
+          <MascotBubbleModal bubbleText={bubbleText} nextStep={setNextStep} />
         ) : (
           <MascotBubble bubbleText={bubbleText} nextStep={setNextStep} />
         ))}
