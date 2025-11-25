@@ -66,19 +66,16 @@ export default function MascotBubbleOrModal({
 }) {
   const { levelType } = useLevelData();
   const { contentRef } = useCursor();
-  if (levelType === "lesson") {
-    return (
-      <TouchableWithoutFeedback onPress={() => {}} accessible={false}>
-        <View style={styles.overlayContainer}>
-          <View style={styles.mainContainer}>
-            <MascotBubble bubbleText={bubbleText} nextStep={nextStep} />
-          </View>
+
+  return (
+    <TouchableWithoutFeedback onPress={() => {}} accessible={false}>
+      <View style={styles.overlayContainer}>
+        <View style={styles.mainContainer}>
+          <MascotBubble bubbleText={bubbleText} nextStep={nextStep} />
         </View>
-      </TouchableWithoutFeedback>
-    );
-  } else {
-    return <MascotBubble bubbleText={bubbleText} nextStep={nextStep} />;
-  }
+      </View>
+    </TouchableWithoutFeedback>
+  );
 }
 
 export function MascotBubble({
