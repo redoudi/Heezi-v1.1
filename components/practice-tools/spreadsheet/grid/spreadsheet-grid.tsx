@@ -25,12 +25,7 @@ export default function SpreadsheetGrid() {
       <HeaderRow columnsLetters={COLUMNS} />
       <ScrollView showsVerticalScrollIndicator>
         {ROWS.map((item, index) => (
-          <ScrollView
-            key={item}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            style={styles.gridCellsContainer}
-          >
+          <View key={item} style={styles.gridCellsContainer}>
             <View ref={rowNumberContainerRef} style={styles.rowNumberContainer}>
               <Text style={styles.rowNumber}>{item}</Text>
             </View>
@@ -40,7 +35,7 @@ export default function SpreadsheetGrid() {
                 id={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
               />
             ))}
-          </ScrollView>
+          </View>
         ))}
       </ScrollView>
     </View>
@@ -57,6 +52,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   gridCellsContainer: {
+    flexDirection: "row",
     paddingHorizontal: 8,
     marginBottom: 8,
   },
