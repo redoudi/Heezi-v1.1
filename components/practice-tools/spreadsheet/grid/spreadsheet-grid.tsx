@@ -1,4 +1,5 @@
 import useCursor from "@/context/useCursor";
+import useHighlight from "@/hooks/useHighlight";
 import { useEffect, useRef } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Cell from "./cell";
@@ -17,11 +18,7 @@ export default function SpreadsheetGrid() {
     }
   }, [setContentRef]);
 
-  const {
-    currentStep: { highlight },
-  } = useCursor();
-
-  const isHighlighted = highlight?.elementId === "rowNumbersColumn";
+  const { isHighlighted } = useHighlight("rowNumbersColumn");
   return (
     <View style={styles.mainContainer}>
       <HeaderRow columnsLetters={COLUMNS} />
