@@ -14,7 +14,11 @@ function TextBlock({ item }: { item: any }) {
 
 function TextInputBlock({ item }: { item: any }) {
   const { setBlockText, setSelectedBlockId } = useTextEditorStore();
-  const { setContentRef, expected } = useCursor();
+  const {
+    setContentRef,
+    expected,
+    currentStep: { focus },
+  } = useCursor();
   const [isWrongAnswer, setIsWrongAnswer] = useState(null);
   const blockRef = useRef<TextInput>(null);
 
@@ -23,6 +27,12 @@ function TextInputBlock({ item }: { item: any }) {
       setContentRef(item.blockId, blockRef);
     }
   }, [setContentRef, item.blockId]);
+
+  useEffect(() => {
+    if (focus && focus.elementId === item.blockId) {
+      blockRef.current?.focus();
+    }
+  }, [focus, item.blockId]);
 
   const handleBlur = () => {
     if (

@@ -43,6 +43,9 @@
                     },
                     "cursor": {
                         "elementId": "exempleInput"
+                    },
+                    "focus": {
+                        "elementId": "exempleInput"
                     }
                 },
                 {
