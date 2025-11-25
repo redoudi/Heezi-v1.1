@@ -3,6 +3,7 @@ import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useEffect, useRef, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import CellTextInput from "./CellTextInput";
+
 export default function Cell({ id }: { id: string }) {
   const { spreadsheetData, setCellsSelected, setCellValue, cellsEnabled } =
     useSpreadsheetStore();

@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
     width: 28,
     alignItems: "flex-end",
     justifyContent: "center",
-    marginRight: 16,
+    marginRight: 4,
   },
 });
