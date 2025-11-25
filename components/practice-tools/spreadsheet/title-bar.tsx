@@ -1,16 +1,29 @@
 import BackButton from "@/components/ui/back-button";
+import useCursor from "@/context/useCursor";
+import useLevelData from "@/hooks/use-level-data";
+import { useEffect, useRef } from "react";
 import { Image, StyleSheet, View } from "react-native";
 
 export default function TitleBar() {
+  const titleBarRef = useRef<View>(null);
+  const { setContentRef } = useCursor();
+  const { levelType } = useLevelData();
+  useEffect(() => {
+    if (setContentRef && levelType === "lesson") {
+      setContentRef("titleBar", titleBarRef);
+    }
+  }, [setContentRef, levelType]);
   return (
-    <View style={styles.row}>
+    <View style={styles.row} ref={titleBarRef}>
       <View style={styles.row2}>
         <Image
-          source={require("@/assets/images/5jt7jwsg_expires_30_days.png")} resizeMode={"stretch"}
+          source={require("@/assets/images/5jt7jwsg_expires_30_days.png")}
+          resizeMode={"stretch"}
           style={styles.image}
         />
         <Image
-          source={require("@/assets/images/os183jfm_expires_30_days.png")} resizeMode={"stretch"}
+          source={require("@/assets/images/os183jfm_expires_30_days.png")}
+          resizeMode={"stretch"}
           style={styles.image2}
         />
         <Image
