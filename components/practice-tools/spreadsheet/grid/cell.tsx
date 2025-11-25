@@ -31,7 +31,11 @@ export default function Cell({ id }: { id: string }) {
       ) : (
         <Pressable onPress={() => setCellsSelected([id])}>
           <View
-            style={[styles.box, isWrongAnswer ? { borderColor: "red" } : {}]}
+            style={[
+              styles.box,
+              isWrongAnswer ? { borderColor: "red" } : {},
+              cellsSelected?.includes(id) ? styles.selectedBox : {},
+            ]}
           >
             <Text style={cellsStyles?.[id]}>{cellsValues?.[id] || ""}</Text>
           </View>
@@ -50,5 +54,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     marginRight: 8,
+  },
+  selectedBox: {
+    width: 107,
+    height: 34,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 8,
+    borderWidth: 3,
+    marginRight: 8,
+    borderColor: "black",
   },
 });
