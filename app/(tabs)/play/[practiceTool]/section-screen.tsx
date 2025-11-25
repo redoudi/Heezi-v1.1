@@ -1,5 +1,6 @@
 import MissionPart from "@/components/MissionPart";
 import StatusText from "@/components/status-text";
+import sectionButtons from "@/constants/sectionButtons";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -51,6 +52,7 @@ export default function SectionScreen() {
           <MissionPart
             title="Quiz"
             image={toolSectionButtons.quiz}
+            imageDisabled={sectionButtons.disabled.quiz}
             levelNumber={2}
             animationData={quizAnimationData}
           />
@@ -59,6 +61,7 @@ export default function SectionScreen() {
             image={toolSectionButtons.practice}
             levelNumber={3}
             animationData={practiceAnimationData}
+            imageDisabled={sectionButtons.disabled.practice}
           />
         </View>
       </View>

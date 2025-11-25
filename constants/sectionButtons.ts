@@ -9,4 +9,9 @@ export default {
     quiz: require("@/assets/images/buttonIcons/quizBleu.png"),
     practice: require("@/assets/images/buttonIcons/practiceBleu.png"),
   },
+  disabled: {
+    lesson: require("@/assets/images/buttonIcons/lessonDisabled.png"),
+    quiz: require("@/assets/images/buttonIcons/quizDisabled.png"),
+    practice: require("@/assets/images/buttonIcons/practiceDisabled.png"),
+  },
 };

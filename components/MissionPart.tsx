@@ -11,10 +11,12 @@ import CustomAnimation from "./animations/CustomAnimation";
 export default function MissionPart({
   title,
   image,
+  imageDisabled,
   levelNumber,
 }: {
   title: string;
   image: any;
+  imageDisabled: any;
   levelNumber: number;
 }) {
   const { practiceTool, toolConstants } = usePracticeToolConstants();
@@ -57,7 +59,10 @@ export default function MissionPart({
       >
         <View style={styles.sectionRow}>
           <CustomAnimation animationData={getAnimationData()} />
-          <JouerButton image={image} />
+          <JouerButton
+            image={disabled ? imageDisabled : image}
+            disabled={disabled}
+          />
         </View>
       </TouchableOpacity>
     </View>
