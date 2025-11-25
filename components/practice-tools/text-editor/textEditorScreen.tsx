@@ -1,3 +1,4 @@
+import useLevelData from "@/hooks/use-level-data";
 import {
   SafeAreaView,
   StyleSheet,
@@ -30,17 +31,24 @@ function ProgressBar() {
 
 export default function TextEditorScreen() {
   const { height } = useWindowDimensions();
+  const { levelType } = useLevelData();
+  const isLesson = levelType === "lesson";
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
-        <TitleBar />
-        <TextEditorHeader />
-        <ContentPage />
-        <PageNumber currentPage={1} totalPages={1} />
-        <View style={styles.progressBarColumn}>
-          <View style={styles.ProgressBarRow}>
-            <ProgressBar />
+        <View style={styles.titleBarContainer}>
+          <TitleBar />
+        </View>
+        <View style={styles.interactiveSection}>
+          <TextEditorHeader />
+          <ContentPage />
+          <PageNumber currentPage={1} totalPages={1} />
+          <View style={styles.progressBarColumn}>
+            <View style={styles.ProgressBarRow}>
+              <ProgressBar />
+            </View>
           </View>
+          {isLesson && <View style={styles.overlay} />}
         </View>
       </View>
     </SafeAreaView>
@@ -58,6 +66,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     borderWidth: 1,
     borderColor: "#EFEFEF",
+  },
+  titleBarContainer: {
+    zIndex: 1001,
+    position: "relative",
+  },
+  interactiveSection: {
+    flex: 1,
+    position: "relative",
+  },
+  overlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1000,
   },
   pageNumberContainer: {
     alignItems: "center",
