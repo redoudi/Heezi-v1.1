@@ -16,13 +16,25 @@ export default function SpreadsheetGrid() {
       setContentRef("rowNumbersColumn", rowNumberContainerRef);
     }
   }, [setContentRef]);
+
+  const {
+    currentStep: { highlight },
+  } = useCursor();
+
+  const isHighlighted = highlight?.elementId === "rowNumbersColumn";
   return (
     <View style={styles.mainContainer}>
       <HeaderRow columnsLetters={COLUMNS} />
       <ScrollView showsVerticalScrollIndicator>
         {ROWS.map((item, index) => (
           <View key={item} style={styles.gridCellsContainer}>
-            <View ref={rowNumberContainerRef} style={styles.rowNumberContainer}>
+            <View
+              ref={rowNumberContainerRef}
+              style={[
+                styles.rowNumberContainer,
+                isHighlighted && styles.highlighted,
+              ]}
+            >
               <Text style={styles.rowNumber}>{item}</Text>
             </View>
             {COLUMNS.map((_, colIndex) => (
@@ -51,6 +63,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: 8,
     marginBottom: 8,
+    marginLeft: 8,
   },
   rowNumber: {
     color: "#292929",
@@ -70,5 +83,10 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "center",
     marginRight: 8,
+  },
+  highlighted: {
+    borderColor: "red",
+    borderWidth: 6,
+    borderStyle: "dotted",
   },
 });

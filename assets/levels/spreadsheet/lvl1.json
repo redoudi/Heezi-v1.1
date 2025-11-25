@@ -94,6 +94,9 @@
                     },
                     "cursor": {
                         "elementId": "rowNumbersColumn"
+                    },
+                    "highlight": {
+                        "elementId": "rowNumbersColumn"
                     }
                 },
                 {
