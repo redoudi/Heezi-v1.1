@@ -6,7 +6,8 @@
     "cellsEnabled": [
         "A1",
         "B2",
-        "L18"
+        "L18",
+        "L13"
     ],
     "tasks": [
         {
@@ -26,7 +27,7 @@
                         }
                     ],
                     "cursor": {
-                        "elementId": "L18"
+                        "elementId": "L13"
                     }
                 },
                 {

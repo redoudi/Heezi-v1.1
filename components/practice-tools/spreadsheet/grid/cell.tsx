@@ -35,7 +35,12 @@ export default function Cell({ id }: { id: string }) {
             style={[
               styles.box,
               isWrongAnswer ? { borderColor: "red" } : {},
-              cellsSelected?.includes(id) ? styles.selectedBox : {},
+              cellsSelected?.includes(id)
+                ? {
+                    borderColor: "black",
+                    borderWidth: 3,
+                  }
+                : {},
             ]}
           >
             <Text style={cellsStyles?.[id]}>{cellsValues?.[id] || ""}</Text>
@@ -55,9 +60,5 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     marginRight: 8,
-  },
-  selectedBox: {
-    borderColor: "black",
-    borderWidth: 3,
   },
 });
