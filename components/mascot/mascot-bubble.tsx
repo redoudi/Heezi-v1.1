@@ -102,13 +102,14 @@ const styles = StyleSheet.create({
     top: 400,
     zIndex: 1000,
     flexDirection: "row",
+    alignItems: "flex-start",
     justifyContent: "flex-end",
   },
   textBoxAndTriangle: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    // alignItems: "flex-end",
     maxWidth: 800,
-    height: "100%",
+    // height: "100%",
   },
   textContainer: {
     backgroundColor: "rgba(82,82,82,0.8)",
