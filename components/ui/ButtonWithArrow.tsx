@@ -1,3 +1,4 @@
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import {
   Image,
   ImageStyle,
@@ -29,8 +30,15 @@ export const ButtonWithArrow = ({
   textStyle?: StyleProp<TextStyle>;
   triangleIconStyle?: StyleProp<ImageStyle>;
 }) => {
+  const {
+    toolConstants: { color },
+  } = usePracticeToolConstants();
+  const toolColorStyle = color ? { backgroundColor: color } : {};
   return (
-    <TouchableOpacity style={[styles.buttonRow]} onPress={onPress}>
+    <TouchableOpacity
+      style={[styles.buttonRow, toolColorStyle]}
+      onPress={onPress}
+    >
       <Text style={styles.text7}>{text}</Text>
       <TriangleIcon style={[styles.triangleIcon]} />
     </TouchableOpacity>
