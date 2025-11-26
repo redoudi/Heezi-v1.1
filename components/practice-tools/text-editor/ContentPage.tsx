@@ -30,9 +30,10 @@ function TextInputBlock({ item }: { item: any }) {
 
   useEffect(() => {
     if (focus && focus.elementId === item.blockId) {
+      console.log("focusing");
       blockRef.current?.focus();
     }
-  }, [focus, item.blockId]);
+  }, [item.blockId, focus, blockRef]);
 
   const handleBlur = () => {
     if (

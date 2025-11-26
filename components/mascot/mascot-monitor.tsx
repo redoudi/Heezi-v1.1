@@ -55,7 +55,7 @@ export default function MascotMonitor({
     } else {
       setCurrentStep(nextStepYield.value);
     }
-  }, [setNextTask]);
+  }, [setNextTask, setCurrentStep]);
 
   useEffect(() => {
     if (currentStep) {
@@ -84,7 +84,7 @@ export default function MascotMonitor({
 
   useEffect(() => {
     if (tasks) {
-      taskGeneratorRef.current = arrayGenerator(tasks);
+      taskGeneratorRef.current = arrayGenerator(tasks.slice(1));
       setNextTask();
     }
   }, [tasks, setNextTask]);
