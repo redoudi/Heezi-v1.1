@@ -1,5 +1,6 @@
 import { RightColumn } from "@/components/home/right-column";
 import {
+  Platform,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -11,15 +12,39 @@ import { Slot } from "expo-router";
 
 export default function HomeScreen() {
   const { height } = useWindowDimensions();
+  const minWidth = 1200; // Minimum width to prevent content from being hidden
+
   return (
-    <SafeAreaView style={[styles.container, { height: height || "100%" }]}>
-      <LeftColumn />
-      <RightColumn />
+    <SafeAreaView style={[styles.safeArea, { height: height || "100%" }]}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={true}
+        contentContainerStyle={styles.scrollContent}
+        style={styles.horizontalScroll}
+      >
+        <View style={[styles.container, { minWidth }]}>
+          <LeftColumn />
+          <RightColumn />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+  },
+  horizontalScroll: {
+    flex: 1,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    ...(Platform.OS === "web" && {
+      minWidth: 1200,
+    }),
+  },
   container: {
     flex: 1,
     alignItems: "center",
@@ -29,6 +54,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginRight: 32,
     marginTop: 16,
+    ...(Platform.OS === "web" && {
+      minWidth: 1200,
+      flexShrink: 0,
+    }),
   },
 });
 
