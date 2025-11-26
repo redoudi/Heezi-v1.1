@@ -2,8 +2,10 @@ import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getElementBottomHeight } from "@/utils/cursorUtils";
+import { useState } from "react";
 import {
   Image,
+  LayoutChangeEvent,
   StyleProp,
   StyleSheet,
   Text,
@@ -38,14 +40,16 @@ export const MascotDialog = ({
   downArrowNextStep = undefined,
   style = undefined,
   textBoxAndTriangleStyle = undefined,
+  onLayout,
 }: {
   bubbleText: string;
   downArrowNextStep: React.ReactNode;
   style?: StyleProp<ViewStyle>;
+  onLayout?: (event: LayoutChangeEvent) => void;
 }) => {
   const DownArrowNextStep = downArrowNextStep;
   return (
-    <View style={[styles.mainContainer, style]}>
+    <View style={[styles.mainContainer, style]} onLayout={onLayout}>
       <View style={[styles.textBoxAndTriangle, textBoxAndTriangleStyle]}>
         <View style={styles.textContainer}>
           <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
@@ -72,16 +76,16 @@ export function MascotBubble({
     contentsRefs,
   } = useCursor();
   const { height: windowHeight } = useWindowDimensions();
+  const [componentHeight, setComponentHeight] = useState<number>(300); // Default fallback
 
-  // Estimate component height: marginTop (64) + textBox + mascot (150) + marginBottom (48)
-  // Add some padding to ensure it doesn't touch the bottom edge
-  const estimatedComponentHeight = 300; // Conservative estimate
+  const handleLayout = (event: LayoutChangeEvent) => {
+    const { height } = event.nativeEvent.layout;
+    setComponentHeight(height);
+  };
+
   const padding = 20;
   const minTop = 0; // Minimum top position
-  const maxTop = Math.max(
-    minTop,
-    windowHeight - estimatedComponentHeight - padding
-  );
+  const maxTop = Math.max(minTop, windowHeight - componentHeight - padding);
 
   const calculatedTop =
     cursor?.elementId && contentsRefs?.current[cursor.elementId]
@@ -122,6 +126,7 @@ export function MascotBubble({
       bubbleText={bubbleText}
       downArrowNextStep={DownArrowNextStep}
       style={topStyle}
+      onLayout={handleLayout}
     />
   );
 }
