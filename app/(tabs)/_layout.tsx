@@ -21,7 +21,7 @@ export default function TabLayout() {
         tabBarLabelStyle: styles.tabBarLabelStyle,
 
         tabBarBackground: () => (
-          <View style={{ backgroundColor: "white", flex: 1 }}>
+          <View style={{ paddingRight: 8 }}>
             <Image
               source={require("../../assets/images/logo.png")}
               resizeMode="contain"
@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
     elevation: 0,
     shadowOpacity: 0,
     paddingTop: 93,
+    paddingRight: 8,
     alignItems: "center",
     width: 193,
     minWidth: 193,
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logoStyle: {
-    width: 191,
+    width: 183,
     height: 69,
   },
   tabBarItemStyle: {
