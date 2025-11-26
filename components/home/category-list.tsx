@@ -1,8 +1,7 @@
+import { CategoryCard } from "@/components/home/category-card";
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { PracticeTool } from "@/context/usePracticeTool";
-import { CategoryCard } from "@/components/home/category-card";
-import { router, useLocalSearchParams } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export interface CategoryItem {
   title: string;
@@ -15,26 +14,17 @@ export function CategoryList() {
   const toolNames = Object.keys(practiceToolsConstants);
 
   return (
-    <View style={styles.categoryList}>
+    <View style={styles.mainContainer}>
       {toolNames.map((toolName, index) => (
-        <CategoryCard key={index} toolName={toolName} />
+        <CategoryCard key={index} toolName={toolName as PracticeTool} />
       ))}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  categoryList: {
+  mainContainer: {
     backgroundColor: "#FFFFFF",
-  },
-  container: {
-    borderRadius: 8,
-    paddingVertical: 49,
-    marginBottom: 8,
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginLeft: 16,
+    marginRight: 8,
   },
 });

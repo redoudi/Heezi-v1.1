@@ -50,6 +50,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 49,
     marginBottom: 8,
+    marginRight: 8,
+    paddingRight: 16,
   },
   text: {
     fontSize: 24,
