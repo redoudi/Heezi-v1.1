@@ -2,16 +2,16 @@ import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getElementBottomHeight } from "@/utils/cursorUtils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Image,
   LayoutChangeEvent,
   StyleProp,
   StyleSheet,
   Text,
-  useWindowDimensions,
   View,
   ViewStyle,
+  useWindowDimensions,
 } from "react-native";
 import SuivantBtn from "../ui/suivantBtn";
 
@@ -77,6 +77,7 @@ export function MascotBubble({
   } = useCursor();
   const { height: windowHeight } = useWindowDimensions();
   const [componentHeight, setComponentHeight] = useState<number>(300); // Default fallback
+  const [topStyle, setTopStyle] = useState<ViewStyle>({});
 
   const handleLayout = (event: LayoutChangeEvent) => {
     const { height } = event.nativeEvent.layout;
@@ -92,7 +93,7 @@ export function MascotBubble({
       ? getElementBottomHeight(contentsRefs, cursor.elementId)
       : undefined;
 
-  const topStyle =
+  const calculatedTopStyle =
     calculatedTop !== undefined
       ? {
           bottom: undefined,
@@ -100,8 +101,12 @@ export function MascotBubble({
         }
       : { bottom: 0 };
 
-  const spreadSheetStyle =
-    practiceTool === "spreadsheet" ? { bottom: undefined } : {};
+  useEffect(() => {
+    setTopStyle(calculatedTopStyle);
+  }, [topStyle]);
+
+  // const spreadSheetStyle =
+  //   practiceTool === "spreadsheet" ? { bottom: undefined } : {};
 
   // const style = { ...spreadSheetStyle, ...topStyle };
 
