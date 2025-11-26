@@ -1,5 +1,7 @@
+import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { getElementBottomHeight } from "@/utils/cursorUtils";
 import {
   Image,
   StyleProp,
@@ -64,6 +66,21 @@ export function MascotBubble({
 }) {
   const { levelType } = useLevelData();
   const { practiceTool } = usePracticeToolConstants();
+  const {
+    currentStep: { cursor },
+    contentRef,
+  } = useCursor();
+
+  const topStyle =
+    cursor?.elementId && contentRef?.current[cursor.elementId]
+      ? { top: getElementBottomHeight(contentRef, cursor.elementId) }
+      : {};
+
+  const spreadSheetStyle =
+    practiceTool === "spreadsheet" ? { bottom: 300 } : {};
+
+  const style = { ...spreadSheetStyle, ...topStyle };
+
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
     <SuivantBtn text="Suivant" onPress={nextStep} />
   );
@@ -71,19 +88,20 @@ export function MascotBubble({
     <MascotDialog
       bubbleText={bubbleText}
       downArrowNextStep={DownArrowNextStep}
-      style={practiceTool === "spreadsheet" ? { bottom: 300 } : {}}
+      style={style}
     />
   );
 }
 
 const styles = StyleSheet.create({
   mainContainer: {
+    borderWidth: 1,
+    borderColor: "red",
     position: "absolute",
-    bottom: 16,
     right: 0,
+    top: 400,
     zIndex: 1000,
     flexDirection: "row",
-    alignItems: "flex-end",
     justifyContent: "flex-end",
   },
   textBoxAndTriangle: {
@@ -101,16 +119,13 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     paddingLeft: 32,
     paddingRight: 32,
-    flex: 1,
+    // flex: 1,
   },
-  image31: {
-    width: 32,
-    height: 21,
-  },
+
   cornerTriangle: {
     width: 42,
     height: 61,
-    alignSelf: "flex-start",
+    // alignSelf: "flex-start",
   },
   mascot: {
     width: 150,
@@ -123,15 +138,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 31,
-  },
-  overlayContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  downArrowContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

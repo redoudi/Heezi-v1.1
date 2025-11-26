@@ -84,7 +84,7 @@ export default function MascotMonitor({
 
   useEffect(() => {
     if (tasks) {
-      taskGeneratorRef.current = arrayGenerator(tasks.slice(1));
+      taskGeneratorRef.current = arrayGenerator(tasks);
       setNextTask();
     }
   }, [tasks, setNextTask]);
