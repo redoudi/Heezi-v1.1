@@ -7,6 +7,7 @@ import {
   StyleProp,
   StyleSheet,
   Text,
+  useWindowDimensions,
   View,
   ViewStyle,
 } from "react-native";
@@ -70,12 +71,28 @@ export function MascotBubble({
     currentStep: { cursor },
     contentsRefs,
   } = useCursor();
+  const { height: windowHeight } = useWindowDimensions();
+
+  // Estimate component height: marginTop (64) + textBox + mascot (150) + marginBottom (48)
+  // Add some padding to ensure it doesn't touch the bottom edge
+  const estimatedComponentHeight = 300; // Conservative estimate
+  const padding = 20;
+  const minTop = 0; // Minimum top position
+  const maxTop = Math.max(
+    minTop,
+    windowHeight - estimatedComponentHeight - padding
+  );
+
+  const calculatedTop =
+    cursor?.elementId && contentsRefs?.current[cursor.elementId]
+      ? getElementBottomHeight(contentsRefs, cursor.elementId)
+      : undefined;
 
   const topStyle =
-    cursor?.elementId && contentsRefs?.current[cursor.elementId]
+    calculatedTop !== undefined
       ? {
           bottom: undefined,
-          top: getElementBottomHeight(contentsRefs, cursor.elementId),
+          top: Math.max(minTop, Math.min(calculatedTop, maxTop)),
         }
       : {};
 
