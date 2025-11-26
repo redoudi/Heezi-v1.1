@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import SuivantBtn from "../ui/suivantBtn";
 
-const CornerTriangle = () => {
+const CornerTriangleIcon = () => {
   return (
     <Image
       source={require("@/assets/images/662flub1_expires_30_days.png")}
@@ -20,7 +20,7 @@ const CornerTriangle = () => {
   );
 };
 
-const Mascot = () => {
+const MascotIcon = () => {
   return (
     <Image
       source={require("@/assets/images/tfupuxd4_expires_30_days.png")}
@@ -48,9 +48,9 @@ export const MascotDialog = ({
           <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
           {DownArrowNextStep}
         </View>
-        <CornerTriangle />
+        <CornerTriangleIcon />
       </View>
-      <Mascot />
+      <MascotIcon />
     </View>
   );
 };
