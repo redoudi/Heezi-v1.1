@@ -88,22 +88,23 @@ export function MascotBubble({
   const minTop = 0; // Minimum top position
   const maxTop = Math.max(minTop, windowHeight - componentHeight - padding);
 
-  const calculatedTop =
-    cursor?.elementId && contentsRefs?.current[cursor.elementId]
-      ? getElementBottomHeight(contentsRefs, cursor.elementId)
-      : undefined;
-
-  const calculatedTopStyle =
-    calculatedTop !== undefined
-      ? {
-          bottom: undefined,
-          top: Math.max(minTop, Math.min(calculatedTop, maxTop)),
-        }
-      : { bottom: 0 };
-
   useEffect(() => {
-    setTopStyle(calculatedTopStyle);
-  }, [topStyle]);
+    if (cursor && contentsRefs && cursor.elementId) {
+      const calculatedTop =
+        cursor.elementId && contentsRefs.current[cursor.elementId]
+          ? getElementBottomHeight(contentsRefs, cursor.elementId)
+          : undefined;
+
+      const calculatedTopStyle =
+        calculatedTop !== undefined
+          ? {
+              bottom: undefined,
+              top: Math.max(minTop, Math.min(calculatedTop, maxTop)),
+            }
+          : { bottom: 0 };
+      setTopStyle(calculatedTopStyle);
+    }
+  }, [cursor, contentsRefs, minTop, maxTop]);
 
   // const spreadSheetStyle =
   //   practiceTool === "spreadsheet" ? { bottom: undefined } : {};
