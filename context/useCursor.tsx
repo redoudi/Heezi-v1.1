@@ -22,6 +22,11 @@ type CursorContextType = {
   contentsRefs: { [key: string]: any };
   hideCursor: () => void;
   showCursor: () => void;
+  animatedStyle: any;
+  expected: any;
+  setExpected: (expected: any) => void;
+  currentStep: any;
+  setCurrentStep: (currentStep: any) => void;
 };
 
 // Create the context with default values
@@ -33,6 +38,11 @@ const CursorContext = createContext<CursorContextType>({
   contentsRefs: {},
   hideCursor: () => {},
   showCursor: () => {},
+  animatedStyle: {},
+  expected: null,
+  setExpected: () => {},
+  currentStep: null,
+  setCurrentStep: () => {},
 });
 
 // Provider component

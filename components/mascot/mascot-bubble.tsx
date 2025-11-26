@@ -68,45 +68,59 @@ export function MascotBubble({
   const { practiceTool } = usePracticeToolConstants();
   const {
     currentStep: { cursor },
-    contentRef,
+    contentsRefs,
   } = useCursor();
 
   const topStyle =
-    cursor?.elementId && contentRef?.current[cursor.elementId]
-      ? { top: getElementBottomHeight(contentRef, cursor.elementId) }
+    cursor?.elementId && contentsRefs?.current[cursor.elementId]
+      ? {
+          bottom: undefined,
+          top: getElementBottomHeight(contentsRefs, cursor.elementId),
+        }
       : {};
 
   const spreadSheetStyle =
-    practiceTool === "spreadsheet" ? { bottom: 300 } : {};
+    practiceTool === "spreadsheet" ? { bottom: undefined } : {};
 
-  const style = { ...spreadSheetStyle, ...topStyle };
+  // const style = { ...spreadSheetStyle, ...topStyle };
 
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
     <SuivantBtn text="Suivant" onPress={nextStep} />
   );
+
+  // useEffect(() => {
+  //   console.log("currentStep", currentStep);
+  //   console.log("contentRef", contentsRefs);
+  //   if (currentStep && contentsRefs) {
+  //     const bottomHeight = getElementBottomHeight(
+  //       contentsRefs,
+  //       currentStep?.cursor?.elementId
+  //     );
+  //     console.log("bottomHeight", bottomHeight);
+  //   }
+  // }, [currentStep, contentsRefs]);
+
   return (
     <MascotDialog
       bubbleText={bubbleText}
       downArrowNextStep={DownArrowNextStep}
-      style={style}
+      style={topStyle}
     />
   );
 }
 
 const styles = StyleSheet.create({
   mainContainer: {
-    borderWidth: 1,
-    borderColor: "red",
-    backgroundColor: "blue",
     position: "absolute",
     right: 0,
-    top: 400,
+    // bottom: 300,
     zIndex: 1000,
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "flex-end",
   },
   textBoxAndTriangle: {
+    marginTop: 64,
     flexDirection: "row",
     // alignItems: "flex-end",
     maxWidth: 800,
