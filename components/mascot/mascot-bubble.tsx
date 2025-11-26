@@ -1,4 +1,3 @@
-import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import {
@@ -6,7 +5,6 @@ import {
   StyleProp,
   StyleSheet,
   Text,
-  TouchableWithoutFeedback,
   View,
   ViewStyle,
 } from "react-native";
@@ -56,27 +54,6 @@ export const MascotDialog = ({
     </View>
   );
 };
-
-export default function MascotBubbleModal({
-  bubbleText,
-  nextStep,
-}: {
-  bubbleText: string;
-  nextStep: () => void | null;
-}) {
-  const { levelType } = useLevelData();
-  const { contentRef } = useCursor();
-
-  return (
-    <TouchableWithoutFeedback onPress={() => {}} accessible={false}>
-      <View style={styles.overlayContainer}>
-        <View style={styles.mainContainer}>
-          <MascotBubble bubbleText={bubbleText} nextStep={nextStep} />
-        </View>
-      </View>
-    </TouchableWithoutFeedback>
-  );
-}
 
 export function MascotBubble({
   bubbleText,
