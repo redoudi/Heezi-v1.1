@@ -9,12 +9,20 @@ export const unstable_settings = {
   anchor: "(tabs)",
 };
 
+const CustomTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "#FFFFFF",
+  },
+};
+
 export default function RootLayout() {
   // const colorScheme = useColorScheme();
 
   return (
     // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-    <ThemeProvider value={DefaultTheme}>
+    <ThemeProvider value={CustomTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen

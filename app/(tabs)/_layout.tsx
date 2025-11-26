@@ -21,7 +21,7 @@ export default function TabLayout() {
         tabBarLabelStyle: styles.tabBarLabelStyle,
 
         tabBarBackground: () => (
-          <View>
+          <View style={{ backgroundColor: "white", flex: 1 }}>
             <Image
               source={require("../../assets/images/logo.png")}
               resizeMode="contain"
