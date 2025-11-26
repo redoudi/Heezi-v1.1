@@ -56,6 +56,9 @@
                     "cursor": {
                         "elementId": ""
                     },
+                    "focus": {
+                        "elementId": "exempleInput"
+                    },
                     "preActions": [
                         {
                             "type": "blockText",
@@ -82,6 +85,9 @@
                     ],
                     "cursor": {
                         "elementId": "exempleInput"
+                    },
+                    "focus": {
+                        "elementId": "exempleInput"
                     }
                 },
                 {
@@ -93,6 +99,10 @@
                         "elementId": "boldButton"
                     },
                     "preActions": [
+                        {
+                            "type": "selectBlock",
+                            "blockId": "exempleInput"
+                        },
                         {
                             "type": "style",
                             "blockId": "exempleInput",

@@ -1,4 +1,5 @@
 import useCursor from "@/context/useCursor";
+import useLevelData from "@/hooks/use-level-data";
 import useHighlight from "@/hooks/useHighlight";
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { useEffect, useRef, useState } from "react";
@@ -21,6 +22,7 @@ function TextInputBlock({ item }: { item: any }) {
   } = useCursor();
   const [isWrongAnswer, setIsWrongAnswer] = useState(null);
   const blockRef = useRef<TextInput>(null);
+  const { levelType } = useLevelData();
 
   useEffect(() => {
     if (setContentRef && item.blockId) {
@@ -29,7 +31,7 @@ function TextInputBlock({ item }: { item: any }) {
   }, [setContentRef, item.blockId]);
 
   useEffect(() => {
-    if (focus && focus.elementId === item.blockId) {
+    if (blockRef.current && focus && focus.elementId === item.blockId) {
       console.log("focusing");
       blockRef.current?.focus();
     }
@@ -37,6 +39,7 @@ function TextInputBlock({ item }: { item: any }) {
 
   const handleBlur = () => {
     if (
+      levelType === "practice" &&
       expected &&
       expected.type === "blockText" &&
       expected.blockId === item.blockId &&
@@ -55,6 +58,14 @@ function TextInputBlock({ item }: { item: any }) {
     borderWidth: 2,
   };
 
+  const focusedStyle =
+    focus && focus.elementId === item.blockId
+      ? {
+          borderColor: "black",
+          borderWidth: 2,
+        }
+      : {};
+
   return (
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
@@ -62,6 +73,7 @@ function TextInputBlock({ item }: { item: any }) {
           styles.textInput,
           item.style,
           isWrongAnswer ? wrongAnswerStyle : {},
+          focusedStyle,
         ]}
         editable={isWrongAnswer !== false}
         value={item.text}
