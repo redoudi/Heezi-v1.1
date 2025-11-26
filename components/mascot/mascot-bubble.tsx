@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     borderWidth: 1,
     borderColor: "red",
+    backgroundColor: "blue",
     position: "absolute",
     right: 0,
     top: 400,
