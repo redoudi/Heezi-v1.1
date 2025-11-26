@@ -98,7 +98,7 @@ export function MascotBubble({
           bottom: undefined,
           top: Math.max(minTop, Math.min(calculatedTop, maxTop)),
         }
-      : {};
+      : { bottom: 0 };
 
   const spreadSheetStyle =
     practiceTool === "spreadsheet" ? { bottom: undefined } : {};
@@ -135,7 +135,6 @@ const styles = StyleSheet.create({
   mainContainer: {
     position: "absolute",
     right: 0,
-    // bottom: 300,
     zIndex: 1000,
     flexDirection: "row",
     alignItems: "flex-start",
