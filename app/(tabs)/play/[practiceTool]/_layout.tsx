@@ -16,7 +16,17 @@ export default function HomeScreen() {
     <SafeAreaView style={[styles.safeArea, { height: height || "100%" }]}>
       <ScrollView horizontal showsHorizontalScrollIndicator={true}>
         <View style={[styles.container]}>
-          <LeftColumn />
+          <View style={styles2.wrapper}>
+            <ScrollView
+              style={styles2.leftColumn}
+              contentContainerStyle={styles2.contentContainer}
+              showsVerticalScrollIndicator={true}
+            >
+              <View style={styles2.leftColumnContent}>
+                <Slot />
+              </View>
+            </ScrollView>
+          </View>
           <RightColumn />
         </View>
       </ScrollView>
@@ -70,7 +80,7 @@ const styles2 = StyleSheet.create({
     alignSelf: "center",
   },
   contentContainer: {
-    paddingTop: 32,
+    paddingTop: 8,
   },
   actionButton: {
     marginBottom: 16,
