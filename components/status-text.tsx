@@ -1,8 +1,7 @@
-import { ThemedText } from "@/components/themed-text";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { spacing } from "@/styles/designSystem";
 import { typography } from "@/styles/typography";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function StatusText() {
   const { toolConstants } = usePracticeToolConstants();
@@ -13,9 +12,7 @@ export default function StatusText() {
         { backgroundColor: toolConstants.secondaryColor },
       ]}
     >
-      <ThemedText style={[typography.body, styles.statusText]}>
-        En cours
-      </ThemedText>
+      <Text style={[typography.body, styles.statusText]}>En cours</Text>
     </View>
   );
 }
