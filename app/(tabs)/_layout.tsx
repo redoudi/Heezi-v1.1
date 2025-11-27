@@ -3,12 +3,10 @@ import { Tabs } from "expo-router";
 import { HapticTab } from "@/components/haptic-tab";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
-import { Image, StyleSheet, View, useWindowDimensions } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const { width } = useWindowDimensions();
-  const isCompact = width < 768;
 
   return (
     <Tabs
@@ -16,36 +14,21 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
         tabBarButton: HapticTab,
-        tabBarPosition: isCompact ? "bottom" : "left",
-        tabBarStyle: [
-          styles.tabBarStyle,
-          isCompact && styles.tabBarStyleCompact,
-        ],
-        tabBarItemStyle: [
-          styles.tabBarItemStyle,
-          isCompact && styles.tabBarItemStyleCompact,
-        ],
-        tabBarIconStyle: [
-          styles.tabBarIconStyle,
-          isCompact && styles.tabBarIconStyleCompact,
-        ],
-        tabBarLabelStyle: [
-          { fontSize: 18, fontWeight: "bold" },
-          styles.tabBarLabelStyle,
-          isCompact && styles.tabBarLabelStyleCompact,
-        ],
-        tabBarBackground: () =>
-          isCompact ? (
-            <View />
-          ) : (
-            <View>
-              <Image
-                source={require("../../assets/images/logo.png")}
-                resizeMode="contain"
-                style={styles.logoStyle}
-              />
-            </View>
-          ),
+        tabBarPosition: "left",
+        tabBarStyle: styles.tabBarStyle,
+        tabBarItemStyle: styles.tabBarItemStyle,
+        tabBarIconStyle: styles.tabBarIconStyle,
+        tabBarLabelStyle: styles.tabBarLabelStyle,
+
+        tabBarBackground: () => (
+          <View style={styles.tabBarBackgroundStyle}>
+            <Image
+              source={require("../../assets/images/logo.png")}
+              resizeMode="contain"
+              style={styles.logoStyle}
+            />
+          </View>
+        ),
       }}
     >
       <Tabs.Screen
@@ -56,10 +39,7 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/play.png")}
               resizeMode="stretch"
-              style={[
-                styles.tabBarItemIconImage,
-                isCompact && styles.tabBarItemIconImageCompact,
-              ]}
+              style={styles.tabBarItemIconImage}
             />
           ),
         }}
@@ -72,10 +52,7 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/profil.png")}
               resizeMode="stretch"
-              style={[
-                styles.tabBarItemIconImage,
-                isCompact && styles.tabBarItemIconImageCompact,
-              ]}
+              style={styles.tabBarItemIconImage}
             />
           ),
         }}
@@ -88,10 +65,7 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/score.png")}
               resizeMode="stretch"
-              style={[
-                styles.tabBarItemIconImage,
-                isCompact && styles.tabBarItemIconImageCompact,
-              ]}
+              style={styles.tabBarItemIconImage}
             />
           ),
         }}
@@ -104,10 +78,7 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/succes.png")}
               resizeMode="stretch"
-              style={[
-                styles.tabBarItemIconImage,
-                isCompact && styles.tabBarItemIconImageCompact,
-              ]}
+              style={styles.tabBarItemIconImage}
             />
           ),
         }}
@@ -135,23 +106,10 @@ const styles = StyleSheet.create({
     maxWidth: 193,
     margin: 32,
   },
-  tabBarStyleCompact: {
-    paddingTop: 0,
-    paddingRight: 0,
-    width: "100%",
-    minWidth: "100%",
-    maxWidth: "100%",
-    margin: 0,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderColor: "#E0E0E0",
-    flexDirection: "row",
-    height: 72,
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
   tabBarBackgroundStyle: {
     alignItems: "center",
     justifyContent: "center",
+    paddingRight: 32,
   },
   logoStyle: {
     width: 183,
@@ -163,32 +121,17 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginVertical: 15,
   },
-  tabBarItemStyleCompact: {
-    marginVertical: 0,
-    flexDirection: "column",
-    flex: 1,
-  },
   tabBarIconStyle: {
     marginRight: 14,
   },
-  tabBarIconStyleCompact: {
-    marginRight: 0,
-    marginBottom: 4,
-  },
 
   tabBarLabelStyle: {
+    fontSize: 24,
+    fontWeight: "bold",
     color: "black",
-  },
-  tabBarLabelStyleCompact: {
-    color: "black",
-    fontSize: 12,
   },
   tabBarItemIconImage: {
     width: 48,
     height: 48,
-  },
-  tabBarItemIconImageCompact: {
-    width: 32,
-    height: 32,
   },
 });
