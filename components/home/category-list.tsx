@@ -26,5 +26,6 @@ const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: "#FFFFFF",
     marginRight: 8,
+    gap: 8,
   },
 });

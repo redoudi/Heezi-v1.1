@@ -1,13 +1,9 @@
+import { ThemedText } from "@/components/themed-text";
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
+import { palette, radius, spacing } from "@/styles/designSystem";
+import { typography, withTextStyle } from "@/styles/typography";
 import { router, useGlobalSearchParams } from "expo-router";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
-import {
-  palette,
-  radius,
-  spacing,
-} from "@/styles/designSystem";
-import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 
 interface CategoryCardProps {
   toolName: keyof typeof practiceToolsConstants;
@@ -44,7 +40,9 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
           },
         ]}
       >
-        <ThemedText style={[styles.text, { color: cardToolConstants.textColor }]}>
+        <ThemedText
+          style={[styles.text, { color: cardToolConstants.textColor }]}
+        >
           {cardToolConstants.title}
         </ThemedText>
       </View>
@@ -56,8 +54,6 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: radius.md,
     paddingVertical: 49,
-    marginBottom: spacing.xs,
-    marginRight: spacing.xs,
     paddingRight: spacing.md,
   },
   text: withTextStyle(typography.headline, {
