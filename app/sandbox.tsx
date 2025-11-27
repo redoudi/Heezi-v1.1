@@ -1,10 +1,11 @@
 import MascotteQuiz from "@/components/animations/MascotteQuiz";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
 
 export default function Sandbox() {
   return (
     <View style={styles.container}>
-      <Text>Sandbox</Text>
+      <ThemedText>Sandbox</ThemedText>
       <MascotteQuiz />
     </View>
   );

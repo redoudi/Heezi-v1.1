@@ -3,6 +3,7 @@ import SectionCard from "@/components/home/section-card/SectionCard";
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { StyleSheet } from "react-native";
+import { typography } from "@/styles/typography";
 
 export default function SectionsList() {
   const { toolConstants, practiceTool } = usePracticeToolConstants();
@@ -185,31 +186,23 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 32,
   },
-  text: {
+  text: StyleSheet.compose(typography.headline, {
     color: "#000000",
-    fontSize: 24,
-    fontWeight: "bold",
     marginBottom: 16,
     marginLeft: 32,
-  },
-  text2: {
+  }),
+  text2: StyleSheet.compose(typography.headline, {
     color: "#0A2924",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 11,
-  },
-  text3: {
+  }),
+  text3: StyleSheet.compose(typography.headline, {
     color: "#000000",
-    fontSize: 24,
-    fontWeight: "bold",
     marginBottom: 15,
-  },
-  text4: {
+  }),
+  text4: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 11,
-  },
+  }),
   view: {
     alignSelf: "flex-start",
     backgroundColor: "#989898",

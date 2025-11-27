@@ -3,6 +3,7 @@ import { Tabs } from "expo-router";
 import { HapticTab } from "@/components/haptic-tab";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
+import { typography } from "@/styles/typography";
 import { Image, StyleSheet, View } from "react-native";
 
 export default function TabLayout() {
@@ -18,7 +19,7 @@ export default function TabLayout() {
         tabBarStyle: styles.tabBarStyle,
         tabBarItemStyle: styles.tabBarItemStyle,
         tabBarIconStyle: styles.tabBarIconStyle,
-        tabBarLabelStyle: styles.tabBarLabelStyle,
+        tabBarLabelStyle: [typography.headline, styles.tabBarLabelStyle],
 
         tabBarBackground: () => (
           <View style={{ paddingRight: 8 }}>
@@ -125,8 +126,6 @@ const styles = StyleSheet.create({
   },
 
   tabBarLabelStyle: {
-    fontSize: 24,
-    fontWeight: "bold",
     color: "black",
   },
   tabBarItemIconImage: {

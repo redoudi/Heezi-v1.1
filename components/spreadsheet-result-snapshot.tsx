@@ -1,5 +1,7 @@
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
-import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 export default function SpreadsheetResultSnapshot() {
   const { contents: cellsContents } = useExportSpreadsheetValues();
@@ -10,7 +12,11 @@ export default function SpreadsheetResultSnapshot() {
         <View style={styles.cellsRow}>
           {headers.map((cell, index) => (
             <View key={index} style={[styles.cell, styles.headerCell]}>
-              <Text style={[styles.headerText, cell.style]}>{cell.value}</Text>
+              <ThemedText
+                style={[typography.headline, styles.headerText, cell.style]}
+              >
+                {cell.value}
+              </ThemedText>
             </View>
           ))}
         </View>
@@ -23,9 +29,9 @@ export default function SpreadsheetResultSnapshot() {
                 {item.map((cell, index) => {
                   return (
                     <View key={index} style={styles.cell}>
-                      <Text style={[styles.text, cell.style]}>
+                      <ThemedText style={[typography.body, styles.text, cell.style]}>
                         {cell.value}
-                      </Text>
+                      </ThemedText>
                     </View>
                   );
                 })}
@@ -81,21 +87,18 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: "#292929",
-    fontSize: 24,
     marginBottom: 10,
     marginRight: 25,
   },
   text: {
     color: "#292929",
-    fontSize: 16,
     marginBottom: 10,
   },
   column: {
     marginHorizontal: 32,
   },
-  text3: {
+  text3: StyleSheet.compose(typography.body, {
     color: "#292929",
-    fontSize: 16,
     marginBottom: 10,
-  },
+  }),
 });

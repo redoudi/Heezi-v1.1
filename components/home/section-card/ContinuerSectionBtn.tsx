@@ -1,6 +1,8 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 export default function ContinuerSectionBtn({
   continuerRoute,
@@ -19,7 +21,7 @@ export default function ContinuerSectionBtn({
         onPress={() => router.push(continuerRoute)}
         disabled={disabled}
       >
-        <Text style={styles.buttonText}>{"Continuer"}</Text>
+        <ThemedText style={styles.buttonText}>{"Continuer"}</ThemedText>
         <Image
           source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
           resizeMode={"contain"}
@@ -39,12 +41,10 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
-  buttonText: {
+  buttonText: StyleSheet.compose(typography.headline, {
     color: "#0A2924",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 11,
-  },
+  }),
   image: {
     borderRadius: 8,
     width: 16,

@@ -3,16 +3,9 @@ import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getElementBottomHeight } from "@/utils/cursorUtils";
 import { useEffect, useState } from "react";
-import {
-  Image,
-  LayoutChangeEvent,
-  StyleProp,
-  StyleSheet,
-  Text,
-  View,
-  ViewStyle,
-  useWindowDimensions,
-} from "react-native";
+import { Image, LayoutChangeEvent, StyleProp, StyleSheet, View, ViewStyle, useWindowDimensions } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 import SuivantBtn from "../ui/suivantBtn";
 
 const CornerTriangleIcon = () => {
@@ -52,7 +45,7 @@ export const MascotDialog = ({
     <View style={[styles.mainContainer, style]} onLayout={onLayout}>
       <View style={[styles.textBoxAndTriangle, textBoxAndTriangleStyle]}>
         <View style={styles.textContainer}>
-          <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
+          <ThemedText style={styles.dialogText}>{bubbleText || "..."}</ThemedText>
           {DownArrowNextStep}
         </View>
         <CornerTriangleIcon />
@@ -177,10 +170,8 @@ const styles = StyleSheet.create({
     marginBottom: 48,
   },
 
-  dialogText: {
+  dialogText: StyleSheet.compose(typography.bodyLargeBold, {
     color: "#FFFFFF",
-    fontSize: 20,
-    fontWeight: "bold",
     marginBottom: 31,
-  },
+  }),
 });

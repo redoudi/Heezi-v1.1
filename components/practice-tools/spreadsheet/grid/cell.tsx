@@ -1,7 +1,8 @@
 import useCursor from "@/context/useCursor";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useEffect, useRef, useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
 import CellTextInput from "./CellTextInput";
 
 export default function Cell({ id }: { id: string }) {
@@ -43,7 +44,7 @@ export default function Cell({ id }: { id: string }) {
                 : {},
             ]}
           >
-            <Text style={cellsStyles?.[id]}>{cellsValues?.[id] || ""}</Text>
+            <ThemedText style={cellsStyles?.[id]}>{cellsValues?.[id] || ""}</ThemedText>
           </View>
         </Pressable>
       )}

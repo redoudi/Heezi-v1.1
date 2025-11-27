@@ -1,35 +1,36 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
 import { styles } from "../spreadsheet-styles";
 
 export default function RibbonTabs() {
   return (
     <View style={styles.row2}>
       <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Accueil"}</Text>
+        <ThemedText style={styles.text}>{"Accueil"}</ThemedText>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button3} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Insertion"}</Text>
+        <ThemedText style={styles.text}>{"Insertion"}</ThemedText>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Dessin"}</Text>
+        <ThemedText style={styles.text}>{"Dessin"}</ThemedText>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Conception"}</Text>
+        <ThemedText style={styles.text}>{"Conception"}</ThemedText>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button6} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Mise en page"}</Text>
+        <ThemedText style={styles.text}>{"Mise en page"}</ThemedText>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button7} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Références"}</Text>
+        <ThemedText style={styles.text}>{"Références"}</ThemedText>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Publipostage"}</Text>
+        <ThemedText style={styles.text}>{"Publipostage"}</ThemedText>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Révision"}</Text>
+        <ThemedText style={styles.text}>{"Révision"}</ThemedText>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button8} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Affichage"}</Text>
+        <ThemedText style={styles.text}>{"Affichage"}</ThemedText>
       </TouchableOpacity>
       <View style={styles.row3}>
         <TouchableOpacity style={styles.button9} onPress={() => {}} disabled>

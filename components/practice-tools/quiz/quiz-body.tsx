@@ -1,14 +1,8 @@
 import CustomAnimation from "@/components/animations/CustomAnimation";
 import { router } from "expo-router";
-import {
-  FlatList,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, Image, SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 const ProgressBar = () => {
   return (
@@ -40,7 +34,7 @@ const TopBar = () => {
 const QuestionBox = ({ question }: { question: string }) => {
   return (
     <View style={styles.view5}>
-      <Text style={styles.text}>{question}</Text>
+      <ThemedText style={styles.text}>{question}</ThemedText>
     </View>
   );
 };
@@ -77,7 +71,7 @@ const AnswerButton = ({
       onPress={() => selectAnswer(index)}
       disabled={isVerified}
     >
-      <Text style={styles.text2}>{answer.text || "..."}</Text>
+      <ThemedText style={styles.text2}>{answer.text || "..."}</ThemedText>
     </TouchableOpacity>
   );
 };
@@ -116,7 +110,7 @@ const VerifyButton = ({
       onPress={isVerified ? nextStep : verifyAnswer}
       disabled={disabled}
     >
-      <Text style={styles.text3}>{isVerified ? "Suivant" : "Vérifier"}</Text>
+      <ThemedText style={styles.text3}>{isVerified ? "Suivant" : "Vérifier"}</ThemedText>
       <Image
         source={require("@/assets/images/tsy13i8h_expires_30_days.png")}
         resizeMode={"stretch"}
@@ -302,23 +296,17 @@ const styles = StyleSheet.create({
     padding: 8,
     marginBottom: 8,
   },
-  text: {
+  text: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
     width: 496,
-  },
-  text2: {
+  }),
+  text2: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  text3: {
+  }),
+  text3: StyleSheet.compose(typography.headline, {
     color: "#0A2924",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 10,
-  },
+  }),
   view: {
     width: 62,
     backgroundColor: "#FDC1AB",

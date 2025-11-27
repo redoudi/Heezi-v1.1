@@ -1,6 +1,8 @@
 import useCursor from "@/context/useCursor";
 import { useEffect, useRef } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 const CornerSymbol = () => (
   <Image
@@ -41,7 +43,7 @@ export default function HeaderRow({
             index === columnsLetters.length - 1 ? styles.view3 : styles.view2
           }
         >
-          <Text style={styles.text9}>{columnLetter}</Text>
+          <ThemedText style={styles.text9}>{columnLetter}</ThemedText>
         </View>
       ))}
     </View>
@@ -61,12 +63,10 @@ const styles = StyleSheet.create({
   view3: {
     width: 106,
   },
-  text9: {
+  text9: StyleSheet.compose(typography.captionBold, {
     color: "#292929",
-    fontSize: 14,
-    fontWeight: "bold",
     textAlign: "center",
-  },
+  }),
   image35: {
     width: 24,
     height: 17,

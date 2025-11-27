@@ -1,10 +1,12 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 function endLevelStats() {
   return (
     <View style={styles.column3}>
       <View style={styles.row}>
-        <Text style={styles.text3}>{"+3"}</Text>
+        <ThemedText style={[typography.bodyLarge, styles.text3]}>{"+3"}</ThemedText>
         <Image
           source={require("@/assets/images/niw8yegh_expires_30_days.png")}
           resizeMode={"stretch"}
@@ -12,7 +14,7 @@ function endLevelStats() {
         />
       </View>
       <View style={styles.row2}>
-        <Text style={styles.text4}>{"+500"}</Text>
+        <ThemedText style={[typography.bodyLarge, styles.text4]}>{"+500"}</ThemedText>
         <Image
           source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
           resizeMode={"stretch"}
@@ -22,13 +24,13 @@ function endLevelStats() {
       <View style={styles.row3}>
         <View style={styles.column4}>
           <View style={styles.view4}>
-            <Text style={styles.text5}>{"Nv.1"}</Text>
+            <ThemedText style={[typography.bodyBold, styles.text5]}>{"Nv.1"}</ThemedText>
           </View>
           <View style={styles.view5}>
             <View style={styles.box2}></View>
           </View>
         </View>
-        <Text style={styles.text6}>{"+100xp"}</Text>
+        <ThemedText style={[typography.bodyBold, styles.text6]}>{"+100xp"}</ThemedText>
       </View>
     </View>
   );
@@ -43,8 +45,10 @@ export function EndLevelReport({
 }) {
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.text}>{title}</Text>
-      <Text style={styles.text2}>{description}</Text>
+      <ThemedText style={[typography.title, styles.text]}>{title}</ThemedText>
+      <ThemedText style={[typography.body, styles.text2]}>
+        {description}
+      </ThemedText>
     </View>
   );
 }
@@ -105,35 +109,27 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#292929",
-    fontSize: 28,
     marginBottom: 8,
   },
   text2: {
     color: "#292929",
-    fontSize: 16,
     marginBottom: 8,
   },
   text3: {
     color: "#F95F3C",
-    fontSize: 20,
     marginLeft: 4,
     marginRight: 8,
   },
   text4: {
     color: "#F28B0E",
-    fontSize: 20,
     marginLeft: 4,
     marginRight: 8,
   },
   text5: {
     color: "#1D1D1D",
-    fontSize: 16,
-    fontWeight: "bold",
   },
   text6: {
     color: "#292929",
-    fontSize: 16,
-    fontWeight: "bold",
   },
   view4: {
     alignSelf: "flex-start",

@@ -5,18 +5,14 @@ import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
-import {
-  Image,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { Image, StyleSheet, View, useWindowDimensions } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 function IntroText({ intro = "..." }) {
   return (
     <View style={styles.introTextBox}>
-      <Text style={styles.introText}>{intro}</Text>
+      <ThemedText style={styles.introText}>{intro}</ThemedText>
     </View>
   );
 }
@@ -105,11 +101,9 @@ const styles = StyleSheet.create({
     paddingLeft: 8,
     marginBottom: 8,
   },
-  introText: {
+  introText: StyleSheet.compose(typography.bodyLargeBold, {
     color: "#292929",
-    fontSize: 20,
-    fontWeight: "bold",
-  },
+  }),
 
   startButton: {
     alignSelf: "flex-end",
@@ -119,12 +113,10 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
-  buttonText: {
+  buttonText: StyleSheet.compose(typography.headline, {
     color: "#0A2924",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 11,
-  },
+  }),
   triangleIcon: {
     alignSelf: "center",
     borderRadius: 8,

@@ -1,11 +1,12 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
 import { styles } from "./spreadsheet-styles";
 
 export default function FunctionBar() {
   return (
     <View style={styles.row4}>
       <TouchableOpacity style={styles.buttonRow7} onPress={() => {}} disabled>
-        <Text style={styles.text5}>{"A20"}</Text>
+        <ThemedText style={styles.text5}>{"A20"}</ThemedText>
         <Image
           source={require("@/assets/images/w85265az_expires_30_days.png")}
           resizeMode={"stretch"}
@@ -24,7 +25,7 @@ export default function FunctionBar() {
           style={styles.image32}
         />
         <View style={styles.row14}>
-          <Text style={styles.text8}>{"fx"}</Text>
+          <ThemedText style={styles.text8}>{"fx"}</ThemedText>
           <Image
             source={require("@/assets/images/fp37iklk_expires_30_days.png")}
             resizeMode={"stretch"}

@@ -1,5 +1,7 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 export default function ProfilScreen() {
   return (
@@ -10,7 +12,7 @@ export default function ProfilScreen() {
             <View style={styles.column}>
               <View style={styles.row}>
                 <View style={styles.column2}>
-                  <Text style={styles.text}>{"Niveau. 1"}</Text>
+                  <ThemedText style={styles.text}>{"Niveau. 1"}</ThemedText>
                   <View style={styles.box}></View>
                 </View>
                 <View style={styles.row2}>
@@ -49,17 +51,19 @@ export default function ProfilScreen() {
                   style={styles.image3}
                 />
                 <View style={styles.column3}>
-                  <Text style={styles.text2}>{"Nom du profil"}</Text>
+                  <ThemedText style={styles.text2}>
+                    {"Nom du profil"}
+                  </ThemedText>
                   <View style={styles.column4}>
-                    <Text style={styles.text}>
+                    <ThemedText style={styles.text}>
                       {"10/100 succès débloqués (10%)"}
-                    </Text>
+                    </ThemedText>
                     <View style={styles.box}></View>
                   </View>
                   <View style={styles.column4}>
-                    <Text style={styles.text}>
+                    <ThemedText style={styles.text}>
                       {"Progression dans le jeu (10%)"}
-                    </Text>
+                    </ThemedText>
                     <View style={styles.box}></View>
                   </View>
                   <View style={styles.row4}>
@@ -71,7 +75,9 @@ export default function ProfilScreen() {
                       style={styles.image4}
                     />
                     <View style={styles.view4}>
-                      <Text style={styles.text3}>{"Rang bronze"}</Text>
+                      <ThemedText style={styles.text3}>
+                        {"Rang bronze"}
+                      </ThemedText>
                     </View>
                   </View>
                 </View>
@@ -178,22 +184,18 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 16,
   },
-  text: {
+  text: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
     marginBottom: 8,
     marginLeft: 16,
-  },
-  text2: {
+  }),
+  text2: StyleSheet.compose(typography.title, {
     color: "#0A2924",
-    fontSize: 28,
     marginBottom: 16,
-  },
-  text3: {
+  }),
+  text3: StyleSheet.compose(typography.title, {
     color: "#B2460B",
-    fontSize: 28,
-  },
+  }),
   view: {
     width: 1184,
     backgroundColor: "#DCDCDC",

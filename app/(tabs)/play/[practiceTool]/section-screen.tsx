@@ -3,7 +3,9 @@ import StatusText from "@/components/status-text";
 import sectionButtons from "@/constants/sectionButtons";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 export default function SectionScreen() {
   const lessonAnimationData = require("@/assets/animations/RenardBureauVert.json");
 
@@ -33,13 +35,13 @@ export default function SectionScreen() {
                 </View>
               </TouchableOpacity>
 
-              <Text style={styles.text}>{"3 niveaux"}</Text>
+              <ThemedText style={styles.text}>{"3 niveaux"}</ThemedText>
             </View>
             <StatusText />
           </View>
           <View>
-            <Text style={styles.text3}>{"Section 1"}</Text>
-            <Text style={styles.text4}>{"Apprendre les bases"}</Text>
+            <ThemedText style={styles.text3}>{"Section 1"}</ThemedText>
+            <ThemedText style={styles.text4}>{"Apprendre les bases"}</ThemedText>
           </View>
         </View>
         <View style={styles.missionPartsContainer}>
@@ -194,30 +196,24 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     marginLeft: 39,
   },
-  text: {
+  text: StyleSheet.compose(typography.caption, {
     color: "#1C5348",
-    fontSize: 14,
-  },
-  statusText: {
+  }),
+  statusText: StyleSheet.compose(typography.body, {
     color: "#0A2924",
-    fontSize: 16,
-  },
-  text3: {
+  }),
+  text3: StyleSheet.compose(typography.title, {
     color: "#0A2924",
-    fontSize: 28,
     marginBottom: 7,
-  },
-  text4: {
+  }),
+  text4: StyleSheet.compose(typography.body, {
     color: "#0A2924",
-    fontSize: 16,
     marginRight: 86,
     width: 151,
-  },
-  text5: {
+  }),
+  text5: StyleSheet.compose(typography.headline, {
     color: "#F2FBF8",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
+  }),
   view: {
     width: 62,
     backgroundColor: "#FFFFFF",

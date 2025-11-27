@@ -1,5 +1,7 @@
 import { router } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 import JouerButton from "@/components/ui/JouerButton";
 import characters from "@/constants/characters";
@@ -48,7 +50,7 @@ export default function MissionPart({
   return (
     <View>
       <View style={[styles.button, { backgroundColor: toolConstants.color }]}>
-        <Text style={styles.text5}>{title}</Text>
+        <ThemedText style={styles.text5}>{title}</ThemedText>
       </View>
 
       <TouchableOpacity
@@ -81,11 +83,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderWidth: 1,
   },
-  text5: {
+  text5: StyleSheet.compose(typography.headline, {
     color: "#F2FBF8",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
+  }),
 
   sectionRow: {
     flexDirection: "row",
@@ -97,9 +97,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     gap: 8,
   },
-  playButtonText: {
+  playButtonText: StyleSheet.compose(typography.captionBold, {
     color: "#292929",
-    fontSize: 14,
-    fontWeight: "bold",
-  },
+  }),
 });

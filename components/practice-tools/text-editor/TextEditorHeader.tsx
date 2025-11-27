@@ -1,7 +1,9 @@
 import useCursor from "@/context/useCursor";
 import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 import BackButton from "../../ui/back-button";
 
 function BoldButton() {
@@ -66,31 +68,31 @@ export default function TextEditorHeader() {
     <View style={styles.column2}>
       <View style={styles.row2}>
         <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Accueil"}</Text>
+          <ThemedText style={styles.text}>{"Accueil"}</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button3} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Insertion"}</Text>
+          <ThemedText style={styles.text}>{"Insertion"}</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Dessin"}</Text>
+          <ThemedText style={styles.text}>{"Dessin"}</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Conception"}</Text>
+          <ThemedText style={styles.text}>{"Conception"}</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button6} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Mise en page"}</Text>
+          <ThemedText style={styles.text}>{"Mise en page"}</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button7} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Références"}</Text>
+          <ThemedText style={styles.text}>{"Références"}</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Publipostage"}</Text>
+          <ThemedText style={styles.text}>{"Publipostage"}</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Révision"}</Text>
+          <ThemedText style={styles.text}>{"Révision"}</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button8} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Affichage"}</Text>
+          <ThemedText style={styles.text}>{"Affichage"}</ThemedText>
         </TouchableOpacity>
         <View style={styles.row3}>
           <TouchableOpacity style={styles.button9} onPress={() => {}} disabled>
@@ -122,7 +124,7 @@ export default function TextEditorHeader() {
                 resizeMode={"stretch"}
                 style={styles.image8}
               />
-              <Text style={styles.text2}>{"Coller"}</Text>
+              <ThemedText style={styles.text2}>{"Coller"}</ThemedText>
               <Image
                 source={require("@/assets/images/oluhu4b3_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -154,7 +156,7 @@ export default function TextEditorHeader() {
               </TouchableOpacity>
             </View>
           </View>
-          <Text style={styles.text3}>{"Presse-papiers"}</Text>
+          <ThemedText style={styles.text3}>{"Presse-papiers"}</ThemedText>
         </View>
         <View style={styles.column5}>
           <View style={styles.column6}>
@@ -164,7 +166,7 @@ export default function TextEditorHeader() {
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text4}>{"Police"}</Text>
+                <ThemedText style={styles.text4}>{"Police"}</ThemedText>
                 <Image
                   source={require("@/assets/images/uig4w09q_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -176,7 +178,7 @@ export default function TextEditorHeader() {
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text5}>{"12"}</Text>
+                <ThemedText style={styles.text5}>{"12"}</ThemedText>
                 <Image
                   source={require("@/assets/images/7bw6obmu_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -188,7 +190,7 @@ export default function TextEditorHeader() {
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text6}>{"A a"}</Text>
+                <ThemedText style={styles.text6}>{"A a"}</ThemedText>
                 <Image
                   source={require("@/assets/images/rjnwoeo6_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -288,7 +290,7 @@ export default function TextEditorHeader() {
               </TouchableOpacity>
             </View>
           </View>
-          <Text style={styles.text7}>{"Police"}</Text>
+          <ThemedText style={styles.text7}>{"Police"}</ThemedText>
         </View>
         {/*all images ok until here*/}
         <View style={styles.column7}>
@@ -406,7 +408,7 @@ export default function TextEditorHeader() {
               />
             </View>
           </View>
-          <Text style={styles.text7}>{"Paragraphe"}</Text>
+          <ThemedText style={styles.text7}>{"Paragraphe"}</ThemedText>
         </View>
         <View style={styles.column9}>
           <View style={styles.row10}>
@@ -416,14 +418,14 @@ export default function TextEditorHeader() {
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text8}>{"Normal"}</Text>
+                <ThemedText style={styles.text8}>{"Normal"}</ThemedText>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.button29}
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text9}>{"Titre 1"}</Text>
+                <ThemedText style={styles.text9}>{"Titre 1"}</ThemedText>
               </TouchableOpacity>
             </View>
             <TouchableOpacity
@@ -438,7 +440,7 @@ export default function TextEditorHeader() {
               />
             </TouchableOpacity>
           </View>
-          <Text style={styles.text7}>{"Styles"}</Text>
+          <ThemedText style={styles.text7}>{"Styles"}</ThemedText>
         </View>
         <View style={styles.view}>
           <TouchableOpacity
@@ -451,7 +453,7 @@ export default function TextEditorHeader() {
               resizeMode={"stretch"}
               style={styles.image29}
             />
-            <Text style={styles.text10}>{"édition"}</Text>
+            <ThemedText style={styles.text10}>{"édition"}</ThemedText>
             <Image
               source={require("@/assets/images/8h776a6o_expires_30_days.png")}
               resizeMode={"stretch"}
@@ -968,55 +970,44 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  text: {
+  text: StyleSheet.compose(typography.body, {
     color: "#292929",
-    fontSize: 16,
-  },
-  text10: {
+  }),
+  text10: StyleSheet.compose(typography.captionSmall, {
     color: "#000000",
-    fontSize: 12,
     marginBottom: 4,
-  },
-  text2: {
+  }),
+  text2: StyleSheet.compose(typography.caption, {
     color: "#292929",
-    fontSize: 14,
     marginBottom: 4,
-  },
-  text3: {
+  }),
+  text3: StyleSheet.compose(typography.caption, {
     color: "#000000",
-    fontSize: 14,
     textAlign: "center",
-  },
-  text4: {
+  }),
+  text4: StyleSheet.compose(typography.caption, {
     color: "#292929",
-    fontSize: 14,
     marginLeft: 8,
     flex: 1,
-  },
-  text5: {
+  }),
+  text5: StyleSheet.compose(typography.caption, {
     color: "#292929",
-    fontSize: 14,
     marginLeft: 8,
-  },
-  text6: {
+  }),
+  text6: StyleSheet.compose(typography.caption, {
     color: "#292929",
-    fontSize: 14,
     marginLeft: 8,
     marginRight: 11,
-  },
-  text7: {
+  }),
+  text7: StyleSheet.compose(typography.caption, {
     color: "#000000",
-    fontSize: 14,
-  },
-  text8: {
+  }),
+  text8: StyleSheet.compose(typography.captionBold, {
     color: "#000000",
-    fontSize: 14,
-    fontWeight: "bold",
-  },
-  text9: {
+  }),
+  text9: StyleSheet.compose(typography.bodyLarge, {
     color: "#000000",
-    fontSize: 20,
-  },
+  }),
   view: {
     width: 54,
     marginRight: 215,

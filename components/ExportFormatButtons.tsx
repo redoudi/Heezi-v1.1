@@ -4,15 +4,10 @@ import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
 import { exportTextEditorDocx } from "@/utils/exportDocx";
 import { exportSpreadsheetPdf, exportTextEditorPdf } from "@/utils/exportPdf";
 import { useLocalSearchParams } from "expo-router";
-import {
-  Alert,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Alert, Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
 import { exportXlsx } from "../utils/exportXlsx";
+import { typography } from "@/styles/typography";
 
 const ExportXlsxButton = () => {
   const { contents } = useExportSpreadsheetValues();
@@ -44,7 +39,7 @@ const ExportXlsxButton = () => {
         resizeMode={"stretch"}
         style={styles.image}
       />
-      <Text style={styles.text}>{".xls"}</Text>
+      <ThemedText style={styles.text}>{".xls"}</ThemedText>
     </TouchableOpacity>
   );
 };
@@ -100,7 +95,7 @@ const ExportPdfButton = () => {
         resizeMode={"stretch"}
         style={styles.image}
       />
-      <Text style={styles.text}>{".pdf"}</Text>
+      <ThemedText style={styles.text}>{".pdf"}</ThemedText>
     </TouchableOpacity>
   );
 };
@@ -140,7 +135,7 @@ const ExportDocxButton = () => {
         resizeMode={"stretch"}
         style={styles.image}
       />
-      <Text style={styles.text}>{".docx"}</Text>
+      <ThemedText style={styles.text}>{".docx"}</ThemedText>
     </TouchableOpacity>
   );
 };
@@ -211,9 +206,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginBottom: 16,
   },
-  text: {
+  text: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
+  }),
 });

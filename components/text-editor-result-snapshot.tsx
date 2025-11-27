@@ -1,5 +1,7 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 type TextEditorBlock = {
   type?: string;
@@ -14,9 +16,9 @@ export default function TextEditorResultSnapshot() {
 
   const renderText = (block: TextEditorBlock, index: number) => (
     <View key={index} style={[block.blockStyle]}>
-      <Text key={index} style={[styles.text, block.style]}>
+      <ThemedText key={index} style={[typography.body, styles.text, block.style]}>
         {block.text}
-      </Text>
+      </ThemedText>
     </View>
   );
   const renderContentBlocksRecursive = (
@@ -68,7 +70,6 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#292929",
-    fontSize: 16,
     marginBottom: 10,
   },
 });

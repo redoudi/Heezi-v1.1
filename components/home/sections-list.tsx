@@ -1,4 +1,6 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 export default function SectionsList({
   setSectionIndex,
 }: {
@@ -8,7 +10,7 @@ export default function SectionsList({
     <View style={styles.container}>
       <View style={styles.column}>
         <View style={styles.column2}>
-          <Text style={styles.text}>{"Section 1"}</Text>
+          <ThemedText style={styles.text}>{"Section 1"}</ThemedText>
           <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
             <View style={styles.view}>
               <View style={styles.box}></View>
@@ -19,7 +21,7 @@ export default function SectionsList({
               style={styles.buttonRow}
               onPress={() => setSectionIndex(0)}
             >
-              <Text style={styles.text2}>{"Continuer"}</Text>
+              <ThemedText style={styles.text2}>{"Continuer"}</ThemedText>
               <Image
                 source={require("@/assets/images/continue-icon.png")}
                 resizeMode={"contain"}
@@ -87,7 +89,7 @@ export default function SectionsList({
       <View style={styles.row2}>
         <View style={styles.column3}>
           <View style={styles.column}>
-            <Text style={styles.text3}>{"Section 2"}</Text>
+            <ThemedText style={styles.text3}>{"Section 2"}</ThemedText>
             <View style={styles.view2}>
               <View style={styles.view3}>
                 <View style={styles.box}></View>
@@ -99,7 +101,7 @@ export default function SectionsList({
             onPress={() => {}}
             disabled
           >
-            <Text style={styles.text4}>{"Continuer"}</Text>
+            <ThemedText style={styles.text4}>{"Continuer"}</ThemedText>
             <Image
               source={require("@/assets/images/sy8w1ahc_expires_30_days.png")}
               resizeMode={"contain"}
@@ -116,7 +118,7 @@ export default function SectionsList({
       <View style={styles.row3}>
         <View style={styles.column3}>
           <View style={styles.column}>
-            <Text style={styles.text3}>{"Section 3"}</Text>
+            <ThemedText style={styles.text3}>{"Section 3"}</ThemedText>
             <View style={styles.view2}>
               <View style={styles.view3}>
                 <View style={styles.box}></View>
@@ -128,7 +130,7 @@ export default function SectionsList({
             onPress={() => {}}
             disabled
           >
-            <Text style={styles.text4}>{"Continuer"}</Text>
+            <ThemedText style={styles.text4}>{"Continuer"}</ThemedText>
             <Image
               source={require("@/assets/images/l29fup9x_expires_30_days.png")}
               resizeMode={"contain"}
@@ -306,31 +308,23 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 32,
   },
-  text: {
+  text: StyleSheet.compose(typography.headline, {
     color: "#000000",
-    fontSize: 24,
-    fontWeight: "bold",
     marginBottom: 16,
     marginLeft: 32,
-  },
-  text2: {
+  }),
+  text2: StyleSheet.compose(typography.headline, {
     color: "#0A2924",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 11,
-  },
-  text3: {
+  }),
+  text3: StyleSheet.compose(typography.headline, {
     color: "#000000",
-    fontSize: 24,
-    fontWeight: "bold",
     marginBottom: 15,
-  },
-  text4: {
+  }),
+  text4: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 11,
-  },
+  }),
   view: {
     alignSelf: "flex-start",
     backgroundColor: "#989898",

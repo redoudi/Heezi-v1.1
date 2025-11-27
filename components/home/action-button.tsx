@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 interface ActionButtonProps {
   label: string;
@@ -10,7 +12,7 @@ interface ActionButtonProps {
 export function ActionButton({ label, onPress, style }: ActionButtonProps) {
   return (
     <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
-      <Text style={styles.text}>{label}</Text>
+      <ThemedText style={styles.text}>{label}</ThemedText>
     </TouchableOpacity>
   );
 }
@@ -22,10 +24,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 8,
   },
-  text: {
+  text: StyleSheet.compose(typography.headline, {
     color: "#F2FBF8",
-    fontSize: 24,
-    fontWeight: "bold",
     marginHorizontal: 15,
-  },
+  }),
 });

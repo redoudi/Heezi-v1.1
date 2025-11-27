@@ -1,5 +1,7 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 interface NavigationMenuItemProps {
   imageUri: string;
@@ -17,7 +19,7 @@ export function NavigationMenuItem({
         resizeMode="stretch"
         style={styles.image}
       />
-      <Text style={styles.text}>{label}</Text>
+      <ThemedText style={styles.text}>{label}</ThemedText>
     </View>
   );
 }
@@ -37,9 +39,7 @@ const styles = StyleSheet.create({
     height: 48,
     marginRight: 16,
   },
-  text: {
+  text: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
+  }),
 });

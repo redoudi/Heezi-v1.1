@@ -1,4 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 interface LevelSectionProps {
   level: string;
@@ -17,7 +19,7 @@ export function LevelSection({
   return (
     <View style={styles.container}>
       <View style={styles.levelHeader}>
-        <Text style={styles.levelText}>{level}</Text>
+        <ThemedText style={styles.levelText}>{level}</ThemedText>
         <View style={styles.progressBar} />
       </View>
       <View style={styles.scoreRow}>
@@ -31,7 +33,7 @@ export function LevelSection({
             resizeMode="stretch"
             style={styles.coinIcon}
           />
-          <Text style={styles.scoreText}>{score}</Text>
+          <ThemedText style={styles.scoreText}>{score}</ThemedText>
         </TouchableOpacity>
         <Image
           source={{ uri: badgeIconUri }}
@@ -55,13 +57,11 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     marginBottom: 8,
   },
-  levelText: {
+  levelText: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
     marginBottom: 8,
     marginLeft: 15,
-  },
+  }),
   progressBar: {
     height: 8,
     backgroundColor: "#989898",
@@ -87,12 +87,10 @@ const styles = StyleSheet.create({
     marginLeft: 7,
     marginRight: 4,
   },
-  scoreText: {
+  scoreText: StyleSheet.compose(typography.headline, {
     color: "#F28B0E",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 10,
-  },
+  }),
   badgeIcon: {
     width: 71,
     height: 48,

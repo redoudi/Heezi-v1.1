@@ -1,5 +1,7 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 export default function ScoreScreen() {
   return (
@@ -30,13 +32,13 @@ export default function ScoreScreen() {
               />
             </View>
             <View style={styles.column3}>
-              <Text style={styles.text}>{"Bronze"}</Text>
-              <Text style={styles.text2}>
+              <ThemedText style={styles.text}>{"Bronze"}</ThemedText>
+              <ThemedText style={styles.text2}>
                 {
                   "Les participants dans le top 10 se verront attribuer un nouveau rang "
                 }
-              </Text>
-              <Text style={styles.text3}>{"7 jours restants"}</Text>
+              </ThemedText>
+              <ThemedText style={styles.text3}>{"7 jours restants"}</ThemedText>
             </View>
           </View>
           <View style={styles.row2}>
@@ -47,12 +49,12 @@ export default function ScoreScreen() {
                   onPress={() => {}}
                   disabled
                 >
-                  <Text style={styles.text4}>{"Classement Global"}</Text>
+                  <ThemedText style={styles.text4}>{"Classement Global"}</ThemedText>
                 </TouchableOpacity>
                 <View style={styles.view2}>
-                  <Text style={styles.text5}>
+                  <ThemedText style={styles.text5}>
                     {"Classement de votre session"}
-                  </Text>
+                  </ThemedText>
                 </View>
               </View>
               <TouchableOpacity
@@ -60,112 +62,112 @@ export default function ScoreScreen() {
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text6}>{"1."}</Text>
+                <ThemedText style={styles.text6}>{"1."}</ThemedText>
                 <Image
                   source={require("@/assets/images/3lokmvs9_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
+                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
+                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow2}
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text9}>{"1."}</Text>
+                <ThemedText style={styles.text9}>{"1."}</ThemedText>
                 <Image
                   source={require("@/assets/images/6643scml_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text10}>{"Nom de la personne"}</Text>
-                <Text style={styles.text11}>{"Nv.100"}</Text>
+                <ThemedText style={styles.text10}>{"Nom de la personne"}</ThemedText>
+                <ThemedText style={styles.text11}>{"Nv.100"}</ThemedText>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text6}>{"1."}</Text>
+                <ThemedText style={styles.text6}>{"1."}</ThemedText>
                 <Image
                   source={require("@/assets/images/n8b0919f_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
+                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
+                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text6}>{"1."}</Text>
+                <ThemedText style={styles.text6}>{"1."}</ThemedText>
                 <Image
                   source={require("@/assets/images/myla2l0p_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
+                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
+                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text6}>{"1."}</Text>
+                <ThemedText style={styles.text6}>{"1."}</ThemedText>
                 <Image
                   source={require("@/assets/images/w55o4c0r_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
+                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
+                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text6}>{"1."}</Text>
+                <ThemedText style={styles.text6}>{"1."}</ThemedText>
                 <Image
                   source={require("@/assets/images/72f9ifvg_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
+                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
+                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text6}>{"1."}</Text>
+                <ThemedText style={styles.text6}>{"1."}</ThemedText>
                 <Image
                   source={require("@/assets/images/lcfh9jwj_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
+                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
+                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow3}
                 onPress={() => {}}
                 disabled
               >
-                <Text style={styles.text6}>{"1."}</Text>
+                <ThemedText style={styles.text6}>{"1."}</ThemedText>
                 <Image
                   source={require("@/assets/images/6lq83c0i_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
+                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
+                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
               </TouchableOpacity>
             </View>
             <View style={styles.column5}>
@@ -293,69 +295,51 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     marginBottom: 16,
   },
-  text: {
+  text: StyleSheet.compose(typography.title, {
     color: "#292929",
-    fontSize: 28,
     marginBottom: 8,
-  },
-  text2: {
+  }),
+  text2: StyleSheet.compose(typography.body, {
     color: "#292929",
-    fontSize: 16,
     marginBottom: 8,
-  },
-  text3: {
+  }),
+  text3: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  text4: {
+  }),
+  text4: StyleSheet.compose(typography.headline, {
     color: "#0A2924",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  text5: {
+  }),
+  text5: StyleSheet.compose(typography.headline, {
     color: "#0A2924",
-    fontSize: 24,
-    fontWeight: "bold",
     marginLeft: 16,
     width: 224,
-  },
-  text6: {
+  }),
+  text6: StyleSheet.compose(typography.title, {
     color: "#292929",
-    fontSize: 28,
     marginLeft: 16,
     marginRight: 20,
-  },
-  text7: {
+  }),
+  text7: StyleSheet.compose(typography.bodyLargeBold, {
     color: "#292929",
-    fontSize: 20,
-    fontWeight: "bold",
     flex: 1,
-  },
-  text8: {
+  }),
+  text8: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 20,
-  },
-  text9: {
+  }),
+  text9: StyleSheet.compose(typography.title, {
     color: "#1B463E",
-    fontSize: 28,
     marginLeft: 16,
     marginRight: 20,
-  },
-  text10: {
+  }),
+  text10: StyleSheet.compose(typography.bodyLargeBold, {
     color: "#1B463E",
-    fontSize: 20,
-    fontWeight: "bold",
     flex: 1,
-  },
-  text11: {
+  }),
+  text11: StyleSheet.compose(typography.headline, {
     color: "#1B463E",
-    fontSize: 24,
-    fontWeight: "bold",
     marginRight: 20,
-  },
+  }),
   view: {
     width: 1184,
     backgroundColor: "#FFFFFF",

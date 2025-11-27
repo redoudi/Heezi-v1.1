@@ -1,5 +1,7 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
 import { ScrollableScreen } from "@/components/scrollable-screen";
+import { typography } from "@/styles/typography";
 
 export default function SuccessScreen() {
   return (
@@ -8,7 +10,7 @@ export default function SuccessScreen() {
         <View style={styles.column}>
           <View style={styles.column2}>
             <View style={styles.view2}>
-              <Text style={styles.text}>{"10/100 succès débloqués (10%)"}</Text>
+              <ThemedText style={styles.text}>{"10/100 succès débloqués (10%)"}</ThemedText>
             </View>
             <View style={styles.view3}>
               <View style={styles.box}></View>
@@ -23,12 +25,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
+              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
+              <ThemedText style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </Text>
+              </ThemedText>
             </View>
           </View>
           <View style={styles.row}>
@@ -40,12 +42,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
+              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
+              <ThemedText style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </Text>
+              </ThemedText>
             </View>
           </View>
           <View style={styles.row}>
@@ -57,12 +59,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
+              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
+              <ThemedText style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </Text>
+              </ThemedText>
             </View>
           </View>
           <View style={styles.row}>
@@ -74,12 +76,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
+              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
+              <ThemedText style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </Text>
+              </ThemedText>
             </View>
           </View>
           <View style={styles.row}>
@@ -91,12 +93,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
+              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
+              <ThemedText style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </Text>
+              </ThemedText>
             </View>
           </View>
           <View style={styles.row2}>
@@ -108,12 +110,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
+              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
+              <ThemedText style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </Text>
+              </ThemedText>
             </View>
           </View>
         </View>
@@ -179,21 +181,16 @@ const styles = StyleSheet.create({
       height: 4,
     },
   },
-  text: {
+  text: StyleSheet.compose(typography.headline, {
     color: "#292929",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  text2: {
+  }),
+  text2: StyleSheet.compose(typography.headline, {
     color: "#3D3D3D",
-    fontSize: 24,
-    fontWeight: "bold",
     marginBottom: 8,
-  },
-  text3: {
+  }),
+  text3: StyleSheet.compose(typography.body, {
     color: "#3D3D3D",
-    fontSize: 16,
-  },
+  }),
   view: {
     width: 1184,
     backgroundColor: "#FFFFFF",

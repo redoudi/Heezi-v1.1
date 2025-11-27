@@ -1,20 +1,16 @@
 import useLevelData from "@/hooks/use-level-data";
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { SafeAreaView, StyleSheet, View, useWindowDimensions } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 import ContentPage from "./ContentPage";
 import TextEditorHeader, { TitleBar } from "./TextEditorHeader";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
     <View style={styles.pageNumberContainer}>
-      <Text
-        style={styles.pageNumberText}
-      >{`Page ${currentPage}/${totalPages}`}</Text>
+      <ThemedText
+        style={[typography.bodyBold, styles.pageNumberText]}
+      >{`Page ${currentPage}/${totalPages}`}</ThemedText>
     </View>
   );
 }
@@ -89,8 +85,6 @@ const styles = StyleSheet.create({
   },
   pageNumberText: {
     color: "#292929",
-    fontSize: 16,
-    fontWeight: "bold",
   },
   progressBarColumn: {
     alignSelf: "flex-start",

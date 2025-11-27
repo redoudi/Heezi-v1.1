@@ -3,12 +3,16 @@ import useLevelData from "@/hooks/use-level-data";
 import useHighlight from "@/hooks/useHighlight";
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { useEffect, useRef, useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 function TextBlock({ item }: { item: any }) {
   return (
     <View style={[styles.textBlockContainer, item.blockStyle]}>
-      <Text style={[styles.textBlockText, item.style]}>{item.text}</Text>
+      <ThemedText style={[typography.body, styles.textBlockText, item.style]}>
+        {item.text}
+      </ThemedText>
     </View>
   );
 }
@@ -70,6 +74,7 @@ function TextInputBlock({ item }: { item: any }) {
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
         style={[
+          typography.body,
           styles.textInput,
           item.style,
           isWrongAnswer ? wrongAnswerStyle : {},
@@ -155,7 +160,6 @@ const styles = StyleSheet.create({
   },
   textBlockText: {
     color: "#292929",
-    fontSize: 16,
     textAlignVertical: "center",
   },
   textInputContainer: {
@@ -167,7 +171,6 @@ const styles = StyleSheet.create({
   },
   textInput: {
     color: "#292929",
-    fontSize: 16,
     marginLeft: 9,
   },
 });

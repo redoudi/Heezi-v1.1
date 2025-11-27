@@ -1,6 +1,8 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { router, useGlobalSearchParams } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { typography } from "@/styles/typography";
 
 interface CategoryCardProps {
   toolName: keyof typeof practiceToolsConstants;
@@ -37,9 +39,9 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
           },
         ]}
       >
-        <Text style={[styles.text, { color: cardToolConstants.textColor }]}>
+        <ThemedText style={[styles.text, { color: cardToolConstants.textColor }]}>
           {cardToolConstants.title}
-        </Text>
+        </ThemedText>
       </View>
     </TouchableOpacity>
   );
@@ -53,9 +55,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
     paddingRight: 16,
   },
-  text: {
-    fontSize: 24,
-    fontWeight: "bold",
+  text: StyleSheet.compose(typography.headline, {
     marginLeft: 16,
-  },
+  }),
 });

@@ -1,3 +1,4 @@
+import { ThemedText } from "@/components/themed-text";
 import FullWindowContainer from "@/components/FullWindowContainer";
 import MascotMonitor from "@/components/mascot/mascot-monitor";
 import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/SpreadsheetScreen";
