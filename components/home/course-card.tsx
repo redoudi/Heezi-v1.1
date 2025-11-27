@@ -14,23 +14,15 @@ import StatusText from "../status-text";
 export function CourseCard() {
   const { toolConstants } = usePracticeToolConstants();
   return (
-    <View style={styles.mainContainer}>
-      {/* <Image
-        source={require("@/assets/images/ldtg9pud_expires_30_days.png")}
-        resizeMode="stretch"
-        style={styles.thumbnail}
-      /> */}
-      <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
-        <View style={styles.header}>
-          <ThemedText style={styles.progressText}>
-            1/3 sections disponibles
+    <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
+      <View style={styles.header}>
+        <View>
+          <ThemedText style={styles.title}>{toolConstants.title}</ThemedText>
+          <ThemedText style={styles.description}>
+            {toolConstants.description}
           </ThemedText>
-          <StatusText />
         </View>
-        <ThemedText style={styles.title}>{toolConstants.title}</ThemedText>
-        <ThemedText style={styles.description}>
-          {toolConstants.description}
-        </ThemedText>
+        <StatusText />
       </View>
     </View>
   );
@@ -49,13 +41,11 @@ const styles = StyleSheet.create({
   content: withViewStyle(surfaces.card, {
     flex: 1,
     borderRadius: radius.md,
-    paddingVertical: spacing.md,
+    padding: spacing.md,
   }),
   header: {
     flexDirection: "row",
-    alignItems: "center",
-    marginBottom: spacing.md,
-    marginHorizontal: spacing.md,
+    justifyContent: "space-between",
   },
   progressText: withTextStyle(typography.caption, {
     color: palette.tertiaryText,
@@ -65,7 +55,6 @@ const styles = StyleSheet.create({
     width: 68,
     alignItems: "center",
     borderRadius: radius.md,
-    paddingVertical: spacing.xs,
   },
   statusText: withTextStyle(typography.body, {
     color: palette.secondaryText,
@@ -73,10 +62,8 @@ const styles = StyleSheet.create({
   title: withTextStyle(typography.title, {
     color: palette.secondaryText,
     marginBottom: spacing.xs,
-    marginLeft: spacing.md,
   }),
   description: withTextStyle(typography.body, {
     color: palette.secondaryText,
-    marginLeft: spacing.md,
   }),
 });

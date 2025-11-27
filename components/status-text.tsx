@@ -1,7 +1,7 @@
-import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { typography } from "@/styles/typography";
+import { StyleSheet, View } from "react-native";
 
 export default function StatusText() {
   const { toolConstants } = usePracticeToolConstants();
