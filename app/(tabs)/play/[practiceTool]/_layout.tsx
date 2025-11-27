@@ -45,12 +45,8 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   safeArea: {},
-  scrollView: {
-    borderWidth: 10,
-    borderColor: "red",
-  },
+  scrollView: {},
   contentContainer: {
-    borderWidth: 10,
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
