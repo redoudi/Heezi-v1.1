@@ -22,10 +22,13 @@ export default function StatusText() {
 const styles = StyleSheet.create({
   statusButton: {
     alignItems: "center",
+    justifyContent: "center",
     borderRadius: 8,
     paddingHorizontal: spacing.xs,
+    paddingVertical: spacing.xs / 2,
   },
   statusText: {
     color: "#0A2924",
+    lineHeight: typography.body.fontSize,
   },
 });
