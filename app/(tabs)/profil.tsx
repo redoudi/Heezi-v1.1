@@ -1,6 +1,6 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 export default function ProfilScreen() {
@@ -184,16 +184,16 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 16,
   },
-  text: StyleSheet.compose(typography.headline, {
+  text: withTextStyle(typography.headline, {
     color: "#292929",
     marginBottom: 8,
     marginLeft: 16,
   }),
-  text2: StyleSheet.compose(typography.title, {
+  text2: withTextStyle(typography.title, {
     color: "#0A2924",
     marginBottom: 16,
   }),
-  text3: StyleSheet.compose(typography.title, {
+  text3: withTextStyle(typography.title, {
     color: "#B2460B",
   }),
   view: {

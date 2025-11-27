@@ -5,7 +5,7 @@ import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 export default function SectionScreen() {
   const lessonAnimationData = require("@/assets/animations/RenardBureauVert.json");
 
@@ -196,22 +196,22 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     marginLeft: 39,
   },
-  text: StyleSheet.compose(typography.caption, {
+  text: withTextStyle(typography.caption, {
     color: "#1C5348",
   }),
-  statusText: StyleSheet.compose(typography.body, {
+  statusText: withTextStyle(typography.body, {
     color: "#0A2924",
   }),
-  text3: StyleSheet.compose(typography.title, {
+  text3: withTextStyle(typography.title, {
     color: "#0A2924",
     marginBottom: 7,
   }),
-  text4: StyleSheet.compose(typography.body, {
+  text4: withTextStyle(typography.body, {
     color: "#0A2924",
     marginRight: 86,
     width: 151,
   }),
-  text5: StyleSheet.compose(typography.headline, {
+  text5: withTextStyle(typography.headline, {
     color: "#F2FBF8",
   }),
   view: {

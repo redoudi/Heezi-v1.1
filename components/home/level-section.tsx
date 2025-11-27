@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 
 interface LevelSectionProps {
   level: string;
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     marginBottom: 8,
   },
-  levelText: StyleSheet.compose(typography.headline, {
+  levelText: withTextStyle(typography.headline, {
     color: "#292929",
     marginBottom: 8,
     marginLeft: 15,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     marginLeft: 7,
     marginRight: 4,
   },
-  scoreText: StyleSheet.compose(typography.headline, {
+  scoreText: withTextStyle(typography.headline, {
     color: "#F28B0E",
     marginRight: 10,
   }),

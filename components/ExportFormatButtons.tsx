@@ -7,7 +7,7 @@ import { useLocalSearchParams } from "expo-router";
 import { Alert, Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
 import { exportXlsx } from "../utils/exportXlsx";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 
 const ExportXlsxButton = () => {
   const { contents } = useExportSpreadsheetValues();
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginBottom: 16,
   },
-  text: StyleSheet.compose(typography.headline, {
+  text: withTextStyle(typography.headline, {
     color: "#292929",
   }),
 });

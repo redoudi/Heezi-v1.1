@@ -1,7 +1,7 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
 import ProgressBar from "./ProgressBar";
 
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   progressAndContinuer: { justifyContent: "space-between", flex: 1 },
-  sectionHeader: StyleSheet.compose(typography.headline, {
+  sectionHeader: withTextStyle(typography.headline, {
     color: "#000000",
     marginBottom: 15,
     marginLeft: 8,

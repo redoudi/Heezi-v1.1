@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 export const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
@@ -692,45 +692,45 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: 8,
   },
-  text: StyleSheet.compose(typography.body, {
+  text: withTextStyle(typography.body, {
     color: "#292929",
   }),
-  text2: StyleSheet.compose(typography.caption, {
+  text2: withTextStyle(typography.caption, {
     color: "#292929",
     marginBottom: 4,
   }),
-  text3: StyleSheet.compose(typography.caption, {
+  text3: withTextStyle(typography.caption, {
     color: "#000000",
     textAlign: "center",
   }),
-  text4: StyleSheet.compose(typography.caption, {
+  text4: withTextStyle(typography.caption, {
     color: "#292929",
     marginLeft: 8,
     marginRight: 12,
   }),
-  text5: StyleSheet.compose(typography.caption, {
+  text5: withTextStyle(typography.caption, {
     color: "#292929",
     marginLeft: 8,
   }),
-  text6: StyleSheet.compose(typography.caption, {
+  text6: withTextStyle(typography.caption, {
     color: "#000000",
   }),
-  text7: StyleSheet.compose(typography.caption, {
+  text7: withTextStyle(typography.caption, {
     color: "#292929",
   }),
-  text8: StyleSheet.compose(typography.caption, {
+  text8: withTextStyle(typography.caption, {
     color: "#292929",
     marginRight: 6,
   }),
-  text9: StyleSheet.compose(typography.captionBold, {
+  text9: withTextStyle(typography.captionBold, {
     color: "#292929",
     textAlign: "center",
   }),
-  text10: StyleSheet.compose(typography.bodyBold, {
+  text10: withTextStyle(typography.bodyBold, {
     color: "#292929",
     textAlign: "center",
   }),
-  text11: StyleSheet.compose(typography.headline, {
+  text11: withTextStyle(typography.headline, {
     color: "#903610",
     marginLeft: 16,
     flex: 1,

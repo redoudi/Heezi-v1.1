@@ -1,7 +1,7 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 
 export default function ScoreScreen() {
   return (
@@ -295,48 +295,48 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     marginBottom: 16,
   },
-  text: StyleSheet.compose(typography.title, {
+  text: withTextStyle(typography.title, {
     color: "#292929",
     marginBottom: 8,
   }),
-  text2: StyleSheet.compose(typography.body, {
+  text2: withTextStyle(typography.body, {
     color: "#292929",
     marginBottom: 8,
   }),
-  text3: StyleSheet.compose(typography.headline, {
+  text3: withTextStyle(typography.headline, {
     color: "#292929",
   }),
-  text4: StyleSheet.compose(typography.headline, {
+  text4: withTextStyle(typography.headline, {
     color: "#0A2924",
   }),
-  text5: StyleSheet.compose(typography.headline, {
+  text5: withTextStyle(typography.headline, {
     color: "#0A2924",
     marginLeft: 16,
     width: 224,
   }),
-  text6: StyleSheet.compose(typography.title, {
+  text6: withTextStyle(typography.title, {
     color: "#292929",
     marginLeft: 16,
     marginRight: 20,
   }),
-  text7: StyleSheet.compose(typography.bodyLargeBold, {
+  text7: withTextStyle(typography.bodyLargeBold, {
     color: "#292929",
     flex: 1,
   }),
-  text8: StyleSheet.compose(typography.headline, {
+  text8: withTextStyle(typography.headline, {
     color: "#292929",
     marginRight: 20,
   }),
-  text9: StyleSheet.compose(typography.title, {
+  text9: withTextStyle(typography.title, {
     color: "#1B463E",
     marginLeft: 16,
     marginRight: 20,
   }),
-  text10: StyleSheet.compose(typography.bodyLargeBold, {
+  text10: withTextStyle(typography.bodyLargeBold, {
     color: "#1B463E",
     flex: 1,
   }),
-  text11: StyleSheet.compose(typography.headline, {
+  text11: withTextStyle(typography.headline, {
     color: "#1B463E",
     marginRight: 20,
   }),

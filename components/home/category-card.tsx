@@ -2,7 +2,7 @@ import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { router, useGlobalSearchParams } from "expo-router";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 
 interface CategoryCardProps {
   toolName: keyof typeof practiceToolsConstants;
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
     paddingRight: 16,
   },
-  text: StyleSheet.compose(typography.headline, {
+  text: withTextStyle(typography.headline, {
     marginLeft: 16,
   }),
 });

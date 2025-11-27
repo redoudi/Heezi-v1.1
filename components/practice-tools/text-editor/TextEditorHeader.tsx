@@ -3,7 +3,7 @@ import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 import BackButton from "../../ui/back-button";
 
 function BoldButton() {
@@ -970,42 +970,42 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  text: StyleSheet.compose(typography.body, {
+  text: withTextStyle(typography.body, {
     color: "#292929",
   }),
-  text10: StyleSheet.compose(typography.captionSmall, {
+  text10: withTextStyle(typography.captionSmall, {
     color: "#000000",
     marginBottom: 4,
   }),
-  text2: StyleSheet.compose(typography.caption, {
+  text2: withTextStyle(typography.caption, {
     color: "#292929",
     marginBottom: 4,
   }),
-  text3: StyleSheet.compose(typography.caption, {
+  text3: withTextStyle(typography.caption, {
     color: "#000000",
     textAlign: "center",
   }),
-  text4: StyleSheet.compose(typography.caption, {
+  text4: withTextStyle(typography.caption, {
     color: "#292929",
     marginLeft: 8,
     flex: 1,
   }),
-  text5: StyleSheet.compose(typography.caption, {
+  text5: withTextStyle(typography.caption, {
     color: "#292929",
     marginLeft: 8,
   }),
-  text6: StyleSheet.compose(typography.caption, {
+  text6: withTextStyle(typography.caption, {
     color: "#292929",
     marginLeft: 8,
     marginRight: 11,
   }),
-  text7: StyleSheet.compose(typography.caption, {
+  text7: withTextStyle(typography.caption, {
     color: "#000000",
   }),
-  text8: StyleSheet.compose(typography.captionBold, {
+  text8: withTextStyle(typography.captionBold, {
     color: "#000000",
   }),
-  text9: StyleSheet.compose(typography.bodyLarge, {
+  text9: withTextStyle(typography.bodyLarge, {
     color: "#000000",
   }),
   view: {

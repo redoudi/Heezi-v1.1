@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 
 interface NavigationMenuItemProps {
   imageUri: string;
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     height: 48,
     marginRight: 16,
   },
-  text: StyleSheet.compose(typography.headline, {
+  text: withTextStyle(typography.headline, {
     color: "#292929",
   }),
 });

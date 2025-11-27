@@ -1,6 +1,24 @@
+import type { TextStyle } from "react-native";
 import { StyleSheet } from "react-native";
 
-const base = (fontSize: number, options?: { lineHeight?: number; fontWeight?: "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"; }) => ({
+const base = (
+  fontSize: number,
+  options?: {
+    lineHeight?: number;
+    fontWeight?:
+      | "normal"
+      | "bold"
+      | "100"
+      | "200"
+      | "300"
+      | "400"
+      | "500"
+      | "600"
+      | "700"
+      | "800"
+      | "900";
+  }
+) => ({
   fontSize,
   ...(options?.lineHeight ? { lineHeight: options.lineHeight } : {}),
   ...(options?.fontWeight ? { fontWeight: options.fontWeight } : {}),
@@ -23,4 +41,7 @@ export const typography = StyleSheet.create({
 
 export type TypographyVariant = keyof typeof typography;
 
-
+export const withTextStyle = (
+  base: TextStyle,
+  overrides?: TextStyle
+): TextStyle => StyleSheet.flatten([base, overrides]) as TextStyle;

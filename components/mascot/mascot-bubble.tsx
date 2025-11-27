@@ -5,7 +5,7 @@ import { getElementBottomHeight } from "@/utils/cursorUtils";
 import { useEffect, useState } from "react";
 import { Image, LayoutChangeEvent, StyleProp, StyleSheet, View, ViewStyle, useWindowDimensions } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 import SuivantBtn from "../ui/suivantBtn";
 
 const CornerTriangleIcon = () => {
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     marginBottom: 48,
   },
 
-  dialogText: StyleSheet.compose(typography.bodyLargeBold, {
+  dialogText: withTextStyle(typography.bodyLargeBold, {
     color: "#FFFFFF",
     marginBottom: 31,
   }),

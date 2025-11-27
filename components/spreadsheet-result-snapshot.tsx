@@ -1,7 +1,7 @@
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
 import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 
 export default function SpreadsheetResultSnapshot() {
   const { contents: cellsContents } = useExportSpreadsheetValues();
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   column: {
     marginHorizontal: 32,
   },
-  text3: StyleSheet.compose(typography.body, {
+  text3: withTextStyle(typography.body, {
     color: "#292929",
     marginBottom: 10,
   }),

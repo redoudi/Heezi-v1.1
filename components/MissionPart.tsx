@@ -1,7 +1,7 @@
 import { router } from "expo-router";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 
 import JouerButton from "@/components/ui/JouerButton";
 import characters from "@/constants/characters";
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderWidth: 1,
   },
-  text5: StyleSheet.compose(typography.headline, {
+  text5: withTextStyle(typography.headline, {
     color: "#F2FBF8",
   }),
 
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     gap: 8,
   },
-  playButtonText: StyleSheet.compose(typography.captionBold, {
+  playButtonText: withTextStyle(typography.captionBold, {
     color: "#292929",
   }),
 });

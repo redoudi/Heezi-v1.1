@@ -1,8 +1,8 @@
-import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { typography, withTextStyle } from "@/styles/typography";
+import { StyleSheet, View } from "react-native";
 import StatusText from "../status-text";
-import { typography } from "@/styles/typography";
 
 export function CourseCard() {
   const { toolConstants } = usePracticeToolConstants();
@@ -15,11 +15,15 @@ export function CourseCard() {
       /> */}
       <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
         <View style={styles.header}>
-          <ThemedText style={styles.progressText}>1/3 sections débloquées</ThemedText>
+          <ThemedText style={styles.progressText}>
+            1/3 sections débloquées
+          </ThemedText>
           <StatusText />
         </View>
         <ThemedText style={styles.title}>{toolConstants.title}</ThemedText>
-        <ThemedText style={styles.description}>{toolConstants.description}</ThemedText>
+        <ThemedText style={styles.description}>
+          {toolConstants.description}
+        </ThemedText>
       </View>
     </View>
   );
@@ -46,7 +50,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     marginHorizontal: 15,
   },
-  progressText: StyleSheet.compose(typography.caption, {
+  progressText: withTextStyle(typography.caption, {
     color: "#1C5348",
     flex: 1,
   }),
@@ -56,15 +60,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 4,
   },
-  statusText: StyleSheet.compose(typography.body, {
+  statusText: withTextStyle(typography.body, {
     color: "#0A2924",
   }),
-  title: StyleSheet.compose(typography.title, {
+  title: withTextStyle(typography.title, {
     color: "#0A2924",
     marginBottom: 7,
     marginLeft: 15,
   }),
-  description: StyleSheet.compose(typography.body, {
+  description: withTextStyle(typography.body, {
     color: "#0A2924",
     marginLeft: 15,
   }),

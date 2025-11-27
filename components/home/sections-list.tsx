@@ -1,6 +1,6 @@
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
+import { typography, withTextStyle } from "@/styles/typography";
 export default function SectionsList({
   setSectionIndex,
 }: {
@@ -308,20 +308,20 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 32,
   },
-  text: StyleSheet.compose(typography.headline, {
+  text: withTextStyle(typography.headline, {
     color: "#000000",
     marginBottom: 16,
     marginLeft: 32,
   }),
-  text2: StyleSheet.compose(typography.headline, {
+  text2: withTextStyle(typography.headline, {
     color: "#0A2924",
     marginRight: 11,
   }),
-  text3: StyleSheet.compose(typography.headline, {
+  text3: withTextStyle(typography.headline, {
     color: "#000000",
     marginBottom: 15,
   }),
-  text4: StyleSheet.compose(typography.headline, {
+  text4: withTextStyle(typography.headline, {
     color: "#292929",
     marginRight: 11,
   }),
