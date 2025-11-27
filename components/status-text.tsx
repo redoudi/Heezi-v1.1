@@ -1,5 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { spacing } from "@/styles/designSystem";
 import { typography } from "@/styles/typography";
 import { StyleSheet, View } from "react-native";
 
@@ -20,10 +21,9 @@ export default function StatusText() {
 }
 const styles = StyleSheet.create({
   statusButton: {
-    width: 68,
     alignItems: "center",
     borderRadius: 8,
-    paddingVertical: 4,
+    paddingHorizontal: spacing.xs,
   },
   statusText: {
     color: "#0A2924",
