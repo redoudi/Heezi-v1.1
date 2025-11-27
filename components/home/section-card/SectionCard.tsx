@@ -24,9 +24,7 @@ export default function SectionCard({
       ]}
     >
       <View style={styles.leftColumn}>
-        <Text
-          style={styles.sectionHeader}
-        >{`Section ${sectionNumber}`}</Text>
+        <Text style={styles.sectionHeader}>{`Section ${sectionNumber}`}</Text>
         <View style={styles.progressAndContinuer}>
           <ProgressBar />
           <ContinuerSectionBtn continuerRoute={continuerRoute} />

@@ -12,6 +12,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveBackgroundColor: "#EFEFEF", // Background color for selected tab
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarPosition: "left",
@@ -101,7 +102,6 @@ const styles = StyleSheet.create({
     paddingTop: 93,
     paddingRight: 8,
     alignItems: "center",
-
     minWidth: 164,
     maxWidth: 164,
     margin: 16,
