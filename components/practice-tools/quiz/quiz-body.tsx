@@ -1,7 +1,6 @@
 import CustomAnimation from "@/components/animations/CustomAnimation";
 import { router } from "expo-router";
-import { FlatList, Image, SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { FlatList, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const ProgressBar = () => {
   return (
@@ -33,7 +32,7 @@ const TopBar = () => {
 const QuestionBox = ({ question }: { question: string }) => {
   return (
     <View style={styles.view5}>
-      <ThemedText style={styles.text}>{question}</ThemedText>
+      <Text style={styles.text}>{question}</Text>
     </View>
   );
 };
@@ -70,7 +69,7 @@ const AnswerButton = ({
       onPress={() => selectAnswer(index)}
       disabled={isVerified}
     >
-      <ThemedText style={styles.text2}>{answer.text || "..."}</ThemedText>
+      <Text style={styles.text2}>{answer.text || "..."}</Text>
     </TouchableOpacity>
   );
 };
@@ -109,7 +108,7 @@ const VerifyButton = ({
       onPress={isVerified ? nextStep : verifyAnswer}
       disabled={disabled}
     >
-      <ThemedText style={styles.text3}>{isVerified ? "Suivant" : "Vérifier"}</ThemedText>
+      <Text style={styles.text3}>{isVerified ? "Suivant" : "Vérifier"}</Text>
       <Image
         source={require("@/assets/images/tsy13i8h_expires_30_days.png")}
         resizeMode={"stretch"}

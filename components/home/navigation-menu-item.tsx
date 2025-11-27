@@ -1,6 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 interface NavigationMenuItemProps {
   imageUri: string;
@@ -18,7 +17,7 @@ export function NavigationMenuItem({
         resizeMode="stretch"
         style={styles.image}
       />
-      <ThemedText style={styles.text}>{label}</ThemedText>
+      <Text style={styles.text}>{label}</Text>
     </View>
   );
 }

@@ -1,5 +1,4 @@
-import { Image, StyleSheet, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { ScrollableScreen } from "@/components/scrollable-screen";
 
 export default function SuccessScreen() {
@@ -9,7 +8,7 @@ export default function SuccessScreen() {
         <View style={styles.column}>
           <View style={styles.column2}>
             <View style={styles.view2}>
-              <ThemedText style={styles.text}>{"10/100 succès débloqués (10%)"}</ThemedText>
+              <Text style={styles.text}>{"10/100 succès débloqués (10%)"}</Text>
             </View>
             <View style={styles.view3}>
               <View style={styles.box}></View>
@@ -24,12 +23,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
-              <ThemedText style={styles.text3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </ThemedText>
+              </Text>
             </View>
           </View>
           <View style={styles.row}>
@@ -41,12 +40,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
-              <ThemedText style={styles.text3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </ThemedText>
+              </Text>
             </View>
           </View>
           <View style={styles.row}>
@@ -58,12 +57,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
-              <ThemedText style={styles.text3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </ThemedText>
+              </Text>
             </View>
           </View>
           <View style={styles.row}>
@@ -75,12 +74,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
-              <ThemedText style={styles.text3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </ThemedText>
+              </Text>
             </View>
           </View>
           <View style={styles.row}>
@@ -92,12 +91,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
-              <ThemedText style={styles.text3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </ThemedText>
+              </Text>
             </View>
           </View>
           <View style={styles.row2}>
@@ -109,12 +108,12 @@ export default function SuccessScreen() {
               style={styles.image}
             />
             <View style={styles.column3}>
-              <ThemedText style={styles.text2}>{"Titre du succès"}</ThemedText>
-              <ThemedText style={styles.text3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
                 {
                   "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
                 }
-              </ThemedText>
+              </Text>
             </View>
           </View>
         </View>

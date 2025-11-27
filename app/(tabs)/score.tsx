@@ -1,6 +1,5 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ScoreScreen() {
   return (
@@ -31,13 +30,13 @@ export default function ScoreScreen() {
               />
             </View>
             <View style={styles.column3}>
-              <ThemedText style={styles.text}>{"Bronze"}</ThemedText>
-              <ThemedText style={styles.text2}>
+              <Text style={styles.text}>{"Bronze"}</Text>
+              <Text style={styles.text2}>
                 {
                   "Les participants dans le top 10 se verront attribuer un nouveau rang "
                 }
-              </ThemedText>
-              <ThemedText style={styles.text3}>{"7 jours restants"}</ThemedText>
+              </Text>
+              <Text style={styles.text3}>{"7 jours restants"}</Text>
             </View>
           </View>
           <View style={styles.row2}>
@@ -48,12 +47,12 @@ export default function ScoreScreen() {
                   onPress={() => {}}
                   disabled
                 >
-                  <ThemedText style={styles.text4}>{"Classement Global"}</ThemedText>
+                  <Text style={styles.text4}>{"Classement Global"}</Text>
                 </TouchableOpacity>
                 <View style={styles.view2}>
-                  <ThemedText style={styles.text5}>
+                  <Text style={styles.text5}>
                     {"Classement de votre session"}
-                  </ThemedText>
+                  </Text>
                 </View>
               </View>
               <TouchableOpacity
@@ -61,112 +60,112 @@ export default function ScoreScreen() {
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text6}>{"1."}</ThemedText>
+                <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/3lokmvs9_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
-                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
+                <Text style={styles.text7}>{"Nom de la personne"}</Text>
+                <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow2}
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text9}>{"1."}</ThemedText>
+                <Text style={styles.text9}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/6643scml_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <ThemedText style={styles.text10}>{"Nom de la personne"}</ThemedText>
-                <ThemedText style={styles.text11}>{"Nv.100"}</ThemedText>
+                <Text style={styles.text10}>{"Nom de la personne"}</Text>
+                <Text style={styles.text11}>{"Nv.100"}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text6}>{"1."}</ThemedText>
+                <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/n8b0919f_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
-                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
+                <Text style={styles.text7}>{"Nom de la personne"}</Text>
+                <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text6}>{"1."}</ThemedText>
+                <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/myla2l0p_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
-                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
+                <Text style={styles.text7}>{"Nom de la personne"}</Text>
+                <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text6}>{"1."}</ThemedText>
+                <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/w55o4c0r_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
-                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
+                <Text style={styles.text7}>{"Nom de la personne"}</Text>
+                <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text6}>{"1."}</ThemedText>
+                <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/72f9ifvg_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
-                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
+                <Text style={styles.text7}>{"Nom de la personne"}</Text>
+                <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow}
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text6}>{"1."}</ThemedText>
+                <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/lcfh9jwj_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
-                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
+                <Text style={styles.text7}>{"Nom de la personne"}</Text>
+                <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.buttonRow3}
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text6}>{"1."}</ThemedText>
+                <Text style={styles.text6}>{"1."}</Text>
                 <Image
                   source={require("@/assets/images/6lq83c0i_expires_30_days.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <ThemedText style={styles.text7}>{"Nom de la personne"}</ThemedText>
-                <ThemedText style={styles.text8}>{"Nv.100"}</ThemedText>
+                <Text style={styles.text7}>{"Nom de la personne"}</Text>
+                <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.column5}>

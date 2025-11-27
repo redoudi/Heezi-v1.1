@@ -1,7 +1,6 @@
-import { ThemedText } from "@/components/themed-text";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { palette, radius, spacing } from "@/styles/designSystem";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import StatusText from "../status-text";
 
 export function CourseCard() {
@@ -11,10 +10,8 @@ export function CourseCard() {
       style={[styles.mainContent, { backgroundColor: toolConstants.color }]}
     >
       <View>
-        <ThemedText style={styles.title}>{toolConstants.title}</ThemedText>
-        <ThemedText style={styles.description}>
-          {toolConstants.description}
-        </ThemedText>
+        <Text style={styles.title}>{toolConstants.title}</Text>
+        <Text style={styles.description}>{toolConstants.description}</Text>
       </View>
       <StatusText />
     </View>

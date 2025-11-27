@@ -1,6 +1,5 @@
-import { ThemedText } from "@/components/themed-text";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
 import ProgressBar from "./ProgressBar";
 
@@ -25,9 +24,9 @@ export default function SectionCard({
       ]}
     >
       <View style={styles.leftColumn}>
-        <ThemedText
+        <Text
           style={styles.sectionHeader}
-        >{`Section ${sectionNumber}`}</ThemedText>
+        >{`Section ${sectionNumber}`}</Text>
         <View style={styles.progressAndContinuer}>
           <ProgressBar />
           <ContinuerSectionBtn continuerRoute={continuerRoute} />

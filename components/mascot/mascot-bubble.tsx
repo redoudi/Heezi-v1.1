@@ -3,8 +3,7 @@ import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getElementBottomHeight } from "@/utils/cursorUtils";
 import { useEffect, useState } from "react";
-import { Image, LayoutChangeEvent, StyleProp, StyleSheet, View, ViewStyle, useWindowDimensions } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, LayoutChangeEvent, StyleProp, StyleSheet, Text, View, ViewStyle, useWindowDimensions } from "react-native";
 import SuivantBtn from "../ui/suivantBtn";
 
 const CornerTriangleIcon = () => {
@@ -44,7 +43,7 @@ export const MascotDialog = ({
     <View style={[styles.mainContainer, style]} onLayout={onLayout}>
       <View style={[styles.textBoxAndTriangle, textBoxAndTriangleStyle]}>
         <View style={styles.textContainer}>
-          <ThemedText style={styles.dialogText}>{bubbleText || "..."}</ThemedText>
+          <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
           {DownArrowNextStep}
         </View>
         <CornerTriangleIcon />

@@ -1,4 +1,3 @@
-import { ThemedText } from "@/components/themed-text";
 import useCursor from "@/context/useCursor";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { getCellUnderneath } from "@/utils/spreadsheetUtils";

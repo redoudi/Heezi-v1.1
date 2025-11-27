@@ -1,6 +1,5 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { Image, StyleSheet, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function JouerButton({
   image,
@@ -23,9 +22,9 @@ export default function JouerButton({
       ]}
     >
       <View style={styles.playButtonTextContainer}>
-        <ThemedText style={[{ fontSize: 18, fontWeight: "bold" }, styles.playButtonText]}>
+        <Text style={[{ fontSize: 18, fontWeight: "bold" }, styles.playButtonText]}>
           {"Jouer"}
-        </ThemedText>
+        </Text>
       </View>
       <Image source={image} resizeMode={"contain"} />
     </View>

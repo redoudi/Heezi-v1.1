@@ -1,14 +1,13 @@
-import { ThemedText } from "@/components/themed-text";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionsList() {
   const { practiceTool } = usePracticeToolConstants();
   return (
     <View style={styles.container}>
       <View style={styles.column}>
         <View style={styles.column2}>
-          <ThemedText style={styles.text}>{"Section 1"}</ThemedText>
+          <Text style={styles.text}>{"Section 1"}</Text>
           <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
             <View style={styles.view}>
               <View style={styles.box}></View>
@@ -21,7 +20,7 @@ export default function SectionsList() {
                 router.push(`/(tabs)/play/${practiceTool}/section-screen`)
               }
             >
-              <ThemedText style={styles.text2}>{"Continuer"}</ThemedText>
+              <Text style={styles.text2}>{"Continuer"}</Text>
               <Image
                 source={require("@/assets/images/continue-icon.png")}
                 resizeMode={"contain"}
@@ -89,7 +88,7 @@ export default function SectionsList() {
       <View style={styles.row2}>
         <View style={styles.column3}>
           <View style={styles.column}>
-            <ThemedText style={styles.text3}>{"Section 2"}</ThemedText>
+            <Text style={styles.text3}>{"Section 2"}</Text>
             <View style={styles.view2}>
               <View style={styles.view3}>
                 <View style={styles.box}></View>
@@ -101,7 +100,7 @@ export default function SectionsList() {
             onPress={() => {}}
             disabled
           >
-            <ThemedText style={styles.text4}>{"Continuer"}</ThemedText>
+            <Text style={styles.text4}>{"Continuer"}</Text>
             <Image
               source={require("@/assets/images/sy8w1ahc_expires_30_days.png")}
               resizeMode={"contain"}
@@ -118,7 +117,7 @@ export default function SectionsList() {
       <View style={styles.row3}>
         <View style={styles.column3}>
           <View style={styles.column}>
-            <ThemedText style={styles.text3}>{"Section 3"}</ThemedText>
+            <Text style={styles.text3}>{"Section 3"}</Text>
             <View style={styles.view2}>
               <View style={styles.view3}>
                 <View style={styles.box}></View>
@@ -130,7 +129,7 @@ export default function SectionsList() {
             onPress={() => {}}
             disabled
           >
-            <ThemedText style={styles.text4}>{"Continuer"}</ThemedText>
+            <Text style={styles.text4}>{"Continuer"}</Text>
             <Image
               source={require("@/assets/images/l29fup9x_expires_30_days.png")}
               resizeMode={"contain"}

@@ -1,5 +1,4 @@
-import { StyleSheet, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { StyleSheet, Text, View } from "react-native";
 import {
   palette,
   radius,
@@ -24,7 +23,7 @@ export function LevelSection({
   return (
     <View style={styles.container}>
       <View style={styles.levelHeader}>
-        <ThemedText style={styles.levelText}>{level}</ThemedText>
+        <Text style={styles.levelText}>{level}</Text>
         <View style={styles.progressBar} />
       </View>
       <View style={styles.scoreRow}>
@@ -38,7 +37,7 @@ export function LevelSection({
             resizeMode="stretch"
             style={styles.coinIcon}
           />
-          <ThemedText style={styles.scoreText}>{score}</ThemedText>
+          <Text style={styles.scoreText}>{score}</Text>
         </TouchableOpacity>
         <Image
           source={{ uri: badgeIconUri }}

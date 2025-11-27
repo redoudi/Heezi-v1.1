@@ -1,6 +1,5 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import { ThemedText } from "@/components/themed-text";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ProfilScreen() {
   return (
@@ -11,7 +10,7 @@ export default function ProfilScreen() {
             <View style={styles.column}>
               <View style={styles.row}>
                 <View style={styles.column2}>
-                  <ThemedText style={styles.text}>{"Niveau. 1"}</ThemedText>
+                  <Text style={styles.text}>{"Niveau. 1"}</Text>
                   <View style={styles.box}></View>
                 </View>
                 <View style={styles.row2}>
@@ -50,19 +49,19 @@ export default function ProfilScreen() {
                   style={styles.image3}
                 />
                 <View style={styles.column3}>
-                  <ThemedText style={styles.text2}>
+                  <Text style={styles.text2}>
                     {"Nom du profil"}
-                  </ThemedText>
+                  </Text>
                   <View style={styles.column4}>
-                    <ThemedText style={styles.text}>
+                    <Text style={styles.text}>
                       {"10/100 succès débloqués (10%)"}
-                    </ThemedText>
+                    </Text>
                     <View style={styles.box}></View>
                   </View>
                   <View style={styles.column4}>
-                    <ThemedText style={styles.text}>
+                    <Text style={styles.text}>
                       {"Progression dans le jeu (10%)"}
-                    </ThemedText>
+                    </Text>
                     <View style={styles.box}></View>
                   </View>
                   <View style={styles.row4}>
@@ -74,9 +73,9 @@ export default function ProfilScreen() {
                       style={styles.image4}
                     />
                     <View style={styles.view4}>
-                      <ThemedText style={styles.text3}>
+                      <Text style={styles.text3}>
                         {"Rang bronze"}
-                      </ThemedText>
+                      </Text>
                     </View>
                   </View>
                 </View>

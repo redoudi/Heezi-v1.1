@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { palette, radius, spacing } from "@/styles/designSystem";
 
 interface ActionButtonProps {
@@ -12,7 +11,7 @@ interface ActionButtonProps {
 export function ActionButton({ label, onPress, style }: ActionButtonProps) {
   return (
     <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
-      <ThemedText style={styles.text}>{label}</ThemedText>
+      <Text style={styles.text}>{label}</Text>
     </TouchableOpacity>
   );
 }

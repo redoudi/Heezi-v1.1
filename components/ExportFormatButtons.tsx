@@ -4,8 +4,7 @@ import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
 import { exportTextEditorDocx } from "@/utils/exportDocx";
 import { exportSpreadsheetPdf, exportTextEditorPdf } from "@/utils/exportPdf";
 import { useLocalSearchParams } from "expo-router";
-import { Alert, Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { exportXlsx } from "../utils/exportXlsx";
 
 const ExportXlsxButton = () => {
@@ -38,7 +37,7 @@ const ExportXlsxButton = () => {
         resizeMode={"stretch"}
         style={styles.image}
       />
-      <ThemedText style={styles.text}>{".xls"}</ThemedText>
+      <Text style={styles.text}>{".xls"}</Text>
     </TouchableOpacity>
   );
 };
@@ -94,7 +93,7 @@ const ExportPdfButton = () => {
         resizeMode={"stretch"}
         style={styles.image}
       />
-      <ThemedText style={styles.text}>{".pdf"}</ThemedText>
+      <Text style={styles.text}>{".pdf"}</Text>
     </TouchableOpacity>
   );
 };
@@ -134,7 +133,7 @@ const ExportDocxButton = () => {
         resizeMode={"stretch"}
         style={styles.image}
       />
-      <ThemedText style={styles.text}>{".docx"}</ThemedText>
+      <Text style={styles.text}>{".docx"}</Text>
     </TouchableOpacity>
   );
 };

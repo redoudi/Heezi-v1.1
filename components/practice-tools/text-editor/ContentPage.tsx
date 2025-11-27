@@ -3,15 +3,14 @@ import useLevelData from "@/hooks/use-level-data";
 import useHighlight from "@/hooks/useHighlight";
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { useEffect, useRef, useState } from "react";
-import { StyleSheet, TextInput, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
 function TextBlock({ item }: { item: any }) {
   return (
     <View style={[styles.textBlockContainer, item.blockStyle]}>
-      <ThemedText style={[{ fontSize: 10, lineHeight: 24 }, styles.textBlockText, item.style]}>
+      <Text style={[{ fontSize: 10, lineHeight: 24 }, styles.textBlockText, item.style]}>
         {item.text}
-      </ThemedText>
+      </Text>
     </View>
   );
 }

@@ -1,8 +1,7 @@
 import useCursor from "@/context/useCursor";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import { useEffect, useRef } from "react";
-import { Image, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "../spreadsheet-styles";
 
 function BoldButton() {
@@ -48,7 +47,7 @@ export default function Ribbon() {
               resizeMode={"stretch"}
               style={styles.image8}
             />
-            <ThemedText style={styles.text2}>{"Coller"}</ThemedText>
+            <Text style={styles.text2}>{"Coller"}</Text>
             <Image
               source={require("@/assets/images/37i3d2ye_expires_30_days.png")}
               resizeMode={"stretch"}
@@ -80,7 +79,7 @@ export default function Ribbon() {
             </TouchableOpacity>
           </View>
         </View>
-        <ThemedText style={styles.text3}>{"Presse-papiers"}</ThemedText>
+        <Text style={styles.text3}>{"Presse-papiers"}</Text>
       </View>
       <View style={styles.column5}>
         <View style={styles.column6}>
@@ -90,7 +89,7 @@ export default function Ribbon() {
               onPress={() => {}}
               disabled
             >
-              <ThemedText style={styles.text4}>{"Police"}</ThemedText>
+              <Text style={styles.text4}>{"Police"}</Text>
               <Image
                 source={require("@/assets/images/3jmssrjq_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -102,7 +101,7 @@ export default function Ribbon() {
               onPress={() => {}}
               disabled
             >
-              <ThemedText style={styles.text5}>{"12"}</ThemedText>
+              <Text style={styles.text5}>{"12"}</Text>
               <Image
                 source={require("@/assets/images/bk05j5hf_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -169,7 +168,7 @@ export default function Ribbon() {
             </TouchableOpacity>
           </View>
         </View>
-        <ThemedText style={styles.text6}>{"Police"}</ThemedText>
+        <Text style={styles.text6}>{"Police"}</Text>
       </View>
       <View style={styles.column7}>
         <View style={styles.row8}>
@@ -245,12 +244,12 @@ export default function Ribbon() {
           </TouchableOpacity>
         </View>
         <View style={styles.view}>
-          <ThemedText style={styles.text6}>{"Paragraphe"}</ThemedText>
+          <Text style={styles.text6}>{"Paragraphe"}</Text>
         </View>
       </View>
       <View style={styles.column8}>
         <TouchableOpacity style={styles.buttonRow3} onPress={() => {}} disabled>
-          <ThemedText style={styles.text4}>{"Standard"}</ThemedText>
+          <Text style={styles.text4}>{"Standard"}</Text>
           <Image
             source={require("@/assets/images/f0blr7yj_expires_30_days.png")}
             resizeMode={"stretch"}
@@ -264,13 +263,13 @@ export default function Ribbon() {
             style={styles.image24}
           />
           <TouchableOpacity style={styles.button26} onPress={() => {}} disabled>
-            <ThemedText style={styles.text7}>{"%"}</ThemedText>
+            <Text style={styles.text7}>{"%"}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button27} onPress={() => {}} disabled>
-            <ThemedText style={styles.text7}>{"000"}</ThemedText>
+            <Text style={styles.text7}>{"000"}</Text>
           </TouchableOpacity>
         </View>
-        <ThemedText style={styles.text3}>{"Nombre"}</ThemedText>
+        <Text style={styles.text3}>{"Nombre"}</Text>
       </View>
       <View style={styles.column9}>
         <View style={styles.row11}>
@@ -290,7 +289,7 @@ export default function Ribbon() {
           resizeMode={"stretch"}
           style={styles.image27}
         />
-        <ThemedText style={styles.text3}>{"Styles"}</ThemedText>
+        <Text style={styles.text3}>{"Styles"}</Text>
       </View>
       <View style={styles.column10}>
         <View style={styles.column11}>
@@ -305,7 +304,7 @@ export default function Ribbon() {
                 resizeMode={"stretch"}
                 style={styles.image28}
               />
-              <ThemedText style={styles.text7}>{"Insérer"}</ThemedText>
+              <Text style={styles.text7}>{"Insérer"}</Text>
               <Image
                 source={require("@/assets/images/bm26nyo6_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -322,7 +321,7 @@ export default function Ribbon() {
                 resizeMode={"stretch"}
                 style={styles.image28}
               />
-              <ThemedText style={styles.text7}>{"Supprimer"}</ThemedText>
+              <Text style={styles.text7}>{"Supprimer"}</Text>
               <Image
                 source={require("@/assets/images/ihd2alr2_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -340,7 +339,7 @@ export default function Ribbon() {
               resizeMode={"stretch"}
               style={styles.image30}
             />
-            <ThemedText style={styles.text8}>{"Format"}</ThemedText>
+            <Text style={styles.text8}>{"Format"}</Text>
             <Image
               source={require("@/assets/images/x88mmd51_expires_30_days.png")}
               resizeMode={"stretch"}
@@ -348,7 +347,7 @@ export default function Ribbon() {
             />
           </TouchableOpacity>
         </View>
-        <ThemedText style={styles.text6}>{"Cellules"}</ThemedText>
+        <Text style={styles.text6}>{"Cellules"}</Text>
       </View>
     </View>
   );

@@ -5,13 +5,12 @@ import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
-import { Image, StyleSheet, View, useWindowDimensions } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 
 function IntroText({ intro = "..." }) {
   return (
     <View style={styles.introTextBox}>
-      <ThemedText style={styles.introText}>{intro}</ThemedText>
+      <Text style={styles.introText}>{intro}</Text>
     </View>
   );
 }

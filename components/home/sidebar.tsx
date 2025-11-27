@@ -1,5 +1,4 @@
-import { Image, StyleSheet, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { NavigationMenuItem } from "./navigation-menu-item";
 
 export function Sidebar() {
@@ -39,7 +38,7 @@ export function Sidebar() {
             resizeMode="stretch"
             style={styles.menuIcon}
           />
-          <ThemedText style={styles.menuText}>{"Succès"}</ThemedText>
+          <Text style={styles.menuText}>{"Succès"}</Text>
         </View>
       </View>
     </View>

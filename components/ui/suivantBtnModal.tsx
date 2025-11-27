@@ -1,5 +1,4 @@
-import { Image, StyleSheet, TouchableOpacity } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function SuivantBtn({
   text,
@@ -10,7 +9,7 @@ export default function SuivantBtn({
 }) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.downArrowContainer}>
-      <ThemedText style={[{ fontSize: 18, fontWeight: "bold" }, styles.text]}>{text}</ThemedText>
+      <Text style={[{ fontSize: 18, fontWeight: "bold" }, styles.text]}>{text}</Text>
       <Image
         source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
         resizeMode={"stretch"}

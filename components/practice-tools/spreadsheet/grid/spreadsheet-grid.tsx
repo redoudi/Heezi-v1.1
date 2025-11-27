@@ -1,8 +1,7 @@
 import useCursor from "@/context/useCursor";
 import useHighlight from "@/hooks/useHighlight";
 import { useEffect, useRef } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Cell from "./cell";
 import HeaderRow from "./header-row";
 
@@ -33,7 +32,7 @@ export default function SpreadsheetGrid() {
                 isHighlighted && styles.highlighted,
               ]}
             >
-              <ThemedText style={styles.rowNumber}>{item}</ThemedText>
+              <Text style={styles.rowNumber}>{item}</Text>
             </View>
             {COLUMNS.map((_, colIndex) => (
               <Cell

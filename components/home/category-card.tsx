@@ -1,8 +1,7 @@
-import { ThemedText } from "@/components/themed-text";
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { palette, radius, spacing } from "@/styles/designSystem";
 import { router, useGlobalSearchParams } from "expo-router";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface CategoryCardProps {
   toolName: keyof typeof practiceToolsConstants;
@@ -39,11 +38,11 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
           },
         ]}
       >
-        <ThemedText
+        <Text
           style={[styles.text, { color: cardToolConstants.textColor }]}
         >
           {cardToolConstants.title}
-        </ThemedText>
+        </Text>
       </View>
     </TouchableOpacity>
   );

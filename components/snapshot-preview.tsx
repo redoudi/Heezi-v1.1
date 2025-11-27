@@ -1,4 +1,3 @@
-import { ThemedText } from "@/components/themed-text";
 import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, View } from "react-native";
 import SpreadsheetResultSnapshot from "./spreadsheet-result-snapshot";

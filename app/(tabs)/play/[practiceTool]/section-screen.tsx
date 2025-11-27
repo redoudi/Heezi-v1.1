@@ -3,8 +3,7 @@ import StatusText from "@/components/status-text";
 import sectionButtons from "@/constants/sectionButtons";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function SectionScreen() {
   const lessonAnimationData = require("@/assets/animations/RenardBureauVert.json");
 
@@ -34,13 +33,13 @@ export default function SectionScreen() {
                 </View>
               </TouchableOpacity>
 
-              <ThemedText style={styles.text}>{"3 niveaux"}</ThemedText>
+              <Text style={styles.text}>{"3 niveaux"}</Text>
             </View>
             <StatusText />
           </View>
           <View>
-            <ThemedText style={styles.text3}>{"Section 1"}</ThemedText>
-            <ThemedText style={styles.text4}>{"Apprendre les bases"}</ThemedText>
+            <Text style={styles.text3}>{"Section 1"}</Text>
+            <Text style={styles.text4}>{"Apprendre les bases"}</Text>
           </View>
         </View>
         <View style={styles.missionPartsContainer}>

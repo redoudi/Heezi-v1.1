@@ -1,7 +1,6 @@
 import SuivantBtnModal from "@/components/ui/suivantBtnModal";
 import { useEffect } from "react";
-import { Image, Modal, Platform, StyleSheet, TouchableWithoutFeedback, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, Modal, Platform, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 
 export default function MascotModal({ open, onClose, modalText }) {
   // Blur any focused elements when modal opens to prevent aria-hidden accessibility issues
@@ -31,7 +30,7 @@ export default function MascotModal({ open, onClose, modalText }) {
             />
             <View style={styles.modalTextBoxContainer}>
               <View style={styles.modalTextBox}>
-                <ThemedText style={styles.modalText}>{modalText || "..."}</ThemedText>
+                <Text style={styles.modalText}>{modalText || "..."}</Text>
               </View>
               <SuivantBtnModal text="Continuer" onPress={onClose} />
             </View>

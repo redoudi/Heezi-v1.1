@@ -1,6 +1,5 @@
 import { router } from "expo-router";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import JouerButton from "@/components/ui/JouerButton";
 import characters from "@/constants/characters";
@@ -49,7 +48,7 @@ export default function MissionPart({
   return (
     <View>
       <View style={[styles.button, { backgroundColor: toolConstants.color }]}>
-        <ThemedText style={styles.text5}>{title}</ThemedText>
+        <Text style={styles.text5}>{title}</Text>
       </View>
 
       <TouchableOpacity

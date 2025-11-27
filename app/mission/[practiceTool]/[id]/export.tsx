@@ -5,8 +5,7 @@ import SnapshotPreview from "@/components/snapshot-preview";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router } from "expo-router";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export const dynamicParams = false;
 
@@ -29,7 +28,7 @@ export default function ExportScreen() {
                 router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
               } // go to home page
             >
-              <ThemedText style={styles.text2}>{"Continuer"}</ThemedText>
+              <Text style={styles.text2}>{"Continuer"}</Text>
               <Image
                 source={require("@/assets/images/a74yzjog_expires_30_days.png")}
                 resizeMode={"stretch"}

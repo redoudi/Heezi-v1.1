@@ -1,8 +1,7 @@
 import useCursor from "@/context/useCursor";
 import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "@/components/themed-text";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import BackButton from "../../ui/back-button";
 
 function BoldButton() {
@@ -67,31 +66,31 @@ export default function TextEditorHeader() {
     <View style={styles.column2}>
       <View style={styles.row2}>
         <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Accueil"}</ThemedText>
+          <Text style={styles.text}>{"Accueil"}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button3} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Insertion"}</ThemedText>
+          <Text style={styles.text}>{"Insertion"}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Dessin"}</ThemedText>
+          <Text style={styles.text}>{"Dessin"}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Conception"}</ThemedText>
+          <Text style={styles.text}>{"Conception"}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button6} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Mise en page"}</ThemedText>
+          <Text style={styles.text}>{"Mise en page"}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button7} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Références"}</ThemedText>
+          <Text style={styles.text}>{"Références"}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Publipostage"}</ThemedText>
+          <Text style={styles.text}>{"Publipostage"}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Révision"}</ThemedText>
+          <Text style={styles.text}>{"Révision"}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button8} onPress={() => {}} disabled>
-          <ThemedText style={styles.text}>{"Affichage"}</ThemedText>
+          <Text style={styles.text}>{"Affichage"}</Text>
         </TouchableOpacity>
         <View style={styles.row3}>
           <TouchableOpacity style={styles.button9} onPress={() => {}} disabled>
@@ -123,7 +122,7 @@ export default function TextEditorHeader() {
                 resizeMode={"stretch"}
                 style={styles.image8}
               />
-              <ThemedText style={styles.text2}>{"Coller"}</ThemedText>
+              <Text style={styles.text2}>{"Coller"}</Text>
               <Image
                 source={require("@/assets/images/oluhu4b3_expires_30_days.png")}
                 resizeMode={"stretch"}
@@ -155,7 +154,7 @@ export default function TextEditorHeader() {
               </TouchableOpacity>
             </View>
           </View>
-          <ThemedText style={styles.text3}>{"Presse-papiers"}</ThemedText>
+          <Text style={styles.text3}>{"Presse-papiers"}</Text>
         </View>
         <View style={styles.column5}>
           <View style={styles.column6}>
@@ -165,7 +164,7 @@ export default function TextEditorHeader() {
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text4}>{"Police"}</ThemedText>
+                <Text style={styles.text4}>{"Police"}</Text>
                 <Image
                   source={require("@/assets/images/uig4w09q_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -177,7 +176,7 @@ export default function TextEditorHeader() {
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text5}>{"12"}</ThemedText>
+                <Text style={styles.text5}>{"12"}</Text>
                 <Image
                   source={require("@/assets/images/7bw6obmu_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -189,7 +188,7 @@ export default function TextEditorHeader() {
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text6}>{"A a"}</ThemedText>
+                <Text style={styles.text6}>{"A a"}</Text>
                 <Image
                   source={require("@/assets/images/rjnwoeo6_expires_30_days.png")}
                   resizeMode={"stretch"}
@@ -289,7 +288,7 @@ export default function TextEditorHeader() {
               </TouchableOpacity>
             </View>
           </View>
-          <ThemedText style={styles.text7}>{"Police"}</ThemedText>
+          <Text style={styles.text7}>{"Police"}</Text>
         </View>
         {/*all images ok until here*/}
         <View style={styles.column7}>
@@ -407,7 +406,7 @@ export default function TextEditorHeader() {
               />
             </View>
           </View>
-          <ThemedText style={styles.text7}>{"Paragraphe"}</ThemedText>
+          <Text style={styles.text7}>{"Paragraphe"}</Text>
         </View>
         <View style={styles.column9}>
           <View style={styles.row10}>
@@ -417,14 +416,14 @@ export default function TextEditorHeader() {
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text8}>{"Normal"}</ThemedText>
+                <Text style={styles.text8}>{"Normal"}</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.button29}
                 onPress={() => {}}
                 disabled
               >
-                <ThemedText style={styles.text9}>{"Titre 1"}</ThemedText>
+                <Text style={styles.text9}>{"Titre 1"}</Text>
               </TouchableOpacity>
             </View>
             <TouchableOpacity
@@ -439,7 +438,7 @@ export default function TextEditorHeader() {
               />
             </TouchableOpacity>
           </View>
-          <ThemedText style={styles.text7}>{"Styles"}</ThemedText>
+          <Text style={styles.text7}>{"Styles"}</Text>
         </View>
         <View style={styles.view}>
           <TouchableOpacity
@@ -452,7 +451,7 @@ export default function TextEditorHeader() {
               resizeMode={"stretch"}
               style={styles.image29}
             />
-            <ThemedText style={styles.text10}>{"édition"}</ThemedText>
+            <Text style={styles.text10}>{"édition"}</Text>
             <Image
               source={require("@/assets/images/8h776a6o_expires_30_days.png")}
               resizeMode={"stretch"}
