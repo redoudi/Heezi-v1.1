@@ -1,11 +1,10 @@
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { typography, withTextStyle } from "@/styles/typography";
-export default function SectionsList({
-  setSectionIndex,
-}: {
-  setSectionIndex: (index: number) => void;
-}) {
+import { router } from "expo-router";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+export default function SectionsList() {
+  const { practiceTool } = usePracticeToolConstants();
   return (
     <View style={styles.container}>
       <View style={styles.column}>
@@ -19,7 +18,9 @@ export default function SectionsList({
           <View style={styles.row}>
             <TouchableOpacity
               style={styles.buttonRow}
-              onPress={() => setSectionIndex(0)}
+              onPress={() =>
+                router.push(`/(tabs)/play/${practiceTool}/section-screen`)
+              }
             >
               <ThemedText style={styles.text2}>{"Continuer"}</ThemedText>
               <Image
