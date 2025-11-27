@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
 
   title: withTextStyle(typography.title, {
     color: palette.secondaryText,
-    marginBottom: spacing.xs,
   }),
   description: withTextStyle(typography.body, {
     color: palette.secondaryText,

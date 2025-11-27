@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
 import type { ViewStyle } from "react-native";
+import { StyleSheet } from "react-native";
 
 export const palette = {
   background: "#FFFFFF",
@@ -7,7 +7,7 @@ export const palette = {
   surfaceMuted: "#D9D9D9",
   divider: "#989898",
   primaryText: "#292929",
-  secondaryText: "#0A2924",
+  secondaryText: "#black",
   tertiaryText: "#1C5348",
   accentOrange: "#F28B0E",
   accentCoral: "#F95F3C",
@@ -69,5 +69,3 @@ export const withViewStyle = (
   base: ViewStyle,
   overrides?: ViewStyle
 ): ViewStyle => StyleSheet.flatten([base, overrides]) as ViewStyle;
-
-
