@@ -14,8 +14,8 @@ export default function TitleBar() {
     }
   }, [setContentRef, levelType]);
   return (
-    <View style={styles.row} ref={titleBarRef}>
-      <View style={styles.row2}>
+    <View style={styles.mainContent} ref={titleBarRef}>
+      <View style={styles.leftRow}>
         <Image
           source={require("@/assets/images/5jt7jwsg_expires_30_days.png")}
           resizeMode={"contain"}
@@ -43,14 +43,15 @@ export default function TitleBar() {
 }
 
 const styles = StyleSheet.create({
-  row: {
+  mainContent: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
   },
-  row2: {
+  leftRow: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "flex-start",
   },
   spreadsheeticon: {
     height: 32,
