@@ -1,6 +1,5 @@
 import {
   Image,
-  SafeAreaView,
   StyleSheet,
   TouchableOpacity,
   View,
@@ -12,6 +11,7 @@ import Ribbon from "./ribbon/spreadsheet-ribbon";
 import RibbonTabs from "./ribbon/spreadsheet-ribbon-tabs";
 
 import useLevelData from "@/hooks/use-level-data";
+import { SafeAreaView } from "react-native-safe-area-context";
 import TitleBar from "./title-bar";
 
 function LevelStats() {
@@ -41,7 +41,7 @@ function LevelStats() {
 }
 
 export default function SpreadsheetScreen() {
-  const { height } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
   const { levelType } = useLevelData();
   const isLesson = levelType === "lesson";
   return (
@@ -57,7 +57,7 @@ export default function SpreadsheetScreen() {
             <FunctionBar />
           </View>
           <SpreadsheetGrid />
-          <LevelStats />
+          {/* <LevelStats /> */}
           {isLesson && <View style={styles.overlay} />}
         </View>
       </View>
