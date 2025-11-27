@@ -29,12 +29,12 @@ export default function HomeScreen() {
   const { height } = useWindowDimensions();
 
   return (
-    <SafeAreaView style={{ height: height || "100%" }}>
+    <SafeAreaView style={[styles.safeArea, { height: height || "100%" }]}>
       <ScrollView
         style={styles.scrollView}
         horizontal
         showsHorizontalScrollIndicator={true}
-        contentContainerStyle={styles.mainContainer}
+        contentContainerStyle={[styles.contentContainer]}
       >
         <LeftColumn />
         <RightColumn />
@@ -44,19 +44,22 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  safeArea: {},
   scrollView: {
     borderWidth: 10,
     borderColor: "red",
   },
-  mainContainer: {
+  contentContainer: {
     borderWidth: 10,
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
-    marginBottom: 16,
+    flexGrow: 1,
+
+    paddingTop: 16,
+    paddingBottom: 16,
+    paddingRight: 32,
     justifyContent: "space-between",
-    marginRight: 32,
-    marginTop: 16,
   },
 });
 
