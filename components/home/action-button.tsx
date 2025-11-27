@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedText } from "@/components/themed-text";
+import { palette, radius, spacing } from "@/styles/designSystem";
 import { typography, withTextStyle } from "@/styles/typography";
 
 interface ActionButtonProps {
@@ -20,12 +21,12 @@ export function ActionButton({ label, onPress, style }: ActionButtonProps) {
 const styles = StyleSheet.create({
   button: {
     alignSelf: "flex-start",
-    backgroundColor: "#45BC9E",
-    borderRadius: 8,
-    paddingVertical: 8,
+    backgroundColor: palette.accentSeafoam,
+    borderRadius: radius.md,
+    paddingVertical: spacing.xs,
   },
   text: withTextStyle(typography.headline, {
-    color: "#F2FBF8",
-    marginHorizontal: 15,
+    color: palette.textOnPrimary,
+    marginHorizontal: spacing.md,
   }),
 });

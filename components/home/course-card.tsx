@@ -1,5 +1,12 @@
 import { ThemedText } from "@/components/themed-text";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import {
+  palette,
+  radius,
+  spacing,
+  surfaces,
+  withViewStyle,
+} from "@/styles/designSystem";
 import { typography, withTextStyle } from "@/styles/typography";
 import { StyleSheet, View } from "react-native";
 import StatusText from "../status-text";
@@ -32,44 +39,44 @@ export function CourseCard() {
 const styles = StyleSheet.create({
   mainContainer: {
     flexDirection: "row",
-    marginBottom: 16,
+    marginBottom: spacing.md,
   },
   thumbnail: {
     width: 173,
     height: 173,
-    marginRight: 16,
+    marginRight: spacing.md,
   },
-  content: {
+  content: withViewStyle(surfaces.card, {
     flex: 1,
-    borderRadius: 8,
-    paddingVertical: 16,
-  },
+    borderRadius: radius.md,
+    paddingVertical: spacing.md,
+  }),
   header: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 16,
-    marginHorizontal: 15,
+    marginBottom: spacing.md,
+    marginHorizontal: spacing.md,
   },
   progressText: withTextStyle(typography.caption, {
-    color: "#1C5348",
+    color: palette.tertiaryText,
     flex: 1,
   }),
   statusButton: {
     width: 68,
     alignItems: "center",
-    borderRadius: 8,
-    paddingVertical: 4,
+    borderRadius: radius.md,
+    paddingVertical: spacing.xs,
   },
   statusText: withTextStyle(typography.body, {
-    color: "#0A2924",
+    color: palette.secondaryText,
   }),
   title: withTextStyle(typography.title, {
-    color: "#0A2924",
-    marginBottom: 7,
-    marginLeft: 15,
+    color: palette.secondaryText,
+    marginBottom: spacing.xs,
+    marginLeft: spacing.md,
   }),
   description: withTextStyle(typography.body, {
-    color: "#0A2924",
-    marginLeft: 15,
+    color: palette.secondaryText,
+    marginLeft: spacing.md,
   }),
 });

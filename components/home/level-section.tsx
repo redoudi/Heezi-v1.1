@@ -1,5 +1,11 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
+import {
+  palette,
+  radius,
+  spacing,
+  surfaces,
+} from "@/styles/designSystem";
 import { typography, withTextStyle } from "@/styles/typography";
 
 interface LevelSectionProps {
@@ -47,25 +53,24 @@ export function LevelSection({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
-    paddingTop: 32,
-    marginBottom: 16,
+    backgroundColor: palette.background,
+    paddingTop: spacing.xl,
+    marginBottom: spacing.md,
   },
   levelHeader: {
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 16,
-    marginBottom: 8,
+    ...surfaces.card,
+    paddingVertical: spacing.md,
+    marginBottom: spacing.xs,
   },
   levelText: withTextStyle(typography.headline, {
-    color: "#292929",
-    marginBottom: 8,
-    marginLeft: 15,
+    color: palette.primaryText,
+    marginBottom: spacing.xs,
+    marginLeft: spacing.md,
   }),
   progressBar: {
     height: 8,
-    backgroundColor: "#989898",
-    marginHorizontal: 16,
+    backgroundColor: palette.divider,
+    marginHorizontal: spacing.md,
   },
   scoreRow: {
     alignSelf: "flex-start",
@@ -75,21 +80,21 @@ const styles = StyleSheet.create({
     width: 98,
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 7,
+    backgroundColor: palette.surface,
+    borderRadius: radius.md,
+    paddingVertical: spacing.xs,
+    marginRight: spacing.xs,
   },
   coinIcon: {
-    borderRadius: 8,
+    borderRadius: radius.md,
     width: 32,
     height: 32,
-    marginLeft: 7,
-    marginRight: 4,
+    marginLeft: spacing.xs,
+    marginRight: spacing.xxs,
   },
   scoreText: withTextStyle(typography.headline, {
-    color: "#F28B0E",
-    marginRight: 10,
+    color: palette.accentOrange,
+    marginRight: spacing.sm,
   }),
   badgeIcon: {
     width: 71,
