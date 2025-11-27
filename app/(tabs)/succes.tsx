@@ -1,7 +1,6 @@
 import { Image, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import { typography, withTextStyle } from "@/styles/typography";
 
 export default function SuccessScreen() {
   return (
@@ -181,16 +180,22 @@ const styles = StyleSheet.create({
       height: 4,
     },
   },
-  text: withTextStyle(typography.headline, {
+  text: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#292929",
-  }),
-  text2: withTextStyle(typography.headline, {
+  },
+  text2: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#3D3D3D",
     marginBottom: 8,
-  }),
-  text3: withTextStyle(typography.body, {
+  },
+  text3: {
+    fontSize: 10,
+    lineHeight: 24,
     color: "#3D3D3D",
-  }),
+  },
   view: {
     width: 1184,
     backgroundColor: "#FFFFFF",

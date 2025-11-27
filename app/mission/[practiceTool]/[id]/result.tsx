@@ -7,7 +7,6 @@ import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import { StyleSheet, View } from "react-native";
-import { typography, withTextStyle } from "@/styles/typography";
 
 export const dynamicParams = false;
 
@@ -91,8 +90,10 @@ const styles = StyleSheet.create({
     width: 16,
     height: 24,
   },
-  text7: withTextStyle(typography.headline, {
+  text7: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#0A2924",
     marginRight: 11,
-  }),
+  },
 });

@@ -1,7 +1,6 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
 
 export default function JouerButton({
   image,
@@ -24,7 +23,7 @@ export default function JouerButton({
       ]}
     >
       <View style={styles.playButtonTextContainer}>
-        <ThemedText style={[typography.headline, styles.playButtonText]}>
+        <ThemedText style={[{ fontSize: 18, fontWeight: "bold" }, styles.playButtonText]}>
           {"Jouer"}
         </ThemedText>
       </View>

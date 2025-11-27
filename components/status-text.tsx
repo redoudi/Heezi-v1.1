@@ -1,6 +1,5 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { spacing } from "@/styles/designSystem";
-import { typography } from "@/styles/typography";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function StatusText() {
@@ -12,7 +11,9 @@ export default function StatusText() {
         { backgroundColor: toolConstants.secondaryColor },
       ]}
     >
-      <Text style={[typography.body, styles.statusText]}>En cours</Text>
+      <Text style={[{ fontSize: 10, lineHeight: 24 }, styles.statusText]}>
+        En cours
+      </Text>
     </View>
   );
 }
@@ -26,6 +27,6 @@ const styles = StyleSheet.create({
   },
   statusText: {
     color: "#0A2924",
-    lineHeight: typography.body.fontSize,
+    lineHeight: 10,
   },
 });

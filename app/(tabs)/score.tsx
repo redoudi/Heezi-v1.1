@@ -1,7 +1,6 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 
 export default function ScoreScreen() {
   return (
@@ -295,51 +294,70 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     marginBottom: 16,
   },
-  text: withTextStyle(typography.title, {
+  text: {
+    fontSize: 22,
     color: "#292929",
     marginBottom: 8,
-  }),
-  text2: withTextStyle(typography.body, {
+  },
+  text2: {
+    fontSize: 10,
+    lineHeight: 24,
     color: "#292929",
     marginBottom: 8,
-  }),
-  text3: withTextStyle(typography.headline, {
+  },
+  text3: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#292929",
-  }),
-  text4: withTextStyle(typography.headline, {
+  },
+  text4: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#0A2924",
-  }),
-  text5: withTextStyle(typography.headline, {
+  },
+  text5: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#0A2924",
     marginLeft: 16,
     width: 224,
-  }),
-  text6: withTextStyle(typography.title, {
+  },
+  text6: {
+    fontSize: 22,
     color: "#292929",
     marginLeft: 16,
     marginRight: 20,
-  }),
-  text7: withTextStyle(typography.bodyLargeBold, {
+  },
+  text7: {
+    fontSize: 14,
+    fontWeight: "bold",
     color: "#292929",
     flex: 1,
-  }),
-  text8: withTextStyle(typography.headline, {
+  },
+  text8: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#292929",
     marginRight: 20,
-  }),
-  text9: withTextStyle(typography.title, {
+  },
+  text9: {
+    fontSize: 22,
     color: "#1B463E",
     marginLeft: 16,
     marginRight: 20,
-  }),
-  text10: withTextStyle(typography.bodyLargeBold, {
+  },
+  text10: {
+    fontSize: 14,
+    fontWeight: "bold",
     color: "#1B463E",
     flex: 1,
-  }),
-  text11: withTextStyle(typography.headline, {
+  },
+  text11: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#1B463E",
     marginRight: 20,
-  }),
+  },
   view: {
     width: 1184,
     backgroundColor: "#FFFFFF",

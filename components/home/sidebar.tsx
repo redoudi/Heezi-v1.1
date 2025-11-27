@@ -1,7 +1,6 @@
 import { Image, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
 import { NavigationMenuItem } from "./navigation-menu-item";
-import { typography, withTextStyle } from "@/styles/typography";
 
 export function Sidebar() {
   const menuItems = [
@@ -68,9 +67,11 @@ const styles = StyleSheet.create({
     height: 48,
     marginRight: 16,
   },
-  menuText: withTextStyle(typography.headline, {
+  menuText: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#292929",
-  }),
+  },
   lastMenuItem: {
     alignSelf: "flex-start",
     flexDirection: "row",

@@ -6,7 +6,6 @@ import {
   spacing,
   surfaces,
 } from "@/styles/designSystem";
-import { typography, withTextStyle } from "@/styles/typography";
 
 interface LevelSectionProps {
   level: string;
@@ -62,11 +61,13 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.md,
     marginBottom: spacing.xs,
   },
-  levelText: withTextStyle(typography.headline, {
+  levelText: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: palette.primaryText,
     marginBottom: spacing.xs,
     marginLeft: spacing.md,
-  }),
+  },
   progressBar: {
     height: 8,
     backgroundColor: palette.divider,
@@ -92,10 +93,12 @@ const styles = StyleSheet.create({
     marginLeft: spacing.xs,
     marginRight: spacing.xxs,
   },
-  scoreText: withTextStyle(typography.headline, {
+  scoreText: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: palette.accentOrange,
     marginRight: spacing.sm,
-  }),
+  },
   badgeIcon: {
     width: 71,
     height: 48,

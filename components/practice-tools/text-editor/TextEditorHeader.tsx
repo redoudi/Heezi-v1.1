@@ -3,7 +3,6 @@ import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 import BackButton from "../../ui/back-button";
 
 function BoldButton() {
@@ -970,44 +969,56 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  text: withTextStyle(typography.body, {
+  text: {
+    fontSize: 10,
+    lineHeight: 24,
     color: "#292929",
-  }),
-  text10: withTextStyle(typography.captionSmall, {
+  },
+  text10: {
+    fontSize: 6,
     color: "#000000",
     marginBottom: 4,
-  }),
-  text2: withTextStyle(typography.caption, {
+  },
+  text2: {
+    fontSize: 8,
     color: "#292929",
     marginBottom: 4,
-  }),
-  text3: withTextStyle(typography.caption, {
+  },
+  text3: {
+    fontSize: 8,
     color: "#000000",
     textAlign: "center",
-  }),
-  text4: withTextStyle(typography.caption, {
+  },
+  text4: {
+    fontSize: 8,
     color: "#292929",
     marginLeft: 8,
     flex: 1,
-  }),
-  text5: withTextStyle(typography.caption, {
+  },
+  text5: {
+    fontSize: 8,
     color: "#292929",
     marginLeft: 8,
-  }),
-  text6: withTextStyle(typography.caption, {
+  },
+  text6: {
+    fontSize: 8,
     color: "#292929",
     marginLeft: 8,
     marginRight: 11,
-  }),
-  text7: withTextStyle(typography.caption, {
+  },
+  text7: {
+    fontSize: 8,
     color: "#000000",
-  }),
-  text8: withTextStyle(typography.captionBold, {
+  },
+  text8: {
+    fontSize: 8,
+    fontWeight: "bold",
     color: "#000000",
-  }),
-  text9: withTextStyle(typography.bodyLarge, {
+  },
+  text9: {
+    fontSize: 14,
     color: "#000000",
-  }),
+  },
   view: {
     width: 54,
     marginRight: 215,

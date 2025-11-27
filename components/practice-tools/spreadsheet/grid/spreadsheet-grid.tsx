@@ -3,7 +3,6 @@ import useHighlight from "@/hooks/useHighlight";
 import { useEffect, useRef } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 import Cell from "./cell";
 import HeaderRow from "./header-row";
 
@@ -64,10 +63,12 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginLeft: 8,
   },
-  rowNumber: withTextStyle(typography.bodyBold, {
+  rowNumber: {
+    fontSize: 10,
+    fontWeight: "bold",
     color: "#292929",
     textAlign: "center",
-  }),
+  },
   view2: {
     width: 106,
     marginRight: 9,

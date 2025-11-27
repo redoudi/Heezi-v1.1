@@ -3,7 +3,6 @@ import { Tabs } from "expo-router";
 import { HapticTab } from "@/components/haptic-tab";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
-import { typography } from "@/styles/typography";
 import { Image, StyleSheet, View, useWindowDimensions } from "react-native";
 
 export default function TabLayout() {
@@ -31,7 +30,7 @@ export default function TabLayout() {
           isCompact && styles.tabBarIconStyleCompact,
         ],
         tabBarLabelStyle: [
-          typography.headline,
+          { fontSize: 18, fontWeight: "bold" },
           styles.tabBarLabelStyle,
           isCompact && styles.tabBarLabelStyleCompact,
         ],

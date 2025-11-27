@@ -2,7 +2,6 @@ import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 
 export default function ContinuerSectionBtn({
   continuerRoute,
@@ -41,10 +40,12 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
-  buttonText: withTextStyle(typography.headline, {
+  buttonText: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#0A2924",
     marginRight: 11,
-  }),
+  },
   image: {
     borderRadius: 8,
     width: 16,

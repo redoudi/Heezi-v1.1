@@ -1,7 +1,6 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, ImageStyle, StyleProp, StyleSheet, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
 
 function TriangleIcon({ style }: { style: StyleProp<ImageStyle> }) {
   return (
@@ -32,7 +31,7 @@ export const ButtonWithArrow = ({
       style={[styles.buttonRow, toolColorStyle]}
       onPress={onPress}
     >
-      <ThemedText style={[typography.headline, styles.text7]}>{text}</ThemedText>
+      <ThemedText style={[{ fontSize: 18, fontWeight: "bold" }, styles.text7]}>{text}</ThemedText>
       <TriangleIcon style={[styles.triangleIcon]} />
     </TouchableOpacity>
   );

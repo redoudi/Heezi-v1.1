@@ -1,7 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { palette, radius, spacing } from "@/styles/designSystem";
-import { typography, withTextStyle } from "@/styles/typography";
 import { router, useGlobalSearchParams } from "expo-router";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
@@ -56,7 +55,9 @@ const styles = StyleSheet.create({
     paddingVertical: 49,
     paddingRight: spacing.md,
   },
-  text: withTextStyle(typography.headline, {
+  text: {
+    fontSize: 18,
+    fontWeight: "bold",
     marginLeft: spacing.md,
-  }),
+  },
 });

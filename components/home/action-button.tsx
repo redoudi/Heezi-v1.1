@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedText } from "@/components/themed-text";
 import { palette, radius, spacing } from "@/styles/designSystem";
-import { typography, withTextStyle } from "@/styles/typography";
 
 interface ActionButtonProps {
   label: string;
@@ -25,8 +24,10 @@ const styles = StyleSheet.create({
     borderRadius: radius.md,
     paddingVertical: spacing.xs,
   },
-  text: withTextStyle(typography.headline, {
+  text: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: palette.textOnPrimary,
     marginHorizontal: spacing.md,
-  }),
+  },
 });

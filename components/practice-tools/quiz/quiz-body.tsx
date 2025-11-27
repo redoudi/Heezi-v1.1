@@ -2,7 +2,6 @@ import CustomAnimation from "@/components/animations/CustomAnimation";
 import { router } from "expo-router";
 import { FlatList, Image, SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 
 const ProgressBar = () => {
   return (
@@ -296,17 +295,23 @@ const styles = StyleSheet.create({
     padding: 8,
     marginBottom: 8,
   },
-  text: withTextStyle(typography.headline, {
+  text: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#292929",
     width: 496,
-  }),
-  text2: withTextStyle(typography.headline, {
+  },
+  text2: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#292929",
-  }),
-  text3: withTextStyle(typography.headline, {
+  },
+  text3: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#0A2924",
     marginRight: 10,
-  }),
+  },
   view: {
     width: 62,
     backgroundColor: "#FDC1AB",

@@ -5,12 +5,11 @@ import useTextEditorStore from "@/store/useTextEditorStore";
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
 
 function TextBlock({ item }: { item: any }) {
   return (
     <View style={[styles.textBlockContainer, item.blockStyle]}>
-      <ThemedText style={[typography.body, styles.textBlockText, item.style]}>
+      <ThemedText style={[{ fontSize: 10, lineHeight: 24 }, styles.textBlockText, item.style]}>
         {item.text}
       </ThemedText>
     </View>
@@ -74,7 +73,7 @@ function TextInputBlock({ item }: { item: any }) {
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
         style={[
-          typography.body,
+          { fontSize: 10, lineHeight: 24 },
           styles.textInput,
           item.style,
           isWrongAnswer ? wrongAnswerStyle : {},

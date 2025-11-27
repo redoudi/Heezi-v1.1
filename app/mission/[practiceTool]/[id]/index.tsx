@@ -7,7 +7,6 @@ import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
 import { Image, StyleSheet, View, useWindowDimensions } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 
 function IntroText({ intro = "..." }) {
   return (
@@ -101,9 +100,11 @@ const styles = StyleSheet.create({
     paddingLeft: 8,
     marginBottom: 8,
   },
-  introText: withTextStyle(typography.bodyLargeBold, {
+  introText: {
+    fontSize: 14,
+    fontWeight: "bold",
     color: "#292929",
-  }),
+  },
 
   startButton: {
     alignSelf: "flex-end",
@@ -113,10 +114,12 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
-  buttonText: withTextStyle(typography.headline, {
+  buttonText: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#0A2924",
     marginRight: 11,
-  }),
+  },
   triangleIcon: {
     alignSelf: "center",
     borderRadius: 8,

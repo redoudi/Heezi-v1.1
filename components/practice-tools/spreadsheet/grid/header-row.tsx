@@ -2,7 +2,6 @@ import useCursor from "@/context/useCursor";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 
 const CornerSymbol = () => (
   <Image
@@ -63,10 +62,12 @@ const styles = StyleSheet.create({
   view3: {
     width: 106,
   },
-  text9: withTextStyle(typography.captionBold, {
+  text9: {
+    fontSize: 8,
+    fontWeight: "bold",
     color: "#292929",
     textAlign: "center",
-  }),
+  },
   image35: {
     width: 24,
     height: 17,

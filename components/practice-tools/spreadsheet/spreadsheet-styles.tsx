@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { typography, withTextStyle } from "@/styles/typography";
 export const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
@@ -692,49 +691,64 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: 8,
   },
-  text: withTextStyle(typography.body, {
+  text: {
+    fontSize: 10,
+    lineHeight: 24,
     color: "#292929",
-  }),
-  text2: withTextStyle(typography.caption, {
+  },
+  text2: {
+    fontSize: 8,
     color: "#292929",
     marginBottom: 4,
-  }),
-  text3: withTextStyle(typography.caption, {
+  },
+  text3: {
+    fontSize: 8,
     color: "#000000",
     textAlign: "center",
-  }),
-  text4: withTextStyle(typography.caption, {
+  },
+  text4: {
+    fontSize: 8,
     color: "#292929",
     marginLeft: 8,
     marginRight: 12,
-  }),
-  text5: withTextStyle(typography.caption, {
+  },
+  text5: {
+    fontSize: 8,
     color: "#292929",
     marginLeft: 8,
-  }),
-  text6: withTextStyle(typography.caption, {
+  },
+  text6: {
+    fontSize: 8,
     color: "#000000",
-  }),
-  text7: withTextStyle(typography.caption, {
+  },
+  text7: {
+    fontSize: 8,
     color: "#292929",
-  }),
-  text8: withTextStyle(typography.caption, {
+  },
+  text8: {
+    fontSize: 8,
     color: "#292929",
     marginRight: 6,
-  }),
-  text9: withTextStyle(typography.captionBold, {
+  },
+  text9: {
+    fontSize: 8,
+    fontWeight: "bold",
     color: "#292929",
     textAlign: "center",
-  }),
-  text10: withTextStyle(typography.bodyBold, {
+  },
+  text10: {
+    fontSize: 10,
+    fontWeight: "bold",
     color: "#292929",
     textAlign: "center",
-  }),
-  text11: withTextStyle(typography.headline, {
+  },
+  text11: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#903610",
     marginLeft: 16,
     flex: 1,
-  }),
+  },
   view: {
     alignItems: "center",
   },

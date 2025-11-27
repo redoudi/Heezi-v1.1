@@ -1,7 +1,6 @@
 import { Text, type TextProps } from "react-native";
 
 import { useThemeColor } from "@/hooks/use-theme-color";
-import { typography } from "@/styles/typography";
 
 const themedLinkStyle = { lineHeight: 30, color: "#0a7ea4" };
 
@@ -23,11 +22,11 @@ export function ThemedText({
     <Text
       style={[
         { color },
-        type === "default" ? typography.body : undefined,
-        type === "title" ? typography.display : undefined,
-        type === "defaultSemiBold" ? typography.bodySemiBold : undefined,
-        type === "subtitle" ? typography.bodyLargeBold : undefined,
-        type === "link" ? [typography.body, themedLinkStyle] : undefined,
+        type === "default" ? { fontSize: 10, lineHeight: 24 } : undefined,
+        type === "title" ? { fontSize: 26, lineHeight: 32, fontWeight: "bold" } : undefined,
+        type === "defaultSemiBold" ? { fontSize: 10, lineHeight: 24, fontWeight: "600" } : undefined,
+        type === "subtitle" ? { fontSize: 14, fontWeight: "bold" } : undefined,
+        type === "link" ? [{ fontSize: 10, lineHeight: 24 }, themedLinkStyle] : undefined,
         style,
       ]}
       {...rest}

@@ -2,7 +2,6 @@ import SuivantBtnModal from "@/components/ui/suivantBtnModal";
 import { useEffect } from "react";
 import { Image, Modal, Platform, StyleSheet, TouchableWithoutFeedback, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 
 export default function MascotModal({ open, onClose, modalText }) {
   // Blur any focused elements when modal opens to prevent aria-hidden accessibility issues
@@ -78,9 +77,11 @@ const styles = StyleSheet.create({
     width: 32,
     height: 21,
   },
-  modalText: withTextStyle(typography.bodyLargeBold, {
+  modalText: {
+    fontSize: 14,
+    fontWeight: "bold",
     color: "#292929",
-  }),
+  },
   modalTextBox: {
     backgroundColor: "#EFEFEF",
     borderRadius: 8,

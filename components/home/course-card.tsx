@@ -1,7 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { palette, radius, spacing } from "@/styles/designSystem";
-import { typography, withTextStyle } from "@/styles/typography";
 import { StyleSheet, View } from "react-native";
 import StatusText from "../status-text";
 
@@ -32,8 +31,9 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
 
-  title: withTextStyle(typography.title, {
+  title: {
+    fontSize: 22,
     color: palette.secondaryText,
-  }),
+  },
   description: { fontSize: 12, color: palette.secondaryText },
 });

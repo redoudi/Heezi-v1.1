@@ -1,12 +1,11 @@
 import { Image, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
 
 function endLevelStats() {
   return (
     <View style={styles.column3}>
       <View style={styles.row}>
-        <ThemedText style={[typography.bodyLarge, styles.text3]}>{"+3"}</ThemedText>
+        <ThemedText style={[{ fontSize: 14 }, styles.text3]}>{"+3"}</ThemedText>
         <Image
           source={require("@/assets/images/niw8yegh_expires_30_days.png")}
           resizeMode={"stretch"}
@@ -14,7 +13,7 @@ function endLevelStats() {
         />
       </View>
       <View style={styles.row2}>
-        <ThemedText style={[typography.bodyLarge, styles.text4]}>{"+500"}</ThemedText>
+        <ThemedText style={[{ fontSize: 14 }, styles.text4]}>{"+500"}</ThemedText>
         <Image
           source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
           resizeMode={"stretch"}
@@ -24,13 +23,13 @@ function endLevelStats() {
       <View style={styles.row3}>
         <View style={styles.column4}>
           <View style={styles.view4}>
-            <ThemedText style={[typography.bodyBold, styles.text5]}>{"Nv.1"}</ThemedText>
+            <ThemedText style={[{ fontSize: 10, fontWeight: "bold" }, styles.text5]}>{"Nv.1"}</ThemedText>
           </View>
           <View style={styles.view5}>
             <View style={styles.box2}></View>
           </View>
         </View>
-        <ThemedText style={[typography.bodyBold, styles.text6]}>{"+100xp"}</ThemedText>
+        <ThemedText style={[{ fontSize: 10, fontWeight: "bold" }, styles.text6]}>{"+100xp"}</ThemedText>
       </View>
     </View>
   );
@@ -45,8 +44,8 @@ export function EndLevelReport({
 }) {
   return (
     <View style={styles.mainContainer}>
-      <ThemedText style={[typography.title, styles.text]}>{title}</ThemedText>
-      <ThemedText style={[typography.body, styles.text2]}>
+      <ThemedText style={[{ fontSize: 22 }, styles.text]}>{title}</ThemedText>
+      <ThemedText style={[{ fontSize: 10, lineHeight: 24 }, styles.text2]}>
         {description}
       </ThemedText>
     </View>

@@ -1,7 +1,6 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
 
 type TextEditorBlock = {
   type?: string;
@@ -16,7 +15,7 @@ export default function TextEditorResultSnapshot() {
 
   const renderText = (block: TextEditorBlock, index: number) => (
     <View key={index} style={[block.blockStyle]}>
-      <ThemedText key={index} style={[typography.body, styles.text, block.style]}>
+      <ThemedText key={index} style={[{ fontSize: 10, lineHeight: 24 }, styles.text, block.style]}>
         {block.text}
       </ThemedText>
     </View>

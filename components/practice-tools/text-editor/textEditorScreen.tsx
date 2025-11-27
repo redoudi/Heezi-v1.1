@@ -1,7 +1,6 @@
 import useLevelData from "@/hooks/use-level-data";
 import { SafeAreaView, StyleSheet, View, useWindowDimensions } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography } from "@/styles/typography";
 import ContentPage from "./ContentPage";
 import TextEditorHeader, { TitleBar } from "./TextEditorHeader";
 
@@ -9,7 +8,7 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
     <View style={styles.pageNumberContainer}>
       <ThemedText
-        style={[typography.bodyBold, styles.pageNumberText]}
+        style={[{ fontSize: 10, fontWeight: "bold" }, styles.pageNumberText]}
       >{`Page ${currentPage}/${totalPages}`}</ThemedText>
     </View>
   );

@@ -7,7 +7,6 @@ import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router } from "expo-router";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
-import { typography, withTextStyle } from "@/styles/typography";
 
 export const dynamicParams = false;
 
@@ -70,10 +69,12 @@ const styles = StyleSheet.create({
     width: 16,
     height: 24,
   },
-  text2: withTextStyle(typography.headline, {
+  text2: {
+    fontSize: 18,
+    fontWeight: "bold",
     color: "#0A2924",
     marginRight: 11,
-  }),
+  },
   view: {
     width: 1440,
     backgroundColor: "#FFFFFF",
