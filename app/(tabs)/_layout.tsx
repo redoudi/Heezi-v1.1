@@ -101,37 +101,37 @@ const styles = StyleSheet.create({
     paddingTop: 93,
     paddingRight: 8,
     alignItems: "center",
-    width: 193,
-    minWidth: 193,
-    maxWidth: 193,
-    margin: 32,
+
+    minWidth: 0,
+    maxWidth: 164,
+    margin: 16,
   },
   tabBarBackgroundStyle: {
     alignItems: "center",
     justifyContent: "center",
-    paddingRight: 32,
+    paddingRight: 16,
+    marginTop: 16,
   },
   logoStyle: {
-    width: 183,
-    height: 69,
+    height: 40,
   },
   tabBarItemStyle: {
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 8,
-    marginVertical: 15,
+    marginVertical: 16,
   },
   tabBarIconStyle: {
-    marginRight: 14,
+    marginRight: 8,
   },
 
   tabBarLabelStyle: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
     color: "black",
   },
   tabBarItemIconImage: {
-    width: 48,
-    height: 48,
+    width: 32,
+    height: 32,
   },
 });
