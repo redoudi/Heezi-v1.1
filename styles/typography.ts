@@ -25,18 +25,18 @@ const base = (
 });
 
 export const typography = StyleSheet.create({
-  display: base(32, { lineHeight: 32, fontWeight: "bold" }),
-  title: base(28),
-  titleBold: base(28, { fontWeight: "bold" }),
-  headline: base(24, { fontWeight: "bold" }),
-  bodyLarge: base(20),
-  bodyLargeBold: base(20, { fontWeight: "bold" }),
-  body: base(16, { lineHeight: 24 }),
-  bodySemiBold: base(16, { lineHeight: 24, fontWeight: "600" }),
-  bodyBold: base(16, { fontWeight: "bold" }),
-  caption: base(14),
-  captionBold: base(14, { fontWeight: "bold" }),
-  captionSmall: base(12),
+  display: base(30, { lineHeight: 32, fontWeight: "bold" }),
+  title: base(26),
+  titleBold: base(26, { fontWeight: "bold" }),
+  headline: base(22, { fontWeight: "bold" }),
+  bodyLarge: base(18),
+  bodyLargeBold: base(18, { fontWeight: "bold" }),
+  body: base(14, { lineHeight: 24 }),
+  bodySemiBold: base(14, { lineHeight: 24, fontWeight: "600" }),
+  bodyBold: base(14, { fontWeight: "bold" }),
+  caption: base(12),
+  captionBold: base(12, { fontWeight: "bold" }),
+  captionSmall: base(10),
 });
 
 export type TypographyVariant = keyof typeof typography;
