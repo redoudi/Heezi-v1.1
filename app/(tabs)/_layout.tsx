@@ -22,7 +22,7 @@ export default function TabLayout() {
         tabBarLabelStyle: [typography.headline, styles.tabBarLabelStyle],
 
         tabBarBackground: () => (
-          <View style={{ paddingRight: 8 }}>
+          <View>
             <Image
               source={require("../../assets/images/logo.png")}
               resizeMode="contain"

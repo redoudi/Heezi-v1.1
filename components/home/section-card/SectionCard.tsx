@@ -1,7 +1,7 @@
-import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { Image, StyleSheet, View } from "react-native";
 import { ThemedText } from "@/components/themed-text";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { typography, withTextStyle } from "@/styles/typography";
+import { Image, StyleSheet, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
 import ProgressBar from "./ProgressBar";
 
@@ -26,7 +26,9 @@ export default function SectionCard({
       ]}
     >
       <View style={styles.leftColumn}>
-        <ThemedText style={styles.sectionHeader}>{`Section ${sectionNumber}`}</ThemedText>
+        <ThemedText
+          style={styles.sectionHeader}
+        >{`Section ${sectionNumber}`}</ThemedText>
         <View style={styles.progressAndContinuer}>
           <ProgressBar />
           <ContinuerSectionBtn continuerRoute={continuerRoute} />
@@ -36,7 +38,7 @@ export default function SectionCard({
         <Image
           source={mascotImageSource}
           resizeMode={"contain"}
-          style={styles.image8}
+          style={styles.mascotImage}
         />
       </View>
     </View>
@@ -67,9 +69,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "flex-end",
   },
-  image8: {
+  mascotImage: {
     borderRadius: 8,
-    height: 195,
+    height: 100,
     flex: 1,
   },
 });

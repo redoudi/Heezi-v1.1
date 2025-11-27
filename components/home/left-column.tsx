@@ -1,9 +1,8 @@
-import { ActiveCourseCard } from "@/components/home/active-course-card";
+import { CourseCard } from "@/components/home/course-card";
 import { useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import SectionScreen from "../../app/(tabs)/play/[practiceTool]/section-screen";
 import SectionsList from "./sections-list";
-import { CourseCard } from "@/components/home/course-card";
 
 export function LeftColumn() {
   const [sectionIndex, setSectionIndex] = useState<number>(-1);
@@ -33,7 +32,6 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     alignSelf: "stretch",
-    marginRight: 16,
   },
   leftColumn: {
     flex: 1,

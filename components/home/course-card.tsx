@@ -23,7 +23,7 @@ export function CourseCard() {
       <View style={[styles.content, { backgroundColor: toolConstants.color }]}>
         <View style={styles.header}>
           <ThemedText style={styles.progressText}>
-            1/3 sections débloquées
+            1/3 sections disponibles
           </ThemedText>
           <StatusText />
         </View>
