@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     paddingRight: 8,
     alignItems: "center",
 
-    minWidth: 0,
+    minWidth: 164,
     maxWidth: 164,
     margin: 16,
   },
