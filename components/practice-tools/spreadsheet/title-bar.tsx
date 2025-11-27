@@ -1,13 +1,15 @@
-import BackButton from "@/components/ui/back-button";
 import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { router } from "expo-router";
 import { useEffect, useRef } from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 export default function TitleBar() {
   const titleBarRef = useRef<View>(null);
   const { setContentRef } = useCursor();
   const { levelType } = useLevelData();
+  const { practiceTool } = usePracticeToolConstants();
   useEffect(() => {
     if (setContentRef && levelType === "lesson") {
       setContentRef("titleBar", titleBarRef);
@@ -37,7 +39,18 @@ export default function TitleBar() {
           style={styles.redoIcon}
         />
       </View>
-      <BackButton />
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() =>
+          router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
+        }
+      >
+        <Image
+          source={require("@/assets/images/iycoag37_expires_30_days.png")}
+          resizeMode={"contain"}
+          style={styles.backButtonIcon}
+        />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -64,5 +77,16 @@ const styles = StyleSheet.create({
   },
   redoIcon: {
     height: 32,
+  },
+  backButton: {
+    width: 32,
+    alignItems: "center",
+    backgroundColor: "#FDC1AB",
+    borderRadius: 8,
+
+    marginRight: 32,
+  },
+  backButtonIcon: {
+    height: 28,
   },
 });
