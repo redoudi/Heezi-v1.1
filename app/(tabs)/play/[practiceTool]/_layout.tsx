@@ -9,47 +9,6 @@ import {
 import { Slot } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function HomeScreen() {
-  const { height } = useWindowDimensions();
-
-  return (
-    <SafeAreaView style={[styles.safeArea, { height: height || "100%" }]}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={true}>
-        <View style={[styles.container]}>
-          <View style={styles2.wrapper}>
-            <ScrollView
-              style={styles2.leftColumn}
-              contentContainerStyle={styles2.contentContainer}
-              showsVerticalScrollIndicator={true}
-            >
-              <View style={styles2.leftColumnContent}>
-                <Slot />
-              </View>
-            </ScrollView>
-          </View>
-          <RightColumn />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  safeArea: {
-    backgroundColor: "#FFFFFF",
-  },
-
-  container: {
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    flexDirection: "row",
-    marginBottom: 16,
-    justifyContent: "center",
-    marginRight: 32,
-    marginTop: 16,
-  },
-});
-
 function LeftColumn() {
   return (
     <View style={styles2.wrapper}>
@@ -65,6 +24,41 @@ function LeftColumn() {
     </View>
   );
 }
+
+export default function HomeScreen() {
+  const { height } = useWindowDimensions();
+
+  return (
+    <SafeAreaView style={{ height: height || "100%" }}>
+      <ScrollView
+        style={styles.scrollView}
+        horizontal
+        showsHorizontalScrollIndicator={true}
+        contentContainerStyle={styles.mainContainer}
+      >
+        <LeftColumn />
+        <RightColumn />
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  scrollView: {
+    borderWidth: 10,
+    borderColor: "red",
+  },
+  mainContainer: {
+    borderWidth: 10,
+    alignItems: "flex-start",
+    backgroundColor: "#FFFFFF",
+    flexDirection: "row",
+    marginBottom: 16,
+    justifyContent: "space-between",
+    marginRight: 32,
+    marginTop: 16,
+  },
+});
 
 const styles2 = StyleSheet.create({
   wrapper: {
