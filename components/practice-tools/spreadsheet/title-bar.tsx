@@ -18,23 +18,23 @@ export default function TitleBar() {
       <View style={styles.row2}>
         <Image
           source={require("@/assets/images/5jt7jwsg_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image}
+          resizeMode={"contain"}
+          style={styles.spreadsheeticon}
         />
         <Image
           source={require("@/assets/images/os183jfm_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image2}
+          resizeMode={"contain"}
+          style={styles.saveIcon}
         />
         <Image
           source={require("../../../assets/images/undo.png")}
-          resizeMode={"stretch"}
-          style={styles.image3}
+          resizeMode={"contain"}
+          style={styles.undoIcon}
         />
         <Image
           source={require("../../../assets/images/redo.png")}
-          resizeMode={"stretch"}
-          style={styles.image4}
+          resizeMode={"contain"}
+          style={styles.redoIcon}
         />
       </View>
       <BackButton />
@@ -52,38 +52,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  image: {
-    width: 38,
+  spreadsheeticon: {
     height: 32,
-    marginLeft: 32,
-    marginRight: 8,
   },
-  image2: {
-    width: 40,
-    height: 40,
-    marginRight: 8,
+  saveIcon: {
+    height: 32,
   },
-  image3: {
-    width: 61,
-    height: 39,
-    marginRight: 8,
+  undoIcon: {
+    height: 32,
   },
-  image4: {
-    width: 39,
-    height: 42,
-    marginRight: 0,
-  },
-  image5: {
-    borderRadius: 8,
-    width: 24,
-    height: 24,
-  },
-  button: {
-    width: 40,
-    alignItems: "center",
-    backgroundColor: "#FDC1AB",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 32,
+  redoIcon: {
+    height: 32,
   },
 });
