@@ -1,7 +1,13 @@
 import useCursor from "@/context/useCursor";
 import useHighlight from "@/hooks/useHighlight";
 import { useEffect, useRef } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+} from "react-native";
 import Cell from "./cell";
 import HeaderRow from "./header-row";
 
@@ -12,6 +18,7 @@ const ROWS = Array.from({ length: 18 }, (_, i) => i + 1);
 export default function SpreadsheetGrid() {
   const rowNumberContainerRef = useRef<View>(null);
   const { setContentRef } = useCursor();
+  const { height } = useWindowDimensions();
   useEffect(() => {
     if (setContentRef) {
       setContentRef("rowNumbersColumn", rowNumberContainerRef);
@@ -19,10 +26,17 @@ export default function SpreadsheetGrid() {
   }, [setContentRef]);
 
   const { isHighlighted } = useHighlight("rowNumbersColumn");
+  // Calculate max height: window height minus safe area, title bar, ribbon, function bar, and padding
+  const scrollViewHeight = height ? Math.max(200, height - 350) : 400;
+
   return (
     <View style={styles.mainContainer}>
       <HeaderRow columnsLetters={COLUMNS} />
-      <ScrollView showsVerticalScrollIndicator>
+      <ScrollView
+        showsVerticalScrollIndicator
+        style={{ height: scrollViewHeight }}
+        nestedScrollEnabled={true}
+      >
         {ROWS.map((item, index) => (
           <View key={item} style={styles.gridCellsContainer}>
             <View
