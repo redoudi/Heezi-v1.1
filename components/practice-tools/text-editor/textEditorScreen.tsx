@@ -7,7 +7,8 @@ import {
   useWindowDimensions,
 } from "react-native";
 import ContentPage from "./ContentPage";
-import TextEditorHeader, { TitleBar } from "./TextEditorHeader";
+import TextEditorHeader from "./TextEditorHeader";
+import { TitleBar } from "./TextEditorTitleBar";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (

@@ -2,7 +2,6 @@ import useCursor from "@/context/useCursor";
 import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import BackButton from "../../ui/back-button";
 
 function BoldButton() {
   const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
@@ -30,34 +29,6 @@ function BoldButton() {
         style={[styles.image13]}
       />
     </TouchableOpacity>
-  );
-}
-
-export function TitleBar() {
-  return (
-    <View style={styles.row}>
-      <Image
-        source={require("@/assets/images/f36dtxie_expires_30_days.png")}
-        resizeMode={"stretch"}
-        style={styles.image}
-      />
-      <Image
-        source={require("@/assets/images/x1cberci_expires_30_days.png")}
-        resizeMode={"stretch"}
-        style={styles.image2}
-      />
-      <Image
-        source={require("@/assets/images/1tMFzp8.png")}
-        resizeMode={"stretch"}
-        style={styles.image3}
-      />
-      <Image
-        source={require("@/assets/images/1tMFzp8.png")}
-        resizeMode={"stretch"}
-        style={styles.image4}
-      />
-      <BackButton />
-    </View>
   );
 }
 
@@ -764,12 +735,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginRight: 7,
   },
-  image: {
-    width: 38,
-    height: 32,
-    marginLeft: 32,
-    marginRight: 8,
-  },
   image10: {
     borderRadius: 8,
     width: 19,
@@ -820,11 +785,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 12,
     height: 14,
-  },
-  image2: {
-    width: 40,
-    height: 40,
-    marginRight: 8,
   },
   image20: {
     width: 44,
@@ -896,22 +856,6 @@ const styles = StyleSheet.create({
     width: 9,
     height: 6,
   },
-  image3: {
-    width: 61,
-    height: 39,
-    marginRight: 8,
-  },
-  image4: {
-    width: 39,
-    height: 42,
-    marginRight: 1134,
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    paddingVertical: 8,
-  },
   row10: {
     flexDirection: "row",
     marginBottom: 10,
@@ -967,7 +911,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    fontSize: 10,
+    fontSize: 12,
     lineHeight: 24,
     color: "#292929",
   },
