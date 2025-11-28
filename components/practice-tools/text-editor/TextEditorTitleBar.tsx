@@ -50,6 +50,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: 8,
+    paddingHorizontal: 32,
+    paddingTop: 8,
   },
   leftRow: {
     flexDirection: "row",
