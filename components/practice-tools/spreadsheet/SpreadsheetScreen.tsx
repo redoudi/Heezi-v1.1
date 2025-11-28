@@ -85,17 +85,15 @@ const styles = StyleSheet.create({
   scrollBody: {
     flexGrow: 1,
     alignItems: "flex-start",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     backgroundColor: "#EFEFEF",
-  },
 
-  mainContent: {
-    alignItems: "center",
-    justifyContent: "flex-start",
     borderWidth: 1,
     borderColor: "#EFEFEF",
     flex: 1,
   },
+
+  mainContent: {},
   titleBarContainer: {
     zIndex: 1001,
     position: "relative",
