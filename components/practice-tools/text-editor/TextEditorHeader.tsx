@@ -32,54 +32,60 @@ function BoldButton() {
   );
 }
 
+export function MenuBar() {
+  return (
+    <View style={styles.row2}>
+      <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Accueil"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button3} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Insertion"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Dessin"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Conception"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button6} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Mise en page"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button7} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Références"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Publipostage"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Révision"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button8} onPress={() => {}} disabled>
+        <Text style={styles.text}>{"Affichage"}</Text>
+      </TouchableOpacity>
+      <View style={styles.row3}>
+        <TouchableOpacity style={styles.button9} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/ufeyprsl_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image6}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button10} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/v82hp4b9_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image7}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
 export default function TextEditorHeader() {
   return (
     <View style={styles.column2}>
-      <View style={styles.row2}>
-        <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Accueil"}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button3} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Insertion"}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Dessin"}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Conception"}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button6} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Mise en page"}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button7} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Références"}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Publipostage"}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Révision"}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button8} onPress={() => {}} disabled>
-          <Text style={styles.text}>{"Affichage"}</Text>
-        </TouchableOpacity>
-        <View style={styles.row3}>
-          <TouchableOpacity style={styles.button9} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/ufeyprsl_expires_30_days.png")}
-              resizeMode={"stretch"}
-              style={styles.image6}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button10} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/v82hp4b9_expires_30_days.png")}
-              resizeMode={"stretch"}
-              style={styles.image7}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <MenuBar />
       <View style={styles.row4}>
         <View style={styles.column3}>
           <View style={styles.row5}>

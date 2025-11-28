@@ -28,7 +28,6 @@ export default function TextEditorScreen() {
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
         <TitleBar />
-
         <TextEditorHeader />
         <ContentPage />
         <PageNumber currentPage={1} totalPages={1} />
