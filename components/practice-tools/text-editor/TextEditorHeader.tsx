@@ -32,9 +32,9 @@ function BoldButton() {
   );
 }
 
-function PressePapiers() {
+function PressePapiersSection() {
   return (
-    <View style={styles.column3}>
+    <View style={styles.section}>
       <View style={styles.row5}>
         {/* bouton Coller */}
         <TouchableOpacity
@@ -76,11 +76,16 @@ function PressePapiers() {
   );
 }
 
+const Divider = () => (
+  <View style={{ height: 1, backgroundColor: "black", marginVertical: 4 }} />
+);
+
 export default function TextEditorHeader() {
   return (
     <View style={styles.column2}>
       <View style={styles.row4}>
-        <PressePapiers />
+        <PressePapiersSection />
+        <Divider />
         <View style={styles.column5}>
           <View style={styles.column6}>
             <View style={styles.row6}>
@@ -588,7 +593,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   column2: { zIndex: 1001, position: "relative", marginBottom: 27 },
-  column3: {
+  section: {
     width: 97,
     marginLeft: 32,
     marginRight: 16,
