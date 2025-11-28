@@ -53,21 +53,23 @@ export default function SpreadsheetScreen() {
         style={styles.scrollView}
         contentContainerStyle={styles.scrollBody}
       >
-        <View style={[styles.mainContent, { width: Math.max(width, 1440) }]}>
-          <View style={styles.titleBarContainer}>
-            <TitleBar />
-          </View>
-          <View style={styles.interactiveSection}>
-            <View style={styles.column2}>
-              <RibbonTabs />
-              <Ribbon />
-              <FunctionBar />
+        <ScrollView>
+          <View style={[styles.mainContent, { width: Math.max(width, 1440) }]}>
+            <View style={styles.titleBarContainer}>
+              <TitleBar />
             </View>
-            <SpreadsheetGrid />
-            {/* <LevelStats /> */}
-            {isLesson && <View style={styles.overlay} />}
+            <View style={styles.interactiveSection}>
+              <View style={styles.column2}>
+                <RibbonTabs />
+                <Ribbon />
+                <FunctionBar />
+              </View>
+              <SpreadsheetGrid />
+              {/* <LevelStats /> */}
+              {isLesson && <View style={styles.overlay} />}
+            </View>
           </View>
-        </View>
+        </ScrollView>
       </ScrollView>
     </SafeAreaView>
   );
