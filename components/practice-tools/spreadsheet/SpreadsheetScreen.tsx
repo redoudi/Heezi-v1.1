@@ -1,5 +1,6 @@
 import {
   Image,
+  ScrollView,
   StyleSheet,
   TouchableOpacity,
   View,
@@ -46,21 +47,23 @@ export default function SpreadsheetScreen() {
   const isLesson = levelType === "lesson";
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
-      <View style={styles.mainContent}>
-        <View style={styles.titleBarContainer}>
-          <TitleBar />
-        </View>
-        <View style={styles.interactiveSection}>
-          <View style={styles.column2}>
-            <RibbonTabs />
-            <Ribbon />
-            <FunctionBar />
+      <ScrollView horizontal>
+        <View style={styles.mainContent}>
+          <View style={styles.titleBarContainer}>
+            <TitleBar />
           </View>
-          <SpreadsheetGrid />
-          {/* <LevelStats /> */}
-          {isLesson && <View style={styles.overlay} />}
+          <View style={styles.interactiveSection}>
+            <View style={styles.column2}>
+              <RibbonTabs />
+              <Ribbon />
+              <FunctionBar />
+            </View>
+            <SpreadsheetGrid />
+            {/* <LevelStats /> */}
+            {isLesson && <View style={styles.overlay} />}
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
