@@ -100,10 +100,12 @@ const styles = StyleSheet.create({
   },
 
   mainContent: {
+    borderWidth: 10,
+    borderColor: "red",
     alignItems: "center",
     justifyContent: "flex-start",
-    borderWidth: 1,
-    borderColor: "#EFEFEF",
+    // borderWidth: 1,
+    // borderColor: "#EFEFEF",
   },
   titleBarContainer: {
     zIndex: 1001,
