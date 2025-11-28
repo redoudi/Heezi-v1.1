@@ -63,7 +63,7 @@ export default function SpreadsheetScreen() {
               <FunctionBar />
             </View>
             <SpreadsheetGrid />
-            {/* <LevelStats /> */}
+
             {isLesson && <View style={styles.overlay} />}
           </View>
         </View>
@@ -86,14 +86,14 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems: "flex-start",
     justifyContent: "center",
-    backgroundColor: "#EFEFEF",
+    backgroundColor: "white",
 
     borderWidth: 1,
     borderColor: "#EFEFEF",
     flex: 1,
   },
 
-  mainContent: {},
+  mainContent: { backgroundColor: "#EFEFEF" },
   titleBarContainer: {
     zIndex: 1001,
     position: "relative",
