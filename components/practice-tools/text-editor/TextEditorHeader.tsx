@@ -77,7 +77,14 @@ function PressePapiersSection() {
 }
 
 const Divider = () => (
-  <View style={{ height: 1, backgroundColor: "black", marginVertical: 4 }} />
+  <View
+    style={{
+      width: 1,
+      backgroundColor: "black",
+      marginHorizontal: 8,
+      alignSelf: "stretch",
+    }}
+  />
 );
 
 export default function TextEditorHeader() {
@@ -220,6 +227,7 @@ export default function TextEditorHeader() {
           </View>
           <Text style={styles.text7}>{"Police"}</Text>
         </View>
+        <Divider />
         {/*all images ok until here*/}
         <View style={styles.column7}>
           <View style={styles.column8}>
@@ -338,6 +346,7 @@ export default function TextEditorHeader() {
           </View>
           <Text style={styles.text7}>{"Paragraphe"}</Text>
         </View>
+        <Divider />
         <View style={styles.column9}>
           <View style={styles.row10}>
             <View style={styles.row11}>
