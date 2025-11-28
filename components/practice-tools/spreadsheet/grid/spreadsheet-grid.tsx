@@ -63,6 +63,8 @@ export default function SpreadsheetGrid() {
 
 const styles = StyleSheet.create({
   mainContainer: {
+    zIndex: 1001,
+    position: "relative",
     flex: 1,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,

@@ -54,9 +54,8 @@ export default function SpreadsheetScreen() {
         contentContainerStyle={styles.scrollBody}
       >
         <View style={styles.mainContent}>
-          <View style={styles.titleBarContainer}>
-            <TitleBar />
-          </View>
+          <TitleBar />
+
           <View style={styles.interactiveSection}>
             <View style={styles.column2}>
               <RibbonTabs />
