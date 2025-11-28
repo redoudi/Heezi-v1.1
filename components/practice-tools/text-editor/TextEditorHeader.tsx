@@ -2,7 +2,6 @@ import useCursor from "@/context/useCursor";
 import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { TextEditorMenuBar } from "./TextEditorMenuBar";
 
 function BoldButton() {
   const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
@@ -36,7 +35,6 @@ function BoldButton() {
 export default function TextEditorHeader() {
   return (
     <View style={styles.column2}>
-      <TextEditorMenuBar />
       <View style={styles.row4}>
         <View style={styles.column3}>
           <View style={styles.row5}>

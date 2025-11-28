@@ -6,6 +6,7 @@ import {
   View,
   useWindowDimensions,
 } from "react-native";
+import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
 import ContentPage from "./ContentPage";
 import TextEditorHeader from "./TextEditorHeader";
 import { TitleBar } from "./TextEditorTitleBar";
@@ -28,6 +29,7 @@ export default function TextEditorScreen() {
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
         <TitleBar />
+        <RibbonTabs />
         <TextEditorHeader />
         <ContentPage />
         <PageNumber currentPage={1} totalPages={1} />

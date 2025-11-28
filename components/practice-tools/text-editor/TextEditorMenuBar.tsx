@@ -1,35 +1,33 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+const darkBgStyle = { backgroundColor: "#989898" };
+const RIBBON_TABS = [
+  { label: "Accueil" },
+  { label: "Insertion" },
+  { label: "Dessin", style: darkBgStyle },
+  { label: "Conception", style: darkBgStyle },
+  { label: "Mise en page" },
+  { label: "Références" },
+  { label: "Publipostage", style: darkBgStyle },
+  { label: "Révision" },
+  { label: "Affichage", style: darkBgStyle },
+];
+
 export function TextEditorMenuBar() {
   return (
     <View style={styles.row2}>
-      <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Accueil"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button3} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Insertion"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Dessin"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Conception"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button6} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Mise en page"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button7} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Références"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button5} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Publipostage"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button4} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Révision"}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button8} onPress={() => {}} disabled>
-        <Text style={styles.text}>{"Affichage"}</Text>
-      </TouchableOpacity>
+      <View style={styles.ribbonTabsContainer}>
+        {RIBBON_TABS.map(({ label, style }) => (
+          <TouchableOpacity
+            key={label}
+            style={[styles.button2, style]}
+            onPress={() => {}}
+            disabled
+          >
+            <Text style={styles.text}>{label}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
       <View style={styles.row3}>
         <TouchableOpacity style={styles.button9} onPress={() => {}} disabled>
           <Image
@@ -149,5 +147,12 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 17,
     height: 17,
+  },
+  ribbonTabsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 32,
+    marginRight: 64,
+    gap: 8,
   },
 });
