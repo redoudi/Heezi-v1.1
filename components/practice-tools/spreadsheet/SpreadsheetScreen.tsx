@@ -53,29 +53,20 @@ export default function SpreadsheetScreen() {
         style={styles.scrollView}
         contentContainerStyle={styles.scrollBody}
       >
-        <View style={{ height: height || "100%" }}>
-          <ScrollView
-            style={{ height: height || "100%" }}
-            showsVerticalScrollIndicator
-          >
-            <View
-              style={[styles.mainContent, { width: Math.max(width, 1440) }]}
-            >
-              <View style={styles.titleBarContainer}>
-                <TitleBar />
-              </View>
-              <View style={styles.interactiveSection}>
-                <View style={styles.column2}>
-                  <RibbonTabs />
-                  <Ribbon />
-                  <FunctionBar />
-                </View>
-                <SpreadsheetGrid />
-                {/* <LevelStats /> */}
-                {isLesson && <View style={styles.overlay} />}
-              </View>
+        <View style={styles.mainContent}>
+          <View style={styles.titleBarContainer}>
+            <TitleBar />
+          </View>
+          <View style={styles.interactiveSection}>
+            <View style={styles.column2}>
+              <RibbonTabs />
+              <Ribbon />
+              <FunctionBar />
             </View>
-          </ScrollView>
+            <SpreadsheetGrid />
+            {/* <LevelStats /> */}
+            {isLesson && <View style={styles.overlay} />}
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -100,12 +91,11 @@ const styles = StyleSheet.create({
   },
 
   mainContent: {
-    borderWidth: 10,
-    borderColor: "red",
     alignItems: "center",
     justifyContent: "flex-start",
-    // borderWidth: 1,
-    // borderColor: "#EFEFEF",
+    borderWidth: 1,
+    borderColor: "#EFEFEF",
+    flex: 1,
   },
   titleBarContainer: {
     zIndex: 1001,
