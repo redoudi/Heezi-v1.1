@@ -80,9 +80,8 @@ const Divider = () => (
   <View
     style={{
       width: 1,
-      backgroundColor: "black",
+      backgroundColor: "darkgray",
       marginHorizontal: 8,
-      alignSelf: "stretch",
     }}
   />
 );
