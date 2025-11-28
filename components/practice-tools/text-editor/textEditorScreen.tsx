@@ -15,7 +15,7 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
     <View style={styles.pageNumberContainer}>
       <Text
-        style={[{ fontSize: 10, fontWeight: "bold" }, styles.pageNumberText]}
+        style={[{ fontSize: 12, fontWeight: "bold" }, styles.pageNumberText]}
       >{`Page ${currentPage}/${totalPages}`}</Text>
     </View>
   );
