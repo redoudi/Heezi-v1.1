@@ -734,9 +734,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 8,
   },
-  column2: {
-    marginBottom: 27,
-  },
+  column2: { zIndex: 1001, position: "relative", marginBottom: 27 },
   column3: {
     width: 97,
     marginLeft: 32,

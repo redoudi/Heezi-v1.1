@@ -19,16 +19,6 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
   );
 }
 
-function ProgressBar() {
-  return (
-    <View style={styles.progressBarContainer1}>
-      <View style={styles.progressBarContainer2}>
-        <View style={styles.progressBar}></View>
-      </View>
-    </View>
-  );
-}
-
 export default function TextEditorScreen() {
   const { height } = useWindowDimensions();
   const { levelType } = useLevelData();
@@ -36,9 +26,8 @@ export default function TextEditorScreen() {
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
-        <View style={styles.titleBarContainer}>
-          <TitleBar />
-        </View>
+        <TitleBar />
+
         <View style={styles.interactiveSection}>
           <TextEditorHeader />
           <ContentPage />
