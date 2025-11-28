@@ -32,56 +32,55 @@ function BoldButton() {
   );
 }
 
+function PressePapiers() {
+  return (
+    <View style={styles.column3}>
+      <View style={styles.row5}>
+        {/* bouton Coller */}
+        <TouchableOpacity
+          style={styles.buttonColumn}
+          onPress={() => {}}
+          disabled
+        >
+          <Image
+            source={require("@/assets/images/coller.png")}
+            resizeMode={"stretch"}
+            style={styles.image8}
+          />
+          <Text style={styles.text2}>{"Coller"}</Text>
+          <Image
+            source={require("@/assets/images/down-arrow.png")}
+            resizeMode={"stretch"}
+            style={styles.image9}
+          />
+        </TouchableOpacity>
+        <View style={styles.column4}>
+          <TouchableOpacity style={styles.button11} onPress={() => {}} disabled>
+            <Image
+              source={require("@/assets/images/cut.png")}
+              resizeMode={"stretch"}
+              style={styles.image10}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button12} onPress={() => {}} disabled>
+            <Image
+              source={require("@/assets/images/clipboard.png")}
+              resizeMode={"stretch"}
+              style={styles.image11}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+      <Text style={styles.text3}>{"Presse-papiers"}</Text>
+    </View>
+  );
+}
+
 export default function TextEditorHeader() {
   return (
     <View style={styles.column2}>
       <View style={styles.row4}>
-        <View style={styles.column3}>
-          <View style={styles.row5}>
-            <TouchableOpacity
-              style={styles.buttonColumn}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/brtm7hpr_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles.image8}
-              />
-              <Text style={styles.text2}>{"Coller"}</Text>
-              <Image
-                source={require("@/assets/images/oluhu4b3_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles.image9}
-              />
-            </TouchableOpacity>
-            <View style={styles.column4}>
-              <TouchableOpacity
-                style={styles.button11}
-                onPress={() => {}}
-                disabled
-              >
-                <Image
-                  source={require("@/assets/images/r2e2a79p_expires_30_days.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image10}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.button12}
-                onPress={() => {}}
-                disabled
-              >
-                <Image
-                  source={require("@/assets/images/183ucgvf_expires_30_days.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image11}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-          <Text style={styles.text3}>{"Presse-papiers"}</Text>
-        </View>
+        <PressePapiers />
         <View style={styles.column5}>
           <View style={styles.column6}>
             <View style={styles.row6}>
