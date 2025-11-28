@@ -47,8 +47,13 @@ export default function SpreadsheetScreen() {
   const isLesson = levelType === "lesson";
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
-      <ScrollView horizontal>
-        <View style={styles.mainContent}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollBody}
+      >
+        <View style={[styles.mainContent, { width: Math.max(width, 1440) }]}>
           <View style={styles.titleBarContainer}>
             <TitleBar />
           </View>
@@ -73,8 +78,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
+  scrollBody: {
+    flexGrow: 1,
+    alignItems: "center",
+  },
+  scrollView: {
+    alignSelf: "stretch",
+  },
   mainContent: {
-    maxWidth: 1440,
     flex: 1,
     backgroundColor: "#EFEFEF",
     borderWidth: 1,
