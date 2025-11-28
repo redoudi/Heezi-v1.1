@@ -149,11 +149,13 @@ const styles = StyleSheet.create({
   contentPage: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-    borderRadius: 8,
+
     paddingTop: 48,
     marginBottom: 8,
     marginHorizontal: 345,
     paddingHorizontal: 64,
+    borderWidth: 1,
+    borderColor: "darkgray",
   },
   textBlockContainer: {
     alignSelf: "flex-start",
