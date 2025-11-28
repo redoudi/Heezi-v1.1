@@ -29,13 +29,10 @@ export default function TextEditorScreen() {
       <View style={styles.mainContent}>
         <TitleBar />
 
-        <View style={styles.interactiveSection}>
-          <TextEditorHeader />
-          <ContentPage />
-          <PageNumber currentPage={1} totalPages={1} />
-
-          {isLesson && <View style={styles.overlay} />}
-        </View>
+        <TextEditorHeader />
+        <ContentPage />
+        <PageNumber currentPage={1} totalPages={1} />
+        {isLesson && <View style={styles.overlay} />}
       </View>
     </SafeAreaView>
   );
@@ -57,10 +54,7 @@ const styles = StyleSheet.create({
     zIndex: 1001,
     position: "relative",
   },
-  interactiveSection: {
-    flex: 1,
-    position: "relative",
-  },
+  interactiveSection: {},
   overlay: {
     position: "absolute",
     top: 0,
