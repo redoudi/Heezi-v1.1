@@ -1,5 +1,11 @@
 import useLevelData from "@/hooks/use-level-data";
-import { SafeAreaView, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+} from "react-native";
 import ContentPage from "./ContentPage";
 import TextEditorHeader, { TitleBar } from "./TextEditorHeader";
 
@@ -37,11 +43,7 @@ export default function TextEditorScreen() {
           <TextEditorHeader />
           <ContentPage />
           <PageNumber currentPage={1} totalPages={1} />
-          <View style={styles.progressBarColumn}>
-            <View style={styles.ProgressBarRow}>
-              <ProgressBar />
-            </View>
-          </View>
+
           {isLesson && <View style={styles.overlay} />}
         </View>
       </View>
