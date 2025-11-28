@@ -78,18 +78,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
-  scrollBody: {
-    flexGrow: 1,
-    alignItems: "center",
-  },
   scrollView: {
+    borderWidth: 10,
+    borderColor: "red",
     alignSelf: "stretch",
   },
+  scrollBody: {
+    borderWidth: 10,
+    borderColor: "blue",
+    flexGrow: 1,
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+
   mainContent: {
+    borderWidth: 10,
+    borderColor: "green",
     flex: 1,
     backgroundColor: "#EFEFEF",
-    borderWidth: 1,
-    borderColor: "#EFEFEF",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    // borderWidth: 1,
+    // borderColor: "#EFEFEF",
   },
   titleBarContainer: {
     zIndex: 1001,
