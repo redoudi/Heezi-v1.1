@@ -8,7 +8,13 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 function TextBlock({ item }: { item: any }) {
   return (
     <View style={[styles.textBlockContainer, item.blockStyle]}>
-      <Text style={[{ fontSize: 10, lineHeight: 24 }, styles.textBlockText, item.style]}>
+      <Text
+        style={[
+          { fontSize: 10, lineHeight: 24 },
+          styles.textBlockText,
+          item.style,
+        ]}
+      >
         {item.text}
       </Text>
     </View>
@@ -22,7 +28,7 @@ function TextInputBlock({ item }: { item: any }) {
     expected,
     currentStep: { focus },
   } = useCursor();
-  const [isWrongAnswer, setIsWrongAnswer] = useState(null);
+  const [isWrongAnswer, setIsWrongAnswer] = useState<boolean | null>(null);
   const blockRef = useRef<TextInput>(null);
   const { levelType } = useLevelData();
 
