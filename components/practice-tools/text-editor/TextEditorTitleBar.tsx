@@ -5,27 +5,29 @@ import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 export function TitleBar() {
   const { practiceTool } = usePracticeToolConstants();
   return (
-    <View style={styles.row}>
-      <Image
-        source={require("@/assets/images/f36dtxie_expires_30_days.png")}
-        resizeMode={"stretch"}
-        style={styles.image}
-      />
-      <Image
-        source={require("@/assets/images/x1cberci_expires_30_days.png")}
-        resizeMode={"stretch"}
-        style={styles.image2}
-      />
-      <Image
-        source={require("@/assets/images/1tMFzp8.png")}
-        resizeMode={"stretch"}
-        style={styles.image3}
-      />
-      <Image
-        source={require("@/assets/images/1tMFzp8.png")}
-        resizeMode={"stretch"}
-        style={styles.image4}
-      />
+    <View style={styles.mainContainer}>
+      <View style={styles.leftRow}>
+        <Image
+          source={require("@/assets/images/f36dtxie_expires_30_days.png")}
+          resizeMode={"contain"}
+          style={styles.image}
+        />
+        <Image
+          source={require("@/assets/images/x1cberci_expires_30_days.png")}
+          resizeMode={"contain"}
+          style={styles.image}
+        />
+        <Image
+          source={require("@/assets/images/1tMFzp8.png")}
+          resizeMode={"contain"}
+          style={styles.image}
+        />
+        <Image
+          source={require("@/assets/images/1tMFzp8.png")}
+          resizeMode={"contain"}
+          style={styles.image}
+        />
+      </View>
       <TouchableOpacity
         style={styles.button}
         onPress={() =>
@@ -34,8 +36,8 @@ export function TitleBar() {
       >
         <Image
           source={require("@/assets/images/iycoag37_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image5}
+          resizeMode={"contain"}
+          style={styles.exitIcon}
         />
       </TouchableOpacity>
     </View>
@@ -43,17 +45,21 @@ export function TitleBar() {
 }
 
 const styles = StyleSheet.create({
-  row: {
+  mainContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    paddingVertical: 8,
+    justifyContent: "space-between",
+    gap: 8,
+  },
+  leftRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    gap: 8,
   },
   image: {
-    width: 38,
+    width: 32,
     height: 32,
-    marginLeft: 32,
-    marginRight: 8,
   },
   image2: {
     width: 40,
@@ -71,16 +77,15 @@ const styles = StyleSheet.create({
     marginRight: 1134,
   },
   button: {
-    width: 40,
+    width: 32,
+    height: 32,
+    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FDC1AB",
     borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 32,
   },
-  image5: {
-    borderRadius: 8,
-    width: 24,
-    height: 24,
+  exitIcon: {
+    width: 20,
+    height: 20,
   },
 });
