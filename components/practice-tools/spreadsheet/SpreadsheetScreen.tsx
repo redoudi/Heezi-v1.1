@@ -75,8 +75,10 @@ export default function SpreadsheetScreen() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    alignItems: "center",
+
     backgroundColor: "#FFFFFF",
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
   scrollView: {
     borderWidth: 10,
@@ -87,15 +89,15 @@ const styles = StyleSheet.create({
     borderWidth: 10,
     borderColor: "blue",
     flexGrow: 1,
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "flex-start",
+    backgroundColor: "#EFEFEF",
   },
 
   mainContent: {
     borderWidth: 10,
     borderColor: "green",
-    flex: 1,
-    backgroundColor: "#EFEFEF",
+
     alignItems: "center",
     justifyContent: "flex-start",
     // borderWidth: 1,
