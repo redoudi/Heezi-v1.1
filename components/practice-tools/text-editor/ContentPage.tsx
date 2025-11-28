@@ -114,7 +114,7 @@ function ContentItem({ item, index }: { item: any; index: number }) {
   }
 }
 
-const ContentPage = () => {
+export default function ContentPage() {
   const { contentBlocks } = useTextEditorStore();
   const contentPageRef = useRef<View>(null);
   const { setContentRef } = useCursor();
@@ -143,9 +143,7 @@ const ContentPage = () => {
       </View>
     </View>
   );
-};
-
-export default ContentPage;
+}
 
 const styles = StyleSheet.create({
   contentPage: {
