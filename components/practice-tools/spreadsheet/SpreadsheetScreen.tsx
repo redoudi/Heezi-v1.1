@@ -42,7 +42,7 @@ function LevelStats() {
 }
 
 export default function SpreadsheetScreen() {
-  const { height, width } = useWindowDimensions();
+  const { height } = useWindowDimensions();
   const { levelType } = useLevelData();
   const isLesson = levelType === "lesson";
   return (
