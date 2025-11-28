@@ -10,7 +10,7 @@ function TextBlock({ item }: { item: any }) {
     <View style={[styles.textBlockContainer, item.blockStyle]}>
       <Text
         style={[
-          { fontSize: 10, lineHeight: 24 },
+          { fontSize: 14, lineHeight: 24 },
           styles.textBlockText,
           item.style,
         ]}
@@ -78,7 +78,7 @@ function TextInputBlock({ item }: { item: any }) {
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
         style={[
-          { fontSize: 10, lineHeight: 24 },
+          { fontSize: 14, lineHeight: 24 },
           styles.textInput,
           item.style,
           isWrongAnswer ? wrongAnswerStyle : {},

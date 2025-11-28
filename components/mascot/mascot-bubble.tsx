@@ -3,7 +3,16 @@ import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getElementBottomHeight } from "@/utils/cursorUtils";
 import { useEffect, useState } from "react";
-import { Image, LayoutChangeEvent, StyleProp, StyleSheet, Text, View, ViewStyle, useWindowDimensions } from "react-native";
+import {
+  Image,
+  LayoutChangeEvent,
+  StyleProp,
+  StyleSheet,
+  Text,
+  View,
+  ViewStyle,
+  useWindowDimensions,
+} from "react-native";
 import SuivantBtn from "../ui/suivantBtn";
 
 const CornerTriangleIcon = () => {
@@ -163,8 +172,8 @@ const styles = StyleSheet.create({
     // alignSelf: "flex-start",
   },
   mascot: {
-    width: 150,
-    height: 150,
+    width: 88,
+    height: 88,
     marginBottom: 48,
   },
 
