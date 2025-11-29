@@ -159,8 +159,6 @@ const styles = StyleSheet.create({
     borderColor: "darkgray",
   },
   pageContent: {
-    borderWidth: 1,
-    borderColor: "darkgray",
     flex: 1,
   },
   textBlockContainer: {
