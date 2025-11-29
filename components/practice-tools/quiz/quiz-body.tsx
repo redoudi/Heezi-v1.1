@@ -3,6 +3,7 @@ import { router } from "expo-router";
 import {
   FlatList,
   Image,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -188,28 +189,33 @@ export default function QuizBody({
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
         <TopBar />
-        <QuestionBox question={question} />
-        <View style={styles.mascotContainer}>
-          <CustomAnimation
-            animationData={require("@/assets/animations/MascotteQuiz.json")}
-          />
-        </View>
-        <View style={styles.answersAndVerifyContainer}>
-          <AnswersBox
-            answers={answers}
-            selectAnswer={selectAnswer}
-            selectedAnswerIndex={selectedAnswerIndex}
-            isVerified={isVerified}
-          />
-          <VerifyButton
-            verifyAnswer={verifyAnswer}
-            nextStep={nextStep}
-            isVerified={isVerified}
-            disabled={disabled}
-            selectedAnswerIndex={selectedAnswerIndex}
-            answers={answers}
-          />
-        </View>
+        <ScrollView
+          style={styles.scrollView}
+          contentContainerStyle={styles.scrollViewContent}
+        >
+          <QuestionBox question={question} />
+          <View style={styles.mascotContainer}>
+            <CustomAnimation
+              animationData={require("@/assets/animations/MascotteQuiz.json")}
+            />
+          </View>
+          <View style={styles.answersAndVerifyContainer}>
+            <AnswersBox
+              answers={answers}
+              selectAnswer={selectAnswer}
+              selectedAnswerIndex={selectedAnswerIndex}
+              isVerified={isVerified}
+            />
+            <VerifyButton
+              verifyAnswer={verifyAnswer}
+              nextStep={nextStep}
+              isVerified={isVerified}
+              disabled={disabled}
+              selectedAnswerIndex={selectedAnswerIndex}
+              answers={answers}
+            />
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -224,8 +230,16 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "stretch",
     backgroundColor: "#FFFFFF",
-    justifyContent: "space-between",
     padding: 16,
+    gap: 16,
+  },
+  scrollView: {
+    flex: 1,
+  },
+  scrollViewContent: {
+    flex: 1,
+
+    justifyContent: "space-between",
   },
   topBar: {
     flexDirection: "row",
