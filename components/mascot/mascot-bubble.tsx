@@ -138,6 +138,7 @@ export const MascotDialog = ({
           <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
           {DownArrowNextStep}
         </View>
+        <CornerTriangle />
       </View>
       <MascotIcon />
     </View>
@@ -146,19 +147,19 @@ export const MascotDialog = ({
 const styles = StyleSheet.create({
   triangleContainer: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
     justifyContent: "flex-end",
     alignItems: "flex-start",
+    marginBottom: "auto",
   },
   triangle: {
     width: 0,
     height: 0,
     backgroundColor: "transparent",
     borderStyle: "solid",
-    borderRightWidth: 200,
-    borderTopWidth: 200,
+    borderRightWidth: 20,
+    borderTopWidth: 20,
     borderRightColor: "transparent",
-    borderTopColor: "#000000",
+    borderTopColor: "rgba(82,82,82,0.8)",
   },
   mainContainer: {
     position: "absolute",
@@ -167,12 +168,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "flex-end",
-    borderWidth: 1,
   },
   textBoxAndTriangle: {
     marginTop: 64,
     flexDirection: "row",
-    borderWidth: 1,
+
     // alignItems: "flex-end",
     // maxWidth: 800,
     // height: "100%",
@@ -184,8 +184,6 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 8,
     padding: 16,
     maxWidth: 600,
-    borderWidth: 1,
-    borderColor: "red",
 
     // flex: 1,
   },
