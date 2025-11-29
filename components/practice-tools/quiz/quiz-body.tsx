@@ -46,8 +46,8 @@ const TopBar = () => {
 
 const QuestionBox = ({ question }: { question: string }) => {
   return (
-    <View style={styles.view5}>
-      <Text style={styles.text}>{question}</Text>
+    <View style={styles.questionContainer}>
+      <Text style={styles.questionText}>{question}</Text>
     </View>
   );
 };
@@ -223,7 +223,6 @@ const styles = StyleSheet.create({
     borderWidth: 10,
     alignItems: "stretch",
     backgroundColor: "#FFFFFF",
-    paddingVertical: 32,
   },
   topBar: {
     flexDirection: "row",
@@ -233,6 +232,17 @@ const styles = StyleSheet.create({
     width: 63,
     height: 8,
     backgroundColor: "#45BC9E",
+  },
+  questionContainer: {
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    padding: 16,
+    marginBottom: 8,
+  },
+  questionText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#292929",
   },
   button: {
     backgroundColor: "#FFFFFF",
@@ -305,11 +315,6 @@ const styles = StyleSheet.create({
     height: 24,
   },
 
-  text: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#292929",
-  },
   text2: {
     fontSize: 18,
     fontWeight: "bold",
@@ -346,15 +351,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginHorizontal: 32,
   },
-  view5: {
-    alignSelf: "flex-start",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 15,
-    paddingLeft: 16,
-    paddingRight: 72,
-    marginBottom: 8,
-  },
+
   view6: {
     alignSelf: "stretch",
     alignItems: "center",
