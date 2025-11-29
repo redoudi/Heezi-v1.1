@@ -175,7 +175,6 @@
             "blockId": "signatureInput",
             "placeholder": "Signature",
             "blockStyle": {
-                "marginBottom": 56,
                 "marginTop": "auto"
             },
             "text": ""

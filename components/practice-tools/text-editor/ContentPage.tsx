@@ -136,7 +136,10 @@ export default function ContentPage() {
       ref={contentPageRef}
       style={[styles.contentPage, contentPageHighlightedStyle]}
     >
-      <View ref={pageContentRef} style={[pageContentHighlightedStyle]}>
+      <View
+        style={[styles.pageContent, pageContentHighlightedStyle]}
+        ref={pageContentRef}
+      >
         {contentBlocks.map((item, index) => (
           <ContentItem key={index} item={item} index={index} />
         ))}
@@ -149,13 +152,17 @@ const styles = StyleSheet.create({
   contentPage: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-
-    paddingTop: 48,
+    paddingVertical: 48,
     marginBottom: 8,
     marginHorizontal: 345,
     paddingHorizontal: 64,
     borderWidth: 1,
     borderColor: "darkgray",
+  },
+  pageContent: {
+    borderWidth: 1,
+    borderColor: "darkgray",
+    flex: 1,
   },
   textBlockContainer: {
     alignSelf: "flex-start",
