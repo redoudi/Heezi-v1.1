@@ -1,5 +1,4 @@
 import CustomAnimation from "@/components/animations/CustomAnimation";
-import { router } from "expo-router";
 import {
   FlatList,
   Image,
@@ -11,40 +10,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-const ProgressBar = () => {
-  return (
-    <View style={styles.progressBarContainer}>
-      <View style={styles.progressBarOutline}>
-        <View style={styles.progressBar}></View>
-      </View>
-    </View>
-  );
-};
-
-function BackButton() {
-  return (
-    <TouchableOpacity
-      style={styles.backButtonBox}
-      onPress={() => router.back()}
-    >
-      <Image
-        source={require("@/assets/images/8jxkmv5m_expires_30_days.png")}
-        resizeMode={"contain"}
-        style={styles.backButtonIcon}
-      />
-    </TouchableOpacity>
-  );
-}
-
-const TopBar = () => {
-  return (
-    <View style={styles.topBar}>
-      <BackButton />
-      <ProgressBar />
-    </View>
-  );
-};
+import TopBar from "./top-bar";
 
 const QuestionBox = ({ question }: { question: string }) => {
   return (
@@ -270,15 +236,6 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     padding: 8,
   },
-  topBar: {
-    flexDirection: "row",
-    backgroundColor: "#FFFFFF",
-  },
-  progressBar: {
-    width: "30%",
-    height: 8,
-    backgroundColor: "#45BC9E",
-  },
   questionContainer: {
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
@@ -343,30 +300,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#0A2924",
     marginRight: 10,
-  },
-  backButtonBox: {
-    width: 32,
-    height: 32,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FDC1AB",
-    borderRadius: 8,
-  },
-  backButtonIcon: {
-    borderRadius: 8,
-    width: 24,
-    height: 24,
-  },
-  progressBarContainer: {
-    flex: 1,
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingHorizontal: 8,
-    justifyContent: "center",
-  },
-  progressBarOutline: {
-    backgroundColor: "#989898",
-    borderRadius: 4,
   },
   questionAndAnswersContainer: { gap: 16 },
 });
