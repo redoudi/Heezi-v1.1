@@ -7,31 +7,38 @@ import {
   Text,
   TouchableOpacity,
   View,
+  useWindowDimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const ProgressBar = () => {
   return (
-    <View style={styles.view2}>
-      <View style={styles.view3}>
-        <View style={styles.box}></View>
+    <View style={styles.progressBarContainer}>
+      <View style={styles.progressBarOutline}>
+        <View style={styles.progressBar}></View>
       </View>
     </View>
   );
 };
 
+function BackButton() {
+  return (
+    <View style={styles.view}>
+      <TouchableOpacity onPress={() => router.back()}>
+        <Image
+          source={require("@/assets/images/8jxkmv5m_expires_30_days.png")}
+          resizeMode={"stretch"}
+          style={styles.image}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+}
+
 const TopBar = () => {
   return (
     <View style={styles.row}>
-      <View style={styles.view}>
-        <TouchableOpacity onPress={() => router.back()}>
-          <Image
-            source={require("@/assets/images/8jxkmv5m_expires_30_days.png")}
-            resizeMode={"stretch"}
-            style={styles.image}
-          />
-        </TouchableOpacity>
-      </View>
+      <BackButton />
       <ProgressBar />
     </View>
   );
@@ -175,9 +182,10 @@ export default function QuizBody({
 }) {
   const { question, answers } = currentStep;
   const disabled = selectedAnswerIndex === null;
+  const { height } = useWindowDimensions();
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.column}>
+    <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
+      <View style={styles.mainContent}>
         <TopBar />
         <View style={styles.view4}>
           <View style={styles.column2}>
@@ -211,12 +219,19 @@ export default function QuizBody({
   );
 }
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
+    borderWidth: 10,
     flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
-  box: {
+  mainContent: {
+    borderWidth: 10,
+    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+    paddingVertical: 32,
+  },
+  progressBar: {
     width: 63,
     height: 8,
     backgroundColor: "#45BC9E",
@@ -266,12 +281,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginLeft: 458,
   },
-  column: {
-    width: 1440,
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 32,
-  },
+
   column2: {
     paddingHorizontal: 8,
   },
@@ -326,14 +336,14 @@ const styles = StyleSheet.create({
     padding: 16,
     marginRight: 16,
   },
-  view2: {
+  progressBarContainer: {
     width: 506,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 28,
     paddingHorizontal: 8,
   },
-  view3: {
+  progressBarOutline: {
     backgroundColor: "#989898",
     borderRadius: 4,
   },
