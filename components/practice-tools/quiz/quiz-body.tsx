@@ -306,9 +306,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#FF6B6B",
   },
   buttonCorrect: {
-    borderWidth: 8,
-    borderColor: "#4ECB71",
-    backgroundColor: "rgba(78, 203, 113, 0.2)",
+    borderWidth: 4,
+    borderColor: "black",
+    backgroundColor: "#45BC9E",
   },
   verifyButton: {
     flexDirection: "row",
