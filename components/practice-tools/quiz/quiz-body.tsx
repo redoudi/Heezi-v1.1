@@ -3,7 +3,6 @@ import { router } from "expo-router";
 import {
   FlatList,
   Image,
-  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -71,7 +70,7 @@ const AnswerButton = ({
   const isWrongAnswer = isVerified && isSelected && !answer.isCorrect;
   const isCorrectAnswer = isVerified && answer.isCorrect;
 
-  let buttonStyle = styles.button;
+  let buttonStyle = {};
   if (isWrongAnswer) {
     buttonStyle = styles.buttonWrong;
   } else if (isCorrectAnswer) {
@@ -82,11 +81,11 @@ const AnswerButton = ({
 
   return (
     <TouchableOpacity
-      style={[buttonStyle]}
+      style={[styles.button, buttonStyle]}
       onPress={() => selectAnswer(index)}
       disabled={isVerified}
     >
-      <Text style={styles.text2}>{answer.text || "..."}</Text>
+      <Text style={styles.answerText}>{answer.text || "..."}</Text>
     </TouchableOpacity>
   );
 };
@@ -135,7 +134,7 @@ const VerifyButton = ({
   );
 };
 
-const AnswersBox = ({
+const AnswersBox_ = ({
   answers,
   selectAnswer,
   selectedAnswerIndex,
@@ -159,10 +158,31 @@ const AnswersBox = ({
         />
       )}
       keyExtractor={(_, index) => index.toString()}
-      contentContainerStyle={styles.column3}
+      contentContainerStyle={styles.answersContainer}
     />
   );
 };
+
+function AnswersBox({
+  answers,
+}: {
+  answers: { text: string; isCorrect?: boolean }[];
+}) {
+  return (
+    <View style={styles.answersContainer}>
+      {answers.map((answer, index) => (
+        <AnswerButton
+          key={index}
+          answer={answer}
+          selectAnswer={() => {}}
+          index={index}
+          selectedAnswerIndex={null}
+          isVerified={false}
+        />
+      ))}
+    </View>
+  );
+}
 
 export default function QuizBody({
   selectAnswer,
@@ -189,33 +209,29 @@ export default function QuizBody({
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
         <TopBar />
-        <ScrollView
-          style={styles.scrollView}
-          contentContainerStyle={styles.scrollViewContent}
-        >
+        <View style={styles.questionAndAnswersContainer}>
           <QuestionBox question={question} />
           <View style={styles.mascotContainer}>
             <CustomAnimation
               animationData={require("@/assets/animations/MascotteQuiz.json")}
             />
           </View>
-          <View style={styles.answersAndVerifyContainer}>
-            <AnswersBox
-              answers={answers}
-              selectAnswer={selectAnswer}
-              selectedAnswerIndex={selectedAnswerIndex}
-              isVerified={isVerified}
-            />
-            <VerifyButton
-              verifyAnswer={verifyAnswer}
-              nextStep={nextStep}
-              isVerified={isVerified}
-              disabled={disabled}
-              selectedAnswerIndex={selectedAnswerIndex}
-              answers={answers}
-            />
-          </View>
-        </ScrollView>
+
+          <AnswersBox
+            answers={answers}
+            selectAnswer={selectAnswer}
+            selectedAnswerIndex={selectedAnswerIndex}
+            isVerified={isVerified}
+          />
+        </View>
+        <VerifyButton
+          verifyAnswer={verifyAnswer}
+          nextStep={nextStep}
+          isVerified={isVerified}
+          disabled={disabled}
+          selectedAnswerIndex={selectedAnswerIndex}
+          answers={answers}
+        />
       </View>
     </SafeAreaView>
   );
@@ -232,21 +248,24 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     padding: 16,
     gap: 16,
+    justifyContent: "space-between",
   },
   scrollView: {
     flex: 1,
+    borderWidth: 1,
   },
   scrollViewContent: {
     flex: 1,
-
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
+    alignItems: "stretch",
+    padding: 8,
   },
   topBar: {
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
   },
   progressBar: {
-    width: 63,
+    width: "30%",
     height: 8,
     backgroundColor: "#45BC9E",
   },
@@ -254,7 +273,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     padding: 16,
-    marginBottom: 8,
   },
   questionText: {
     fontSize: 18,
@@ -262,37 +280,24 @@ const styles = StyleSheet.create({
     color: "#292929",
   },
   answersAndVerifyContainer: {
-    alignSelf: "flex-end",
     gap: 16,
   },
   button: {
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingVertical: 7,
-    paddingHorizontal: 256,
+    paddingHorizontal: 8,
     marginBottom: 16,
   },
   buttonSelected: {
     backgroundColor: "#45BC9E",
-    borderRadius: 8,
-    paddingVertical: 7,
-    paddingHorizontal: 256,
-    marginBottom: 16,
   },
   buttonWrong: {
     backgroundColor: "#FF6B6B",
-    borderRadius: 8,
-    paddingVertical: 7,
-    paddingHorizontal: 256,
-    marginBottom: 16,
   },
   buttonCorrect: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 7,
-    paddingHorizontal: 256,
-    marginBottom: 16,
-    borderWidth: 3,
+    borderWidth: 8,
     borderColor: "#4ECB71",
   },
   verifyButton: {
@@ -304,25 +309,25 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
   },
 
-  column3: {
-    alignSelf: "flex-start",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    padding: 16,
-  },
   mascotContainer: {
-    height: 304,
+    flex: 3,
+    alignSelf: "flex-start",
   },
   triangleIcon: {
     borderRadius: 8,
     width: 16,
     height: 24,
   },
-
-  text2: {
+  answersContainer: {
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    padding: 16,
+  },
+  answerText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#292929",
+    textAlign: "center",
   },
   text3: {
     fontSize: 18,
@@ -354,4 +359,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#989898",
     borderRadius: 4,
   },
+  questionAndAnswersContainer: { gap: 16 },
 });
