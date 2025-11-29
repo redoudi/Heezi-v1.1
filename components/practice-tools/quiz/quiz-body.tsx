@@ -23,15 +23,16 @@ const ProgressBar = () => {
 
 function BackButton() {
   return (
-    <View style={styles.view}>
-      <TouchableOpacity onPress={() => router.back()}>
-        <Image
-          source={require("@/assets/images/8jxkmv5m_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image}
-        />
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      style={styles.backButtonBox}
+      onPress={() => router.back()}
+    >
+      <Image
+        source={require("@/assets/images/8jxkmv5m_expires_30_days.png")}
+        resizeMode={"contain"}
+        style={styles.backButtonIcon}
+      />
+    </TouchableOpacity>
   );
 }
 
@@ -299,11 +300,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 16,
   },
-  image: {
-    borderRadius: 8,
-    width: 30,
-    height: 32,
-  },
+
   mascotContainer: {
     width: 257,
     height: 304,
@@ -326,12 +323,18 @@ const styles = StyleSheet.create({
     color: "#0A2924",
     marginRight: 10,
   },
-  view: {
-    width: 62,
+  backButtonBox: {
+    width: 32,
+    height: 32,
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "#FDC1AB",
     borderRadius: 8,
-    padding: 16,
-    marginRight: 16,
+  },
+  backButtonIcon: {
+    borderRadius: 8,
+    width: 24,
+    height: 24,
   },
   progressBarContainer: {
     flex: 1,

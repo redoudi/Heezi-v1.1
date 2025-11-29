@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FDC1AB",
     borderRadius: 8,
-
     marginRight: 32,
   },
   backButtonIcon: {
