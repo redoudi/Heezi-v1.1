@@ -1,6 +1,14 @@
 import CustomAnimation from "@/components/animations/CustomAnimation";
 import { router } from "expo-router";
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const ProgressBar = () => {
   return (
