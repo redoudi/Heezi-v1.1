@@ -194,36 +194,39 @@ export default function QuizBody({
             animationData={require("@/assets/animations/MascotteQuiz.json")}
           />
         </View>
-        <AnswersBox
-          answers={answers}
-          selectAnswer={selectAnswer}
-          selectedAnswerIndex={selectedAnswerIndex}
-          isVerified={isVerified}
-        />
-        <VerifyButton
-          verifyAnswer={verifyAnswer}
-          nextStep={nextStep}
-          isVerified={isVerified}
-          disabled={disabled}
-          selectedAnswerIndex={selectedAnswerIndex}
-          answers={answers}
-        />
+        <View style={styles.answersAndVerifyContainer}>
+          <AnswersBox
+            answers={answers}
+            selectAnswer={selectAnswer}
+            selectedAnswerIndex={selectedAnswerIndex}
+            isVerified={isVerified}
+          />
+          <VerifyButton
+            verifyAnswer={verifyAnswer}
+            nextStep={nextStep}
+            isVerified={isVerified}
+            disabled={disabled}
+            selectedAnswerIndex={selectedAnswerIndex}
+            answers={answers}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   mainContainer: {
-    borderWidth: 10,
     flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
   mainContent: {
     flex: 1,
-    borderWidth: 10,
+
     alignItems: "stretch",
     backgroundColor: "#FFFFFF",
+    justifyContent: "space-between",
+    padding: 16,
   },
   topBar: {
     flexDirection: "row",
@@ -244,6 +247,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     color: "#292929",
+  },
+  answersAndVerifyContainer: {
+    alignSelf: "flex-end",
+    gap: 16,
   },
   button: {
     backgroundColor: "#FFFFFF",
@@ -302,7 +309,6 @@ const styles = StyleSheet.create({
   },
   mascotContainer: {
     height: 304,
-    borderWidth: 1,
   },
   image3: {
     borderRadius: 8,
