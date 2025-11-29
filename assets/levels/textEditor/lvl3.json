@@ -25,7 +25,7 @@
                 {
                     "tip": {
                         "text1": "1.2 L'adresse",
-                        "text2": "Et maintenant, tu peux saisir l'adresse : \"123 Rue de la Paix 97310 Kourou\". Veille bien à respecter les majuscules et les minuscules"
+                        "text2": "Et maintenant, tu peux saisir l'adresse : \"123 Rue de la Paix 97310 Kourou\".\nVeille bien à respecter les majuscules et les minuscules"
                     },
                     "cursor": {
                         "elementId": "adresseInput"

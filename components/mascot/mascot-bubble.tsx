@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     paddingLeft: 32,
     paddingRight: 32,
-    maxWidth: 800,
+    maxWidth: 600,
     // flex: 1,
   },
 
