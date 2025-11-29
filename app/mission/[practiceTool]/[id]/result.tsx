@@ -1,4 +1,3 @@
-import FullWindowContainer from "@/components/FullWindowContainer";
 import CustomAnimation from "@/components/animations/CustomAnimation";
 import { EndLevelReport } from "@/components/result/EndLevelReport";
 import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
@@ -6,7 +5,8 @@ import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, useWindowDimensions } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const dynamicParams = false;
 
@@ -29,10 +29,11 @@ export default function ResultScreen() {
     }
   };
 
+  const { height } = useWindowDimensions();
   return (
-    <FullWindowContainer style={styles.mainContainer}>
+    <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
-        <View style={styles.imageBox}>
+        <View style={styles.animationBox}>
           <CustomAnimation
             animationData={
               characters[character as keyof typeof characters]?.fin || ""
@@ -49,7 +50,7 @@ export default function ResultScreen() {
           <ButtonWithArrow text={"Continuer"} onPress={goToNextPage} />
         </View>
       </View>
-    </FullWindowContainer>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
@@ -61,15 +62,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   mainContent: {
+    borderWidth: 1,
     backgroundColor: "white",
-    alignItems: "stretch",
+    alignItems: "center",
     justifyContent: "space-between",
-    height: "100%",
+    flex: 1,
     padding: 16,
     borderRadius: 8,
     margin: 16,
   },
-  imageBox: {
+  animationBox: {
     backgroundColor: "white",
     borderRadius: 8,
     padding: 8,

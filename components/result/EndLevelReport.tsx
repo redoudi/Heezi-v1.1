@@ -22,13 +22,17 @@ function endLevelStats() {
       <View style={styles.row3}>
         <View style={styles.column4}>
           <View style={styles.view4}>
-            <Text style={[{ fontSize: 10, fontWeight: "bold" }, styles.text5]}>{"Nv.1"}</Text>
+            <Text style={[{ fontSize: 10, fontWeight: "bold" }, styles.text5]}>
+              {"Nv.1"}
+            </Text>
           </View>
           <View style={styles.view5}>
             <View style={styles.box2}></View>
           </View>
         </View>
-        <Text style={[{ fontSize: 10, fontWeight: "bold" }, styles.text6]}>{"+100xp"}</Text>
+        <Text style={[{ fontSize: 10, fontWeight: "bold" }, styles.text6]}>
+          {"+100xp"}
+        </Text>
       </View>
     </View>
   );
@@ -43,10 +47,8 @@ export function EndLevelReport({
 }) {
   return (
     <View style={styles.mainContainer}>
-      <Text style={[{ fontSize: 22 }, styles.text]}>{title}</Text>
-      <Text style={[{ fontSize: 10, lineHeight: 24 }, styles.text2]}>
-        {description}
-      </Text>
+      <Text style={styles.reportTitle}>{title}</Text>
+      <Text style={[styles.text2]}>{description}</Text>
     </View>
   );
 }
@@ -70,6 +72,11 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingLeft: 8,
     marginRight: 8,
+  },
+  reportTitle: {
+    fontSize: 24,
+    color: "#292929",
+    marginBottom: 8,
   },
   image: {
     borderRadius: 8,
@@ -112,6 +119,8 @@ const styles = StyleSheet.create({
   text2: {
     color: "#292929",
     marginBottom: 8,
+    fontSize: 16,
+    lineHeight: 24,
   },
   text3: {
     color: "#F95F3C",
