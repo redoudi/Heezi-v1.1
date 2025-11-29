@@ -3,6 +3,7 @@ import { router } from "expo-router";
 import {
   FlatList,
   Image,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -207,7 +208,10 @@ export default function QuizBody({
   const { height } = useWindowDimensions();
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
-      <View style={styles.mainContent}>
+      <ScrollView
+        style={styles.scrollView}
+        contentContainerStyle={styles.mainContent}
+      >
         <TopBar />
         <View style={styles.questionAndAnswersContainer}>
           <QuestionBox question={question} />
@@ -233,7 +237,7 @@ export default function QuizBody({
           selectedAnswerIndex={selectedAnswerIndex}
           answers={answers}
         />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -253,7 +257,6 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
-    borderWidth: 1,
   },
   scrollViewContent: {
     flex: 1,
