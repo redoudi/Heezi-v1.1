@@ -54,48 +54,22 @@ export default function ResultScreen() {
   );
 }
 const styles = StyleSheet.create({
-  mainContainer: { padding: 16 },
-  container: {
-    backgroundColor: "#FFFFFF",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  mainContainer: { padding: 16, alignItems: "center" },
+
   mainContent: {
     borderWidth: 1,
     backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "space-between",
+    alignItems: "stretch",
     flex: 1,
     padding: 16,
     borderRadius: 8,
     margin: 16,
   },
   animationBox: {
+    alignSelf: "center",
     backgroundColor: "white",
     borderRadius: 8,
     padding: 8,
     flex: 1,
-  },
-  buttonRow: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    backgroundColor: "#72D6BA",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginRight: 399,
-  },
-  triangleIcon: {
-    alignSelf: "center",
-    borderRadius: 8,
-    width: 16,
-    height: 24,
-  },
-  text7: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#0A2924",
-    marginRight: 11,
   },
 });

@@ -1,42 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
-
-function endLevelStats() {
-  return (
-    <View style={styles.column3}>
-      <View style={styles.row}>
-        <Text style={[{ fontSize: 14 }, styles.text3]}>{"+3"}</Text>
-        <Image
-          source={require("@/assets/images/niw8yegh_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image}
-        />
-      </View>
-      <View style={styles.row2}>
-        <Text style={[{ fontSize: 14 }, styles.text4]}>{"+500"}</Text>
-        <Image
-          source={require("@/assets/images/3ixeh7z2_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image2}
-        />
-      </View>
-      <View style={styles.row3}>
-        <View style={styles.column4}>
-          <View style={styles.view4}>
-            <Text style={[{ fontSize: 10, fontWeight: "bold" }, styles.text5]}>
-              {"Nv.1"}
-            </Text>
-          </View>
-          <View style={styles.view5}>
-            <View style={styles.box2}></View>
-          </View>
-        </View>
-        <Text style={[{ fontSize: 10, fontWeight: "bold" }, styles.text6]}>
-          {"+100xp"}
-        </Text>
-      </View>
-    </View>
-  );
-}
+import { StyleSheet, Text, View } from "react-native";
 
 export function EndLevelReport({
   title,
@@ -55,7 +17,6 @@ export function EndLevelReport({
 
 const styles = StyleSheet.create({
   mainContainer: {
-    alignSelf: "stretch",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 8,
@@ -66,7 +27,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
   },
   column4: {
-    width: 441,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingVertical: 8,
