@@ -300,11 +300,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 16,
   },
-
   mascotContainer: {
-    width: 257,
     height: 304,
-    marginBottom: 7,
+    borderWidth: 1,
   },
   image3: {
     borderRadius: 8,
