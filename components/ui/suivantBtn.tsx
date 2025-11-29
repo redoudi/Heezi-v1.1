@@ -8,8 +8,10 @@ export default function SuivantBtn({
   onPress: () => void;
 }) {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.downArrowContainer}>
-      <Text style={[{ fontSize: 18, fontWeight: "bold" }, styles.text]}>{text}</Text>
+    <TouchableOpacity onPress={onPress} style={styles.mainContainer}>
+      <Text style={[{ fontSize: 18, fontWeight: "bold" }, styles.text]}>
+        {text}
+      </Text>
       <Image
         source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
         resizeMode={"stretch"}
@@ -19,7 +21,7 @@ export default function SuivantBtn({
   );
 }
 const styles = StyleSheet.create({
-  downArrowContainer: {
+  mainContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -28,6 +30,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 8,
+    marginTop: 16,
   },
   image31: {
     width: 32,

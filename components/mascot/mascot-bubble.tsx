@@ -34,33 +34,6 @@ const MascotIcon = () => {
   );
 };
 
-export const MascotDialog = ({
-  bubbleText,
-  downArrowNextStep = undefined,
-  style = undefined,
-  textBoxAndTriangleStyle = undefined,
-  onLayout,
-}: {
-  bubbleText: string;
-  downArrowNextStep: React.ReactNode;
-  style?: StyleProp<ViewStyle>;
-  onLayout?: (event: LayoutChangeEvent) => void;
-}) => {
-  const DownArrowNextStep = downArrowNextStep;
-  return (
-    <View style={[styles.mainContainer, style]} onLayout={onLayout}>
-      <View style={[styles.textBoxAndTriangle, textBoxAndTriangleStyle]}>
-        <View style={styles.textContainer}>
-          <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
-          {DownArrowNextStep}
-        </View>
-        <CornerTriangleIcon />
-      </View>
-      <MascotIcon />
-    </View>
-  );
-};
-
 export function MascotBubble({
   bubbleText,
   nextStep,
@@ -137,7 +110,56 @@ export function MascotBubble({
   );
 }
 
+const CornerTriangle = () => {
+  return (
+    <View style={styles.triangleContainer}>
+      <View style={styles.triangle} />
+    </View>
+  );
+};
+
+export const MascotDialog = ({
+  bubbleText,
+  downArrowNextStep = undefined,
+  style = undefined,
+  textBoxAndTriangleStyle = undefined,
+  onLayout,
+}: {
+  bubbleText: string;
+  downArrowNextStep: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+  onLayout?: (event: LayoutChangeEvent) => void;
+}) => {
+  const DownArrowNextStep = downArrowNextStep;
+  return (
+    <View style={[styles.mainContainer, style]} onLayout={onLayout}>
+      <View style={[styles.textBoxAndTriangle, textBoxAndTriangleStyle]}>
+        <View style={styles.textContainer}>
+          <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
+          {DownArrowNextStep}
+        </View>
+      </View>
+      <MascotIcon />
+    </View>
+  );
+};
 const styles = StyleSheet.create({
+  triangleContainer: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+  },
+  triangle: {
+    width: 0,
+    height: 0,
+    backgroundColor: "transparent",
+    borderStyle: "solid",
+    borderRightWidth: 200,
+    borderTopWidth: 200,
+    borderRightColor: "transparent",
+    borderTopColor: "#000000",
+  },
   mainContainer: {
     position: "absolute",
     right: 0,
@@ -145,10 +167,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "flex-end",
+    borderWidth: 1,
   },
   textBoxAndTriangle: {
     marginTop: 64,
     flexDirection: "row",
+    borderWidth: 1,
     // alignItems: "flex-end",
     // maxWidth: 800,
     // height: "100%",
@@ -158,29 +182,28 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 8,
     borderBottomRightRadius: 8,
     borderBottomLeftRadius: 8,
-    paddingTop: 16,
-    paddingBottom: 16,
-    paddingLeft: 32,
-    paddingRight: 32,
+    padding: 16,
     maxWidth: 600,
+    borderWidth: 1,
+    borderColor: "red",
+
     // flex: 1,
   },
 
   cornerTriangle: {
     width: 42,
-    height: 61,
-    // alignSelf: "flex-start",
+    marginBottom: "auto",
+    borderWidth: 1,
+    borderColor: "green",
   },
   mascot: {
     width: 88,
     height: 88,
-    marginBottom: 48,
   },
 
   dialogText: {
     fontSize: 14,
     fontWeight: "bold",
     color: "#FFFFFF",
-    marginBottom: 31,
   },
 });

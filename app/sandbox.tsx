@@ -1,19 +1,28 @@
-import MascotteQuiz from "@/components/animations/MascotteQuiz";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function Sandbox() {
   return (
-    <View style={styles.container}>
-      <Text style={{ fontSize: 10, lineHeight: 24 }}>Sandbox</Text>
-      <MascotteQuiz />
+    <View style={styles.triangleContainer}>
+      <View style={styles.triangle} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  triangleContainer: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+  },
+  triangle: {
+    width: 0,
+    height: 0,
+    backgroundColor: "transparent",
+    borderStyle: "solid",
+    borderRightWidth: 200,
+    borderTopWidth: 200,
+    borderRightColor: "transparent",
+    borderTopColor: "#000000",
   },
 });
