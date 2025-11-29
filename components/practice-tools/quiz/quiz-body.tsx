@@ -101,35 +101,6 @@ const VerifyButton = ({
   );
 };
 
-const AnswersBox_ = ({
-  answers,
-  selectAnswer,
-  selectedAnswerIndex,
-  isVerified,
-}: {
-  answers: { text: string; isCorrect?: boolean }[];
-  selectAnswer: (index: number) => void;
-  selectedAnswerIndex: number | null;
-  isVerified: boolean;
-}) => {
-  return (
-    <FlatList
-      data={answers}
-      renderItem={({ item, index }) => (
-        <AnswerButton
-          answer={item}
-          selectAnswer={selectAnswer}
-          index={index}
-          selectedAnswerIndex={selectedAnswerIndex}
-          isVerified={isVerified}
-        />
-      )}
-      keyExtractor={(_, index) => index.toString()}
-      contentContainerStyle={styles.answersContainer}
-    />
-  );
-};
-
 function AnswersBox({
   answers,
   selectAnswer,
