@@ -18,12 +18,12 @@ export const AnswerButton = ({
   const isCorrectAnswer = isVerified && answer.isCorrect;
 
   let buttonStyle = {};
-  if (isWrongAnswer) {
+  if (isSelected) {
+    buttonStyle = styles.buttonSelected;
+  } else if (isWrongAnswer) {
     buttonStyle = styles.buttonWrong;
   } else if (isCorrectAnswer) {
     buttonStyle = styles.buttonCorrect;
-  } else if (isSelected) {
-    buttonStyle = styles.buttonSelected;
   }
 
   return (
@@ -55,21 +55,16 @@ export const VerifyButton = ({
   // Check if the selected answer is correct
   const isCorrectAnswer =
     selectedAnswerIndex !== null &&
-    answers[selectedAnswerIndex]?.isCorrect === true;
+    answers[selectedAnswerIndex]?.isCorrect === true &&
+    isVerified;
 
   // Hide button if answer is correct and verified (auto-advancing)
-  if (isVerified && isCorrectAnswer) {
-    return null;
-  }
 
   return (
     <TouchableOpacity
-      style={[
-        styles.verifyButton,
-        disabled ? { opacity: 0.5, backgroundColor: "#989898" } : {},
-      ]}
+      style={[styles.verifyButton, disabled ? styles.buttonDisabled : {}]}
       onPress={isVerified ? nextStep : verifyAnswer}
-      disabled={disabled}
+      disabled={disabled || isCorrectAnswer}
     >
       <Text style={styles.text3}>{isVerified ? "Suivant" : "Vérifier"}</Text>
       <Image
@@ -99,6 +94,10 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: "black",
     backgroundColor: "#45BC9E",
+  },
+  buttonDisabled: {
+    opacity: 0.5,
+    backgroundColor: "#989898",
   },
   verifyButton: {
     flexDirection: "row",
