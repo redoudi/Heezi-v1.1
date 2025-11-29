@@ -187,33 +187,26 @@ export default function QuizBody({
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
         <TopBar />
-        <View style={styles.view4}>
-          <View style={styles.column2}>
-            <QuestionBox question={question} />
-            <View style={styles.mascotImage}>
-              <CustomAnimation
-                animationData={require("@/assets/animations/MascotteQuiz.json")}
-              />
-            </View>
-            {/* <MascotInquisitive /> */}
-            <AnswersBox
-              answers={answers}
-              selectAnswer={selectAnswer}
-              selectedAnswerIndex={selectedAnswerIndex}
-              isVerified={isVerified}
-            />
-          </View>
-        </View>
-        <View style={styles.view6}>
-          <VerifyButton
-            verifyAnswer={verifyAnswer}
-            nextStep={nextStep}
-            isVerified={isVerified}
-            disabled={disabled}
-            selectedAnswerIndex={selectedAnswerIndex}
-            answers={answers}
+        <QuestionBox question={question} />
+        <View style={styles.mascotContainer}>
+          <CustomAnimation
+            animationData={require("@/assets/animations/MascotteQuiz.json")}
           />
         </View>
+        <AnswersBox
+          answers={answers}
+          selectAnswer={selectAnswer}
+          selectedAnswerIndex={selectedAnswerIndex}
+          isVerified={isVerified}
+        />
+        <VerifyButton
+          verifyAnswer={verifyAnswer}
+          nextStep={nextStep}
+          isVerified={isVerified}
+          disabled={disabled}
+          selectedAnswerIndex={selectedAnswerIndex}
+          answers={answers}
+        />
       </View>
     </SafeAreaView>
   );
@@ -296,7 +289,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 32,
   },
-  mascotImage: {
+  mascotContainer: {
     width: 257,
     height: 304,
     marginBottom: 7,
