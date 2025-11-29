@@ -221,9 +221,13 @@ const styles = StyleSheet.create({
   mainContent: {
     flex: 1,
     borderWidth: 10,
-    alignItems: "center",
+    alignItems: "stretch",
     backgroundColor: "#FFFFFF",
     paddingVertical: 32,
+  },
+  topBar: {
+    flexDirection: "row",
+    backgroundColor: "#FFFFFF",
   },
   progressBar: {
     width: 63,
@@ -300,10 +304,7 @@ const styles = StyleSheet.create({
     width: 16,
     height: 24,
   },
-  topBar: {
-    flexDirection: "row",
-    backgroundColor: "#FFFFFF",
-  },
+
   text: {
     fontSize: 18,
     fontWeight: "bold",
@@ -328,11 +329,11 @@ const styles = StyleSheet.create({
     marginRight: 16,
   },
   progressBarContainer: {
-    width: 506,
+    flex: 1,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
-    paddingVertical: 28,
     paddingHorizontal: 8,
+    justifyContent: "center",
   },
   progressBarOutline: {
     backgroundColor: "#989898",
