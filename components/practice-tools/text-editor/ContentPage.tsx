@@ -78,7 +78,6 @@ function TextInputBlock({ item }: { item: any }) {
     <View style={[styles.textInputContainer, item.blockStyle]}>
       <TextInput
         style={[
-          { fontSize: 14, lineHeight: 24 },
           styles.textInput,
           item.style,
           isWrongAnswer ? wrongAnswerStyle : {},
@@ -183,5 +182,7 @@ const styles = StyleSheet.create({
   textInput: {
     color: "#292929",
     marginLeft: 9,
+    fontSize: 14,
+    lineHeight: 24,
   },
 });
