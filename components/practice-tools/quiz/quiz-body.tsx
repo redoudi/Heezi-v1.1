@@ -37,7 +37,7 @@ function BackButton() {
 
 const TopBar = () => {
   return (
-    <View style={styles.row}>
+    <View style={styles.topBar}>
       <BackButton />
       <ProgressBar />
     </View>
@@ -117,7 +117,7 @@ const VerifyButton = ({
   return (
     <TouchableOpacity
       style={[
-        styles.buttonRow,
+        styles.verifyButton,
         disabled ? { opacity: 0.5, backgroundColor: "#989898" } : {},
       ]}
       onPress={isVerified ? nextStep : verifyAnswer}
@@ -219,6 +219,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   mainContent: {
+    flex: 1,
     borderWidth: 10,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
@@ -266,13 +267,13 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
     paddingHorizontal: 256,
   },
-  buttonRow: {
+  verifyButton: {
     flexDirection: "row",
     backgroundColor: "#72D6BA",
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
-    marginLeft: 458,
+    alignSelf: "flex-end",
   },
 
   column2: {
@@ -299,17 +300,14 @@ const styles = StyleSheet.create({
     width: 16,
     height: 24,
   },
-  row: {
+  topBar: {
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
-    padding: 8,
-    marginBottom: 8,
   },
   text: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#292929",
-    width: 496,
   },
   text2: {
     fontSize: 18,
