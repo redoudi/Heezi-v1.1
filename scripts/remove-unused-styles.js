@@ -56,9 +56,9 @@ class UnusedStylesRemover {
     try {
       const content = fs.readFileSync(filePath, "utf8");
 
-      // Find StyleSheet.create calls
+      // Find StyleSheet.create calls - improved regex to handle multiline and nested structures
       const styleSheetRegex =
-        /const\s+(\w+)\s*=\s*StyleSheet\.create\s*\(\s*\{([^}]+(?:\{[^}]*\}[^}]*)*)\}\s*\);/gs;
+        /(?:const|let|var)\s+(\w+)\s*=\s*StyleSheet\.create\s*\(\s*\{/gs;
       const matches = [...content.matchAll(styleSheetRegex)];
 
       if (matches.length === 0) {
@@ -73,21 +73,31 @@ class UnusedStylesRemover {
 
       matches.forEach((match) => {
         const stylesVarName = match[1];
-        const stylesContent = match[2];
+        const startPos = match.index;
 
-        // Extract style definitions
-        const styleDefinitions = this.extractStyleDefinitions(stylesContent);
+        // Find the matching closing brace for StyleSheet.create({ ... })
+        const styleSheetBlock = this.extractStyleSheetBlock(content, startPos);
 
-        // Find all usages of this styles object
+        if (!styleSheetBlock) {
+          return;
+        }
+
+        // Extract style definitions using proper bracket matching
+        const styleDefinitions = this.extractStyleDefinitions(
+          styleSheetBlock.content
+        );
+
+        // Find all usages of this styles object (improved detection)
         const usages = this.findStyleUsages(content, stylesVarName);
 
         result.styleSheets.push({
           varName: stylesVarName,
           definitions: styleDefinitions,
           usages: usages,
-          fullMatch: match[0],
-          startIndex: match.index,
-          endIndex: match.index + match[0].length,
+          fullMatch: styleSheetBlock.fullMatch,
+          startIndex: styleSheetBlock.startIndex,
+          endIndex: styleSheetBlock.endIndex,
+          contentStartOffset: styleSheetBlock.startOffset,
         });
       });
 
@@ -99,24 +109,151 @@ class UnusedStylesRemover {
   }
 
   /**
-   * Extract style definitions from StyleSheet content
+   * Extract the complete StyleSheet.create block using bracket matching
+   */
+  extractStyleSheetBlock(content, startPos) {
+    // Find the opening brace after StyleSheet.create(
+    let pos = startPos;
+    let bracePos = content.indexOf("{", pos);
+
+    if (bracePos === -1) {
+      return null;
+    }
+
+    // Find matching closing brace
+    let depth = 0;
+    let inString = false;
+    let stringChar = null;
+    let i = bracePos;
+
+    while (i < content.length) {
+      const char = content[i];
+      const prevChar = i > 0 ? content[i - 1] : "";
+
+      // Handle string literals
+      if (!inString && (char === '"' || char === "'" || char === "`")) {
+        inString = true;
+        stringChar = char;
+      } else if (inString && char === stringChar && prevChar !== "\\") {
+        inString = false;
+        stringChar = null;
+      }
+
+      if (!inString) {
+        if (char === "{") {
+          depth++;
+        } else if (char === "}") {
+          depth--;
+          if (depth === 0) {
+            // Found the matching closing brace
+            const endPos = i + 1;
+            // Check if there's a closing parenthesis and semicolon
+            let finalEnd = endPos;
+            while (
+              finalEnd < content.length &&
+              /[\s\n]/.test(content[finalEnd])
+            ) {
+              finalEnd++;
+            }
+            if (content[finalEnd] === ")") {
+              finalEnd++;
+              while (
+                finalEnd < content.length &&
+                /[\s\n]/.test(content[finalEnd])
+              ) {
+                finalEnd++;
+              }
+              if (content[finalEnd] === ";") {
+                finalEnd++;
+              }
+            }
+
+            return {
+              content: content.substring(bracePos + 1, i),
+              fullMatch: content.substring(startPos, finalEnd),
+              startIndex: startPos,
+              endIndex: finalEnd,
+              startOffset: bracePos + 1,
+            };
+          }
+        }
+      }
+
+      i++;
+    }
+
+    return null;
+  }
+
+  /**
+   * Extract style definitions from StyleSheet content using proper bracket matching
    */
   extractStyleDefinitions(content) {
     const definitions = {};
 
-    // Match style definitions like "styleName: { ... }"
-    const styleRegex = /(\w+)\s*:\s*\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}/g;
+    // Find all style name definitions (pattern: styleName: { ... })
+    const styleNameRegex = /(\w+)\s*:\s*\{/g;
     let match;
 
-    while ((match = styleRegex.exec(content)) !== null) {
+    while ((match = styleNameRegex.exec(content)) !== null) {
       const styleName = match[1];
-      const styleContent = match[2];
-      definitions[styleName] = {
-        fullDefinition: match[0],
-        content: styleContent.trim(),
-        startIndex: match.index,
-        endIndex: match.index + match[0].length,
-      };
+      const styleStart = match.index;
+      const braceStart = match.index + match[0].length - 1; // Position of opening brace
+
+      // Find matching closing brace
+      let depth = 0;
+      let inString = false;
+      let stringChar = null;
+      let i = braceStart;
+
+      while (i < content.length) {
+        const char = content[i];
+        const prevChar = i > 0 ? content[i - 1] : "";
+
+        // Handle string literals
+        if (!inString && (char === '"' || char === "'" || char === "`")) {
+          inString = true;
+          stringChar = char;
+        } else if (inString && char === stringChar && prevChar !== "\\") {
+          inString = false;
+          stringChar = null;
+        }
+
+        if (!inString) {
+          if (char === "{") {
+            depth++;
+          } else if (char === "}") {
+            depth--;
+            if (depth === 0) {
+              // Found the matching closing brace
+              const styleEnd = i + 1;
+              const fullDefinition = content.substring(styleStart, styleEnd);
+
+              // Find where this definition ends (including trailing comma)
+              let definitionEnd = styleEnd;
+              while (
+                definitionEnd < content.length &&
+                /[\s\n]/.test(content[definitionEnd])
+              ) {
+                definitionEnd++;
+              }
+              if (content[definitionEnd] === ",") {
+                definitionEnd++;
+              }
+
+              definitions[styleName] = {
+                fullDefinition: fullDefinition,
+                content: content.substring(braceStart + 1, i),
+                startIndex: styleStart,
+                endIndex: definitionEnd,
+              };
+              break;
+            }
+          }
+        }
+
+        i++;
+      }
     }
 
     return definitions;
@@ -124,19 +261,118 @@ class UnusedStylesRemover {
 
   /**
    * Find all usages of a styles object in the content
+   * Handles: styles.name, [styles.name], styles[name], etc.
+   * Excludes comments and string literals
    */
   findStyleUsages(content, stylesVarName) {
     const usages = new Set();
 
-    // Find patterns like styles.styleName
-    const usageRegex = new RegExp(`${stylesVarName}\\.(\\w+)`, "g");
-    let match;
+    // Remove comments and string literals to avoid false matches
+    const cleanedContent = this.removeCommentsAndStrings(content);
 
-    while ((match = usageRegex.exec(content)) !== null) {
+    // Pattern 1: styles.styleName (most common)
+    const directUsageRegex = new RegExp(`\\b${stylesVarName}\\.(\\w+)`, "g");
+    let match;
+    while ((match = directUsageRegex.exec(cleanedContent)) !== null) {
       usages.add(match[1]);
     }
 
+    // Pattern 2: styles['styleName'] or styles["styleName"]
+    const bracketUsageRegex = new RegExp(
+      `\\b${stylesVarName}\\[['"](\\w+)['"]\\]`,
+      "g"
+    );
+    while ((match = bracketUsageRegex.exec(cleanedContent)) !== null) {
+      usages.add(match[1]);
+    }
+
+    // Pattern 3: styles[variable] - we can't determine statically, so be conservative
+    // Pattern 4: In arrays like [styles.name1, styles.name2] - already caught by pattern 1
+    // Pattern 5: In template literals - already caught by pattern 1
+
     return Array.from(usages);
+  }
+
+  /**
+   * Remove comments and string literals from content for safer pattern matching
+   */
+  removeCommentsAndStrings(content) {
+    let result = "";
+    let i = 0;
+    let inString = false;
+    let stringChar = null;
+    let inSingleLineComment = false;
+    let inMultiLineComment = false;
+
+    while (i < content.length) {
+      const char = content[i];
+      const nextChar = i + 1 < content.length ? content[i + 1] : "";
+      const prevChar = i > 0 ? content[i - 1] : "";
+
+      // Handle string literals
+      if (!inString && !inSingleLineComment && !inMultiLineComment) {
+        if (char === '"' || char === "'" || char === "`") {
+          inString = true;
+          stringChar = char;
+          result += " "; // Replace with space to maintain positions
+          i++;
+          continue;
+        }
+      } else if (inString) {
+        if (char === stringChar && prevChar !== "\\") {
+          inString = false;
+          stringChar = null;
+          result += " ";
+          i++;
+          continue;
+        }
+        result += " ";
+        i++;
+        continue;
+      }
+
+      // Handle single-line comments
+      if (!inString && !inMultiLineComment) {
+        if (char === "/" && nextChar === "/") {
+          inSingleLineComment = true;
+          result += "  ";
+          i += 2;
+          continue;
+        }
+      } else if (inSingleLineComment) {
+        if (char === "\n") {
+          inSingleLineComment = false;
+        }
+        result += " ";
+        i++;
+        continue;
+      }
+
+      // Handle multi-line comments
+      if (!inString && !inSingleLineComment) {
+        if (char === "/" && nextChar === "*") {
+          inMultiLineComment = true;
+          result += "  ";
+          i += 2;
+          continue;
+        }
+      } else if (inMultiLineComment) {
+        if (char === "*" && nextChar === "/") {
+          inMultiLineComment = false;
+          result += "  ";
+          i += 2;
+          continue;
+        }
+        result += " ";
+        i++;
+        continue;
+      }
+
+      result += char;
+      i++;
+    }
+
+    return result;
   }
 
   /**
@@ -168,52 +404,70 @@ class UnusedStylesRemover {
 
   /**
    * Generate cleaned content by removing unused styles
+   * Processes removals in reverse order to maintain correct indices
    */
   generateCleanedContent(fileInfo, changes) {
     let content = fileInfo.content;
-    let offset = 0;
 
-    // Sort changes by position (reverse order to maintain indices)
-    const allChanges = [];
-    fileInfo.styleSheets.forEach((styleSheet, sheetIndex) => {
+    // Collect all removals with their absolute positions
+    const allRemovals = [];
+
+    fileInfo.styleSheets.forEach((styleSheet) => {
       const change = changes.find((c) => c.varName === styleSheet.varName);
       if (change) {
-        allChanges.push({
-          ...change,
-          styleSheet,
-          sheetIndex,
+        change.unusedStyles.forEach((styleName) => {
+          const definition = styleSheet.definitions[styleName];
+          if (definition) {
+            // Calculate absolute positions in the file
+            // definition.startIndex is relative to the StyleSheet content block
+            // styleSheet.contentStartOffset is the offset of that block in the file
+            const startPos =
+              styleSheet.contentStartOffset + definition.startIndex;
+            const endPos = styleSheet.contentStartOffset + definition.endIndex;
+
+            allRemovals.push({
+              styleName,
+              varName: change.varName,
+              startPos,
+              endPos,
+            });
+          }
         });
       }
     });
 
-    allChanges.forEach((change) => {
-      const { styleSheet } = change;
-      const { definitions } = styleSheet;
+    // Sort by position in reverse order (remove from end to start)
+    allRemovals.sort((a, b) => b.startPos - a.startPos);
 
-      // Remove unused style definitions
-      change.unusedStyles.forEach((styleName) => {
-        const definition = definitions[styleName];
-        if (definition) {
-          // Find the exact position in the original content
-          const startPos = styleSheet.startIndex + definition.startIndex;
-          const endPos = styleSheet.startIndex + definition.endIndex;
+    // Remove each unused style definition
+    allRemovals.forEach((removal) => {
+      const beforeDefinition = content.substring(0, removal.startPos);
+      const afterDefinition = content.substring(removal.endPos);
 
-          // Remove the definition (including trailing comma)
-          const beforeDefinition = content.substring(0, startPos);
-          const afterDefinition = content.substring(endPos);
+      // Remove trailing comma and whitespace
+      // Also check if we need to remove a leading comma from the next item
+      let cleanAfter = afterDefinition.replace(/^\s*,?\s*/, "");
 
-          // Remove trailing comma if it exists
-          const cleanAfter = afterDefinition.replace(/^\s*,?\s*/, "");
-
+      // If the line before ends with a comma, we might need to clean it up
+      const beforeTrimmed = beforeDefinition.trimEnd();
+      if (beforeTrimmed.endsWith(",")) {
+        // Check if there's content after - if not, remove the trailing comma
+        const nextNonWhitespace = cleanAfter.match(/^\s*(\S)/);
+        if (!nextNonWhitespace || nextNonWhitespace[1] === "}") {
+          // Remove trailing comma from before
+          content = beforeTrimmed.slice(0, -1) + cleanAfter;
+        } else {
           content = beforeDefinition + cleanAfter;
-
-          if (this.verbose) {
-            console.log(
-              `  Removed unused style: ${change.varName}.${styleName}`
-            );
-          }
         }
-      });
+      } else {
+        content = beforeDefinition + cleanAfter;
+      }
+
+      if (this.verbose) {
+        console.log(
+          `  Removed unused style: ${removal.varName}.${removal.styleName}`
+        );
+      }
     });
 
     return content;

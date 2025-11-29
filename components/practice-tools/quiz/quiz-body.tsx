@@ -282,13 +282,6 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: "#4ECB71",
   },
-  button2: {
-    alignSelf: "flex-start",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 7,
-    paddingHorizontal: 256,
-  },
   verifyButton: {
     flexDirection: "row",
     backgroundColor: "#72D6BA",
@@ -298,9 +291,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
   },
 
-  column2: {
-    paddingHorizontal: 8,
-  },
   column3: {
     alignSelf: "flex-start",
     backgroundColor: "#EFEFEF",
@@ -350,20 +340,5 @@ const styles = StyleSheet.create({
   progressBarOutline: {
     backgroundColor: "#989898",
     borderRadius: 4,
-  },
-  view4: {
-    alignSelf: "stretch",
-    alignItems: "center",
-    paddingVertical: 80,
-    marginBottom: 8,
-    marginHorizontal: 32,
-  },
-
-  view6: {
-    alignSelf: "stretch",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 8,
-    marginHorizontal: 32,
   },
 });
