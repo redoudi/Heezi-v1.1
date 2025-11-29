@@ -54,15 +54,13 @@ export default function ResultScreen() {
   );
 }
 const styles = StyleSheet.create({
-  mainContainer: { padding: 16, alignItems: "center" },
+  mainContainer: { alignItems: "center" },
 
   mainContent: {
-    borderWidth: 1,
     backgroundColor: "white",
     alignItems: "stretch",
     flex: 1,
     padding: 16,
-    borderRadius: 8,
     margin: 16,
   },
   animationBox: {
