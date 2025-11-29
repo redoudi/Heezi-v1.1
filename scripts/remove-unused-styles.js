@@ -470,6 +470,87 @@ class UnusedStylesRemover {
       }
     });
 
+    // Ensure each StyleSheet has a closing } before the final )
+    // Fix any StyleSheet.create({ ... ) patterns that are missing the closing brace
+    content = this.fixStyleSheetClosingBraces(content, fileInfo);
+
+    return content;
+  }
+
+  /**
+   * Fix StyleSheet closing braces - ensure there's always a } before the final )
+   */
+  fixStyleSheetClosingBraces(content, fileInfo) {
+    fileInfo.styleSheets.forEach((styleSheet) => {
+      // Find the StyleSheet.create call in the content
+      const styleSheetPattern = new RegExp(
+        `(?:const|let|var)\\s+${styleSheet.varName}\\s*=\\s*StyleSheet\\.create\\s*\\(`,
+        "g"
+      );
+      let match;
+
+      while ((match = styleSheetPattern.exec(content)) !== null) {
+        const startPos = match.index;
+        const braceStart = content.indexOf("{", startPos);
+
+        if (braceStart === -1) continue;
+
+        // Track depth: 0 = at StyleSheet.create level, 1 = inside the object
+        let parenDepth = 0; // Track parentheses
+        let braceDepth = 0; // Track braces
+        let inString = false;
+        let stringChar = null;
+        let i = startPos;
+        let foundClosingParen = false;
+
+        while (i < content.length && !foundClosingParen) {
+          const char = content[i];
+          const prevChar = i > 0 ? content[i - 1] : "";
+
+          // Handle string literals
+          if (!inString && (char === '"' || char === "'" || char === "`")) {
+            inString = true;
+            stringChar = char;
+          } else if (inString && char === stringChar && prevChar !== "\\") {
+            inString = false;
+            stringChar = null;
+          }
+
+          if (!inString) {
+            if (char === "(") {
+              parenDepth++;
+            } else if (char === ")") {
+              parenDepth--;
+              if (parenDepth === 0 && braceDepth === 0) {
+                // Found the closing parenthesis of StyleSheet.create
+                // Check if there's a closing brace immediately before it
+                let beforeParen = i - 1;
+                while (
+                  beforeParen >= 0 &&
+                  /[\s\n\r]/.test(content[beforeParen])
+                ) {
+                  beforeParen--;
+                }
+                if (beforeParen < 0 || content[beforeParen] !== "}") {
+                  // Missing closing brace - add it before the )
+                  content =
+                    content.substring(0, i) + "\n}" + content.substring(i);
+                  foundClosingParen = true;
+                }
+                break;
+              }
+            } else if (char === "{") {
+              braceDepth++;
+            } else if (char === "}") {
+              braceDepth--;
+            }
+          }
+
+          i++;
+        }
+      }
+    });
+
     return content;
   }
 

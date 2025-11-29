@@ -222,7 +222,6 @@ const styles = StyleSheet.create({
   },
   mainContent: {
     flex: 1,
-
     alignItems: "stretch",
     backgroundColor: "#FFFFFF",
     justifyContent: "space-between",
