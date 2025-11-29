@@ -211,6 +211,7 @@ export default function QuizBody({
         <TopBar />
         <View style={styles.questionAndAnswersContainer}>
           <QuestionBox question={question} />
+
           <View style={styles.mascotContainer}>
             <CustomAnimation
               animationData={require("@/assets/animations/MascotteQuiz.json")}
@@ -310,7 +311,6 @@ const styles = StyleSheet.create({
   },
 
   mascotContainer: {
-    flex: 3,
     alignSelf: "flex-start",
   },
   triangleIcon: {

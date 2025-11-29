@@ -1,9 +1,12 @@
 import LottieView from "lottie-react-native";
+import { StyleProp, ViewStyle } from "react-native";
 
 export default function CustomAnimation({
   animationData,
+  style,
 }: {
   animationData: any;
+  style?: StyleProp<ViewStyle>;
 }) {
   return (
     <LottieView
@@ -11,6 +14,7 @@ export default function CustomAnimation({
       loop={true}
       autoPlay={true}
       resizeMode="cover"
+      style={style}
     />
   );
 }
