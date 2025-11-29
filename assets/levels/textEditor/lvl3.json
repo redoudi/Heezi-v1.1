@@ -6,7 +6,7 @@
     "intro": "Je veux envoyer une lettre à la mairie pour réserver une salle de réunion pour mon association. Peux-tu m'aider ?",
     "tasks": [
         {
-            "intro": "On saisit d'abord les informations.",
+            "intro": "On va écrire ensemble, pas à pas, une lettre en bonne et due forme à la mairie. J'ai déjà rédigé une partie de la lettre pour toi. Je te montrerai ce qu'il faut compléter.",
             "steps": [
                 {
                     "tip": {
