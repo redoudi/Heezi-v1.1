@@ -127,8 +127,8 @@ const VerifyButton = ({
       <Text style={styles.text3}>{isVerified ? "Suivant" : "Vérifier"}</Text>
       <Image
         source={require("@/assets/images/tsy13i8h_expires_30_days.png")}
-        resizeMode={"stretch"}
-        style={styles.image3}
+        resizeMode={"contain"}
+        style={styles.triangleIcon}
       />
     </TouchableOpacity>
   );
@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
   mascotContainer: {
     height: 304,
   },
-  image3: {
+  triangleIcon: {
     borderRadius: 8,
     width: 16,
     height: 24,
