@@ -166,8 +166,14 @@ const AnswersBox_ = ({
 
 function AnswersBox({
   answers,
+  selectAnswer,
+  selectedAnswerIndex,
+  isVerified,
 }: {
   answers: { text: string; isCorrect?: boolean }[];
+  selectAnswer: (index: number) => void;
+  selectedAnswerIndex: number | null;
+  isVerified: boolean;
 }) {
   return (
     <View style={styles.answersContainer}>
@@ -175,10 +181,10 @@ function AnswersBox({
         <AnswerButton
           key={index}
           answer={answer}
-          selectAnswer={() => {}}
+          selectAnswer={selectAnswer}
           index={index}
-          selectedAnswerIndex={null}
-          isVerified={false}
+          selectedAnswerIndex={selectedAnswerIndex}
+          isVerified={isVerified}
         />
       ))}
     </View>
@@ -300,9 +306,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#FF6B6B",
   },
   buttonCorrect: {
-    backgroundColor: "#FFFFFF",
     borderWidth: 8,
     borderColor: "#4ECB71",
+    backgroundColor: "rgba(78, 203, 113, 0.2)",
   },
   verifyButton: {
     flexDirection: "row",
