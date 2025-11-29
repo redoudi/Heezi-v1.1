@@ -175,8 +175,8 @@ const styles = StyleSheet.create({
   textInputContainer: {
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
-    paddingVertical: 11,
-    marginBottom: 10,
+    paddingVertical: 8,
+    marginBottom: 8,
     // marginHorizontal: 64,
   },
   textInput: {

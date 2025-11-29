@@ -1,6 +1,5 @@
 import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
-import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getElementBottomHeight } from "@/utils/cursorUtils";
 import { useEffect, useState } from "react";
 import {
@@ -70,14 +69,15 @@ export function MascotBubble({
   nextStep: () => void | null;
 }) {
   const { levelType } = useLevelData();
-  const { practiceTool } = usePracticeToolConstants();
   const {
     currentStep: { cursor },
     contentsRefs,
   } = useCursor();
   const { height: windowHeight } = useWindowDimensions();
   const [componentHeight, setComponentHeight] = useState<number>(300); // Default fallback
-  const [topStyle, setTopStyle] = useState<ViewStyle>({});
+  const [mascotPosition, setMascotPosition] = useState<ViewStyle>({
+    bottom: 0,
+  });
 
   const handleLayout = (event: LayoutChangeEvent) => {
     const { height } = event.nativeEvent.layout;
@@ -102,7 +102,7 @@ export function MascotBubble({
               top: Math.max(minTop, Math.min(calculatedTop, maxTop)),
             }
           : { bottom: 0 };
-      setTopStyle(calculatedTopStyle);
+      setMascotPosition(calculatedTopStyle);
     }
   }, [cursor, contentsRefs, minTop, maxTop]);
 
@@ -131,7 +131,7 @@ export function MascotBubble({
     <MascotDialog
       bubbleText={bubbleText}
       downArrowNextStep={DownArrowNextStep}
-      style={topStyle}
+      style={mascotPosition}
       onLayout={handleLayout}
     />
   );
