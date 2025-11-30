@@ -168,10 +168,11 @@ export default function ScoreScreen() {
                 <Text style={styles.text8}>{"Nv.100"}</Text>
               </TouchableOpacity>
             </View>
-            <View style={styles.column5}>
-              <View style={styles.box}></View>
-              <View style={styles.box2}></View>
-            </View>
+            <Image
+              source={require("@/assets/images/ScoreIcon.png")}
+              resizeMode={"contain"}
+              style={styles.scoreIcon}
+            />
           </View>
         </View>
       </View>
@@ -273,6 +274,11 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     marginRight: 16,
+  },
+  scoreIcon: {
+    flex: 1,
+    marginTop: 24,
+    marginLeft: 34,
   },
   row: {
     flexDirection: "row",
