@@ -32,9 +32,20 @@ function BoldButton() {
   );
 }
 
+const Divider = () => (
+  <View
+    style={{
+      width: 1,
+      backgroundColor: "darkgray",
+      marginHorizontal: 8,
+      alignSelf: "stretch",
+    }}
+  />
+);
+
 export default function Ribbon() {
   return (
-    <View style={styles.row4}>
+    <View style={styles.ribbonContainer}>
       <View style={styles.column3}>
         <View style={styles.row5}>
           <TouchableOpacity
@@ -81,6 +92,7 @@ export default function Ribbon() {
         </View>
         <Text style={styles.text3}>{"Presse-papiers"}</Text>
       </View>
+      <Divider />
       <View style={styles.column5}>
         <View style={styles.column6}>
           <View style={styles.row6}>
@@ -170,6 +182,7 @@ export default function Ribbon() {
         </View>
         <Text style={styles.text6}>{"Police"}</Text>
       </View>
+      <Divider />
       <View style={styles.column7}>
         <View style={styles.row8}>
           <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
@@ -247,6 +260,7 @@ export default function Ribbon() {
           <Text style={styles.text6}>{"Paragraphe"}</Text>
         </View>
       </View>
+      <Divider />
       <View style={styles.column8}>
         <TouchableOpacity style={styles.buttonRow3} onPress={() => {}} disabled>
           <Text style={styles.text4}>{"Standard"}</Text>
@@ -271,6 +285,7 @@ export default function Ribbon() {
         </View>
         <Text style={styles.text3}>{"Nombre"}</Text>
       </View>
+      <Divider />
       <View style={styles.column9}>
         <View style={styles.row11}>
           <Image
@@ -291,6 +306,7 @@ export default function Ribbon() {
         />
         <Text style={styles.text3}>{"Styles"}</Text>
       </View>
+      <Divider />
       <View style={styles.column10}>
         <View style={styles.column11}>
           <View style={styles.row12}>

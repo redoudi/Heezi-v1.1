@@ -612,7 +612,9 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginRight: 33,
   },
-  row4: {
+  ribbonContainer: {
+    borderWidth: 1,
+    justifyContent: "center",
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
