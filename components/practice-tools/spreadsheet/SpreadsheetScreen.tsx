@@ -1,8 +1,6 @@
 import {
-  Image,
   ScrollView,
   StyleSheet,
-  TouchableOpacity,
   View,
   useWindowDimensions,
 } from "react-native";
@@ -14,32 +12,6 @@ import RibbonTabs from "./ribbon/spreadsheet-ribbon-tabs";
 import useLevelData from "@/hooks/use-level-data";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TitleBar from "./title-bar";
-
-function LevelStats() {
-  return (
-    <View style={styles.column13}>
-      <View style={styles.row16}>
-        <Image
-          source={require("@/assets/images/4z87rs57_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image36}
-        />
-        <TouchableOpacity style={styles.button28} onPress={() => {}} disabled>
-          <Image
-            source={require("@/assets/images/o6j3pvf5_expires_30_days.png")}
-            resizeMode={"stretch"}
-            style={styles.image37}
-          />
-        </TouchableOpacity>
-        <View style={styles.view12}>
-          <View style={styles.view13}>
-            <View style={styles.box4}></View>
-          </View>
-        </View>
-      </View>
-    </View>
-  );
-}
 
 export default function SpreadsheetScreen() {
   const { height } = useWindowDimensions();
