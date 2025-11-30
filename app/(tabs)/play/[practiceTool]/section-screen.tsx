@@ -1,41 +1,10 @@
 import MissionPart from "@/components/MissionPart";
-import StatusText from "@/components/status-text";
+import SectionHeader from "@/components/home/section-header";
 import sectionButtons from "@/constants/sectionButtons";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { router } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 const Divider = () => <View style={styles.divider} />;
-
-function SectionHeader() {
-  const { toolConstants, practiceTool } = usePracticeToolConstants();
-  return (
-    <View style={[styles.column2, { backgroundColor: toolConstants.color }]}>
-      <View style={styles.row}>
-        <View style={styles.row2}>
-          <TouchableOpacity
-            onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
-          >
-            <View style={styles.view}>
-              <Image
-                source={require("@/assets/images/z1q84zux_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles.image}
-              />
-            </View>
-          </TouchableOpacity>
-
-          <Text style={styles.text}>{"3 niveaux"}</Text>
-        </View>
-        <StatusText />
-      </View>
-      <View>
-        <Text style={styles.text3}>{"Section 1"}</Text>
-        <Text style={styles.text4}>{"Apprendre les bases"}</Text>
-      </View>
-    </View>
-  );
-}
 
 export default function SectionScreen() {
   const lessonAnimationData = require("@/assets/animations/RenardBureauVert.json");
@@ -90,63 +59,8 @@ const styles = StyleSheet.create({
     width: 71,
     height: 128,
   },
-  absoluteImage2: {
-    position: "absolute",
-    bottom: 50,
-    left: 47,
-    width: 123,
-    height: 135,
-  },
-  absoluteImage3: {
-    position: "absolute",
-    top: 0,
-    left: 71,
-    width: 69,
-    height: 98,
-  },
-  absoluteImage4: {
-    position: "absolute",
-    top: 0,
-    right: 161,
-    left: 161,
-    height: 127,
-    flex: 1,
-  },
-  button: {
-    alignSelf: "flex-start",
-    backgroundColor: "#45BC9E",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-  },
-  button2: {
-    alignSelf: "flex-start",
-    backgroundColor: "#45BC9E",
-    borderRadius: 8,
-    paddingVertical: 7,
-    paddingHorizontal: 16,
-  },
-  button3: {
-    alignSelf: "flex-start",
-    backgroundColor: "#989898",
-    borderRadius: 8,
-    paddingVertical: 7,
-    paddingHorizontal: 16,
-    marginBottom: 16,
-  },
-
-  column2: {
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 16,
-  },
   column3: {
     width: 89,
-  },
-  image: {
-    borderRadius: 8,
-    width: 30,
-    height: 16,
   },
   image2: {
     height: 385,
@@ -185,56 +99,21 @@ const styles = StyleSheet.create({
     width: 70,
     height: 59,
   },
-  row: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 16,
-  },
-  row2: {
-    width: 138,
-    flexDirection: "row",
-    alignItems: "center",
-  },
   row3: {
     alignSelf: "flex-start",
     flexDirection: "row",
     marginBottom: 15,
     marginLeft: 39,
   },
-  text: {
-    fontSize: 8,
-    color: "#1C5348",
-  },
   statusText: {
     fontSize: 10,
     lineHeight: 24,
     color: "#0A2924",
   },
-  text3: {
-    fontSize: 22,
-    color: "#0A2924",
-    marginBottom: 7,
-  },
-  text4: {
-    fontSize: 10,
-    lineHeight: 24,
-    color: "#0A2924",
-    marginRight: 86,
-    width: 151,
-  },
   text5: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#F2FBF8",
-  },
-  view: {
-    width: 62,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginRight: 16,
   },
   view2: {
     width: 68,
