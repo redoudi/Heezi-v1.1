@@ -20,10 +20,8 @@ export default function ProfilScreen() {
                     disabled
                   >
                     <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/tggwgkm0_expires_30_days.png",
-                      }}
-                      resizeMode={"stretch"}
+                      source={require("@/assets/images/profiladd.png")}
+                      resizeMode={"contain"}
                       style={styles.image}
                     />
                   </TouchableOpacity>
@@ -33,9 +31,7 @@ export default function ProfilScreen() {
                     disabled
                   >
                     <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/vf068hk1_expires_30_days.png",
-                      }}
+                      source={require("@/assets/images/profilSettings.png")}
                       resizeMode={"stretch"}
                       style={styles.image2}
                     />
@@ -44,14 +40,12 @@ export default function ProfilScreen() {
               </View>
               <View style={styles.row3}>
                 <Image
-                  source={require("@/assets/images/1tMFzp8.png")}
-                  resizeMode={"stretch"}
+                  source={require("@/assets/images/ProfilMascot.png")}
+                  resizeMode={"contain"}
                   style={styles.image3}
                 />
                 <View style={styles.column3}>
-                  <Text style={styles.text2}>
-                    {"Nom du profil"}
-                  </Text>
+                  <Text style={styles.text2}>{"Nom du profil"}</Text>
                   <View style={styles.column4}>
                     <Text style={styles.text}>
                       {"10/100 succès débloqués (10%)"}
@@ -66,16 +60,12 @@ export default function ProfilScreen() {
                   </View>
                   <View style={styles.row4}>
                     <Image
-                      source={{
-                        uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xpt97fg1_expires_30_days.png",
-                      }}
+                      source={require("@/assets/images/Rank.png")}
                       resizeMode={"stretch"}
                       style={styles.image4}
                     />
                     <View style={styles.view4}>
-                      <Text style={styles.text3}>
-                        {"Rang bronze"}
-                      </Text>
+                      <Text style={styles.text3}>{"Rang bronze"}</Text>
                     </View>
                   </View>
                 </View>
