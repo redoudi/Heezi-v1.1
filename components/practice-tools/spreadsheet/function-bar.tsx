@@ -1,5 +1,4 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
-import { styles } from "./spreadsheet-styles";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function FunctionBar() {
   return (
@@ -32,11 +31,73 @@ export default function FunctionBar() {
           />
         </View>
       </View>
-      <Image
-        source={require("@/assets/images/1tMFzp8.png")}
-        resizeMode={"stretch"}
-        style={styles.image34}
-      />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  row4: {
+    flexDirection: "row",
+    backgroundColor: "#FFFFFF",
+    paddingVertical: 8,
+  },
+  buttonRow7: {
+    width: 88,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginLeft: 32,
+    marginRight: 8,
+  },
+  text5: {
+    fontSize: 10,
+    color: "#292929",
+    marginLeft: 8,
+  },
+  image12: {
+    borderRadius: 8,
+    width: 9,
+    height: 6,
+    marginRight: 8,
+  },
+  row13: {
+    width: 96,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 8,
+  },
+  image31: {
+    borderRadius: 8,
+    width: 12,
+    height: 12,
+    marginLeft: 8,
+    marginRight: 10,
+  },
+  image32: {
+    borderRadius: 8,
+    width: 19,
+    height: 14,
+    marginRight: 10,
+  },
+  row14: {
+    width: 29,
+    flexDirection: "row",
+    alignItems: "center",
+    marginRight: 8,
+  },
+  text8: {
+    fontSize: 10,
+    color: "#292929",
+    marginRight: 6,
+  },
+  image33: {
+    width: 11,
+    height: 7,
+  },
+});
