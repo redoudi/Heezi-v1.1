@@ -9,22 +9,22 @@ export default function ScoreScreen() {
           <View style={styles.column2}>
             <View style={styles.row}>
               <Image
-                source={require("@/assets/images/zyyckjro_expires_30_days.png")}
+                source={require("@/assets/images/Bronze.png")}
                 resizeMode={"stretch"}
                 style={styles.image}
               />
               <Image
-                source={require("@/assets/images/b9id1gh6_expires_30_days.png")}
+                source={require("@/assets/images/Argent.png")}
                 resizeMode={"stretch"}
                 style={styles.image2}
               />
               <Image
-                source={require("@/assets/images/1wiy58je_expires_30_days.png")}
+                source={require("@/assets/images/Or.png")}
                 resizeMode={"stretch"}
                 style={styles.image2}
               />
               <Image
-                source={require("@/assets/images/rtrwfngz_expires_30_days.png")}
+                source={require("@/assets/images/Diamant.png")}
                 resizeMode={"stretch"}
                 style={styles.image3}
               />
@@ -62,7 +62,7 @@ export default function ScoreScreen() {
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/3lokmvs9_expires_30_days.png")}
+                  source={require("@/assets/images/Coq.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
@@ -76,7 +76,7 @@ export default function ScoreScreen() {
               >
                 <Text style={styles.text9}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/6643scml_expires_30_days.png")}
+                  source={require("@/assets/images/Coq.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
@@ -90,7 +90,7 @@ export default function ScoreScreen() {
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/n8b0919f_expires_30_days.png")}
+                  source={require("@/assets/images/Coq.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
@@ -104,7 +104,7 @@ export default function ScoreScreen() {
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/myla2l0p_expires_30_days.png")}
+                  source={require("@/assets/images/Coq.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
@@ -118,7 +118,7 @@ export default function ScoreScreen() {
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/w55o4c0r_expires_30_days.png")}
+                  source={require("@/assets/images/Coq.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
@@ -132,7 +132,7 @@ export default function ScoreScreen() {
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/72f9ifvg_expires_30_days.png")}
+                  source={require("@/assets/images/Coq.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
@@ -146,7 +146,7 @@ export default function ScoreScreen() {
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/lcfh9jwj_expires_30_days.png")}
+                  source={require("@/assets/images/Coq.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
@@ -160,7 +160,7 @@ export default function ScoreScreen() {
               >
                 <Text style={styles.text6}>{"1."}</Text>
                 <Image
-                  source={require("@/assets/images/6lq83c0i_expires_30_days.png")}
+                  source={require("@/assets/images/Coq.png")}
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
@@ -303,6 +303,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: "#292929",
     marginBottom: 8,
+    fontWeight: "bold",
   },
   text2: {
     fontSize: 10,
