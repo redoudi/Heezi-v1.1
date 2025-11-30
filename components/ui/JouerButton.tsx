@@ -28,7 +28,9 @@ export default function JouerButton({
           {"Jouer"}
         </Text>
       </View>
-      <Image source={image} resizeMode={"contain"} />
+      <View style={styles.iconContainer}>
+        <Image source={image} resizeMode={"contain"} />
+      </View>
     </View>
   );
 }
@@ -49,5 +51,10 @@ const styles = StyleSheet.create({
   },
   playButtonText: {
     color: "white",
+  },
+  iconContainer: {
+    borderWidth: 1,
+    height: 24,
+    width: 24,
   },
 });
