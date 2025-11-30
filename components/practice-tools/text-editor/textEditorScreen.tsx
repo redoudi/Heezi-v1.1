@@ -9,7 +9,7 @@ import {
 import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
 import ContentPage from "./ContentPage";
 import TextEditorHeader from "./TextEditorHeader";
-import { TitleBar } from "./TextEditorTitleBar";
+import TitleBar from "./TextEditorTitleBar";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (

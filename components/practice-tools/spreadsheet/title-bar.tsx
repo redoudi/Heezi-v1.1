@@ -16,27 +16,27 @@ export default function TitleBar() {
     }
   }, [setContentRef, levelType]);
   return (
-    <View style={styles.mainContent} ref={titleBarRef}>
+    <View style={styles.mainContainer} ref={titleBarRef}>
       <View style={styles.leftRow}>
         <Image
           source={require("@/assets/images/5jt7jwsg_expires_30_days.png")}
           resizeMode={"contain"}
-          style={styles.spreadsheeticon}
+          style={styles.icon}
         />
         <Image
           source={require("@/assets/images/os183jfm_expires_30_days.png")}
           resizeMode={"contain"}
-          style={styles.saveIcon}
+          style={styles.icon}
         />
         <Image
           source={require("../../../assets/images/undo.png")}
           resizeMode={"contain"}
-          style={styles.undoIcon}
+          style={styles.icon}
         />
         <Image
           source={require("../../../assets/images/redo.png")}
           resizeMode={"contain"}
-          style={styles.redoIcon}
+          style={styles.icon}
         />
       </View>
       <TouchableOpacity
@@ -56,36 +56,36 @@ export default function TitleBar() {
 }
 
 const styles = StyleSheet.create({
-  mainContent: {
+  mainContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    gap: 8,
+    paddingHorizontal: 32,
+    paddingTop: 8,
+    zIndex: 1001,
   },
   leftRow: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
+    gap: 8,
   },
-  spreadsheeticon: {
+  icon: {
+    maxWidth: 52,
     height: 32,
   },
-  saveIcon: {
-    height: 32,
-  },
-  undoIcon: {
-    height: 32,
-  },
-  redoIcon: {
-    height: 32,
-  },
+
   backButton: {
     width: 32,
+    height: 32,
+    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FDC1AB",
     borderRadius: 8,
-    marginRight: 32,
   },
   backButtonIcon: {
-    height: 28,
+    width: 20,
+    height: 20,
   },
 });

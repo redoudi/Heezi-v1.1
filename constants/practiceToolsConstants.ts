@@ -8,6 +8,7 @@ export default {
     backgroundColor: "#72D6BA",
     tool: "spreadsheet",
     textColor: "#0A2924",
+    icon: require("@/assets/images/f36dtxie_expires_30_days.png"),
   },
   textEditor: {
     name: "Éditeur de texte",
@@ -18,5 +19,6 @@ export default {
     tool: "textEditor",
     textColor: "#0A4F70",
     backgroundColor: "#33C6FD",
+    icon: require("@/assets/images/5jt7jwsg_expires_30_days.png"),
   },
 };

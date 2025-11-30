@@ -2,7 +2,7 @@ import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
-export function TitleBar() {
+export default function TitleBar() {
   const { practiceTool } = usePracticeToolConstants();
   return (
     <View style={styles.mainContainer}>
@@ -10,26 +10,26 @@ export function TitleBar() {
         <Image
           source={require("@/assets/images/f36dtxie_expires_30_days.png")}
           resizeMode={"contain"}
-          style={styles.image}
+          style={styles.icon}
         />
         <Image
-          source={require("@/assets/images/x1cberci_expires_30_days.png")}
+          source={require("@/assets/images/os183jfm_expires_30_days.png")}
           resizeMode={"contain"}
-          style={styles.image}
+          style={styles.icon}
         />
         <Image
-          source={require("@/assets/images/1tMFzp8.png")}
+          source={require("../../../assets/images/undo.png")}
           resizeMode={"contain"}
-          style={styles.image}
+          style={styles.icon}
         />
         <Image
-          source={require("@/assets/images/1tMFzp8.png")}
+          source={require("../../../assets/images/redo.png")}
           resizeMode={"contain"}
-          style={styles.image}
+          style={styles.icon}
         />
       </View>
       <TouchableOpacity
-        style={styles.button}
+        style={styles.backButton}
         onPress={() =>
           router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
         }
@@ -37,7 +37,7 @@ export function TitleBar() {
         <Image
           source={require("@/assets/images/iycoag37_expires_30_days.png")}
           resizeMode={"contain"}
-          style={styles.exitIcon}
+          style={styles.backButtonIcon}
         />
       </TouchableOpacity>
     </View>
@@ -60,26 +60,12 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     gap: 8,
   },
-  image: {
-    width: 32,
+  icon: {
+    maxWidth: 52,
     height: 32,
   },
-  image2: {
-    width: 40,
-    height: 40,
-    marginRight: 8,
-  },
-  image3: {
-    width: 61,
-    height: 39,
-    marginRight: 8,
-  },
-  image4: {
-    width: 39,
-    height: 42,
-    marginRight: 1134,
-  },
-  button: {
+
+  backButton: {
     width: 32,
     height: 32,
     justifyContent: "center",
@@ -87,7 +73,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FDC1AB",
     borderRadius: 8,
   },
-  exitIcon: {
+  backButtonIcon: {
     width: 20,
     height: 20,
   },
