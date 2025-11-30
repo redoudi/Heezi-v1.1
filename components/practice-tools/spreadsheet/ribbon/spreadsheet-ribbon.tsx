@@ -1,8 +1,7 @@
 import useCursor from "@/context/useCursor";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import { useEffect, useRef } from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
-import { styles } from "../spreadsheet-styles";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function BoldButton() {
   const { isSelectedCellBold, boldSelectedCell } = useSpreadsheetRibbon();
@@ -368,3 +367,436 @@ export default function Ribbon() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  button11: {
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginBottom: 4,
+  },
+  button12: {
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+  },
+  button13: {
+    width: 23,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 10,
+  },
+  button14: {
+    width: 22,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 10,
+  },
+  button15: {
+    width: 24,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 20,
+  },
+  button16: {
+    width: 32,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 7,
+    marginRight: 10,
+  },
+  button17: {
+    width: 32,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 10,
+  },
+  button18: {
+    width: 28,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+  },
+  button19: {
+    width: 29,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 4,
+  },
+  button20: {
+    width: 29,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 8,
+  },
+  button21: {
+    width: 31,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+  },
+  button22: {
+    width: 30,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 8,
+  },
+  button23: {
+    width: 30,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 16,
+  },
+  button24: {
+    width: 31,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 8,
+  },
+  button25: {
+    width: 30,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+  },
+  button26: {
+    width: 26,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 10,
+    marginRight: 8,
+  },
+  button27: {
+    width: 44,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+  },
+  buttonColumn: {
+    width: 54,
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    padding: 8,
+    marginRight: 8,
+  },
+  buttonRow: {
+    width: 72,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 10,
+  },
+  buttonRow2: {
+    width: 73,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 10,
+  },
+  buttonRow3: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginBottom: 10,
+  },
+  buttonRow4: {
+    width: 92,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+    marginRight: 9,
+  },
+  buttonRow5: {
+    width: 114,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+  },
+  buttonRow6: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 8,
+  },
+  column3: {
+    width: 97,
+    marginLeft: 32,
+    marginRight: 16,
+  },
+  column4: {
+    width: 35,
+  },
+  column5: {
+    width: 229,
+    alignItems: "center",
+    marginRight: 16,
+  },
+  column6: {
+    marginBottom: 16,
+  },
+  column7: {
+    width: 244,
+    marginRight: 16,
+  },
+  column8: {
+    width: 133,
+    marginRight: 16,
+  },
+  column9: {
+    width: 99,
+    marginRight: 16,
+  },
+  column10: {
+    width: 216,
+    alignItems: "center",
+    marginRight: 309,
+  },
+  column11: {
+    marginBottom: 11,
+  },
+  image8: {
+    borderRadius: 8,
+    width: 26,
+    height: 31,
+    marginBottom: 4,
+  },
+  image9: {
+    borderRadius: 8,
+    width: 9,
+    height: 6,
+  },
+  image10: {
+    borderRadius: 8,
+    width: 19,
+    height: 23,
+  },
+  image11: {
+    borderRadius: 8,
+    width: 18,
+    height: 18,
+  },
+  image12: {
+    borderRadius: 8,
+    width: 9,
+    height: 6,
+    marginRight: 8,
+  },
+  image13: {
+    borderRadius: 8,
+    width: 7,
+    height: 10,
+  },
+  image14: {
+    borderRadius: 8,
+    width: 6,
+    height: 10,
+  },
+  image15: {
+    borderRadius: 8,
+    width: 8,
+    height: 10,
+  },
+  image16: {
+    borderRadius: 8,
+    width: 16,
+    height: 16,
+  },
+  image17: {
+    borderRadius: 8,
+    width: 16,
+    height: 14,
+  },
+  image18: {
+    borderRadius: 8,
+    width: 12,
+    height: 14,
+  },
+  image19: {
+    borderRadius: 8,
+    width: 13,
+    height: 12,
+  },
+  image20: {
+    borderRadius: 8,
+    width: 15,
+    height: 12,
+  },
+  image21: {
+    borderRadius: 8,
+    width: 14,
+    height: 12,
+  },
+  image22: {
+    width: 45,
+    height: 32,
+    marginRight: 7,
+  },
+  image23: {
+    borderRadius: 8,
+    width: 9,
+    height: 6,
+    marginRight: 7,
+  },
+  image24: {
+    width: 46,
+    height: 30,
+    marginRight: 7,
+  },
+  image25: {
+    width: 45,
+    height: 32,
+    marginRight: 8,
+  },
+  image26: {
+    width: 44,
+    height: 31,
+  },
+  image27: {
+    width: 44,
+    height: 31,
+    marginBottom: 9,
+  },
+  image28: {
+    borderRadius: 8,
+    width: 15,
+    height: 15,
+    marginLeft: 8,
+  },
+  image29: {
+    borderRadius: 8,
+    width: 9,
+    height: 6,
+    marginRight: 6,
+  },
+  image30: {
+    borderRadius: 8,
+    width: 15,
+    height: 15,
+    marginLeft: 8,
+    marginRight: 4,
+  },
+  ribbonContainer: {
+    borderWidth: 1,
+    justifyContent: "center",
+    flexDirection: "row",
+    backgroundColor: "#FFFFFF",
+    paddingVertical: 8,
+  },
+  row5: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 6,
+  },
+  row6: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    marginBottom: 4,
+  },
+  row7: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginHorizontal: 4,
+  },
+  row8: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    marginBottom: 8,
+  },
+  row9: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 12,
+  },
+  row10: {
+    flexDirection: "row",
+    marginBottom: 10,
+  },
+  row11: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 8,
+  },
+  row12: {
+    flexDirection: "row",
+    marginBottom: 8,
+  },
+  text2: {
+    fontSize: 10,
+    color: "#292929",
+    marginBottom: 4,
+  },
+  text3: {
+    fontSize: 10,
+    color: "#000000",
+    textAlign: "center",
+  },
+  text4: {
+    fontSize: 10,
+    color: "#292929",
+    marginLeft: 8,
+    marginRight: 12,
+  },
+  text5: {
+    fontSize: 10,
+    color: "#292929",
+    marginLeft: 8,
+  },
+  text6: {
+    fontSize: 10,
+    color: "#000000",
+  },
+  text7: {
+    fontSize: 10,
+    color: "#292929",
+  },
+  text8: {
+    fontSize: 10,
+    color: "#292929",
+    marginRight: 6,
+  },
+  view: {
+    alignItems: "center",
+  },
+});
