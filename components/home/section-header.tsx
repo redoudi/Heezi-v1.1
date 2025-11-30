@@ -27,14 +27,13 @@ export default function SectionHeader() {
       style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
     >
       <View style={styles.row}>
-        <View style={styles.retourAndToolNameContainer}>
-          <RetourButton />
-          <View>
-            <Text
-              style={styles.toolNameText}
-            >{`Outil : ${toolConstants.name}`}</Text>
-          </View>
+        <RetourButton />
+        <View>
+          <Text
+            style={styles.toolNameText}
+          >{`Outil : ${toolConstants.name}`}</Text>
         </View>
+
         <StatusText />
       </View>
       <View style={styles.sectionTitleContainer}>
