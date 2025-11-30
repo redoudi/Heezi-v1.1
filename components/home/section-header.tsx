@@ -3,6 +3,22 @@ import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+function RetourButton() {
+  const { practiceTool } = usePracticeToolConstants();
+  return (
+    <TouchableOpacity
+      onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
+      style={styles.retourButton}
+    >
+      <Image
+        source={require("@/assets/images/z1q84zux_expires_30_days.png")}
+        resizeMode={"stretch"}
+        style={styles.image}
+      />
+    </TouchableOpacity>
+  );
+}
+
 export default function SectionHeader() {
   const { toolConstants, practiceTool } = usePracticeToolConstants();
   return (
@@ -11,17 +27,7 @@ export default function SectionHeader() {
     >
       <View style={styles.row}>
         <View style={styles.row2}>
-          <TouchableOpacity
-            onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
-          >
-            <View style={styles.view}>
-              <Image
-                source={require("@/assets/images/z1q84zux_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles.image}
-              />
-            </View>
-          </TouchableOpacity>
+          <RetourButton />
           <View>
             <Text
               style={styles.toolNameText}
@@ -74,7 +80,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: "#0A2924",
   },
-  view: {
+  retourButton: {
     width: 62,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
