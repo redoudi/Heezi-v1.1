@@ -7,10 +7,7 @@ export default function SectionHeader() {
   const { toolConstants, practiceTool } = usePracticeToolConstants();
   return (
     <View
-      style={[
-        styles.sectionHeaderContainer,
-        { backgroundColor: toolConstants.color },
-      ]}
+      style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
     >
       <View style={styles.row}>
         <View style={styles.row2}>
@@ -26,23 +23,28 @@ export default function SectionHeader() {
             </View>
           </TouchableOpacity>
 
-          <Text style={styles.text}>{"3 niveaux"}</Text>
+          <Text style={styles.levelsNumberText}>{"3 niveaux"}</Text>
         </View>
         <StatusText />
       </View>
-      <View>
-        <Text style={styles.text3}>{"Section 1"}</Text>
-        <Text style={styles.text4}>{"Apprendre les bases"}</Text>
+      <View style={styles.sectionTitleContainer}>
+        <Text style={styles.sectionNumberText}>{"Section 1"}</Text>
+        <Text style={styles.sectionTitleText}>{"Apprendre les bases"}</Text>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionHeaderContainer: {
+  mainContainer: {
     borderRadius: 8,
     padding: 16,
     marginBottom: 16,
+  },
+  sectionTitleContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   row: {
     flexDirection: "row",
@@ -55,21 +57,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  text: {
-    fontSize: 8,
+  levelsNumberText: {
+    fontSize: 12,
     color: "#1C5348",
   },
-  text3: {
+  sectionNumberText: {
     fontSize: 22,
     color: "#0A2924",
     marginBottom: 7,
   },
-  text4: {
-    fontSize: 10,
+  sectionTitleText: {
+    fontSize: 12,
     lineHeight: 24,
     color: "#0A2924",
-    marginRight: 86,
-    width: 151,
   },
   view: {
     width: 62,
