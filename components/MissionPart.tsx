@@ -47,8 +47,13 @@ export default function MissionPart({
 
   return (
     <View>
-      <View style={[styles.button, { backgroundColor: toolConstants.color }]}>
-        <Text style={styles.text5}>{title}</Text>
+      <View
+        style={[
+          styles.partTitleContainer,
+          { backgroundColor: toolConstants.color },
+        ]}
+      >
+        <Text style={styles.partTitleText}>{title}</Text>
       </View>
 
       <TouchableOpacity
@@ -70,7 +75,7 @@ export default function MissionPart({
 }
 
 const styles = StyleSheet.create({
-  button: {
+  partTitleContainer: {
     alignSelf: "flex-start",
     borderRadius: 8,
     paddingVertical: 8,
@@ -81,7 +86,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderWidth: 1,
   },
-  text5: {
+  partTitleText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#F2FBF8",
