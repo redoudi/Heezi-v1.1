@@ -46,7 +46,7 @@ export default function MissionPart({
   const disabled = !(levelNumber === 1) && !isPreviousLevelCompleted;
 
   return (
-    <View>
+    <View style={styles.mainContainer}>
       <View
         style={[
           styles.partTitleContainer,
@@ -57,44 +57,44 @@ export default function MissionPart({
       </View>
 
       <TouchableOpacity
+        style={styles.sectionRow}
         disabled={disabled}
         onPress={() =>
           router.replace(`/mission/${practiceTool}/${levelNumber}`)
         }
       >
-        <View style={styles.sectionRow}>
+        <View style={styles.animationContainer}>
           <CustomAnimation animationData={getAnimationData()} />
-          <JouerButton
-            image={disabled ? imageDisabled : image}
-            disabled={disabled}
-          />
         </View>
+        <JouerButton
+          image={disabled ? imageDisabled : image}
+          disabled={disabled}
+        />
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  mainContainer: {},
   partTitleContainer: {
     alignSelf: "flex-start",
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
-  chouette: {
-    height: 385,
-    marginBottom: 15,
-    borderWidth: 1,
-  },
   partTitleText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#F2FBF8",
   },
-
   sectionRow: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
+  },
+  animationContainer: {
+    // borderWidth: 1,
   },
   playButton: {
     flexDirection: "row",

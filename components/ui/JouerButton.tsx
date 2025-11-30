@@ -22,7 +22,9 @@ export default function JouerButton({
       ]}
     >
       <View style={styles.playButtonTextContainer}>
-        <Text style={[{ fontSize: 18, fontWeight: "bold" }, styles.playButtonText]}>
+        <Text
+          style={[{ fontSize: 18, fontWeight: "bold" }, styles.playButtonText]}
+        >
           {"Jouer"}
         </Text>
       </View>
@@ -37,9 +39,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
-
     marginRight: 8,
-    marginBottom: 56,
   },
   playButtonTextContainer: {
     alignSelf: "stretch",
