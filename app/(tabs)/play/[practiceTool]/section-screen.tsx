@@ -4,44 +4,50 @@ import sectionButtons from "@/constants/sectionButtons";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+const Divider = () => <View style={styles.divider} />;
+
+function SectionHeader() {
+  const { toolConstants, practiceTool } = usePracticeToolConstants();
+  return (
+    <View style={[styles.column2, { backgroundColor: toolConstants.color }]}>
+      <View style={styles.row}>
+        <View style={styles.row2}>
+          <TouchableOpacity
+            onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
+          >
+            <View style={styles.view}>
+              <Image
+                source={require("@/assets/images/z1q84zux_expires_30_days.png")}
+                resizeMode={"stretch"}
+                style={styles.image}
+              />
+            </View>
+          </TouchableOpacity>
+
+          <Text style={styles.text}>{"3 niveaux"}</Text>
+        </View>
+        <StatusText />
+      </View>
+      <View>
+        <Text style={styles.text3}>{"Section 1"}</Text>
+        <Text style={styles.text4}>{"Apprendre les bases"}</Text>
+      </View>
+    </View>
+  );
+}
+
 export default function SectionScreen() {
   const lessonAnimationData = require("@/assets/animations/RenardBureauVert.json");
-
   const quizAnimationData = require("@/assets/animations/RenardBureauVert.json");
-
   const practiceAnimationData = require("@/assets/animations/RenardBureauVert.json");
 
-  const { toolConstants, practiceTool, toolSectionButtons } =
-    usePracticeToolConstants();
-  return (
-    <View style={styles.container}>
-      <View style={styles.column}>
-        <View
-          style={[styles.column2, { backgroundColor: toolConstants.color }]}
-        >
-          <View style={styles.row}>
-            <View style={styles.row2}>
-              <TouchableOpacity
-                onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
-              >
-                <View style={styles.view}>
-                  <Image
-                    source={require("@/assets/images/z1q84zux_expires_30_days.png")}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
-                </View>
-              </TouchableOpacity>
+  const { toolSectionButtons } = usePracticeToolConstants();
 
-              <Text style={styles.text}>{"3 niveaux"}</Text>
-            </View>
-            <StatusText />
-          </View>
-          <View>
-            <Text style={styles.text3}>{"Section 1"}</Text>
-            <Text style={styles.text4}>{"Apprendre les bases"}</Text>
-          </View>
-        </View>
+  return (
+    <View style={styles.mainContainer}>
+      <View style={styles.mainContent}>
+        <SectionHeader />
         <View style={styles.missionPartsContainer}>
           <MissionPart
             title="Cours"
@@ -49,6 +55,7 @@ export default function SectionScreen() {
             levelNumber={1}
             animationData={lessonAnimationData}
           />
+          <Divider />
           <MissionPart
             title="Quiz"
             image={toolSectionButtons.quiz}
@@ -69,10 +76,13 @@ export default function SectionScreen() {
   );
 }
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "flex-start",
+  mainContainer: {
+    flex: 1,
+    alignItems: "center",
     backgroundColor: "#FFFFFF",
+    justifyContent: "flex-start",
   },
+  mainContent: { flex: 1, borderWidth: 1, justifyContent: "flex-start" },
   absoluteImage: {
     position: "absolute",
     top: 9,
@@ -124,9 +134,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginBottom: 16,
   },
-  column: {
-    width: 741,
-  },
+
   column2: {
     borderRadius: 8,
     padding: 16,
@@ -243,5 +251,10 @@ const styles = StyleSheet.create({
   },
   missionPartsContainer: {
     gap: 32,
+  },
+  divider: {
+    height: 2,
+    backgroundColor: "#EFEFEF",
+    marginHorizontal: 16,
   },
 });
