@@ -32,6 +32,7 @@ export default function SectionScreen() {
             levelNumber={2}
             animationData={quizAnimationData}
           />
+          <Divider />
           <MissionPart
             title="Pratique"
             image={toolSectionButtons.practice}
@@ -53,11 +54,12 @@ const styles = StyleSheet.create({
   },
   mainContent: { flex: 1, borderWidth: 1, justifyContent: "flex-start" },
   missionPartsContainer: {
-    gap: 32,
+    gap: 0,
   },
   divider: {
     height: 2,
+
     backgroundColor: "#EFEFEF",
-    marginHorizontal: 16,
+    marginHorizontal: "20%",
   },
 });
