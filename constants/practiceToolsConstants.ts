@@ -1,5 +1,6 @@
 export default {
   spreadsheet: {
+    name: "Tableur",
     color: "#72D6BA",
     secondaryColor: "#D3F4E9",
     title: "Le Tableur",
@@ -9,6 +10,7 @@ export default {
     textColor: "#0A2924",
   },
   textEditor: {
+    name: "Éditeur de texte",
     color: "#33C6FD",
     secondaryColor: "#E6F9FF",
     title: "L'éditeur de texte",

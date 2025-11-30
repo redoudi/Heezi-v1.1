@@ -22,8 +22,11 @@ export default function SectionHeader() {
               />
             </View>
           </TouchableOpacity>
-
-          <Text style={styles.levelsNumberText}>{"3 niveaux"}</Text>
+          <View>
+            <Text
+              style={styles.toolNameText}
+            >{`Outil : ${toolConstants.name}`}</Text>
+          </View>
         </View>
         <StatusText />
       </View>
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  levelsNumberText: {
+  toolNameText: {
     fontSize: 12,
     color: "#1C5348",
   },
