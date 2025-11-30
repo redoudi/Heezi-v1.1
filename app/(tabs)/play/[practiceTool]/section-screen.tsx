@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     justifyContent: "flex-start",
   },
-  mainContent: { flex: 1, borderWidth: 1, justifyContent: "flex-start" },
+  mainContent: { flex: 1, justifyContent: "flex-start" },
   missionPartsContainer: {
     gap: 0,
   },

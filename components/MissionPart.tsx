@@ -80,8 +80,9 @@ const styles = StyleSheet.create({
   partTitleContainer: {
     alignSelf: "flex-start",
     borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
+    borderTopLeftRadius: 0,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
   },
   partTitleText: {
     fontSize: 18,

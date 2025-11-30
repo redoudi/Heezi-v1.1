@@ -1,5 +1,12 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { Image, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  StyleProp,
+  StyleSheet,
+  Text,
+  View,
+  ViewStyle,
+} from "react-native";
 
 export default function JouerButton({
   image,
@@ -7,6 +14,7 @@ export default function JouerButton({
 }: {
   image: any;
   disabled: boolean;
+  style?: StyleProp<ViewStyle>;
 }) {
   const { toolConstants } = usePracticeToolConstants();
 
@@ -14,6 +22,7 @@ export default function JouerButton({
     <View
       style={[
         styles.mainContainer,
+
         {
           backgroundColor: disabled
             ? "rgb(169, 169, 169)"
@@ -28,9 +37,8 @@ export default function JouerButton({
           {"Jouer"}
         </Text>
       </View>
-      <View style={styles.iconContainer}>
-        <Image source={image} resizeMode={"contain"} />
-      </View>
+
+      <Image source={image} resizeMode={"contain"} style={styles.icon} />
     </View>
   );
 }
@@ -52,9 +60,8 @@ const styles = StyleSheet.create({
   playButtonText: {
     color: "white",
   },
-  iconContainer: {
-    borderWidth: 1,
-    height: 24,
-    width: 24,
+  icon: {
+    height: 36,
+    width: 36,
   },
 });
