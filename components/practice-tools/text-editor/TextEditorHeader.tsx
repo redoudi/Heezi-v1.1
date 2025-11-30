@@ -82,6 +82,7 @@ const Divider = () => (
       width: 1,
       backgroundColor: "darkgray",
       marginHorizontal: 8,
+      alignSelf: "stretch",
     }}
   />
 );
@@ -237,15 +238,16 @@ export default function TextEditorHeader() {
                 style={styles.image20}
               />
               <Image
-                source={require("@/assets/images/1tMFzp8.png")}
+                source={require("@/assets/images/textEditorRibbon2.png")}
                 resizeMode={"contain"}
                 style={styles.image20}
               />
               <Image
-                source={require("@/assets/images/1tMFzp8.png")}
+                source={require("@/assets/images/textEditorRibbon3.png")}
                 resizeMode={"contain"}
                 style={styles.image21}
               />
+              <Divider />
               <TouchableOpacity
                 style={styles.button22}
                 onPress={() => {}}
@@ -337,7 +339,7 @@ export default function TextEditorHeader() {
                 />
               </TouchableOpacity>
               <Image
-                source={require("@/assets/images/1tMFzp8.png")}
+                source={require("@/assets/images/textEditorRibbon4.png")}
                 resizeMode={"contain"}
                 style={styles.image27}
               />
@@ -751,6 +753,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   row11: {
+    borderWidth: 1,
+    borderRightWidth: 0,
     width: 242,
     flexDirection: "row",
     backgroundColor: "#EFEFEF",
