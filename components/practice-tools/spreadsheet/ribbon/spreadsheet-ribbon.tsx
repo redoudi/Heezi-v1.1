@@ -271,7 +271,7 @@ export default function Ribbon() {
         </TouchableOpacity>
         <View style={styles.row10}>
           <Image
-            source={require("@/assets/images/1tMFzp8.png")}
+            source={require("@/assets/images/spreadsheetRibbon2.png")}
             resizeMode={"stretch"}
             style={styles.image24}
           />
