@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
     paddingBottom: 1,
   },
   view3: {
-    backgroundColor: "#000000",
+    backgroundColor: "#FFFFFF",
     paddingVertical: 214,
   },
   view4: {
