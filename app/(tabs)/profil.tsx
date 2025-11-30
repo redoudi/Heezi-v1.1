@@ -5,69 +5,65 @@ export default function ProfilScreen() {
   return (
     <ScrollableScreen contentContainerStyle={styles.container}>
       <View style={styles.view}>
-        <View style={styles.view2}>
-          <View style={styles.view3}>
-            <View style={styles.column}>
-              <View style={styles.row}>
-                <View style={styles.column2}>
-                  <Text style={styles.text}>{"Niveau. 1"}</Text>
-                  <View style={styles.box}></View>
-                </View>
-                <View style={styles.row2}>
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => {}}
-                    disabled
-                  >
-                    <Image
-                      source={require("@/assets/images/profiladd.png")}
-                      resizeMode={"contain"}
-                      style={styles.image}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.button2}
-                    onPress={() => {}}
-                    disabled
-                  >
-                    <Image
-                      source={require("@/assets/images/profilSettings.png")}
-                      resizeMode={"stretch"}
-                      style={styles.image2}
-                    />
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <View style={styles.row3}>
+        <View style={styles.column}>
+          <View style={styles.row}>
+            <View style={styles.column2}>
+              <Text style={styles.text}>{"Niveau. 1"}</Text>
+              <View style={styles.box}></View>
+            </View>
+            <View style={styles.row2}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => {}}
+                disabled
+              >
                 <Image
-                  source={require("@/assets/images/ProfilMascot.png")}
+                  source={require("@/assets/images/profiladd.png")}
                   resizeMode={"contain"}
-                  style={styles.image3}
+                  style={styles.image}
                 />
-                <View style={styles.column3}>
-                  <Text style={styles.text2}>{"Nom du profil"}</Text>
-                  <View style={styles.column4}>
-                    <Text style={styles.text}>
-                      {"10/100 succès débloqués (10%)"}
-                    </Text>
-                    <View style={styles.box}></View>
-                  </View>
-                  <View style={styles.column4}>
-                    <Text style={styles.text}>
-                      {"Progression dans le jeu (10%)"}
-                    </Text>
-                    <View style={styles.box}></View>
-                  </View>
-                  <View style={styles.row4}>
-                    <Image
-                      source={require("@/assets/images/Rank.png")}
-                      resizeMode={"stretch"}
-                      style={styles.image4}
-                    />
-                    <View style={styles.view4}>
-                      <Text style={styles.text3}>{"Rang bronze"}</Text>
-                    </View>
-                  </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.button2}
+                onPress={() => {}}
+                disabled
+              >
+                <Image
+                  source={require("@/assets/images/profilSettings.png")}
+                  resizeMode={"stretch"}
+                  style={styles.image2}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View style={styles.row3}>
+            <Image
+              source={require("@/assets/images/ProfilMascot.png")}
+              resizeMode={"contain"}
+              style={styles.image3}
+            />
+            <View style={styles.column3}>
+              <Text style={styles.text2}>{"Nom du profil"}</Text>
+              <View style={styles.column4}>
+                <Text style={styles.text}>
+                  {"10/100 succès débloqués (10%)"}
+                </Text>
+                <View style={styles.box}></View>
+              </View>
+              <View style={styles.column4}>
+                <Text style={styles.text}>
+                  {"Progression dans le jeu (10%)"}
+                </Text>
+                <View style={styles.box}></View>
+              </View>
+              <View style={styles.row4}>
+                <Image
+                  source={require("@/assets/images/Rank.png")}
+                  resizeMode={"stretch"}
+                  style={styles.image4}
+                />
+                <View style={styles.view4}>
+                  <Text style={styles.text3}>{"Rang bronze"}</Text>
                 </View>
               </View>
             </View>
@@ -191,17 +187,11 @@ const styles = StyleSheet.create({
     color: "#B2460B",
   },
   view: {
-    width: 1184,
-    backgroundColor: "#DCDCDC",
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop: 32,
   },
-  view2: {
-    backgroundColor: "#D9D9D9",
-    paddingBottom: 1,
-  },
-  view3: {
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 214,
-  },
+
   view4: {
     width: 162,
     alignItems: "center",
