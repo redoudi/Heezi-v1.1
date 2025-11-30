@@ -122,7 +122,7 @@ export const MascotDialog = ({
   bubbleText,
   downArrowNextStep = undefined,
   style = undefined,
-  textBoxAndTriangleStyle = undefined,
+  textContainerStyle = undefined,
   onLayout,
 }: {
   bubbleText: string;
@@ -133,8 +133,8 @@ export const MascotDialog = ({
   const DownArrowNextStep = downArrowNextStep;
   return (
     <View style={[styles.mainContainer, style]} onLayout={onLayout}>
-      <View style={[styles.textBoxAndTriangle, textBoxAndTriangleStyle]}>
-        <View style={styles.textContainer}>
+      <View style={styles.textBoxAndTriangle}>
+        <View style={[styles.textContainer, textContainerStyle]}>
           <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
           {DownArrowNextStep}
         </View>
