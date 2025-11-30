@@ -1,5 +1,15 @@
-import { Image, StyleSheet, Text, View } from "react-native";
 import { ScrollableScreen } from "@/components/scrollable-screen";
+import { Image, StyleSheet, Text, View } from "react-native";
+
+function SuccessIcon() {
+  return (
+    <Image
+      source={require("@/assets/images/successIcon.png")}
+      resizeMode={"contain"}
+      style={styles.image}
+    />
+  );
+}
 
 export default function SuccessScreen() {
   return (
@@ -15,13 +25,7 @@ export default function SuccessScreen() {
             </View>
           </View>
           <View style={styles.row}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/xgqljo1q_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image}
-            />
+            <SuccessIcon />
             <View style={styles.column3}>
               <Text style={styles.text2}>{"Titre du succès"}</Text>
               <Text style={styles.text3}>
@@ -32,13 +36,7 @@ export default function SuccessScreen() {
             </View>
           </View>
           <View style={styles.row}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/zvwgawv2_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image}
-            />
+            <SuccessIcon />
             <View style={styles.column3}>
               <Text style={styles.text2}>{"Titre du succès"}</Text>
               <Text style={styles.text3}>
@@ -49,13 +47,7 @@ export default function SuccessScreen() {
             </View>
           </View>
           <View style={styles.row}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/v2mfz6nn_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image}
-            />
+            <SuccessIcon />
             <View style={styles.column3}>
               <Text style={styles.text2}>{"Titre du succès"}</Text>
               <Text style={styles.text3}>
@@ -66,13 +58,7 @@ export default function SuccessScreen() {
             </View>
           </View>
           <View style={styles.row}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/0h5s0ff3_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image}
-            />
+            <SuccessIcon />
             <View style={styles.column3}>
               <Text style={styles.text2}>{"Titre du succès"}</Text>
               <Text style={styles.text3}>
@@ -83,13 +69,7 @@ export default function SuccessScreen() {
             </View>
           </View>
           <View style={styles.row}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/kdurlwx0_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image}
-            />
+            <SuccessIcon />
             <View style={styles.column3}>
               <Text style={styles.text2}>{"Titre du succès"}</Text>
               <Text style={styles.text3}>
@@ -100,13 +80,7 @@ export default function SuccessScreen() {
             </View>
           </View>
           <View style={styles.row2}>
-            <Image
-              source={{
-                uri: "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ROUqyFKGQX/nuaa8tx6_expires_30_days.png",
-              }}
-              resizeMode={"stretch"}
-              style={styles.image}
-            />
+            <SuccessIcon />
             <View style={styles.column3}>
               <Text style={styles.text2}>{"Titre du succès"}</Text>
               <Text style={styles.text3}>
