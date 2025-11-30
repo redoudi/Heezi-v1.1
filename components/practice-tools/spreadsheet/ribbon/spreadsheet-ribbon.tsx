@@ -288,18 +288,18 @@ export default function Ribbon() {
       <View style={styles.column9}>
         <View style={styles.row11}>
           <Image
-            source={require("@/assets/images/1tMFzp8.png")}
+            source={require("@/assets/images/spreadsheetRibbon3.png")}
             resizeMode={"stretch"}
             style={styles.image25}
           />
           <Image
-            source={require("@/assets/images/1tMFzp8.png")}
+            source={require("@/assets/images/spreadsheetRibbon4.png")}
             resizeMode={"stretch"}
             style={styles.image26}
           />
         </View>
         <Image
-          source={require("@/assets/images/1tMFzp8.png")}
+          source={require("@/assets/images/spreadsheetRibbon5.png")}
           resizeMode={"stretch"}
           style={styles.image27}
         />
