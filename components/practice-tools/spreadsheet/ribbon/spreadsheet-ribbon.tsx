@@ -718,7 +718,6 @@ const styles = StyleSheet.create({
     marginRight: 4,
   },
   ribbonContainer: {
-    borderWidth: 1,
     justifyContent: "center",
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
