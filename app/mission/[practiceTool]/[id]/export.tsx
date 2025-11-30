@@ -1,11 +1,18 @@
 import ExportFormatButtons from "@/components/ExportFormatButtons";
-import FullWindowContainer from "@/components/FullWindowContainer";
 import { MascotDialog } from "@/components/mascot/mascot-bubble";
 import SnapshotPreview from "@/components/snapshot-preview";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  useWindowDimensions,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const dynamicParams = false;
 
@@ -13,46 +20,55 @@ export function generateStaticParams() {
   return getMissionStaticParams();
 }
 
-export default function ExportScreen() {
-  const { practiceTool } = usePracticeToolConstants();
+function ContinuerButton() {
+  const { practiceTool, toolConstants } = usePracticeToolConstants();
   return (
-    <FullWindowContainer>
-      <View style={styles.view}>
-        <View style={styles.view2}>
-          <View style={styles.column}>
-            <SnapshotPreview />
-            <ExportFormatButtons />
-            <TouchableOpacity
-              style={styles.buttonRow5}
-              onPress={() =>
-                router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
-              } // go to home page
-            >
-              <Text style={styles.text2}>{"Continuer"}</Text>
-              <Image
-                source={require("@/assets/images/a74yzjog_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles.image2}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
+    <TouchableOpacity
+      style={[styles.continuerButton, { backgroundColor: toolConstants.color }]}
+      onPress={() =>
+        router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
+      } // go to home page
+    >
+      <Text style={styles.continuerText}>{"Continuer"}</Text>
+      <Image
+        source={require("@/assets/images/a74yzjog_expires_30_days.png")}
+        resizeMode={"stretch"}
+        style={styles.triangleIcon}
+      />
+    </TouchableOpacity>
+  );
+}
+
+export default function ExportScreen() {
+  const { height } = useWindowDimensions();
+  return (
+    <SafeAreaView style={[{ height: height || "100%" }]}>
+      <View style={styles.mainContent}>
+        <SnapshotPreview />
+        <ExportFormatButtons />
+        <ContinuerButton />
       </View>
+
       <MascotDialog
         bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!"
         textContainerStyle={{ maxWidth: 300 }}
         style={{ bottom: 16 }}
       />
-    </FullWindowContainer>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
+  mainContent: {
+    alignItems: "center",
+    paddingVertical: 32,
+    paddingHorizontal: 8,
+  },
   container: {
     flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
-  buttonRow5: {
+  continuerButton: {
     alignSelf: "flex-start",
     flexDirection: "row",
     backgroundColor: "#72D6BA",
@@ -61,27 +77,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginRight: 399,
   },
-  column: {
-    paddingHorizontal: 8,
-  },
-  image2: {
+
+  triangleIcon: {
     borderRadius: 8,
     width: 16,
     height: 24,
   },
-  text2: {
+  continuerText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#0A2924",
     marginRight: 11,
-  },
-  view: {
-    width: 1440,
-    backgroundColor: "#FFFFFF",
-  },
-  view2: {
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 32,
   },
 });
