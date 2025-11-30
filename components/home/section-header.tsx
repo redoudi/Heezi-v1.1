@@ -12,9 +12,10 @@ function RetourButton() {
     >
       <Image
         source={require("@/assets/images/z1q84zux_expires_30_days.png")}
-        resizeMode={"stretch"}
-        style={styles.image}
+        resizeMode={"contain"}
+        style={styles.triangleIcon}
       />
+      <Text style={styles.retourButtonText}>{"Retour"}</Text>
     </TouchableOpacity>
   );
 }
@@ -26,7 +27,7 @@ export default function SectionHeader() {
       style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
     >
       <View style={styles.row}>
-        <View style={styles.row2}>
+        <View style={styles.retourAndToolNameContainer}>
           <RetourButton />
           <View>
             <Text
@@ -61,10 +62,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 16,
   },
-  row2: {
-    width: 138,
+  retourAndToolNameContainer: {
     flexDirection: "row",
     alignItems: "center",
+    gap: 8,
   },
   toolNameText: {
     fontSize: 12,
@@ -81,16 +82,18 @@ const styles = StyleSheet.create({
     color: "#0A2924",
   },
   retourButton: {
-    width: 62,
+    flexDirection: "row",
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginRight: 16,
+    paddingVertical: 4,
+    paddingRight: 8,
   },
-  image: {
+  retourButtonText: {
+    fontSize: 12,
+  },
+  triangleIcon: {
     borderRadius: 8,
-    width: 30,
+    width: 16,
     height: 16,
   },
 });
