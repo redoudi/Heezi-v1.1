@@ -42,13 +42,12 @@ function ContinuerButton() {
 export default function ExportScreen() {
   const { height } = useWindowDimensions();
   return (
-    <SafeAreaView style={[{ height: height || "100%" }]}>
+    <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
         <SnapshotPreview />
         <ExportFormatButtons />
         <ContinuerButton />
       </View>
-
       <MascotDialog
         bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!"
         textContainerStyle={{ maxWidth: 300 }}
@@ -58,18 +57,20 @@ export default function ExportScreen() {
   );
 }
 const styles = StyleSheet.create({
-  mainContent: {
-    alignItems: "center",
-    paddingVertical: 32,
-    paddingHorizontal: 8,
-  },
-  container: {
+  mainContainer: {
     flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
+  mainContent: {
+    flex: 1,
+    borderWidth: 1,
+    alignItems: "stretch",
+    paddingVertical: 32,
+    paddingHorizontal: 8,
+  },
   continuerButton: {
-    alignSelf: "flex-start",
+    alignSelf: "flex-end",
     flexDirection: "row",
     backgroundColor: "#72D6BA",
     borderRadius: 8,
