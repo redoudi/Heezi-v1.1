@@ -21,7 +21,7 @@ function RetourButton() {
 }
 
 export default function SectionHeader() {
-  const { toolConstants, practiceTool } = usePracticeToolConstants();
+  const { toolConstants } = usePracticeToolConstants();
   return (
     <View
       style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
