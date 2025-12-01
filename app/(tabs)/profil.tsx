@@ -41,11 +41,11 @@ export default function ProfilScreen() {
           <View style={styles.column3}>
             <Text style={styles.text2}>{"Nom du profil"}</Text>
             <View style={styles.column4}>
-              <Text style={styles.text}>{"10/100 succès débloqués (10%)"}</Text>
+              <Text style={styles.text}>{"0/6 succès débloqués (0%)"}</Text>
               <View style={styles.box}></View>
             </View>
             <View style={styles.column4}>
-              <Text style={styles.text}>{"Progression dans le jeu (10%)"}</Text>
+              <Text style={styles.text}>{"Progression dans le jeu (0%)"}</Text>
               <View style={styles.box}></View>
             </View>
             <View style={styles.row4}>

@@ -19,7 +19,7 @@ export default function SuccessScreen() {
         <View style={styles.mainContent}>
           <View style={styles.column2}>
             <View style={styles.view2}>
-              <Text style={styles.text}>{"10/100 succès débloqués (10%)"}</Text>
+              <Text style={styles.text}>{"0/6 succès débloqués (0%)"}</Text>
             </View>
             <View style={styles.view3}>
               <View style={styles.box}></View>
@@ -28,67 +28,43 @@ export default function SuccessScreen() {
           <View style={styles.row}>
             <SuccessIcon />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
-                {
-                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-                }
-              </Text>
+              <Text style={styles.text2}>{"Succès 1"}</Text>
+              <Text style={styles.text3}>{"..."}</Text>
             </View>
           </View>
           <View style={styles.row}>
             <SuccessIcon />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
-                {
-                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-                }
-              </Text>
+              <Text style={styles.text2}>{"Succès 2"}</Text>
+              <Text style={styles.text3}>{"..."}</Text>
             </View>
           </View>
           <View style={styles.row}>
             <SuccessIcon />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
-                {
-                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-                }
-              </Text>
+              <Text style={styles.text2}>{"Succès 3"}</Text>
+              <Text style={styles.text3}>{"..."}</Text>
             </View>
           </View>
           <View style={styles.row}>
             <SuccessIcon />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
-                {
-                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-                }
-              </Text>
+              <Text style={styles.text2}>{"Succès 4"}</Text>
+              <Text style={styles.text3}>{"..."}</Text>
             </View>
           </View>
           <View style={styles.row}>
             <SuccessIcon />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
-                {
-                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-                }
-              </Text>
+              <Text style={styles.text2}>{"Succès 5"}</Text>
+              <Text style={styles.text3}>{"..."}</Text>
             </View>
           </View>
           <View style={styles.row2}>
             <SuccessIcon />
             <View style={styles.column3}>
-              <Text style={styles.text2}>{"Titre du succès"}</Text>
-              <Text style={styles.text3}>
-                {
-                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-                }
-              </Text>
+              <Text style={styles.text2}>{"Succès 6"}</Text>
+              <Text style={styles.text3}>{"..."}</Text>
             </View>
           </View>
         </View>
