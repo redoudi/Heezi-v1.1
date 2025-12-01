@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 export default function ProfilScreen() {
   return (
     <ScrollableScreen contentContainerStyle={styles.mainContainer}>
-      <View style={styles.column}>
+      <View style={styles.mainContent}>
         <View style={styles.row}>
           <View style={styles.column2}>
             <Text style={styles.text}>{"Niveau. 1"}</Text>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 18,
   },
-  column: {
+  mainContent: {
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     paddingTop: 32,
@@ -175,11 +175,6 @@ const styles = StyleSheet.create({
   text3: {
     fontSize: 22,
     color: "#B2460B",
-  },
-  mainContent: {
-    flex: 1,
-    backgroundColor: "white",
-    paddingTop: 32,
   },
 
   view4: {
