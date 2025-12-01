@@ -27,7 +27,10 @@ export const AnswerButton = ({
   if (isWrongAnswer) {
     buttonStyle = styles.buttonWrong;
   } else if (isCorrectAnswer) {
-    buttonStyle = styles.buttonCorrect;
+    buttonStyle = [
+      styles.buttonCorrect,
+      { backgroundColor: toolConstants.color },
+    ];
   }
 
   return (
@@ -56,7 +59,6 @@ const styles = StyleSheet.create({
   buttonCorrect: {
     borderWidth: 4,
     borderColor: "black",
-    backgroundColor: "#45BC9E",
   },
   answerText: {
     fontSize: 18,
