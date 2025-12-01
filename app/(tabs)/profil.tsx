@@ -5,6 +5,7 @@ export default function ProfilScreen() {
   return (
     <ScrollableScreen contentContainerStyle={styles.mainContainer}>
       <View style={styles.mainContent}>
+        <Text style={styles.watermark}>bientôt disponible</Text>
         <View style={styles.row}>
           <View style={styles.column2}>
             <Text style={styles.text}>{"Niveau. 1"}</Text>
@@ -64,6 +65,22 @@ export default function ProfilScreen() {
   );
 }
 const styles = StyleSheet.create({
+  watermark: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: [
+      { translateX: -100 },
+      { translateY: -20 },
+      { rotate: "-45deg" },
+    ],
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "rgba(0, 0, 0, 0.1)",
+    zIndex: 1,
+    textAlign: "center",
+    width: 200,
+  },
   mainContainer: {
     borderWidth: 1,
     alignItems: "center",
