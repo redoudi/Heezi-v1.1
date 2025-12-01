@@ -31,18 +31,17 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 16,
     marginBottom: 8,
+    paddingHorizontal: 16,
   },
   levelText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#292929",
     marginBottom: 8,
-    marginLeft: 16,
   },
   progressBar: {
     height: 8,
     backgroundColor: "#989898",
-    marginHorizontal: 16,
   },
   scoreRow: {
     alignSelf: "flex-start",
