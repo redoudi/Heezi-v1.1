@@ -19,8 +19,8 @@ export default function Cursor() {
 const styles = StyleSheet.create({
   cursor: {
     position: "absolute",
-    width: 20,
-    height: 20,
+    width: 40,
+    height: 40,
     zIndex: 10000,
     pointerEvents: "none",
     visibility: "hidden",
