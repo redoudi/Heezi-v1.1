@@ -3,184 +3,182 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ScoreScreen() {
   return (
-    <ScrollableScreen contentContainerStyle={styles.container}>
-      <View style={styles.view}>
-        <View style={styles.column}>
-          <View style={styles.column2}>
-            <View style={styles.row}>
-              <Image
-                source={require("@/assets/images/Bronze.png")}
-                resizeMode={"stretch"}
-                style={styles.image}
-              />
-              <Image
-                source={require("@/assets/images/Argent.png")}
-                resizeMode={"stretch"}
-                style={styles.image2}
-              />
-              <Image
-                source={require("@/assets/images/Or.png")}
-                resizeMode={"stretch"}
-                style={styles.image2}
-              />
-              <Image
-                source={require("@/assets/images/Diamant.png")}
-                resizeMode={"stretch"}
-                style={styles.image3}
-              />
-            </View>
-            <View style={styles.column3}>
-              <Text style={styles.text}>{"Bronze"}</Text>
-              <Text style={styles.text2}>
-                {
-                  "Les participants dans le top 10 se verront attribuer un nouveau rang "
-                }
-              </Text>
-              <Text style={styles.text3}>{"7 jours restants"}</Text>
-            </View>
-          </View>
-          <View style={styles.row2}>
-            <View style={styles.column4}>
-              <View style={styles.row3}>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => {}}
-                  disabled
-                >
-                  <Text style={styles.text4}>{"Classement Global"}</Text>
-                </TouchableOpacity>
-                <View style={styles.view2}>
-                  <Text style={styles.text5}>
-                    {"Classement de votre session"}
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow2}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text9}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text10}>{"Nom de la personne"}</Text>
-                <Text style={styles.text11}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow3}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-            </View>
+    <ScrollableScreen contentContainerStyle={styles.mainContainer}>
+      <View style={styles.mainContent}>
+        <View style={styles.column2}>
+          <View style={styles.row}>
             <Image
-              source={require("@/assets/images/ScoreIcon.png")}
-              resizeMode={"contain"}
-              style={styles.scoreIcon}
+              source={require("@/assets/images/Bronze.png")}
+              resizeMode={"stretch"}
+              style={styles.image}
+            />
+            <Image
+              source={require("@/assets/images/Argent.png")}
+              resizeMode={"stretch"}
+              style={styles.image2}
+            />
+            <Image
+              source={require("@/assets/images/Or.png")}
+              resizeMode={"stretch"}
+              style={styles.image2}
+            />
+            <Image
+              source={require("@/assets/images/Diamant.png")}
+              resizeMode={"stretch"}
+              style={styles.image3}
             />
           </View>
+          <View style={styles.column3}>
+            <Text style={styles.text}>{"Bronze"}</Text>
+            <Text style={styles.text2}>
+              {
+                "Les participants dans le top 10 se verront attribuer un nouveau rang "
+              }
+            </Text>
+            <Text style={styles.text3}>{"7 jours restants"}</Text>
+          </View>
+        </View>
+        <View style={styles.row2}>
+          <View style={styles.column4}>
+            <View style={styles.row3}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => {}}
+                disabled
+              >
+                <Text style={styles.text4}>{"Classement Global"}</Text>
+              </TouchableOpacity>
+              <View style={styles.view2}>
+                <Text style={styles.text5}>
+                  {"Classement de votre session"}
+                </Text>
+              </View>
+            </View>
+            <TouchableOpacity
+              style={styles.buttonRow}
+              onPress={() => {}}
+              disabled
+            >
+              <Text style={styles.text6}>{"1."}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+              <Text style={styles.text7}>{"Nom de la personne"}</Text>
+              <Text style={styles.text8}>{"Nv.100"}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonRow2}
+              onPress={() => {}}
+              disabled
+            >
+              <Text style={styles.text9}>{"1."}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+              <Text style={styles.text10}>{"Nom de la personne"}</Text>
+              <Text style={styles.text11}>{"Nv.100"}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonRow}
+              onPress={() => {}}
+              disabled
+            >
+              <Text style={styles.text6}>{"1."}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+              <Text style={styles.text7}>{"Nom de la personne"}</Text>
+              <Text style={styles.text8}>{"Nv.100"}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonRow}
+              onPress={() => {}}
+              disabled
+            >
+              <Text style={styles.text6}>{"1."}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+              <Text style={styles.text7}>{"Nom de la personne"}</Text>
+              <Text style={styles.text8}>{"Nv.100"}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonRow}
+              onPress={() => {}}
+              disabled
+            >
+              <Text style={styles.text6}>{"1."}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+              <Text style={styles.text7}>{"Nom de la personne"}</Text>
+              <Text style={styles.text8}>{"Nv.100"}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonRow}
+              onPress={() => {}}
+              disabled
+            >
+              <Text style={styles.text6}>{"1."}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+              <Text style={styles.text7}>{"Nom de la personne"}</Text>
+              <Text style={styles.text8}>{"Nv.100"}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonRow}
+              onPress={() => {}}
+              disabled
+            >
+              <Text style={styles.text6}>{"1."}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+              <Text style={styles.text7}>{"Nom de la personne"}</Text>
+              <Text style={styles.text8}>{"Nv.100"}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonRow3}
+              onPress={() => {}}
+              disabled
+            >
+              <Text style={styles.text6}>{"1."}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"stretch"}
+                style={styles.image4}
+              />
+              <Text style={styles.text7}>{"Nom de la personne"}</Text>
+              <Text style={styles.text8}>{"Nv.100"}</Text>
+            </TouchableOpacity>
+          </View>
+          <Image
+            source={require("@/assets/images/ScoreIcon.png")}
+            resizeMode={"contain"}
+            style={styles.scoreIcon}
+          />
         </View>
       </View>
     </ScrollableScreen>
   );
 }
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
@@ -364,7 +362,7 @@ const styles = StyleSheet.create({
     color: "#1B463E",
     marginRight: 20,
   },
-  view: {
+  mainContent: {
     width: 1184,
     backgroundColor: "#FFFFFF",
   },
