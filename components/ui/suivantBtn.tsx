@@ -14,7 +14,7 @@ export default function SuivantBtn({
       </Text>
       <Image
         source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
-        resizeMode={"stretch"}
+        resizeMode={"center"}
         style={styles.image31}
       />
     </TouchableOpacity>
