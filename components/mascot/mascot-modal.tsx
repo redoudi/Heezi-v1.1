@@ -1,6 +1,14 @@
 import SuivantBtnModal from "@/components/ui/suivantBtnModal";
 import { useEffect } from "react";
-import { Image, Modal, Platform, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
+import {
+  Image,
+  Modal,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 
 export default function MascotModal({ open, onClose, modalText }) {
   // Blur any focused elements when modal opens to prevent aria-hidden accessibility issues
@@ -28,12 +36,11 @@ export default function MascotModal({ open, onClose, modalText }) {
               resizeMode={"contain"}
               style={styles.mascotImage}
             />
-            <View style={styles.modalTextBoxContainer}>
-              <View style={styles.modalTextBox}>
-                <Text style={styles.modalText}>{modalText || "..."}</Text>
-              </View>
-              <SuivantBtnModal text="Continuer" onPress={onClose} />
+
+            <View style={styles.modalTextBox}>
+              <Text style={styles.modalText}>{modalText || "..."}</Text>
             </View>
+            <SuivantBtnModal text="Continuer" onPress={onClose} />
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -48,17 +55,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.7)",
   },
-
   modalContent: {
+    gap: 8,
     borderWidth: 1,
-    width: 748,
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
-    paddingTop: 16,
-    paddingBottom: 17,
-    paddingLeft: 15,
-    paddingRight: 16,
+    padding: 16,
     alignItems: "center",
+    justifyContent: "center",
     shadowColor: "#1E6759",
     shadowOpacity: 1.0,
     shadowOffset: {
@@ -68,7 +72,8 @@ const styles = StyleSheet.create({
   },
   mascotImage: {
     borderRadius: 8,
-    height: 398,
+    width: "100%",
+    height: 250,
     marginBottom: 8,
   },
   arrowDownImage: {
@@ -77,20 +82,13 @@ const styles = StyleSheet.create({
     height: 21,
   },
   modalText: {
-    fontSize: 14,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontWeight: "500",
     color: "#292929",
   },
   modalTextBox: {
+    padding: 16,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
-    paddingTop: 8,
-    paddingBottom: 7,
-    paddingLeft: 8,
-    marginBottom: 8,
-  },
-  modalTextBoxContainer: {
-    alignSelf: "stretch",
-    alignItems: "stretch",
   },
 });
