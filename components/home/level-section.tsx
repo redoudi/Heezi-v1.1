@@ -1,4 +1,4 @@
-import { palette, radius, spacing, surfaces } from "@/styles/designSystem";
+import { palette, spacing, surfaces } from "@/styles/designSystem";
 import { StyleSheet, Text, View } from "react-native";
 
 interface LevelSectionProps {
@@ -47,31 +47,5 @@ const styles = StyleSheet.create({
   scoreRow: {
     alignSelf: "flex-start",
     flexDirection: "row",
-  },
-  scoreButton: {
-    width: 98,
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: palette.surface,
-    borderRadius: radius.md,
-    paddingVertical: spacing.xs,
-    marginRight: spacing.xs,
-  },
-  coinIcon: {
-    borderRadius: radius.md,
-    width: 32,
-    height: 32,
-    marginLeft: spacing.xs,
-    marginRight: spacing.xxs,
-  },
-  scoreText: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: palette.accentOrange,
-    marginRight: spacing.sm,
-  },
-  badgeIcon: {
-    width: 71,
-    height: 48,
   },
 });
