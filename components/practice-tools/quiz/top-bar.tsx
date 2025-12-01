@@ -1,11 +1,18 @@
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 const ProgressBar = ({ progress }: { progress: number }) => {
+  const { toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.progressBarContainer}>
       <View style={styles.progressBarOutline}>
-        <View style={[styles.progressBar, { width: `${progress}%` }]}></View>
+        <View
+          style={[
+            styles.progressBar,
+            { backgroundColor: toolConstants.color, width: `${progress}%` },
+          ]}
+        ></View>
       </View>
     </View>
   );
