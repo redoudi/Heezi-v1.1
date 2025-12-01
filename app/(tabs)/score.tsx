@@ -181,6 +181,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
+    padding: 16,
   },
   box: {
     height: 686,
