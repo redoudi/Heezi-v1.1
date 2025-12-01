@@ -15,15 +15,26 @@ type PracticeTool = "spreadsheet" | "textEditor";
 interface CompletedLevelsState {
   levelsCompleted: Record<PracticeTool, Record<string, boolean>>;
   setLevelCompleted: (level: string, practiceTool: PracticeTool) => void;
+  spreadSheetProgress: number;
+  textEditorProgress: number;
+  totalProgress: number;
 }
+
+const getPercentage = (levelsCompleted: Record<string, boolean>) =>
+  (Object.values(levelsCompleted).filter(Boolean).length /
+    Object.values(levelsCompleted).length) *
+  100;
 
 const useCompletedLevelsStore = create<CompletedLevelsState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       levelsCompleted: {
         spreadsheet: { 1: false, 2: false, 3: false },
         textEditor: { 1: false, 2: false, 3: false },
       },
+      spreadSheetProgress: getPercentage(get().levelsCompleted.spreadsheet),
+      textEditorProgress: getPercentage(get().levelsCompleted.textEditor),
+      totalProgress: (get().spreadSheetProgress + get().textEditorProgress) / 2,
       setLevelCompleted: (level, practiceTool) => {
         set((state) => ({
           levelsCompleted: {

@@ -9,27 +9,8 @@ interface LevelSectionProps {
   onScorePress: () => void;
 }
 
-const toolLevelsCompletedPercentage = (
-  toolLevelsCompleted: Record<string, boolean>
-) => {
-  const levelsCompletedCount =
-    Object.values(toolLevelsCompleted).filter(Boolean).length;
-  return (
-    (levelsCompletedCount / Object.values(toolLevelsCompleted).length) * 100
-  );
-};
-
-const levelsCompletedPercentage = (
-  levelsCompleted: Record<string, boolean>
-) => {
-  const levelsCompletedCount = toolLevelsCompletedPercentage({
-    ...Object.values(levelsCompleted),
-  });
-};
-
 export function LevelSection({ level }: LevelSectionProps) {
-  const { levelsCompleted } = useCompletedLevelsStore();
-  const totalProgress = levelsCompletedPercentage(levelsCompleted);
+  const { totalProgress } = useCompletedLevelsStore();
 
   return (
     <View style={styles.container}>
