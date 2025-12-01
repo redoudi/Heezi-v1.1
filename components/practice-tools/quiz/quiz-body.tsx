@@ -7,8 +7,9 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { AnswerButton, VerifyButton } from "./answer-button";
+import { AnswerButton } from "./answer-button";
 import TopBar from "./top-bar";
+import { VerifyButton } from "./verify-button";
 
 const QuestionBox = ({ question }: { question: string }) => {
   return (
