@@ -1,3 +1,4 @@
+import WatermarkAbsolute from "@/components/ui/watermark";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, Text, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
@@ -37,6 +38,12 @@ export default function SectionCard({
           style={styles.mascotImage}
         />
       </View>
+      {disabled && (
+        <WatermarkAbsolute
+          text="BIENTÔT DISPONIBLE"
+          textStyle={styles.watermarkText}
+        />
+      )}
     </View>
   );
 }
@@ -71,5 +78,12 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     height: 100,
     flex: 1,
+  },
+  watermarkText: {
+    fontSize: 16,
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    fontWeight: "bold",
+    transform: [{ rotate: "-30deg" }],
   },
 });

@@ -1,5 +1,5 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import Watermark from "@/components/ui/watermark";
+import WatermarkAbsolute from "@/components/ui/watermark";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ProfilScreen() {
@@ -61,7 +61,7 @@ export default function ProfilScreen() {
           </View>
         </View>
       </View>
-      <Watermark text="BIENTÔT DISPONIBLE" />
+      <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
     </ScrollableScreen>
   );
 }

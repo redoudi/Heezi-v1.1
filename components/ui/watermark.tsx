@@ -1,15 +1,31 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TextStyle, View } from "react-native";
 
-export default function Watermark({ text }: { text: string }) {
+function WatermarkText({
+  text = "BIENTÔT DISPONIBLE",
+  textStyle,
+}: {
+  text: string;
+  textStyle: TextStyle;
+}) {
+  return <Text style={[styles.watermark, textStyle]}>{text}</Text>;
+}
+
+export default function WatermarkAbsolute({
+  text,
+  textStyle = {},
+}: {
+  text: string;
+  textStyle: TextStyle;
+}) {
   return (
-    <View style={styles.overlay}>
-      <Text style={styles.watermark}>{text}</Text>
+    <View style={styles.overlayAbsolute}>
+      <WatermarkText text={text} textStyle={textStyle} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  overlay: {
+  overlayAbsolute: {
     position: "absolute",
     top: 0,
     left: 0,
@@ -28,7 +44,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(234, 234, 234, 0.6)",
     zIndex: 1,
     textAlign: "center",
-
     padding: 16,
     borderColor: "rgb(255, 91, 91)",
     color: "rgb(255, 91, 91)",

@@ -1,5 +1,5 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import Watermark from "@/components/ui/watermark";
+import WatermarkAbsolute from "@/components/ui/watermark";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 function SuccessIcon() {
@@ -69,7 +69,7 @@ export default function SuccessScreen() {
           </View>
         </View>
       </ScrollableScreen>
-      <Watermark text="BIENTÔT DISPONIBLE" />
+      <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
     </View>
   );
 }

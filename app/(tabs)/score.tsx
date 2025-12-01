@@ -1,5 +1,5 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
-import Watermark from "@/components/ui/watermark";
+import WatermarkAbsolute from "@/components/ui/watermark";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ScoreScreen() {
@@ -177,7 +177,7 @@ export default function ScoreScreen() {
           </View>
         </View>
       </ScrollableScreen>
-      <Watermark text="BIENTÔT DISPONIBLE" />
+      <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
     </View>
   );
 }
