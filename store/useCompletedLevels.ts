@@ -73,17 +73,28 @@ const useCompletedLevelsStore = create<CompletedLevelsState>()(
           ...currentState,
           ...persistedState,
         };
-        // Recalculate progress values from levelsCompleted to ensure they're always correct
-        if (merged.levelsCompleted) {
-          merged.spreadSheetProgress = getPercentage(
-            merged.levelsCompleted.spreadsheet || initialLevelsCompleted.spreadsheet
-          );
-          merged.textEditorProgress = getPercentage(
-            merged.levelsCompleted.textEditor || initialLevelsCompleted.textEditor
-          );
-          merged.totalProgress =
-            (merged.spreadSheetProgress + merged.textEditorProgress) / 2;
+        // Ensure levelsCompleted exists and has the correct structure
+        if (!merged.levelsCompleted) {
+          merged.levelsCompleted = initialLevelsCompleted;
+        } else {
+          merged.levelsCompleted = {
+            spreadsheet:
+              merged.levelsCompleted.spreadsheet ||
+              initialLevelsCompleted.spreadsheet,
+            textEditor:
+              merged.levelsCompleted.textEditor ||
+              initialLevelsCompleted.textEditor,
+          };
         }
+        // Recalculate progress values from levelsCompleted to ensure they're always correct
+        merged.spreadSheetProgress = getPercentage(
+          merged.levelsCompleted.spreadsheet
+        );
+        merged.textEditorProgress = getPercentage(
+          merged.levelsCompleted.textEditor
+        );
+        merged.totalProgress =
+          (merged.spreadSheetProgress + merged.textEditorProgress) / 2;
         return merged;
       },
     }
