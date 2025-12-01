@@ -13,7 +13,9 @@ export function LevelSection({ level }: LevelSectionProps) {
     <View style={styles.container}>
       <View style={styles.levelHeader}>
         <Text style={styles.levelText}>{"Niveau : débutant"}</Text>
-        <View style={styles.progressBar} />
+        <View style={styles.progressBar}>
+          <View style={styles.progressBarFill} />
+        </View>
       </View>
       <View style={styles.scoreRow}></View>
     </View>
@@ -42,6 +44,11 @@ const styles = StyleSheet.create({
   progressBar: {
     height: 8,
     backgroundColor: "#989898",
+  },
+  progressBarFill: {
+    height: 8,
+    backgroundColor: "#33C6FD",
+    width: "0%",
   },
   scoreRow: {
     alignSelf: "flex-start",
