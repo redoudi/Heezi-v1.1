@@ -1,4 +1,3 @@
-import { palette, spacing, surfaces } from "@/styles/designSystem";
 import { StyleSheet, Text, View } from "react-native";
 
 interface LevelSectionProps {
@@ -23,26 +22,27 @@ export function LevelSection({ level }: LevelSectionProps) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: palette.background,
-    paddingTop: spacing.xl,
-    marginBottom: spacing.md,
+    backgroundColor: "#FFFFFF",
+    paddingTop: 32,
+    marginBottom: 16,
   },
   levelHeader: {
-    ...surfaces.card,
-    paddingVertical: spacing.md,
-    marginBottom: spacing.xs,
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    paddingVertical: 16,
+    marginBottom: 8,
   },
   levelText: {
     fontSize: 18,
     fontWeight: "bold",
-    color: palette.primaryText,
-    marginBottom: spacing.xs,
-    marginLeft: spacing.md,
+    color: "#292929",
+    marginBottom: 8,
+    marginLeft: 16,
   },
   progressBar: {
     height: 8,
-    backgroundColor: palette.divider,
-    marginHorizontal: spacing.md,
+    backgroundColor: "#989898",
+    marginHorizontal: 16,
   },
   scoreRow: {
     alignSelf: "flex-start",
