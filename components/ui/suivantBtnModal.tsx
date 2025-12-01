@@ -9,10 +9,12 @@ export default function SuivantBtn({
 }) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.downArrowContainer}>
-      <Text style={[{ fontSize: 18, fontWeight: "bold" }, styles.text]}>{text}</Text>
+      <Text style={[{ fontSize: 18, fontWeight: "bold" }, styles.text]}>
+        {text}
+      </Text>
       <Image
         source={require("@/assets/images/7b4n53nk_expires_30_days.png")}
-        resizeMode={"stretch"}
+        resizeMode={"contain"}
         style={styles.image31}
       />
     </TouchableOpacity>
