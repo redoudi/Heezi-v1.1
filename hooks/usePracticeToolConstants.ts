@@ -1,5 +1,6 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import sectionButtons from "@/constants/sectionButtons";
+import useCompletedLevelsStore from "@/store/useCompletedLevels";
 
 import { useLocalSearchParams } from "expo-router";
 
@@ -10,5 +11,13 @@ export default function usePracticeToolConstants() {
     practiceToolsConstants[practiceTool as keyof typeof practiceToolsConstants];
   const toolSectionButtons =
     sectionButtons[practiceTool as keyof typeof sectionButtons];
-  return { practiceTool, toolConstants, toolSectionButtons };
+  const { levelsCompleted } = useCompletedLevelsStore();
+  const toolLevelsCompleted =
+    levelsCompleted[practiceTool as keyof typeof levelsCompleted];
+  return {
+    practiceTool,
+    toolConstants,
+    toolSectionButtons,
+    toolLevelsCompleted,
+  };
 }
