@@ -14,85 +14,87 @@ function SuccessIcon() {
 
 export default function SuccessScreen() {
   return (
-    <ScrollableScreen contentContainerStyle={styles.mainContainer}>
-      <View style={styles.mainContent}>
-        <View style={styles.column2}>
-          <View style={styles.view2}>
-            <Text style={styles.text}>{"10/100 succès débloqués (10%)"}</Text>
+    <View>
+      <ScrollableScreen contentContainerStyle={styles.mainContainer}>
+        <View style={styles.mainContent}>
+          <View style={styles.column2}>
+            <View style={styles.view2}>
+              <Text style={styles.text}>{"10/100 succès débloqués (10%)"}</Text>
+            </View>
+            <View style={styles.view3}>
+              <View style={styles.box}></View>
+            </View>
           </View>
-          <View style={styles.view3}>
-            <View style={styles.box}></View>
+          <View style={styles.row}>
+            <SuccessIcon />
+            <View style={styles.column3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
+                {
+                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
+                }
+              </Text>
+            </View>
+          </View>
+          <View style={styles.row}>
+            <SuccessIcon />
+            <View style={styles.column3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
+                {
+                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
+                }
+              </Text>
+            </View>
+          </View>
+          <View style={styles.row}>
+            <SuccessIcon />
+            <View style={styles.column3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
+                {
+                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
+                }
+              </Text>
+            </View>
+          </View>
+          <View style={styles.row}>
+            <SuccessIcon />
+            <View style={styles.column3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
+                {
+                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
+                }
+              </Text>
+            </View>
+          </View>
+          <View style={styles.row}>
+            <SuccessIcon />
+            <View style={styles.column3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
+                {
+                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
+                }
+              </Text>
+            </View>
+          </View>
+          <View style={styles.row2}>
+            <SuccessIcon />
+            <View style={styles.column3}>
+              <Text style={styles.text2}>{"Titre du succès"}</Text>
+              <Text style={styles.text3}>
+                {
+                  "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
+                }
+              </Text>
+            </View>
           </View>
         </View>
-        <View style={styles.row}>
-          <SuccessIcon />
-          <View style={styles.column3}>
-            <Text style={styles.text2}>{"Titre du succès"}</Text>
-            <Text style={styles.text3}>
-              {
-                "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-              }
-            </Text>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <SuccessIcon />
-          <View style={styles.column3}>
-            <Text style={styles.text2}>{"Titre du succès"}</Text>
-            <Text style={styles.text3}>
-              {
-                "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-              }
-            </Text>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <SuccessIcon />
-          <View style={styles.column3}>
-            <Text style={styles.text2}>{"Titre du succès"}</Text>
-            <Text style={styles.text3}>
-              {
-                "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-              }
-            </Text>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <SuccessIcon />
-          <View style={styles.column3}>
-            <Text style={styles.text2}>{"Titre du succès"}</Text>
-            <Text style={styles.text3}>
-              {
-                "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-              }
-            </Text>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <SuccessIcon />
-          <View style={styles.column3}>
-            <Text style={styles.text2}>{"Titre du succès"}</Text>
-            <Text style={styles.text3}>
-              {
-                "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-              }
-            </Text>
-          </View>
-        </View>
-        <View style={styles.row2}>
-          <SuccessIcon />
-          <View style={styles.column3}>
-            <Text style={styles.text2}>{"Titre du succès"}</Text>
-            <Text style={styles.text3}>
-              {
-                "Lörem ipsum or nor, renysesm saserad.Lörem ipsum or nor, renysesm "
-              }
-            </Text>
-          </View>
-        </View>
-      </View>
+      </ScrollableScreen>
       <Watermark text="BIENTÔT DISPONIBLE" />
-    </ScrollableScreen>
+    </View>
   );
 }
 const styles = StyleSheet.create({
