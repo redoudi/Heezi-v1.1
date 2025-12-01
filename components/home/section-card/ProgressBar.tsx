@@ -1,10 +1,16 @@
 import { StyleSheet, View } from "react-native";
 
-export default function ProgressBar(): React.ReactNode {
+export default function ProgressBar({
+  progress,
+}: {
+  progress: number;
+}): React.ReactNode {
   return (
     <View style={styles.progressBarContainer}>
       <View style={styles.progressBarBg}>
-        <View style={styles.progressBarFill}></View>
+        <View
+          style={[styles.progressBarFill, { width: `${progress}%` }]}
+        ></View>
       </View>
     </View>
   );

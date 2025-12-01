@@ -1,4 +1,4 @@
-import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import useCompletedLevelsStore from "@/store/useCompletedLevels";
 import { StyleSheet, Text, View } from "react-native";
 
 interface LevelSectionProps {
@@ -10,7 +10,7 @@ interface LevelSectionProps {
 }
 
 export function LevelSection({ level }: LevelSectionProps) {
-  const { toolProgress } = usePracticeToolConstants();
+  const { totalProgress } = useCompletedLevelsStore();
 
   return (
     <View style={styles.container}>
@@ -18,7 +18,7 @@ export function LevelSection({ level }: LevelSectionProps) {
         <Text style={styles.levelText}>{"Niveau : débutant"}</Text>
         <View style={styles.progressBar}>
           <View
-            style={[styles.progressBarFill, { width: `${toolProgress}%` }]}
+            style={[styles.progressBarFill, { width: `${totalProgress}%` }]}
           />
         </View>
       </View>

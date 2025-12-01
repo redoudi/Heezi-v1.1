@@ -1,5 +1,6 @@
 import WatermarkAbsolute from "@/components/ui/watermark";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import useCompletedLevelsStore from "@/store/useCompletedLevels";
 import { Image, StyleSheet, Text, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
 import ProgressBar from "./ProgressBar";
@@ -14,7 +15,8 @@ export default function SectionCard({
   continuerRoute: string;
 }) {
   const disabled = !!!continuerRoute;
-  const { toolConstants } = usePracticeToolConstants();
+  const { toolConstants, toolProgress } = usePracticeToolConstants();
+  const { totalProgress } = useCompletedLevelsStore();
   return (
     <View
       style={[
@@ -27,7 +29,7 @@ export default function SectionCard({
       <View style={styles.leftColumn}>
         <Text style={styles.sectionHeader}>{`Section ${sectionNumber}`}</Text>
         <View style={styles.progressAndContinuer}>
-          <ProgressBar />
+          <ProgressBar progress={disabled ? 0 : toolProgress} />
           <ContinuerSectionBtn continuerRoute={continuerRoute} />
         </View>
       </View>
