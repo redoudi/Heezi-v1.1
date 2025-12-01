@@ -6,7 +6,6 @@ export default function ProfilScreen() {
   return (
     <ScrollableScreen contentContainerStyle={styles.mainContainer}>
       <View style={styles.mainContent}>
-        <Watermark text="BIENTÔT DISPONIBLE" />
         <View style={styles.row}>
           <View style={styles.column2}>
             <Text style={styles.text}>{"Niveau. 1"}</Text>
@@ -62,6 +61,7 @@ export default function ProfilScreen() {
           </View>
         </View>
       </View>
+      <Watermark text="BIENTÔT DISPONIBLE" />
     </ScrollableScreen>
   );
 }

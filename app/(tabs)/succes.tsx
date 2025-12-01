@@ -16,7 +16,6 @@ export default function SuccessScreen() {
   return (
     <ScrollableScreen contentContainerStyle={styles.mainContainer}>
       <View style={styles.mainContent}>
-        <Watermark text="BIENTÔT DISPONIBLE" />
         <View style={styles.column2}>
           <View style={styles.view2}>
             <Text style={styles.text}>{"10/100 succès débloqués (10%)"}</Text>
@@ -92,6 +91,7 @@ export default function SuccessScreen() {
           </View>
         </View>
       </View>
+      <Watermark text="BIENTÔT DISPONIBLE" />
     </ScrollableScreen>
   );
 }
