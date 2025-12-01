@@ -1,3 +1,4 @@
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export const VerifyButton = ({
@@ -15,6 +16,7 @@ export const VerifyButton = ({
   selectedAnswerIndex: number | null;
   answers: { text: string; isCorrect?: boolean }[];
 }) => {
+  const { toolConstants } = usePracticeToolConstants();
   // Check if the selected answer is correct
   const isCorrectAnswer =
     selectedAnswerIndex !== null &&
@@ -25,7 +27,11 @@ export const VerifyButton = ({
 
   return (
     <TouchableOpacity
-      style={[styles.verifyButton, disabled ? styles.buttonDisabled : {}]}
+      style={[
+        styles.verifyButton,
+        { backgroundColor: toolConstants.color },
+        disabled ? styles.buttonDisabled : {},
+      ]}
       onPress={isVerified ? nextStep : verifyAnswer}
       disabled={disabled || isCorrectAnswer}
     >
@@ -42,7 +48,7 @@ export const VerifyButton = ({
 const styles = StyleSheet.create({
   verifyButton: {
     flexDirection: "row",
-    backgroundColor: "#72D6BA",
+
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
