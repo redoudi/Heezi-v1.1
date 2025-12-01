@@ -1,19 +1,26 @@
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Watermark({ text }: { text: string }) {
-  return <Text style={styles.watermark}>{text}</Text>;
+  return (
+    <View style={styles.overlay}>
+      <Text style={styles.watermark}>{text}</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  watermark: {
+  overlay: {
     position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: [
-      { translateX: -100 },
-      { translateY: -20 },
-      { rotate: "-45deg" },
-    ],
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1002,
+  },
+  watermark: {
+    transform: [{ rotate: "-45deg" }, { translateY: -20 }],
     fontSize: 40,
     fontWeight: "900",
     borderTopWidth: 10,
@@ -21,7 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(234, 234, 234, 0.6)",
     zIndex: 1,
     textAlign: "center",
-    flex: 1,
+
     padding: 16,
     borderColor: "rgb(255, 91, 91)",
     color: "rgb(255, 91, 91)",
