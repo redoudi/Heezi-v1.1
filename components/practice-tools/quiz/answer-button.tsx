@@ -1,3 +1,4 @@
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export const AnswerButton = ({
@@ -13,13 +14,14 @@ export const AnswerButton = ({
   selectedAnswerIndex: number | null;
   isVerified: boolean;
 }) => {
+  const { toolConstants } = usePracticeToolConstants();
   const isSelected = selectedAnswerIndex === index;
   const isWrongAnswer = isVerified && isSelected && !answer.isCorrect;
   const isCorrectAnswer = isVerified && answer.isCorrect;
 
   let buttonStyle = {};
   if (isSelected) {
-    buttonStyle = styles.buttonSelected;
+    buttonStyle = { backgroundColor: toolConstants.color };
   }
 
   if (isWrongAnswer) {
@@ -47,9 +49,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     marginBottom: 16,
   },
-  buttonSelected: {
-    backgroundColor: "#45BC9E",
-  },
+
   buttonWrong: {
     backgroundColor: "#FF6B6B",
   },
