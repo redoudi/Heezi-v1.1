@@ -25,31 +25,67 @@ const getPercentage = (levelsCompleted: Record<string, boolean>) =>
     Object.values(levelsCompleted).length) *
   100;
 
+const initialLevelsCompleted = {
+  spreadsheet: { 1: false, 2: false, 3: false },
+  textEditor: { 1: false, 2: false, 3: false },
+};
+
 const useCompletedLevelsStore = create<CompletedLevelsState>()(
   persist(
     (set, get) => ({
-      levelsCompleted: {
-        spreadsheet: { 1: false, 2: false, 3: false },
-        textEditor: { 1: false, 2: false, 3: false },
-      },
-      spreadSheetProgress: getPercentage(get().levelsCompleted.spreadsheet),
-      textEditorProgress: getPercentage(get().levelsCompleted.textEditor),
-      totalProgress: (get().spreadSheetProgress + get().textEditorProgress) / 2,
+      levelsCompleted: initialLevelsCompleted,
+      spreadSheetProgress: getPercentage(initialLevelsCompleted.spreadsheet),
+      textEditorProgress: getPercentage(initialLevelsCompleted.textEditor),
+      totalProgress:
+        (getPercentage(initialLevelsCompleted.spreadsheet) +
+          getPercentage(initialLevelsCompleted.textEditor)) /
+        2,
       setLevelCompleted: (level, practiceTool) => {
-        set((state) => ({
-          levelsCompleted: {
+        set((state) => {
+          const updatedLevelsCompleted = {
             ...state.levelsCompleted,
             [practiceTool]: {
               ...state.levelsCompleted[practiceTool],
               [level]: true,
             },
-          },
-        }));
+          };
+          return {
+            levelsCompleted: updatedLevelsCompleted,
+            spreadSheetProgress: getPercentage(
+              updatedLevelsCompleted.spreadsheet
+            ),
+            textEditorProgress: getPercentage(
+              updatedLevelsCompleted.textEditor
+            ),
+            totalProgress:
+              (getPercentage(updatedLevelsCompleted.spreadsheet) +
+                getPercentage(updatedLevelsCompleted.textEditor)) /
+              2,
+          };
+        });
       },
     }),
     {
       name: "completed-levels",
       storage: createJSONStorage(() => AsyncStorage),
+      merge: (persistedState: any, currentState: CompletedLevelsState) => {
+        const merged = {
+          ...currentState,
+          ...persistedState,
+        };
+        // Recalculate progress values from levelsCompleted to ensure they're always correct
+        if (merged.levelsCompleted) {
+          merged.spreadSheetProgress = getPercentage(
+            merged.levelsCompleted.spreadsheet || initialLevelsCompleted.spreadsheet
+          );
+          merged.textEditorProgress = getPercentage(
+            merged.levelsCompleted.textEditor || initialLevelsCompleted.textEditor
+          );
+          merged.totalProgress =
+            (merged.spreadSheetProgress + merged.textEditorProgress) / 2;
+        }
+        return merged;
+      },
     }
   )
 );
