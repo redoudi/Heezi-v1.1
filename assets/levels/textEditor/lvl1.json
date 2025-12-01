@@ -5,7 +5,7 @@
     "intro": "Ensemble, nous allons apprendre à utiliser un éditeur de texte.",
     "tasks": [
         {
-            "intro": "Un peu de vocabulaire pour commencer.",
+            "intro": "On commence par de petits mot-clés pour se repérer.",
             "steps": [
                 {
                     "tip": {
@@ -34,7 +34,7 @@
             ]
         },
         {
-            "intro": "Saisir du texte",
+            "intro": "Et maintenant, comment saisir du texte",
             "steps": [
                 {
                     "tip": {
@@ -70,7 +70,7 @@
             ]
         },
         {
-            "intro": "Modifier du texte",
+            "intro": "Et, bien sûr, comment modifier du texte",
             "steps": [
                 {
                     "tip": {

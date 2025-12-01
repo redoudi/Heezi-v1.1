@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   mascotImage: {
     borderRadius: 8,
     width: "100%",
-    height: 250,
+    height: 300,
     marginBottom: 8,
   },
   arrowDownImage: {
@@ -83,12 +83,13 @@ const styles = StyleSheet.create({
   },
   modalText: {
     fontSize: 18,
-    fontWeight: "500",
+    fontWeight: "700",
     color: "#292929",
   },
   modalTextBox: {
     padding: 16,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
+    width: 500,
   },
 });
