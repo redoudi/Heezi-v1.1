@@ -1,4 +1,5 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
+import Watermark from "@/components/ui/watermark";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 function SuccessIcon() {
@@ -14,7 +15,8 @@ function SuccessIcon() {
 export default function SuccessScreen() {
   return (
     <ScrollableScreen contentContainerStyle={styles.mainContainer}>
-      <View style={styles.view}>
+      <View style={styles.mainContent}>
+        <Watermark text="BIENTÔT DISPONIBLE" />
         <View style={styles.column2}>
           <View style={styles.view2}>
             <Text style={styles.text}>{"10/100 succès débloqués (10%)"}</Text>
@@ -168,7 +170,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: "#3D3D3D",
   },
-  view: {
+  mainContent: {
     width: 1184,
     backgroundColor: "#FFFFFF",
   },
