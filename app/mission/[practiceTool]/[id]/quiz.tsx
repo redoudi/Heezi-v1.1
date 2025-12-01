@@ -1,7 +1,7 @@
 import QuizBody from "@/components/practice-tools/quiz/quiz-body";
 import useLevelData from "@/hooks/use-level-data";
 import useCompletedLevelsStore from "@/store/useCompletedLevels";
-import arrayGenerator from "@/utils/arrayGenerator";
+import { arrGenWithProgress } from "@/utils/arrayGenerator";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 
@@ -43,19 +43,23 @@ export default function QuizScreen() {
     } else {
       setSelectedAnswerIndex(null);
       setIsVerified(false);
-      setCurrentStep(nextStepYield.value);
+      setCurrentStep({
+        ...nextStepYield.value.value,
+        progress: nextStepYield.value.percent,
+      });
     }
   };
 
   useEffect(() => {
     if (tasks?.length && id && practiceTool) {
-      stepGeneratorRef.current = arrayGenerator(tasks[0].steps);
+      stepGeneratorRef.current = arrGenWithProgress(tasks[0].steps);
       nextStep();
     }
   }, [tasks]);
 
   return (
     <QuizBody
+      progress={currentStep?.progress}
       currentStep={currentStep}
       selectAnswer={(index: number) => setSelectedAnswerIndex(index)}
       selectedAnswerIndex={selectedAnswerIndex}

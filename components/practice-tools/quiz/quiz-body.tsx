@@ -1,4 +1,5 @@
 import CustomAnimation from "@/components/animations/CustomAnimation";
+import { useEffect } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -53,6 +54,7 @@ export default function QuizBody({
   verifyAnswer,
   nextStep,
   isVerified,
+  progress,
 }: {
   selectAnswer: (index: number) => void;
   currentStep: {
@@ -63,17 +65,19 @@ export default function QuizBody({
   verifyAnswer: () => void;
   nextStep: () => void;
   isVerified: boolean;
+  progress: number;
 }) {
   const { question, answers } = currentStep;
   const disabled = selectedAnswerIndex === null;
   const { height } = useWindowDimensions();
+
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.mainContent}
       >
-        <TopBar />
+        <TopBar progress={progress} />
         <View style={styles.questionAndAnswersContainer}>
           <QuestionBox question={question} />
 

@@ -1,11 +1,11 @@
 import { router } from "expo-router";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
-const ProgressBar = () => {
+const ProgressBar = ({ progress }: { progress: number }) => {
   return (
     <View style={styles.progressBarContainer}>
       <View style={styles.progressBarOutline}>
-        <View style={styles.progressBar}></View>
+        <View style={[styles.progressBar, { width: `${progress}%` }]}></View>
       </View>
     </View>
   );
@@ -26,11 +26,11 @@ function BackButton() {
   );
 }
 
-const TopBar = () => {
+const TopBar = ({ progress }: { progress: number }) => {
   return (
     <View style={styles.topBar}>
       <BackButton />
-      <ProgressBar />
+      <ProgressBar progress={progress} />
     </View>
   );
 };
