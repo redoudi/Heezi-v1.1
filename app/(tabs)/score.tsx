@@ -1,10 +1,12 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
+import Watermark from "@/components/ui/watermark";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ScoreScreen() {
   return (
     <ScrollableScreen contentContainerStyle={styles.mainContainer}>
       <View style={styles.mainContent}>
+        <Watermark text="BIENTÔT DISPONIBLE" />
         <View style={styles.column2}>
           <View style={styles.row}>
             <Image
