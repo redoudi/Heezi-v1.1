@@ -1,10 +1,5 @@
+import { palette, radius, spacing, surfaces } from "@/styles/designSystem";
 import { StyleSheet, Text, View } from "react-native";
-import {
-  palette,
-  radius,
-  spacing,
-  surfaces,
-} from "@/styles/designSystem";
 
 interface LevelSectionProps {
   level: string;
@@ -14,37 +9,14 @@ interface LevelSectionProps {
   onScorePress: () => void;
 }
 
-export function LevelSection({
-  level,
-  score,
-  coinIconUri,
-  badgeIconUri,
-}: LevelSectionProps) {
+export function LevelSection({ level }: LevelSectionProps) {
   return (
     <View style={styles.container}>
       <View style={styles.levelHeader}>
-        <Text style={styles.levelText}>{level}</Text>
+        <Text style={styles.levelText}>{"Niveau : débutant"}</Text>
         <View style={styles.progressBar} />
       </View>
-      <View style={styles.scoreRow}>
-        {/* <TouchableOpacity
-          style={styles.scoreButton}
-          disabled
-          onPress={() => {}}
-        >
-          <Image
-            source={{ uri: coinIconUri }}
-            resizeMode="stretch"
-            style={styles.coinIcon}
-          />
-          <Text style={styles.scoreText}>{score}</Text>
-        </TouchableOpacity>
-        <Image
-          source={{ uri: badgeIconUri }}
-          resizeMode="stretch"
-          style={styles.badgeIcon}
-        /> */}
-      </View>
+      <View style={styles.scoreRow}></View>
     </View>
   );
 }
