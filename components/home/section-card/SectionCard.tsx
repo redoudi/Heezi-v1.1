@@ -78,14 +78,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "flex-end",
     justifyContent: "center",
-    overflow: "hidden",
-    maxWidth: isMobile ? "40%" : undefined,
   },
   mascotImage: {
     borderRadius: 8,
     height: 100,
-    width: isMobile ? 120 : undefined,
-    maxWidth: isMobile ? 120 : undefined,
+    maxWidth: isMobile ? 140 : undefined,
   },
   watermarkText: {
     fontSize: 16,
