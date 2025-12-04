@@ -31,7 +31,6 @@ export function CategoryList() {
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: "#FFFFFF",
-    marginRight: !isMobile ? 8 : 0,
     gap: 8,
     flexDirection: isMobile ? "row" : "column",
     flex: 1,
