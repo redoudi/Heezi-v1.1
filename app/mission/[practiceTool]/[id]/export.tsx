@@ -22,36 +22,57 @@ export function generateStaticParams() {
 
 function ContinuerButton() {
   const { practiceTool, toolConstants } = usePracticeToolConstants();
+  const { width } = useWindowDimensions();
+  const responsiveStyles = {
+    continuerButton: {
+      ...styles.continuerButton,
+      backgroundColor: toolConstants.color,
+      marginRight: Math.max(8, width * 0.05), // Responsive margin, minimum 8px
+    },
+    continuerText: {
+      ...styles.continuerText,
+      fontSize: Math.max(16, width * 0.045), // Responsive font size
+    },
+    triangleIcon: {
+      ...styles.triangleIcon,
+      width: Math.max(14, width * 0.04),
+      height: Math.max(20, width * 0.06),
+    },
+  };
   return (
     <TouchableOpacity
-      style={[styles.continuerButton, { backgroundColor: toolConstants.color }]}
+      style={responsiveStyles.continuerButton}
       onPress={() =>
         router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
       } // go to home page
     >
-      <Text style={styles.continuerText}>{"Continuer"}</Text>
+      <Text style={responsiveStyles.continuerText}>{"Continuer"}</Text>
       <Image
         source={require("@/assets/images/a74yzjog_expires_30_days.png")}
         resizeMode={"stretch"}
-        style={styles.triangleIcon}
+        style={responsiveStyles.triangleIcon}
       />
     </TouchableOpacity>
   );
 }
 
 export default function ExportScreen() {
-  const { height } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
+  const responsivePadding = {
+    paddingVertical: Math.max(16, height * 0.04),
+    paddingHorizontal: Math.max(8, width * 0.02),
+  };
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
-      <View style={styles.mainContent}>
+      <View style={[styles.mainContent, responsivePadding]}>
         <SnapshotPreview />
         <ExportFormatButtons />
         <ContinuerButton />
       </View>
       <MascotDialog
         bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!"
-        textContainerStyle={{ maxWidth: 300 }}
-        style={{ bottom: 16 }}
+        downArrowNextStep={undefined}
+        style={{ top: 8 }}
       />
     </SafeAreaView>
   );
@@ -66,8 +87,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 1,
     alignItems: "stretch",
-    paddingVertical: 32,
-    paddingHorizontal: 8,
+    width: "100%",
   },
   continuerButton: {
     alignSelf: "flex-end",
@@ -76,16 +96,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 16,
-    marginRight: 399,
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   triangleIcon: {
     borderRadius: 8,
-    width: 16,
-    height: 24,
   },
   continuerText: {
-    fontSize: 18,
     fontWeight: "bold",
     color: "#0A2924",
     marginRight: 11,
