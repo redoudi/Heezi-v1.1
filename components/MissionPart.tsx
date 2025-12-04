@@ -6,6 +6,7 @@ import characters from "@/constants/characters";
 import { getLevelDataByNumber } from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import useCompletedLevelsStore from "@/store/useCompletedLevels";
+import { isMobile } from "@/utils/isMobile";
 import CustomAnimation from "./animations/CustomAnimation";
 
 export default function MissionPart({
@@ -47,13 +48,21 @@ export default function MissionPart({
 
   return (
     <View style={styles.mainContainer}>
-      <View
-        style={[
-          styles.partTitleContainer,
-          { backgroundColor: toolConstants.color },
-        ]}
-      >
-        <Text style={styles.partTitleText}>{title}</Text>
+      <View style={styles.titleContainer}>
+        <View
+          style={[
+            styles.partTitleContainer,
+            { backgroundColor: toolConstants.color },
+          ]}
+        >
+          <Text style={styles.partTitleText}>{title}</Text>
+        </View>
+        {isMobile && (
+          <JouerButton
+            image={disabled ? imageDisabled : image}
+            disabled={disabled}
+          />
+        )}
       </View>
 
       <TouchableOpacity
@@ -66,10 +75,12 @@ export default function MissionPart({
         <View style={styles.animationContainer}>
           <CustomAnimation animationData={getAnimationData()} />
         </View>
-        <JouerButton
-          image={disabled ? imageDisabled : image}
-          disabled={disabled}
-        />
+        {!isMobile && (
+          <JouerButton
+            image={disabled ? imageDisabled : image}
+            disabled={disabled}
+          />
+        )}
       </TouchableOpacity>
     </View>
   );
@@ -77,6 +88,11 @@ export default function MissionPart({
 
 const styles = StyleSheet.create({
   mainContainer: {},
+  titleContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
   partTitleContainer: {
     alignSelf: "flex-start",
     borderRadius: 8,

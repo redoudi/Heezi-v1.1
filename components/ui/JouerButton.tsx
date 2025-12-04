@@ -1,12 +1,5 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import {
-  Image,
-  StyleProp,
-  StyleSheet,
-  Text,
-  View,
-  ViewStyle,
-} from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function JouerButton({
   image,
@@ -14,7 +7,6 @@ export default function JouerButton({
 }: {
   image: any;
   disabled: boolean;
-  style?: StyleProp<ViewStyle>;
 }) {
   const { toolConstants } = usePracticeToolConstants();
 
