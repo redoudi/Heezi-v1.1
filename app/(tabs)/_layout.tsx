@@ -10,6 +10,16 @@ export default function TabLayout() {
   const screenWidth = Dimensions.get("window").width;
   const isMobile = screenWidth < 768; // Use bottom tab bar on screens smaller than 768px
 
+  function MobileBackground() {
+    return (
+      <Image
+        source={require("../../assets/images/mascot-head.png")}
+        resizeMode="contain"
+        style={styles.mobileBackgroundStyle}
+      />
+    );
+  }
+
   return (
     <Tabs
       screenOptions={{
@@ -30,7 +40,9 @@ export default function TabLayout() {
           : styles.tabBarLabelStyle,
 
         tabBarBackground: () => {
-          return isMobile ? null : (
+          return isMobile ? (
+            MobileBackground()
+          ) : (
             <View style={styles.tabBarBackgroundStyle}>
               <Image
                 source={require("../../assets/images/logo.png")}
@@ -169,5 +181,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "600",
     color: "black",
+  },
+  mobileBackgroundStyle: {
+    flex: 1,
+    alignSelf: "flex-end",
+    height: 36,
+    width: 36,
+    marginRight: 16,
   },
 });
