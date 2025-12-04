@@ -28,7 +28,9 @@ function LeftColumn() {
 
 function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
   return isMobile ? (
-    <View style={styles.mobileWrapper}>{children}</View>
+    <ScrollView contentContainerStyle={styles.mobileWrapper}>
+      {children}
+    </ScrollView>
   ) : (
     <ScrollView
       style={styles.scrollView}
