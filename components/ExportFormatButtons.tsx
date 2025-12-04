@@ -117,7 +117,7 @@ const ExportPdfButton = () => {
   const responsiveStyles = {
     button: {
       ...styles.buttonRow2,
-      width: Math.max(70, Math.min(119, width * 0.26)),
+      width: Math.max(70, Math.min(119, width * 0.23)),
       paddingVertical: Math.max(4, Math.min(8, width * 0.015)),
       paddingHorizontal: Math.max(8, Math.min(16, width * 0.035)),
       marginRight: Math.max(4, Math.min(8, width * 0.015)),
