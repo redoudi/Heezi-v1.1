@@ -30,7 +30,7 @@ export function LevelSection({ level }: LevelSectionProps) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFFFFF",
-    paddingTop: 32,
+
     marginBottom: 16,
   },
   levelHeader: {
