@@ -66,8 +66,10 @@ export default function ExportScreen() {
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={[styles.mainContent, responsivePadding]}>
         <SnapshotPreview />
-        <ExportFormatButtons />
-        <ContinuerButton />
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <ExportFormatButtons />
+          <ContinuerButton />
+        </View>
       </View>
       <MascotDialog
         bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!"
