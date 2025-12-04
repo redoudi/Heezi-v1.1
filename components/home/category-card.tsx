@@ -1,5 +1,4 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
-import { palette, radius, spacing } from "@/styles/designSystem";
 import { router, useGlobalSearchParams } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
@@ -21,7 +20,7 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
 
   const backgroundColor = isCurrentTool
     ? cardToolConstants.backgroundColor
-    : palette.background;
+    : "#FFFFFF";
 
   return (
     <TouchableOpacity
@@ -51,7 +50,7 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: radius.md,
+    borderRadius: 8,
     paddingVertical: 32,
     paddingHorizontal: 8,
     flexDirection: "row",
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     fontWeight: "bold",
-    marginLeft: spacing.md,
+    marginLeft: 16,
   },
   icon: {
     width: 32,

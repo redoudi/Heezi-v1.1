@@ -1,5 +1,4 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { spacing } from "@/styles/designSystem";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function StatusText() {
@@ -22,8 +21,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 8,
-    paddingHorizontal: spacing.xs,
-    paddingVertical: spacing.xs / 2,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
   },
   statusText: {
     color: "#0A2924",

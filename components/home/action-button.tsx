@@ -1,6 +1,4 @@
-import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import { palette, radius, spacing } from "@/styles/designSystem";
 
 interface ActionButtonProps {
   label: string;
@@ -19,14 +17,14 @@ export function ActionButton({ label, onPress, style }: ActionButtonProps) {
 const styles = StyleSheet.create({
   button: {
     alignSelf: "flex-start",
-    backgroundColor: palette.accentSeafoam,
-    borderRadius: radius.md,
-    paddingVertical: spacing.xs,
+    backgroundColor: "#45BC9E",
+    borderRadius: 8,
+    paddingVertical: 8,
   },
   text: {
     fontSize: 18,
     fontWeight: "bold",
-    color: palette.textOnPrimary,
-    marginHorizontal: spacing.md,
+    color: "#F2FBF8",
+    marginHorizontal: 16,
   },
 });
