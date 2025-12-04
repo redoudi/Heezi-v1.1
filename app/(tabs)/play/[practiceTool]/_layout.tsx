@@ -10,18 +10,30 @@ import { isMobile } from "@/utils/isMobile";
 import { Slot } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+function LeftColumnResponsiveWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return isMobile ? (
+    <View>{children}</View>
+  ) : (
+    <ScrollView
+      style={styles2.leftColumn}
+      contentContainerStyle={styles2.contentContainer}
+      showsVerticalScrollIndicator={true}
+    >
+      {children}
+    </ScrollView>
+  );
+}
+
 function LeftColumn() {
   return (
     <View style={styles2.wrapper}>
-      <ScrollView
-        style={styles2.leftColumn}
-        contentContainerStyle={styles2.contentContainer}
-        showsVerticalScrollIndicator={true}
-      >
-        <View style={styles2.leftColumnContent}>
-          <Slot />
-        </View>
-      </ScrollView>
+      <LeftColumnResponsiveWrapper>
+        <Slot />
+      </LeftColumnResponsiveWrapper>
     </View>
   );
 }
