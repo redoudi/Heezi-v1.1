@@ -18,10 +18,16 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarPosition: isMobile ? "bottom" : "left",
-        tabBarStyle: styles.tabBarStyle,
-        tabBarItemStyle: styles.tabBarItemStyle,
-        tabBarIconStyle: styles.tabBarIconStyle,
-        tabBarLabelStyle: styles.tabBarLabelStyle,
+        tabBarStyle: isMobile ? styles.tabBarStyleMobile : styles.tabBarStyle,
+        tabBarItemStyle: isMobile
+          ? styles.tabBarItemStyleMobile
+          : styles.tabBarItemStyle,
+        tabBarIconStyle: isMobile
+          ? styles.tabBarIconStyleMobile
+          : styles.tabBarIconStyle,
+        tabBarLabelStyle: isMobile
+          ? styles.tabBarLabelStyleMobile
+          : styles.tabBarLabelStyle,
 
         tabBarBackground: () => {
           return isMobile ? null : (
@@ -137,5 +143,31 @@ const styles = StyleSheet.create({
   tabBarItemIconImage: {
     width: 32,
     height: 32,
+  },
+  // Mobile (bottom tab bar) styles
+  tabBarStyleMobile: {
+    backgroundColor: "white",
+    elevation: 0,
+    shadowOpacity: 0,
+    height: 60,
+    paddingBottom: 8,
+    paddingTop: 8,
+    borderTopWidth: 1,
+    borderTopColor: "#E0E0E0",
+  },
+  tabBarItemStyleMobile: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 4,
+  },
+  tabBarIconStyleMobile: {
+    marginRight: 0,
+    marginBottom: 4,
+  },
+  tabBarLabelStyleMobile: {
+    fontSize: 12,
+    fontWeight: "600",
+    color: "black",
   },
 });
