@@ -5,7 +5,13 @@ import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
-import { Image, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+} from "react-native";
 
 function IntroText({ intro = "..." }) {
   return (
@@ -24,15 +30,19 @@ export function generateStaticParams() {
 export default function ScenarioScreen() {
   const { intro, character } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
-  const { height } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
 
   const handleStart = () =>
     router.push(`/mission/${practiceTool}/${id}/practice`);
 
   return (
     <FullWindowContainer>
-      {/* <View style={[styles.mainContent]}> */}
-      <View style={[styles.mainContent, { height: height - 24 }]}>
+      <View
+        style={[
+          styles.mainContent,
+          { height: height - 24, maxWidth: Math.min(width - 32, 633) },
+        ]}
+      >
         <BackButton style={styles.backButton} />
         <Image
           source={
@@ -74,7 +84,7 @@ const styles = StyleSheet.create({
 
     paddingHorizontal: 16,
     gap: 8,
-    width: 633,
+    width: "100%",
   },
   backButton: {
     marginBottom: 16,
