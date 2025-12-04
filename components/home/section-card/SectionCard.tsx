@@ -2,7 +2,7 @@ import WatermarkAbsolute from "@/components/ui/watermark";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import useCompletedLevelsStore from "@/store/useCompletedLevels";
 import { isMobile } from "@/utils/isMobile";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
 import ProgressBar from "./ProgressBar";
 
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 32,
     justifyContent: "space-between",
-    width: isMobile ? Dimensions.get("window").width : undefined,
   },
   leftColumn: {
     flex: 1,
