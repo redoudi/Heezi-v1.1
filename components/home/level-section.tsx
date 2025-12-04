@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     marginBottom: !isMobile ? 32 : 16,
     paddingHorizontal: 16,
+    flexDirection: !isMobile ? "column" : "row",
   },
   levelText: {
     fontSize: 18,
