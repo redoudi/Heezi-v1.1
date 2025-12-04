@@ -1,4 +1,3 @@
-import FullWindowContainer from "@/components/FullWindowContainer";
 import { ButtonWithArrow } from "@/components/ui/ButtonWithArrow";
 import BackButton from "@/components/ui/back-button";
 import characters from "@/constants/characters";
@@ -12,6 +11,7 @@ import {
   View,
   useWindowDimensions,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 function IntroText({ intro = "..." }) {
   return (
@@ -36,7 +36,7 @@ export default function ScenarioScreen() {
     router.push(`/mission/${practiceTool}/${id}/practice`);
 
   return (
-    <FullWindowContainer>
+    <SafeAreaView style={styles.mainContainer}>
       <View
         style={[
           styles.mainContent,
@@ -58,11 +58,11 @@ export default function ScenarioScreen() {
           <ButtonWithArrow text={"Commencer"} onPress={handleStart} />
         </View>
       </View>
-    </FullWindowContainer>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
     alignItems: "center",
