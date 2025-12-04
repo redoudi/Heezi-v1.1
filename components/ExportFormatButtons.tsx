@@ -11,12 +11,14 @@ import {
   Text,
   TouchableOpacity,
   View,
+  useWindowDimensions,
 } from "react-native";
 import { exportXlsx } from "../utils/exportXlsx";
 
 const ExportXlsxButton = () => {
   const { contents } = useExportSpreadsheetValues();
   const { title } = useLevelData();
+  const { width } = useWindowDimensions();
   const handleExportXlsx = () => {
     if (!contents.length) {
       Alert.alert(
@@ -37,14 +39,37 @@ const ExportXlsxButton = () => {
     }
   };
 
+  const responsiveStyles = {
+    button: {
+      ...styles.buttonRow,
+      width: Math.max(70, Math.min(110, width * 0.25)),
+      paddingVertical: Math.max(4, Math.min(8, width * 0.015)),
+      paddingHorizontal: Math.max(8, Math.min(16, width * 0.035)),
+      marginHorizontal: Math.max(4, Math.min(8, width * 0.015)),
+    },
+    image: {
+      ...styles.image,
+      width: Math.max(14, Math.min(30, width * 0.07)),
+      height: Math.max(17, Math.min(36, width * 0.085)),
+      marginRight: Math.max(4, Math.min(10, width * 0.02)),
+    },
+    text: {
+      ...styles.text,
+      fontSize: Math.max(12, Math.min(18, width * 0.04)),
+    },
+  };
+
   return (
-    <TouchableOpacity style={styles.buttonRow} onPress={handleExportXlsx}>
+    <TouchableOpacity
+      style={responsiveStyles.button}
+      onPress={handleExportXlsx}
+    >
       <Image
         source={require("@/assets/images/ceguc7fq_expires_30_days.png")}
         resizeMode={"stretch"}
-        style={styles.image}
+        style={responsiveStyles.image}
       />
-      <Text style={styles.text}>{".xls"}</Text>
+      <Text style={responsiveStyles.text}>{".xls"}</Text>
     </TouchableOpacity>
   );
 };
@@ -52,6 +77,7 @@ const ExportXlsxButton = () => {
 const ExportPdfButton = () => {
   const { practiceTool } = useLocalSearchParams();
   const { title } = useLevelData();
+  const { width } = useWindowDimensions();
   const getValuesHook =
     practiceTool === "spreadsheet"
       ? useExportSpreadsheetValues
@@ -88,9 +114,29 @@ const ExportPdfButton = () => {
     }
   };
 
+  const responsiveStyles = {
+    button: {
+      ...styles.buttonRow2,
+      width: Math.max(70, Math.min(119, width * 0.26)),
+      paddingVertical: Math.max(4, Math.min(8, width * 0.015)),
+      paddingHorizontal: Math.max(8, Math.min(16, width * 0.035)),
+      marginRight: Math.max(4, Math.min(8, width * 0.015)),
+    },
+    image: {
+      ...styles.image,
+      width: Math.max(14, Math.min(30, width * 0.07)),
+      height: Math.max(17, Math.min(36, width * 0.085)),
+      marginRight: Math.max(4, Math.min(10, width * 0.02)),
+    },
+    text: {
+      ...styles.text,
+      fontSize: Math.max(12, Math.min(18, width * 0.04)),
+    },
+  };
+
   return (
     <TouchableOpacity
-      style={styles.buttonRow2}
+      style={responsiveStyles.button}
       onPress={() => {
         void handleExportPdf();
       }}
@@ -98,9 +144,9 @@ const ExportPdfButton = () => {
       <Image
         source={require("@/assets/images/0a6n5ovw_expires_30_days.png")}
         resizeMode={"stretch"}
-        style={styles.image}
+        style={responsiveStyles.image}
       />
-      <Text style={styles.text}>{".pdf"}</Text>
+      <Text style={responsiveStyles.text}>{".pdf"}</Text>
     </TouchableOpacity>
   );
 };
@@ -108,6 +154,7 @@ const ExportPdfButton = () => {
 const ExportDocxButton = () => {
   const { contents } = useExportTextEditorValues();
   const { title } = useLevelData();
+  const { width } = useWindowDimensions();
   const handleExportDocx = async () => {
     if (!contents.length) {
       Alert.alert(
@@ -128,9 +175,29 @@ const ExportDocxButton = () => {
     }
   };
 
+  const responsiveStyles = {
+    button: {
+      ...styles.buttonRow3,
+      width: Math.max(75, Math.min(132, width * 0.23)),
+      paddingVertical: Math.max(4, Math.min(8, width * 0.015)),
+      paddingHorizontal: Math.max(8, Math.min(16, width * 0.01)),
+      marginRight: Math.max(4, Math.min(8, width * 0.015)),
+    },
+    image: {
+      ...styles.image,
+      width: Math.max(14, Math.min(30, width * 0.07)),
+      height: Math.max(17, Math.min(36, width * 0.085)),
+      marginRight: Math.max(4, Math.min(10, width * 0.02)),
+    },
+    text: {
+      ...styles.text,
+      fontSize: Math.max(12, Math.min(18, width * 0.04)),
+    },
+  };
+
   return (
     <TouchableOpacity
-      style={styles.buttonRow3}
+      style={responsiveStyles.button}
       onPress={() => {
         void handleExportDocx();
       }}
@@ -138,17 +205,23 @@ const ExportDocxButton = () => {
       <Image
         source={require("@/assets/images/xhzm8bjz_expires_30_days.png")}
         resizeMode={"stretch"}
-        style={styles.image}
+        style={responsiveStyles.image}
       />
-      <Text style={styles.text}>{".docx"}</Text>
+      <Text style={responsiveStyles.text}>{".docx"}</Text>
     </TouchableOpacity>
   );
 };
 
 export default function ExportFormatButtons() {
   const { practiceTool } = useLocalSearchParams();
+  const { width } = useWindowDimensions();
+  const responsiveRowStyle = {
+    ...styles.row,
+    paddingVertical: Math.max(4, Math.min(8, width * 0.015)),
+    marginBottom: Math.max(8, Math.min(16, width * 0.035)),
+  };
   return (
-    <View style={styles.row}>
+    <View style={responsiveRowStyle}>
       <ExportPdfButton />
       {practiceTool === "spreadsheet" && <ExportXlsxButton />}
       {practiceTool === "textEditor" && <ExportDocxButton />}

@@ -31,12 +31,12 @@ function ContinuerButton() {
     },
     continuerText: {
       ...styles.continuerText,
-      fontSize: Math.max(16, Math.min(20, width * 0.045)), // Responsive font size, min 16px, max 20px
+      fontSize: Math.max(12, Math.min(20, width * 0.045)), // Responsive font size, min 12px, max 20px
     },
     triangleIcon: {
       ...styles.triangleIcon,
-      width: Math.max(14, Math.min(20, width * 0.04)), // Responsive width, min 14px, max 20px
-      height: Math.max(20, Math.min(28, width * 0.06)), // Responsive height, min 20px, max 28px
+      width: Math.max(8, Math.min(20, width * 0.04)), // Responsive width, min 8px, max 20px
+      height: Math.max(11, Math.min(28, width * 0.06)), // Responsive height, min 11px, max 28px
     },
   };
   return (
