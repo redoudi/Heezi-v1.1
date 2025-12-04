@@ -28,16 +28,13 @@ export function LevelSection({ level }: LevelSectionProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#FFFFFF",
-    marginTop: !isMobile ? 8 : 0,
-    marginBottom: 16,
-  },
+  container: {},
   levelHeader: {
+    marginTop: !isMobile ? 8 : 0,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 16,
-    marginBottom: 8,
+    marginBottom: !isMobile ? 32 : 16,
     paddingHorizontal: 16,
   },
   levelText: {
