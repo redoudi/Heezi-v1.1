@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
   mobileContentContainer: {
     flex: 1,
     flexDirection: "column-reverse",
+    alignItems: "center",
   },
   mobileScrollView: {
     flex: 1,
