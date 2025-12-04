@@ -17,7 +17,12 @@ export function CategoryList() {
   return (
     <View style={styles.mainContainer}>
       {toolNames.map((toolName, index) => (
-        <CategoryCard key={index} toolName={toolName as PracticeTool} />
+        <View key={index} style={isMobile ? styles.cardWrapper : undefined}>
+          <CategoryCard
+            toolName={toolName as PracticeTool}
+            style={isMobile ? styles.cardFill : undefined}
+          />
+        </View>
       ))}
     </View>
   );
@@ -31,5 +36,12 @@ const styles = StyleSheet.create({
     flexDirection: isMobile ? "row" : "column",
     flex: 1,
     justifyContent: isMobile ? "center" : "flex-start",
+  },
+  cardWrapper: {
+    flex: 1,
+    alignSelf: "stretch",
+  },
+  cardFill: {
+    flex: 1,
   },
 });

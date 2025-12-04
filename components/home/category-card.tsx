@@ -4,9 +4,10 @@ import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 interface CategoryCardProps {
   toolName: keyof typeof practiceToolsConstants;
+  style?: any;
 }
 
-export function CategoryCard({ toolName }: CategoryCardProps) {
+export function CategoryCard({ toolName, style }: CategoryCardProps) {
   const { practiceTool } = useGlobalSearchParams();
 
   const cardToolConstants = practiceToolsConstants[toolName];
@@ -34,6 +35,7 @@ export function CategoryCard({ toolName }: CategoryCardProps) {
           borderWidth: isCurrentTool ? 0 : 1,
           backgroundColor,
         },
+        style,
       ]}
     >
       <Image
