@@ -27,16 +27,16 @@ function ContinuerButton() {
     continuerButton: {
       ...styles.continuerButton,
       backgroundColor: toolConstants.color,
-      marginRight: Math.max(8, width * 0.05), // Responsive margin, minimum 8px
+      marginRight: Math.max(8, Math.min(32, width * 0.05)), // Responsive margin, min 8px, max 32px
     },
     continuerText: {
       ...styles.continuerText,
-      fontSize: Math.max(16, width * 0.045), // Responsive font size
+      fontSize: Math.max(16, Math.min(20, width * 0.045)), // Responsive font size, min 16px, max 20px
     },
     triangleIcon: {
       ...styles.triangleIcon,
-      width: Math.max(14, width * 0.04),
-      height: Math.max(20, width * 0.06),
+      width: Math.max(14, Math.min(20, width * 0.04)), // Responsive width, min 14px, max 20px
+      height: Math.max(20, Math.min(28, width * 0.06)), // Responsive height, min 20px, max 28px
     },
   };
   return (
