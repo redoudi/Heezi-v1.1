@@ -2,6 +2,7 @@ import MissionPart from "@/components/MissionPart";
 import SectionHeader from "@/components/home/section-header";
 import sectionButtons from "@/constants/sectionButtons";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, View } from "react-native";
 
 const Divider = () => <View style={styles.divider} />;
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
   divider: {
     height: 2,
 
-    backgroundColor: "#EFEFEF",
+    backgroundColor: !isMobile ? "#EFEFEF" : "lightgray",
     marginHorizontal: "20%",
   },
 });
