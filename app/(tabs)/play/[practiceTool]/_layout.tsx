@@ -28,7 +28,10 @@ function LeftColumn() {
 
 function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
   return isMobile ? (
-    <ScrollView contentContainerStyle={styles.mobileWrapper}>
+    <ScrollView
+      style={styles.mobileScrollView}
+      contentContainerStyle={styles.mobileWrapper}
+    >
       {children}
     </ScrollView>
   ) : (
@@ -71,6 +74,9 @@ const styles = StyleSheet.create({
   },
   mobileWrapper: {
     flexDirection: "column-reverse",
+  },
+  mobileScrollView: {
+    flex: 1,
   },
 });
 
