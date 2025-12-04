@@ -6,6 +6,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 
+import { isMobile } from "@/utils/isMobile";
 import { Slot } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -49,9 +50,9 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
-    flexDirection: "row",
-    flexGrow: 1,
 
+    flexGrow: 1,
+    flexDirection: isMobile ? "column" : "row",
     paddingTop: 16,
     paddingBottom: 16,
     paddingRight: 32,
