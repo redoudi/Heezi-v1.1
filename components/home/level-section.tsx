@@ -1,4 +1,5 @@
 import useCompletedLevelsStore from "@/store/useCompletedLevels";
+import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, Text, View } from "react-native";
 
 interface LevelSectionProps {
@@ -30,7 +31,7 @@ export function LevelSection({ level }: LevelSectionProps) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFFFFF",
-
+    marginTop: !isMobile ? 8 : 0,
     marginBottom: 16,
   },
   levelHeader: {
