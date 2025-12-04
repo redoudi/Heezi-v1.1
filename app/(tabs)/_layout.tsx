@@ -62,7 +62,7 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/play.png")}
               resizeMode="contain"
-              style={styles.tabBarItemIconImage}
+              style={isMobile ? styles.tabBarItemIconImageMobile : styles.tabBarItemIconImage}
             />
           ),
         }}
@@ -75,7 +75,7 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/profil.png")}
               resizeMode="contain"
-              style={styles.tabBarItemIconImage}
+              style={isMobile ? styles.tabBarItemIconImageMobile : styles.tabBarItemIconImage}
             />
           ),
         }}
@@ -88,7 +88,7 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/score.png")}
               resizeMode="contain"
-              style={styles.tabBarItemIconImage}
+              style={isMobile ? styles.tabBarItemIconImageMobile : styles.tabBarItemIconImage}
             />
           ),
         }}
@@ -101,7 +101,7 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/succes.png")}
               resizeMode="contain"
-              style={styles.tabBarItemIconImage}
+              style={isMobile ? styles.tabBarItemIconImageMobile : styles.tabBarItemIconImage}
             />
           ),
         }}
@@ -155,6 +155,10 @@ const styles = StyleSheet.create({
   tabBarItemIconImage: {
     width: 32,
     height: 32,
+  },
+  tabBarItemIconImageMobile: {
+    width: 42,
+    height: 42,
   },
   // Mobile (bottom tab bar) styles
   tabBarStyleMobile: {
