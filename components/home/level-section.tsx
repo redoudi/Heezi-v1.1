@@ -34,12 +34,14 @@ const styles = StyleSheet.create({
     marginBottom: !isMobile ? 32 : 16,
     paddingHorizontal: 16,
     flexDirection: !isMobile ? "column" : "row",
+    alignItems: !isMobile ? "flex-start" : "center",
   },
   levelText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#292929",
-    marginBottom: 8,
+    marginBottom: !isMobile ? 8 : 0,
+    marginRight: !isMobile ? 0 : 12,
   },
   progressBar: {
     flex: 1,
