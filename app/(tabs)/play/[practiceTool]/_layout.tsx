@@ -30,7 +30,7 @@ function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
   return isMobile ? (
     <ScrollView
       style={styles.mobileScrollView}
-      contentContainerStyle={styles.mobileWrapper}
+      contentContainerStyle={styles.mobileContentContainer}
     >
       {children}
     </ScrollView>
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
     paddingRight: 32,
     justifyContent: "space-between",
   },
-  mobileWrapper: {
+  mobileContentContainer: {
+    flex: 1,
     flexDirection: "column-reverse",
   },
   mobileScrollView: {
