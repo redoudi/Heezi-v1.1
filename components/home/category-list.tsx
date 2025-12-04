@@ -1,6 +1,7 @@
 import { CategoryCard } from "@/components/home/category-card";
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { PracticeTool } from "@/context/usePracticeTool";
+import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, View } from "react-native";
 
 export interface CategoryItem {
@@ -27,5 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     marginRight: 8,
     gap: 8,
+    flexDirection: isMobile ? "row" : "column",
   },
 });
