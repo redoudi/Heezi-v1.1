@@ -111,13 +111,26 @@ export const MascotDialog = ({
   bubbleText: string;
   downArrowNextStep: React.ReactNode;
   style?: StyleProp<ViewStyle>;
+  textContainerStyle?: StyleProp<ViewStyle>;
   onLayout?: (event: LayoutChangeEvent) => void;
 }) => {
+  const { width: windowWidth } = useWindowDimensions();
   const DownArrowNextStep = downArrowNextStep;
+
+  // Calculate responsive maxWidth to prevent overflow on mobile
+  // Reserve space for mascot (88px) + padding (16px on each side) + triangle (20px)
+  const maxTextWidth = Math.min(600, windowWidth - 88 - 32 - 20);
+
   return (
     <View style={[styles.mainContainer, style]} onLayout={onLayout}>
       <View style={styles.textBoxAndTriangle}>
-        <View style={[styles.textContainer, textContainerStyle]}>
+        <View
+          style={[
+            styles.textContainer,
+            { maxWidth: maxTextWidth },
+            textContainerStyle,
+          ]}
+        >
           <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
           {DownArrowNextStep}
         </View>
@@ -152,6 +165,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "flex-end",
+    maxWidth: "100%",
+    paddingLeft: 8, // Prevent overflow on left side
   },
   textBoxAndTriangle: {
     marginTop: 64,
@@ -168,7 +183,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 8,
     padding: 16,
     maxWidth: 600,
-
+    flexShrink: 1, // Allow text container to shrink on mobile
     // flex: 1,
   },
 
