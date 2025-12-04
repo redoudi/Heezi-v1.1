@@ -4,7 +4,14 @@ import useExportTextEditorValues from "@/hooks/useExportTextEditorValues";
 import { exportTextEditorDocx } from "@/utils/exportDocx";
 import { exportSpreadsheetPdf, exportTextEditorPdf } from "@/utils/exportPdf";
 import { useLocalSearchParams } from "expo-router";
-import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { exportXlsx } from "../utils/exportXlsx";
 
 const ExportXlsxButton = () => {
@@ -197,7 +204,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   row: {
-    alignSelf: "flex-start",
     flexDirection: "row",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,

@@ -66,7 +66,13 @@ export default function ExportScreen() {
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={[styles.mainContent, responsivePadding]}>
         <SnapshotPreview />
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <ExportFormatButtons />
           <ContinuerButton />
         </View>
@@ -92,7 +98,6 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   continuerButton: {
-    alignSelf: "flex-end",
     flexDirection: "row",
     backgroundColor: "#72D6BA",
     borderRadius: 8,
