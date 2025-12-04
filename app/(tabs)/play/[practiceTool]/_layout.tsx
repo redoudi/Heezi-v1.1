@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
-
     flexGrow: 1,
     flexDirection: "row",
     paddingTop: 16,
