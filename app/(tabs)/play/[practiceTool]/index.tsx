@@ -2,6 +2,7 @@ import { CourseCard } from "@/components/home/course-card";
 import SectionCard from "@/components/home/section-card/SectionCard";
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { isMobile } from "@/utils/isMobile";
 import { StyleSheet } from "react-native";
 
 export default function SectionsList() {
@@ -11,7 +12,7 @@ export default function SectionsList() {
     <ScrollableScreen
       contentContainerStyle={[styles.container, { marginBottom: 32 }]}
     >
-      <CourseCard />
+      {!isMobile && <CourseCard />}
       <SectionCard
         mascotImageSource={require("@/assets/images/aik0c764_expires_30_days.png")}
         sectionNumber={1}

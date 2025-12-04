@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
 
     flexGrow: 1,
-    flexDirection: isMobile ? "column" : "row",
+    flexDirection: isMobile ? "column-reverse" : "row",
     paddingTop: 16,
     paddingBottom: 16,
     paddingRight: 32,
