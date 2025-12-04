@@ -23,7 +23,6 @@ export function LevelSection({ level }: LevelSectionProps) {
           />
         </View>
       </View>
-      <View style={styles.scoreRow}></View>
     </View>
   );
 }
