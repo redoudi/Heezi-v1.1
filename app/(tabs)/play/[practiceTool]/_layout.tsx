@@ -8,7 +8,6 @@ import {
 
 import { isMobile } from "@/utils/isMobile";
 import { Slot } from "expo-router";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 function LeftColumnResponsiveWrapper({
   children,
@@ -59,15 +58,11 @@ function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
 }
 
 export default function HomeScreenLayout() {
-  const { height } = useWindowDimensions();
-
   return (
-    <SafeAreaView style={[styles.safeArea, { height: height || "100%" }]}>
-      <ResponsiveWrapper>
-        <LeftColumn />
-        <RightColumn />
-      </ResponsiveWrapper>
-    </SafeAreaView>
+    <ResponsiveWrapper>
+      <LeftColumn />
+      <RightColumn />
+    </ResponsiveWrapper>
   );
 }
 
