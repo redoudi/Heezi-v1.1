@@ -26,20 +26,30 @@ function LeftColumn() {
   );
 }
 
+function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
+  return isMobile ? (
+    <View style={styles.mobileWrapper}>{children}</View>
+  ) : (
+    <ScrollView
+      style={styles.scrollView}
+      horizontal
+      showsHorizontalScrollIndicator={true}
+      contentContainerStyle={[styles.contentContainer]}
+    >
+      {children}
+    </ScrollView>
+  );
+}
+
 export default function HomeScreenLayout() {
   const { height } = useWindowDimensions();
 
   return (
     <SafeAreaView style={[styles.safeArea, { height: height || "100%" }]}>
-      <ScrollView
-        style={styles.scrollView}
-        horizontal
-        showsHorizontalScrollIndicator={true}
-        contentContainerStyle={[styles.contentContainer]}
-      >
+      <ResponsiveWrapper>
         <LeftColumn />
         <RightColumn />
-      </ScrollView>
+      </ResponsiveWrapper>
     </SafeAreaView>
   );
 }
@@ -52,11 +62,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
 
     flexGrow: 1,
-    flexDirection: isMobile ? "column-reverse" : "row",
+    flexDirection: "row",
     paddingTop: 16,
     paddingBottom: 16,
     paddingRight: 32,
     justifyContent: "space-between",
+  },
+  mobileWrapper: {
+    flexDirection: "column-reverse",
   },
 });
 
