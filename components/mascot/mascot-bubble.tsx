@@ -79,26 +79,9 @@ export function MascotBubble({
     }
   }, [cursor, contentsRefs, minTop, maxTop]);
 
-  // const spreadSheetStyle =
-  //   practiceTool === "spreadsheet" ? { bottom: undefined } : {};
-
-  // const style = { ...spreadSheetStyle, ...topStyle };
-
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
     <SuivantBtn text="Suivant" onPress={nextStep} />
   );
-
-  // useEffect(() => {
-  //   console.log("currentStep", currentStep);
-  //   console.log("contentRef", contentsRefs);
-  //   if (currentStep && contentsRefs) {
-  //     const bottomHeight = getElementBottomHeight(
-  //       contentsRefs,
-  //       currentStep?.cursor?.elementId
-  //     );
-  //     console.log("bottomHeight", bottomHeight);
-  //   }
-  // }, [currentStep, contentsRefs]);
 
   return (
     <MascotDialog
@@ -144,6 +127,7 @@ export const MascotDialog = ({
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   triangleContainer: {
     flex: 1,
