@@ -25,11 +25,14 @@ const CornerTriangleIcon = () => {
 };
 
 const MascotIcon = () => {
+  const { width: windowWidth } = useWindowDimensions();
+  const isMobile = windowWidth < 768; // Common mobile breakpoint
+
   return (
     <Image
       source={require("@/assets/images/tfupuxd4_expires_30_days.png")}
       resizeMode={"contain"}
-      style={styles.mascot}
+      style={[styles.mascot, isMobile && { width: 68, height: 68 }]}
     />
   );
 };
