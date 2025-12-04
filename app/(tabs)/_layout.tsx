@@ -3,10 +3,12 @@ import { Tabs } from "expo-router";
 import { HapticTab } from "@/components/haptic-tab";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
-import { Image, StyleSheet, View } from "react-native";
+import { Dimensions, Image, StyleSheet, View } from "react-native";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const screenWidth = Dimensions.get("window").width;
+  const isMobile = screenWidth < 768; // Use bottom tab bar on screens smaller than 768px
 
   return (
     <Tabs
@@ -15,21 +17,23 @@ export default function TabLayout() {
         tabBarActiveBackgroundColor: "#EFEFEF", // Background color for selected tab
         headerShown: false,
         tabBarButton: HapticTab,
-        tabBarPosition: "left",
+        tabBarPosition: isMobile ? "bottom" : "left",
         tabBarStyle: styles.tabBarStyle,
         tabBarItemStyle: styles.tabBarItemStyle,
         tabBarIconStyle: styles.tabBarIconStyle,
         tabBarLabelStyle: styles.tabBarLabelStyle,
 
-        tabBarBackground: () => (
-          <View style={styles.tabBarBackgroundStyle}>
-            <Image
-              source={require("../../assets/images/logo.png")}
-              resizeMode="contain"
-              style={styles.logoStyle}
-            />
-          </View>
-        ),
+        tabBarBackground: () => {
+          return isMobile ? null : (
+            <View style={styles.tabBarBackgroundStyle}>
+              <Image
+                source={require("../../assets/images/logo.png")}
+                resizeMode="contain"
+                style={styles.logoStyle}
+              />
+            </View>
+          );
+        },
       }}
     >
       <Tabs.Screen
@@ -39,7 +43,7 @@ export default function TabLayout() {
           tabBarIcon: () => (
             <Image
               source={require("../../assets/images/play.png")}
-              resizeMode="stretch"
+              resizeMode="contain"
               style={styles.tabBarItemIconImage}
             />
           ),
@@ -52,7 +56,7 @@ export default function TabLayout() {
           tabBarIcon: () => (
             <Image
               source={require("../../assets/images/profil.png")}
-              resizeMode="stretch"
+              resizeMode="contain"
               style={styles.tabBarItemIconImage}
             />
           ),
@@ -65,7 +69,7 @@ export default function TabLayout() {
           tabBarIcon: () => (
             <Image
               source={require("../../assets/images/score.png")}
-              resizeMode="stretch"
+              resizeMode="contain"
               style={styles.tabBarItemIconImage}
             />
           ),
@@ -78,7 +82,7 @@ export default function TabLayout() {
           tabBarIcon: () => (
             <Image
               source={require("../../assets/images/succes.png")}
-              resizeMode="stretch"
+              resizeMode="contain"
               style={styles.tabBarItemIconImage}
             />
           ),
