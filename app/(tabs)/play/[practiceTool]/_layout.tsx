@@ -25,7 +25,7 @@ function LeftColumn() {
   );
 }
 
-export default function HomeScreen() {
+export default function HomeScreenLayout() {
   const { height } = useWindowDimensions();
 
   return (
