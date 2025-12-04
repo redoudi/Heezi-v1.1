@@ -51,8 +51,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#33C6FD",
     width: "0%",
   },
-  scoreRow: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-  },
 });
