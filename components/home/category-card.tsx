@@ -1,4 +1,5 @@
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
+import { isMobile } from "@/utils/isMobile";
 import { router, useGlobalSearchParams } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
@@ -53,7 +54,7 @@ export function CategoryCard({ toolName, style }: CategoryCardProps) {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 8,
-    paddingVertical: 32,
+    paddingVertical: !isMobile ? 32 : 8,
     paddingHorizontal: 8,
     flexDirection: "row",
     alignItems: "center",
