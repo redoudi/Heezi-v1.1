@@ -3,15 +3,25 @@ import SectionCard from "@/components/home/section-card/SectionCard";
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { isMobile } from "@/utils/isMobile";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
+
+function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
+  return isMobile ? (
+    <View style={styles.mobileContainer}>{children}</View>
+  ) : (
+    <ScrollableScreen
+      contentContainerStyle={[styles.container, { marginBottom: 32 }]}
+    >
+      {children}
+    </ScrollableScreen>
+  );
+}
 
 export default function SectionsList() {
   const { toolConstants, practiceTool } = usePracticeToolConstants();
 
   return (
-    <ScrollableScreen
-      contentContainerStyle={[styles.container, { marginBottom: 32 }]}
-    >
+    <ResponsiveWrapper>
       {!isMobile && <CourseCard />}
       <SectionCard
         mascotImageSource={require("@/assets/images/aik0c764_expires_30_days.png")}
@@ -26,10 +36,16 @@ export default function SectionsList() {
         mascotImageSource={require("@/assets/images/xdcz0s8c_expires_30_days.png")}
         sectionNumber={3}
       />
-    </ScrollableScreen>
+    </ResponsiveWrapper>
   );
 }
 const styles = StyleSheet.create({
+  mobileContainer: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 16,
+  },
   container: {
     backgroundColor: "#FFFFFF",
     gap: 32,
