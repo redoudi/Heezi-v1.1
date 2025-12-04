@@ -62,7 +62,11 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/play.png")}
               resizeMode="contain"
-              style={isMobile ? styles.tabBarItemIconImageMobile : styles.tabBarItemIconImage}
+              style={
+                isMobile
+                  ? styles.tabBarItemIconImageMobile
+                  : styles.tabBarItemIconImage
+              }
             />
           ),
         }}
@@ -75,7 +79,11 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/profil.png")}
               resizeMode="contain"
-              style={isMobile ? styles.tabBarItemIconImageMobile : styles.tabBarItemIconImage}
+              style={
+                isMobile
+                  ? styles.tabBarItemIconImageMobile
+                  : styles.tabBarItemIconImage
+              }
             />
           ),
         }}
@@ -88,7 +96,11 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/score.png")}
               resizeMode="contain"
-              style={isMobile ? styles.tabBarItemIconImageMobile : styles.tabBarItemIconImage}
+              style={
+                isMobile
+                  ? styles.tabBarItemIconImageMobile
+                  : styles.tabBarItemIconImage
+              }
             />
           ),
         }}
@@ -101,7 +113,11 @@ export default function TabLayout() {
             <Image
               source={require("../../assets/images/succes.png")}
               resizeMode="contain"
-              style={isMobile ? styles.tabBarItemIconImageMobile : styles.tabBarItemIconImage}
+              style={
+                isMobile
+                  ? styles.tabBarItemIconImageMobile
+                  : styles.tabBarItemIconImage
+              }
             />
           ),
         }}
