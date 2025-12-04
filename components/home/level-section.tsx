@@ -15,7 +15,10 @@ export function LevelSection({ level }: LevelSectionProps) {
 
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.levelText}>{"Niveau : débutant"}</Text>
+      <View style={styles.levelHeader}>
+        <Text style={[styles.levelText, styles.bold]}>{"Niveau :"}</Text>
+        <Text style={styles.levelText}>débutant</Text>
+      </View>
       <View style={styles.progressBar}>
         <View
           style={[styles.progressBarFill, { width: `${totalProgress}%` }]}
@@ -35,13 +38,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     flexDirection: !isMobile ? "column" : "row",
     alignItems: !isMobile ? "flex-start" : "center",
+    gap: !isMobile ? 0 : 16,
   },
   levelText: {
     fontSize: 18,
-    fontWeight: "bold",
+
     color: "#292929",
     marginBottom: !isMobile ? 8 : 0,
     marginRight: !isMobile ? 0 : 12,
+  },
+  bold: {
+    fontWeight: "bold",
   },
   progressBar: {
     flex: 1,
@@ -52,5 +59,9 @@ const styles = StyleSheet.create({
     height: 8,
     backgroundColor: "#33C6FD",
     width: "0%",
+  },
+  levelHeader: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
