@@ -14,14 +14,12 @@ export function LevelSection({ level }: LevelSectionProps) {
   const { totalProgress } = useCompletedLevelsStore();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.levelHeader}>
-        <Text style={styles.levelText}>{"Niveau : débutant"}</Text>
-        <View style={styles.progressBar}>
-          <View
-            style={[styles.progressBarFill, { width: `${totalProgress}%` }]}
-          />
-        </View>
+    <View style={styles.levelHeader}>
+      <Text style={styles.levelText}>{"Niveau : débutant"}</Text>
+      <View style={styles.progressBar}>
+        <View
+          style={[styles.progressBarFill, { width: `${totalProgress}%` }]}
+        />
       </View>
     </View>
   );
