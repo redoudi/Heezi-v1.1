@@ -32,7 +32,7 @@ export default function ScenarioScreen() {
     <SafeAreaView style={styles.mainContainer}>
       <View style={[styles.mainContent]}>
         <BackButton style={styles.backButton} />
-        {/* <Image
+        <Image
           source={
             character
               ? characters?.[character as keyof typeof characters]?.intro
@@ -40,7 +40,7 @@ export default function ScenarioScreen() {
           }
           resizeMode={"contain"}
           style={styles.boxImage}
-        /> */}
+        />
         <View>
           <IntroText intro={intro} />
           <ButtonWithArrow text={"Commencer"} onPress={handleStart} />
@@ -51,11 +51,10 @@ export default function ScenarioScreen() {
 }
 const styles = StyleSheet.create({
   mainContainer: {
-    // backgroundColor: "#FFFFFF",
+    backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    backgroundColor: "red",
   },
   mainContent: {
     backgroundColor: "white",
@@ -80,7 +79,8 @@ const styles = StyleSheet.create({
   },
   boxImage: {
     borderRadius: 8,
-
+    flex: 1,
+    width: "100%",
     marginBottom: 16,
   },
 
