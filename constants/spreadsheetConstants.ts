@@ -1,3 +1,5 @@
+import { isMobile } from "@/utils/isMobile";
+
 const darkBgStyle = { backgroundColor: "#989898" };
 export const RIBBON_TABS_MOBILE = [
   { label: "Accueil" },
@@ -13,3 +15,22 @@ export const RIBBON_TABS_DESKTOP = [
   { label: "Révision" },
   { label: "Affichage", style: darkBgStyle },
 ];
+
+const COLUMNS_MOBILE = ["A", "B", "C"];
+
+const COLUMNS_DESKTOP = [
+  ...COLUMNS_MOBILE,
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+];
+
+export const COLUMNS = isMobile ? COLUMNS_MOBILE : COLUMNS_DESKTOP;
+
+export const ROWS = Array.from({ length: isMobile ? 10 : 18 }, (_, i) => i + 1);

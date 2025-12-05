@@ -54,7 +54,7 @@ export default function SpreadsheetScreen() {
           {!isMobile && <RibbonTabs />}
           <SpreadsheetRibbon />
           <FunctionBar />
-          {!isMobile && <SpreadsheetGrid />}
+          <SpreadsheetGrid />
           {isLesson && <View style={styles.overlay} />}
         </View>
       </ResponsiveWrapper>

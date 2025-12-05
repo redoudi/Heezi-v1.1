@@ -1,7 +1,7 @@
 import {
   RIBBON_TABS_DESKTOP,
   RIBBON_TABS_MOBILE,
-} from "@/constants/spreadsheetRibbon";
+} from "@/constants/spreadsheetConstants";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { isMobile } from "@/utils/isMobile";
 import { router } from "expo-router";

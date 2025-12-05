@@ -11,9 +11,9 @@ import {
 import Cell from "./cell";
 import HeaderRow from "./header-row";
 
-const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
+import { COLUMNS, ROWS } from "@/constants/spreadsheetConstants";
+
 // Row configuration
-const ROWS = Array.from({ length: 18 }, (_, i) => i + 1);
 
 export default function SpreadsheetGrid() {
   const rowNumberContainerRef = useRef<View>(null);
