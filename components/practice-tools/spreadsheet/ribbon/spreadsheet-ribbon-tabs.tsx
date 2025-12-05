@@ -1,27 +1,11 @@
-import { isMobile } from "@/utils/isMobile";
+import { RIBBON_TABS_DESKTOP } from "@/constants/spreadsheetRibbon";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-
-const darkBgStyle = { backgroundColor: "#989898" };
-const RIBBON_TABS = [{ label: "Accueil" }, { label: "Insertion" }];
-const RIBBON_TABS_DESKTOP = [
-  { label: "Dessin", style: darkBgStyle },
-  { label: "Conception", style: darkBgStyle },
-  { label: "Mise en page" },
-  { label: "Références" },
-  { label: "Publipostage", style: darkBgStyle },
-  { label: "Révision" },
-  { label: "Affichage", style: darkBgStyle },
-];
-
-if (!isMobile) {
-  RIBBON_TABS.push(...RIBBON_TABS_DESKTOP);
-}
 
 export default function RibbonTabs() {
   return (
     <View style={styles.row2}>
       <View style={styles.ribbonTabsContainer}>
-        {RIBBON_TABS.map(({ label, style }) => (
+        {RIBBON_TABS_DESKTOP.map(({ label, style }) => (
           <TouchableOpacity
             key={label}
             style={[styles.button2, style]}

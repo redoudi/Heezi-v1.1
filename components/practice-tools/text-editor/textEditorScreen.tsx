@@ -22,7 +22,7 @@ export default function TextEditorScreen() {
   const { levelType } = useLevelData();
   const isLesson = levelType === "lesson";
   return (
-    <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
+    <SafeAreaView style={[styles.mainContainer]}>
       <View style={styles.mainContent}>
         {!isMobile && <TitleBar />}
         <RibbonTabs />
@@ -37,6 +37,7 @@ export default function TextEditorScreen() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    height: "100%",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
   },
