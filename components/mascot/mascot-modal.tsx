@@ -80,8 +80,8 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
-    maxWidth: "90%",
-    width: "100%",
+    maxWidth: 600,
+    width: "90%",
   },
   mascotImage: {
     borderRadius: 8,
