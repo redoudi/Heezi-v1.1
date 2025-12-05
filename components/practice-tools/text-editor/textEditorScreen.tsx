@@ -1,4 +1,5 @@
 import useLevelData from "@/hooks/use-level-data";
+import { isMobile } from "@/utils/isMobile";
 import {
   SafeAreaView,
   StyleSheet,
@@ -28,7 +29,7 @@ export default function TextEditorScreen() {
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
       <View style={styles.mainContent}>
-        <TitleBar />
+        {!isMobile && <TitleBar />}
         <RibbonTabs />
         <TextEditorHeader />
         <ContentPage />

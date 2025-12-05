@@ -1,9 +1,9 @@
+import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const darkBgStyle = { backgroundColor: "#989898" };
-const RIBBON_TABS = [
-  { label: "Accueil" },
-  { label: "Insertion" },
+const RIBBON_TABS = [{ label: "Accueil" }, { label: "Insertion" }];
+const RIBBON_TABS_DESKTOP = [
   { label: "Dessin", style: darkBgStyle },
   { label: "Conception", style: darkBgStyle },
   { label: "Mise en page" },
@@ -12,6 +12,10 @@ const RIBBON_TABS = [
   { label: "Révision" },
   { label: "Affichage", style: darkBgStyle },
 ];
+
+if (!isMobile) {
+  RIBBON_TABS.push(...RIBBON_TABS_DESKTOP);
+}
 
 export default function RibbonTabs() {
   return (
