@@ -13,7 +13,7 @@ export default function BackButton({ style }) {
         }
       >
         <Image
-          source={require("@/assets/images/iycoag37_expires_30_days.png")}
+          source={require("@/assets/images/escape.png")}
           resizeMode={"stretch"}
           style={styles.image5}
         />

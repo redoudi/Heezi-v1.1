@@ -19,6 +19,6 @@ export default {
     tool: "textEditor",
     textColor: "#0A4F70",
     backgroundColor: "#33C6FD",
-    icon: require("@/assets/images/f36dtxie_expires_30_days.png"),
+    icon: require("@/assets/images/textEditor.png"),
   },
 };

@@ -24,7 +24,7 @@ export default function TitleBar() {
           style={styles.icon}
         />
         <Image
-          source={require("@/assets/images/os183jfm_expires_30_days.png")}
+          source={require("@/assets/images/save.png")}
           resizeMode={"contain"}
           style={styles.icon}
         />
@@ -46,7 +46,7 @@ export default function TitleBar() {
         }
       >
         <Image
-          source={require("@/assets/images/iycoag37_expires_30_days.png")}
+          source={require("@/assets/images/escape.png")}
           resizeMode={"contain"}
           style={styles.backButtonIcon}
         />

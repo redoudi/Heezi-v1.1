@@ -8,12 +8,12 @@ export default function TitleBar() {
     <View style={styles.mainContainer}>
       <View style={styles.leftRow}>
         <Image
-          source={require("@/assets/images/f36dtxie_expires_30_days.png")}
+          source={require("@/assets/images/textEditor.png")}
           resizeMode={"contain"}
           style={styles.icon}
         />
         <Image
-          source={require("@/assets/images/os183jfm_expires_30_days.png")}
+          source={require("@/assets/images/save.png")}
           resizeMode={"contain"}
           style={styles.icon}
         />
@@ -35,7 +35,7 @@ export default function TitleBar() {
         }
       >
         <Image
-          source={require("@/assets/images/iycoag37_expires_30_days.png")}
+          source={require("@/assets/images/escape.png")}
           resizeMode={"contain"}
           style={styles.backButtonIcon}
         />
