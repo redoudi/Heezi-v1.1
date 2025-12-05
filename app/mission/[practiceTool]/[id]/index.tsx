@@ -3,6 +3,7 @@ import BackButton from "@/components/ui/back-button";
 import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
+import { isMobile } from "@/utils/isMobile";
 import { router, useLocalSearchParams } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
+    padding: !isMobile ? 16 : 0,
   },
   mainContent: {
     backgroundColor: "white",
