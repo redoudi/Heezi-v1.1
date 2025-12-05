@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
 import ContentPage from "./ContentPage";
-import TextEditorHeader from "./TextEditorHeader";
+import TextEditorRibbon from "./TextEditorHeader";
 import TitleBar from "./TextEditorTitleBar";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
@@ -25,7 +25,7 @@ export default function TextEditorScreen() {
       <View style={styles.mainContent}>
         {!isMobile && <TitleBar />}
         <RibbonTabs />
-        <TextEditorHeader />
+        <TextEditorRibbon />
         <ContentPage />
         <PageNumber currentPage={1} totalPages={1} />
         {isLesson && <View style={styles.overlay} />}

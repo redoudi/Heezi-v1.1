@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, View } from "react-native";
 import FunctionBar from "./function-bar";
 import SpreadsheetGrid from "./grid/spreadsheet-grid";
-import Ribbon from "./ribbon/spreadsheet-ribbon";
+import SpreadsheetRibbon from "./ribbon/spreadsheet-ribbon";
 import RibbonTabs from "./ribbon/spreadsheet-ribbon-tabs";
 
 import useLevelData from "@/hooks/use-level-data";
@@ -51,18 +51,11 @@ export default function SpreadsheetScreen() {
       <ResponsiveWrapper>
         <View style={styles.mainContent}>
           <TitleBar />
-          {!isMobile && (
-            <View style={styles.interactiveSection}>
-              <View style={styles.column2}>
-                <RibbonTabs />
-                <Ribbon />
-                <FunctionBar />
-              </View>
-              <SpreadsheetGrid />
-
-              {isLesson && <View style={styles.overlay} />}
-            </View>
-          )}
+          {!isMobile && <RibbonTabs />}
+          <SpreadsheetRibbon />
+          {!isMobile && <FunctionBar />}
+          {!isMobile && <SpreadsheetGrid />}
+          {isLesson && <View style={styles.overlay} />}
         </View>
       </ResponsiveWrapper>
     </SafeAreaView>
@@ -84,8 +77,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "center",
     backgroundColor: "white",
-
-    borderWidth: 1,
     borderColor: "#EFEFEF",
     flex: 1,
   },
