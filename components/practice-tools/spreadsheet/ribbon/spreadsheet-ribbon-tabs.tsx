@@ -147,6 +147,5 @@ const styles = StyleSheet.create({
     marginLeft: !isMobile ? 32 : undefined,
     gap: 8,
     flex: 1,
-    flexWrap: isMobile ? "wrap" : "nowrap",
   },
 });
