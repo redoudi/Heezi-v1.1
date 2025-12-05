@@ -92,6 +92,7 @@ function TextInputBlock({ item }: { item: any }) {
         placeholderTextColor="rgb(111, 111, 111)"
         ref={blockRef}
         onBlur={handleBlur}
+        multiline={isMobile}
       />
     </View>
   );
