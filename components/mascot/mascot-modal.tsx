@@ -10,7 +10,17 @@ import {
   View,
 } from "react-native";
 
-export default function MascotModal({ open, onClose, modalText }) {
+interface MascotModalProps {
+  open: boolean;
+  onClose: () => void;
+  modalText?: string;
+}
+
+export default function MascotModal({
+  open,
+  onClose,
+  modalText,
+}: MascotModalProps) {
   // Blur any focused elements when modal opens to prevent aria-hidden accessibility issues
   useEffect(() => {
     if (open && Platform.OS === "web") {
@@ -54,6 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.7)",
+    padding: 16,
   },
   modalContent: {
     gap: 8,
@@ -69,6 +80,8 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
+    maxWidth: "90%",
+    width: "100%",
   },
   mascotImage: {
     borderRadius: 8,
@@ -90,6 +103,7 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
-    width: 500,
+    width: "100%",
+    maxWidth: 500,
   },
 });
