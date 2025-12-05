@@ -2,6 +2,7 @@ import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import useHighlight from "@/hooks/useHighlight";
 import useTextEditorStore from "@/store/useTextEditorStore";
+import { isMobile } from "@/utils/isMobile";
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
@@ -153,8 +154,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     paddingVertical: 48,
     marginBottom: 8,
-    marginHorizontal: 345,
-    paddingHorizontal: 64,
+    marginHorizontal: isMobile ? 16 : 345,
+    paddingHorizontal: isMobile ? 16 : 64,
     borderWidth: 1,
     borderColor: "darkgray",
   },

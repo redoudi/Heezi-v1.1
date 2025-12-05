@@ -102,6 +102,8 @@ const mobileStyles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
+    flexWrap: "wrap",
+    width: "100%",
   },
 });
 

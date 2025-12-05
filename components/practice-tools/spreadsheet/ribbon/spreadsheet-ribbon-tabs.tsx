@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     paddingVertical: 11,
     justifyContent: isMobile ? "space-between" : undefined,
+    width: "100%",
   },
   backButton: {
     width: 32,
@@ -110,7 +111,9 @@ const styles = StyleSheet.create({
     color: "#292929",
   },
   button2: {
-    width: 130,
+    width: isMobile ? undefined : 130,
+    minWidth: isMobile ? 80 : 130,
+    flex: isMobile ? 1 : undefined,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
@@ -142,7 +145,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginLeft: !isMobile ? 32 : undefined,
-
     gap: 8,
+    flex: 1,
+    flexWrap: isMobile ? "wrap" : "nowrap",
   },
 });

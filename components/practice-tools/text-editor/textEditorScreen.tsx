@@ -1,6 +1,6 @@
 import useLevelData from "@/hooks/use-level-data";
 import { isMobile } from "@/utils/isMobile";
-import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
 import ContentPage from "./ContentPage";
@@ -18,7 +18,6 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
 }
 
 export default function TextEditorScreen() {
-  const { height } = useWindowDimensions();
   const { levelType } = useLevelData();
   const isLesson = levelType === "lesson";
   return (
@@ -38,11 +37,14 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     height: "100%",
+    width: "100%",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
+    overflow: "hidden",
   },
   mainContent: {
     maxWidth: 1440,
+    width: "100%",
     flex: 1,
     backgroundColor: "#EFEFEF",
     borderWidth: 1,
