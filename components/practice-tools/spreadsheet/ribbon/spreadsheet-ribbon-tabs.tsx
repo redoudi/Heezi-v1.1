@@ -1,7 +1,20 @@
 import { RIBBON_TABS_DESKTOP } from "@/constants/spreadsheetRibbon";
+import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+function RibbonTabsMobile() {
+  return (
+    <View>
+      <Text>RibbonTabsMobile</Text>
+    </View>
+  );
+}
+
 export default function RibbonTabs() {
+  return isMobile ? <RibbonTabsMobile /> : <RibbonTabsDesktop />;
+}
+
+function RibbonTabsDesktop() {
   return (
     <View style={styles.row2}>
       <View style={styles.ribbonTabsContainer}>
