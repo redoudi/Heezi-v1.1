@@ -1,5 +1,6 @@
 import useCursor from "@/context/useCursor";
 import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
+import { isMobile } from "@/utils/isMobile";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -87,7 +88,19 @@ const Divider = () => (
   />
 );
 
+function MobileTextEditorHeader() {
+  return (
+    <View>
+      <Text>MobileTextEditorHeader</Text>
+    </View>
+  );
+}
+
 export default function TextEditorHeader() {
+  return isMobile ? <MobileTextEditorHeader /> : <DesktopTextEditorHeader />;
+}
+
+function DesktopTextEditorHeader() {
   return (
     <View style={styles.column2}>
       <View style={styles.row4}>

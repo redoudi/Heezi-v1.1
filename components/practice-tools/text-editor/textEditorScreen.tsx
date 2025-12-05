@@ -1,11 +1,11 @@
 import useLevelData from "@/hooks/use-level-data";
 import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
 import ContentPage from "./ContentPage";
 import TextEditorHeader from "./TextEditorHeader";
 import TitleBar from "./TextEditorTitleBar";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
