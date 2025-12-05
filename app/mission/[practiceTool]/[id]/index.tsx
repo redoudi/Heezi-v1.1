@@ -4,13 +4,7 @@ import characters from "@/constants/characters";
 import useLevelData from "@/hooks/use-level-data";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { router, useLocalSearchParams } from "expo-router";
-import {
-  Image,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 function IntroText({ intro = "..." }) {
@@ -30,21 +24,15 @@ export function generateStaticParams() {
 export default function ScenarioScreen() {
   const { intro, character } = useLevelData();
   const { practiceTool, id } = useLocalSearchParams();
-  const { height, width } = useWindowDimensions();
 
   const handleStart = () =>
     router.push(`/mission/${practiceTool}/${id}/practice`);
 
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <View
-        style={[
-          styles.mainContent,
-          { height: height - 24, maxWidth: Math.min(width - 32, 633) },
-        ]}
-      >
+      <View style={[styles.mainContent]}>
         <BackButton style={styles.backButton} />
-        <Image
+        {/* <Image
           source={
             character
               ? characters?.[character as keyof typeof characters]?.intro
@@ -52,7 +40,7 @@ export default function ScenarioScreen() {
           }
           resizeMode={"contain"}
           style={styles.boxImage}
-        />
+        /> */}
         <View>
           <IntroText intro={intro} />
           <ButtonWithArrow text={"Commencer"} onPress={handleStart} />
@@ -63,28 +51,27 @@ export default function ScenarioScreen() {
 }
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: "#FFFFFF",
-    flexDirection: "row",
+    // backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "center",
+    flex: 1,
+    backgroundColor: "red",
   },
   mainContent: {
     backgroundColor: "white",
     alignItems: "center",
-    justifyContent: "space-between",
+
     padding: 16,
     borderRadius: 8,
-
     shadowColor: "#1E6759",
     shadowOpacity: 1.0,
     shadowOffset: {
       width: 0,
       height: 4,
     },
-
+    flex: 1,
     paddingHorizontal: 16,
     gap: 8,
-    width: "100%",
   },
   backButton: {
     marginBottom: 16,
@@ -93,11 +80,7 @@ const styles = StyleSheet.create({
   },
   boxImage: {
     borderRadius: 8,
-    alignSelf: "stretch",
-    flex: 1,
-    width: "100%",
-    maxWidth: "100%",
-    maxHeight: "100%",
+
     marginBottom: 16,
   },
 
