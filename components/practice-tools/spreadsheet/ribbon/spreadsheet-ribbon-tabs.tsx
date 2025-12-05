@@ -1,11 +1,45 @@
-import { RIBBON_TABS_DESKTOP } from "@/constants/spreadsheetRibbon";
+import {
+  RIBBON_TABS_DESKTOP,
+  RIBBON_TABS_MOBILE,
+} from "@/constants/spreadsheetRibbon";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { isMobile } from "@/utils/isMobile";
+import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function RibbonTabsMobile() {
+  const { practiceTool } = usePracticeToolConstants();
   return (
-    <View>
-      <Text>RibbonTabsMobile</Text>
+    <View style={styles.mainContainer}>
+      <View style={styles.ribbonTabsContainer}>
+        <Image
+          source={require("@/assets/images/textEditor.png")}
+          resizeMode={"contain"}
+          style={styles.icon}
+        />
+        {RIBBON_TABS_MOBILE.map(({ label }) => (
+          <TouchableOpacity
+            key={label}
+            style={styles.button2}
+            onPress={() => {}}
+            disabled
+          >
+            <Text style={styles.text}>{label}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() =>
+          router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
+        }
+      >
+        <Image
+          source={require("@/assets/images/escape.png")}
+          resizeMode={"contain"}
+          style={styles.backButtonIcon}
+        />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -16,7 +50,7 @@ export default function RibbonTabs() {
 
 function RibbonTabsDesktop() {
   return (
-    <View style={styles.row2}>
+    <View style={styles.mainContainer}>
       <View style={styles.ribbonTabsContainer}>
         {RIBBON_TABS_DESKTOP.map(({ label, style }) => (
           <TouchableOpacity
@@ -28,19 +62,10 @@ function RibbonTabsDesktop() {
             <Text style={styles.text}>{label}</Text>
           </TouchableOpacity>
         ))}
-      </View>
-      <View style={styles.row3}>
-        <TouchableOpacity style={styles.button9} onPress={() => {}} disabled>
-          <Image
-            source={require("@/assets/images/86rkedvc_expires_30_days.png")}
-            resizeMode={"stretch"}
-            style={styles.image6}
-          />
-        </TouchableOpacity>
         <TouchableOpacity style={styles.button10} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/zromobil_expires_30_days.png")}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles.image6}
           />
         </TouchableOpacity>
@@ -50,11 +75,28 @@ function RibbonTabsDesktop() {
 }
 
 const styles = StyleSheet.create({
-  row2: {
+  mainContainer: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#EFEFEF",
     paddingVertical: 11,
+    justifyContent: isMobile ? "space-between" : undefined,
+  },
+  backButton: {
+    width: 32,
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FDC1AB",
+    borderRadius: 8,
+  },
+  backButtonIcon: {
+    width: 20,
+    height: 20,
+  },
+  icon: {
+    maxWidth: 52,
+    height: 32,
   },
   row3: {
     width: 73,
@@ -99,8 +141,8 @@ const styles = StyleSheet.create({
   ribbonTabsContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginLeft: 32,
-    marginRight: 64,
+    marginLeft: !isMobile ? 32 : undefined,
+
     gap: 8,
   },
 });

@@ -4,6 +4,107 @@ import { isMobile } from "@/utils/isMobile";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+function MobileTextEditorHeader() {
+  return (
+    <View style={mobileStyles.mainContainer}>
+      <View style={mobileStyles.mainContent}>
+        <TouchableOpacity style={styles.buttonRow} onPress={() => {}} disabled>
+          <Text style={styles.text4}>{"Police"}</Text>
+          <Image
+            source={require("@/assets/images/uig4w09q_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image12}
+          />
+        </TouchableOpacity>
+        <Image
+          source={require("@/assets/images/1tMFzp8.png")}
+          resizeMode={"contain"}
+          style={styles.image20}
+        />
+        <Image
+          source={require("@/assets/images/textEditorRibbon2.png")}
+          resizeMode={"contain"}
+          style={styles.image20}
+        />
+        <Image
+          source={require("@/assets/images/textEditorRibbon3.png")}
+          resizeMode={"contain"}
+          style={styles.image21}
+        />
+        <Divider />
+        <TouchableOpacity style={styles.button22} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/xhij6qe3_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image22}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button23} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/m8i25506_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image22}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={mobileStyles.mainContent}>
+        <BoldButton />
+        <TouchableOpacity style={styles.button14} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/djgcsw86_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image14}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button15} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/yn5b2k86_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image15}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/ce74949l_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image25}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button26} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/mk84bjzk_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image26}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/wnui27r7_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image25}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button27} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/x1fh47wq_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image22}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const mobileStyles = StyleSheet.create({
+  mainContainer: { zIndex: 1001, position: "relative", marginBottom: 27 },
+  mainContent: {
+    flexDirection: "row",
+    backgroundColor: "#FFFFFF",
+    paddingVertical: 8,
+  },
+});
+
 function BoldButton() {
   const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
   const boldButtonRef = useRef<any>(null);
@@ -88,22 +189,14 @@ const Divider = () => (
   />
 );
 
-function MobileTextEditorHeader() {
-  return (
-    <View>
-      <Text>MobileTextEditorHeader</Text>
-    </View>
-  );
-}
-
 export default function TextEditorHeader() {
   return isMobile ? <MobileTextEditorHeader /> : <DesktopTextEditorHeader />;
 }
 
 function DesktopTextEditorHeader() {
   return (
-    <View style={styles.column2}>
-      <View style={styles.row4}>
+    <View style={styles.mainContainer}>
+      <View style={styles.mainContent}>
         <PressePapiersSection />
         <Divider />
         <View style={styles.column5}>
@@ -615,7 +708,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 8,
   },
-  column2: { zIndex: 1001, position: "relative", marginBottom: 27 },
+  mainContainer: { zIndex: 1001, position: "relative", marginBottom: 27 },
   section: {
     width: 97,
     marginLeft: 32,
@@ -775,7 +868,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 8,
     paddingVertical: 8,
   },
-  row4: {
+  mainContent: {
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,

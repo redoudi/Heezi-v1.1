@@ -27,7 +27,7 @@ export default function TextEditorScreen() {
         {!isMobile && <TitleBar />}
         <RibbonTabs />
         <TextEditorHeader />
-        <ContentPage />
+        {!isMobile && <ContentPage />}
         <PageNumber currentPage={1} totalPages={1} />
         {isLesson && <View style={styles.overlay} />}
       </View>
