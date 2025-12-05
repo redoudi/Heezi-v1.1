@@ -684,7 +684,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   buttonRow: {
-    width: 241,
+    width: isMobile ? 100 : 241,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#EFEFEF",
