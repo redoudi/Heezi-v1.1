@@ -1,44 +1,70 @@
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import FunctionBar from "./function-bar";
 import SpreadsheetGrid from "./grid/spreadsheet-grid";
 import Ribbon from "./ribbon/spreadsheet-ribbon";
 import RibbonTabs from "./ribbon/spreadsheet-ribbon-tabs";
 
 import useLevelData from "@/hooks/use-level-data";
+import { isMobile } from "@/utils/isMobile";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TitleBar from "./title-bar";
 
+const ResponsiveWrapper = ({ children }: { children: React.ReactNode }) => {
+  return isMobile ? (
+    <View style={mobileStyles.mainContainer}>
+      <View style={mobileStyles.mainContent}>{children}</View>
+    </View>
+  ) : (
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator
+      style={styles.scrollView}
+      contentContainerStyle={styles.scrollBody}
+    >
+      {children}
+    </ScrollView>
+  );
+};
+
+const mobileStyles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    borderWidth: 1,
+    height: "100%",
+  },
+  mainContent: {
+    flex: 1,
+    backgroundColor: "#EFEFEF",
+    borderWidth: 1,
+    borderColor: "#EFEFEF",
+  },
+});
+
 export default function SpreadsheetScreen() {
-  const { height } = useWindowDimensions();
   const { levelType } = useLevelData();
   const isLesson = levelType === "lesson";
   return (
-    <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator
-        style={styles.scrollView}
-        contentContainerStyle={styles.scrollBody}
-      >
+    <SafeAreaView style={[styles.mainContainer]}>
+      <ResponsiveWrapper>
         <View style={styles.mainContent}>
           <TitleBar />
-          <View style={styles.interactiveSection}>
-            <View style={styles.column2}>
-              <RibbonTabs />
-              <Ribbon />
-              <FunctionBar />
-            </View>
-            <SpreadsheetGrid />
+          {!isMobile && (
+            <View style={styles.interactiveSection}>
+              <View style={styles.column2}>
+                <RibbonTabs />
+                <Ribbon />
+                <FunctionBar />
+              </View>
+              <SpreadsheetGrid />
 
-            {isLesson && <View style={styles.overlay} />}
-          </View>
+              {isLesson && <View style={styles.overlay} />}
+            </View>
+          )}
         </View>
-      </ScrollView>
+      </ResponsiveWrapper>
     </SafeAreaView>
   );
 }
