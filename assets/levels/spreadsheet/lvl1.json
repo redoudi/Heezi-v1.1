@@ -5,7 +5,10 @@
     "intro": "Coucou ! Moi c'est Heezi. Ensemble, nous allons apprendre à utiliser un tableur.",
     "cellsEnabled": [
         "A1",
+        "A2",
+        "A3",
         "B2",
+        "B3",
         "L18",
         "L13"
     ],
@@ -27,7 +30,7 @@
                         }
                     ],
                     "cursor": {
-                        "elementId": "L13"
+                        "elementId": "B3"
                     }
                 },
                 {
@@ -44,7 +47,7 @@
                         }
                     ],
                     "cursor": {
-                        "elementId": "A18"
+                        "elementId": "A3"
                     }
                 },
                 {
@@ -61,7 +64,7 @@
                         }
                     ],
                     "cursor": {
-                        "elementId": "L1"
+                        "elementId": "C1"
                     }
                 }
             ]
