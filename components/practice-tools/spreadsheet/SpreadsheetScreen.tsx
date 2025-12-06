@@ -60,7 +60,7 @@ export default function SpreadsheetScreen({
       <ResponsiveWrapper>
         <View style={styles.mainContent}>
           <TitleBar />
-          {!isMobile && <RibbonTabs />}
+          <RibbonTabs />
           <SpreadsheetRibbon />
           <FunctionBar />
           <SpreadsheetGrid />
