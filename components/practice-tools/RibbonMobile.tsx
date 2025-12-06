@@ -1,3 +1,4 @@
+import VerticalDivider from "@/components/practice-tools/VerticalDivider";
 import BoldButton from "@/components/practice-tools/spreadsheet/BoldButton";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -88,25 +89,37 @@ function ParagraphButtons() {
   );
 }
 
+function TabButtons() {
+  return (
+    <View>
+      <View style={mobileStyles.row}>
+        <TouchableOpacity style={styles.button24} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image20}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles.image20}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
 export default function RibbonMobile() {
   return (
     <View style={styles.mainContainer}>
       <PoliceButtons />
+      <VerticalDivider />
       <ParagraphButtons />
-      <TouchableOpacity style={styles.button24} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image20}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image20}
-        />
-      </TouchableOpacity>
+      <VerticalDivider />
+      <TabButtons />
     </View>
   );
 }
