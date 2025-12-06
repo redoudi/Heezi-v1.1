@@ -1,30 +1,82 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { isMobile } from "@/utils/isMobile";
 import { router } from "expo-router";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { useEffect, useState } from "react";
+import {
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
+
+const TARGET_HEIGHT = 32;
+
+function IconImage({
+  source,
+  style,
+}: {
+  source: ImageSourcePropType;
+  style?: any;
+}) {
+  const [width, setWidth] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (typeof source === "object" && "uri" in source) {
+      Image.getSize(
+        source.uri as string,
+        (imageWidth, imageHeight) => {
+          const aspectRatio = imageWidth / imageHeight;
+          const calculatedWidth = TARGET_HEIGHT * aspectRatio;
+          setWidth(calculatedWidth);
+        },
+        () => {}
+      );
+    } else if (
+      typeof source === "number" ||
+      (typeof source === "object" && !("uri" in source))
+    ) {
+      // For require() images, we need to use onLoad
+      // Width will be set via onLoad handler
+    }
+  }, [source]);
+
+  const handleLoad = (event: any) => {
+    const { width: imageWidth, height: imageHeight } =
+      event.nativeEvent.source || {};
+    if (imageWidth && imageHeight && !width) {
+      const aspectRatio = imageWidth / imageHeight;
+      const calculatedWidth = TARGET_HEIGHT * aspectRatio;
+      setWidth(calculatedWidth);
+    }
+  };
+
+  return (
+    <Image
+      source={source}
+      resizeMode={"contain"}
+      onLoad={handleLoad}
+      style={[style, width !== undefined && { width }]}
+    />
+  );
+}
 
 export default function TitleBar() {
   const { practiceTool, toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.mainContainer}>
       <View style={styles.leftRow}>
-        <Image
-          source={toolConstants.icon}
-          resizeMode={"contain"}
-          style={styles.icon}
-        />
-        <Image
+        <IconImage source={toolConstants.icon} style={styles.icon} />
+        <IconImage
           source={require("@/assets/images/save.png")}
-          resizeMode={"contain"}
           style={styles.icon}
         />
-        <Image
+        <IconImage
           source={require("../../../assets/images/undo.png")}
-          resizeMode={"contain"}
           style={styles.icon}
         />
-        <Image
+        <IconImage
           source={require("../../../assets/images/redo.png")}
-          resizeMode={"contain"}
           style={styles.icon}
         />
       </View>
@@ -50,8 +102,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: 8,
-    paddingHorizontal: 32,
-    paddingTop: 8,
+    paddingHorizontal: isMobile ? 8 : 32,
     zIndex: 1001,
   },
   leftRow: {
@@ -61,8 +112,8 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   icon: {
-    maxWidth: 52,
-    height: 32,
+    height: TARGET_HEIGHT,
+    borderWidth: 1,
   },
 
   backButton: {

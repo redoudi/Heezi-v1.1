@@ -1,5 +1,6 @@
 import MascotMonitor from "@/components/mascot/mascot-monitor";
 import useLevelData from "@/hooks/use-level-data";
+import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     borderWidth: 1,
     borderColor: "#EFEFEF",
+    gap: isMobile ? 8 : 0,
   },
   titleBarContainer: {
     zIndex: 1001,
