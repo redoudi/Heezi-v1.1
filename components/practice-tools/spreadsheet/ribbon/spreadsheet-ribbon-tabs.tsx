@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
     justifyContent: isMobile ? "space-between" : undefined,
     width: "100%",
-    paddingHorizontal: isMobile ? 8 : 0,
+    paddingHorizontal: isMobile ? 16 : 0,
   },
   backButton: {
     width: 32,
