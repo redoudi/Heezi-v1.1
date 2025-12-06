@@ -1,19 +1,9 @@
+import VerticalDivider from "@/components/practice-tools/VerticalDivider";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import MobileRibbon from "../../RibbonMobile";
 import BoldButton from "../BoldButton";
-
-const Divider = () => (
-  <View
-    style={{
-      width: 1,
-      backgroundColor: "darkgray",
-      marginHorizontal: 8,
-      alignSelf: "stretch",
-    }}
-  />
-);
 
 export default function SpreadsheetRibbon() {
   return isMobile ? <MobileRibbon /> : <SpreadsheetRibbonDesktop />;
@@ -69,7 +59,7 @@ function SpreadsheetRibbonDesktop() {
         </View>
         <Text style={styles.text3}>{"Presse-papiers"}</Text>
       </View>
-      <Divider />
+      <VerticalDivider />
       <View style={styles.column5}>
         <View style={styles.column6}>
           <View style={styles.row6}>
@@ -162,7 +152,7 @@ function SpreadsheetRibbonDesktop() {
         </View>
         <Text style={styles.text6}>{"Police"}</Text>
       </View>
-      <Divider />
+      <VerticalDivider />
       <View style={styles.column7}>
         <View style={styles.row8}>
           <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
@@ -240,7 +230,7 @@ function SpreadsheetRibbonDesktop() {
           <Text style={styles.text6}>{"Paragraphe"}</Text>
         </View>
       </View>
-      <Divider />
+      <VerticalDivider />
       <View style={styles.column8}>
         <TouchableOpacity style={styles.buttonRow3} onPress={() => {}} disabled>
           <Text style={styles.text4}>{"Standard"}</Text>
@@ -265,7 +255,7 @@ function SpreadsheetRibbonDesktop() {
         </View>
         <Text style={styles.text3}>{"Nombre"}</Text>
       </View>
-      <Divider />
+      <VerticalDivider />
       <View style={styles.column9}>
         <View style={styles.row11}>
           <Image
@@ -286,7 +276,7 @@ function SpreadsheetRibbonDesktop() {
         />
         <Text style={styles.text3}>{"Styles"}</Text>
       </View>
-      <Divider />
+      <VerticalDivider />
       <View style={styles.column10}>
         <View style={styles.column11}>
           <View style={styles.row12}>
