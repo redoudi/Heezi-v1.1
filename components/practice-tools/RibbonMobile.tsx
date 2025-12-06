@@ -133,7 +133,9 @@ const styles = StyleSheet.create({
   grid: { gap: 8, width: "30%", padding: 8 },
   button: {
     backgroundColor: "#EFEFEF",
-    width: 22,
+    width: 32,
+    height: 32,
+    justifyContent: "center",
     alignItems: "center",
     borderRadius: 8,
     paddingVertical: 8,
