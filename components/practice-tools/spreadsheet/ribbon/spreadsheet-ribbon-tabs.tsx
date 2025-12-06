@@ -2,12 +2,10 @@ import {
   RIBBON_TABS_DESKTOP,
   RIBBON_TABS_MOBILE,
 } from "@/constants/spreadsheetConstants";
-import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function RibbonTabsMobile() {
-  const { practiceTool } = usePracticeToolConstants();
   return (
     <View style={styles.mainContainer}>
       <View style={styles.ribbonTabsContainer}>
@@ -64,6 +62,7 @@ const styles = StyleSheet.create({
     paddingVertical: 11,
     justifyContent: isMobile ? "space-between" : undefined,
     width: "100%",
+    paddingHorizontal: isMobile ? 8 : 0,
   },
   backButton: {
     width: 32,
