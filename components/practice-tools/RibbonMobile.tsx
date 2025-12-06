@@ -172,7 +172,5 @@ const styles = StyleSheet.create({
   policeText: {
     fontSize: isMobile ? 12 : 10,
     color: "#292929",
-    marginLeft: 8,
-    marginRight: 12,
   },
 });
