@@ -1,5 +1,3 @@
-import FullWindowContainer from "@/components/FullWindowContainer";
-import MascotMonitor from "@/components/mascot/mascot-monitor";
 import SpreadsheetScreen from "@/components/practice-tools/spreadsheet/SpreadsheetScreen";
 import TextEditorScreen from "@/components/practice-tools/text-editor/textEditorScreen";
 import { CursorProvider } from "@/context/useCursor";
@@ -14,6 +12,7 @@ import checkSpreasheetCondition from "@/utils/checkSpreasheetCondition";
 import checkTextEditorCondition from "@/utils/checkTextEditorCondition";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
 import { useLocalSearchParams } from "expo-router";
+import { StyleSheet } from "react-native";
 import QuizScreen from "./quiz";
 
 export const dynamicParams = false;
@@ -32,14 +31,11 @@ function LoadedSpreadsheetScreen() {
   };
 
   return (
-    <FullWindowContainer>
-      <SpreadsheetScreen />
-      <MascotMonitor
-        runPreActions={runPreActions}
-        practiceToolData={spreadsheetData}
-        checkConditionCallback={checkCondition}
-      />
-    </FullWindowContainer>
+    <SpreadsheetScreen
+      runPreActions={runPreActions}
+      practiceToolData={spreadsheetData}
+      checkConditionCallback={checkCondition}
+    />
   );
 }
 
@@ -57,14 +53,11 @@ function LoadedTextEditorScreen() {
   };
 
   return (
-    <FullWindowContainer>
-      <TextEditorScreen />
-      <MascotMonitor
-        runPreActions={runPreActions}
-        practiceToolData={contentBlocks}
-        checkConditionCallback={checkCondition}
-      />
-    </FullWindowContainer>
+    <TextEditorScreen
+      runPreActions={runPreActions}
+      practiceToolData={contentBlocks}
+      checkConditionCallback={checkCondition}
+    />
   );
 }
 
@@ -91,3 +84,12 @@ export default function PracticeScreen() {
     </CursorProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+});

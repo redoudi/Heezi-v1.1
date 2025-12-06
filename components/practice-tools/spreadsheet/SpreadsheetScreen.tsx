@@ -4,6 +4,7 @@ import SpreadsheetGrid from "./grid/spreadsheet-grid";
 import SpreadsheetRibbon from "./ribbon/spreadsheet-ribbon";
 import RibbonTabs from "./ribbon/spreadsheet-ribbon-tabs";
 
+import MascotMonitor from "@/components/mascot/mascot-monitor";
 import useLevelData from "@/hooks/use-level-data";
 import { isMobile } from "@/utils/isMobile";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -43,7 +44,15 @@ const mobileStyles = StyleSheet.create({
   },
 });
 
-export default function SpreadsheetScreen() {
+export default function SpreadsheetScreen({
+  runPreActions,
+  practiceToolData,
+  checkConditionCallback,
+}: {
+  runPreActions: (preActions: any[]) => void;
+  practiceToolData: any;
+  checkConditionCallback: (expected: any) => boolean;
+}) {
   const { levelType } = useLevelData();
   const isLesson = levelType === "lesson";
   return (
@@ -58,13 +67,17 @@ export default function SpreadsheetScreen() {
           {isLesson && <View style={styles.overlay} />}
         </View>
       </ResponsiveWrapper>
+      <MascotMonitor
+        runPreActions={runPreActions}
+        practiceToolData={practiceToolData}
+        checkConditionCallback={checkConditionCallback}
+      />
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-
     backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "flex-start",

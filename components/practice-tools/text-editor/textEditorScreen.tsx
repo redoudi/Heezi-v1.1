@@ -1,3 +1,4 @@
+import MascotMonitor from "@/components/mascot/mascot-monitor";
 import useLevelData from "@/hooks/use-level-data";
 import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, Text, View } from "react-native";
@@ -17,7 +18,15 @@ function PageNumber({ currentPage = 1, totalPages = 1 }) {
   );
 }
 
-export default function TextEditorScreen() {
+export default function TextEditorScreen({
+  runPreActions,
+  practiceToolData,
+  checkConditionCallback,
+}: {
+  runPreActions: (preActions: any[]) => void;
+  practiceToolData: any;
+  checkConditionCallback: (expected: any) => boolean;
+}) {
   const { levelType } = useLevelData();
   const isLesson = levelType === "lesson";
   return (
@@ -30,6 +39,11 @@ export default function TextEditorScreen() {
         <PageNumber currentPage={1} totalPages={1} />
         {isLesson && <View style={styles.overlay} />}
       </View>
+      <MascotMonitor
+        runPreActions={runPreActions}
+        practiceToolData={practiceToolData}
+        checkConditionCallback={checkConditionCallback}
+      />
     </SafeAreaView>
   );
 }
