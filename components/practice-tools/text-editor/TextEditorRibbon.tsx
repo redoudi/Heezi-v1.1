@@ -1,7 +1,5 @@
-import useCursor from "@/context/useCursor";
-import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
+import BoldButton from "@/components/practice-tools/spreadsheet/BoldButton";
 import { isMobile } from "@/utils/isMobile";
-import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function MobileTextEditorHeader() {
@@ -106,35 +104,6 @@ const mobileStyles = StyleSheet.create({
     width: "100%",
   },
 });
-
-function BoldButton() {
-  const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
-  const boldButtonRef = useRef<any>(null);
-  const { setContentRef } = useCursor();
-
-  useEffect(() => {
-    if (setContentRef) {
-      setContentRef("boldButton", boldButtonRef);
-    }
-  }, [setContentRef, boldButtonRef]);
-
-  return (
-    <TouchableOpacity
-      style={[
-        styles.button13,
-        isSelectedBlockBold ? { borderColor: "black", borderWidth: 1 } : {},
-      ]}
-      onPress={() => boldSelectedBlock()}
-      ref={boldButtonRef}
-    >
-      <Image
-        source={require("@/assets/images/2ib5w9m2_expires_30_days.png")}
-        resizeMode={"contain"}
-        style={[styles.image13]}
-      />
-    </TouchableOpacity>
-  );
-}
 
 function PressePapiersSection() {
   return (

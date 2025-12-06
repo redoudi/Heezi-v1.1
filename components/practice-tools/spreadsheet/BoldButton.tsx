@@ -1,8 +1,34 @@
 import useCursor from "@/context/useCursor";
+import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
+import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function BoldButton({
+export default function BoldButton() {
+  const { practiceTool } = usePracticeToolConstants();
+  return practiceTool === "spreadsheet" ? (
+    <BoldButtonSpreadsheet />
+  ) : (
+    <BoldButtonTextEditor />
+  );
+}
+
+function BoldButtonSpreadsheet() {
+  const { isSelectedCellBold, boldSelectedCell } = useSpreadsheetRibbon();
+  return (
+    <BoldButtonBody isBold={isSelectedCellBold} onPress={boldSelectedCell} />
+  );
+}
+
+function BoldButtonTextEditor() {
+  const { isSelectedBlockBold, boldSelectedBlock } = useTextEditorRibbon();
+  return (
+    <BoldButtonBody isBold={isSelectedBlockBold} onPress={boldSelectedBlock} />
+  );
+}
+
+function BoldButtonBody({
   isBold,
   onPress,
 }: {

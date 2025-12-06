@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
 import ContentPage from "./ContentPage";
-import TextEditorRibbon from "./TextEditorHeader";
+import TextEditorRibbon from "./TextEditorRibbon";
 import TitleBar from "./TextEditorTitleBar";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {

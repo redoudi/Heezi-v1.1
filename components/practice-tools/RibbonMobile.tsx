@@ -1,3 +1,4 @@
+import BoldButton from "@/components/practice-tools/spreadsheet/BoldButton";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function PoliceButtons() {
@@ -87,7 +88,7 @@ function ParagraphButtons() {
   );
 }
 
-function SpreadsheetRibbonMobile() {
+export default function RibbonMobile() {
   return (
     <View style={styles.mainContainer}>
       <PoliceButtons />
