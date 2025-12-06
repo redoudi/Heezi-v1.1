@@ -12,7 +12,7 @@ import TitleBar from "./title-bar";
 
 const ResponsiveWrapper = ({ children }: { children: React.ReactNode }) => {
   return isMobile ? (
-    <View style={mobileStyles.mainContainer}>{children}</View>
+    children
   ) : (
     <ScrollView
       horizontal
@@ -24,23 +24,6 @@ const ResponsiveWrapper = ({ children }: { children: React.ReactNode }) => {
     </ScrollView>
   );
 };
-
-const mobileStyles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    backgroundColor: "#FFFFFF",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    borderWidth: 1,
-    height: "100%",
-  },
-  mainContent: {
-    flex: 1,
-    backgroundColor: "#EFEFEF",
-    borderWidth: 1,
-    borderColor: "#EFEFEF",
-  },
-});
 
 export default function SpreadsheetScreen({
   runPreActions,
