@@ -1,25 +1,14 @@
-import useCursor from "@/context/useCursor";
-import useLevelData from "@/hooks/use-level-data";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { useEffect, useRef } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 export default function TitleBar() {
-  const titleBarRef = useRef<View>(null);
-  const { setContentRef } = useCursor();
-  const { levelType } = useLevelData();
-  const { practiceTool } = usePracticeToolConstants();
-  useEffect(() => {
-    if (setContentRef && levelType === "lesson") {
-      setContentRef("titleBar", titleBarRef);
-    }
-  }, [setContentRef, levelType]);
+  const { practiceTool, toolConstants } = usePracticeToolConstants();
   return (
-    <View style={styles.mainContainer} ref={titleBarRef}>
+    <View style={styles.mainContainer}>
       <View style={styles.leftRow}>
         <Image
-          source={require("@/assets/images/5jt7jwsg_expires_30_days.png")}
+          source={toolConstants.icon}
           resizeMode={"contain"}
           style={styles.icon}
         />

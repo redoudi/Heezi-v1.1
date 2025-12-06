@@ -3,12 +3,12 @@ import { router } from "expo-router";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 export default function TitleBar() {
-  const { practiceTool } = usePracticeToolConstants();
+  const { practiceTool, toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.mainContainer}>
       <View style={styles.leftRow}>
         <Image
-          source={require("@/assets/images/textEditor.png")}
+          source={toolConstants.icon}
           resizeMode={"contain"}
           style={styles.icon}
         />
