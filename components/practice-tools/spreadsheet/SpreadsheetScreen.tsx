@@ -12,9 +12,7 @@ import TitleBar from "./title-bar";
 
 const ResponsiveWrapper = ({ children }: { children: React.ReactNode }) => {
   return isMobile ? (
-    <View style={mobileStyles.mainContainer}>
-      <View style={mobileStyles.mainContent}>{children}</View>
-    </View>
+    <View style={mobileStyles.mainContainer}>{children}</View>
   ) : (
     <ScrollView
       horizontal
