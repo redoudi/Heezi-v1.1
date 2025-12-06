@@ -47,7 +47,7 @@ export default function SpreadsheetScreen() {
   const { levelType } = useLevelData();
   const isLesson = levelType === "lesson";
   return (
-    <SafeAreaView style={[styles.mainContainer]}>
+    <SafeAreaView style={styles.mainContainer}>
       <ResponsiveWrapper>
         <View style={styles.mainContent}>
           <TitleBar />
