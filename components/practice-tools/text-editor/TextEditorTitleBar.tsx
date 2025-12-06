@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
   },
   icon: {
     height: TARGET_HEIGHT,
-    borderWidth: 1,
   },
 
   backButton: {
