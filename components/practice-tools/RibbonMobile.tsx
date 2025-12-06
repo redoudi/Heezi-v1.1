@@ -6,7 +6,7 @@ function PoliceButtons() {
   return (
     <View style={styles.grid}>
       <View style={styles.row}>
-        <TouchableOpacity style={styles.buttonRow} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.police} onPress={() => {}} disabled>
           <Text style={styles.text4}>{"Police"}</Text>
           <Image
             source={require("@/assets/images/downArrow.png")}
@@ -92,7 +92,7 @@ function ParagraphButtons() {
 function TabButtons() {
   return (
     <View style={styles.grid}>
-      <View style={styles.row}>
+      <View style={[styles.row, { justifyContent: "flex-start" }]}>
         <TouchableOpacity style={styles.button24} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
@@ -124,15 +124,14 @@ export default function RibbonMobile() {
   );
 }
 
-const mobileStyles = StyleSheet.create({});
-
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
   },
-  grid: { gap: 8, width: "30%" },
+  grid: { gap: 8, width: "30%", padding: 8 },
+  button: { backgroundColor: "#EFEFEF" },
   button14: {
     width: 22,
     alignItems: "center",
@@ -196,8 +195,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 8,
   },
-  buttonRow: {
-    width: 72,
+  police: {
+    flex: 1,
+    justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#EFEFEF",
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
-    flexWrap: "wrap",
+    paddingHorizontal: 24,
   },
   text4: {
     fontSize: 10,
