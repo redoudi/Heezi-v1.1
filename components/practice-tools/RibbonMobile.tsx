@@ -4,8 +4,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function PoliceButtons() {
   return (
-    <View>
-      <View style={mobileStyles.row}>
+    <View style={styles.grid}>
+      <View style={styles.row}>
         <TouchableOpacity style={styles.buttonRow} onPress={() => {}} disabled>
           <Text style={styles.text4}>{"Police"}</Text>
           <Image
@@ -15,7 +15,7 @@ function PoliceButtons() {
           />
         </TouchableOpacity>
       </View>
-      <View style={mobileStyles.row}>
+      <View style={styles.row}>
         <BoldButton />
         <TouchableOpacity style={styles.button14} onPress={() => {}} disabled>
           <Image
@@ -38,8 +38,8 @@ function PoliceButtons() {
 
 function ParagraphButtons() {
   return (
-    <View>
-      <View style={mobileStyles.row}>
+    <View style={styles.grid}>
+      <View style={styles.row}>
         <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
@@ -62,7 +62,7 @@ function ParagraphButtons() {
           />
         </TouchableOpacity>
       </View>
-      <View style={mobileStyles.row}>
+      <View style={styles.row}>
         <TouchableOpacity style={styles.button22} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/uirt4emu_expires_30_days.png")}
@@ -91,8 +91,8 @@ function ParagraphButtons() {
 
 function TabButtons() {
   return (
-    <View>
-      <View style={mobileStyles.row}>
+    <View style={styles.grid}>
+      <View style={styles.row}>
         <TouchableOpacity style={styles.button24} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
@@ -124,15 +124,15 @@ export default function RibbonMobile() {
   );
 }
 
-const mobileStyles = StyleSheet.create({
+const mobileStyles = StyleSheet.create({});
+
+const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
   },
-});
-
-const styles = StyleSheet.create({
+  grid: { gap: 8, width: "30%" },
   button14: {
     width: 22,
     alignItems: "center",
