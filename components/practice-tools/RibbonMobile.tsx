@@ -5,7 +5,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 function PoliceButtons() {
   return (
     <View style={styles.grid}>
-      <View style={styles.row}>
+      <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.police} onPress={() => {}} disabled>
           <Text style={styles.text4}>{"Police"}</Text>
           <Image
@@ -15,7 +15,7 @@ function PoliceButtons() {
           />
         </TouchableOpacity>
       </View>
-      <View style={styles.row}>
+      <View style={styles.buttonRow}>
         <BoldButton />
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
@@ -39,7 +39,7 @@ function PoliceButtons() {
 function ParagraphButtons() {
   return (
     <View style={styles.grid}>
-      <View style={styles.row}>
+      <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
@@ -62,7 +62,7 @@ function ParagraphButtons() {
           />
         </TouchableOpacity>
       </View>
-      <View style={styles.row}>
+      <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/uirt4emu_expires_30_days.png")}
@@ -92,7 +92,7 @@ function ParagraphButtons() {
 function TabButtons() {
   return (
     <View style={styles.grid}>
-      <View style={[styles.row, { justifyContent: "flex-start" }]}>
+      <View style={[styles.buttonRow, { justifyContent: "flex-start" }]}>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
@@ -125,10 +125,11 @@ export default function RibbonMobile() {
 }
 
 const styles = StyleSheet.create({
-  row: {
+  buttonRow: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    gap: 8,
   },
   grid: { gap: 8, width: "30%", padding: 8 },
   button: {
@@ -138,8 +139,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 10,
   },
 
   police: {
