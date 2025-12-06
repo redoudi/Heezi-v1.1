@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     gap: 8,
   },
-  grid: { gap: 8, width: "30%", padding: 8 },
+  grid: { gap: 8, padding: 8 },
   button: {
     backgroundColor: "#EFEFEF",
     width: 32,
