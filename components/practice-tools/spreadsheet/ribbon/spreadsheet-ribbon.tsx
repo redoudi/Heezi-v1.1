@@ -4,74 +4,98 @@ import { isMobile } from "@/utils/isMobile";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+function PoliceButtons() {
+  return (
+    <View>
+      <View style={mobileStyles.row}>
+        <TouchableOpacity style={styles.buttonRow} onPress={() => {}} disabled>
+          <Text style={styles.text4}>{"Police"}</Text>
+          <Image
+            source={require("@/assets/images/downArrow.png")}
+            resizeMode={"stretch"}
+            style={styles.image12}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={mobileStyles.row}>
+        <BoldButton />
+        <TouchableOpacity style={styles.button14} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image14}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button15} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/shmc35k2_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image15}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+function ParagraphButtons() {
+  return (
+    <View>
+      <View style={mobileStyles.row}>
+        <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image19}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image19}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button20} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image19}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={mobileStyles.row}>
+        <TouchableOpacity style={styles.button22} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/uirt4emu_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image21}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button20} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/393nlgpw_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image19}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button23} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
+            resizeMode={"stretch"}
+            style={styles.image21}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
 function SpreadsheetRibbonMobile() {
   return (
     <View style={styles.mainContainer}>
-      <TouchableOpacity style={styles.buttonRow} onPress={() => {}} disabled>
-        <Text style={styles.text4}>{"Police"}</Text>
-        <Image
-          source={require("@/assets/images/3jmssrjq_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image12}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image19}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image19}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button20} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image19}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button22} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/uirt4emu_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image21}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button20} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/393nlgpw_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image19}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button23} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image21}
-        />
-      </TouchableOpacity>
-      <BoldButton />{" "}
-      <TouchableOpacity style={styles.button14} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image14}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button15} onPress={() => {}} disabled>
-        <Image
-          source={require("@/assets/images/shmc35k2_expires_30_days.png")}
-          resizeMode={"stretch"}
-          style={styles.image15}
-        />
-      </TouchableOpacity>
+      <PoliceButtons />
+      <ParagraphButtons />
       <TouchableOpacity style={styles.button24} onPress={() => {}} disabled>
         <Image
           source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
@@ -89,6 +113,10 @@ function SpreadsheetRibbonMobile() {
     </View>
   );
 }
+
+const mobileStyles = StyleSheet.create({
+  row: { flexDirection: "row", alignItems: "center" },
+});
 
 function BoldButton() {
   const { isSelectedCellBold, boldSelectedCell } = useSpreadsheetRibbon();
@@ -193,7 +221,7 @@ function SpreadsheetRibbonDesktop() {
             >
               <Text style={styles.text4}>{"Police"}</Text>
               <Image
-                source={require("@/assets/images/3jmssrjq_expires_30_days.png")}
+                source={require("@/assets/images/downArrow.png")}
                 resizeMode={"stretch"}
                 style={styles.image12}
               />
