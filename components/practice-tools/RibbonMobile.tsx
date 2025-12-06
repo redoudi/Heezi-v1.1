@@ -17,14 +17,14 @@ function PoliceButtons() {
       </View>
       <View style={styles.row}>
         <BoldButton />
-        <TouchableOpacity style={styles.button14} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
             resizeMode={"contain"}
             style={styles.image14}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button15} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/shmc35k2_expires_30_days.png")}
             resizeMode={"contain"}
@@ -40,21 +40,21 @@ function ParagraphButtons() {
   return (
     <View style={styles.grid}>
       <View style={styles.row}>
-        <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
             resizeMode={"contain"}
             style={styles.image19}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
             resizeMode={"contain"}
             style={styles.image19}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button20} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
             resizeMode={"contain"}
@@ -63,21 +63,21 @@ function ParagraphButtons() {
         </TouchableOpacity>
       </View>
       <View style={styles.row}>
-        <TouchableOpacity style={styles.button22} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/uirt4emu_expires_30_days.png")}
             resizeMode={"contain"}
             style={styles.image21}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button20} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/393nlgpw_expires_30_days.png")}
             resizeMode={"contain"}
             style={styles.image19}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button23} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
             resizeMode={"contain"}
@@ -93,14 +93,14 @@ function TabButtons() {
   return (
     <View style={styles.grid}>
       <View style={[styles.row, { justifyContent: "flex-start" }]}>
-        <TouchableOpacity style={styles.button24} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
             resizeMode={"contain"}
             style={styles.image20}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
             resizeMode={"contain"}
@@ -131,70 +131,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   grid: { gap: 8, width: "30%", padding: 8 },
-  button: { backgroundColor: "#EFEFEF" },
-  button14: {
+  button: {
+    backgroundColor: "#EFEFEF",
     width: 22,
     alignItems: "center",
-    backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 8,
     marginRight: 10,
   },
-  button15: {
-    width: 24,
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 20,
-  },
-  button19: {
-    width: 29,
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 4,
-  },
-  button20: {
-    width: 29,
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 8,
-  },
-  button22: {
-    width: 30,
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 8,
-  },
-  button23: {
-    width: 30,
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 16,
-  },
-  button24: {
-    width: 31,
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginRight: 8,
-  },
-  button25: {
-    width: 30,
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-  },
+
   police: {
     flex: 1,
     justifyContent: "space-between",
