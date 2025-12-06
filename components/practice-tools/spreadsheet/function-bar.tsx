@@ -12,7 +12,7 @@ export default function FunctionBar() {
   return (
     <View style={styles.mainContainer}>
       <TouchableOpacity style={styles.cellDropdown} onPress={() => {}} disabled>
-        <Text style={styles.text5}>{"A20"}</Text>
+        <Text style={styles.cellIndexText}>{"A20"}</Text>
         <Image
           source={require("@/assets/images/w85265az_expires_30_days.png")}
           resizeMode={"stretch"}
@@ -58,12 +58,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
-    paddingVertical: 8,
+    padding: 8,
   },
-  text5: {
+  cellIndexText: {
     fontSize: 10,
     color: "#292929",
-    marginLeft: 8,
   },
   triangleIcon: {
     borderRadius: 8,
