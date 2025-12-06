@@ -1,6 +1,5 @@
 import MascotMonitor from "@/components/mascot/mascot-monitor";
 import useLevelData from "@/hooks/use-level-data";
-import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
@@ -32,7 +31,7 @@ export default function TextEditorScreen({
   return (
     <SafeAreaView style={[styles.mainContainer]}>
       <View style={styles.mainContent}>
-        {!isMobile && <TitleBar />}
+        <TitleBar />
         <RibbonTabs />
         <TextEditorRibbon />
         <ContentPage />

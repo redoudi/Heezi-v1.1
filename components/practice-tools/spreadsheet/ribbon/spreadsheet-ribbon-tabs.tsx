@@ -4,7 +4,6 @@ import {
 } from "@/constants/spreadsheetConstants";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { isMobile } from "@/utils/isMobile";
-import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function RibbonTabsMobile() {
@@ -12,11 +11,6 @@ function RibbonTabsMobile() {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.ribbonTabsContainer}>
-        <Image
-          source={require("@/assets/images/textEditor.png")}
-          resizeMode={"contain"}
-          style={styles.icon}
-        />
         {RIBBON_TABS_MOBILE.map(({ label }) => (
           <TouchableOpacity
             key={label}
@@ -28,18 +22,6 @@ function RibbonTabsMobile() {
           </TouchableOpacity>
         ))}
       </View>
-      <TouchableOpacity
-        style={styles.backButton}
-        onPress={() =>
-          router.replace(`/(tabs)/play/${practiceTool}/section-screen`)
-        }
-      >
-        <Image
-          source={require("@/assets/images/escape.png")}
-          resizeMode={"contain"}
-          style={styles.backButtonIcon}
-        />
-      </TouchableOpacity>
     </View>
   );
 }
