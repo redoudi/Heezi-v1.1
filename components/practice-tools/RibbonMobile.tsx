@@ -1,5 +1,6 @@
 import VerticalDivider from "@/components/practice-tools/VerticalDivider";
 import BoldButton from "@/components/practice-tools/spreadsheet/BoldButton";
+import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function PoliceButtons() {
@@ -7,7 +8,7 @@ function PoliceButtons() {
     <View style={styles.grid}>
       <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.police} onPress={() => {}} disabled>
-          <Text style={styles.text4}>{"Police"}</Text>
+          <Text style={styles.policeText}>{"Police"}</Text>
           <Image
             source={require("@/assets/images/downArrow.png")}
             resizeMode={"contain"}
@@ -97,14 +98,14 @@ function TabButtons() {
           <Image
             source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image20}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image20}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
       </View>
@@ -158,28 +159,7 @@ const styles = StyleSheet.create({
   },
   buttonIcon: {
     borderRadius: 8,
-
     height: 10,
-  },
-  image15: {
-    borderRadius: 8,
-    width: 8,
-    height: 10,
-  },
-  image19: {
-    borderRadius: 8,
-    width: 13,
-    height: 12,
-  },
-  image20: {
-    borderRadius: 8,
-    width: 15,
-    height: 12,
-  },
-  image21: {
-    borderRadius: 8,
-    width: 14,
-    height: 12,
   },
   mainContainer: {
     justifyContent: "center",
@@ -189,8 +169,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     gap: 8,
   },
-  text4: {
-    fontSize: 10,
+  policeText: {
+    fontSize: isMobile ? 12 : 10,
     color: "#292929",
     marginLeft: 8,
     marginRight: 12,
