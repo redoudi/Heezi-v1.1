@@ -1,17 +1,70 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { useEffect, useState } from "react";
+import {
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
+
+const TARGET_HEIGHT = 32;
+function IconImage({
+  source,
+  style,
+}: {
+  source: ImageSourcePropType;
+  style?: any;
+}) {
+  const [width, setWidth] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (typeof source === "object" && "uri" in source) {
+      Image.getSize(
+        source.uri as string,
+        (imageWidth, imageHeight) => {
+          const aspectRatio = imageWidth / imageHeight;
+          const calculatedWidth = TARGET_HEIGHT * aspectRatio;
+          setWidth(calculatedWidth);
+        },
+        () => {}
+      );
+    } else if (
+      typeof source === "number" ||
+      (typeof source === "object" && !("uri" in source))
+    ) {
+      // For require() images, we need to use onLoad
+      // Width will be set via onLoad handler
+    }
+  }, [source]);
+
+  const handleLoad = (event: any) => {
+    const { width: imageWidth, height: imageHeight } =
+      event.nativeEvent.source || {};
+    if (imageWidth && imageHeight && !width) {
+      const aspectRatio = imageWidth / imageHeight;
+      const calculatedWidth = TARGET_HEIGHT * aspectRatio;
+      setWidth(calculatedWidth);
+    }
+  };
+
+  return (
+    <Image
+      source={source}
+      resizeMode={"contain"}
+      onLoad={handleLoad}
+      style={[style, width !== undefined && { width }]}
+    />
+  );
+}
 
 export default function TitleBar() {
   const { practiceTool, toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.mainContainer}>
       <View style={styles.leftRow}>
-        <Image
-          source={toolConstants.icon}
-          resizeMode={"contain"}
-          style={styles.icon}
-        />
+        <IconImage source={toolConstants.icon} style={styles.icon} />
         <Image
           source={require("@/assets/images/save.png")}
           resizeMode={"contain"}

@@ -72,11 +72,11 @@ export default function TitleBar() {
           style={styles.icon}
         />
         <IconImage
-          source={require("../../../assets/images/undo.png")}
+          source={require("@/assets/images/undo.png")}
           style={styles.icon}
         />
         <IconImage
-          source={require("../../../assets/images/redo.png")}
+          source={require("@/assets/images/redo.png")}
           style={styles.icon}
         />
       </View>

@@ -6,7 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import RibbonTabs from "../spreadsheet/ribbon/spreadsheet-ribbon-tabs";
 import ContentPage from "./ContentPage";
 import TextEditorRibbon from "./TextEditorRibbon";
-import TitleBar from "./TextEditorTitleBar";
+import TitleBar from "../TitleBar";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
