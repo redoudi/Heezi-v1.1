@@ -8,7 +8,7 @@ import MascotMonitor from "@/components/mascot/mascot-monitor";
 import useLevelData from "@/hooks/use-level-data";
 import { isMobile } from "@/utils/isMobile";
 import { SafeAreaView } from "react-native-safe-area-context";
-import TitleBar from "./title-bar";
+import TitleBar from "../TitleBar";
 
 const ResponsiveWrapper = ({ children }: { children: React.ReactNode }) => {
   return isMobile ? (
