@@ -58,7 +58,7 @@ export default function SpreadsheetScreen({
 }
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
+    height: "100%",
     backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "flex-start",
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  mainContent: { backgroundColor: "#EFEFEF" },
+  mainContent: { backgroundColor: "#EFEFEF", height: "100%" },
   titleBarContainer: {
     zIndex: 1001,
     position: "relative",
