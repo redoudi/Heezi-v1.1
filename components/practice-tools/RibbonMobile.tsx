@@ -11,7 +11,7 @@ function PoliceButtons() {
           <Image
             source={require("@/assets/images/downArrow.png")}
             resizeMode={"contain"}
-            style={styles.image12}
+            style={styles.downArrowIcon}
           />
         </TouchableOpacity>
       </View>
@@ -21,14 +21,14 @@ function PoliceButtons() {
           <Image
             source={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image14}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/shmc35k2_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image15}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
       </View>
@@ -44,21 +44,21 @@ function ParagraphButtons() {
           <Image
             source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image19}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image19}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image19}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
       </View>
@@ -67,21 +67,21 @@ function ParagraphButtons() {
           <Image
             source={require("@/assets/images/uirt4emu_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image21}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/393nlgpw_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image19}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
             resizeMode={"contain"}
-            style={styles.image21}
+            style={styles.buttonIcon}
           />
         </TouchableOpacity>
       </View>
@@ -149,17 +149,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 8,
-    marginRight: 10,
+    paddingHorizontal: 4,
   },
-  image12: {
+  downArrowIcon: {
     borderRadius: 8,
     width: 9,
     height: 6,
-    marginRight: 8,
   },
-  image14: {
+  buttonIcon: {
     borderRadius: 8,
-    width: 6,
+
     height: 10,
   },
   image15: {
@@ -188,6 +187,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
     paddingHorizontal: 24,
+    gap: 8,
   },
   text4: {
     fontSize: 10,

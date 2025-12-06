@@ -1,20 +1,14 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 
 export default function VerticalDivider() {
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.divider} />
-    </View>
+    <View
+      style={{
+        width: 1,
+        backgroundColor: "darkgray",
+
+        alignSelf: "stretch",
+      }}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  mainContainer: {
-    paddingHorizontal: 8,
-  },
-  divider: {
-    width: 1,
-    flex: 1,
-    backgroundColor: "darkgray",
-  },
-});
