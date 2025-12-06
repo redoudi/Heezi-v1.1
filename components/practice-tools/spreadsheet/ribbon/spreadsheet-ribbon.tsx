@@ -162,6 +162,7 @@ export default function SpreadsheetRibbon() {
 }
 
 function SpreadsheetRibbonDesktop() {
+  const { isSelectedCellBold, boldSelectedCell } = useSpreadsheetRibbon();
   return (
     <View style={styles.mainContainer}>
       <View style={styles.column3}>
@@ -240,7 +241,10 @@ function SpreadsheetRibbonDesktop() {
             </TouchableOpacity>
           </View>
           <View style={styles.row7}>
-            <BoldButton />
+            <BoldButton
+              isBold={isSelectedCellBold}
+              onPress={boldSelectedCell}
+            />
             <TouchableOpacity
               style={styles.button14}
               onPress={() => {}}
