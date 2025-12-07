@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     gap: 8,
     paddingHorizontal: isMobile ? 8 : 32,
     zIndex: 1001,
+    paddingTop: 4,
   },
   leftRow: {
     flexDirection: "row",
