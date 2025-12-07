@@ -22,11 +22,11 @@ function SectionPolice() {
             onPress={() => {}}
             disabled
           >
-            <Text style={styles2.text4}>{"Police"}</Text>
+            <Text style={styles.text}>{"Police"}</Text>
             <Image
               source={require("@/assets/images/downArrow.png")}
               resizeMode={"contain"}
-              style={styles2.image12}
+              style={styles.downArrow}
             />
           </TouchableOpacity>
           <TouchableOpacity
@@ -34,7 +34,7 @@ function SectionPolice() {
             onPress={() => {}}
             disabled
           >
-            <Text style={styles2.text5}>{"12"}</Text>
+            <Text style={styles.text}>{"12"}</Text>
             <Image
               source={require("@/assets/images/downArrow.png")}
               resizeMode={"contain"}
@@ -42,7 +42,7 @@ function SectionPolice() {
             />
           </TouchableOpacity>
         </View>
-        <View style={styles2.row7}>
+        <View style={styles.buttonsRow}>
           <BoldButton isBold={isSelectedCellBold} onPress={boldSelectedCell} />
           <TouchableOpacity
             style={styles2.button14}
@@ -66,6 +66,7 @@ function SectionPolice() {
               style={styles2.image15}
             />
           </TouchableOpacity>
+          <VerticalDivider />
           <TouchableOpacity
             style={styles2.button16}
             onPress={() => {}}
@@ -106,6 +107,205 @@ function SectionPolice() {
   );
 }
 
+function SectionParagraphe() {
+  return (
+    <View style={styles2.column7}>
+      <View style={styles2.row8}>
+        <TouchableOpacity style={styles2.button19} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image19}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles2.button19} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image19}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles2.button20} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image19}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles2.button21} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/mc2ln7j3_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image20}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={styles2.row9}>
+        <TouchableOpacity style={styles2.button22} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/uirt4emu_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image21}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles2.button20} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/393nlgpw_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image19}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles2.button23} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image21}
+          />
+        </TouchableOpacity>
+        <Image
+          source={require("@/assets/images/spreadsheetRibbonAlignment.png")}
+          resizeMode={"contain"}
+          style={styles2.image22}
+        />
+        <TouchableOpacity style={styles2.button24} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image20}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles2.button25} onPress={() => {}} disabled>
+          <Image
+            source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image20}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={styles2.view}>
+        <Text style={styles2.text6}>{"Paragraphe"}</Text>
+      </View>
+    </View>
+  );
+}
+
+function SectionNombre() {
+  return (
+    <View style={styles2.column8}>
+      <TouchableOpacity style={styles2.buttonRow3} onPress={() => {}} disabled>
+        <Text style={styles2.text4}>{"Standard"}</Text>
+        <Image
+          source={require("@/assets/images/f0blr7yj_expires_30_days.png")}
+          resizeMode={"contain"}
+          style={styles2.image23}
+        />
+      </TouchableOpacity>
+      <View style={styles2.row10}>
+        <Image
+          source={require("@/assets/images/spreadsheetRibbon2.png")}
+          resizeMode={"contain"}
+          style={styles2.image24}
+        />
+        <TouchableOpacity style={styles2.button26} onPress={() => {}} disabled>
+          <Text style={styles2.text7}>{"%"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles2.button27} onPress={() => {}} disabled>
+          <Text style={styles2.text7}>{"000"}</Text>
+        </TouchableOpacity>
+      </View>
+      <Text style={styles2.text3}>{"Nombre"}</Text>
+    </View>
+  );
+}
+
+function SectionStyles() {
+  return (
+    <View style={styles2.column9}>
+      <View style={styles2.row11}>
+        <Image
+          source={require("@/assets/images/spreadsheetRibbon3.png")}
+          resizeMode={"contain"}
+          style={styles2.image25}
+        />
+        <Image
+          source={require("@/assets/images/spreadsheetRibbon4.png")}
+          resizeMode={"contain"}
+          style={styles2.image26}
+        />
+      </View>
+      <Image
+        source={require("@/assets/images/spreadsheetRibbon5.png")}
+        resizeMode={"contain"}
+        style={styles2.image27}
+      />
+      <Text style={styles2.text3}>{"Styles"}</Text>
+    </View>
+  );
+}
+
+function SectionCellules() {
+  return (
+    <View style={styles2.column10}>
+      <View style={styles2.column11}>
+        <View style={styles2.row12}>
+          <TouchableOpacity
+            style={styles2.buttonRow4}
+            onPress={() => {}}
+            disabled
+          >
+            <Image
+              source={require("@/assets/images/6p0qmdld_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image28}
+            />
+            <Text style={styles2.text7}>{"Insérer"}</Text>
+            <Image
+              source={require("@/assets/images/bm26nyo6_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image29}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles2.buttonRow5}
+            onPress={() => {}}
+            disabled
+          >
+            <Image
+              source={require("@/assets/images/3psjry5g_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image28}
+            />
+            <Text style={styles2.text7}>{"Supprimer"}</Text>
+            <Image
+              source={require("@/assets/images/ihd2alr2_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image23}
+            />
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity
+          style={styles2.buttonRow6}
+          onPress={() => {}}
+          disabled
+        >
+          <Image
+            source={require("@/assets/images/ueuz0btu_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image30}
+          />
+          <Text style={styles2.text8}>{"Format"}</Text>
+          <Image
+            source={require("@/assets/images/x88mmd51_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image29}
+          />
+        </TouchableOpacity>
+      </View>
+      <Text style={styles2.text6}>{"Cellules"}</Text>
+    </View>
+  );
+}
+
 function SpreadsheetRibbonDesktop() {
   return (
     <View style={styles.mainContainer}>
@@ -113,236 +313,13 @@ function SpreadsheetRibbonDesktop() {
       <VerticalDivider />
       <SectionPolice />
       <VerticalDivider />
-      <View style={styles2.column7}>
-        <View style={styles2.row8}>
-          <TouchableOpacity
-            style={styles2.button19}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image19}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button19}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image19}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button20}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image19}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button21}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/mc2ln7j3_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image20}
-            />
-          </TouchableOpacity>
-        </View>
-        <View style={styles2.row9}>
-          <TouchableOpacity
-            style={styles2.button22}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/uirt4emu_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image21}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button20}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/393nlgpw_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image19}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button23}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image21}
-            />
-          </TouchableOpacity>
-          <Image
-            source={require("@/assets/images/spreadsheetRibbonAlignment.png")}
-            resizeMode={"contain"}
-            style={styles2.image22}
-          />
-          <TouchableOpacity
-            style={styles2.button24}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image20}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button25}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image20}
-            />
-          </TouchableOpacity>
-        </View>
-        <View style={styles2.view}>
-          <Text style={styles2.text6}>{"Paragraphe"}</Text>
-        </View>
-      </View>
+      <SectionParagraphe />
       <VerticalDivider />
-      <View style={styles2.column8}>
-        <TouchableOpacity
-          style={styles2.buttonRow3}
-          onPress={() => {}}
-          disabled
-        >
-          <Text style={styles2.text4}>{"Standard"}</Text>
-          <Image
-            source={require("@/assets/images/f0blr7yj_expires_30_days.png")}
-            resizeMode={"contain"}
-            style={styles2.image23}
-          />
-        </TouchableOpacity>
-        <View style={styles2.row10}>
-          <Image
-            source={require("@/assets/images/spreadsheetRibbon2.png")}
-            resizeMode={"contain"}
-            style={styles2.image24}
-          />
-          <TouchableOpacity
-            style={styles2.button26}
-            onPress={() => {}}
-            disabled
-          >
-            <Text style={styles2.text7}>{"%"}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button27}
-            onPress={() => {}}
-            disabled
-          >
-            <Text style={styles2.text7}>{"000"}</Text>
-          </TouchableOpacity>
-        </View>
-        <Text style={styles2.text3}>{"Nombre"}</Text>
-      </View>
+      <SectionNombre />
       <VerticalDivider />
-      <View style={styles2.column9}>
-        <View style={styles2.row11}>
-          <Image
-            source={require("@/assets/images/spreadsheetRibbon3.png")}
-            resizeMode={"contain"}
-            style={styles2.image25}
-          />
-          <Image
-            source={require("@/assets/images/spreadsheetRibbon4.png")}
-            resizeMode={"contain"}
-            style={styles2.image26}
-          />
-        </View>
-        <Image
-          source={require("@/assets/images/spreadsheetRibbon5.png")}
-          resizeMode={"contain"}
-          style={styles2.image27}
-        />
-        <Text style={styles2.text3}>{"Styles"}</Text>
-      </View>
+      <SectionStyles />
       <VerticalDivider />
-      <View style={styles2.column10}>
-        <View style={styles2.column11}>
-          <View style={styles2.row12}>
-            <TouchableOpacity
-              style={styles2.buttonRow4}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/6p0qmdld_expires_30_days.png")}
-                resizeMode={"contain"}
-                style={styles2.image28}
-              />
-              <Text style={styles2.text7}>{"Insérer"}</Text>
-              <Image
-                source={require("@/assets/images/bm26nyo6_expires_30_days.png")}
-                resizeMode={"contain"}
-                style={styles2.image29}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles2.buttonRow5}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/3psjry5g_expires_30_days.png")}
-                resizeMode={"contain"}
-                style={styles2.image28}
-              />
-              <Text style={styles2.text7}>{"Supprimer"}</Text>
-              <Image
-                source={require("@/assets/images/ihd2alr2_expires_30_days.png")}
-                resizeMode={"contain"}
-                style={styles2.image23}
-              />
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity
-            style={styles2.buttonRow6}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/ueuz0btu_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image30}
-            />
-            <Text style={styles2.text8}>{"Format"}</Text>
-            <Image
-              source={require("@/assets/images/x88mmd51_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image29}
-            />
-          </TouchableOpacity>
-        </View>
-        <Text style={styles2.text6}>{"Cellules"}</Text>
-      </View>
+      <SectionCellules />
     </View>
   );
 }
