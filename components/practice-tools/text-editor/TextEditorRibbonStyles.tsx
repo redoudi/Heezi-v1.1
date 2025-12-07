@@ -38,6 +38,9 @@ export default StyleSheet.create({
     borderRadius: 8,
     padding: 4,
   },
+  buttonIcon: {
+    height: 10,
+  },
   button11: {
     ...buttonBase,
   },
@@ -164,7 +167,7 @@ export default StyleSheet.create({
     height: 18,
   },
 
-  image12: {
+  downArrow: {
     width: 9,
     height: 6,
   },

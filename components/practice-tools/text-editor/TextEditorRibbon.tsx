@@ -63,7 +63,7 @@ function SectionPolice() {
             <Image
               source={require("@/assets/images/uig4w09q_expires_30_days.png")}
               resizeMode={"contain"}
-              style={styles.image12}
+              style={styles.downArrow}
             />
           </TouchableOpacity>
           <TouchableOpacity
@@ -75,7 +75,7 @@ function SectionPolice() {
             <Image
               source={require("@/assets/images/7bw6obmu_expires_30_days.png")}
               resizeMode={"contain"}
-              style={styles.image12}
+              style={styles.downArrow}
             />
           </TouchableOpacity>
           <VerticalDivider />
@@ -88,27 +88,27 @@ function SectionPolice() {
             <Image
               source={require("@/assets/images/rjnwoeo6_expires_30_days.png")}
               resizeMode={"contain"}
-              style={styles.image12}
+              style={styles.downArrow}
             />
           </TouchableOpacity>
         </View>
         <View style={styles.buttonsRow}>
           <BoldButton />
-          <TouchableOpacity style={styles.button14} onPress={() => {}} disabled>
+          <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/djgcsw86_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image14}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button15} onPress={() => {}} disabled>
+          <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/yn5b2k86_expires_30_days.png")}
               resizeMode={"contain"}
               style={styles.image15}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button16} onPress={() => {}} disabled>
+          <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/k9vx5ycz_expires_30_days.png")}
               resizeMode={"contain"}
