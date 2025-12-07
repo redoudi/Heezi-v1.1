@@ -8,11 +8,11 @@ import styles from "./TextEditorRibbonStyles";
 
 function IconButton({ iconSource }) {
   return (
-    <TouchableOpacity style={styles.buttonBase} onPress={() => {}} disabled>
+    <TouchableOpacity style={styles.buttonMd} onPress={() => {}} disabled>
       <Image
         source={iconSource}
         resizeMode={"contain"}
-        style={styles.buttonIcon}
+        style={styles.buttonIconMd}
       />
     </TouchableOpacity>
   );

@@ -45,9 +45,18 @@ export default StyleSheet.create({
     borderRadius: 8,
     padding: 8,
   },
+  buttonMd: {
+    width: 28,
+    height: 28,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+  },
   buttonIcon: {
     height: 10,
   },
+  buttonIconMd: { height: 16, width: 16 },
   button28: {
     ...buttonBaseWhite,
     width: 113,
