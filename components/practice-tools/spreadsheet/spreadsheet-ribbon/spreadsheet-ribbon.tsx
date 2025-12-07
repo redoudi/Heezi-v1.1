@@ -11,104 +11,107 @@ export default function SpreadsheetRibbon() {
   return isMobile ? <MobileRibbon /> : <SpreadsheetRibbonDesktop />;
 }
 
-function SpreadsheetRibbonDesktop() {
+function SectionPolice() {
   const { isSelectedCellBold, boldSelectedCell } = useSpreadsheetRibbon();
+  return (
+    <View style={styles.section}>
+      <View style={styles.sectionGrid}>
+        <View style={styles.buttonsRow}>
+          <TouchableOpacity
+            style={styles.buttonDropdown}
+            onPress={() => {}}
+            disabled
+          >
+            <Text style={styles2.text4}>{"Police"}</Text>
+            <Image
+              source={require("@/assets/images/downArrow.png")}
+              resizeMode={"contain"}
+              style={styles2.image12}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonDropdown}
+            onPress={() => {}}
+            disabled
+          >
+            <Text style={styles2.text5}>{"12"}</Text>
+            <Image
+              source={require("@/assets/images/downArrow.png")}
+              resizeMode={"contain"}
+              style={styles.downArrow}
+            />
+          </TouchableOpacity>
+        </View>
+        <View style={styles2.row7}>
+          <BoldButton isBold={isSelectedCellBold} onPress={boldSelectedCell} />
+          <TouchableOpacity
+            style={styles2.button14}
+            onPress={() => {}}
+            disabled
+          >
+            <Image
+              source={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image14}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles2.button15}
+            onPress={() => {}}
+            disabled
+          >
+            <Image
+              source={require("@/assets/images/shmc35k2_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image15}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles2.button16}
+            onPress={() => {}}
+            disabled
+          >
+            <Image
+              source={require("@/assets/images/7czrdf4k_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image16}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles2.button17}
+            onPress={() => {}}
+            disabled
+          >
+            <Image
+              source={require("@/assets/images/ath16u4f_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image17}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles2.button18}
+            onPress={() => {}}
+            disabled
+          >
+            <Image
+              source={require("@/assets/images/uewh91sl_expires_30_days.png")}
+              resizeMode={"contain"}
+              style={styles2.image18}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+      <Text style={styles2.text6}>{"Police"}</Text>
+    </View>
+  );
+}
+
+function SpreadsheetRibbonDesktop() {
   return (
     <View style={styles.mainContainer}>
       <SectionPressePapiers />
       <VerticalDivider />
-      <View style={styles2.column5}>
-        <View style={styles2.column6}>
-          <View style={styles2.row6}>
-            <TouchableOpacity
-              style={styles2.buttonRow}
-              onPress={() => {}}
-              disabled
-            >
-              <Text style={styles2.text4}>{"Police"}</Text>
-              <Image
-                source={require("@/assets/images/downArrow.png")}
-                resizeMode={"stretch"}
-                style={styles2.image12}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles2.buttonRow2}
-              onPress={() => {}}
-              disabled
-            >
-              <Text style={styles2.text5}>{"12"}</Text>
-              <Image
-                source={require("@/assets/images/bk05j5hf_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles2.image12}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles2.row7}>
-            <BoldButton
-              isBold={isSelectedCellBold}
-              onPress={boldSelectedCell}
-            />
-            <TouchableOpacity
-              style={styles2.button14}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles2.image14}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles2.button15}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/shmc35k2_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles2.image15}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles2.button16}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/7czrdf4k_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles2.image16}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles2.button17}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/ath16u4f_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles2.image17}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles2.button18}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/uewh91sl_expires_30_days.png")}
-                resizeMode={"stretch"}
-                style={styles2.image18}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
-        <Text style={styles2.text6}>{"Police"}</Text>
-      </View>
+      <SectionPolice />
       <VerticalDivider />
       <View style={styles2.column7}>
         <View style={styles2.row8}>
@@ -119,7 +122,7 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image19}
             />
           </TouchableOpacity>
@@ -130,7 +133,7 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image19}
             />
           </TouchableOpacity>
@@ -141,7 +144,7 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image19}
             />
           </TouchableOpacity>
@@ -152,7 +155,7 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/mc2ln7j3_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image20}
             />
           </TouchableOpacity>
@@ -165,7 +168,7 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/uirt4emu_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image21}
             />
           </TouchableOpacity>
@@ -176,7 +179,7 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/393nlgpw_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image19}
             />
           </TouchableOpacity>
@@ -187,13 +190,13 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image21}
             />
           </TouchableOpacity>
           <Image
             source={require("@/assets/images/spreadsheetRibbonAlignment.png")}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles2.image22}
           />
           <TouchableOpacity
@@ -203,7 +206,7 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image20}
             />
           </TouchableOpacity>
@@ -214,7 +217,7 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image20}
             />
           </TouchableOpacity>
@@ -233,14 +236,14 @@ function SpreadsheetRibbonDesktop() {
           <Text style={styles2.text4}>{"Standard"}</Text>
           <Image
             source={require("@/assets/images/f0blr7yj_expires_30_days.png")}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles2.image23}
           />
         </TouchableOpacity>
         <View style={styles2.row10}>
           <Image
             source={require("@/assets/images/spreadsheetRibbon2.png")}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles2.image24}
           />
           <TouchableOpacity
@@ -265,18 +268,18 @@ function SpreadsheetRibbonDesktop() {
         <View style={styles2.row11}>
           <Image
             source={require("@/assets/images/spreadsheetRibbon3.png")}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles2.image25}
           />
           <Image
             source={require("@/assets/images/spreadsheetRibbon4.png")}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles2.image26}
           />
         </View>
         <Image
           source={require("@/assets/images/spreadsheetRibbon5.png")}
-          resizeMode={"stretch"}
+          resizeMode={"contain"}
           style={styles2.image27}
         />
         <Text style={styles2.text3}>{"Styles"}</Text>
@@ -292,13 +295,13 @@ function SpreadsheetRibbonDesktop() {
             >
               <Image
                 source={require("@/assets/images/6p0qmdld_expires_30_days.png")}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles2.image28}
               />
               <Text style={styles2.text7}>{"Insérer"}</Text>
               <Image
                 source={require("@/assets/images/bm26nyo6_expires_30_days.png")}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles2.image29}
               />
             </TouchableOpacity>
@@ -309,13 +312,13 @@ function SpreadsheetRibbonDesktop() {
             >
               <Image
                 source={require("@/assets/images/3psjry5g_expires_30_days.png")}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles2.image28}
               />
               <Text style={styles2.text7}>{"Supprimer"}</Text>
               <Image
                 source={require("@/assets/images/ihd2alr2_expires_30_days.png")}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles2.image23}
               />
             </TouchableOpacity>
@@ -327,13 +330,13 @@ function SpreadsheetRibbonDesktop() {
           >
             <Image
               source={require("@/assets/images/ueuz0btu_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image30}
             />
             <Text style={styles2.text8}>{"Format"}</Text>
             <Image
               source={require("@/assets/images/x88mmd51_expires_30_days.png")}
-              resizeMode={"stretch"}
+              resizeMode={"contain"}
               style={styles2.image29}
             />
           </TouchableOpacity>
