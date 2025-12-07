@@ -188,30 +188,43 @@ function SectionParagraphe() {
 
 function SectionNombre() {
   return (
-    <View style={styles2.column8}>
-      <TouchableOpacity style={styles2.buttonRow3} onPress={() => {}} disabled>
-        <Text style={styles2.text4}>{"Standard"}</Text>
-        <Image
-          source={require("@/assets/images/f0blr7yj_expires_30_days.png")}
-          resizeMode={"contain"}
-          style={styles2.image23}
-        />
-      </TouchableOpacity>
-      <View style={styles2.row10}>
-        <Image
-          source={require("@/assets/images/spreadsheetRibbon2.png")}
-          resizeMode={"contain"}
-          style={styles2.image24}
-        />
-        <TouchableOpacity style={styles2.button26} onPress={() => {}} disabled>
-          <Text style={styles2.text7}>{"%"}</Text>
+    <SectionGrid title="Nombre">
+      <View style={styles2.column8}>
+        <TouchableOpacity
+          style={styles2.buttonRow3}
+          onPress={() => {}}
+          disabled
+        >
+          <Text style={styles2.text4}>{"Standard"}</Text>
+          <Image
+            source={require("@/assets/images/f0blr7yj_expires_30_days.png")}
+            resizeMode={"contain"}
+            style={styles2.image23}
+          />
         </TouchableOpacity>
-        <TouchableOpacity style={styles2.button27} onPress={() => {}} disabled>
-          <Text style={styles2.text7}>{"000"}</Text>
-        </TouchableOpacity>
+        <View style={styles2.row10}>
+          <Image
+            source={require("@/assets/images/spreadsheetRibbon2.png")}
+            resizeMode={"contain"}
+            style={styles2.image24}
+          />
+          <TouchableOpacity
+            style={styles2.button26}
+            onPress={() => {}}
+            disabled
+          >
+            <Text style={styles2.text7}>{"%"}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles2.button27}
+            onPress={() => {}}
+            disabled
+          >
+            <Text style={styles2.text7}>{"000"}</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <Text style={styles2.text3}>{"Nombre"}</Text>
-    </View>
+    </SectionGrid>
   );
 }
 
