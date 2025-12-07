@@ -1,98 +1,17 @@
 import useCursor from "@/context/useCursor";
-import useLevelData from "@/hooks/use-level-data";
 import useHighlight from "@/hooks/useHighlight";
 import useTextEditorStore from "@/store/useTextEditorStore";
 import { isMobile } from "@/utils/isMobile";
-import { useEffect, useRef, useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { useEffect, useRef } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import TextInputBlock from "./TextInputBlock";
 
 function TextBlock({ item }: { item: any }) {
   return (
     <View style={[styles.textBlockContainer, item.blockStyle]}>
-      <Text
-        style={[
-          { fontSize: 14, lineHeight: 24 },
-          styles.textBlockText,
-          item.style,
-        ]}
-      >
+      <Text style={[styles.text, styles.textBlockText, item.style]}>
         {item.text}
       </Text>
-    </View>
-  );
-}
-
-function TextInputBlock({ item }: { item: any }) {
-  const { setBlockText, setSelectedBlockId } = useTextEditorStore();
-  const {
-    setContentRef,
-    expected,
-    currentStep: { focus },
-  } = useCursor();
-  const [isWrongAnswer, setIsWrongAnswer] = useState<boolean | null>(null);
-  const blockRef = useRef<TextInput>(null);
-  const { levelType } = useLevelData();
-
-  useEffect(() => {
-    if (setContentRef && item.blockId) {
-      setContentRef(item.blockId, blockRef);
-    }
-  }, [setContentRef, item.blockId]);
-
-  useEffect(() => {
-    if (blockRef.current && focus && focus.elementId === item.blockId) {
-      blockRef.current?.focus();
-    }
-  }, [item.blockId, focus, blockRef]);
-
-  const handleBlur = () => {
-    if (
-      levelType === "practice" &&
-      expected &&
-      expected.type === "blockText" &&
-      expected.blockId === item.blockId &&
-      item.text.length &&
-      expected?.text &&
-      item.text !== expected.text
-    ) {
-      setIsWrongAnswer(true);
-    } else {
-      setIsWrongAnswer(false);
-    }
-  };
-
-  const wrongAnswerStyle = {
-    borderColor: "red",
-    borderWidth: 2,
-  };
-
-  const focusedStyle =
-    focus && focus.elementId === item.blockId
-      ? {
-          borderColor: "black",
-          borderWidth: 2,
-        }
-      : {};
-
-  return (
-    <View style={[styles.textInputContainer, item.blockStyle]}>
-      <TextInput
-        style={[
-          styles.textInput,
-          item.style,
-          isWrongAnswer ? wrongAnswerStyle : {},
-          focusedStyle,
-        ]}
-        editable={isWrongAnswer !== false}
-        value={item.text}
-        onChangeText={(inputText) => setBlockText(item.blockId, inputText)}
-        onFocus={() => setSelectedBlockId(item.blockId)}
-        placeholder={item.placeholder}
-        placeholderTextColor="rgb(111, 111, 111)"
-        ref={blockRef}
-        onBlur={handleBlur}
-        multiline={isMobile}
-      />
     </View>
   );
 }
@@ -171,17 +90,5 @@ const styles = StyleSheet.create({
     color: "#292929",
     textAlignVertical: "center",
   },
-  textInputContainer: {
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    paddingVertical: 8,
-    marginBottom: 8,
-    // marginHorizontal: 64,
-  },
-  textInput: {
-    color: "#292929",
-    marginLeft: 9,
-    fontSize: 14,
-    lineHeight: 24,
-  },
+  text: { fontSize: 18, lineHeight: 24 },
 });

@@ -128,7 +128,8 @@
         {
             "type": "textInput",
             "blockId": "exempleInput",
-            "text": ""
+            "text": "",
+            "multiline": true
         }
     ],
     "endLevelReport": {
