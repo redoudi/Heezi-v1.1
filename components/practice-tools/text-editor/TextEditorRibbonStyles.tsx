@@ -40,43 +40,35 @@ export default StyleSheet.create({
   button13: {
     ...buttonBase,
     width: 23,
-    marginRight: 10,
   },
   button14: {
     ...buttonBase,
     width: 22,
-    marginRight: 10,
   },
   button15: {
     ...buttonBase,
     width: 24,
-    marginRight: 10,
   },
   button16: {
     ...buttonBase,
     width: 32,
-    marginRight: 10,
   },
   button17: {
     ...buttonBase,
     width: 27,
-    marginRight: 11,
   },
   button18: {
     ...buttonBase,
     width: 27,
-    marginRight: 21,
   },
   button19: {
     ...buttonBase,
     width: 31,
-    marginRight: 10,
   },
   button20: {
     ...buttonBase,
     width: 33,
     paddingVertical: 7,
-    marginRight: 10,
   },
   button21: {
     ...buttonBase,
@@ -85,12 +77,10 @@ export default StyleSheet.create({
   button22: {
     ...buttonBase,
     width: 31,
-    marginRight: 4,
   },
   button23: {
     ...buttonBase,
     width: 31,
-    marginRight: 8,
   },
   button24: {
     ...buttonBase,
@@ -99,23 +89,19 @@ export default StyleSheet.create({
   button25: {
     ...buttonBase,
     width: 30,
-    marginRight: 8,
   },
   button26: {
     ...buttonBase,
     width: 29,
-    marginRight: 8,
   },
   button27: {
     ...buttonBase,
     width: 31,
-    marginRight: 16,
   },
   button28: {
     ...buttonBaseWhite,
     width: 113,
     paddingVertical: 20,
-    marginHorizontal: 8,
   },
   button29: {
     ...buttonBaseWhite,
@@ -135,7 +121,6 @@ export default StyleSheet.create({
     ...buttonBase,
     width: 54,
     padding: 8,
-    marginRight: 8,
   },
   buttonColumn2: {
     ...buttonBase,
@@ -145,7 +130,6 @@ export default StyleSheet.create({
     ...buttonBase,
     width: isMobile ? 100 : 241,
     flexDirection: "row",
-    marginRight: 10,
   },
   buttonRow2: {
     ...buttonBase,
@@ -153,7 +137,6 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingVertical: 10,
-    marginRight: 20,
   },
   buttonRow3: {
     ...buttonBase,
@@ -167,23 +150,16 @@ export default StyleSheet.create({
   column5: {
     width: 399,
     alignItems: "center",
-    marginRight: 16,
   },
-  column6: {
-    marginBottom: 16,
-  },
+  column6: {},
   column7: {
     width: 293,
     alignItems: "center",
-    marginRight: 17,
   },
-  column8: {
-    marginBottom: 9,
-  },
+  column8: {},
   column9: {
     width: 293,
     alignItems: "center",
-    marginRight: 7,
   },
   image10: {
     ...imageBaseRounded,
@@ -199,7 +175,6 @@ export default StyleSheet.create({
     ...imageBaseRounded,
     width: 9,
     height: 6,
-    marginRight: 8,
   },
   image13: {
     ...imageBaseRounded,
@@ -239,12 +214,10 @@ export default StyleSheet.create({
   image20: {
     width: 44,
     height: 28,
-    marginRight: 4,
   },
   image21: {
     width: 44,
     height: 28,
-    marginRight: 8,
   },
   image22: {
     ...imageBaseRounded,
@@ -283,7 +256,6 @@ export default StyleSheet.create({
     ...imageBaseRounded,
     width: 31,
     height: 31,
-    marginBottom: 4,
   },
   image6: {
     ...imageBaseRounded,
@@ -302,7 +274,6 @@ export default StyleSheet.create({
   },
   row10: {
     flexDirection: "row",
-    marginBottom: 10,
   },
   row11: {
     borderWidth: 1,
@@ -317,18 +288,15 @@ export default StyleSheet.create({
 
   row6: {
     flexDirection: "row",
-    marginBottom: 4,
   },
   row7: {
     alignSelf: "flex-start",
     flexDirection: "row",
     alignItems: "center",
-    marginLeft: 4,
   },
   row8: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 8,
   },
   row9: {
     alignSelf: "flex-start",
@@ -338,7 +306,6 @@ export default StyleSheet.create({
   text10: {
     fontSize: 6,
     color: "#000000",
-    marginBottom: 4,
   },
   text: {
     fontSize: 10,
@@ -347,19 +314,16 @@ export default StyleSheet.create({
   text4: {
     fontSize: 10,
     color: "#292929",
-    marginLeft: 8,
+
     flex: 1,
   },
   text5: {
     fontSize: 10,
     color: "#292929",
-    marginLeft: 8,
   },
   text6: {
     fontSize: 10,
     color: "#292929",
-    marginLeft: 8,
-    marginRight: 11,
   },
   text7: {
     fontSize: 10,
@@ -376,6 +340,5 @@ export default StyleSheet.create({
   },
   view: {
     width: 54,
-    marginRight: 215,
   },
 });
