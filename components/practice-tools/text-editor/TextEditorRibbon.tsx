@@ -7,8 +7,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 function SectionPressePapiers() {
   return (
     <View style={styles.section}>
-      <View style={styles.row5}>
-        {/* bouton Coller */}
+      <View style={styles.sectionContent}>
         <TouchableOpacity
           style={styles.buttonColumn}
           onPress={() => {}}
@@ -17,13 +16,13 @@ function SectionPressePapiers() {
           <Image
             source={require("@/assets/images/coller.png")}
             resizeMode={"contain"}
-            style={styles.image8}
+            style={styles.iconBig}
           />
-          <Text style={styles.text2}>{"Coller"}</Text>
+          <Text style={styles.text}>{"Coller"}</Text>
           <Image
             source={require("@/assets/images/down-arrow.png")}
             resizeMode={"contain"}
-            style={styles.image9}
+            style={styles.downArrow}
           />
         </TouchableOpacity>
         <View style={styles.column4}>
@@ -50,7 +49,7 @@ function SectionPressePapiers() {
 
 function SectionPolice() {
   return (
-    <View style={styles.column5}>
+    <View style={styles.section}>
       <View style={styles.column6}>
         <View style={styles.row6}>
           <TouchableOpacity
@@ -157,7 +156,7 @@ function SectionPolice() {
 
 function SectionParagraphe() {
   return (
-    <View style={styles.column7}>
+    <View style={styles.section}>
       <View style={styles.column8}>
         <View style={styles.row8}>
           <Image
@@ -248,7 +247,7 @@ function SectionParagraphe() {
 
 function SectionStyles() {
   return (
-    <View style={styles.column9}>
+    <View style={styles.section}>
       <View style={styles.row10}>
         <View style={styles.row11}>
           <TouchableOpacity style={styles.button28} onPress={() => {}} disabled>
@@ -273,7 +272,7 @@ function SectionStyles() {
 
 function SectionEdition() {
   return (
-    <View style={styles.view}>
+    <View style={styles.section}>
       <TouchableOpacity
         style={styles.buttonColumn2}
         onPress={() => {}}
@@ -288,7 +287,7 @@ function SectionEdition() {
         <Image
           source={require("@/assets/images/8h776a6o_expires_30_days.png")}
           resizeMode={"contain"}
-          style={styles.image9}
+          style={styles.downArrow}
         />
       </TouchableOpacity>
     </View>
@@ -334,6 +333,20 @@ const imageBaseRounded = {
 };
 
 const styles = StyleSheet.create({
+  mainContainer: {},
+  section: {
+    marginLeft: 32,
+    marginRight: 16,
+  },
+  sectionContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 6,
+  },
+  sectionTitle: {
+    fontSize: 10,
+    textAlign: "center",
+  },
   button11: {
     ...buttonBase,
     marginBottom: 4,
@@ -462,12 +475,7 @@ const styles = StyleSheet.create({
     width: 55,
     flexDirection: "row",
   },
-  mainContainer: {},
-  section: {
-    width: 97,
-    marginLeft: 32,
-    marginRight: 16,
-  },
+
   column4: {
     width: 35,
   },
@@ -597,13 +605,12 @@ const styles = StyleSheet.create({
     width: 17,
     height: 16,
   },
-  image8: {
+  iconBig: {
     ...imageBaseRounded,
     width: 26,
     height: 31,
-    marginBottom: 4,
   },
-  image9: {
+  downArrow: {
     ...imageBaseRounded,
     width: 9,
     height: 6,
@@ -627,11 +634,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
   },
-  row5: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 6,
-  },
+
   row6: {
     flexDirection: "row",
     marginBottom: 4,
@@ -657,16 +660,10 @@ const styles = StyleSheet.create({
     color: "#000000",
     marginBottom: 4,
   },
-  text2: {
+  text: {
     fontSize: 10,
-    color: "#292929",
-    marginBottom: 4,
   },
-  sectionTitle: {
-    fontSize: 10,
-    color: "#000000",
-    textAlign: "center",
-  },
+
   text4: {
     fontSize: 10,
     color: "#292929",
