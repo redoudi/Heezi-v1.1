@@ -10,7 +10,7 @@ import {
   View,
 } from "react-native";
 
-const TARGET_HEIGHT = 32;
+const TARGET_HEIGHT = 26;
 
 function IconImage({
   source,
@@ -116,8 +116,8 @@ const styles = StyleSheet.create({
   },
 
   backButton: {
-    width: 32,
-    height: 32,
+    width: 28,
+    height: 28,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FDC1AB",
