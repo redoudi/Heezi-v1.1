@@ -55,11 +55,11 @@ function SectionPolice() {
       <View style={styles.sectionGrid}>
         <View style={styles.buttonsRow}>
           <TouchableOpacity
-            style={styles.buttonRow}
+            style={[styles.buttonDropdown, { width: isMobile ? 100 : 241 }]}
             onPress={() => {}}
             disabled
           >
-            <Text style={styles.text4}>{"Police"}</Text>
+            <Text style={styles.text}>{"Police"}</Text>
             <Image
               source={require("@/assets/images/uig4w09q_expires_30_days.png")}
               resizeMode={"contain"}
@@ -67,7 +67,7 @@ function SectionPolice() {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.buttonRow2}
+            style={[styles.buttonDropdown, { width: 73 }]}
             onPress={() => {}}
             disabled
           >
@@ -80,7 +80,7 @@ function SectionPolice() {
           </TouchableOpacity>
           <VerticalDivider />
           <TouchableOpacity
-            style={styles.buttonRow3}
+            style={[styles.buttonDropdown, { width: 55 }]}
             onPress={() => {}}
             disabled
           >

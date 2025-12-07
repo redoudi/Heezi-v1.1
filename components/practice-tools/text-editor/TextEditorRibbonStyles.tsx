@@ -1,4 +1,3 @@
-import { isMobile } from "@/utils/isMobile";
 import { StyleSheet } from "react-native";
 // Base styles for consolidation
 const buttonBase = {
@@ -132,10 +131,11 @@ export default StyleSheet.create({
     ...buttonBase,
     padding: 8,
   },
-  buttonRow: {
+  buttonDropdown: {
     ...buttonBase,
-    width: isMobile ? 100 : 241,
+    paddingVertical: 10,
     flexDirection: "row",
+    justifyContent: "space-between",
   },
   buttonRow2: {
     ...buttonBase,
@@ -143,11 +143,6 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingVertical: 10,
-  },
-  buttonRow3: {
-    ...buttonBase,
-    width: 55,
-    flexDirection: "row",
   },
 
   buttonColumn: { gap: 4 },
