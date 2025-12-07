@@ -5,7 +5,7 @@ import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
 import { Image, TouchableOpacity } from "react-native";
 
-import styles from "@/components/practice-tools/text-editor/RibbonStyles";
+import styles from "@/components/practice-tools/ribbons/RibbonStyles";
 export default function BoldButton() {
   const { practiceTool } = usePracticeToolConstants();
   return practiceTool === "spreadsheet" ? (
