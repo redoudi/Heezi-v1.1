@@ -208,7 +208,7 @@ export default StyleSheet.create({
     width: 12,
     height: 14,
   },
-  image20: {
+  imageAsButton: {
     width: 44,
     height: 28,
   },

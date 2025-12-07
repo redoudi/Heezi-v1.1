@@ -6,6 +6,14 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import styles from "./TextEditorRibbonStyles";
 
+function IconButton({ iconSource }) {
+  return (
+    <TouchableOpacity style={styles.buttonBase} onPress={() => {}} disabled>
+      <Image source={iconSource} resizeMode={"contain"} style={styles.iconMd} />
+    </TouchableOpacity>
+  );
+}
+
 function SectionPressePapiers() {
   return (
     <View style={styles.section}>
@@ -201,23 +209,18 @@ function SectionPolice() {
 function SectionParagraphe() {
   return (
     <View style={styles.section}>
-      <View style={styles.column8}>
-        <View style={styles.row8}>
-          <Image
-            source={require("@/assets/images/1tMFzp8.png")}
-            resizeMode={"contain"}
-            style={styles.image20}
+      <View style={styles.sectionGrid}>
+        <View style={styles.buttonsRow}>
+          <IconButton
+            iconSource={require("@/assets/images/bulletPoints.png")}
           />
-          <Image
-            source={require("@/assets/images/textEditorRibbon2.png")}
-            resizeMode={"contain"}
-            style={styles.image20}
+          <IconButton
+            iconSource={require("@/assets/images/numberedList.png")}
           />
-          <Image
-            source={require("@/assets/images/textEditorRibbon3.png")}
-            resizeMode={"contain"}
-            style={styles.image21}
+          <IconButton
+            iconSource={require("@/assets/images/numberedtablist.png")}
           />
+
           <VerticalDivider />
           <TouchableOpacity style={styles.button22} onPress={() => {}} disabled>
             <Image
