@@ -38,16 +38,15 @@ export default function SpreadsheetScreen({
   const isLesson = levelType === "lesson";
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <ResponsiveWrapper>
-        <View style={styles.mainContent}>
-          <TitleBar />
-          <RibbonTabs />
-          <SpreadsheetRibbon />
-          <FunctionBar />
-          <SpreadsheetGrid />
-          {isLesson && <View style={styles.overlay} />}
-        </View>
-      </ResponsiveWrapper>
+      <View style={styles.mainContent}>
+        <TitleBar />
+        <RibbonTabs />
+        <SpreadsheetRibbon />
+        <FunctionBar />
+        <SpreadsheetGrid />
+        {isLesson && <View style={styles.overlay} />}
+      </View>
+
       <MascotMonitor
         runPreActions={runPreActions}
         practiceToolData={practiceToolData}
@@ -58,10 +57,12 @@ export default function SpreadsheetScreen({
 }
 const styles = StyleSheet.create({
   mainContainer: {
+    flex: 1,
     height: "100%",
-    backgroundColor: "#FFFFFF",
+    width: "100%",
     alignItems: "center",
-    justifyContent: "flex-start",
+    backgroundColor: "#FFFFFF",
+    overflow: "hidden",
   },
   scrollView: {
     alignSelf: "stretch",
@@ -75,17 +76,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  mainContent: { backgroundColor: "#EFEFEF", height: "100%" },
-  titleBarContainer: {
-    zIndex: 1001,
-    position: "relative",
-  },
-  interactiveSection: {
-    position: "relative",
-  },
-  column2: {
-    marginTop: 2,
-    marginBottom: 3,
+  mainContent: {
+    maxWidth: 1440,
+    width: "100%",
+    flex: 1,
+    backgroundColor: "#EFEFEF",
+    borderWidth: 1,
+    borderColor: "#EFEFEF",
+    gap: 8,
   },
   overlay: {
     position: "absolute",
@@ -94,50 +92,5 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     zIndex: 1000,
-  },
-  column13: {
-    alignSelf: "flex-start",
-    marginBottom: 32,
-    marginLeft: 32,
-  },
-  row16: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 16,
-  },
-  image36: {
-    width: 87,
-    height: 53,
-    marginRight: 16,
-  },
-  button28: {
-    width: 62,
-    alignItems: "center",
-    backgroundColor: "#33C6FD",
-    borderRadius: 8,
-    paddingVertical: 16,
-    marginRight: 16,
-  },
-  image37: {
-    borderRadius: 8,
-    width: 30,
-    height: 22,
-  },
-  view12: {
-    width: 116,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 23,
-  },
-  view13: {
-    backgroundColor: "#989898",
-    borderRadius: 4,
-    marginHorizontal: 16,
-  },
-  box4: {
-    width: 63,
-    height: 8,
-    backgroundColor: "#45BC9E",
   },
 });

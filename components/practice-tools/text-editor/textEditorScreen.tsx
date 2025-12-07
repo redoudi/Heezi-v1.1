@@ -64,11 +64,6 @@ const styles = StyleSheet.create({
     borderColor: "#EFEFEF",
     gap: 8,
   },
-  titleBarContainer: {
-    zIndex: 1001,
-    position: "relative",
-  },
-  interactiveSection: {},
   overlay: {
     position: "absolute",
     top: 0,
@@ -83,31 +78,5 @@ const styles = StyleSheet.create({
   },
   pageNumberText: {
     color: "#292929",
-  },
-  progressBarColumn: {
-    alignSelf: "flex-start",
-    marginBottom: 32,
-    marginLeft: 32,
-  },
-  ProgressBarRow: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    marginBottom: 16,
-  },
-  progressBarContainer1: {
-    width: 116,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingVertical: 22,
-  },
-  progressBarContainer2: {
-    backgroundColor: "#989898",
-    borderRadius: 4,
-    marginHorizontal: 16,
-  },
-  progressBar: {
-    width: 63,
-    height: 8,
-    backgroundColor: "#45BC9E",
   },
 });
