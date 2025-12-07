@@ -222,68 +222,35 @@ function SectionParagraphe() {
           />
 
           <VerticalDivider />
-          <TouchableOpacity style={styles.button22} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/xhij6qe3_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image22}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button23} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/m8i25506_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image22}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button23} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/qsucqhf4_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image23}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button24} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/f5tsg9ts_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image24}
-            />
-          </TouchableOpacity>
+          <IconButton
+            iconSource={require("@/assets/images/xhij6qe3_expires_30_days.png")}
+          />
+
+          <IconButton
+            iconSource={require("@/assets/images/m8i25506_expires_30_days.png")}
+          />
+          <IconButton
+            iconSource={require("@/assets/images/qsucqhf4_expires_30_days.png")}
+          />
+          <IconButton
+            iconSource={require("@/assets/images/f5tsg9ts_expires_30_days.png")}
+          />
         </View>
         <View style={styles.row9}>
-          <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/ce74949l_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image25}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button26} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/mk84bjzk_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image26}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button25} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/wnui27r7_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image25}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button27} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/x1fh47wq_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.image22}
-            />
-          </TouchableOpacity>
-          <Image
-            source={require("@/assets/images/textEditorRibbon4.png")}
-            resizeMode={"contain"}
-            style={styles.image27}
+          <IconButton
+            iconSource={require("@/assets/images/ce74949l_expires_30_days.png")}
+          />
+          <IconButton
+            iconSource={require("@/assets/images/mk84bjzk_expires_30_days.png")}
+          />
+          <IconButton
+            iconSource={require("@/assets/images/wnui27r7_expires_30_days.png")}
+          />
+          <IconButton
+            iconSource={require("@/assets/images/x1fh47wq_expires_30_days.png")}
+          />
+          <IconButton
+            iconSource={require("@/assets/images/textEditorRibbon4.png")}
           />
         </View>
       </View>

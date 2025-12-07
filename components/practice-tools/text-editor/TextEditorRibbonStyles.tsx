@@ -145,7 +145,7 @@ export default StyleSheet.create({
   },
   buttonDropdown: {
     ...buttonBase,
-    paddingVertical: 10,
+    paddingVertical: 8,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -208,10 +208,7 @@ export default StyleSheet.create({
     width: 12,
     height: 14,
   },
-  imageAsButton: {
-    width: 44,
-    height: 28,
-  },
+
   image21: {
     width: 44,
     height: 28,
