@@ -92,7 +92,7 @@ function SectionPolice() {
             onPress={() => {}}
             disabled
           >
-            <Text style={styles.text6}>{"A a"}</Text>
+            <Text style={styles.text}>{"A a"}</Text>
             <Image
               source={require("@/assets/images/rjnwoeo6_expires_30_days.png")}
               resizeMode={"contain"}
@@ -166,7 +166,7 @@ function SectionPolice() {
             <Image
               source={require("@/assets/images/lrwrll0x_expires_30_days.png")}
               resizeMode={"contain"}
-              style={styles.image18}
+              style={styles.buttonIcon}
             />
           </TouchableOpacity>
           <TouchableOpacity
@@ -177,7 +177,7 @@ function SectionPolice() {
             <Image
               source={require("@/assets/images/zvx6kr6l_expires_30_days.png")}
               resizeMode={"contain"}
-              style={styles.image6}
+              style={styles.buttonIcon}
             />
           </TouchableOpacity>
           <TouchableOpacity
@@ -188,7 +188,7 @@ function SectionPolice() {
             <Image
               source={require("@/assets/images/zcd58amp_expires_30_days.png")}
               resizeMode={"contain"}
-              style={styles.image19}
+              style={styles.buttonIcon}
             />
           </TouchableOpacity>
         </View>
