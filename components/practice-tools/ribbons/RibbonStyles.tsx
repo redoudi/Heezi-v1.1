@@ -18,7 +18,8 @@ export default StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
     paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingBottom: 8,
+    paddingTop: 12,
   },
   sectionTitleContainer: {
     paddingHorizontal: 16,

@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#EFEFEF",
-    paddingVertical: 11,
+
     justifyContent: isMobile ? "space-between" : undefined,
     width: "100%",
     paddingHorizontal: isMobile ? 16 : 0,
