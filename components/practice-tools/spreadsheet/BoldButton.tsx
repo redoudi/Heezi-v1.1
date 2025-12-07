@@ -3,8 +3,9 @@ import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import useTextEditorRibbon from "@/hooks/useTextEditorRibbon";
 import { useEffect, useRef } from "react";
-import { Image, StyleSheet, TouchableOpacity } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 
+import styles from "@/components/practice-tools/text-editor/TextEditorRibbonStyles";
 export default function BoldButton() {
   const { practiceTool } = usePracticeToolConstants();
   return practiceTool === "spreadsheet" ? (
@@ -46,7 +47,7 @@ function BoldButtonBody({
     <TouchableOpacity
       // bold button
       style={[
-        styles.mainContainer,
+        styles.buttonSmall,
         isBold ? { borderColor: "black", borderWidth: 1 } : {},
       ]}
       onPress={onPress}
@@ -55,21 +56,8 @@ function BoldButtonBody({
       <Image
         source={require("@/assets/images/grsf2bb1_expires_30_days.png")}
         resizeMode={"contain"}
-        style={styles.icon}
+        style={styles.buttonIcon}
       />
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  icon: {
-    height: 10,
-  },
-  mainContainer: {
-    width: 23,
-    alignItems: "center",
-    backgroundColor: "#EFEFEF",
-    borderRadius: 8,
-    padding: 8,
-  },
-});

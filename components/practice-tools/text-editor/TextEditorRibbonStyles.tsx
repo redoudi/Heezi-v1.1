@@ -32,11 +32,19 @@ export default StyleSheet.create({
     fontSize: 10,
     textAlign: "center",
   },
-  button: {
+  buttonBase: {
     alignItems: "center" as const,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     padding: 4,
+  },
+  buttonSmall: {
+    width: 23,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    padding: 8,
   },
   buttonIcon: {
     height: 10,
@@ -247,10 +255,7 @@ export default StyleSheet.create({
     width: 26,
     height: 31,
   },
-  downArrow: {
-    width: 9,
-    height: 6,
-  },
+
   row10: {
     flexDirection: "row",
   },
