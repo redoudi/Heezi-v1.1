@@ -1,4 +1,4 @@
-import RibbonMobile from "@/components/practice-tools/RibbonMobile";
+import RibbonMobile from "@/components/practice-tools/ribbon/RibbonMobile";
 import BoldButton from "@/components/practice-tools/spreadsheet/BoldButton";
 import VerticalDivider from "@/components/practice-tools/VerticalDivider";
 import { isMobile } from "@/utils/isMobile";

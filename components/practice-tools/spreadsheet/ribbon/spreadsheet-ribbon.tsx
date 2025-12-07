@@ -2,7 +2,7 @@ import VerticalDivider from "@/components/practice-tools/VerticalDivider";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import MobileRibbon from "../../RibbonMobile";
+import MobileRibbon from "../../ribbon/RibbonMobile";
 import BoldButton from "../BoldButton";
 
 export default function SpreadsheetRibbon() {
