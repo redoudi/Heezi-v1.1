@@ -23,7 +23,7 @@ export default StyleSheet.create({
   sectionTitleContainer: {
     paddingHorizontal: 16,
   },
-  section: { paddingHorizontal: 16 },
+  section: { paddingHorizontal: 16, justifyContent: "space-between" },
   sectionContent: {
     flexDirection: "row",
     alignItems: "center",
