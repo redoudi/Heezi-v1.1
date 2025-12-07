@@ -28,9 +28,16 @@ export default StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
+  sectionGrid: { gap: 8 },
   sectionTitle: {
     fontSize: 10,
     textAlign: "center",
+  },
+  button: {
+    alignItems: "center" as const,
+    backgroundColor: "#EFEFEF",
+    borderRadius: 8,
+    padding: 4,
   },
   button11: {
     ...buttonBase,
@@ -148,7 +155,6 @@ export default StyleSheet.create({
     width: 399,
     alignItems: "center",
   },
-  column6: {},
   column7: {
     width: 293,
     alignItems: "center",
@@ -158,14 +164,11 @@ export default StyleSheet.create({
     width: 293,
     alignItems: "center",
   },
-  image10: {
-    width: 19,
-    height: 23,
-  },
-  image11: {
+  iconMd: {
     width: 18,
     height: 18,
   },
+
   image12: {
     width: 9,
     height: 6,
@@ -264,8 +267,9 @@ export default StyleSheet.create({
     paddingVertical: 8,
   },
 
-  row6: {
+  buttonsRow: {
     flexDirection: "row",
+    gap: 8,
   },
   row7: {
     alignSelf: "flex-start",

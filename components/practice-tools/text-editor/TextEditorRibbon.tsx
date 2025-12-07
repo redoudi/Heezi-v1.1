@@ -28,18 +28,18 @@ function SectionPressePapiers() {
           />
         </TouchableOpacity>
         <View style={styles.buttonColumn}>
-          <TouchableOpacity style={styles.button11} onPress={() => {}} disabled>
+          <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/cut.png")}
               resizeMode={"contain"}
-              style={styles.image10}
+              style={styles.iconMd}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button12} onPress={() => {}} disabled>
+          <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/clipboard.png")}
               resizeMode={"contain"}
-              style={styles.image11}
+              style={styles.iconMd}
             />
           </TouchableOpacity>
         </View>
@@ -52,8 +52,8 @@ function SectionPressePapiers() {
 function SectionPolice() {
   return (
     <View style={styles.section}>
-      <View style={styles.column6}>
-        <View style={styles.row6}>
+      <View style={styles.sectionGrid}>
+        <View style={styles.buttonsRow}>
           <TouchableOpacity
             style={styles.buttonRow}
             onPress={() => {}}
@@ -78,6 +78,7 @@ function SectionPolice() {
               style={styles.image12}
             />
           </TouchableOpacity>
+          <VerticalDivider />
           <TouchableOpacity
             style={styles.buttonRow3}
             onPress={() => {}}
@@ -91,7 +92,7 @@ function SectionPolice() {
             />
           </TouchableOpacity>
         </View>
-        <View style={styles.row7}>
+        <View style={styles.buttonsRow}>
           <BoldButton />
           <TouchableOpacity style={styles.button14} onPress={() => {}} disabled>
             <Image
@@ -128,6 +129,7 @@ function SectionPolice() {
               style={styles.image17}
             />
           </TouchableOpacity>
+          <VerticalDivider />
           <TouchableOpacity style={styles.button19} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/lrwrll0x_expires_30_days.png")}
