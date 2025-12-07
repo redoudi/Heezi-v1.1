@@ -64,18 +64,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     overflow: "hidden",
   },
-  scrollView: {
-    alignSelf: "stretch",
-  },
-  scrollBody: {
-    flexGrow: 1,
-    alignItems: "flex-start",
-    justifyContent: "center",
-    backgroundColor: "white",
-    borderColor: "#EFEFEF",
-    flex: 1,
-  },
-
   mainContent: {
     maxWidth: 1440,
     width: "100%",
@@ -92,5 +80,16 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     zIndex: 1000,
+  },
+  scrollView: {
+    alignSelf: "stretch",
+  },
+  scrollBody: {
+    flexGrow: 1,
+    alignItems: "flex-start",
+    justifyContent: "center",
+    backgroundColor: "white",
+    borderColor: "#EFEFEF",
+    flex: 1,
   },
 });

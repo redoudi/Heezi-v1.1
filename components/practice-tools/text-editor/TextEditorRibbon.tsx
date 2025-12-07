@@ -4,21 +4,11 @@ import RibbonMobile from "@/components/practice-tools/spreadsheet/RibbonMobile";
 import { isMobile } from "@/utils/isMobile";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-import styles from "../ribbons/RibbonStyles";
+import styles from "@/components/practice-tools/ribbons/RibbonStyles";
 import SectionPressePapiers from "../ribbons/SectionPressePapiers";
 import SectionTitle from "../ribbons/SectionTitle";
 
-function IconButton({ iconSource }) {
-  return (
-    <TouchableOpacity style={styles.buttonMd} onPress={() => {}} disabled>
-      <Image
-        source={iconSource}
-        resizeMode={"contain"}
-        style={styles.buttonIconMd}
-      />
-    </TouchableOpacity>
-  );
-}
+import IconButton from "../ribbons/IconButton";
 
 function SectionPolice() {
   return (
