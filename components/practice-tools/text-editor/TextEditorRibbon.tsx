@@ -9,7 +9,11 @@ import styles from "./TextEditorRibbonStyles";
 function IconButton({ iconSource }) {
   return (
     <TouchableOpacity style={styles.buttonBase} onPress={() => {}} disabled>
-      <Image source={iconSource} resizeMode={"contain"} style={styles.iconMd} />
+      <Image
+        source={iconSource}
+        resizeMode={"contain"}
+        style={styles.buttonIcon}
+      />
     </TouchableOpacity>
   );
 }
@@ -87,7 +91,7 @@ function SectionPolice() {
             onPress={() => {}}
             disabled
           >
-            <Text style={styles.text5}>{"12"}</Text>
+            <Text style={styles.text}>{"12"}</Text>
             <Image
               source={require("@/assets/images/7bw6obmu_expires_30_days.png")}
               resizeMode={"contain"}

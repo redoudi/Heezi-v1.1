@@ -13,8 +13,6 @@ const buttonBaseWhite = {
   borderRadius: 8,
 };
 
-const imageBaseRounded = {};
-
 export default StyleSheet.create({
   mainContainer: {
     flexDirection: "row",
@@ -50,71 +48,6 @@ export default StyleSheet.create({
   buttonIcon: {
     height: 10,
   },
-  button11: {
-    ...buttonBase,
-  },
-  button12: buttonBase,
-  button13: {
-    ...buttonBase,
-    width: 23,
-  },
-  button14: {
-    ...buttonBase,
-    width: 22,
-  },
-  button15: {
-    ...buttonBase,
-    width: 24,
-  },
-  button16: {
-    ...buttonBase,
-    width: 32,
-  },
-  button17: {
-    ...buttonBase,
-    width: 27,
-  },
-  button18: {
-    ...buttonBase,
-    width: 27,
-  },
-  button19: {
-    ...buttonBase,
-    width: 31,
-  },
-  button20: {
-    ...buttonBase,
-    width: 33,
-    paddingVertical: 7,
-  },
-  button21: {
-    ...buttonBase,
-    width: 28,
-  },
-  button22: {
-    ...buttonBase,
-    width: 31,
-  },
-  button23: {
-    ...buttonBase,
-    width: 31,
-  },
-  button24: {
-    ...buttonBase,
-    width: 31,
-  },
-  button25: {
-    ...buttonBase,
-    width: 30,
-  },
-  button26: {
-    ...buttonBase,
-    width: 29,
-  },
-  button27: {
-    ...buttonBase,
-    width: 31,
-  },
   button28: {
     ...buttonBaseWhite,
     width: 113,
@@ -149,28 +82,7 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  buttonRow2: {
-    ...buttonBase,
-    width: 73,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingVertical: 10,
-  },
-
   buttonColumn: { gap: 4 },
-  column5: {
-    width: 399,
-    alignItems: "center",
-  },
-  column7: {
-    width: 293,
-    alignItems: "center",
-  },
-  column8: {},
-  column9: {
-    width: 293,
-    alignItems: "center",
-  },
   iconMd: {
     width: 18,
     height: 18,
@@ -180,63 +92,6 @@ export default StyleSheet.create({
     width: 9,
     height: 6,
   },
-  image13: {
-    width: 7,
-    height: 10,
-  },
-  image14: {
-    width: 6,
-    height: 10,
-  },
-  image15: {
-    width: 8,
-    height: 10,
-  },
-  image16: {
-    width: 16,
-    height: 10,
-  },
-  image17: {
-    width: 11,
-    height: 9,
-  },
-  image18: {
-    width: 15,
-    height: 13,
-  },
-  image19: {
-    width: 12,
-    height: 14,
-  },
-
-  image21: {
-    width: 44,
-    height: 28,
-  },
-  image22: {
-    width: 15,
-    height: 12,
-  },
-  image23: {
-    width: 15,
-    height: 17,
-  },
-  image24: {
-    width: 15,
-    height: 14,
-  },
-  image25: {
-    width: 14,
-    height: 12,
-  },
-  image26: {
-    width: 13,
-    height: 12,
-  },
-  image27: {
-    width: 49,
-    height: 31,
-  },
   image28: {
     width: 27,
     height: 15,
@@ -244,10 +99,6 @@ export default StyleSheet.create({
   image29: {
     width: 31,
     height: 31,
-  },
-  image6: {
-    width: 17,
-    height: 16,
   },
   iconBig: {
     width: 26,
@@ -272,15 +123,6 @@ export default StyleSheet.create({
     flexDirection: "row",
     gap: 8,
   },
-  row7: {
-    alignSelf: "flex-start",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  row8: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
   row9: {
     alignSelf: "flex-start",
     flexDirection: "row",
@@ -292,21 +134,6 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: 10,
-  },
-
-  text4: {
-    fontSize: 10,
-    color: "#292929",
-
-    flex: 1,
-  },
-  text5: {
-    fontSize: 10,
-    color: "#292929",
-  },
-  text6: {
-    fontSize: 10,
-    color: "#292929",
   },
   text7: {
     fontSize: 10,
@@ -320,8 +147,5 @@ export default StyleSheet.create({
   text9: {
     fontSize: 14,
     color: "#000000",
-  },
-  view: {
-    width: 54,
   },
 });
