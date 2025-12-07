@@ -334,10 +334,7 @@ const imageBaseRounded = {
 
 const styles = StyleSheet.create({
   mainContainer: {},
-  section: {
-    marginLeft: 32,
-    marginRight: 16,
-  },
+  section: { paddingHorizontal: 16 },
   sectionContent: {
     flexDirection: "row",
     alignItems: "center",
