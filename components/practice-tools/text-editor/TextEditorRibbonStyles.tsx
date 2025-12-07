@@ -20,6 +20,9 @@ export default StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
+  sectionTitleContainer: {
+    paddingHorizontal: 16,
+  },
   section: { paddingHorizontal: 16 },
   sectionContent: {
     flexDirection: "row",

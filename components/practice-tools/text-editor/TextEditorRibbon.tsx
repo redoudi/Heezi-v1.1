@@ -64,7 +64,7 @@ function SectionPressePapiers() {
           </TouchableOpacity>
         </View>
       </View>
-      <Text style={styles.sectionTitle}>{"Presse-papiers"}</Text>
+      <SectionTitle title={"Presse-papiers"} />
     </View>
   );
 }
@@ -205,7 +205,7 @@ function SectionPolice() {
           </TouchableOpacity>
         </View>
       </View>
-      <Text style={styles.sectionTitle}>{"Police"}</Text>
+      <SectionTitle title={"Police"} />
     </View>
   );
 }
@@ -259,7 +259,15 @@ function SectionParagraphe() {
           />
         </View>
       </View>
-      <Text style={styles.text7}>{"Paragraphe"}</Text>
+      <SectionTitle title={"Paragraphe"} />
+    </View>
+  );
+}
+
+function SectionTitle({ title }: { title: string }) {
+  return (
+    <View style={styles.sectionTitleContainer}>
+      <Text style={styles.sectionTitle}>{title}</Text>
     </View>
   );
 }
@@ -284,7 +292,7 @@ function SectionStyles() {
           />
         </TouchableOpacity>
       </View>
-      <Text style={styles.text7}>{"Styles"}</Text>
+      <SectionTitle title={"Styles"} />
     </View>
   );
 }
@@ -302,7 +310,7 @@ function SectionEdition() {
           resizeMode={"contain"}
           style={styles.image29}
         />
-        <Text style={styles.text10}>{"édition"}</Text>
+        <Text style={styles.text}>{"édition"}</Text>
         <Image
           source={require("@/assets/images/8h776a6o_expires_30_days.png")}
           resizeMode={"contain"}
