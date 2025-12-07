@@ -57,6 +57,7 @@ export default StyleSheet.create({
     height: 10,
   },
   buttonIconMd: { height: 16, width: 16 },
+  buttonIconWide: { height: 20 },
   button28: {
     ...buttonBaseWhite,
     width: 113,

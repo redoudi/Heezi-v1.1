@@ -240,7 +240,7 @@ function SectionParagraphe() {
             iconSource={require("@/assets/images/f5tsg9ts_expires_30_days.png")}
           />
         </View>
-        <View style={styles.row9}>
+        <View style={styles.buttonsRow}>
           <IconButton
             iconSource={require("@/assets/images/ce74949l_expires_30_days.png")}
           />
@@ -253,8 +253,9 @@ function SectionParagraphe() {
           <IconButton
             iconSource={require("@/assets/images/x1fh47wq_expires_30_days.png")}
           />
+
           <IconButton
-            iconSource={require("@/assets/images/textEditorRibbon4.png")}
+            iconSource={require("@/assets/images/paragraphSpacing.png")}
           />
         </View>
       </View>
