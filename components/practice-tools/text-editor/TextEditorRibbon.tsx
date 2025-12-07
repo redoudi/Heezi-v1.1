@@ -1,10 +1,10 @@
-import RibbonMobile from "@/components/practice-tools/ribbon/RibbonMobile";
-import BoldButton from "@/components/practice-tools/spreadsheet/BoldButton";
 import VerticalDivider from "@/components/practice-tools/VerticalDivider";
+import BoldButton from "@/components/practice-tools/spreadsheet/BoldButton";
+import RibbonMobile from "@/components/practice-tools/spreadsheet/RibbonMobile";
 import { isMobile } from "@/utils/isMobile";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-import styles from "./TextEditorRibbonStyles";
+import styles from "./RibbonStyles";
 
 function IconButton({ iconSource }) {
   return (

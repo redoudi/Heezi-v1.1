@@ -2,8 +2,8 @@ import VerticalDivider from "@/components/practice-tools/VerticalDivider";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import MobileRibbon from "../../ribbon/RibbonMobile";
 import BoldButton from "../BoldButton";
+import MobileRibbon from "../RibbonMobile";
 
 export default function SpreadsheetRibbon() {
   return isMobile ? <MobileRibbon /> : <SpreadsheetRibbonDesktop />;

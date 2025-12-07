@@ -1,8 +1,8 @@
 import { ScrollView, StyleSheet, View } from "react-native";
 import FunctionBar from "./function-bar";
 import SpreadsheetGrid from "./grid/spreadsheet-grid";
-import SpreadsheetRibbon from "./ribbon/spreadsheet-ribbon";
-import RibbonTabs from "./ribbon/spreadsheet-ribbon-tabs";
+import SpreadsheetRibbon from "./spreadsheet-ribbon/spreadsheet-ribbon";
+import RibbonTabs from "./spreadsheet-ribbon/spreadsheet-ribbon-tabs";
 
 import MascotMonitor from "@/components/mascot/mascot-monitor";
 import useLevelData from "@/hooks/use-level-data";
