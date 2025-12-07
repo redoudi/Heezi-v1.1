@@ -14,9 +14,7 @@ const buttonBaseWhite = {
   borderRadius: 8,
 };
 
-const imageBaseRounded = {
-  borderRadius: 8,
-};
+const imageBaseRounded = {};
 
 export default StyleSheet.create({
   mainContainer: {
@@ -161,52 +159,42 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   image10: {
-    ...imageBaseRounded,
     width: 19,
     height: 23,
   },
   image11: {
-    ...imageBaseRounded,
     width: 18,
     height: 18,
   },
   image12: {
-    ...imageBaseRounded,
     width: 9,
     height: 6,
   },
   image13: {
-    ...imageBaseRounded,
     width: 7,
     height: 10,
   },
   image14: {
-    ...imageBaseRounded,
     width: 6,
     height: 10,
   },
   image15: {
-    ...imageBaseRounded,
     width: 8,
     height: 10,
   },
   image16: {
-    ...imageBaseRounded,
     width: 16,
     height: 10,
   },
   image17: {
-    ...imageBaseRounded,
     width: 11,
     height: 9,
   },
   image18: {
-    ...imageBaseRounded,
     width: 15,
     height: 13,
   },
   image19: {
-    ...imageBaseRounded,
     width: 12,
     height: 14,
   },
@@ -219,27 +207,22 @@ export default StyleSheet.create({
     height: 28,
   },
   image22: {
-    ...imageBaseRounded,
     width: 15,
     height: 12,
   },
   image23: {
-    ...imageBaseRounded,
     width: 15,
     height: 17,
   },
   image24: {
-    ...imageBaseRounded,
     width: 15,
     height: 14,
   },
   image25: {
-    ...imageBaseRounded,
     width: 14,
     height: 12,
   },
   image26: {
-    ...imageBaseRounded,
     width: 13,
     height: 12,
   },
@@ -252,22 +235,18 @@ export default StyleSheet.create({
     height: 15,
   },
   image29: {
-    ...imageBaseRounded,
     width: 31,
     height: 31,
   },
   image6: {
-    ...imageBaseRounded,
     width: 17,
     height: 16,
   },
   iconBig: {
-    ...imageBaseRounded,
     width: 26,
     height: 31,
   },
   downArrow: {
-    ...imageBaseRounded,
     width: 9,
     height: 6,
   },
