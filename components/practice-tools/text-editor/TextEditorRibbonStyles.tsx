@@ -39,7 +39,8 @@ export default StyleSheet.create({
     padding: 4,
   },
   buttonSmall: {
-    width: 23,
+    width: 24,
+    height: 24,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#EFEFEF",
