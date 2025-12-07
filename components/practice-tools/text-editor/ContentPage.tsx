@@ -41,7 +41,6 @@ function TextInputBlock({ item }: { item: any }) {
 
   useEffect(() => {
     if (blockRef.current && focus && focus.elementId === item.blockId) {
-      console.log("focusing");
       blockRef.current?.focus();
     }
   }, [item.blockId, focus, blockRef]);
@@ -135,7 +134,7 @@ export default function ContentPage() {
   return (
     <View
       ref={contentPageRef}
-      style={[styles.contentPage, contentPageHighlightedStyle]}
+      style={[styles.mainContainer, contentPageHighlightedStyle]}
     >
       <View
         style={[styles.pageContent, pageContentHighlightedStyle]}
@@ -150,12 +149,12 @@ export default function ContentPage() {
 }
 
 const styles = StyleSheet.create({
-  contentPage: {
+  mainContainer: {
     flex: 1,
     backgroundColor: "#FFFFFF",
     paddingVertical: 48,
     marginBottom: 8,
-    marginHorizontal: isMobile ? 16 : 345,
+    marginHorizontal: isMobile ? 16 : "20%",
     paddingHorizontal: isMobile ? 16 : 64,
     borderWidth: 1,
     borderColor: "darkgray",
