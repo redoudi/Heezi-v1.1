@@ -5,7 +5,7 @@ const buttonBase = {
   alignItems: "center" as const,
   backgroundColor: "#EFEFEF",
   borderRadius: 8,
-  paddingVertical: 8,
+  padding: 4,
 };
 
 const buttonBaseWhite = {
@@ -22,6 +22,7 @@ export default StyleSheet.create({
   mainContainer: {
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
+    paddingHorizontal: 16,
     paddingVertical: 8,
   },
   section: { paddingHorizontal: 16 },
@@ -117,7 +118,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     paddingVertical: 27,
   },
-  buttonColumn: {
+  verticalButton: {
     ...buttonBase,
     width: 54,
     padding: 8,
@@ -144,9 +145,7 @@ export default StyleSheet.create({
     flexDirection: "row",
   },
 
-  column4: {
-    width: 35,
-  },
+  buttonColumn: { gap: 4 },
   column5: {
     width: 399,
     alignItems: "center",

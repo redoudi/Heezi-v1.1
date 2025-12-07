@@ -9,9 +9,9 @@ import styles from "./TextEditorRibbonStyles";
 function SectionPressePapiers() {
   return (
     <View style={styles.section}>
-      <View style={styles.sectionContent}>
+      <View style={[styles.sectionContent, { gap: 8 }]}>
         <TouchableOpacity
-          style={styles.buttonColumn}
+          style={styles.verticalButton}
           onPress={() => {}}
           disabled
         >
@@ -27,7 +27,7 @@ function SectionPressePapiers() {
             style={styles.downArrow}
           />
         </TouchableOpacity>
-        <View style={styles.column4}>
+        <View style={styles.buttonColumn}>
           <TouchableOpacity style={styles.button11} onPress={() => {}} disabled>
             <Image
               source={require("@/assets/images/cut.png")}
