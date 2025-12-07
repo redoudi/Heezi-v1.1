@@ -28,7 +28,6 @@ export default StyleSheet.create({
   sectionContent: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 6,
   },
   sectionTitle: {
     fontSize: 10,
@@ -36,7 +35,6 @@ export default StyleSheet.create({
   },
   button11: {
     ...buttonBase,
-    marginBottom: 4,
   },
   button12: buttonBase,
   button13: {
