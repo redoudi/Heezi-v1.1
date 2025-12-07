@@ -1,4 +1,5 @@
 import VerticalDivider from "@/components/practice-tools/VerticalDivider";
+import { IconButtonSmall } from "@/components/practice-tools/ribbons/IconButton";
 import styles from "@/components/practice-tools/ribbons/RibbonStyles";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import { isMobile } from "@/utils/isMobile";
@@ -44,62 +45,23 @@ function SectionPolice() {
         </View>
         <View style={styles.buttonsRow}>
           <BoldButton isBold={isSelectedCellBold} onPress={boldSelectedCell} />
-          <TouchableOpacity
-            style={styles2.button14}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image14}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button15}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/shmc35k2_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image15}
-            />
-          </TouchableOpacity>
+          <IconButtonSmall
+            iconSource={require("@/assets/images/wbsdd6yd_expires_30_days.png")}
+          />
+          <IconButtonSmall
+            iconSource={require("@/assets/images/shmc35k2_expires_30_days.png")}
+          />
+
           <VerticalDivider />
-          <TouchableOpacity
-            style={styles2.button16}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/7czrdf4k_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image16}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button17}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/ath16u4f_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image17}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button18}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/uewh91sl_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image18}
-            />
-          </TouchableOpacity>
+          <IconButtonSmall
+            iconSource={require("@/assets/images/7czrdf4k_expires_30_days.png")}
+          />
+          <IconButtonSmall
+            iconSource={require("@/assets/images/ath16u4f_expires_30_days.png")}
+          />
+          <IconButtonSmall
+            iconSource={require("@/assets/images/uewh91sl_expires_30_days.png")}
+          />
         </View>
       </View>
       <Text style={styles2.text6}>{"Police"}</Text>
@@ -132,6 +94,7 @@ function SectionParagraphe() {
             style={styles2.image19}
           />
         </TouchableOpacity>
+        <VerticalDivider />
         <TouchableOpacity style={styles2.button21} onPress={() => {}} disabled>
           <Image
             source={require("@/assets/images/mc2ln7j3_expires_30_days.png")}
@@ -162,6 +125,7 @@ function SectionParagraphe() {
             style={styles2.image21}
           />
         </TouchableOpacity>
+        <VerticalDivider />
         <Image
           source={require("@/assets/images/spreadsheetRibbonAlignment.png")}
           resizeMode={"contain"}
@@ -182,6 +146,7 @@ function SectionParagraphe() {
           />
         </TouchableOpacity>
       </View>
+
       <View style={styles2.view}>
         <Text style={styles2.text6}>{"Paragraphe"}</Text>
       </View>

@@ -16,3 +16,19 @@ export default function IconButton({
     </TouchableOpacity>
   );
 }
+
+export function IconButtonSmall({
+  iconSource,
+}: {
+  iconSource: ImageSourcePropType;
+}) {
+  return (
+    <TouchableOpacity style={styles.buttonSmall} onPress={() => {}} disabled>
+      <Image
+        source={iconSource}
+        resizeMode={"contain"}
+        style={styles.buttonIcon}
+      />
+    </TouchableOpacity>
+  );
+}
