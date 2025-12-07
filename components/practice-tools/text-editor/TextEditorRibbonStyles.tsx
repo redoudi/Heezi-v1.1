@@ -84,6 +84,7 @@ export default StyleSheet.create({
     ...buttonBase,
     width: 54,
     padding: 8,
+    gap: 2,
   },
   buttonColumn2: {
     ...buttonBase,
@@ -115,7 +116,7 @@ export default StyleSheet.create({
   },
   iconBig: {
     width: 26,
-    height: 31,
+    height: 20,
   },
 
   row10: {

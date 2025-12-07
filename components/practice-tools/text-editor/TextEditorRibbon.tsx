@@ -301,7 +301,7 @@ function SectionEdition() {
   return (
     <View style={styles.section}>
       <TouchableOpacity
-        style={styles.buttonColumn2}
+        style={styles.verticalButton}
         onPress={() => {}}
         disabled
       >
@@ -332,11 +332,12 @@ function RibbonDesktop() {
       <VerticalDivider />
       <SectionPolice />
       <VerticalDivider />
-      {/*all images ok until here*/}
       <SectionParagraphe />
       <VerticalDivider />
       <SectionStyles />
+      <VerticalDivider />
       <SectionEdition />
+      <VerticalDivider />
     </View>
   );
 }
