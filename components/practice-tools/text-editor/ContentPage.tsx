@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     paddingVertical: 48,
     marginBottom: 8,
+    marginTop: 4,
     marginHorizontal: isMobile ? 16 : "20%",
     paddingHorizontal: isMobile ? 16 : 64,
     borderWidth: 1,
