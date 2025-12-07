@@ -224,18 +224,18 @@ function SectionParagraphe() {
           <IconButton
             iconSource={require("@/assets/images/numberedtablist.png")}
           />
-
           <VerticalDivider />
           <IconButton
             iconSource={require("@/assets/images/xhij6qe3_expires_30_days.png")}
           />
-
           <IconButton
             iconSource={require("@/assets/images/m8i25506_expires_30_days.png")}
           />
+          <VerticalDivider />
           <IconButton
             iconSource={require("@/assets/images/qsucqhf4_expires_30_days.png")}
           />
+          <VerticalDivider />
           <IconButton
             iconSource={require("@/assets/images/f5tsg9ts_expires_30_days.png")}
           />
