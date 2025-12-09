@@ -8,25 +8,18 @@ import styles from "@/components/practice-tools/ribbons/RibbonStyles";
 import SectionPressePapiers from "../ribbons/SectionPressePapiers";
 import SectionTitle from "../ribbons/SectionTitle";
 
-import IconButton from "../ribbons/IconButton";
+import IconButton, { TextDropdownButton } from "../ribbons/RibbonButtons";
 
 function SectionPolice() {
   return (
     <View style={styles.section}>
       <View style={styles.sectionGrid}>
         <View style={styles.buttonsRow}>
-          <TouchableOpacity
-            style={[styles.buttonDropdown, { width: isMobile ? 100 : 241 }]}
-            onPress={() => {}}
-            disabled
-          >
-            <Text style={styles.text}>{"Police"}</Text>
-            <Image
-              source={require("@/assets/images/uig4w09q_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles.downArrow}
-            />
-          </TouchableOpacity>
+          <TextDropdownButton
+            text="Police"
+            widthMobile={100}
+            widthDesktop={241}
+          />
           <TouchableOpacity
             style={[styles.buttonDropdown, { width: 73 }]}
             onPress={() => {}}

@@ -1,5 +1,8 @@
 import VerticalDivider from "@/components/practice-tools/VerticalDivider";
-import { IconButtonSmall } from "@/components/practice-tools/ribbons/IconButton";
+import {
+  IconButtonSmall,
+  TextDropdownButton,
+} from "@/components/practice-tools/ribbons/RibbonButtons";
 import styles from "@/components/practice-tools/ribbons/RibbonStyles";
 import SectionGrid from "@/components/practice-tools/ribbons/SectionGrid";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
@@ -18,18 +21,7 @@ function SectionPolice() {
   return (
     <SectionGrid title="Police">
       <View style={styles.buttonsRow}>
-        <TouchableOpacity
-          style={styles.buttonDropdown}
-          onPress={() => {}}
-          disabled
-        >
-          <Text style={styles.text}>{"Police"}</Text>
-          <Image
-            source={require("@/assets/images/downArrow.png")}
-            resizeMode={"contain"}
-            style={styles.downArrow}
-          />
-        </TouchableOpacity>
+        <TextDropdownButton text="Police" widthMobile={73} widthDesktop={100} />
         <TouchableOpacity
           style={styles.buttonDropdown}
           onPress={() => {}}
