@@ -3,11 +3,13 @@ import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 const CornerSymbol = () => (
-  <Image
-    source={require("@/assets/images/pt024urq_expires_30_days.png")}
-    resizeMode={"stretch"}
-    style={styles.image35}
-  />
+  <View style={styles.rowNumberContainer}>
+    <Image
+      source={require("@/assets/images/pt024urq_expires_30_days.png")}
+      resizeMode={"stretch"}
+      style={styles.image35}
+    />
+  </View>
 );
 
 export default function HeaderRow({
@@ -31,21 +33,16 @@ export default function HeaderRow({
   return (
     <View
       ref={headerRowRef}
-      style={[styles.mainContainer, isHighlighted && styles.highlighted]}
+      style={[styles.cellsRow, isHighlighted && styles.highlighted]}
     >
       <CornerSymbol />
-      {columnsLetters.map((columnLetter, index) => (
-        <View
-          key={columnLetter}
-          style={
-            index === columnsLetters.length - 1
-              ? styles.letterContainer
-              : styles.lastLetterContainer
-          }
-        >
-          <Text style={styles.letterText}>{columnLetter}</Text>
-        </View>
-      ))}
+      <View style={styles.lettersContainer}>
+        {columnsLetters.map((columnLetter, index) => (
+          <View key={columnLetter} style={styles.letterContainer}>
+            <Text style={styles.letterText}>{columnLetter}</Text>
+          </View>
+        ))}
+      </View>
     </View>
   );
 }
@@ -56,12 +53,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     marginBottom: 8,
   },
+  lettersContainer: {
+    flexDirection: "row",
+    gap: 8,
+  },
   lastLetterContainer: {
-    width: 106,
     marginRight: 9,
   },
   letterContainer: {
-    width: 106,
+    width: 107,
+    paddingHorizontal: 8,
   },
   letterText: {
     fontSize: 12,
@@ -78,5 +79,17 @@ const styles = StyleSheet.create({
     borderColor: "red",
     borderWidth: 6,
     borderStyle: "dotted",
+  },
+  cellsRow: {
+    flexDirection: "row",
+    paddingHorizontal: 8,
+    gap: 8,
+    marginLeft: 8,
+  },
+  rowNumberContainer: {
+    width: 28,
+    alignItems: "flex-end",
+    justifyContent: "center",
+    marginRight: 8,
   },
 });

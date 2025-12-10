@@ -30,35 +30,33 @@ export default function SpreadsheetGrid() {
   const scrollViewHeight = height ? Math.max(200, height - 350) : 400;
 
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView
+      showsVerticalScrollIndicator
+      style={[styles.mainContainer, { height: scrollViewHeight }]}
+      nestedScrollEnabled={true}
+      contentContainerStyle={styles.scrollViewContentContainer}
+    >
       <HeaderRow columnsLetters={COLUMNS} />
-      <ScrollView
-        showsVerticalScrollIndicator
-        style={{ height: scrollViewHeight }}
-        nestedScrollEnabled={true}
-        contentContainerStyle={styles.scrollViewContentContainer}
-      >
-        {ROWS.map((item, index) => (
-          <View key={item} style={styles.cellsRow}>
-            <View
-              ref={rowNumberContainerRef}
-              style={[
-                styles.rowNumberContainer,
-                isHighlighted && styles.highlighted,
-              ]}
-            >
-              <Text style={styles.rowNumber}>{item}</Text>
-            </View>
-            {COLUMNS.map((_, colIndex) => (
-              <Cell
-                key={`${colIndex}-${index}`}
-                id={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
-              />
-            ))}
+      {ROWS.map((item, index) => (
+        <View key={item} style={styles.cellsRow}>
+          <View
+            ref={rowNumberContainerRef}
+            style={[
+              styles.rowNumberContainer,
+              isHighlighted && styles.highlighted,
+            ]}
+          >
+            <Text style={styles.rowNumber}>{item}</Text>
           </View>
-        ))}
-      </ScrollView>
-    </View>
+          {COLUMNS.map((_, colIndex) => (
+            <Cell
+              key={`${colIndex}-${index}`}
+              id={`${String.fromCharCode(65 + colIndex)}${index + 1}`}
+            />
+          ))}
+        </View>
+      ))}
+    </ScrollView>
   );
 }
 
