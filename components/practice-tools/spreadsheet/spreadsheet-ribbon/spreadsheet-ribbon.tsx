@@ -1,10 +1,12 @@
 import VerticalDivider from "@/components/practice-tools/VerticalDivider";
-import {
+import IconButton, {
   IconButtonSmall,
   TextDropdownButton,
 } from "@/components/practice-tools/ribbons/RibbonButtons";
 import styles from "@/components/practice-tools/ribbons/RibbonStyles";
-import SectionGrid from "@/components/practice-tools/ribbons/SectionGrid";
+import SectionGrid, {
+  ButtonsStack,
+} from "@/components/practice-tools/ribbons/SectionGrid";
 import { useSpreadsheetRibbon } from "@/hooks/useSpreadsheet";
 import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -22,18 +24,7 @@ function SectionPolice() {
     <SectionGrid title="Police">
       <View style={styles.buttonsRow}>
         <TextDropdownButton text="Police" widthMobile={73} widthDesktop={100} />
-        <TouchableOpacity
-          style={styles.buttonDropdown}
-          onPress={() => {}}
-          disabled
-        >
-          <Text style={styles.text}>{"12"}</Text>
-          <Image
-            source={require("@/assets/images/downArrow.png")}
-            resizeMode={"contain"}
-            style={styles.downArrow}
-          />
-        </TouchableOpacity>
+        <TextDropdownButton text="12" widthDesktop={50} />
       </View>
       <View style={styles.buttonsRow}>
         <BoldButton isBold={isSelectedCellBold} onPress={boldSelectedCell} />
@@ -62,117 +53,40 @@ function SectionPolice() {
 function SectionParagraphe() {
   return (
     <SectionGrid title="Paragraphe">
-      <View style={styles2.column7}>
-        <View style={styles2.row8}>
-          <TouchableOpacity
-            style={styles2.button19}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/nkzp2nt3_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image19}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button19}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/y7bq5psu_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image19}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button20}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/gxdqlt2g_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image19}
-            />
-          </TouchableOpacity>
-          <VerticalDivider />
-          <TouchableOpacity
-            style={styles2.button21}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/mc2ln7j3_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image20}
-            />
-          </TouchableOpacity>
-        </View>
-        <View style={styles2.row9}>
-          <TouchableOpacity
-            style={styles2.button22}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/uirt4emu_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image21}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button20}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/393nlgpw_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image19}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button23}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/e7u96dzs_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image21}
-            />
-          </TouchableOpacity>
-          <VerticalDivider />
-          <Image
-            source={require("@/assets/images/spreadsheetRibbonAlignment.png")}
-            resizeMode={"contain"}
-            style={styles2.image22}
-          />
-          <TouchableOpacity
-            style={styles2.button24}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/h7fhqw57_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image20}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles2.button25}
-            onPress={() => {}}
-            disabled
-          >
-            <Image
-              source={require("@/assets/images/lxt8yo0p_expires_30_days.png")}
-              resizeMode={"contain"}
-              style={styles2.image20}
-            />
-          </TouchableOpacity>
-        </View>
+      <View style={styles.buttonsRow}>
+        <ButtonsStack
+          iconSources={[
+            require("@/assets/images/nkzp2nt3_expires_30_days.png"),
+            require("@/assets/images/y7bq5psu_expires_30_days.png"),
+            require("@/assets/images/gxdqlt2g_expires_30_days.png"),
+          ]}
+        />
+        <VerticalDivider />
+        <IconButton
+          iconSource={require("@/assets/images/mc2ln7j3_expires_30_days.png")}
+        />
+      </View>
+      <View style={styles.buttonsRow}>
+        <ButtonsStack
+          iconSources={[
+            require("@/assets/images/uirt4emu_expires_30_days.png"),
+            require("@/assets/images/393nlgpw_expires_30_days.png"),
+            require("@/assets/images/e7u96dzs_expires_30_days.png"),
+          ]}
+        />
+
+        <VerticalDivider />
+        <Image
+          source={require("@/assets/images/spreadsheetRibbonAlignment.png")}
+          resizeMode={"contain"}
+          style={styles2.image22}
+        />
+        <ButtonsStack
+          iconSources={[
+            require("@/assets/images/h7fhqw57_expires_30_days.png"),
+            require("@/assets/images/lxt8yo0p_expires_30_days.png"),
+          ]}
+        />
       </View>
     </SectionGrid>
   );
@@ -222,7 +136,7 @@ function SectionNombre() {
 
 function SectionStyles() {
   return (
-    <View style={styles2.column9}>
+    <SectionGrid title="Styles">
       <View style={styles2.row11}>
         <Image
           source={require("@/assets/images/spreadsheetRibbon3.png")}
@@ -240,14 +154,13 @@ function SectionStyles() {
         resizeMode={"contain"}
         style={styles2.image27}
       />
-      <Text style={styles2.text3}>{"Styles"}</Text>
-    </View>
+    </SectionGrid>
   );
 }
 
 function SectionCellules() {
   return (
-    <View style={styles2.column10}>
+    <SectionGrid title="Cellules">
       <View style={styles2.column11}>
         <View style={styles2.row12}>
           <TouchableOpacity
@@ -303,8 +216,7 @@ function SectionCellules() {
           />
         </TouchableOpacity>
       </View>
-      <Text style={styles2.text6}>{"Cellules"}</Text>
-    </View>
+    </SectionGrid>
   );
 }
 

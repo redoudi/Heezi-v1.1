@@ -41,7 +41,7 @@ export function IconButtonSmall({
 
 export function TextDropdownButton({
   text,
-  widthMobile,
+  widthMobile = 0,
   widthDesktop,
 }: {
   text: string;
@@ -52,7 +52,7 @@ export function TextDropdownButton({
     <TouchableOpacity
       style={[
         styles.buttonDropdown,
-        { width: isMobile ? widthMobile : widthDesktop },
+        { width: isMobile ? widthMobile || widthDesktop : widthDesktop },
       ]}
       onPress={() => {}}
       disabled
