@@ -36,14 +36,12 @@ function SectionPolice() {
         />
 
         <VerticalDivider />
-        <IconButtonSmall
-          iconSource={require("@/assets/images/7czrdf4k_expires_30_days.png")}
-        />
-        <IconButtonSmall
-          iconSource={require("@/assets/images/ath16u4f_expires_30_days.png")}
-        />
-        <IconButtonSmall
-          iconSource={require("@/assets/images/uewh91sl_expires_30_days.png")}
+        <ButtonsStack
+          iconSources={[
+            require("@/assets/images/7czrdf4k_expires_30_days.png"),
+            require("@/assets/images/ath16u4f_expires_30_days.png"),
+            require("@/assets/images/uewh91sl_expires_30_days.png"),
+          ]}
         />
       </View>
     </SectionGrid>
