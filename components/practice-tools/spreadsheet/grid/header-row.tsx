@@ -6,8 +6,8 @@ const CornerSymbol = () => (
   <View style={styles.rowNumberContainer}>
     <Image
       source={require("@/assets/images/pt024urq_expires_30_days.png")}
-      resizeMode={"stretch"}
-      style={styles.image35}
+      resizeMode={"contain"}
+      style={styles.triangleIcon}
     />
   </View>
 );
@@ -39,9 +39,7 @@ export default function HeaderRow({
       <View style={styles.lettersContainer}>
         {columnsLetters.map((columnLetter, index) => (
           <View key={columnLetter} style={styles.letterContainer}>
-            <View style={styles.letterTextContainer}>
-              <Text style={styles.letterText}>{columnLetter}</Text>
-            </View>
+            <Text style={styles.letterText}>{columnLetter}</Text>
           </View>
         ))}
       </View>
@@ -72,10 +70,9 @@ const styles = StyleSheet.create({
     color: "#292929",
     textAlign: "center",
   },
-  image35: {
+  triangleIcon: {
     width: 24,
     height: 17,
-    marginRight: 8,
   },
   highlighted: {
     borderColor: "red",
@@ -93,11 +90,5 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "center",
     marginRight: 8,
-  },
-  letterTextContainer: {
-    marginHorizontal: "auto",
-    paddingHorizontal: 4,
-    paddingVertical: 2,
-    borderRadius: 4,
   },
 });
