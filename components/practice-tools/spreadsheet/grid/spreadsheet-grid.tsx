@@ -36,9 +36,10 @@ export default function SpreadsheetGrid() {
         showsVerticalScrollIndicator
         style={{ height: scrollViewHeight }}
         nestedScrollEnabled={true}
+        contentContainerStyle={styles.scrollViewContentContainer}
       >
         {ROWS.map((item, index) => (
-          <View key={item} style={styles.gridCellsContainer}>
+          <View key={item} style={styles.cellsRow}>
             <View
               ref={rowNumberContainerRef}
               style={[
@@ -72,19 +73,19 @@ const styles = StyleSheet.create({
     marginBottom: 17,
     marginHorizontal: 8,
   },
-  gridCellsContainer: {
+  cellsRow: {
     flexDirection: "row",
     paddingHorizontal: 8,
-    marginBottom: 8,
+    gap: 8,
     marginLeft: 8,
   },
+  scrollViewContentContainer: { gap: 8 },
   rowNumber: {
     fontSize: 12,
     fontWeight: "bold",
     color: "#292929",
     textAlign: "center",
   },
-
   rowNumberContainer: {
     width: 28,
     alignItems: "flex-end",
