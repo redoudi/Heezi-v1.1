@@ -39,7 +39,9 @@ export default function HeaderRow({
       <View style={styles.lettersContainer}>
         {columnsLetters.map((columnLetter, index) => (
           <View key={columnLetter} style={styles.letterContainer}>
-            <Text style={styles.letterText}>{columnLetter}</Text>
+            <View style={styles.letterTextContainer}>
+              <Text style={styles.letterText}>{columnLetter}</Text>
+            </View>
           </View>
         ))}
       </View>
@@ -91,5 +93,11 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "center",
     marginRight: 8,
+  },
+  letterTextContainer: {
+    marginHorizontal: "auto",
+    paddingHorizontal: 4,
+    paddingVertical: 2,
+    borderRadius: 4,
   },
 });
