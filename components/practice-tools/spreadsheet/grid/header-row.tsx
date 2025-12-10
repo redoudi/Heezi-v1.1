@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
   letterContainer: {
     width: 107,
     paddingHorizontal: 8,
+    backgroundColor: "#A6E9D4",
+    borderRadius: 8,
   },
   letterText: {
     fontSize: 12,
