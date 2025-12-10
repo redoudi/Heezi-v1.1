@@ -1,4 +1,5 @@
 import useCursor from "@/context/useCursor";
+import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
@@ -20,6 +21,8 @@ export default function HeaderRow({
   const elementId = "headerRow";
   const headerRowRef = useRef<View>(null);
   const { setContentRef } = useCursor();
+  const { spreadsheetData } = useSpreadsheetStore();
+  const cellsSelected = spreadsheetData?.cellsSelected;
   useEffect(() => {
     if (setContentRef) {
       setContentRef(elementId, headerRowRef);
@@ -28,7 +31,8 @@ export default function HeaderRow({
   const {
     currentStep: { highlight },
   } = useCursor();
-
+  const isCellFromColumnsSelected = (columnLetter: string) =>
+    cellsSelected?.some((cell) => cell.startsWith(columnLetter));
   const isHighlighted = highlight?.elementId === elementId;
   return (
     <View
@@ -38,7 +42,15 @@ export default function HeaderRow({
       <CornerSymbol />
       <View style={styles.lettersContainer}>
         {columnsLetters.map((columnLetter, index) => (
-          <View key={columnLetter} style={styles.letterContainer}>
+          <View
+            key={columnLetter}
+            style={[
+              styles.letterContainer,
+              isCellFromColumnsSelected(columnLetter) && {
+                backgroundColor: "#A6E9D4",
+              },
+            ]}
+          >
             <Text style={styles.letterText}>{columnLetter}</Text>
           </View>
         ))}
@@ -63,7 +75,7 @@ const styles = StyleSheet.create({
   letterContainer: {
     width: 107,
     paddingHorizontal: 8,
-    backgroundColor: "#A6E9D4",
+
     borderRadius: 8,
   },
   letterText: {
