@@ -31,17 +31,19 @@ export default function HeaderRow({
   return (
     <View
       ref={headerRowRef}
-      style={[styles.scrollView, isHighlighted && styles.highlighted]}
+      style={[styles.mainContainer, isHighlighted && styles.highlighted]}
     >
       <CornerSymbol />
       {columnsLetters.map((columnLetter, index) => (
         <View
           key={columnLetter}
           style={
-            index === columnsLetters.length - 1 ? styles.view3 : styles.view2
+            index === columnsLetters.length - 1
+              ? styles.letterContainer
+              : styles.lastLetterContainer
           }
         >
-          <Text style={styles.text9}>{columnLetter}</Text>
+          <Text style={styles.letterText}>{columnLetter}</Text>
         </View>
       ))}
     </View>
@@ -49,19 +51,19 @@ export default function HeaderRow({
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
+  mainContainer: {
     flexDirection: "row",
     paddingHorizontal: 8,
     marginBottom: 8,
   },
-  view2: {
+  lastLetterContainer: {
     width: 106,
     marginRight: 9,
   },
-  view3: {
+  letterContainer: {
     width: 106,
   },
-  text9: {
+  letterText: {
     fontSize: 12,
     fontWeight: "bold",
     color: "#292929",

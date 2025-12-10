@@ -84,13 +84,7 @@ const styles = StyleSheet.create({
     color: "#292929",
     textAlign: "center",
   },
-  view2: {
-    width: 106,
-    marginRight: 9,
-  },
-  view3: {
-    width: 106,
-  },
+
   rowNumberContainer: {
     width: 28,
     alignItems: "flex-end",
