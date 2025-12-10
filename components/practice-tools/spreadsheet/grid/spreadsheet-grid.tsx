@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   rowNumber: {
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: "bold",
     color: "#292929",
     textAlign: "center",
