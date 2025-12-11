@@ -9,7 +9,10 @@ function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
   return isMobile ? (
     <View style={styles.mobileContainer}>{children}</View>
   ) : (
-    <ScrollableScreen contentContainerStyle={[styles.mainContainer]}>
+    <ScrollableScreen
+      style={styles.mainContainer}
+      contentContainerStyle={styles.mainContent}
+    >
       {children}
     </ScrollableScreen>
   );
@@ -38,13 +41,16 @@ export default function SectionsList() {
   );
 }
 const styles = StyleSheet.create({
+  mainContainer: {
+    marginHorizontal: 32,
+  },
   mobileContainer: {
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
     gap: 16,
   },
-  mainContainer: {
+  mainContent: {
     gap: 32,
     marginBottom: 32,
   },
