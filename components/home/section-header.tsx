@@ -32,8 +32,6 @@ export default function SectionHeader() {
             style={styles.toolNameText}
           >{`Outil : ${toolConstants.name}`}</Text>
         </View>
-
-        <StatusText />
       </View>
       <View style={styles.sectionTitleContainer}>
         <Text style={styles.sectionNumberText}>{"Section 1"}</Text>
