@@ -46,9 +46,8 @@ export default function HeaderRow({
             key={columnLetter}
             style={[
               styles.letterContainer,
-              isCellFromColumnsSelected(columnLetter) && {
-                backgroundColor: "#A6E9D4",
-              },
+              isCellFromColumnsSelected(columnLetter) && styles.selectedIndex,
+              ,
             ]}
           >
             <Text style={styles.letterText}>{columnLetter}</Text>
@@ -68,9 +67,6 @@ const styles = StyleSheet.create({
   lettersContainer: {
     flexDirection: "row",
     gap: 8,
-  },
-  lastLetterContainer: {
-    marginRight: 9,
   },
   letterContainer: {
     width: 107,
@@ -105,4 +101,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginRight: 8,
   },
+  selectedIndex: { backgroundColor: "#A6E9D4" },
 });
