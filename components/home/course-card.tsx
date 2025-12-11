@@ -1,12 +1,12 @@
+import HomeHeader from "@/components/home/HomeHeader";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import StatusText from "../status-text";
 
-export function CourseCard() {
+export default function CourseCard() {
   const { toolConstants } = usePracticeToolConstants();
   return (
-    <View style={styles.container}>
-      <Image source={toolConstants.icon} resizeMode={"contain"} />
+    <HomeHeader>
       <View
         style={[styles.mainContent, { backgroundColor: toolConstants.color }]}
       >
@@ -16,16 +16,11 @@ export function CourseCard() {
         </View>
         <StatusText />
       </View>
-    </View>
+    </HomeHeader>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 16,
-  },
   mainContent: {
     flex: 1,
     borderRadius: 8,
