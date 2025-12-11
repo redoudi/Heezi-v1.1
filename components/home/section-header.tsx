@@ -25,23 +25,19 @@ export default function SectionHeader() {
   const { toolConstants } = usePracticeToolConstants();
   return (
     <HomeHeader>
-      <View
-        style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
-      >
-        <View style={styles.row}>
-          <RetourButton />
-          <View>
-            <Text
-              style={styles.toolNameText}
-            >{`Outil : ${toolConstants.name}`}</Text>
-          </View>
+      <View style={styles.row}>
+        <RetourButton />
+        <View>
+          <Text
+            style={styles.toolNameText}
+          >{`Outil : ${toolConstants.name}`}</Text>
+        </View>
 
-          <StatusText />
-        </View>
-        <View style={styles.sectionTitleContainer}>
-          <Text style={styles.sectionNumberText}>{"Section 1"}</Text>
-          <Text style={styles.sectionTitleText}>{"Apprendre les bases"}</Text>
-        </View>
+        <StatusText />
+      </View>
+      <View style={styles.sectionTitleContainer}>
+        <Text style={styles.sectionNumberText}>{"Section 1"}</Text>
+        <Text style={styles.sectionTitleText}>{"Apprendre les bases"}</Text>
       </View>
     </HomeHeader>
   );
