@@ -52,7 +52,7 @@ export default function CellTextInput({
       style={[
         styles.selectedBox,
         cellsStyles?.[id],
-        { borderColor: isWrongAnswer ? "red" : "black" },
+        isWrongAnswer ? styles.wrongAnswer : styles.selectedCell,
       ]}
       editable={isWrongAnswer !== false}
       value={cellsValues?.[id] || ""}
@@ -74,8 +74,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
     borderWidth: 2,
-    marginRight: 8,
     padding: 8,
     outlineStyle: "none",
+  },
+  wrongAnswer: {
+    borderColor: "red",
+  },
+  selectedCell: {
+    borderColor: "#249079",
+    borderWidth: 3,
   },
 });
