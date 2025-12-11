@@ -16,7 +16,7 @@ export function LevelSection({ level }: LevelSectionProps) {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.levelHeader}>
-        <Text style={[styles.levelText, styles.bold]}>{"Niveau :"}</Text>
+        <Text style={[styles.levelText, styles.bold]}>{"Niveau : "}</Text>
         <Text style={styles.levelText}>débutant</Text>
       </View>
       <View style={styles.progressBar}>
