@@ -31,14 +31,14 @@ export default function HeaderRow({
   const {
     currentStep: { highlight },
   } = useCursor();
-  const isCellFromColumnSelected = (columnLetter: string) =>
-    cellsSelected?.some((cell) => cell.startsWith(columnLetter));
+
   const isHighlighted = highlight?.elementId === elementId;
+  const isCellFromColumnSelected = (columnLetter: string) =>
+    isHighlighted ||
+    cellsSelected?.some((cell) => cell.startsWith(columnLetter));
+
   return (
-    <View
-      ref={headerRowRef}
-      style={[styles.cellsRow, isHighlighted && styles.highlighted]}
-    >
+    <View ref={headerRowRef} style={[styles.cellsRow]}>
       <CornerSymbol />
       <View style={styles.lettersContainer}>
         {columnsLetters.map((columnLetter, index) => (

@@ -33,6 +33,7 @@ export default function SpreadsheetGrid() {
   const scrollViewHeight = height ? Math.max(200, height - 350) : 400;
 
   const isCellFromRowSelected = (rowNumber: string) =>
+    isHighlighted ||
     cellsSelected?.some((cell) => cell.substring(1) === String(rowNumber));
 
   return (
@@ -45,13 +46,7 @@ export default function SpreadsheetGrid() {
       <HeaderRow columnsLetters={COLUMNS} />
       {ROWS.map((item, index) => (
         <View key={item} style={styles.cellsRow}>
-          <View
-            ref={rowNumberContainerRef}
-            style={[
-              styles.rowNumberContainer,
-              isHighlighted && styles.highlighted,
-            ]}
-          >
+          <View ref={rowNumberContainerRef} style={[styles.rowNumberContainer]}>
             <View
               style={[
                 styles.rowNumberTextContainer,
