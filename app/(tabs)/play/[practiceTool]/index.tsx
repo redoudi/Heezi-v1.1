@@ -22,10 +22,7 @@ export default function SectionsList() {
   const { practiceTool } = usePracticeToolConstants();
 
   return (
-    <ScrollableScreen
-      style={styles.mainContainer}
-      contentContainerStyle={styles.mainContent}
-    >
+    <ResponsiveWrapper>
       {!isMobile && <CourseCard />}
       <SectionCard
         mascotImageSource={require("@/assets/images/aik0c764_expires_30_days.png")}
@@ -40,7 +37,7 @@ export default function SectionsList() {
         mascotImageSource={require("@/assets/images/xdcz0s8c_expires_30_days.png")}
         sectionNumber={3}
       />
-    </ScrollableScreen>
+    </ResponsiveWrapper>
   );
 }
 const styles = StyleSheet.create({
