@@ -12,6 +12,7 @@ import Cell from "./cell";
 import HeaderRow from "./header-row";
 
 import { COLUMNS, ROWS } from "@/constants/spreadsheetConstants";
+import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 
 // Row configuration
 
@@ -19,6 +20,8 @@ export default function SpreadsheetGrid() {
   const rowNumberContainerRef = useRef<View>(null);
   const { setContentRef } = useCursor();
   const { height } = useWindowDimensions();
+  const { spreadsheetData } = useSpreadsheetStore();
+  const cellsSelected = spreadsheetData?.cellsSelected;
   useEffect(() => {
     if (setContentRef) {
       setContentRef("rowNumbersColumn", rowNumberContainerRef);
@@ -28,6 +31,9 @@ export default function SpreadsheetGrid() {
   const { isHighlighted } = useHighlight("rowNumbersColumn");
   // Calculate max height: window height minus safe area, title bar, ribbon, function bar, and padding
   const scrollViewHeight = height ? Math.max(200, height - 350) : 400;
+
+  const isCellFromRowSelected = (rowNumber: string) =>
+    cellsSelected?.some((cell) => cell.substring(1) === String(rowNumber));
 
   return (
     <ScrollView
@@ -46,7 +52,14 @@ export default function SpreadsheetGrid() {
               isHighlighted && styles.highlighted,
             ]}
           >
-            <Text style={styles.rowNumber}>{item}</Text>
+            <View
+              style={[
+                styles.rowNumberTextContainer,
+                isCellFromRowSelected(item) && styles.selectedIndex,
+              ]}
+            >
+              <Text style={styles.rowNumber}>{item}</Text>
+            </View>
           </View>
           {COLUMNS.map((_, colIndex) => (
             <Cell
@@ -94,5 +107,11 @@ const styles = StyleSheet.create({
     borderColor: "red",
     borderWidth: 6,
     borderStyle: "dotted",
+  },
+  selectedIndex: { backgroundColor: "#A6E9D4" },
+  rowNumberTextContainer: {
+    paddingHorizontal: 4,
+    paddingVertical: 2,
+    borderRadius: 8,
   },
 });

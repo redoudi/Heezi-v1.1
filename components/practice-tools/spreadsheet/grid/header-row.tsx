@@ -31,7 +31,7 @@ export default function HeaderRow({
   const {
     currentStep: { highlight },
   } = useCursor();
-  const isCellFromColumnsSelected = (columnLetter: string) =>
+  const isCellFromColumnSelected = (columnLetter: string) =>
     cellsSelected?.some((cell) => cell.startsWith(columnLetter));
   const isHighlighted = highlight?.elementId === elementId;
   return (
@@ -46,7 +46,7 @@ export default function HeaderRow({
             key={columnLetter}
             style={[
               styles.letterContainer,
-              isCellFromColumnsSelected(columnLetter) && styles.selectedIndex,
+              isCellFromColumnSelected(columnLetter) && styles.selectedIndex,
               ,
             ]}
           >
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
   letterContainer: {
     width: 107,
     paddingHorizontal: 8,
-
     borderRadius: 8,
   },
   letterText: {
