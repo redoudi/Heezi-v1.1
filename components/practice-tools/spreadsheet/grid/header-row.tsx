@@ -1,4 +1,5 @@
 import useCursor from "@/context/useCursor";
+import useHighlight from "@/hooks/useHighlight";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
@@ -32,7 +33,7 @@ export default function HeaderRow({
     currentStep: { highlight },
   } = useCursor();
 
-  const isHighlighted = highlight?.elementId === elementId;
+  const { isHighlighted } = useHighlight("headerRow");
   const isCellFromColumnSelected = (columnLetter: string) =>
     isHighlighted ||
     cellsSelected?.some((cell) => cell.startsWith(columnLetter));

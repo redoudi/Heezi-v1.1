@@ -33,4 +33,4 @@ const COLUMNS_DESKTOP = [
 
 export const COLUMNS = isMobile ? COLUMNS_MOBILE : COLUMNS_DESKTOP;
 
-export const ROWS = Array.from({ length: isMobile ? 10 : 18 }, (_, i) => i + 1);
+export const ROWS = Array.from({ length: 10 }, (_, i) => i + 1);

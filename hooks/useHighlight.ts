@@ -5,8 +5,11 @@ export default function useHighlight(elementId: string) {
     currentStep: { highlight },
   } = useCursor();
 
-  const isHighlighted = highlight?.elementId === elementId;
+  const isHighlighted = highlight?.elementId?.includes(elementId);
 
+  console.log("elementId", elementId);
+  console.log("highlight", highlight);
+  console.log("isHighlighted", isHighlighted);
   const hightlightedStyleDef = {
     borderColor: "red",
     borderWidth: 6,

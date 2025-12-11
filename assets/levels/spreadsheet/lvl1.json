@@ -11,7 +11,7 @@
         "A5",
         "B2",
         "B3",
-        "L18",
+        "L10",
         "L13"
     ],
     "tasks": [
@@ -27,7 +27,7 @@
                         {
                             "type": "select",
                             "cells": [
-                                "A1:L18"
+                                "A1:L10"
                             ]
                         }
                     ],
@@ -44,7 +44,7 @@
                         {
                             "type": "select",
                             "cells": [
-                                "A1:A18"
+                                "A1:A10"
                             ]
                         }
                     ],
@@ -111,6 +111,12 @@
                     },
                     "cursor": {
                         "elementId": ""
+                    },
+                    "highlight": {
+                        "elementId": [
+                            "rowNumbersColumn",
+                            "headerRow"
+                        ]
                     }
                 },
                 {
