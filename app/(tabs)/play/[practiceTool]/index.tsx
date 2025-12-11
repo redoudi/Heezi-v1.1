@@ -9,9 +9,7 @@ function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
   return isMobile ? (
     <View style={styles.mobileContainer}>{children}</View>
   ) : (
-    <ScrollableScreen
-      contentContainerStyle={[styles.container, { marginBottom: 32 }]}
-    >
+    <ScrollableScreen contentContainerStyle={[styles.container]}>
       {children}
     </ScrollableScreen>
   );
@@ -49,6 +47,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFFFFF",
     gap: 32,
+    marginBottom: 32,
   },
   absoluteImage: {
     position: "absolute",
