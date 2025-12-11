@@ -1,5 +1,6 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { Image, StyleSheet, View } from "react-native";
+import StatusText from "../status-text";
 
 export default function HomeHeader({
   children,
@@ -14,6 +15,7 @@ export default function HomeHeader({
         style={[styles.mainContent, { backgroundColor: toolConstants.color }]}
       >
         {children}
+        <StatusText />
       </View>
     </View>
   );

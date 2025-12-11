@@ -1,7 +1,6 @@
 import HomeHeader from "@/components/home/HomeHeader";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { StyleSheet, Text, View } from "react-native";
-import StatusText from "../status-text";
 
 export default function CourseCard() {
   const { toolConstants } = usePracticeToolConstants();
@@ -11,7 +10,6 @@ export default function CourseCard() {
         <Text style={styles.title}>{toolConstants.title}</Text>
         <Text style={styles.description}>{toolConstants.description}</Text>
       </View>
-      <StatusText />
     </HomeHeader>
   );
 }
