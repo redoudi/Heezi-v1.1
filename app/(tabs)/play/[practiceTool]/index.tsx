@@ -9,7 +9,7 @@ function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
   return isMobile ? (
     <View style={styles.mobileContainer}>{children}</View>
   ) : (
-    <ScrollableScreen contentContainerStyle={[styles.container]}>
+    <ScrollableScreen contentContainerStyle={[styles.mainContainer]}>
       {children}
     </ScrollableScreen>
   );
@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 16,
   },
-  container: {
-    backgroundColor: "#FFFFFF",
+  mainContainer: {
     gap: 32,
     marginBottom: 32,
   },
