@@ -1,3 +1,4 @@
+import HomeHeader from "@/components/home/HomeHeader";
 import StatusText from "@/components/status-text";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
@@ -23,24 +24,26 @@ function RetourButton() {
 export default function SectionHeader() {
   const { toolConstants } = usePracticeToolConstants();
   return (
-    <View
-      style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
-    >
-      <View style={styles.row}>
-        <RetourButton />
-        <View>
-          <Text
-            style={styles.toolNameText}
-          >{`Outil : ${toolConstants.name}`}</Text>
-        </View>
+    <HomeHeader>
+      <View
+        style={[styles.mainContainer, { backgroundColor: toolConstants.color }]}
+      >
+        <View style={styles.row}>
+          <RetourButton />
+          <View>
+            <Text
+              style={styles.toolNameText}
+            >{`Outil : ${toolConstants.name}`}</Text>
+          </View>
 
-        <StatusText />
+          <StatusText />
+        </View>
+        <View style={styles.sectionTitleContainer}>
+          <Text style={styles.sectionNumberText}>{"Section 1"}</Text>
+          <Text style={styles.sectionTitleText}>{"Apprendre les bases"}</Text>
+        </View>
       </View>
-      <View style={styles.sectionTitleContainer}>
-        <Text style={styles.sectionNumberText}>{"Section 1"}</Text>
-        <Text style={styles.sectionTitleText}>{"Apprendre les bases"}</Text>
-      </View>
-    </View>
+    </HomeHeader>
   );
 }
 

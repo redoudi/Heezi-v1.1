@@ -7,15 +7,11 @@ export default function CourseCard() {
   const { toolConstants } = usePracticeToolConstants();
   return (
     <HomeHeader>
-      <View
-        style={[styles.mainContent, { backgroundColor: toolConstants.color }]}
-      >
-        <View>
-          <Text style={styles.title}>{toolConstants.title}</Text>
-          <Text style={styles.description}>{toolConstants.description}</Text>
-        </View>
-        <StatusText />
+      <View>
+        <Text style={styles.title}>{toolConstants.title}</Text>
+        <Text style={styles.description}>{toolConstants.description}</Text>
       </View>
+      <StatusText />
     </HomeHeader>
   );
 }

@@ -1,4 +1,4 @@
-import { CourseCard } from "@/components/home/course-card";
+import CourseCard from "@/components/home/course-card";
 import SectionCard from "@/components/home/section-card/SectionCard";
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
@@ -32,10 +32,12 @@ export default function SectionsList() {
       <SectionCard
         mascotImageSource={require("@/assets/images/kvf6wzrn_expires_30_days.png")}
         sectionNumber={2}
+        continuerRoute=""
       />
       <SectionCard
         mascotImageSource={require("@/assets/images/xdcz0s8c_expires_30_days.png")}
         sectionNumber={3}
+        continuerRoute=""
       />
     </ResponsiveWrapper>
   );
