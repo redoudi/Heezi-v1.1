@@ -8,10 +8,6 @@ import { StyleSheet, View } from "react-native";
 const Divider = () => <View style={styles.divider} />;
 
 export default function SectionScreen() {
-  const lessonAnimationData = require("@/assets/animations/RenardBureauVert.json");
-  const quizAnimationData = require("@/assets/animations/RenardBureauVert.json");
-  const practiceAnimationData = require("@/assets/animations/RenardBureauVert.json");
-
   const { toolSectionButtons } = usePracticeToolConstants();
 
   return (
@@ -23,7 +19,6 @@ export default function SectionScreen() {
             title="Cours"
             image={toolSectionButtons.lesson}
             levelNumber={1}
-            animationData={lessonAnimationData}
           />
           <Divider />
           <MissionPart
@@ -31,14 +26,12 @@ export default function SectionScreen() {
             image={toolSectionButtons.quiz}
             imageDisabled={sectionButtons.disabled.quiz}
             levelNumber={2}
-            animationData={quizAnimationData}
           />
           <Divider />
           <MissionPart
             title="Pratique"
             image={toolSectionButtons.practice}
             levelNumber={3}
-            animationData={practiceAnimationData}
             imageDisabled={sectionButtons.disabled.practice}
           />
         </View>

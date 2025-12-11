@@ -18,7 +18,7 @@ function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
 }
 
 export default function SectionsList() {
-  const { toolConstants, practiceTool } = usePracticeToolConstants();
+  const { practiceTool } = usePracticeToolConstants();
 
   return (
     <ResponsiveWrapper>

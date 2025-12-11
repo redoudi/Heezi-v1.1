@@ -12,7 +12,7 @@ import CustomAnimation from "./animations/CustomAnimation";
 export default function MissionPart({
   title,
   image,
-  imageDisabled,
+  imageDisabled = undefined,
   levelNumber,
 }: {
   title: string;
