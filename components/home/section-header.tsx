@@ -10,7 +10,7 @@ function RetourButton() {
     <StyleSwitchTouchableOpacity
       onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
       containerStyle={styles.retourButton}
-      isHoveredStyle={styles.retourButtonContainerHovered}
+      isHoveredStyle={styles.buttonContainerHovered}
     >
       <Image
         source={require("@/assets/images/z1q84zux_expires_30_days.png")}
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
   },
-  retourButtonContainerHovered: {
+  buttonContainerHovered: {
     backgroundColor: "rgba(255, 255, 255, 0.87)",
   },
 });

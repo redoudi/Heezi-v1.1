@@ -1,4 +1,6 @@
-import CustomTouchableOpacity from "@/components/home/section-card/CustomTouchableOpacity";
+import CustomTouchableOpacity, {
+  StyleSwitchTouchableOpacity,
+} from "@/components/home/section-card/CustomTouchableOpacity";
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { isMobile } from "@/utils/isMobile";
 import { router, useGlobalSearchParams } from "expo-router";
@@ -24,6 +26,10 @@ export function PracticeToolCard({ toolName, style }: CategoryCardProps) {
   const backgroundColor = isCurrentTool
     ? cardToolConstants.backgroundColor
     : "#FFFFFF";
+
+  const Wrapper = isCurrentTool
+    ? CustomTouchableOpacity
+    : StyleSwitchTouchableOpacity;
 
   return (
     <CustomTouchableOpacity
@@ -69,5 +75,8 @@ const styles = StyleSheet.create({
   icon: {
     width: 32,
     height: 32,
+  },
+  buttonContainerHovered: {
+    backgroundColor: "rgba(255, 255, 255, 0.87)",
   },
 });
