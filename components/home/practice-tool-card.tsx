@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: 8,
     paddingVertical: !isMobile ? 32 : 8,
-    paddingHorizontal: 8,
+    paddingLeft: 8,
+    paddingRight: isMobile ? 8 : 16,
     flexDirection: "row",
     alignItems: "center",
     gap: 4,
