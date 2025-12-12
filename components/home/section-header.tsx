@@ -33,7 +33,7 @@ export default function SectionHeader() {
 const styles = StyleSheet.create({
   mainContent: {
     flexDirection: "row",
-    gap: 8,
+    gap: 16,
   },
   sectionTitleContainer: {
     flexDirection: "row",
