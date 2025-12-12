@@ -94,6 +94,7 @@ export default function MissionPart({
 const styles = StyleSheet.create({
   mainContainer: { flexDirection: "row", justifyContent: "center" },
   titleContainer: {
+    marginTop: 8,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -129,7 +130,6 @@ const styles = StyleSheet.create({
     color: "#292929",
   },
   animationContainer: {
-    borderWidth: 1,
     width: 300,
     height: 300,
     overflow: "hidden",
