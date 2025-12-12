@@ -10,7 +10,7 @@ export default function StatusText() {
         { backgroundColor: toolConstants.secondaryColor },
       ]}
     >
-      <Text style={[styles.statusText]}>En cours</Text>
+      <Text style={styles.statusText}>En cours</Text>
     </View>
   );
 }
