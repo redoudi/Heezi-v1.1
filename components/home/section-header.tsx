@@ -1,7 +1,7 @@
 import HomeHeader, { TitleBanner } from "@/components/home/HomeHeader";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { Image, StyleSheet, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 function RetourButton() {
   const { practiceTool } = usePracticeToolConstants();
@@ -30,15 +30,18 @@ export default function SectionHeader() {
       {/* <View style={styles.row}>
         <RetourButton />
       </View> */}
-      <RetourButton />
-      <TitleBanner title={"Section 1"} description={"Apprendre les bases"} />
+      <View style={styles.flexDirectionRow}>
+        <RetourButton />
+
+        <TitleBanner title={"Section 1"} description={"Apprendre les bases"} />
+      </View>
     </HomeHeader>
     // </View>
   );
 }
 
 const styles = StyleSheet.create({
-  mainContainer: {
+  flexDirectionRow: {
     flexDirection: "row",
   },
   sectionTitleContainer: {

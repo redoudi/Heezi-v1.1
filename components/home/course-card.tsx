@@ -6,12 +6,10 @@ export default function CourseCard() {
   const { toolConstants } = usePracticeToolConstants();
   return (
     <HomeHeader>
-      <View>
-        <TitleBanner
-          title={toolConstants.title}
-          description={toolConstants.description}
-        />
-      </View>
+      <TitleBanner
+        title={toolConstants.title}
+        description={toolConstants.description}
+      />
     </HomeHeader>
   );
 }

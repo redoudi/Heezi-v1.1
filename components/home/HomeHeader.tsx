@@ -9,14 +9,12 @@ export function TitleBanner({
   title: string;
   description: string;
 }) {
-  return [
-    <Text key="title" style={styles.title}>
-      {title}
-    </Text>,
-    <Text key="description" style={styles.description}>
-      {description}
-    </Text>,
-  ];
+  return (
+    <View>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.description}>{description}</Text>
+    </View>
+  );
 }
 
 export default function HomeHeader({
