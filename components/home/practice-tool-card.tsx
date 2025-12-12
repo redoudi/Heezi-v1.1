@@ -1,7 +1,8 @@
+import CustomTouchableOpacity from "@/components/home/section-card/CustomTouchableOpacity";
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { isMobile } from "@/utils/isMobile";
 import { router, useGlobalSearchParams } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, Text } from "react-native";
 
 interface CategoryCardProps {
   toolName: keyof typeof practiceToolsConstants;
@@ -25,7 +26,7 @@ export function PracticeToolCard({ toolName, style }: CategoryCardProps) {
     : "#FFFFFF";
 
   return (
-    <TouchableOpacity
+    <CustomTouchableOpacity
       onPress={() => {
         router.push(`/(tabs)/play/${toolName}`);
       }}
@@ -47,7 +48,7 @@ export function PracticeToolCard({ toolName, style }: CategoryCardProps) {
       <Text style={[styles.text, { color: cardToolConstants.textColor }]}>
         {cardToolConstants.title}
       </Text>
-    </TouchableOpacity>
+    </CustomTouchableOpacity>
   );
 }
 

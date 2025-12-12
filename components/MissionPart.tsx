@@ -1,6 +1,7 @@
 import { router } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
+import CustomTouchableOpacity from "@/components/home/section-card/CustomTouchableOpacity";
 import JouerButton from "@/components/ui/JouerButton";
 import characters from "@/constants/characters";
 import { getLevelDataByNumber } from "@/hooks/use-level-data";
@@ -47,7 +48,11 @@ export default function MissionPart({
   const disabled = !(levelNumber === 1) && !isPreviousLevelCompleted;
 
   return (
-    <View style={styles.mainContainer}>
+    <CustomTouchableOpacity
+      style={styles.mainContainer}
+      disabled={disabled}
+      onPress={() => router.replace(`/mission/${practiceTool}/${levelNumber}`)}
+    >
       <View style={styles.titleContainer}>
         <View
           style={[
@@ -65,13 +70,7 @@ export default function MissionPart({
         )}
       </View>
 
-      <TouchableOpacity
-        style={styles.sectionRow}
-        disabled={disabled}
-        onPress={() =>
-          router.replace(`/mission/${practiceTool}/${levelNumber}`)
-        }
-      >
+      <View style={styles.sectionRow}>
         <View style={styles.animationContainer}>
           <CustomAnimation
             animationData={getAnimationData()}
@@ -86,8 +85,8 @@ export default function MissionPart({
             disabled={disabled}
           />
         )}
-      </TouchableOpacity>
-    </View>
+      </View>
+    </CustomTouchableOpacity>
   );
 }
 
