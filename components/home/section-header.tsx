@@ -1,7 +1,7 @@
-import HomeHeader from "@/components/home/HomeHeader";
+import HomeHeader, { TitleBanner } from "@/components/home/HomeHeader";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity } from "react-native";
 
 function RetourButton() {
   const { practiceTool } = usePracticeToolConstants();
@@ -15,7 +15,6 @@ function RetourButton() {
         resizeMode={"contain"}
         style={styles.triangleIcon}
       />
-      <Text style={styles.retourButtonText}>{"Retour"}</Text>
     </TouchableOpacity>
   );
 }
@@ -23,23 +22,24 @@ function RetourButton() {
 export default function SectionHeader() {
   const { toolConstants } = usePracticeToolConstants();
   return (
+    // <View style={styles.mainContainer}>
+    //   <View style={styles.row}>
+    //     <RetourButton />
+    //   </View>
     <HomeHeader>
-      <View style={styles.row}>
+      {/* <View style={styles.row}>
         <RetourButton />
-      </View>
-      <View style={styles.sectionTitleContainer}>
-        <Text style={styles.sectionNumberText}>{"Section 1"}</Text>
-        <Text style={styles.sectionTitleText}>{"Apprendre les bases"}</Text>
-      </View>
+      </View> */}
+      <RetourButton />
+      <TitleBanner title={"Section 1"} description={"Apprendre les bases"} />
     </HomeHeader>
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   mainContainer: {
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 16,
+    flexDirection: "row",
   },
   sectionTitleContainer: {
     flexDirection: "row",
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 4,
     paddingRight: 8,
+    borderWidth: 1,
   },
   retourButtonText: {
     fontSize: 12,
