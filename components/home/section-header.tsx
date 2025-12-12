@@ -1,21 +1,22 @@
 import HomeHeader, { TitleBanner } from "@/components/home/HomeHeader";
+import CustomTouchableOpacity from "@/components/home/section-card/CustomTouchableOpacity";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
 function RetourButton() {
   const { practiceTool } = usePracticeToolConstants();
   return (
-    <TouchableOpacity
+    <CustomTouchableOpacity
       onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
-      style={styles.retourButton}
+      containerStyle={styles.retourButton}
     >
       <Image
         source={require("@/assets/images/z1q84zux_expires_30_days.png")}
         resizeMode={"contain"}
         style={styles.triangleIcon}
       />
-    </TouchableOpacity>
+    </CustomTouchableOpacity>
   );
 }
 
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 4,
     paddingRight: 8,
-
     alignItems: "center",
     justifyContent: "center",
   },

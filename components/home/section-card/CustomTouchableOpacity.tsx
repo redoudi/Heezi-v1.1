@@ -50,6 +50,7 @@ export default function CustomTouchableOpacity({
   hoverOverlayOpacity = 0.2,
   hoverOverlayColor = "rgba(255, 255, 255, 0.2)",
   isHoveredStyle,
+  containerStyle,
   ...props
 }: CustomTouchableOpacityProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -62,7 +63,7 @@ export default function CustomTouchableOpacity({
         onMouseEnter: () => !disabled && setIsHovered(true),
         onMouseLeave: () => setIsHovered(false),
       } as any)}
-      style={styles.wrapper}
+      style={[styles.wrapper, containerStyle]}
     >
       <TouchableOpacity
         style={[styles.button, style, hoveredStyle]}
