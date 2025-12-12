@@ -1,7 +1,7 @@
 import { router } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
-import CustomTouchableOpacity from "@/components/home/section-card/CustomTouchableOpacity";
+import { StyleSwitchTouchableOpacity } from "@/components/home/section-card/CustomTouchableOpacity";
 import JouerButton from "@/components/ui/JouerButton";
 import characters from "@/constants/characters";
 import { getLevelDataByNumber } from "@/hooks/use-level-data";
@@ -49,13 +49,12 @@ export default function MissionPart({
 
   return (
     <View style={styles.mainContainer}>
-      <CustomTouchableOpacity
+      <StyleSwitchTouchableOpacity
         style={styles.touchableOpacity}
         disabled={disabled}
         onPress={() =>
           router.replace(`/mission/${practiceTool}/${levelNumber}`)
         }
-        isHoveredStyle={styles.hoveredMainContainer}
       >
         <View style={styles.titleContainer}>
           <View
@@ -90,7 +89,7 @@ export default function MissionPart({
             />
           )}
         </View>
-      </CustomTouchableOpacity>
+      </StyleSwitchTouchableOpacity>
     </View>
   );
 }
@@ -148,8 +147,5 @@ const styles = StyleSheet.create({
   animation: {
     width: "100%",
     height: "100%",
-  },
-  hoveredMainContainer: {
-    backgroundColor: "rgba(0, 0, 0, 0.05)",
   },
 });
