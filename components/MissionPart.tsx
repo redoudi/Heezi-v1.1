@@ -92,7 +92,10 @@ export default function MissionPart({
 }
 
 const styles = StyleSheet.create({
-  mainContainer: { flexDirection: "row", justifyContent: "center" },
+  mainContainer: {
+    flexDirection: isMobile ? "column" : "row",
+    justifyContent: "center",
+  },
   titleContainer: {
     marginTop: 8,
     flexDirection: "row",
