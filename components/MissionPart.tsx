@@ -76,6 +76,7 @@ export default function MissionPart({
           <CustomAnimation
             animationData={getAnimationData()}
             style={styles.animation}
+            resizeMode="contain"
           />
         </View>
 
