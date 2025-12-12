@@ -20,11 +20,15 @@ function RetourButton() {
 }
 
 export default function SectionHeader() {
+  const {
+    toolConstants: { sectionDescription },
+  } = usePracticeToolConstants();
+
   return (
     <HomeHeader>
       <View style={styles.mainContent}>
         <RetourButton />
-        <TitleBanner title={"Section 1"} description={"Apprendre les bases"} />
+        <TitleBanner title={"Section 1"} description={sectionDescription} />
       </View>
     </HomeHeader>
   );
