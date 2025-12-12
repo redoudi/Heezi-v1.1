@@ -1,5 +1,5 @@
 import HomeHeader, { TitleBanner } from "@/components/home/HomeHeader";
-import CustomTouchableOpacity from "@/components/home/section-card/CustomTouchableOpacity";
+import { StyleSwitchTouchableOpacity } from "@/components/home/section-card/CustomTouchableOpacity";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { router } from "expo-router";
 import { Image, StyleSheet, View } from "react-native";
@@ -7,16 +7,17 @@ import { Image, StyleSheet, View } from "react-native";
 function RetourButton() {
   const { practiceTool } = usePracticeToolConstants();
   return (
-    <CustomTouchableOpacity
+    <StyleSwitchTouchableOpacity
       onPress={() => router.replace(`/(tabs)/play/${practiceTool}`)}
       containerStyle={styles.retourButton}
+      isHoveredStyle={styles.retourButtonContainerHovered}
     >
       <Image
         source={require("@/assets/images/z1q84zux_expires_30_days.png")}
         resizeMode={"contain"}
         style={styles.triangleIcon}
       />
-    </CustomTouchableOpacity>
+    </StyleSwitchTouchableOpacity>
   );
 }
 
@@ -86,5 +87,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 20,
     height: 20,
+  },
+  retourButtonContainerHovered: {
+    backgroundColor: "rgba(255, 255, 255, 0.87)",
   },
 });
