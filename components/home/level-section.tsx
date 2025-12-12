@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
   },
   levelText: {
     fontSize: 18,
-
     color: "#292929",
     marginBottom: !isMobile ? 8 : 0,
     marginRight: !isMobile ? 0 : 12,
