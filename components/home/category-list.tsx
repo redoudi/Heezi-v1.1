@@ -1,4 +1,4 @@
-import { CategoryCard } from "@/components/home/category-card";
+import { PracticeToolCard } from "@/components/home/practice-tool-card";
 import practiceToolsConstants from "@/constants/practiceToolsConstants";
 import { PracticeTool } from "@/context/usePracticeTool";
 import { isMobile } from "@/utils/isMobile";
@@ -18,7 +18,7 @@ export function CategoryList() {
     <View style={styles.mainContainer}>
       {toolNames.map((toolName, index) => (
         <View key={index} style={isMobile ? styles.cardWrapper : undefined}>
-          <CategoryCard
+          <PracticeToolCard
             toolName={toolName as PracticeTool}
             style={isMobile ? styles.cardFill : undefined}
           />

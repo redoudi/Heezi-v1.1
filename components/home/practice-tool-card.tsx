@@ -8,7 +8,7 @@ interface CategoryCardProps {
   style?: any;
 }
 
-export function CategoryCard({ toolName, style }: CategoryCardProps) {
+export function PracticeToolCard({ toolName, style }: CategoryCardProps) {
   const { practiceTool } = useGlobalSearchParams();
 
   const cardToolConstants = practiceToolsConstants[toolName];
@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     flexDirection: "row",
     alignItems: "center",
+    gap: 4,
   },
   text: {
     fontSize: 18,
     fontWeight: "bold",
-    marginLeft: 16,
   },
   icon: {
     width: 32,
