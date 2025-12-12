@@ -20,29 +20,20 @@ function RetourButton() {
 }
 
 export default function SectionHeader() {
-  const { toolConstants } = usePracticeToolConstants();
   return (
-    // <View style={styles.mainContainer}>
-    //   <View style={styles.row}>
-    //     <RetourButton />
-    //   </View>
     <HomeHeader>
-      {/* <View style={styles.row}>
+      <View style={styles.mainContent}>
         <RetourButton />
-      </View> */}
-      <View style={styles.flexDirectionRow}>
-        <RetourButton />
-
         <TitleBanner title={"Section 1"} description={"Apprendre les bases"} />
       </View>
     </HomeHeader>
-    // </View>
   );
 }
 
 const styles = StyleSheet.create({
-  flexDirectionRow: {
+  mainContent: {
     flexDirection: "row",
+    gap: 8,
   },
   sectionTitleContainer: {
     flexDirection: "row",
@@ -80,14 +71,16 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 4,
     paddingRight: 8,
-    borderWidth: 1,
+
+    alignItems: "center",
+    justifyContent: "center",
   },
   retourButtonText: {
     fontSize: 12,
   },
   triangleIcon: {
     borderRadius: 8,
-    width: 16,
-    height: 16,
+    width: 20,
+    height: 20,
   },
 });
