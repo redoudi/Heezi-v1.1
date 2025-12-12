@@ -73,8 +73,12 @@ export default function MissionPart({
         }
       >
         <View style={styles.animationContainer}>
-          <CustomAnimation animationData={getAnimationData()} />
+          <CustomAnimation
+            animationData={getAnimationData()}
+            style={styles.animation}
+          />
         </View>
+
         {!isMobile && (
           <JouerButton
             image={disabled ? imageDisabled : image}
@@ -125,5 +129,12 @@ const styles = StyleSheet.create({
   },
   animationContainer: {
     borderWidth: 1,
+    width: 300,
+    height: 300,
+    overflow: "hidden",
+  },
+  animation: {
+    width: "100%",
+    height: "100%",
   },
 });
