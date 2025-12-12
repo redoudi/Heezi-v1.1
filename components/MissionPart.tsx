@@ -87,7 +87,7 @@ export default function MissionPart({
 }
 
 const styles = StyleSheet.create({
-  mainContainer: {},
+  mainContainer: { flexDirection: "row", justifyContent: "center" },
   titleContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 0,
     paddingVertical: 4,
     paddingHorizontal: 8,
+    width: 100,
   },
   partTitleText: {
     fontSize: 18,
@@ -110,9 +111,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  animationContainer: {
-    // borderWidth: 1,
-  },
+
   playButton: {
     flexDirection: "row",
     alignItems: "center",
@@ -123,5 +122,8 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: "bold",
     color: "#292929",
+  },
+  animationContainer: {
+    borderWidth: 1,
   },
 });

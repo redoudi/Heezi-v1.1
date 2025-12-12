@@ -1,4 +1,5 @@
 import MissionPart from "@/components/MissionPart";
+import HomeContainer from "@/components/home/HomeContainer";
 import SectionHeader from "@/components/home/section-header";
 import sectionButtons from "@/constants/sectionButtons";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
@@ -11,32 +12,30 @@ export default function SectionScreen() {
   const { toolSectionButtons } = usePracticeToolConstants();
 
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.mainContent}>
-        <SectionHeader />
-        <View style={styles.missionPartsContainer}>
-          <MissionPart
-            title="Cours"
-            image={toolSectionButtons.lesson}
-            levelNumber={1}
-          />
-          <Divider />
-          <MissionPart
-            title="Quiz"
-            image={toolSectionButtons.quiz}
-            imageDisabled={sectionButtons.disabled.quiz}
-            levelNumber={2}
-          />
-          <Divider />
-          <MissionPart
-            title="Pratique"
-            image={toolSectionButtons.practice}
-            levelNumber={3}
-            imageDisabled={sectionButtons.disabled.practice}
-          />
-        </View>
+    <HomeContainer>
+      <SectionHeader />
+      <View style={styles.missionPartsContainer}>
+        <MissionPart
+          title="Cours"
+          image={toolSectionButtons.lesson}
+          levelNumber={1}
+        />
+        <Divider />
+        <MissionPart
+          title="Quiz"
+          image={toolSectionButtons.quiz}
+          imageDisabled={sectionButtons.disabled.quiz}
+          levelNumber={2}
+        />
+        <Divider />
+        <MissionPart
+          title="Pratique"
+          image={toolSectionButtons.practice}
+          levelNumber={3}
+          imageDisabled={sectionButtons.disabled.practice}
+        />
       </View>
-    </View>
+    </HomeContainer>
   );
 }
 const styles = StyleSheet.create({

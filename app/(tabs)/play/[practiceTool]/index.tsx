@@ -1,6 +1,6 @@
+import HomeContainer from "@/components/home/HomeContainer";
 import CourseCard from "@/components/home/course-card";
 import SectionCard from "@/components/home/section-card/SectionCard";
-import { ScrollableScreen } from "@/components/scrollable-screen";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, View } from "react-native";
@@ -9,12 +9,7 @@ function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
   return isMobile ? (
     <View style={styles.mobileContainer}>{children}</View>
   ) : (
-    <ScrollableScreen
-      style={styles.mainContainer}
-      contentContainerStyle={styles.mainContent}
-    >
-      {children}
-    </ScrollableScreen>
+    <HomeContainer>{children}</HomeContainer>
   );
 }
 
@@ -46,14 +41,14 @@ const styles = StyleSheet.create({
   mainContainer: {
     marginHorizontal: 32,
   },
+  mainContent: {
+    gap: 32,
+    marginBottom: 32,
+  },
   mobileContainer: {
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
     gap: 16,
-  },
-  mainContent: {
-    gap: 32,
-    marginBottom: 32,
   },
 });
