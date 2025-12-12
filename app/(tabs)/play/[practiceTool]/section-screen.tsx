@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   mainContent: { flex: 1, justifyContent: "flex-start" },
   missionPartsContainer: {
-    gap: 0,
+    gap: 8,
   },
   divider: {
     height: 2,

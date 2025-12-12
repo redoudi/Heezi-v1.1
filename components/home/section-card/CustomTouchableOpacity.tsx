@@ -100,6 +100,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   hoveredBackground: {
-    backgroundColor: "rgba(0, 0, 0, 0.05)",
+    backgroundColor: "rgba(0, 0, 0, 0.03)",
   },
 });
