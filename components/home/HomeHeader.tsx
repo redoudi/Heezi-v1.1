@@ -1,4 +1,5 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, View } from "react-native";
 import StatusText from "../status-text";
 
@@ -25,7 +26,9 @@ export default function HomeHeader({
   const { toolConstants } = usePracticeToolConstants();
   return (
     <View style={styles.container}>
-      <Image source={toolConstants.icon} resizeMode={"contain"} />
+      {!isMobile && (
+        <Image source={toolConstants.icon} resizeMode={"contain"} />
+      )}
       <View
         style={[styles.mainContent, { backgroundColor: toolConstants.color }]}
       >
