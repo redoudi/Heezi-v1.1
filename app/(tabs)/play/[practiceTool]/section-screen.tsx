@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: 2,
-
     backgroundColor: !isMobile ? "#EFEFEF" : "lightgray",
     marginHorizontal: "20%",
   },
