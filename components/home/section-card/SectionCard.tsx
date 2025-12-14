@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 32,
-    paddingHorizontal: !isMobile ? 32 : 4,
+    paddingLeft: !isMobile ? 32 : 4,
+    paddingRight: !isMobile ? 32 : 0,
     justifyContent: "space-between",
   },
   leftColumn: {
