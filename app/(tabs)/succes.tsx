@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 16,
   },
-  mainContent: {},
   contentContainer: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 18,
     marginBottom: 16,
-    alignSelf: "stretch",
+    width: "100%",
   },
   column3: {
     width: 489,
