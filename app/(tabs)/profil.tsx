@@ -5,7 +5,10 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ProfilScreen() {
   return (
-    <ScrollableScreen contentContainerStyle={styles.mainContainer}>
+    <ScrollableScreen
+      style={styles.mainContainer}
+      contentContainerStyle={styles.mainContainerContent}
+    >
       <View style={styles.mainContent}>
         <View style={styles.headerRow}>
           <View style={styles.levelAndProgress}>
@@ -64,6 +67,9 @@ export default function ProfilScreen() {
 }
 const styles = StyleSheet.create({
   mainContainer: {
+    flex: 1,
+  },
+  mainContainerContent: {
     borderWidth: 1,
     alignItems: "center",
     justifyContent: "flex-start",
@@ -103,7 +109,7 @@ const styles = StyleSheet.create({
     },
   },
   levelAndProgress: {
-    width: 866,
+    flex: 1,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 16,
