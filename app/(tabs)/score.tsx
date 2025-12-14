@@ -242,6 +242,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     paddingHorizontal: isMobile ? 8 : 0,
     justifyContent: "center",
+    gap: 8,
   },
   bronzeText: {
     fontSize: isMobile ? 18 : 22,
