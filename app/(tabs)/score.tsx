@@ -1,106 +1,114 @@
-import { ScrollableScreen } from "@/components/scrollable-screen";
 import WatermarkAbsolute from "@/components/ui/watermark";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ScoreScreen() {
   return (
-    <View>
-      <ScrollableScreen
-        style={styles.mainContainer}
+    <SafeAreaView style={styles.mainContainer}>
+      <ScrollView
+        style={styles.scrollview}
         contentContainerStyle={styles.mainContainerContent}
       >
-        <View style={styles.mainContent}>
-          <View style={styles.tropheebanner}>
-            <View style={styles.tropheeRow}>
-              <Image
-                source={require("@/assets/images/Bronze.png")}
-                resizeMode={"stretch"}
-                style={styles.trophee1}
-              />
-              <Image
-                source={require("@/assets/images/Argent.png")}
-                resizeMode={"stretch"}
-                style={styles.trophee2}
-              />
-              <Image
-                source={require("@/assets/images/Or.png")}
-                resizeMode={"stretch"}
-                style={styles.trophee2}
-              />
-              <Image
-                source={require("@/assets/images/Diamant.png")}
-                resizeMode={"stretch"}
-                style={styles.trophee3}
-              />
-            </View>
-            <View style={styles.rankBanner}>
-              <Text style={styles.bronzeText}>{"Bronze"}</Text>
-              <Text style={styles.rankIndication}>
-                {
-                  "Les participants dans le top 10 se verront attribuer un nouveau rang "
-                }
-              </Text>
-              <Text style={styles.daysLeft}>{"7 jours restants"}</Text>
-            </View>
-          </View>
-          <View style={styles.rankingTableContainer}>
-            <View style={styles.rankingList}>
-              <View style={styles.rankeeRow}>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => {}}
-                  disabled
-                >
-                  <Text style={styles.text4}>{"Classement Global"}</Text>
-                </TouchableOpacity>
-                <View style={styles.view2}>
-                  <Text style={styles.text5}>
-                    {"Classement de votre session"}
-                  </Text>
-                </View>
-              </View>
-
-              {[...Array(7)].map((_, index) => (
-                <TouchableOpacity
-                  key={index}
-                  style={[styles.buttonRow, index === 1 && styles.youRankedRow]}
-                  onPress={() => {}}
-                  disabled
-                >
-                  <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
-                  <Image
-                    source={require("@/assets/images/Coq.png")}
-                    resizeMode={"stretch"}
-                    style={styles.image4}
-                  />
-                  <Text style={styles.text7}>
-                    {index === 1 ? "Vous" : "Autre joueur"}
-                  </Text>
-                  <Text style={styles.text8}>{"Nv. ?"}</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
+        <View style={styles.tropheebanner}>
+          <View style={styles.tropheeRow}>
             <Image
-              source={require("@/assets/images/ScoreIcon.png")}
-              resizeMode={"contain"}
-              style={styles.scoreIcon}
+              source={require("@/assets/images/Bronze.png")}
+              resizeMode={"stretch"}
+              style={styles.trophee1}
+            />
+            <Image
+              source={require("@/assets/images/Argent.png")}
+              resizeMode={"stretch"}
+              style={styles.trophee2}
+            />
+            <Image
+              source={require("@/assets/images/Or.png")}
+              resizeMode={"stretch"}
+              style={styles.trophee2}
+            />
+            <Image
+              source={require("@/assets/images/Diamant.png")}
+              resizeMode={"stretch"}
+              style={styles.trophee3}
             />
           </View>
+          <View style={styles.rankBanner}>
+            <Text style={styles.bronzeText}>{"Bronze"}</Text>
+            <Text style={styles.rankIndication}>
+              {
+                "Les participants dans le top 10 se verront attribuer un nouveau rang "
+              }
+            </Text>
+            <Text style={styles.daysLeft}>{"7 jours restants"}</Text>
+          </View>
         </View>
-      </ScrollableScreen>
-      <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
-    </View>
+        <View style={styles.rankingTableContainer}>
+          <View style={styles.rankingList}>
+            <View style={styles.rankeeRow}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => {}}
+                disabled
+              >
+                <Text style={styles.text4}>{"Classement Global"}</Text>
+              </TouchableOpacity>
+              <View style={styles.view2}>
+                <Text style={styles.text5}>
+                  {"Classement de votre session"}
+                </Text>
+              </View>
+            </View>
+
+            {[...Array(7)].map((_, index) => (
+              <TouchableOpacity
+                key={index}
+                style={[styles.buttonRow, index === 1 && styles.youRankedRow]}
+                onPress={() => {}}
+                disabled
+              >
+                <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
+                <Image
+                  source={require("@/assets/images/Coq.png")}
+                  resizeMode={"stretch"}
+                  style={styles.image4}
+                />
+                <Text style={styles.text7}>
+                  {index === 1 ? "Vous" : "Autre joueur"}
+                </Text>
+                <Text style={styles.text8}>{"Nv. ?"}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          <Image
+            source={require("@/assets/images/ScoreIcon.png")}
+            resizeMode={"contain"}
+            style={styles.scoreIcon}
+          />
+        </View>
+
+        <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    alignItems: "center",
   },
+  scrollview: {},
   mainContainerContent: {
+    flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
     padding: 16,
-    flex: 1,
   },
   mainContent: {},
   box: {
