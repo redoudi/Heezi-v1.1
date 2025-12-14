@@ -1,6 +1,5 @@
 import WatermarkAbsolute from "@/components/ui/watermark";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
-import useCompletedLevelsStore from "@/store/useCompletedLevels";
 import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, View } from "react-native";
 import ContinuerSectionBtn from "./ContinuerSectionBtn";
@@ -17,7 +16,7 @@ export default function SectionCard({
 }) {
   const disabled = !!!continuerRoute;
   const { toolConstants, toolProgress } = usePracticeToolConstants();
-  const { totalProgress } = useCompletedLevelsStore();
+
   return (
     <View
       style={[
@@ -56,7 +55,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
-    padding: 32,
+    paddingVertical: 32,
+    paddingHorizontal: !isMobile ? 32 : 4,
     justifyContent: "space-between",
   },
   leftColumn: {
