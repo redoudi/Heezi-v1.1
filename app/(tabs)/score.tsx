@@ -52,13 +52,13 @@ function RankingListSection() {
     <View style={styles.rankingList}>
       <View style={styles.rankingButtonsRow}>
         <TouchableOpacity
-          style={styles.rankingButton1}
+          style={[styles.rankingButton, styles.rankingButton1]}
           onPress={() => {}}
           disabled
         >
           <Text style={styles.text4}>{"Classement Global"}</Text>
         </TouchableOpacity>
-        <View style={styles.rankingButton2}>
+        <View style={[styles.rankingButton, styles.rankingButton2]}>
           <Text style={styles.text5}>{"Classement de votre session"}</Text>
         </View>
       </View>
@@ -315,20 +315,17 @@ const styles = StyleSheet.create({
   youRankedRow: {
     backgroundColor: "#72D6BA",
   },
-  rankingButton1: {
+  rankingButton: {
     width: isMobile ? "48%" : 240,
     alignItems: "center",
-    backgroundColor: "#72D6BA",
-    borderRadius: 8,
-    paddingVertical: 24,
-    marginLeft: isMobile ? 0 : 16,
-    marginRight: isMobile ? 8 : 8,
-  },
-  rankingButton2: {
-    width: isMobile ? "48%" : 272,
-    backgroundColor: "white",
+    justifyContent: "center",
     borderRadius: 8,
     paddingVertical: 8,
-    marginRight: isMobile ? 0 : 16,
+  },
+  rankingButton1: {
+    backgroundColor: "#72D6BA",
+  },
+  rankingButton2: {
+    backgroundColor: "white",
   },
 });
