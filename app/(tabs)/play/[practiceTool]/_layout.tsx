@@ -1,10 +1,5 @@
 import { RightColumn } from "@/components/home/right-column";
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 import { isMobile } from "@/utils/isMobile";
 import { Slot } from "expo-router";
@@ -29,7 +24,7 @@ function LeftColumnResponsiveWrapper({
 
 function LeftColumn() {
   return (
-    <View style={styles2.wrapper}>
+    <View style={styles2.leftColumnContainer}>
       <LeftColumnResponsiveWrapper>
         <Slot />
       </LeftColumnResponsiveWrapper>
@@ -47,7 +42,6 @@ function ResponsiveWrapper({ children }: { children: React.ReactNode }) {
     </ScrollView>
   ) : (
     <ScrollView
-      style={styles.scrollView}
       horizontal
       showsHorizontalScrollIndicator={true}
       contentContainerStyle={[styles.contentContainer]}
@@ -67,8 +61,6 @@ export default function HomeScreenLayout() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: {},
-  scrollView: {},
   contentContainer: {
     alignItems: "flex-start",
     backgroundColor: "#FFFFFF",
@@ -92,7 +84,7 @@ const styles = StyleSheet.create({
 });
 
 const styles2 = StyleSheet.create({
-  wrapper: {
+  leftColumnContainer: {
     flex: 1,
     alignSelf: "stretch",
   },

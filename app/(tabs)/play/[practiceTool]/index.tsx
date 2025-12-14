@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   mobileContainer: {
     flex: 1,
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "stretch",
     gap: 16,
   },
 });
