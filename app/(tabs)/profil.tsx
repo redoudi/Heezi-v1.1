@@ -1,5 +1,6 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
 import WatermarkAbsolute from "@/components/ui/watermark";
+import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ProfilScreen() {
@@ -32,7 +33,7 @@ export default function ProfilScreen() {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.row3}>
+        <View style={styles.body}>
           <Image
             source={require("@/assets/images/ProfilMascot.png")}
             resizeMode={"contain"}
@@ -151,9 +152,10 @@ const styles = StyleSheet.create({
     width: 173,
     flexDirection: "row",
   },
-  row3: {
-    flexDirection: "row",
+  body: {
+    flexDirection: !isMobile ? "row" : "column",
     marginHorizontal: 32,
+    alignItems: isMobile ? "center" : undefined,
   },
   row4: {
     flexDirection: "row",
