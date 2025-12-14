@@ -45,6 +45,7 @@ export function PracticeToolCard({ toolName, style }: CategoryCardProps) {
         },
         style,
       ]}
+      containerStyle={isMobile ? { height: "100%" } : undefined}
     >
       <Image
         source={cardToolConstants.icon}
