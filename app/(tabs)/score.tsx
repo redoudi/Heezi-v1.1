@@ -70,7 +70,7 @@ function RankingListSection() {
           <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
           <Image
             source={require("@/assets/images/Coq.png")}
-            resizeMode={"stretch"}
+            resizeMode={"contain"}
             style={styles.image4}
           />
           <Text style={styles.text7}>
@@ -214,6 +214,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginLeft: 34,
     alignSelf: isMobile ? "center" : undefined,
+    height: isMobile ? 300 : undefined,
   },
   tropheeRow: {
     flexDirection: "row",
