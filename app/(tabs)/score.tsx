@@ -87,90 +87,22 @@ export default function ScoreScreen() {
                 <Text style={styles.text10}>{"Nom de la personne"}</Text>
                 <Text style={styles.text11}>{"Nv.100"}</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"3."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"4."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"5."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"6."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow3}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"7."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
+              {["3", "4", "5", "6", "7"].map((item) => (
+                <TouchableOpacity
+                  style={styles.buttonRow}
+                  onPress={() => {}}
+                  disabled
+                >
+                  <Text style={styles.text6}>{`${item}.`}</Text>
+                  <Image
+                    source={require("@/assets/images/Coq.png")}
+                    resizeMode={"stretch"}
+                    style={styles.image4}
+                  />
+                  <Text style={styles.text7}>{"Nom de la personne"}</Text>
+                  <Text style={styles.text8}>{"Nv.100"}</Text>
+                </TouchableOpacity>
+              ))}
             </View>
             <Image
               source={require("@/assets/images/ScoreIcon.png")}
