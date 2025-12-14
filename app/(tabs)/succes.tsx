@@ -27,15 +27,19 @@ export default function SuccessScreen() {
               <View style={styles.progressBar}></View>
             </View>
           </View>
-          {[...Array(6)].map((_, index) => (
-            <View key={index} style={styles.successRow}>
-              <SuccessIcon />
-              <View style={styles.successDescriptionRow}>
-                <Text style={styles.successName}>{`Succès ${index + 1}`}</Text>
-                <Text style={styles.successName}>{"..."}</Text>
+          <View style={styles.successRowsContainer}>
+            {[...Array(6)].map((_, index) => (
+              <View key={index} style={styles.successRow}>
+                <SuccessIcon />
+                <View style={styles.successDescriptionRow}>
+                  <Text style={styles.successName}>{`Succès ${
+                    index + 1
+                  }`}</Text>
+                  <Text style={styles.successName}>{"..."}</Text>
+                </View>
               </View>
-            </View>
-          ))}
+            ))}
+          </View>
         </View>
       </ScrollView>
       <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
@@ -45,7 +49,7 @@ export default function SuccessScreen() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    paddingVertical: 16,
+    paddingVertical: 20,
   },
   contentContainer: {
     alignItems: "center",
@@ -57,18 +61,16 @@ const styles = StyleSheet.create({
     height: 8,
     backgroundColor: "#33C6FD",
   },
-  column: {
-    backgroundColor: "#FFFFFF",
-    paddingBottom: 120,
-    marginTop: 32,
-    marginHorizontal: 32,
-  },
+
   header: {
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 18,
     marginBottom: 16,
     width: "100%",
+  },
+  successRowsContainer: {
+    gap: 28,
   },
   successDescriptionRow: {
     width: !isMobile ? 489 : "100%",
@@ -83,8 +85,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
-    paddingVertical: 16,
-    marginBottom: 16,
     shadowColor: "#1E6759",
     shadowOpacity: 1.0,
     shadowOffset: {
