@@ -218,6 +218,7 @@ const styles = StyleSheet.create({
   },
   rankingTableContainer: {
     flexDirection: "row",
+    alignSelf: "stretch",
   },
   rankeeRow: {
     flexDirection: "row",
