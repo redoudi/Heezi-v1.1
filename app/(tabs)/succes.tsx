@@ -28,8 +28,8 @@ export default function SuccessScreen() {
             <View key={index} style={styles.successRow}>
               <SuccessIcon />
               <View style={styles.successDescriptionRow}>
-                <Text style={styles.text2}>{`Succès ${index + 1}`}</Text>
-                <Text style={styles.text3}>{"..."}</Text>
+                <Text style={styles.successName}>{`Succès ${index + 1}`}</Text>
+                <Text style={styles.successName}>{"..."}</Text>
               </View>
             </View>
           ))}
@@ -108,13 +108,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#292929",
   },
-  text2: {
+  successName: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#3D3D3D",
     marginBottom: 8,
   },
-  text3: {
+  successDescription: {
     fontSize: 10,
     lineHeight: 24,
     color: "#3D3D3D",
