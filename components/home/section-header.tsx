@@ -1,6 +1,7 @@
 import HomeHeader, { TitleBanner } from "@/components/home/HomeHeader";
 import { StyleSwitchTouchableOpacity } from "@/components/home/section-card/CustomTouchableOpacity";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { isMobile } from "@/utils/isMobile";
 import { router } from "expo-router";
 import { Image, StyleSheet, View } from "react-native";
 
@@ -23,14 +24,21 @@ function RetourButton() {
 
 export default function SectionHeader() {
   const {
-    toolConstants: { sectionDescription },
+    toolConstants: { sectionDescription, sectionDescriptionMobile },
   } = usePracticeToolConstants();
+
+  const sectionDescriptionToDisplay = isMobile
+    ? sectionDescriptionMobile
+    : sectionDescription;
 
   return (
     <HomeHeader>
       <View style={styles.mainContent}>
         <RetourButton />
-        <TitleBanner title={"Section 1"} description={sectionDescription} />
+        <TitleBanner
+          title={"Section 1"}
+          description={sectionDescriptionToDisplay}
+        />
       </View>
     </HomeHeader>
   );
