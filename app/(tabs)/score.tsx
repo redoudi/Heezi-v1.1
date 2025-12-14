@@ -111,7 +111,11 @@ export default function ScoreScreen() {
   );
 }
 const styles = StyleSheet.create({
-  rankingListContainer: { paddingHorizontal: 16 },
+  rankingListContainer: {
+    paddingHorizontal: 16,
+    alignItems: "stretch",
+    width: "100%",
+  },
   rankNumberContainer: {
     flexDirection: "row",
     alignItems: "center",
