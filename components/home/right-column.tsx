@@ -14,7 +14,7 @@ export function RightColumn() {
             style={styles.logo}
             resizeMode="contain"
           />
-          <HorizontalDivider />
+          <HorizontalDivider height={1} />
         </View>
       )}
 
@@ -25,7 +25,7 @@ export function RightColumn() {
 }
 
 const styles = StyleSheet.create({
-  mobileHeader: { gap: 5, marginBottom: 4 },
+  mobileHeader: { gap: 5, paddingBottom: 8 },
   logo: {
     height: 36,
     alignSelf: "center",
