@@ -22,6 +22,9 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingHorizontal: isMobile ? 4 : 8,
     paddingVertical: isMobile ? 4 : 6,
+    position: isMobile ? "absolute" : undefined,
+    right: isMobile ? 8 : undefined,
+    top: isMobile ? 8 : undefined,
   },
   statusText: {
     color: "#0A2924",

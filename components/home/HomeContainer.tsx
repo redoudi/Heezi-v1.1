@@ -20,7 +20,7 @@ export default function HomeContainer({
 const styles = StyleSheet.create({
   mainContainer: {
     marginHorizontal: isMobile ? 0 : 32,
-    paddingHorizontal: isMobile ? 32 : 0,
+    paddingHorizontal: isMobile ? 0 : 0,
   },
   mainContent: {
     gap: 32,

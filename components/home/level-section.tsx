@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#292929",
     marginBottom: !isMobile ? 8 : 0,
-    marginRight: !isMobile ? 0 : 12,
   },
   bold: {
     fontWeight: "bold",
@@ -68,6 +67,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   levelHeader: {
+    justifyContent: "flex-start",
     flexDirection: "row",
     alignItems: "center",
   },
