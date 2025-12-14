@@ -93,20 +93,9 @@ const styles = StyleSheet.create({
     },
     gap: 16,
     paddingHorizontal: 16,
-  },
-  row2: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
     paddingVertical: 16,
-    shadowColor: "#1E6759",
-    shadowOpacity: 1.0,
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
   },
+
   headerText: {
     fontSize: 18,
     fontWeight: "bold",
