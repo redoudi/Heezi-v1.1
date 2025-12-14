@@ -12,7 +12,7 @@ export default function ProfilScreen() {
             <Text style={styles.text}>{"Niveau. 1"}</Text>
             <View style={styles.progressBar}></View>
           </View>
-          <View style={styles.row2}>
+          <View style={styles.headerButtonsRow}>
             <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
               <Image
                 source={require("@/assets/images/profiladd.png")}
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     marginBottom: 32,
     marginHorizontal: 32,
   },
-  row2: {
+  headerButtonsRow: {
     width: 173,
     flexDirection: "row",
   },
