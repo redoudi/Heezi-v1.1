@@ -25,9 +25,9 @@ export default function SuccessScreen() {
             </View>
           </View>
           {[...Array(6)].map((_, index) => (
-            <View key={index} style={styles.row}>
+            <View key={index} style={styles.successRow}>
               <SuccessIcon />
-              <View style={styles.column3}>
+              <View style={styles.successDescriptionRow}>
                 <Text style={styles.text2}>{`Succès ${index + 1}`}</Text>
                 <Text style={styles.text3}>{"..."}</Text>
               </View>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     width: "100%",
   },
-  column3: {
+  successDescriptionRow: {
     width: 489,
   },
   image: {
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     height: 85,
     marginHorizontal: 16,
   },
-  row: {
+  successRow: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
