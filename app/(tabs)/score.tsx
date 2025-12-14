@@ -47,6 +47,41 @@ function HeaderSection() {
   );
 }
 
+function RankingListSection() {
+  return (
+    <View style={styles.rankingList}>
+      <View style={styles.rankeeRow}>
+        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
+          <Text style={styles.text4}>{"Classement Global"}</Text>
+        </TouchableOpacity>
+        <View style={styles.view2}>
+          <Text style={styles.text5}>{"Classement de votre session"}</Text>
+        </View>
+      </View>
+
+      {[...Array(7)].map((_, index) => (
+        <TouchableOpacity
+          key={index}
+          style={[styles.buttonRow, index === 1 && styles.youRankedRow]}
+          onPress={() => {}}
+          disabled
+        >
+          <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
+          <Image
+            source={require("@/assets/images/Coq.png")}
+            resizeMode={"stretch"}
+            style={styles.image4}
+          />
+          <Text style={styles.text7}>
+            {index === 1 ? "Vous" : "Autre joueur"}
+          </Text>
+          <Text style={styles.text8}>{"Nv. ?"}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
+}
+
 export default function ScoreScreen() {
   return (
     <SafeAreaView style={styles.mainContainer}>
@@ -56,42 +91,7 @@ export default function ScoreScreen() {
       >
         <HeaderSection />
         <View style={styles.rankingTableContainer}>
-          <View style={styles.rankingList}>
-            <View style={styles.rankeeRow}>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text4}>{"Classement Global"}</Text>
-              </TouchableOpacity>
-              <View style={styles.view2}>
-                <Text style={styles.text5}>
-                  {"Classement de votre session"}
-                </Text>
-              </View>
-            </View>
-
-            {[...Array(7)].map((_, index) => (
-              <TouchableOpacity
-                key={index}
-                style={[styles.buttonRow, index === 1 && styles.youRankedRow]}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>
-                  {index === 1 ? "Vous" : "Autre joueur"}
-                </Text>
-                <Text style={styles.text8}>{"Nv. ?"}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
+          <RankingListSection />
           <Image
             source={require("@/assets/images/ScoreIcon.png")}
             resizeMode={"contain"}
