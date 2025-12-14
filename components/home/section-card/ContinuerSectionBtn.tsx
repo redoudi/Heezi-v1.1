@@ -1,4 +1,5 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { isMobile } from "@/utils/isMobile";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
 import CustomTouchableOpacity from "./CustomTouchableOpacity";
@@ -39,17 +40,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 8,
     paddingVertical: 8,
-    paddingHorizontal: 16,
+    paddingHorizontal: !isMobile ? 16 : 12,
+    gap: !isMobile ? 10 : 8,
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: !isMobile ? 18 : 16,
     fontWeight: "bold",
     color: "#0A2924",
-    marginRight: 11,
   },
   image: {
     borderRadius: 8,
-    width: 16,
-    height: 24,
+    width: !isMobile ? 16 : 10,
+    height: !isMobile ? 24 : 18,
   },
 });
