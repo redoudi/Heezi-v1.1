@@ -13,6 +13,7 @@ import HeaderRow from "./header-row";
 
 import { COLUMNS, ROWS } from "@/constants/spreadsheetConstants";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import { isMobile } from "@/utils/isMobile";
 
 // Row configuration
 
@@ -93,10 +94,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   rowNumberContainer: {
-    width: 28,
+    width: !isMobile ? 28 : 16,
     alignItems: "flex-end",
     justifyContent: "center",
-    marginRight: 8,
+    marginRight: !isMobile ? 8 : 4,
   },
   highlighted: {
     borderColor: "red",

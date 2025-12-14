@@ -1,6 +1,7 @@
 import useCursor from "@/context/useCursor";
 import useHighlight from "@/hooks/useHighlight";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
+import { isMobile } from "@/utils/isMobile";
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
@@ -96,10 +97,10 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   rowNumberContainer: {
-    width: 28,
+    width: !isMobile ? 28 : 16,
     alignItems: "flex-end",
     justifyContent: "center",
-    marginRight: 8,
+    marginRight: !isMobile ? 8 : 4,
   },
   selectedIndex: { backgroundColor: "#A6E9D4" },
 });
