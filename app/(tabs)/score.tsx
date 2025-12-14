@@ -9,6 +9,44 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+function HeaderSection() {
+  return (
+    <View style={styles.tropheebanner}>
+      <View style={styles.tropheeRow}>
+        <Image
+          source={require("@/assets/images/Bronze.png")}
+          resizeMode={"stretch"}
+          style={styles.trophee1}
+        />
+        <Image
+          source={require("@/assets/images/Argent.png")}
+          resizeMode={"stretch"}
+          style={styles.trophee2}
+        />
+        <Image
+          source={require("@/assets/images/Or.png")}
+          resizeMode={"stretch"}
+          style={styles.trophee2}
+        />
+        <Image
+          source={require("@/assets/images/Diamant.png")}
+          resizeMode={"stretch"}
+          style={styles.trophee3}
+        />
+      </View>
+      <View style={styles.rankBanner}>
+        <Text style={styles.bronzeText}>{"Bronze"}</Text>
+        <Text style={styles.rankIndication}>
+          {
+            "Les participants dans le top 10 se verront attribuer un nouveau rang "
+          }
+        </Text>
+        <Text style={styles.daysLeft}>{"7 jours restants"}</Text>
+      </View>
+    </View>
+  );
+}
+
 export default function ScoreScreen() {
   return (
     <SafeAreaView style={styles.mainContainer}>
@@ -16,39 +54,7 @@ export default function ScoreScreen() {
         style={styles.scrollview}
         contentContainerStyle={styles.mainContainerContent}
       >
-        <View style={styles.tropheebanner}>
-          <View style={styles.tropheeRow}>
-            <Image
-              source={require("@/assets/images/Bronze.png")}
-              resizeMode={"stretch"}
-              style={styles.trophee1}
-            />
-            <Image
-              source={require("@/assets/images/Argent.png")}
-              resizeMode={"stretch"}
-              style={styles.trophee2}
-            />
-            <Image
-              source={require("@/assets/images/Or.png")}
-              resizeMode={"stretch"}
-              style={styles.trophee2}
-            />
-            <Image
-              source={require("@/assets/images/Diamant.png")}
-              resizeMode={"stretch"}
-              style={styles.trophee3}
-            />
-          </View>
-          <View style={styles.rankBanner}>
-            <Text style={styles.bronzeText}>{"Bronze"}</Text>
-            <Text style={styles.rankIndication}>
-              {
-                "Les participants dans le top 10 se verront attribuer un nouveau rang "
-              }
-            </Text>
-            <Text style={styles.daysLeft}>{"7 jours restants"}</Text>
-          </View>
-        </View>
+        <HeaderSection />
         <View style={styles.rankingTableContainer}>
           <View style={styles.rankingList}>
             <View style={styles.rankeeRow}>
