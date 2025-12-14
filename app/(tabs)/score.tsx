@@ -213,6 +213,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 24,
     marginLeft: 34,
+    alignSelf: isMobile ? "center" : undefined,
   },
   tropheeRow: {
     flexDirection: "row",
@@ -224,8 +225,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   bodySection: {
-    flexDirection: !isMobile ? "row" : "column",
-    alignSelf: "stretch",
+    flexDirection: !isMobile ? "row" : "column-reverse",
   },
   rankeeRow: {
     flexDirection: "row",
