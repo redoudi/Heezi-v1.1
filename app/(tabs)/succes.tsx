@@ -1,4 +1,5 @@
 import WatermarkAbsolute from "@/components/ui/watermark";
+import { isMobile } from "@/utils/isMobile";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 function SuccessIcon() {
@@ -6,7 +7,7 @@ function SuccessIcon() {
     <Image
       source={require("@/assets/images/successIcon.png")}
       resizeMode={"contain"}
-      style={styles.image}
+      style={styles.sucessIcon}
     />
   );
 }
@@ -17,11 +18,13 @@ export default function SuccessScreen() {
       <ScrollView contentContainerStyle={styles.contentContainer}>
         <View>
           <View style={styles.header}>
-            <View style={styles.view2}>
-              <Text style={styles.text}>{"0/6 succès débloqués (0%)"}</Text>
+            <View style={styles.headerTextContainer}>
+              <Text style={styles.headerText}>
+                {"0/6 succès débloqués (0%)"}
+              </Text>
             </View>
-            <View style={styles.view3}>
-              <View style={styles.box}></View>
+            <View style={styles.progressBarContainer}>
+              <View style={styles.progressBar}></View>
             </View>
           </View>
           {[...Array(6)].map((_, index) => (
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     padding: 16,
   },
-  box: {
+  progressBar: {
     width: 63,
     height: 8,
     backgroundColor: "#33C6FD",
@@ -68,9 +71,9 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   successDescriptionRow: {
-    width: 489,
+    width: !isMobile ? 489 : "100%",
   },
-  image: {
+  sucessIcon: {
     borderRadius: 8,
     width: 85,
     height: 85,
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
       height: 4,
     },
   },
-  text: {
+  headerText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#292929",
@@ -120,12 +123,12 @@ const styles = StyleSheet.create({
     color: "#3D3D3D",
   },
 
-  view2: {
+  headerTextContainer: {
     alignSelf: "flex-start",
     marginBottom: 8,
     marginLeft: 16,
   },
-  view3: {
+  progressBarContainer: {
     backgroundColor: "#989898",
     borderRadius: 4,
     marginHorizontal: 16,
