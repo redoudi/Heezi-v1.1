@@ -59,7 +59,7 @@ function RankingListSection() {
         </View>
       </View>
 
-      <View>
+      <View style={styles.rankingListContainer}>
         {[...Array(7)].map((_, index) => (
           <TouchableOpacity
             key={index}
@@ -111,6 +111,7 @@ export default function ScoreScreen() {
   );
 }
 const styles = StyleSheet.create({
+  rankingListContainer: { paddingHorizontal: 16 },
   rankNumberContainer: {
     flexDirection: "row",
     alignItems: "center",
