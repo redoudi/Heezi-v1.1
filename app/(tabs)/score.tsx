@@ -59,25 +59,27 @@ function RankingListSection() {
         </View>
       </View>
 
-      {[...Array(7)].map((_, index) => (
-        <TouchableOpacity
-          key={index}
-          style={[styles.buttonRow, index === 1 && styles.youRankedRow]}
-          onPress={() => {}}
-          disabled
-        >
-          <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
-          <Image
-            source={require("@/assets/images/Coq.png")}
-            resizeMode={"contain"}
-            style={styles.image4}
-          />
-          <Text style={styles.text7}>
-            {index === 1 ? "Vous" : "Autre joueur"}
-          </Text>
-          <Text style={styles.text8}>{"Nv. ?"}</Text>
-        </TouchableOpacity>
-      ))}
+      <View>
+        {[...Array(7)].map((_, index) => (
+          <TouchableOpacity
+            key={index}
+            style={[styles.buttonRow, index === 1 && styles.youRankedRow]}
+            onPress={() => {}}
+            disabled
+          >
+            <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
+            <Image
+              source={require("@/assets/images/Coq.png")}
+              resizeMode={"contain"}
+              style={styles.coqIcon}
+            />
+            <Text style={styles.text7}>
+              {index === 1 ? "Vous" : "Autre joueur"}
+            </Text>
+            <Text style={styles.text8}>{"Nv. ?"}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
     </View>
   );
 }
@@ -109,32 +111,24 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  scrollview: {},
+  scrollview: { paddingHorizontal: 16 },
   mainContainerContent: {
     flex: 1,
     alignItems: "center",
     backgroundColor: "#FFFFFF",
-    padding: 16,
+    padding: isMobile ? 8 : 16,
+    width: "100%",
   },
   mainContent: {},
-  box: {
-    height: 686,
-    backgroundColor: "#000000",
-  },
-  box2: {
-    width: 518,
-    height: 687,
-    backgroundColor: "#000000",
-    marginLeft: 34,
-  },
+
   button: {
-    width: 240,
+    width: isMobile ? "48%" : 240,
     alignItems: "center",
     backgroundColor: "#72D6BA",
     borderRadius: 8,
     paddingVertical: 24,
-    marginLeft: 16,
-    marginRight: 8,
+    marginLeft: isMobile ? 0 : 16,
+    marginRight: isMobile ? 8 : 8,
   },
   buttonRow: {
     flexDirection: "row",
@@ -142,6 +136,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 16,
+    paddingHorizontal: isMobile ? 8 : 0,
     marginBottom: 16,
   },
   buttonRow2: {
@@ -170,12 +165,12 @@ const styles = StyleSheet.create({
   },
   rankBanner: {
     alignItems: "center",
-    paddingHorizontal: 305,
+    paddingHorizontal: isMobile ? 16 : 305,
     marginHorizontal: 16,
   },
   rankingList: {
-    width: 552,
-    marginRight: 16,
+    width: isMobile ? "100%" : 552,
+    marginRight: isMobile ? 0 : 16,
   },
   column5: {
     width: 552,
@@ -187,7 +182,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 68,
     height: 68,
-    marginLeft: 511,
+    marginLeft: isMobile ? 0 : 511,
     marginRight: 8,
   },
   trophee2: {
@@ -200,18 +195,18 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 36,
     height: 36,
-    marginRight: 376,
+    marginRight: isMobile ? 8 : 376,
   },
-  image4: {
+  coqIcon: {
     borderRadius: 8,
-    width: 40,
-    height: 40,
-    marginRight: 16,
+    width: isMobile ? 32 : 40,
+    height: isMobile ? 32 : 40,
+    marginRight: isMobile ? 8 : 16,
   },
   scoreIcon: {
     flex: 1,
     marginTop: 24,
-    marginLeft: 34,
+    marginLeft: isMobile ? 0 : 34,
     alignSelf: isMobile ? "center" : undefined,
     height: isMobile ? 300 : undefined,
   },
@@ -223,6 +218,8 @@ const styles = StyleSheet.create({
     paddingVertical: 37,
     marginBottom: 16,
     marginHorizontal: 16,
+    flexWrap: isMobile ? "wrap" : "nowrap",
+    justifyContent: isMobile ? "center" : "flex-start",
   },
   bodySection: {
     flexDirection: !isMobile ? "row" : "column-reverse",
@@ -233,53 +230,58 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 16,
     marginBottom: 16,
+    paddingHorizontal: isMobile ? 8 : 0,
   },
   bronzeText: {
-    fontSize: 22,
+    fontSize: isMobile ? 18 : 22,
     color: "#292929",
     marginBottom: 8,
     fontWeight: "bold",
   },
   rankIndication: {
-    fontSize: 16,
+    fontSize: isMobile ? 14 : 16,
     lineHeight: 24,
     color: "#292929",
     marginBottom: 8,
+    textAlign: "center",
   },
   daysLeft: {
-    fontSize: 18,
+    fontSize: isMobile ? 16 : 18,
     fontWeight: "bold",
     color: "#292929",
   },
   text4: {
-    fontSize: 18,
+    fontSize: isMobile ? 16 : 18,
     fontWeight: "bold",
     color: "#0A2924",
+    textAlign: "center",
   },
   text5: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#0A2924",
-    marginLeft: 16,
-    width: 224,
+    marginLeft: isMobile ? 8 : 16,
+    width: isMobile ? undefined : 224,
+    flex: isMobile ? 1 : undefined,
+    textAlign: isMobile ? "center" : "left",
   },
   rankNumber: {
-    fontSize: 22,
+    fontSize: isMobile ? 18 : 22,
     color: "#292929",
-    marginLeft: 16,
-    marginRight: 20,
+    marginLeft: isMobile ? 8 : 16,
+    marginRight: isMobile ? 12 : 20,
   },
   text7: {
-    fontSize: 14,
+    fontSize: isMobile ? 12 : 14,
     fontWeight: "bold",
     color: "#292929",
     flex: 1,
   },
   text8: {
-    fontSize: 18,
+    fontSize: isMobile ? 14 : 18,
     fontWeight: "bold",
     color: "#292929",
-    marginRight: 20,
+    marginRight: isMobile ? 8 : 20,
   },
   text9: {
     fontSize: 22,
@@ -301,11 +303,11 @@ const styles = StyleSheet.create({
   },
 
   view2: {
-    width: 272,
+    width: isMobile ? "48%" : 272,
     backgroundColor: "#72D6BA",
     borderRadius: 8,
     paddingVertical: 8,
-    marginRight: 16,
+    marginRight: isMobile ? 0 : 16,
   },
   youRankedRow: {
     backgroundColor: "#72D6BA",
