@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   contentContainer: {
-    alignItems: "center",
+    alignItems: !isMobile ? "center" : "stretch",
     backgroundColor: "#FFFFFF",
     padding: 16,
   },
