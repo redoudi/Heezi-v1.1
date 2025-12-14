@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 function HeaderSection() {
   return (
@@ -85,7 +84,7 @@ function RankingListSection() {
 
 export default function ScoreScreen() {
   return (
-    <SafeAreaView style={styles.mainContainer}>
+    <View style={styles.mainContainer}>
       <ScrollView
         style={styles.scrollview}
         contentContainerStyle={styles.mainContainerContent}
@@ -102,7 +101,7 @@ export default function ScoreScreen() {
 
         <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 const styles = StyleSheet.create({
