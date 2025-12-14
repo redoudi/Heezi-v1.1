@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 85,
     height: 85,
-    marginHorizontal: 16,
   },
   successRow: {
     flexDirection: "row",
@@ -92,6 +91,8 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
+    gap: 16,
+    paddingHorizontal: 16,
   },
   row2: {
     flexDirection: "row",
