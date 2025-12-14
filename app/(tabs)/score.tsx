@@ -51,10 +51,14 @@ function RankingListSection() {
   return (
     <View style={styles.rankingList}>
       <View style={styles.rankingButtonsRow}>
-        <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
+        <TouchableOpacity
+          style={styles.rankingButton1}
+          onPress={() => {}}
+          disabled
+        >
           <Text style={styles.text4}>{"Classement Global"}</Text>
         </TouchableOpacity>
-        <View style={styles.view2}>
+        <View style={styles.rankingButton2}>
           <Text style={styles.text5}>{"Classement de votre session"}</Text>
         </View>
       </View>
@@ -63,7 +67,7 @@ function RankingListSection() {
         {[...Array(7)].map((_, index) => (
           <TouchableOpacity
             key={index}
-            style={[styles.buttonRow, index === 1 && styles.youRankedRow]}
+            style={[styles.rankeeRow, index === 1 && styles.youRankedRow]}
             onPress={() => {}}
             disabled
           >
@@ -134,16 +138,7 @@ const styles = StyleSheet.create({
   },
   mainContent: {},
 
-  button: {
-    width: isMobile ? "48%" : 240,
-    alignItems: "center",
-    backgroundColor: "#72D6BA",
-    borderRadius: 8,
-    paddingVertical: 24,
-    marginLeft: isMobile ? 0 : 16,
-    marginRight: isMobile ? 8 : 8,
-  },
-  buttonRow: {
+  rankeeRow: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#EFEFEF",
@@ -317,15 +312,23 @@ const styles = StyleSheet.create({
     color: "#1B463E",
     marginRight: 20,
   },
-
-  view2: {
-    width: isMobile ? "48%" : 272,
+  youRankedRow: {
     backgroundColor: "#72D6BA",
+  },
+  rankingButton1: {
+    width: isMobile ? "48%" : 240,
+    alignItems: "center",
+    backgroundColor: "#72D6BA",
+    borderRadius: 8,
+    paddingVertical: 24,
+    marginLeft: isMobile ? 0 : 16,
+    marginRight: isMobile ? 8 : 8,
+  },
+  rankingButton2: {
+    width: isMobile ? "48%" : 272,
+    backgroundColor: "white",
     borderRadius: 8,
     paddingVertical: 8,
     marginRight: isMobile ? 0 : 16,
-  },
-  youRankedRow: {
-    backgroundColor: "#72D6BA",
   },
 });
