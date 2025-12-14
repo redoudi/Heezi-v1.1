@@ -15,8 +15,8 @@ export default function SuccessScreen() {
   return (
     <View style={styles.mainContainer}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
-        <View style={styles.mainContent}>
-          <View style={styles.column2}>
+        <View>
+          <View style={styles.header}>
             <View style={styles.view2}>
               <Text style={styles.text}>{"0/6 succès débloqués (0%)"}</Text>
             </View>
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 16,
   },
+  mainContent: {},
   contentContainer: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
@@ -60,11 +61,12 @@ const styles = StyleSheet.create({
     marginTop: 32,
     marginHorizontal: 32,
   },
-  column2: {
+  header: {
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 18,
     marginBottom: 16,
+    alignSelf: "stretch",
   },
   column3: {
     width: 489,
@@ -118,10 +120,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: "#3D3D3D",
   },
-  mainContent: {
-    width: 1184,
-    backgroundColor: "#FFFFFF",
-  },
+
   view2: {
     alignSelf: "flex-start",
     marginBottom: 8,
