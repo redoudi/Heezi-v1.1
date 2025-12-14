@@ -84,7 +84,7 @@ export default function ScoreScreen() {
                   resizeMode={"stretch"}
                   style={styles.image4}
                 />
-                <Text style={styles.text10}>{"Nom de la personne"}</Text>
+                <Text style={styles.text10}>{"Vous"}</Text>
                 <Text style={styles.text11}>{"Nv.100"}</Text>
               </TouchableOpacity>
               {["3", "4", "5", "6", "7"].map((item) => (
