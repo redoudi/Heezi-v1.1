@@ -7,17 +7,17 @@ export default function ProfilScreen() {
   return (
     <ScrollableScreen contentContainerStyle={styles.mainContainer}>
       <View style={styles.mainContent}>
-        <View style={styles.row}>
-          <View style={styles.column2}>
+        <View style={styles.headerRow}>
+          <View style={styles.levelAndProgress}>
             <Text style={styles.text}>{"Niveau. 1"}</Text>
-            <View style={styles.box}></View>
+            <View style={styles.progressBar}></View>
           </View>
           <View style={styles.row2}>
             <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
               <Image
                 source={require("@/assets/images/profiladd.png")}
                 resizeMode={"contain"}
-                style={styles.image}
+                style={styles.addIcon}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -28,7 +28,7 @@ export default function ProfilScreen() {
               <Image
                 source={require("@/assets/images/profilSettings.png")}
                 resizeMode={"stretch"}
-                style={styles.image2}
+                style={styles.settingsIcon}
               />
             </TouchableOpacity>
           </View>
@@ -37,26 +37,26 @@ export default function ProfilScreen() {
           <Image
             source={require("@/assets/images/ProfilMascot.png")}
             resizeMode={"contain"}
-            style={styles.image3}
+            style={styles.mascotImage}
           />
-          <View style={styles.column3}>
-            <Text style={styles.text2}>{"Nom du profil"}</Text>
-            <View style={styles.column4}>
+          <View style={styles.statsContainer}>
+            <Text style={styles.profileNameText}>{"Nom du profil"}</Text>
+            <View style={styles.progressContainer}>
               <Text style={styles.text}>{"0/6 succès débloqués (0%)"}</Text>
-              <View style={styles.box}></View>
+              <View style={styles.progressBar}></View>
             </View>
-            <View style={styles.column4}>
+            <View style={styles.progressContainer}>
               <Text style={styles.text}>{"Progression dans le jeu (0%)"}</Text>
-              <View style={styles.box}></View>
+              <View style={styles.progressBar}></View>
             </View>
-            <View style={styles.row4}>
+            <View style={styles.rankContainer}>
               <Image
                 source={require("@/assets/images/Rank.png")}
                 resizeMode={"stretch"}
-                style={styles.image4}
+                style={styles.rankIcon}
               />
-              <View style={styles.view4}>
-                <Text style={styles.text3}>{"Rang bronze"}</Text>
+              <View style={styles.rankTextContainer}>
+                <Text style={styles.rankText}>{"Rang bronze"}</Text>
               </View>
             </View>
           </View>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     backgroundColor: "#FFFFFF",
   },
-  box: {
+  progressBar: {
     height: 8,
     backgroundColor: "#33C6FD",
     marginHorizontal: 16,
@@ -106,44 +106,44 @@ const styles = StyleSheet.create({
       height: 8,
     },
   },
-  column2: {
+  levelAndProgress: {
     width: 866,
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 16,
     marginRight: 16,
   },
-  column3: {
+  statsContainer: {
     width: 520,
   },
-  column4: {
+  progressContainer: {
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 16,
     marginBottom: 16,
   },
-  image: {
+  addIcon: {
     borderRadius: 8,
     width: 65,
     height: 36,
   },
-  image2: {
+  settingsIcon: {
     borderRadius: 8,
     width: 36,
     height: 36,
   },
-  image3: {
+  mascotImage: {
     width: 520,
     height: 306,
     marginRight: 16,
   },
-  image4: {
+  rankIcon: {
     borderRadius: 8,
     width: 41,
     height: 51,
     marginHorizontal: 16,
   },
-  row: {
+  headerRow: {
     flexDirection: "row",
     marginBottom: 32,
     marginHorizontal: 32,
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 32,
     alignItems: isMobile ? "center" : undefined,
   },
-  row4: {
+  rankContainer: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#FDEFC8",
@@ -171,17 +171,17 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginLeft: 16,
   },
-  text2: {
+  profileNameText: {
     fontSize: 22,
     color: "#0A2924",
     marginBottom: 16,
   },
-  text3: {
+  rankText: {
     fontSize: 22,
     color: "#B2460B",
   },
 
-  view4: {
+  rankTextContainer: {
     width: 162,
     alignItems: "center",
   },
