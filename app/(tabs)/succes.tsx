@@ -24,48 +24,15 @@ export default function SuccessScreen() {
               <View style={styles.box}></View>
             </View>
           </View>
-          <View style={styles.row}>
-            <SuccessIcon />
-            <View style={styles.column3}>
-              <Text style={styles.text2}>{"Succès 1"}</Text>
-              <Text style={styles.text3}>{"..."}</Text>
+          {[...Array(6)].map((_, index) => (
+            <View key={index} style={styles.row}>
+              <SuccessIcon />
+              <View style={styles.column3}>
+                <Text style={styles.text2}>{`Succès ${index + 1}`}</Text>
+                <Text style={styles.text3}>{"..."}</Text>
+              </View>
             </View>
-          </View>
-          <View style={styles.row}>
-            <SuccessIcon />
-            <View style={styles.column3}>
-              <Text style={styles.text2}>{"Succès 2"}</Text>
-              <Text style={styles.text3}>{"..."}</Text>
-            </View>
-          </View>
-          <View style={styles.row}>
-            <SuccessIcon />
-            <View style={styles.column3}>
-              <Text style={styles.text2}>{"Succès 3"}</Text>
-              <Text style={styles.text3}>{"..."}</Text>
-            </View>
-          </View>
-          <View style={styles.row}>
-            <SuccessIcon />
-            <View style={styles.column3}>
-              <Text style={styles.text2}>{"Succès 4"}</Text>
-              <Text style={styles.text3}>{"..."}</Text>
-            </View>
-          </View>
-          <View style={styles.row}>
-            <SuccessIcon />
-            <View style={styles.column3}>
-              <Text style={styles.text2}>{"Succès 5"}</Text>
-              <Text style={styles.text3}>{"..."}</Text>
-            </View>
-          </View>
-          <View style={styles.row2}>
-            <SuccessIcon />
-            <View style={styles.column3}>
-              <Text style={styles.text2}>{"Succès 6"}</Text>
-              <Text style={styles.text3}>{"..."}</Text>
-            </View>
-          </View>
+          ))}
         </View>
       </ScrollView>
       <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
