@@ -130,9 +130,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: 8,
+    gap: !isMobile ? 8 : 4,
   },
-  grid: { gap: 8, padding: 8 },
+  grid: { gap: !isMobile ? 8 : 4, padding: 8 },
   button: {
     backgroundColor: "#EFEFEF",
     width: 32,
@@ -141,7 +141,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 8,
   },
-
   police: {
     flex: 1,
     justifyContent: "space-between",
@@ -159,7 +158,7 @@ const styles = StyleSheet.create({
   },
   buttonIcon: {
     borderRadius: 8,
-    height: 10,
+    height: !isMobile ? 10 : 12,
   },
   mainContainer: {
     justifyContent: "center",
@@ -167,7 +166,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     paddingVertical: 8,
     paddingHorizontal: 24,
-    gap: 8,
+    gap: !isMobile ? 8 : 2,
   },
   policeText: {
     fontSize: isMobile ? 12 : 10,
