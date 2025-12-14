@@ -3,6 +3,36 @@ import WatermarkAbsolute from "@/components/ui/watermark";
 import { isMobile } from "@/utils/isMobile";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+function HeaderSection() {
+  return (
+    <View style={styles.headerRow}>
+      <View style={styles.levelAndProgress}>
+        <Text style={styles.text}>{"Niveau. 1"}</Text>
+        <View style={styles.progressBar}></View>
+      </View>
+
+      <TouchableOpacity style={styles.addButton} onPress={() => {}} disabled>
+        <Image
+          source={require("@/assets/images/profiladd.png")}
+          resizeMode={"contain"}
+          style={styles.addIcon}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.settingsButton}
+        onPress={() => {}}
+        disabled
+      >
+        <Image
+          source={require("@/assets/images/profilSettings.png")}
+          resizeMode={"contain"}
+          style={styles.settingsIcon}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+}
+
 export default function ProfilScreen() {
   return (
     <ScrollableScreen
@@ -10,27 +40,7 @@ export default function ProfilScreen() {
       contentContainerStyle={styles.mainContainerContent}
     >
       <View style={styles.mainContent}>
-        <View style={styles.headerRow}>
-          <View style={styles.levelAndProgress}>
-            <Text style={styles.text}>{"Niveau. 1"}</Text>
-            <View style={styles.progressBar}></View>
-          </View>
-
-          <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/profiladd.png")}
-              resizeMode={"contain"}
-              style={styles.addIcon}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
-            <Image
-              source={require("@/assets/images/profilSettings.png")}
-              resizeMode={"stretch"}
-              style={styles.settingsIcon}
-            />
-          </TouchableOpacity>
-        </View>
+        <HeaderSection />
 
         <View style={styles.body}>
           <Image
@@ -51,7 +61,7 @@ export default function ProfilScreen() {
             <View style={styles.rankContainer}>
               <Image
                 source={require("@/assets/images/Rank.png")}
-                resizeMode={"stretch"}
+                resizeMode={"contain"}
                 style={styles.rankIcon}
               />
               <View style={styles.rankTextContainer}>
@@ -80,7 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#33C6FD",
     marginHorizontal: 16,
   },
-  button: {
+  addButton: {
     width: 97,
     alignItems: "center",
     backgroundColor: "#EFEFEF",
@@ -88,7 +98,7 @@ const styles = StyleSheet.create({
     paddingVertical: 18,
     marginRight: 9,
   },
-  button2: {
+  settingsButton: {
     width: 67,
     alignItems: "center",
     backgroundColor: "#EFEFEF",
