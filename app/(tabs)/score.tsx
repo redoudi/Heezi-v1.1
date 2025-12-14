@@ -67,16 +67,20 @@ function RankingListSection() {
             onPress={() => {}}
             disabled
           >
-            <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
-            <Image
-              source={require("@/assets/images/Coq.png")}
-              resizeMode={"contain"}
-              style={styles.coqIcon}
-            />
-            <Text style={styles.text7}>
-              {index === 1 ? "Vous" : "Autre joueur"}
-            </Text>
-            <Text style={styles.text8}>{"Nv. ?"}</Text>
+            <View style={styles.rankNumberContainer}>
+              <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
+              <Image
+                source={require("@/assets/images/Coq.png")}
+                resizeMode={"contain"}
+                style={styles.coqIcon}
+              />
+              <Text style={styles.text7}>
+                {index === 1 ? "Vous" : "Autre joueur"}
+              </Text>
+            </View>
+            <View>
+              <Text style={styles.text8}>{"Nv. ?"}</Text>
+            </View>
           </TouchableOpacity>
         ))}
       </View>
@@ -107,6 +111,10 @@ export default function ScoreScreen() {
   );
 }
 const styles = StyleSheet.create({
+  rankNumberContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   mainContainer: {
     flex: 1,
     alignItems: "center",
@@ -138,6 +146,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: isMobile ? 8 : 0,
     marginBottom: 16,
+    justifyContent: "space-between",
   },
   buttonRow2: {
     flexDirection: "row",
@@ -171,6 +180,7 @@ const styles = StyleSheet.create({
   rankingList: {
     width: isMobile ? "100%" : 552,
     marginRight: isMobile ? 0 : 16,
+    alignItems: "center",
   },
   column5: {
     width: 552,
