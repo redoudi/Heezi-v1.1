@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   rankIndication: {
-    fontSize: 10,
+    fontSize: 16,
     lineHeight: 24,
     color: "#292929",
     marginBottom: 8,
