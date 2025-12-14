@@ -6,6 +6,7 @@ import TitleBar from "../TitleBar";
 import RibbonTabs from "../spreadsheet/spreadsheet-ribbon/spreadsheet-ribbon-tabs";
 import ContentPage from "./ContentPage";
 import TextEditorRibbon from "./TextEditorRibbon";
+import { isMobile } from "@/utils/isMobile";
 
 function PageNumber({ currentPage = 1, totalPages = 1 }) {
   return (
@@ -32,7 +33,7 @@ export default function TextEditorScreen({
     <SafeAreaView style={[styles.mainContainer]}>
       <View style={styles.mainContent}>
         <TitleBar />
-        <RibbonTabs />
+        {!isMobile && <RibbonTabs />}
         <TextEditorRibbon />
         <ContentPage />
         <PageNumber currentPage={1} totalPages={1} />
