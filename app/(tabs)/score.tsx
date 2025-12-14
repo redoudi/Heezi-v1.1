@@ -50,7 +50,7 @@ function HeaderSection() {
 function RankingListSection() {
   return (
     <View style={styles.rankingList}>
-      <View style={styles.rankeeRow}>
+      <View style={styles.rankingButtonsRow}>
         <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
           <Text style={styles.text4}>{"Classement Global"}</Text>
         </TouchableOpacity>
@@ -239,13 +239,14 @@ const styles = StyleSheet.create({
   bodySection: {
     flexDirection: !isMobile ? "row" : "column-reverse",
   },
-  rankeeRow: {
+  rankingButtonsRow: {
     flexDirection: "row",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 16,
     marginBottom: 16,
     paddingHorizontal: isMobile ? 8 : 0,
+    justifyContent: "center",
   },
   bronzeText: {
     fontSize: isMobile ? 18 : 22,
