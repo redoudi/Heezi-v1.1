@@ -12,27 +12,23 @@ export default function ProfilScreen() {
             <Text style={styles.text}>{"Niveau. 1"}</Text>
             <View style={styles.progressBar}></View>
           </View>
-          <View style={styles.headerButtonsRow}>
-            <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
-              <Image
-                source={require("@/assets/images/profiladd.png")}
-                resizeMode={"contain"}
-                style={styles.addIcon}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button2}
-              onPress={() => {}}
-              disabled
-            >
-              <Image
-                source={require("@/assets/images/profilSettings.png")}
-                resizeMode={"stretch"}
-                style={styles.settingsIcon}
-              />
-            </TouchableOpacity>
-          </View>
+
+          <TouchableOpacity style={styles.button} onPress={() => {}} disabled>
+            <Image
+              source={require("@/assets/images/profiladd.png")}
+              resizeMode={"contain"}
+              style={styles.addIcon}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button2} onPress={() => {}} disabled>
+            <Image
+              source={require("@/assets/images/profilSettings.png")}
+              resizeMode={"stretch"}
+              style={styles.settingsIcon}
+            />
+          </TouchableOpacity>
         </View>
+
         <View style={styles.body}>
           <Image
             source={require("@/assets/images/ProfilMascot.png")}
