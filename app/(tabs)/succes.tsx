@@ -42,6 +42,7 @@ export default function SuccessScreen() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    paddingVertical: 16,
   },
   contentContainer: {
     alignItems: "center",
