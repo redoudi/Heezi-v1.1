@@ -44,8 +44,8 @@ export default function ScoreScreen() {
             </View>
           </View>
           <View style={styles.rankingTableContainer}>
-            <View style={styles.column4}>
-              <View style={styles.row3}>
+            <View style={styles.rankingList}>
+              <View style={styles.rankeeRow}>
                 <TouchableOpacity
                   style={styles.button}
                   onPress={() => {}}
@@ -59,48 +59,24 @@ export default function ScoreScreen() {
                   </Text>
                 </View>
               </View>
-              <TouchableOpacity
-                style={styles.buttonRow}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text6}>{"1."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                <Text style={styles.text8}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.buttonRow2}
-                onPress={() => {}}
-                disabled
-              >
-                <Text style={styles.text9}>{"2."}</Text>
-                <Image
-                  source={require("@/assets/images/Coq.png")}
-                  resizeMode={"stretch"}
-                  style={styles.image4}
-                />
-                <Text style={styles.text10}>{"Vous"}</Text>
-                <Text style={styles.text11}>{"Nv.100"}</Text>
-              </TouchableOpacity>
-              {["3", "4", "5", "6", "7"].map((item) => (
+
+              {[...Array(7)].map((_, index) => (
                 <TouchableOpacity
-                  style={styles.buttonRow}
+                  key={index}
+                  style={[styles.buttonRow, index === 1 && styles.youRankedRow]}
                   onPress={() => {}}
                   disabled
                 >
-                  <Text style={styles.text6}>{`${item}.`}</Text>
+                  <Text style={styles.rankNumber}>{`${index + 1}.`}</Text>
                   <Image
                     source={require("@/assets/images/Coq.png")}
                     resizeMode={"stretch"}
                     style={styles.image4}
                   />
-                  <Text style={styles.text7}>{"Nom de la personne"}</Text>
-                  <Text style={styles.text8}>{"Nv.100"}</Text>
+                  <Text style={styles.text7}>
+                    {index === 1 ? "Vous" : "Autre joueur"}
+                  </Text>
+                  <Text style={styles.text8}>{"Nv. ?"}</Text>
                 </TouchableOpacity>
               ))}
             </View>
@@ -183,7 +159,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 305,
     marginHorizontal: 16,
   },
-  column4: {
+  rankingList: {
     width: 552,
     marginRight: 16,
   },
@@ -235,7 +211,7 @@ const styles = StyleSheet.create({
   rankingTableContainer: {
     flexDirection: "row",
   },
-  row3: {
+  rankeeRow: {
     flexDirection: "row",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
@@ -271,7 +247,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     width: 224,
   },
-  text6: {
+  rankNumber: {
     fontSize: 22,
     color: "#292929",
     marginLeft: 16,
@@ -314,5 +290,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 8,
     marginRight: 16,
+  },
+  youRankedRow: {
+    backgroundColor: "#72D6BA",
   },
 });
