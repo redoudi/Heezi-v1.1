@@ -84,22 +84,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     backgroundColor: "#FFFFFF",
+    paddingBottom: isMobile ? 32 : 0,
   },
   progressBar: {
     height: 8,
     backgroundColor: "#33C6FD",
-    marginHorizontal: 16,
+    marginHorizontal: isMobile ? 8 : 16,
+    flex: 1,
   },
   addButton: {
-    width: 97,
+    width: isMobile ? 70 : 97,
     alignItems: "center",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 18,
-    marginRight: 9,
+    marginRight: isMobile ? 4 : 9,
   },
   settingsButton: {
-    width: 67,
+    width: isMobile ? 50 : 67,
     alignItems: "center",
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingTop: 32,
     paddingBottom: 32,
-    marginHorizontal: 32,
+    marginHorizontal: isMobile ? 16 : 32,
     shadowColor: "#249079",
     shadowOpacity: 1.0,
     shadowOffset: {
@@ -123,16 +125,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 16,
-    marginRight: 16,
+    marginRight: isMobile ? 8 : 16,
   },
   statsContainer: {
-    width: 520,
+    width: isMobile ? "100%" : 520,
   },
   progressContainer: {
     backgroundColor: "#EFEFEF",
     borderRadius: 8,
     paddingVertical: 16,
     marginBottom: 16,
+    width: "100%",
   },
   addIcon: {
     borderRadius: 8,
@@ -145,9 +148,10 @@ const styles = StyleSheet.create({
     height: 36,
   },
   mascotImage: {
-    width: 520,
-    height: 306,
-    marginRight: 16,
+    width: isMobile ? "100%" : 520,
+    height: isMobile ? 200 : 306,
+    marginRight: isMobile ? 0 : 16,
+    marginBottom: isMobile ? 16 : 0,
   },
   rankIcon: {
     borderRadius: 8,
@@ -158,7 +162,7 @@ const styles = StyleSheet.create({
   headerRow: {
     flexDirection: "row",
     marginBottom: 32,
-    marginHorizontal: 32,
+    marginHorizontal: isMobile ? 16 : 32,
   },
   headerButtonsRow: {
     width: 173,
@@ -166,7 +170,7 @@ const styles = StyleSheet.create({
   },
   body: {
     flexDirection: !isMobile ? "row" : "column",
-    marginHorizontal: 32,
+    marginHorizontal: isMobile ? 16 : 32,
     alignItems: isMobile ? "center" : undefined,
   },
   rankContainer: {

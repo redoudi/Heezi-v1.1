@@ -5,7 +5,7 @@ function WatermarkText({
   textStyle,
 }: {
   text: string;
-  textStyle: TextStyle;
+  textStyle?: TextStyle;
 }) {
   return <Text style={[styles.watermark, textStyle]}>{text}</Text>;
 }
@@ -15,7 +15,7 @@ export default function WatermarkAbsolute({
   textStyle = {},
 }: {
   text: string;
-  textStyle: TextStyle;
+  textStyle?: TextStyle;
 }) {
   return (
     <View style={styles.overlayAbsolute}>
