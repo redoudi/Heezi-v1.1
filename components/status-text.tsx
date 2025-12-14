@@ -1,4 +1,5 @@
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
+import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function StatusText() {
@@ -19,12 +20,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 4,
-    paddingHorizontal: 8,
-    paddingVertical: 6,
+    paddingHorizontal: isMobile ? 4 : 8,
+    paddingVertical: isMobile ? 4 : 6,
   },
   statusText: {
     color: "#0A2924",
     lineHeight: 10,
-    fontSize: 14,
+    fontSize: isMobile ? 12 : 14,
   },
 });

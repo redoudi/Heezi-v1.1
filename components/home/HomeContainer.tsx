@@ -1,4 +1,5 @@
 import { ScrollableScreen } from "@/components/scrollable-screen";
+import { isMobile } from "@/utils/isMobile";
 import { StyleSheet } from "react-native";
 
 export default function HomeContainer({
@@ -18,7 +19,7 @@ export default function HomeContainer({
 
 const styles = StyleSheet.create({
   mainContainer: {
-    marginHorizontal: 32,
+    marginHorizontal: isMobile ? 0 : 32,
   },
   mainContent: {
     gap: 32,
