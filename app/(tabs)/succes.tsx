@@ -1,6 +1,5 @@
-import { ScrollableScreen } from "@/components/scrollable-screen";
 import WatermarkAbsolute from "@/components/ui/watermark";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 function SuccessIcon() {
   return (
@@ -14,8 +13,8 @@ function SuccessIcon() {
 
 export default function SuccessScreen() {
   return (
-    <View>
-      <ScrollableScreen contentContainerStyle={styles.mainContainer}>
+    <View style={styles.mainContainer}>
+      <ScrollView contentContainerStyle={styles.contentContainer}>
         <View style={styles.mainContent}>
           <View style={styles.column2}>
             <View style={styles.view2}>
@@ -68,13 +67,16 @@ export default function SuccessScreen() {
             </View>
           </View>
         </View>
-      </ScrollableScreen>
+      </ScrollView>
       <WatermarkAbsolute text="BIENTÔT DISPONIBLE" />
     </View>
   );
 }
 const styles = StyleSheet.create({
   mainContainer: {
+    flex: 1,
+  },
+  contentContainer: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
     padding: 16,
