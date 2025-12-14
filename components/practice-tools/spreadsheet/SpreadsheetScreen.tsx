@@ -40,7 +40,7 @@ export default function SpreadsheetScreen({
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.mainContent}>
         <TitleBar />
-        <RibbonTabs />
+        {!isMobile && <RibbonTabs />}
         <SpreadsheetRibbon />
         <FunctionBar />
         <SpreadsheetGrid />
