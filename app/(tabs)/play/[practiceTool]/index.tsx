@@ -38,9 +38,6 @@ export default function SectionsList() {
   );
 }
 const styles = StyleSheet.create({
-  mainContainer: {
-    marginHorizontal: 32,
-  },
   mainContent: {
     gap: 32,
     marginBottom: 32,
