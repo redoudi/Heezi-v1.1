@@ -1,4 +1,5 @@
 import WatermarkAbsolute from "@/components/ui/watermark";
+import { isMobile } from "@/utils/isMobile";
 import {
   Image,
   ScrollView,
@@ -90,7 +91,7 @@ export default function ScoreScreen() {
         contentContainerStyle={styles.mainContainerContent}
       >
         <HeaderSection />
-        <View style={styles.rankingTableContainer}>
+        <View style={styles.bodySection}>
           <RankingListSection />
           <Image
             source={require("@/assets/images/ScoreIcon.png")}
@@ -222,8 +223,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     marginHorizontal: 16,
   },
-  rankingTableContainer: {
-    flexDirection: "row",
+  bodySection: {
+    flexDirection: !isMobile ? "row" : "column",
     alignSelf: "stretch",
   },
   rankeeRow: {
