@@ -71,6 +71,7 @@ export const MascotDialog = ({
   style?: StyleProp<ViewStyle>;
   textContainerStyle?: StyleProp<ViewStyle>;
   onLayout?: (event: LayoutChangeEvent) => void;
+  fixed?: boolean;
 }) => {
   const { width: windowWidth } = useWindowDimensions();
   const DownArrowNextStep = downArrowNextStep;
@@ -83,12 +84,14 @@ export const MascotDialog = ({
     <View
       style={[!fixed && styles.mainContainer, style, fixed && { marginTop: 8 }]}
       onLayout={onLayout}
+      pointerEvents="box-none" // allow clicks to pass through empty space
     >
       <View
         style={[
           styles.textBoxAndTriangle,
           { marginTop: fixed ? 0 : undefined },
         ]}
+        pointerEvents="box-none"
       >
         <View
           style={[
