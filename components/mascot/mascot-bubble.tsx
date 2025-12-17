@@ -1,4 +1,3 @@
-import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import useMascotBubble from "@/hooks/useMascotBubble";
 import {
@@ -44,11 +43,7 @@ export function MascotBubble({
   nextStep: () => void | null;
 }) {
   const { levelType } = useLevelData();
-  const {
-    currentStep: { cursor, mascotPosition: forcedMascotPosition },
-    contentsRefs,
-  } = useCursor();
-  const { height: windowHeight } = useWindowDimensions();
+
   const { handleLayout, mascotPosition } = useMascotBubble();
 
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
@@ -171,8 +166,8 @@ const styles = StyleSheet.create({
   },
 
   dialogText: {
-    fontSize: 14,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontWeight: 600,
     color: "#FFFFFF",
   },
 });
