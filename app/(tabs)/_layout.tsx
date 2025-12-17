@@ -24,7 +24,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        tabBarActiveBackgroundColor: !isMobile ? "#EFEFEF" : "yellow", // Background color for selected tab
+        tabBarActiveBackgroundColor: !isMobile ? "#EFEFEF" : "lightgray", // Background color for selected tab
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarPosition: isMobile ? "bottom" : "left",
@@ -40,9 +40,7 @@ export default function TabLayout() {
           : styles.tabBarLabelStyle,
 
         tabBarBackground: () => {
-          return isMobile ? (
-            MobileBackground()
-          ) : (
+          return isMobile ? null : (
             <View style={styles.tabBarBackgroundStyle}>
               <Image
                 source={require("../../assets/images/logo.png")}
@@ -60,7 +58,11 @@ export default function TabLayout() {
           title: "Jouer",
           tabBarIcon: () => (
             <Image
-              source={require("../../assets/images/play.png")}
+              source={
+                !isMobile
+                  ? require("../../assets/images/play.png")
+                  : require("../../assets/images/mascot-head.png")
+              }
               resizeMode="contain"
               style={
                 isMobile
