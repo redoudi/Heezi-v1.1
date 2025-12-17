@@ -54,7 +54,6 @@ export default function CellTextInput({
         cellsStyles?.[id],
         isWrongAnswer ? styles.wrongAnswer : styles.selectedCell,
       ]}
-      editable={isWrongAnswer !== false}
       value={cellsValues?.[id] || ""}
       onChangeText={(text) => setCellValue(id, text)}
       ref={textInputRef}

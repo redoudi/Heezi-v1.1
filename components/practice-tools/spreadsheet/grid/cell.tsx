@@ -1,4 +1,5 @@
 import useCursor from "@/context/useCursor";
+import useLevelData from "@/hooks/use-level-data";
 import useSpreadsheetStore from "@/store/useSpreadsheetStore";
 import { useEffect, useRef, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
@@ -7,7 +8,8 @@ import CellTextInput from "./CellTextInput";
 export default function Cell({ id }: { id: string }) {
   const { spreadsheetData, setCellsSelected, setCellValue, cellsEnabled } =
     useSpreadsheetStore();
-  const { setContentRef, expected } = useCursor();
+  const { levelType } = useLevelData();
+  const { setContentRef, expected, currentStep } = useCursor();
   const [isWrongAnswer, setIsWrongAnswer] = useState(null);
   const cellsValues = spreadsheetData?.cellsValues;
   const cellsSelected = spreadsheetData?.cellsSelected;
@@ -23,7 +25,9 @@ export default function Cell({ id }: { id: string }) {
 
   return (
     <View ref={cellRef}>
-      {cellsEnabled?.includes(id) && cellsSelected?.includes(id) ? (
+      {levelType === "practice" &&
+      currentStep.expected?.cell === id &&
+      cellsSelected?.includes(id) ? (
         <CellTextInput
           id={id}
           isWrongAnswer={isWrongAnswer}
