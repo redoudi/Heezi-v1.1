@@ -14,10 +14,16 @@ export default function useMascotBubble() {
     contentsRefs,
   } = useCursor();
   const { height: windowHeight } = useWindowDimensions();
+  const [baseWindowHeight, setBaseWindowHeight] = useState(windowHeight);
   const [componentHeight, setComponentHeight] = useState<number>(300); // Default fallback
   const [mascotPosition, setMascotPosition] = useState<ViewStyle>({
     bottom: 0,
   });
+
+  // Keep the largest observed window height so keyboard shrink doesn't pull the bubble down
+  useEffect(() => {
+    setBaseWindowHeight((prev) => Math.max(prev, windowHeight));
+  }, [windowHeight]);
 
   const handleLayout = (event: LayoutChangeEvent) => {
     const { height } = event.nativeEvent.layout;
@@ -26,9 +32,10 @@ export default function useMascotBubble() {
 
   const padding = 20;
   const minBottom = 0;
+  const effectiveWindowHeight = Math.max(baseWindowHeight, windowHeight);
   const maxBottom = Math.max(
     minBottom,
-    windowHeight - componentHeight - padding
+    effectiveWindowHeight - componentHeight - padding
   );
   useEffect(() => {
     if (isMobile && forcedMascotPosition) {
@@ -46,7 +53,7 @@ export default function useMascotBubble() {
                 top: undefined,
                 bottom: Math.max(
                   minBottom,
-                  Math.min(windowHeight - elementTop + 8, maxBottom)
+                  Math.min(effectiveWindowHeight - elementTop + 8, maxBottom)
                 ),
               }
             : { bottom: 0 };
@@ -61,6 +68,8 @@ export default function useMascotBubble() {
     minBottom,
     forcedMascotPosition,
     windowHeight,
+    baseWindowHeight,
+    effectiveWindowHeight,
   ]);
   return { handleLayout, mascotPosition };
 }
