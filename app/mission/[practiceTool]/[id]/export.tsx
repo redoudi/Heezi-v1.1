@@ -60,7 +60,7 @@ function ContinuerButton() {
 export default function ExportScreen() {
   const { height, width } = useWindowDimensions();
   const responsivePadding = {
-    paddingVertical: Math.max(16, height * 0.04),
+    paddingVertical: isMobile ? 0 : Math.max(16, height * 0.04),
     paddingHorizontal: Math.max(8, width * 0.02),
   };
   return (
