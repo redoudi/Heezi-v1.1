@@ -48,6 +48,9 @@
                         "type": "blockText",
                         "text": "Réservation",
                         "blockId": "objetInput"
+                    },
+                    "mascotPosition": {
+                        "top": 0
                     }
                 },
                 {

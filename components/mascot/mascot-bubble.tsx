@@ -46,7 +46,7 @@ export function MascotBubble({
 }) {
   const { levelType } = useLevelData();
   const {
-    currentStep: { cursor },
+    currentStep: { cursor, mascotPosition: forcedMascotPosition },
     contentsRefs,
   } = useCursor();
   const { height: windowHeight } = useWindowDimensions();
@@ -65,22 +65,26 @@ export function MascotBubble({
   const maxTop = Math.max(minTop, windowHeight - componentHeight - padding);
 
   useEffect(() => {
-    if (cursor && contentsRefs && cursor.elementId) {
-      const calculatedTop =
-        cursor.elementId && contentsRefs.current[cursor.elementId]
-          ? getElementBottomHeight(contentsRefs, cursor.elementId)
-          : undefined;
+    if (forcedMascotPosition) {
+      setMascotPosition(forcedMascotPosition);
+    } else {
+      if (cursor && contentsRefs && cursor.elementId) {
+        const calculatedTop =
+          cursor.elementId && contentsRefs.current[cursor.elementId]
+            ? getElementBottomHeight(contentsRefs, cursor.elementId)
+            : undefined;
 
-      const calculatedTopStyle =
-        calculatedTop !== undefined
-          ? {
-              bottom: undefined,
-              top: Math.max(minTop, Math.min(calculatedTop, maxTop)),
-            }
-          : { bottom: 0 };
-      setMascotPosition(calculatedTopStyle);
+        const calculatedTopStyle =
+          calculatedTop !== undefined
+            ? {
+                bottom: undefined,
+                top: Math.max(minTop, Math.min(calculatedTop, maxTop)),
+              }
+            : { bottom: 0 };
+        setMascotPosition(calculatedTopStyle);
+      }
     }
-  }, [cursor, contentsRefs, minTop, maxTop]);
+  }, [cursor, contentsRefs, minTop, maxTop, forcedMascotPosition]);
 
   const DownArrowNextStep = nextStep && levelType === "lesson" && (
     <SuivantBtn text="Suivant" onPress={nextStep} />
