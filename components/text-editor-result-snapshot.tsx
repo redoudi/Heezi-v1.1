@@ -1,6 +1,6 @@
 import useTextEditorStore from "@/store/useTextEditorStore";
+import { isMobile } from "@/utils/isMobile";
 import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 type TextEditorBlock = {
   type?: string;
@@ -50,11 +50,11 @@ export default function TextEditorResultSnapshot() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.snapshotBox}>
         {renderContentBlocksRecursive(contentBlocks)}
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 const styles = StyleSheet.create({
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   snapshotBox: {
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
-    padding: 32,
+    padding: !isMobile ? 32 : 24,
     borderWidth: 1,
     borderColor: "black",
     flex: 1,

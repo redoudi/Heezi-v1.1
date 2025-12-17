@@ -1,14 +1,13 @@
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
 import { isMobile } from "@/utils/isMobile";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SpreadsheetResultSnapshot() {
   const { contents: cellsContents } = useExportSpreadsheetValues();
   const [headers, ...entries] = cellsContents;
   // useLoadSpreadsheet();
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.snapshotBox}>
         <View style={styles.cellsRow}>
           {headers.map((cell, index) => (
@@ -52,7 +51,7 @@ export default function SpreadsheetResultSnapshot() {
           }}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 const styles = StyleSheet.create({
