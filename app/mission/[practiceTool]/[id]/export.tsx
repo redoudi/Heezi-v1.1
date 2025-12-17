@@ -69,8 +69,8 @@ export default function ExportScreen() {
         <MascotDialog
           bubbleText="Tu peux maintenant télécharger une copie  de ton travail !"
           downArrowNextStep={undefined}
-          fixed={isMobile}
-          style={isMobile && styles.bubbleContainer}
+          fixed={true}
+          style={styles.bubbleContainer}
         />
       )}
       <View style={[styles.mainContent, responsivePadding]}>

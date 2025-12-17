@@ -12,16 +12,6 @@ import {
 } from "react-native";
 import SuivantBtn from "../ui/suivantBtn";
 
-const CornerTriangleIcon = () => {
-  return (
-    <Image
-      source={require("@/assets/images/662flub1_expires_30_days.png")}
-      resizeMode={"contain"}
-      style={styles.cornerTriangle}
-    />
-  );
-};
-
 const MascotIcon = () => {
   const { width: windowWidth } = useWindowDimensions();
   const isMobile = windowWidth < 768; // Common mobile breakpoint
@@ -60,9 +50,9 @@ export function MascotBubble({
   );
 }
 
-const CornerTriangle = () => {
+const CornerTriangle = ({ style }: { style?: StyleProp<ViewStyle> }) => {
   return (
-    <View style={styles.triangleContainer}>
+    <View style={[styles.triangleContainer, style]}>
       <View style={styles.triangle} />
     </View>
   );
@@ -90,8 +80,16 @@ export const MascotDialog = ({
   const maxTextWidth = Math.min(600, windowWidth - 88 - 32 - 20);
 
   return (
-    <View style={[!fixed && styles.mainContainer, style]} onLayout={onLayout}>
-      <View style={styles.textBoxAndTriangle}>
+    <View
+      style={[!fixed && styles.mainContainer, style, fixed && { marginTop: 8 }]}
+      onLayout={onLayout}
+    >
+      <View
+        style={[
+          styles.textBoxAndTriangle,
+          { marginTop: fixed ? 0 : undefined },
+        ]}
+      >
         <View
           style={[
             styles.textContainer,
@@ -102,7 +100,7 @@ export const MascotDialog = ({
           <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
           {DownArrowNextStep}
         </View>
-        <CornerTriangle />
+        <CornerTriangle style={fixed && { marginBottom: "10%" }} />
       </View>
       <MascotIcon />
     </View>
