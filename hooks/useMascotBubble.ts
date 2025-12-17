@@ -1,6 +1,7 @@
 import useCursor from "@/context/useCursor";
 import useLevelData from "@/hooks/use-level-data";
 import { getElementBottomHeight } from "@/utils/cursorUtils";
+import { isMobile } from "@/utils/isMobile";
 import { useEffect, useState } from "react";
 import {
   LayoutChangeEvent,
@@ -29,7 +30,7 @@ export default function useMascotBubble() {
   const minTop = 0; // Minimum top position
   const maxTop = Math.max(minTop, windowHeight - componentHeight - padding);
   useEffect(() => {
-    if (forcedMascotPosition) {
+    if (isMobile && forcedMascotPosition) {
       setMascotPosition(forcedMascotPosition);
     } else {
       if (cursor && contentsRefs && cursor.elementId) {
