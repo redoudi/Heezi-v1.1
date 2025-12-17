@@ -97,7 +97,9 @@ export const MascotDialog = ({
             textContainerStyle,
           ]}
         >
-          <Text style={styles.dialogText}>{bubbleText || "..."}</Text>
+          <Text style={[styles.dialogText, fixed && { fontSize: 14 }]}>
+            {bubbleText || "..."}
+          </Text>
           {DownArrowNextStep}
         </View>
         <CornerTriangle style={fixed && { marginBottom: "10%" }} />
