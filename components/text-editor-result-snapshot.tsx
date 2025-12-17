@@ -14,7 +14,10 @@ export default function TextEditorResultSnapshot() {
 
   const renderText = (block: TextEditorBlock, index: number) => (
     <View key={index} style={[block.blockStyle]}>
-      <Text key={index} style={[{ fontSize: 10, lineHeight: 24 }, styles.text, block.style]}>
+      <Text
+        key={index}
+        style={[{ fontSize: 16, lineHeight: 24 }, styles.text, block.style]}
+      >
         {block.text}
       </Text>
     </View>
