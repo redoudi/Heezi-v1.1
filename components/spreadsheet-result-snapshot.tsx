@@ -1,5 +1,4 @@
 import useExportSpreadsheetValues from "@/hooks/useExportSpreadsheetValues";
-import useLoadSpreadsheet from "@/hooks/useLoadSpreadsheet";
 import { isMobile } from "@/utils/isMobile";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -7,7 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function SpreadsheetResultSnapshot() {
   const { contents: cellsContents } = useExportSpreadsheetValues();
   const [headers, ...entries] = cellsContents;
-  useLoadSpreadsheet();
+  // useLoadSpreadsheet();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.snapshotBox}>
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
   snapshotBox: {
     backgroundColor: "#FFFFFF",
     borderRadius: 8,
-    padding: 32,
+    padding: !isMobile ? 32 : 8,
     // borderWidth: 1,
     // borderColor: "black",
   },
