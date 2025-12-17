@@ -16,20 +16,20 @@ export default function SectionScreen() {
       <SectionHeader />
       <View style={styles.missionPartsContainer}>
         <MissionPart
-          title="Cours"
+          title="1/3 - Cours"
           image={toolSectionButtons.lesson}
           levelNumber={1}
         />
         <Divider />
         <MissionPart
-          title="Quiz"
+          title="2/3 - Quiz"
           image={toolSectionButtons.quiz}
           imageDisabled={sectionButtons.disabled.quiz}
           levelNumber={2}
         />
         <Divider />
         <MissionPart
-          title="Pratique"
+          title="3/3 - Pratique"
           image={toolSectionButtons.practice}
           levelNumber={3}
           imageDisabled={sectionButtons.disabled.practice}

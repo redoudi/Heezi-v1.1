@@ -115,12 +115,12 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 0,
     paddingVertical: 4,
     paddingHorizontal: 8,
-    width: 100,
   },
   partTitleText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#F2FBF8",
+    flex: 1,
   },
   sectionRow: {
     flexDirection: "row",
