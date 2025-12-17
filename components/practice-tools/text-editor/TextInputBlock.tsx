@@ -71,7 +71,9 @@ export default function TextInputBlock({ item }: TextInputBlockProps) {
           isWrongAnswer ? wrongAnswerStyle : {},
           focusedStyle,
         ]}
-        editable={isWrongAnswer !== false}
+        editable={
+          levelType === "practice" && expected?.blockId === item?.blockId
+        }
         value={item.text}
         onChangeText={(inputText) => setBlockText(item.blockId, inputText)}
         onFocus={() => setSelectedBlockId(item.blockId)}
