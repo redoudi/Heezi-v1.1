@@ -74,6 +74,7 @@ export const MascotDialog = ({
   style = undefined,
   textContainerStyle = undefined,
   onLayout,
+  fixed = false,
 }: {
   bubbleText: string;
   downArrowNextStep: React.ReactNode;
@@ -89,7 +90,7 @@ export const MascotDialog = ({
   const maxTextWidth = Math.min(600, windowWidth - 88 - 32 - 20);
 
   return (
-    <View style={[styles.mainContainer, style]} onLayout={onLayout}>
+    <View style={[!fixed && styles.mainContainer, style]} onLayout={onLayout}>
       <View style={styles.textBoxAndTriangle}>
         <View
           style={[

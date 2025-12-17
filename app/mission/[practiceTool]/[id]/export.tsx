@@ -3,6 +3,7 @@ import { MascotDialog } from "@/components/mascot/mascot-bubble";
 import SnapshotPreview from "@/components/snapshot-preview";
 import usePracticeToolConstants from "@/hooks/usePracticeToolConstants";
 import { getMissionStaticParams } from "@/utils/getMissionStaticParams";
+import { isMobile } from "@/utils/isMobile";
 import { router } from "expo-router";
 import {
   Image,
@@ -64,6 +65,14 @@ export default function ExportScreen() {
   };
   return (
     <SafeAreaView style={[styles.mainContainer, { height: height || "100%" }]}>
+      {isMobile && (
+        <MascotDialog
+          bubbleText="Tu peux maintenant télécharger une copie  de ton travail !"
+          downArrowNextStep={undefined}
+          fixed={isMobile}
+          style={isMobile && styles.bubbleContainer}
+        />
+      )}
       <View style={[styles.mainContent, responsivePadding]}>
         <SnapshotPreview />
         <View
@@ -77,11 +86,15 @@ export default function ExportScreen() {
           <ContinuerButton />
         </View>
       </View>
-      <MascotDialog
-        bubbleText="Tu peux maintenant télécharger une copie  de ton travail au format que tu veux!"
-        downArrowNextStep={undefined}
-        style={{ top: 8 }}
-      />
+      {!isMobile && (
+        <MascotDialog
+          bubbleText={
+            "Tu peux maintenant télécharger une copie de ton travail au format que tu veux !"
+          }
+          downArrowNextStep={undefined}
+          style={{ top: 8 }}
+        />
+      )}
     </SafeAreaView>
   );
 }
@@ -114,5 +127,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#0A2924",
     marginRight: 11,
+  },
+  bubbleContainer: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "flex-end",
+    maxWidth: "100%",
+    paddingLeft: 8, // Prevent overflow on left side
+    marginBottom: 8,
   },
 });
