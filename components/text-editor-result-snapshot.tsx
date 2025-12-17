@@ -12,12 +12,13 @@ type TextEditorBlock = {
 
 export default function TextEditorResultSnapshot() {
   const { contentBlocks } = useTextEditorStore();
+  // useLoadTextEditor();
 
   const renderText = (block: TextEditorBlock, index: number) => (
     <View key={index} style={[block.blockStyle]}>
       <Text
         key={index}
-        style={[{ fontSize: 16, lineHeight: 24 }, styles.text, block.style]}
+        style={[{ fontSize: 14, lineHeight: 24 }, styles.text, block.style]}
       >
         {block.text}
       </Text>
