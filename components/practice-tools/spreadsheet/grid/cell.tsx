@@ -38,7 +38,9 @@ export default function Cell({ id }: { id: string }) {
               cellsSelected?.includes(id) && styles.selectedCell,
             ]}
           >
-            <Text style={cellsStyles?.[id]}>{cellsValues?.[id] || ""}</Text>
+            <Text style={[cellsStyles?.[id], { fontSize: 16 }]}>
+              {cellsValues?.[id] || ""}
+            </Text>
           </View>
         </Pressable>
       )}

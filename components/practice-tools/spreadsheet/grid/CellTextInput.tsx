@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 8,
     outlineStyle: "none",
+    fontSize: 16,
   },
   wrongAnswer: {
     borderColor: "red",
