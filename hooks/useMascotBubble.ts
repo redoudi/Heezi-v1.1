@@ -1,6 +1,5 @@
 import useCursor from "@/context/useCursor";
-import useLevelData from "@/hooks/use-level-data";
-import { getElementBottomHeight } from "@/utils/cursorUtils";
+import { getElementTopPosition } from "@/utils/cursorUtils";
 import { isMobile } from "@/utils/isMobile";
 import { useEffect, useState } from "react";
 import {
@@ -10,7 +9,6 @@ import {
 } from "react-native";
 
 export default function useMascotBubble() {
-  const { levelType } = useLevelData();
   const {
     currentStep: { cursor, mascotPosition: forcedMascotPosition },
     contentsRefs,
@@ -27,28 +25,42 @@ export default function useMascotBubble() {
   };
 
   const padding = 20;
-  const minTop = 0; // Minimum top position
-  const maxTop = Math.max(minTop, windowHeight - componentHeight - padding);
+  const minBottom = 0;
+  const maxBottom = Math.max(
+    minBottom,
+    windowHeight - componentHeight - padding
+  );
   useEffect(() => {
     if (isMobile && forcedMascotPosition) {
       setMascotPosition(forcedMascotPosition);
     } else {
       if (cursor && contentsRefs && cursor.elementId) {
-        const calculatedTop =
+        const elementTop =
           cursor.elementId && contentsRefs.current[cursor.elementId]
-            ? getElementBottomHeight(contentsRefs, cursor.elementId)
+            ? getElementTopPosition(contentsRefs, cursor.elementId)
             : undefined;
 
-        const calculatedTopStyle =
-          calculatedTop !== undefined
+        const calculatedBottomStyle =
+          elementTop !== undefined
             ? {
-                bottom: undefined,
-                top: Math.max(minTop, Math.min(calculatedTop, maxTop)),
+                top: undefined,
+                bottom: Math.max(
+                  minBottom,
+                  Math.min(windowHeight - elementTop + 8, maxBottom)
+                ),
               }
             : { bottom: 0 };
-        setMascotPosition(calculatedTopStyle);
+        setMascotPosition(calculatedBottomStyle);
       }
     }
-  }, [cursor, contentsRefs, minTop, maxTop, forcedMascotPosition]);
+  }, [
+    componentHeight,
+    cursor,
+    contentsRefs,
+    maxBottom,
+    minBottom,
+    forcedMascotPosition,
+    windowHeight,
+  ]);
   return { handleLayout, mascotPosition };
 }
