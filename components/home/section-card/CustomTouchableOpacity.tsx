@@ -88,6 +88,7 @@ export default function CustomTouchableOpacity({
 const styles = StyleSheet.create({
   wrapper: {
     position: "relative",
+    borderRadius: 32,
   },
   button: {
     position: "relative",
