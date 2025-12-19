@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     gap: 8,
     paddingHorizontal: isMobile ? 8 : 32,
-    zIndex: 1001,
+    zIndex: 1002,
     paddingTop: 4,
   },
   leftRow: {
